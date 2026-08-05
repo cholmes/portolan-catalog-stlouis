@@ -1,6 +1,6 @@
 # ZIP Codes
 
-ZIP code areas from the city's boundaries map service.
+ZIP code areas from the city's boundaries map service. Mirrored from [the city's open data portal](https://maps8.stlouis-mo.gov/arcgis/rest/services/STLOUIS/BOUNDARIES/MapServer); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/citywide/zip-codes/collection.json).
 
 ![st-louis](https://img.shields.io/badge/st--louis-blue) ![missouri](https://img.shields.io/badge/missouri-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![zip](https://img.shields.io/badge/zip-blue) ![codes](https://img.shields.io/badge/codes-blue)
 
@@ -44,6 +44,7 @@ ZIP code areas from the city's boundaries map service.
 | ./styles/default.json | 1.8 KB | 1220a1321ded... |
 | ./styles/style-boundaries.json | 459 B | 1220dc4a979f... |
 | ./styles/style-subtle.json | 481 B | 12209f4aab33... |
+| ./thumbnail.png | 292.6 KB | 1220dd6253f6... |
 
 ## Quick Start
 

@@ -2,7 +2,7 @@
   "version": 8,
   "name": "Utility-side service line status",
   "metadata": {
-    "description": "Every water service line by the utility-side status from the Water Division's EPA lead inventory: Lead red, Galvanized-requiring-replacement orange, Non-Lead green, Unknown gray. Codes follow the service's own domain (1 Lead, 2 Non-Lead, 3 Galvanized, 0 Unknown)."
+    "description": "Every water service line by the utility-side status from the Water Division's EPA lead inventory: Lead red, Galvanized-requiring-replacement orange, Non-Lead green, Unknown gray (names decoded from the service's own coded-value domain)."
   },
   "sources": {
     "data": {
@@ -21,15 +21,15 @@
           "match",
           [
             "get",
-            "utilstatus"
+            "utilstatus_desc"
           ],
-          1,
+          "Lead",
           "#c03221",
-          3,
+          "Galvanized Requiring Replacement",
           "#e89d07",
-          2,
+          "Non-Lead",
           "#538400",
-          0,
+          "Unknown",
           "#9aa3a8",
           "#dfe6ea"
         ],
@@ -46,15 +46,15 @@
           "match",
           [
             "get",
-            "utilstatus"
+            "utilstatus_desc"
           ],
-          1,
+          "Lead",
           "#c03221",
-          3,
+          "Galvanized Requiring Replacement",
           "#e89d07",
-          2,
+          "Non-Lead",
           "#538400",
-          0,
+          "Unknown",
           "#9aa3a8",
           "#dfe6ea"
         ],

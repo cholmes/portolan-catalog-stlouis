@@ -1,6 +1,6 @@
 # Occupancy Permits
 
-Commercial, industrial, and occupancy building permits in the City of St. Louis
+Commercial, industrial, and occupancy building permits in the City of St. Louis Mirrored from [the city's open data portal](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=6); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/building/occupancy-permits/collection.json).
 
 ![st-louis](https://img.shields.io/badge/st--louis-blue) ![missouri](https://img.shields.io/badge/missouri-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![occupancy](https://img.shields.io/badge/occupancy-blue) ![permits](https://img.shields.io/badge/permits-blue)
 

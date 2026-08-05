@@ -6,19 +6,19 @@ Street network, permits, parking, and sweeping schedules from the Streets Depart
 
 ### [City Streets](streets/streets/parking-meters/)
 
-City street GIS data
+City street GIS data Mirrored from [the city's open data portal](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=68); explore it in the [St. Louis data browser](https://cholmes.github.io/st...
 
 ### [City Streets](streets/streets/street-permits/)
 
-City street GIS data
+City street GIS data Mirrored from [the city's open data portal](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=68); explore it in the [St. Louis data browser](https://cholmes.github.io/st...
 
 ### [City Streets](streets/streets/street-sweeping/)
 
-City street GIS data
+City street GIS data Mirrored from [the city's open data portal](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=68); explore it in the [St. Louis data browser](https://cholmes.github.io/st...
 
 ### [City Streets](streets/streets/streets/)
 
-City street GIS data
+City street GIS data Mirrored from [the city's open data portal](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=68); explore it in the [St. Louis data browser](https://cholmes.github.io/st...
 
 ## Coverage
 

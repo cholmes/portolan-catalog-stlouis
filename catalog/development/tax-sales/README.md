@@ -1,6 +1,6 @@
 # Tax Sales
 
-Tax sale parcels from SLDC.
+Tax sale parcels from SLDC. Mirrored from [the city's open data portal](https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/Tax_Sales/FeatureServer); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/development/tax-sales/collection.json).
 
 ![st-louis](https://img.shields.io/badge/st--louis-blue) ![missouri](https://img.shields.io/badge/missouri-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![tax](https://img.shields.io/badge/tax-blue) ![sales](https://img.shields.io/badge/sales-blue)
 
@@ -45,6 +45,7 @@ Tax sale parcels from SLDC.
 | ./styles/default.json | 1.3 KB | 12203df4879d... |
 | ./styles/style-boundaries.json | 460 B | 1220a8e696fe... |
 | ./styles/style-solid.json | 488 B | 12206ce86ca6... |
+| ./thumbnail.png | 349.2 KB | 1220fcb1d01a... |
 
 ## Quick Start
 

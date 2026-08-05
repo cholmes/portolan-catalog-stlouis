@@ -1,6 +1,6 @@
 # CSB Service Requests (311)
 
-The Citizens' Service Bureau (CSB) is the customer service department for the City of St. Louis. This dataset provides access to some of the data collected when services are requested. The X/Y coordinates are in WGS 84 Web Mercator (EPSG:3857). File new service request here: https://www.stlouis-mo.gov/government/departments/public-safety/neighborhood-stabilization-office/citizens-service-bureau/csb-request-submit.cfm
+The Citizens' Service Bureau (CSB) is the customer service department for the City of St. Louis. This dataset provides access to some of the data collected when services are requested. The X/Y coordinates are in WGS 84 Web Mercator (EPSG:3857). File new service request here: https://www.stlouis-mo.gov/government/departments/public-safety/neighborhood-stabilization-office/citizens-service-bureau/csb-request-submit.cfm Mirrored from [the city's open data portal](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/community/csb-311-requests/collection.json).
 
 ![st-louis](https://img.shields.io/badge/st--louis-blue) ![missouri](https://img.shields.io/badge/missouri-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![csb](https://img.shields.io/badge/csb-blue) ![311](https://img.shields.io/badge/311-blue) ![requests](https://img.shields.io/badge/requests-blue)
 
@@ -57,7 +57,7 @@ The Citizens' Service Bureau (CSB) is the customer service department for the Ci
 | ./styles/style-channel.json | 1.7 KB | 12201e1515b0... |
 | ./styles/style-open.json | 1.5 KB | 1220181d4924... |
 | ./thumbnail.png | 369.3 KB | 1220dca6c185... |
-| ./README.md | 3.3 KB | 12205071702e... |
+| ./README.md | 3.3 KB | 122002795247... |
 
 ## Quick Start
 

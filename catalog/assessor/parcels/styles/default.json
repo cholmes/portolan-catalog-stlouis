@@ -1,8 +1,8 @@
 {
   "version": 8,
-  "name": "Parcel fabric",
+  "name": "All parcels",
   "metadata": {
-    "description": "Every parcel in the city: quiet fill with hairline lot lines, the base reference view of the assessor's parcel layer."
+    "description": "Every parcel in the city: quiet fill with hairline lot lines \u2014 the base reference view of the assessor's parcel layer."
   },
   "sources": {
     "data": {

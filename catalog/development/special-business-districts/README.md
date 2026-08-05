@@ -1,6 +1,6 @@
 # Special Business Districts (SBDs)
 
-Special business districts (SBDs) within the City of Saint Louis. SBDs are established by Missouri statute. More Info: http://revisor.mo.gov/main/OneChapter.aspx?chapter=67
+Special business districts (SBDs) within the City of Saint Louis. SBDs are established by Missouri statute. More Info: http://revisor.mo.gov/main/OneChapter.aspx?chapter=67 Mirrored from [the city's open data portal](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=62); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/development/special-business-districts/collection.json).
 
 ![st-louis](https://img.shields.io/badge/st--louis-blue) ![missouri](https://img.shields.io/badge/missouri-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![special](https://img.shields.io/badge/special-blue) ![business](https://img.shields.io/badge/business-blue) ![districts](https://img.shields.io/badge/districts-blue)
 
@@ -53,7 +53,7 @@ Special business districts (SBDs) within the City of Saint Louis. SBDs are estab
 | ./styles/default.json | 1.1 KB | 1220a8916942... |
 | ./styles/style-boundaries.json | 498 B | 12203828e01c... |
 | ./styles/style-labeled.json | 1008 B | 1220cd21824e... |
-| ./README.md | 3.0 KB | 12209e6fcf87... |
+| ./README.md | 3.0 KB | 12200624ae1d... |
 | ./thumbnail.png | 368.8 KB | 122091599d3f... |
 
 ## Quick Start

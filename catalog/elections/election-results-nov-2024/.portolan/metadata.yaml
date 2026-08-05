@@ -1,5 +1,5 @@
 title: "November 2024 Election Results by Precinct"
-description: "This is the detailed vote extract (dve) from the November 5, 2024, General Municipal Election for the City of St. Louis."
+description: "This is the detailed vote extract (dve) from the November 5, 2024, General Municipal Election for the City of St. Louis. Mirrored from [the city's open data portal](https://stlcity.maps.arcgis.com/home/item.html?id=6e72fa855cd445f7af37d79615f602d0); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/elections/election-results-nov-2024/collection.json)."
 contact:
   name: "Chris Holmes"
   email: "cholmes@9eo.org"
@@ -12,3 +12,11 @@ processing_notes: |
   Mirrored from the City of St. Louis open data portal (https://stlcity.maps.arcgis.com/home/item.html?id=6e72fa855cd445f7af37d79615f602d0).
   Source: https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/Nov24_Detailed_Vote_Totals_Test/FeatureServer (ArcGIS REST service),
   converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.
+examples:
+  - engine: duckdb
+    description: "Count rows by Contest_Title, straight off the published file"
+    code: |
+      INSTALL httpfs; LOAD httpfs;
+      SELECT Contest_Title, count(*) AS n
+      FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/elections/election-results-nov-2024/election-results-nov-2024.parquet'
+      GROUP BY 1 ORDER BY 2 DESC LIMIT 10;

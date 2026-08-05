@@ -1,6 +1,6 @@
 # Property Sales
 
-Dataset describes real estate sale prices for recent property sales in the city. A separate table describes codes for different type of sales.
+Dataset describes real estate sale prices for recent property sales in the city. A separate table describes codes for different type of sales. Mirrored from [the city's open data portal](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=31); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/assessor/property-sales/collection.json).
 
 ![st-louis](https://img.shields.io/badge/st--louis-blue) ![missouri](https://img.shields.io/badge/missouri-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![property](https://img.shields.io/badge/property-blue) ![sales](https://img.shields.io/badge/sales-blue)
 
@@ -37,9 +37,10 @@ Dataset describes real estate sale prices for recent property sales in the city.
 | File | Size | Checksum |
 |------|------|----------|
 | ./property-sales.parquet | 2.3 MB | 122088e0e4fe... |
-| ./property-sales.pmtiles | 13.4 MB | 1220f944ade8... |
+| ./property-sales.pmtiles | 13.8 MB | 122098554acf... |
 | ./thumbnail.png | 390.4 KB | 122004eefc9f... |
 | ./styles/default.json | 1.4 KB | 12209323c67f... |
+| ./styles/style-price-per-sqft.json | 1.5 KB | 12201bc2360a... |
 | ./styles/style-solid.json | 507 B | 122052fe2aab... |
 | ./styles/style-year.json | 1.2 KB | 1220cdf94897... |
 

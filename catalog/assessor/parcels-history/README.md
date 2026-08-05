@@ -1,6 +1,6 @@
 # Parcels (Historical, 1997-2020)
 
-Current and historic parcel data
+Current and historic parcel data Mirrored from [the city's open data portal](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=82); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/assessor/parcels-history/collection.json).
 
 ![st-louis](https://img.shields.io/badge/st--louis-blue) ![missouri](https://img.shields.io/badge/missouri-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![parcels](https://img.shields.io/badge/parcels-blue) ![history](https://img.shields.io/badge/history-blue)
 
@@ -109,11 +109,13 @@ Current and historic parcel data
 
 | File | Size | Checksum |
 |------|------|----------|
-| ./parcels-history.parquet | 141.6 MB | 122048fde09d... |
-| ./parcels-history.pmtiles | 20.0 MB | 122020e573dc... |
-| ./styles/default.json | 1.5 KB | 1220fdb40016... |
-| ./styles/style-1997.json | 714 B | 1220d0168a6d... |
-| ./styles/style-2020.json | 633 B | 122093c5a523... |
+| ./parcels-history.parquet | 142.0 MB | 12200fff4bfb... |
+| ./parcels-history.pmtiles | 33.2 MB | 1220f9b01b0c... |
+| ./styles/default.json | 1.5 KB | 1220689b28ba... |
+| ./styles/style-1997.json | 1.1 KB | 122005ebd500... |
+| ./styles/style-2020.json | 1.0 KB | 1220cdd8fb56... |
+| ./thumbnail.png | 598.8 KB | 12205e8080d7... |
+| ./styles/style-zoning-1997.json | 2.1 KB | 122034b4142c... |
 
 ## Quick Start
 

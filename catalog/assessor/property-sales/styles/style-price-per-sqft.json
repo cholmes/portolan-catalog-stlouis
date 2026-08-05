@@ -1,0 +1,76 @@
+{
+  "version": 8,
+  "name": "Price per square foot",
+  "metadata": {
+    "description": "Sale price divided by the parcel's lot area \u2014 the cleanest way to compare land value across parcel sizes (steps at $1, $4, $10, $25, $60 per sq ft of lot)."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../property-sales.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "property-sales-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "property-sales",
+      "paint": {
+        "fill-color": [
+          "step",
+          [
+            "to-number",
+            [
+              "get",
+              "PricePerSqFt"
+            ]
+          ],
+          "#eef3f6",
+          1,
+          "#c6dbe8",
+          4,
+          "#8fbdd6",
+          10,
+          "#5591b5",
+          25,
+          "#2d6a8e",
+          60,
+          "#174054"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "property-sales",
+      "paint": {
+        "fill-color": [
+          "step",
+          [
+            "to-number",
+            [
+              "get",
+              "PricePerSqFt"
+            ]
+          ],
+          "#eef3f6",
+          1,
+          "#c6dbe8",
+          4,
+          "#8fbdd6",
+          10,
+          "#5591b5",
+          25,
+          "#2d6a8e",
+          60,
+          "#174054"
+        ],
+        "fill-opacity": 0.78,
+        "fill-outline-color": "#ffffff00"
+      }
+    }
+  ]
+}

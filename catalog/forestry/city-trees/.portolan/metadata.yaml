@@ -1,5 +1,5 @@
 title: "City Trees (Planting Sites)"
-description: "All mapped planting sites within the city for tree plantings managed by the Forestry Division. Street tree planting sites are re-used, while park tree sites tend not to be. This data contains vacant sites, as well."
+description: "All mapped planting sites within the city for tree plantings managed by the Forestry Division. Street tree planting sites are re-used, while park tree sites tend not to be. This data contains vacant sites, as well. Mirrored from [the city's open data portal](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=121); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/forestry/city-trees/collection.json)."
 contact:
   name: "Chris Holmes"
   email: "cholmes@9eo.org"
@@ -12,3 +12,11 @@ processing_notes: |
   Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=121).
   Source: https://maps9.stlouis-mo.gov/arcgis/rest/services/FORESTRY/FORESTRY_TREES/MapServer (ArcGIS REST service),
   converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.
+examples:
+  - engine: duckdb
+    description: "Count rows by CONDITION, straight off the published file"
+    code: |
+      INSTALL httpfs; LOAD httpfs;
+      SELECT CONDITION, count(*) AS n
+      FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/forestry/city-trees/city-trees.parquet'
+      GROUP BY 1 ORDER BY 2 DESC LIMIT 10;

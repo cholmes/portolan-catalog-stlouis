@@ -250,8 +250,8 @@
         "visual"
       ],
       "title": "November 2024 Election Results by Precinct (PMTiles)",
-      "file:size": 414658,
-      "file:checksum": "1220ff54aa64fdd00a0b1c1567dbc7c35faea603198cac5f161f8045e92c3e7e0192"
+      "file:size": 494184,
+      "file:checksum": "122077fec398120efbe3210a8703e7ee5616260c9fecd0102993ed941c3a016e8e17"
     },
     "thumbnail": {
       "href": "./thumbnail.png",
@@ -285,6 +285,17 @@
       "description": "Ballots cast per precinct.",
       "file:size": 1270,
       "file:checksum": "1220a466882d5e1c9cf7aab9b2427c7909c4465843c684d8d6777b075769124f9b3f"
+    },
+    "styles/style-presidential": {
+      "href": "./styles/style-presidential.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "style"
+      ],
+      "title": "Presidential two-party share",
+      "description": "Harris share of the two-party presidential vote by precinct (Harris and Trump votes only; steps at 50, 70, 85, and 95 percent \u2014 red below 50).",
+      "file:size": 1671,
+      "file:checksum": "1220a85d668fc21fc611bb2ef5875846ab89c523e9915bd12cf8d4014a42994f885b"
     },
     "styles/style-registered": {
       "href": "./styles/style-registered.json",

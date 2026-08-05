@@ -1,6 +1,6 @@
 # Zoning
 
-Strategic land use (SLUP),parcel, and zoning data
+Strategic land use (SLUP),parcel, and zoning data Mirrored from [the city's open data portal](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=78); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/planning/zoning/collection.json).
 
 ![st-louis](https://img.shields.io/badge/st--louis-blue) ![missouri](https://img.shields.io/badge/missouri-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![zoning](https://img.shields.io/badge/zoning-blue)
 

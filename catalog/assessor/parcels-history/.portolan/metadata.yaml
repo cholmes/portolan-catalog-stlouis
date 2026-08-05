@@ -1,5 +1,5 @@
 title: "Parcels (Historical, 1997-2020)"
-description: "Current and historic parcel data"
+description: "Current and historic parcel data Mirrored from [the city's open data portal](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=82); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/assessor/parcels-history/collection.json)."
 contact:
   name: "Chris Holmes"
   email: "cholmes@9eo.org"
@@ -12,3 +12,11 @@ processing_notes: |
   Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=82).
   Source: https://www.stlouis-mo.gov/data/upload/data-files/stl_parcels_1997-2000.zip (portal download),
   converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.
+examples:
+  - engine: duckdb
+    description: "Count rows by era, straight off the published file"
+    code: |
+      INSTALL httpfs; LOAD httpfs;
+      SELECT era, count(*) AS n
+      FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/assessor/parcels-history/parcels-history.parquet'
+      GROUP BY 1 ORDER BY 2 DESC LIMIT 10;

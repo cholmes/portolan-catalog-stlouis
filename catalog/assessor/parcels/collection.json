@@ -719,10 +719,10 @@
     "styles/default": {
       "href": "./styles/default.json",
       "type": "application/vnd.mapbox.style+json",
-      "title": "Parcel fabric",
-      "description": "Every parcel in the city: quiet fill with hairline lot lines, the base reference view of the assessor's parcel layer.",
-      "file:size": 797,
-      "file:checksum": "12205582023a37d212a068f0e5886b4ce973873c2c4164345923c452daa88964a0df",
+      "title": "All parcels",
+      "description": "Every parcel in the city: quiet fill with hairline lot lines \u2014 the base reference view of the assessor's parcel layer.",
+      "file:size": 801,
+      "file:checksum": "12207be6f7551131a51b8d02c5b6135251d2f774a6e77a7de7856eb9ebc9a9965534",
       "roles": [
         "default",
         "style"
@@ -781,6 +781,17 @@
       "roles": [
         "thumbnail"
       ]
+    },
+    "styles/style-zoning": {
+      "href": "./styles/style-zoning.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "style"
+      ],
+      "title": "Zoning district",
+      "description": "Each parcel colored by its zoning letter from the assessor record, using the city's official district names (A Single-Family through L Jefferson Memorial).",
+      "file:size": 1896,
+      "file:checksum": "1220d402120cd37c7fde87c873a1b2c87284857ab06217f82240dd264076624b1d8c"
     }
   }
 }

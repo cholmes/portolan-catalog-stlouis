@@ -289,8 +289,8 @@
     "documentation": {
       "href": "./README.md",
       "type": "text/markdown",
-      "file:size": 3106,
-      "file:checksum": "12200624ae1d81ae965b9142beb6250ec1545c9b0a9314821569e435a0a382dce40a",
+      "file:size": 3360,
+      "file:checksum": "122070c8ea40cf748769cb10078ef55fc8aedeb06fadc6c5e6549254337f5e032fb2",
       "roles": [
         "documentation"
       ]

@@ -30,6 +30,12 @@ Full schema: `table:columns` in collection.json.
 
 Address fields (STREET_NUM, STREET) join loosely to parcel situs addresses.
 
+## Links
+
+- [View on the data browser](https://cholmes.github.io/stlouis-data-browser/#/forestry/city-trees/collection.json) — map, styles, legends, downloads
+- [Browse on Source Cooperative](https://source.coop/tge-labs/st-louis-open-data-mirror/forestry/city-trees/) — rendered README and file listing
+- [Source dataset](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=121) on the City of St. Louis open data portal
+
 ## Provenance
 
-Mirror of [City Trees (Planting Sites)](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=121) from the City of St. Louis open data portal; source: https://maps9.stlouis-mo.gov/arcgis/rest/services/FORESTRY/FORESTRY_TREES/MapServer. No explicit license is published — see the portal page. Synced 2026-08-05T19:58:51+00:00.
+Mirror of [City Trees (Planting Sites)](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=121) from the City of St. Louis; source: https://maps9.stlouis-mo.gov/arcgis/rest/services/FORESTRY/FORESTRY_TREES/MapServer. No explicit license is published — see the source page. Synced 2026-08-05T19:58:51+00:00.

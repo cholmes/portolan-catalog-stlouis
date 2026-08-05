@@ -21,15 +21,15 @@
           "match",
           [
             "get",
-            "custstatus"
+            "custstatus_desc"
           ],
-          1,
+          "Lead",
           "#c03221",
-          3,
+          "Galvanized Requiring Replacement",
           "#e89d07",
-          2,
+          "Non-Lead",
           "#538400",
-          0,
+          "Unknown",
           "#9aa3a8",
           "#dfe6ea"
         ],
@@ -46,15 +46,15 @@
           "match",
           [
             "get",
-            "custstatus"
+            "custstatus_desc"
           ],
-          1,
+          "Lead",
           "#c03221",
-          3,
+          "Galvanized Requiring Replacement",
           "#e89d07",
-          2,
+          "Non-Lead",
           "#538400",
-          0,
+          "Unknown",
           "#9aa3a8",
           "#dfe6ea"
         ],

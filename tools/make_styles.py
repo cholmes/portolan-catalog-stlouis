@@ -163,9 +163,9 @@ YEAR = ["step", ["get", "FirstYearBuilt"], "#d9dee1",
 VAC = ["match", ["get", "VacantLot"], 0, LIGHT, -1, RED, GRAY]
 
 emit("parcels", "default", style(
-    "parcels", "Parcel fabric",
-    "Every parcel in the city: quiet fill with hairline lot lines, the base "
-    "reference view of the assessor's parcel layer.",
+    "parcels", "All parcels",
+    "Every parcel in the city: quiet fill with hairline lot lines — the "
+    "base reference view of the assessor's parcel layer.",
     [fill("parcels", "#f4f1ea", 0.85, "#b8b2a6"),
      line("parcels", "#8f8878", 0.3, lid="lots")]), default=True)
 emit("parcels", "style-assessed-value", style(
@@ -213,6 +213,15 @@ ZONE_COLORS = {
     "I": RED, "J": "#7c5295", "K": "#8b6f5e", "L": LIGHTBLUE,
 }
 ZONE = match("LAYER", ZONE_COLORS)
+
+# parcels carry the same zoning letters on the assessor record
+PARCEL_ZONE = match("Zoning", ZONE_COLORS)
+emit("parcels", "style-zoning", style(
+    "parcels", "Zoning district",
+    "Each parcel colored by its zoning letter from the assessor record, "
+    "using the city's official district names (A Single-Family through "
+    "L Jefferson Memorial).",
+    [fill("parcels", PARCEL_ZONE, 0.75, "#ffffff00")], legend=PARCEL_ZONE))
 ZGROUP = ["match", ["get", "LAYER"],
           "A", GREEN, "B", GREEN, "C", GREEN, "D", GREEN, "E", GREEN,
           "F", ORANGE, "G", ORANGE, "H", ORANGE,
@@ -799,20 +808,24 @@ emit("bike-infrastructure", "style-planned", style(
 LSLI_STATUS_LABELS = {  # verbatim ArcGIS domain: code → name
     0: "Unknown", 1: "Lead", 2: "Non-Lead",
     3: "Galvanized Requiring Replacement"}
-LSLI_STATUS = ["match", ["get", "utilstatus"],
-               1, RED, 3, ORANGE, 2, GREEN, 0, GRAY, LIGHT]
-LSLI_CUST = ["match", ["get", "custstatus"],
-             1, RED, 3, ORANGE, 2, GREEN, 0, GRAY, LIGHT]
-LSLI_MAT = ["match", ["get", "utilmaterial"],
-            109, RED, 89, ORANGE, 84, GREEN, 88, "#4a9d9c", 83, "#7c5295",
-            94, LIGHTBLUE, 93, "#a6c96a", 81, "#8b6f5e", 110, "#c98bab",
-            0, GRAY, LIGHT]
+LSLI_STATUS = match("utilstatus_desc", {
+    "Lead": RED, "Galvanized Requiring Replacement": ORANGE,
+    "Non-Lead": GREEN, "Unknown": GRAY}, LIGHT)
+LSLI_CUST = match("custstatus_desc", {
+    "Lead": RED, "Galvanized Requiring Replacement": ORANGE,
+    "Non-Lead": GREEN, "Unknown": GRAY}, LIGHT)
+LSLI_MAT = match("utilmaterial_desc", {
+    "Lead": RED, "Galvanized Pipe": ORANGE, "Copper": GREEN,
+    "Ductile Iron": "#4a9d9c", "Cast Iron": "#7c5295",
+    "Polyvinyl Chloride": LIGHTBLUE, "Polyethylene": "#a6c96a",
+    "Asbestos Cement": "#8b6f5e", "Brass": "#c98bab",
+    "Unknown": GRAY}, LIGHT)
 emit("lead-service-lines", "default", style(
     "lead-service-lines", "Utility-side service line status",
     "Every water service line by the utility-side status from the Water "
     "Division's EPA lead inventory: Lead red, Galvanized-requiring-"
-    "replacement orange, Non-Lead green, Unknown gray. Codes follow the "
-    "service's own domain (1 Lead, 2 Non-Lead, 3 Galvanized, 0 Unknown).",
+    "replacement orange, Non-Lead green, Unknown gray (names decoded "
+    "from the service's own coded-value domain).",
     [circle("lead-service-lines", LSLI_STATUS, zoom_radius(2.2),
             stroke="#FFFFFF")], legend=LSLI_STATUS), default=True)
 emit("lead-service-lines", "style-customer-side", style(
@@ -822,9 +835,9 @@ emit("lead-service-lines", "style-customer-side", style(
             stroke="#FFFFFF")], legend=LSLI_CUST))
 emit("lead-service-lines", "style-material", style(
     "lead-service-lines", "Pipe material",
-    "Utility-side pipe material by the service's own domain codes: Lead "
-    "(109) red, Galvanized (89) orange, Copper (84) green, Ductile Iron "
-    "(88) teal, Cast Iron (83) purple, PVC/PE light, Unknown (0) gray.",
+    "Utility-side pipe material, decoded from the service's own domain: "
+    "Lead red, Galvanized orange, Copper green, iron teal/purple, "
+    "plastics light, Unknown gray.",
     [circle("lead-service-lines", LSLI_MAT, zoom_radius(2.2))],
     legend=LSLI_MAT))
 
@@ -1177,6 +1190,15 @@ emit("property-sales", "style-year", style(
     "property-sales", "Sale year",
     "Sales stepped by decade, 2020s in red.",
     [fill("property-sales", SALE_YEAR, 0.75, "#ffffff00")], legend=SALE_YEAR))
+PPSF = step("PricePerSqFt", "#eef3f6",
+            [1, "#c6dbe8", 4, "#8fbdd6", 10, "#5591b5", 25, "#2d6a8e",
+             60, DARK], to_number=True)
+emit("property-sales", "style-price-per-sqft", style(
+    "property-sales", "Price per square foot",
+    "Sale price divided by the parcel's lot area — the cleanest way to "
+    "compare land value across parcel sizes (steps at $1, $4, $10, $25, "
+    "$60 per sq ft of lot).",
+    [fill("property-sales", PPSF, 0.78, "#ffffff00")], legend=PPSF))
 emit("property-sales", "style-solid", style(
     "property-sales", "All sold parcels",
     "Every parcel with a recorded sale.",
@@ -1210,6 +1232,15 @@ emit("election-results-nov-2024", "default", style(
     [fill("election-results-nov-2024", TURNOUT, 0.78, "#FFFFFF"),
      line("election-results-nov-2024", "#FFFFFF", 0.6)], legend=TURNOUT),
     default=True)
+PRES_SHARE = ["step", ["get", "Pres_Dem_TwoPartyShare"], "#8b1a1a",
+              0.5, "#e8c4c4", 0.7, "#a8c4e0", 0.85, "#4575b4", 0.95, "#1a3a6b"]
+emit("election-results-nov-2024", "style-presidential", style(
+    "election-results-nov-2024", "Presidential two-party share",
+    "Harris share of the two-party presidential vote by precinct (Harris "
+    "and Trump votes only; steps at 50, 70, 85, and 95 percent — red "
+    "below 50).",
+    [fill("election-results-nov-2024", PRES_SHARE, 0.8, "#FFFFFF"),
+     line("election-results-nov-2024", "#FFFFFF", 0.6)], legend=PRES_SHARE))
 emit("election-results-nov-2024", "style-registered", style(
     "election-results-nov-2024", "Registered voters",
     "Registered voters per precinct in steps.",
@@ -1249,26 +1280,39 @@ emit("animal-bites", "style-plain", style(
 # --------------------------------------------------------------------------
 
 ERA = match("era", {"1997": "#4a2d78", "2000": "#7c5295", "2005": "#b085c9",
-                    "2010": "#5591b5", "2015": "#2d6a8e", "2020": DARK}, LIGHT)
+                    "2010": "#5591b5", "2015": "#2d6a8e",
+                    "2016-2020": DARK}, LIGHT)
 emit("parcels-history", "default", style(
-    "parcels-history", "Parcel fabric by era",
-    "Five-year snapshots of the parcel fabric (tiles carry 1997-2020 "
-    "snapshots; the full Parquet holds every yearly snapshot 1997-2020, "
-    "3.1M rows).",
+    "parcels-history", "Parcels by era",
+    "Five-year snapshots of the city's parcel boundaries (the map shows "
+    "1997, 2000, 2005, 2010, 2015, and 2016-2020; the full Parquet holds "
+    "every yearly snapshot, 3.1M rows).",
     [line("parcels-history", ERA, 0.5)], legend=ERA), default=True)
 emit("parcels-history", "style-1997", style(
-    "parcels-history", "1997 fabric",
+    "parcels-history", "Parcels in 1997",
     "The oldest snapshot alone — compare against the current parcels "
     "collection to see consolidation and demolition.",
     [line("parcels-history",
           ["match", ["get", "era"], "1997", "#4a2d78", "#00000000"], 0.7)],
     legend=["match", ["get", "era"], "1997", "#4a2d78", "#00000000"]))
 emit("parcels-history", "style-2020", style(
-    "parcels-history", "2020 fabric",
-    "The newest snapshot in the archive.",
+    "parcels-history", "Parcels in 2016-2020",
+    "The newest snapshot in the archive (published as a single 2016-2020 "
+    "era file).",
     [line("parcels-history",
-          ["match", ["get", "era"], "2020", DARK, "#00000000"], 0.7)],
-    legend=["match", ["get", "era"], "2020", DARK, "#00000000"]))
+          ["match", ["get", "era"], "2016-2020", DARK, "#00000000"], 0.7)],
+    legend=["match", ["get", "era"], "2016-2020", DARK, "#00000000"]))
+
+HIST_ZONE_1997 = ["case",
+    ["==", ["get", "era"], "1997"],
+    match("ZONING1", ZONE_COLORS), "#00000000"]
+emit("parcels-history", "style-zoning-1997", style(
+    "parcels-history", "Zoning in 1997",
+    "Each 1997 parcel filled by its zoning letter — compare with the "
+    "current parcels collection's zoning view to see three decades of "
+    "rezoning.",
+    [fill("parcels-history", HIST_ZONE_1997, 0.75, "#ffffff00")],
+    legend=match("ZONING1", ZONE_COLORS)))
 
 CRIME_AGAINST = match("CrimeAgainst", {
     "Person": RED, "Property": ORANGE, "Society": "#7c5295",

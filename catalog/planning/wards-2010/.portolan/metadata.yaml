@@ -1,5 +1,5 @@
 title: "Ward Boundaries (2010)"
-description: "Boundaries of City of St. Louis wards"
+description: "Boundaries of City of St. Louis wards Mirrored from [the city's open data portal](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=131); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/planning/wards-2010/collection.json)."
 contact:
   name: "Chris Holmes"
   email: "cholmes@9eo.org"
@@ -12,3 +12,9 @@ processing_notes: |
   Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=131).
   Source: https://static.stlouis-mo.gov/open-data/planning/wards/wards_2010.zip (portal download),
   converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.
+examples:
+  - engine: duckdb
+    description: "Preview the first rows, straight off the published file"
+    code: |
+      INSTALL httpfs; LOAD httpfs;
+      SELECT * FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/planning/wards-2010/wards-2010.parquet' LIMIT 5;

@@ -1,6 +1,6 @@
 # Tax-abated Parcels
 
-Parcels within the City of Saint Louis that have obtained and activated an abatement on real estate taxes.
+Parcels within the City of Saint Louis that have obtained and activated an abatement on real estate taxes. Mirrored from [the city's open data portal](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=61); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/development/tax-abated-parcels/collection.json).
 
 ![st-louis](https://img.shields.io/badge/st--louis-blue) ![missouri](https://img.shields.io/badge/missouri-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![tax](https://img.shields.io/badge/tax-blue) ![abated](https://img.shields.io/badge/abated-blue) ![parcels](https://img.shields.io/badge/parcels-blue)
 

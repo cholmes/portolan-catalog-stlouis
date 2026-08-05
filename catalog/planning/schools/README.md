@@ -1,6 +1,6 @@
 # City Public Schools
 
-City of St. Louis public school information including school name, school address, grades, and ages.
+City of St. Louis public school information including school name, school address, grades, and ages. Mirrored from [the city's open data portal](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=125); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/planning/schools/collection.json).
 
 ![st-louis](https://img.shields.io/badge/st--louis-blue) ![missouri](https://img.shields.io/badge/missouri-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![schools](https://img.shields.io/badge/schools-blue)
 

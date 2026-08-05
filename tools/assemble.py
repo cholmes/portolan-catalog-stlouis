@@ -474,6 +474,35 @@ def assemble(coll_id: str) -> dict:
             rename_geom(out)
         restore_stats(out)
 
+    # Lead service lines: bake the service's own coded-value domains into
+    # *_desc columns so styles and legends read as names, not codes.
+    if coll_id == "lead-service-lines":
+        mat = {0: "Unknown", 81: "Asbestos Cement", 83: "Cast Iron",
+               84: "Copper", 88: "Ductile Iron", 89: "Galvanized Pipe",
+               93: "Polyethylene", 94: "Polyvinyl Chloride", 109: "Lead",
+               110: "Brass"}
+        st = {0: "Unknown", 1: "Lead", 2: "Non-Lead",
+              3: "Galvanized Requiring Replacement"}
+        def case(col, dom):
+            whens = " ".join(f"WHEN {k} THEN '{v}'" for k, v in dom.items())
+            return f"CASE {col} {whens} ELSE 'Unknown' END"
+        tmp_d = out.parent / f".{out.stem}.decoded.parquet"
+        run(["duckdb", "-c",
+             "INSTALL spatial; LOAD spatial; "
+             f"COPY (SELECT *, {case('utilmaterial', mat)} AS utilmaterial_desc, "
+             f"{case('custmaterial', mat)} AS custmaterial_desc, "
+             f"{case('utilstatus', st)} AS utilstatus_desc, "
+             f"{case('custstatus', st)} AS custstatus_desc "
+             f"FROM '{out}') TO '{tmp_d}' "
+             "(FORMAT PARQUET, COMPRESSION ZSTD, ROW_GROUP_SIZE 20000)"])
+        # duckdb writes GeoParquet 1.0 without covering stats — re-run the
+        # gpio conversion to restore a spec-conformant file.
+        tmp_g = out.parent / f".{out.stem}.gpio.parquet"
+        run(["gpio", "convert", "geoparquet", tmp_d, tmp_g])
+        tmp_g.replace(out)
+        tmp_d.unlink(missing_ok=True)
+        restore_stats(out)
+
     # Carry the extracted city renderer style along, if there is one
     city_style = STAGING / "extracts" / coll_id / "styles" / "city-renderer.json"
     if city_style.exists():

@@ -24,6 +24,12 @@ Full schema: `table:columns` in collection.json.
 
 parcels.NBRHD, csb-311-requests.NEIGHBORHOOD, and city-blocks.NBRHD all carry NHD_NUM.
 
+## Links
+
+- [View on the data browser](https://cholmes.github.io/stlouis-data-browser/#/planning/neighborhoods/collection.json) — map, styles, legends, downloads
+- [Browse on Source Cooperative](https://source.coop/tge-labs/st-louis-open-data-mirror/planning/neighborhoods/) — rendered README and file listing
+- [Source dataset](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=85) on the City of St. Louis open data portal
+
 ## Provenance
 
-Mirror of [Neighborhood Boundaries](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=85) from the City of St. Louis open data portal; source: https://maps6.stlouis-mo.gov/arcgis/rest/services/PublicDataStore/NEIGHBORHOOD_BOUNDARIES/FeatureServer. No explicit license is published — see the portal page. Synced 2026-08-05T19:58:51+00:00.
+Mirror of [Neighborhood Boundaries](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=85) from the City of St. Louis; source: https://maps6.stlouis-mo.gov/arcgis/rest/services/PublicDataStore/NEIGHBORHOOD_BOUNDARIES/FeatureServer. No explicit license is published — see the source page. Synced 2026-08-05T19:58:51+00:00.

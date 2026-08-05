@@ -1,6 +1,6 @@
 # Parking Meters
 
-Parking meters from the Streets Division parking services map.
+Parking meters from the Streets Division parking services map. Mirrored from [the city's open data portal](https://maps8.stlouis-mo.gov/arcgis/rest/services/STREETS/ParkingServices/MapServer); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/streets/parking-meters/collection.json).
 
 ![st-louis](https://img.shields.io/badge/st--louis-blue) ![missouri](https://img.shields.io/badge/missouri-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![parking](https://img.shields.io/badge/parking-blue) ![meters](https://img.shields.io/badge/meters-blue)
 
@@ -46,6 +46,7 @@ Parking meters from the Streets Division parking services map.
 | ./styles/default.json | 789 B | 12207c87d484... |
 | ./styles/style-bold.json | 775 B | 12206a632116... |
 | ./styles/style-plain.json | 693 B | 12202e92b415... |
+| ./thumbnail.png | 331.9 KB | 12208b009efe... |
 
 ## Quick Start
 

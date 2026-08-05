@@ -177,8 +177,8 @@
       "href": "./lead-service-lines.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Lead Service Line Inventory (GeoParquet)",
-      "file:size": 8781788,
-      "file:checksum": "1220ac80f73d395703b95e59c29667c7c319d68e963c746c23de64919408b1e8511b",
+      "file:size": 8871466,
+      "file:checksum": "12205a267c78110eebd7e2105152f7d7fb7e378d2e07ccf0d1d7413f3017a2084155",
       "roles": [
         "data"
       ]
@@ -187,8 +187,8 @@
       "href": "./lead-service-lines.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Lead Service Line Inventory (PMTiles)",
-      "file:size": 2351427,
-      "file:checksum": "12208d4ec4b409c98f2f3b862343dc9db1ffda8b80ae658f5824cd55c52dd018194c",
+      "file:size": 2342054,
+      "file:checksum": "12208189bee6db6eb627fc13c50266ac38538a801e92554c66bdb50c731ccf359089",
       "roles": [
         "visual"
       ]
@@ -208,9 +208,9 @@
       "href": "./styles/default.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "Utility-side service line status",
-      "description": "Every water service line by the utility-side status from the Water Division's EPA lead inventory: Lead red, Galvanized-requiring-replacement orange, Non-Lead green, Unknown gray. Codes follow the service's own domain (1 Lead, 2 Non-Lead, 3 Galvanized, 0 Unknown).",
-      "file:size": 1792,
-      "file:checksum": "122012ecec15c8e7a20b82f773267ae3167a1683a279dde4998d794a56e3466c57d0",
+      "description": "Every water service line by the utility-side status from the Water Division's EPA lead inventory: Lead red, Galvanized-requiring-replacement orange, Non-Lead green, Unknown gray (names decoded from the service's own coded-value domain).",
+      "file:size": 1885,
+      "file:checksum": "122090dd0be274463360b4647308334d9b4ab1212dd19d904a89cc52f024387f7bb3",
       "roles": [
         "default",
         "style"
@@ -221,8 +221,8 @@
       "type": "application/vnd.mapbox.style+json",
       "title": "Customer-side status",
       "description": "Same classification for the customer-owned side of each service line.",
-      "file:size": 1586,
-      "file:checksum": "12205173f9f8e0deb0b1a9ff933090ebb43ff1289a0b891427ca9fca608956adfb3c",
+      "file:size": 1706,
+      "file:checksum": "1220e2ad8bc9ff20a1c95a429f2f10677ef0d91ece073fba6c7d0df917eb84a11061",
       "roles": [
         "style"
       ]
@@ -231,9 +231,9 @@
       "href": "./styles/style-material.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "Pipe material",
-      "description": "Utility-side pipe material by the service's own domain codes: Lead (109) red, Galvanized (89) orange, Copper (84) green, Ductile Iron (88) teal, Cast Iron (83) purple, PVC/PE light, Unknown (0) gray.",
-      "file:size": 2065,
-      "file:checksum": "1220dfbbd860afe21cbc29ef09bc9ac115074562e8418502d46687aee7acae240296",
+      "description": "Utility-side pipe material, decoded from the service's own domain: Lead red, Galvanized orange, Copper green, iron teal/purple, plastics light, Unknown gray.",
+      "file:size": 2237,
+      "file:checksum": "1220b6416e1b46e834d2643663f793cd71339650f68ad4437c45dd97f6e87f0fd09e",
       "roles": [
         "style"
       ]

@@ -1,6 +1,6 @@
 # 2024 Market Value Analysis
 
-The Market Value Analysis (MVA) is an in-depth study and mapping of a community's housing market. It reveals the mosaic of market conditions in St. Louis.
+The Market Value Analysis (MVA) is an in-depth study and mapping of a community's housing market. It reveals the mosaic of market conditions in St. Louis. Mirrored from [the city's open data portal](https://stlcity.maps.arcgis.com/home/item.html?id=e71e3ebca1f345a4b7db134d30c5d9ff); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/development/market-value-analysis/collection.json).
 
 ![st-louis](https://img.shields.io/badge/st--louis-blue) ![missouri](https://img.shields.io/badge/missouri-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![market](https://img.shields.io/badge/market-blue) ![value](https://img.shields.io/badge/value-blue) ![analysis](https://img.shields.io/badge/analysis-blue)
 

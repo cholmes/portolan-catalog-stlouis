@@ -2,10 +2,16 @@
 
 ![st-louis](https://img.shields.io/badge/st--louis-blue) ![missouri](https://img.shields.io/badge/missouri-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![city-government](https://img.shields.io/badge/city--government-blue) ![parcels](https://img.shields.io/badge/parcels-blue) ![boundaries](https://img.shields.io/badge/boundaries-blue) ![cloud-native](https://img.shields.io/badge/cloud--native-blue) ![geoparquet](https://img.shields.io/badge/geoparquet-blue) ![stac](https://img.shields.io/badge/stac-blue) ![pmtiles](https://img.shields.io/badge/pmtiles-blue)
 
-Cloud-native mirror of datasets from the
-[City of St. Louis open data portal](https://www.stlouis-mo.gov/data/):
-GeoParquet, PMTiles, and STAC metadata for the city's most-used geospatial
-and parcel-joinable datasets. Not an official city service.
+Cloud-native mirror of 51 datasets from the
+[City of St. Louis open data portal](https://www.stlouis-mo.gov/data/),
+the city's public ArcGIS servers, and its
+[ArcGIS Online organization](https://stlcity.maps.arcgis.com/): about 6.6
+million features as GeoParquet and PMTiles with STAC metadata, organized
+into 13 department catalogs. Explore it in the
+[St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/),
+[browse the files on Source Cooperative](https://source.coop/tge-labs/st-louis-open-data-mirror),
+or query any file directly with DuckDB — no download needed. Not an
+official city service.
 
 ## Source
 

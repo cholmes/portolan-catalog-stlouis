@@ -1,6 +1,6 @@
 # Crime (NIBRS)
 
-Downloadable NIBRS crime data published by the St. Louis Metropolitan Police Department.
+Downloadable NIBRS crime data published by the St. Louis Metropolitan Police Department. Mirrored from [the city's open data portal](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=69); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/public-safety/crime/collection.json).
 
 ![st-louis](https://img.shields.io/badge/st--louis-blue) ![missouri](https://img.shields.io/badge/missouri-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![crime](https://img.shields.io/badge/crime-blue)
 
@@ -50,6 +50,7 @@ Downloadable NIBRS crime data published by the St. Louis Metropolitan Police Dep
 | ./styles/default.json | 1.7 KB | 122064c26483... |
 | ./styles/style-category.json | 2.0 KB | 122069865461... |
 | ./styles/style-firearm.json | 1.2 KB | 12203d45cd2a... |
+| ./thumbnail.png | 430.4 KB | 122073d5e0b2... |
 
 ## Quick Start
 

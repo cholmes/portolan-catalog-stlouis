@@ -25,6 +25,12 @@ Full schema: `table:columns` in collection.json.
 
 The 14 wards from 2020 redistricting (effective 2023); older datasets reference the previous 28 wards (WARD10 columns elsewhere).
 
+## Links
+
+- [View on the data browser](https://cholmes.github.io/stlouis-data-browser/#/planning/wards/collection.json) — map, styles, legends, downloads
+- [Browse on Source Cooperative](https://source.coop/tge-labs/st-louis-open-data-mirror/planning/wards/) — rendered README and file listing
+- [Source dataset](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=131) on the City of St. Louis open data portal
+
 ## Provenance
 
-Mirror of [Ward Boundaries (2020)](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=131) from the City of St. Louis open data portal; source: https://static.stlouis-mo.gov/open-data/planning/wards/wards_2020.zip. No explicit license is published — see the portal page. Synced 2026-08-05T19:58:51+00:00.
+Mirror of [Ward Boundaries (2020)](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=131) from the City of St. Louis; source: https://static.stlouis-mo.gov/open-data/planning/wards/wards_2020.zip. No explicit license is published — see the source page. Synced 2026-08-05T19:58:51+00:00.

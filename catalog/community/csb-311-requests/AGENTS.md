@@ -33,6 +33,12 @@ Full schema: `table:columns` in collection.json.
 
 PROBADDRESS matches parcel situs addresses (fuzzy); NEIGHBORHOOD = neighborhoods.NHD_NUM; WARD = wards.DISTRICT.
 
+## Links
+
+- [View on the data browser](https://cholmes.github.io/stlouis-data-browser/#/community/csb-311-requests/collection.json) — map, styles, legends, downloads
+- [Browse on Source Cooperative](https://source.coop/tge-labs/st-louis-open-data-mirror/community/csb-311-requests/) — rendered README and file listing
+- [Source dataset](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5) on the City of St. Louis open data portal
+
 ## Provenance
 
-Mirror of [CSB Service Requests (311)](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5) from the City of St. Louis open data portal; source: https://www.stlouis-mo.gov/data/upload/data-files/csb.zip. No explicit license is published — see the portal page. Synced 2026-08-05T19:58:51+00:00.
+Mirror of [CSB Service Requests (311)](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5) from the City of St. Louis; source: https://www.stlouis-mo.gov/data/upload/data-files/csb.zip. No explicit license is published — see the source page. Synced 2026-08-05T19:58:51+00:00.

@@ -1,6 +1,6 @@
 # Mechanical Permits
 
-Mechanical permit information by property type, year, neighborhood, ward, and project type.
+Mechanical permit information by property type, year, neighborhood, ward, and project type. Mirrored from [the city's open data portal](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=52); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/building/mechanical-permits/collection.json).
 
 ![st-louis](https://img.shields.io/badge/st--louis-blue) ![missouri](https://img.shields.io/badge/missouri-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![mechanical](https://img.shields.io/badge/mechanical-blue) ![permits](https://img.shields.io/badge/permits-blue)
 

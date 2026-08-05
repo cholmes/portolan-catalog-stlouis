@@ -19,6 +19,12 @@ Full schema: `table:columns` in collection.json.
 
 A 2020 snapshot (source: 'as exported 6-20-20'); contacts and activity status age accordingly.
 
+## Links
+
+- [View on the data browser](https://cholmes.github.io/stlouis-data-browser/#/community/neighborhood-organizations/collection.json) — map, styles, legends, downloads
+- [Browse on Source Cooperative](https://source.coop/tge-labs/st-louis-open-data-mirror/community/neighborhood-organizations/) — rendered README and file listing
+- [Source dataset](https://stlcity.maps.arcgis.com/home/item.html?id=ac198aeb9592458b8591c7258e719ad1) on the City of St. Louis open data portal
+
 ## Provenance
 
-Mirror of [Neighborhood Organizations](https://stlcity.maps.arcgis.com/home/item.html?id=ac198aeb9592458b8591c7258e719ad1) from the City of St. Louis open data portal; source: https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/Neighborhood_Organizations/FeatureServer. No explicit license is published — see the portal page. Synced 2026-08-05T19:58:51+00:00.
+Mirror of [Neighborhood Organizations](https://stlcity.maps.arcgis.com/home/item.html?id=ac198aeb9592458b8591c7258e719ad1) from the City of St. Louis; source: https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/Neighborhood_Organizations/FeatureServer. No explicit license is published — see the source page. Synced 2026-08-05T19:58:51+00:00.

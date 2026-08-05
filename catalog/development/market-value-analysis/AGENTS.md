@@ -24,6 +24,12 @@ Full schema: `table:columns` in collection.json.
 
 Reinvestment Fund 2024 MVA at block-group level; ~30 market indicator columns.
 
+## Links
+
+- [View on the data browser](https://cholmes.github.io/stlouis-data-browser/#/development/market-value-analysis/collection.json) — map, styles, legends, downloads
+- [Browse on Source Cooperative](https://source.coop/tge-labs/st-louis-open-data-mirror/development/market-value-analysis/) — rendered README and file listing
+- [Source dataset](https://stlcity.maps.arcgis.com/home/item.html?id=e71e3ebca1f345a4b7db134d30c5d9ff) on the City of St. Louis open data portal
+
 ## Provenance
 
-Mirror of [2024 Market Value Analysis](https://stlcity.maps.arcgis.com/home/item.html?id=e71e3ebca1f345a4b7db134d30c5d9ff) from the City of St. Louis open data portal; source: https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/2024_Market_Value_Analysis/FeatureServer. No explicit license is published — see the portal page. Synced 2026-08-05T19:58:51+00:00.
+Mirror of [2024 Market Value Analysis](https://stlcity.maps.arcgis.com/home/item.html?id=e71e3ebca1f345a4b7db134d30c5d9ff) from the City of St. Louis; source: https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/2024_Market_Value_Analysis/FeatureServer. No explicit license is published — see the source page. Synced 2026-08-05T19:58:51+00:00.

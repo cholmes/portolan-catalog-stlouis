@@ -1,6 +1,6 @@
 # City Boundary
 
-St. Louis City limits
+St. Louis City limits Mirrored from [the city's open data portal](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=67); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/citywide/city-boundary/collection.json).
 
 ![st-louis](https://img.shields.io/badge/st--louis-blue) ![missouri](https://img.shields.io/badge/missouri-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![city](https://img.shields.io/badge/city-blue) ![boundary](https://img.shields.io/badge/boundary-blue)
 

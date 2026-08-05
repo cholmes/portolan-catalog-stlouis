@@ -1,6 +1,6 @@
 # Property Taxes
 
-Property tax records by parcel
+Property tax records by parcel Mirrored from [the city's open data portal](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=3); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/assessor/property-taxes/collection.json).
 
 ![st-louis](https://img.shields.io/badge/st--louis-blue) ![missouri](https://img.shields.io/badge/missouri-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![property](https://img.shields.io/badge/property-blue) ![taxes](https://img.shields.io/badge/taxes-blue)
 

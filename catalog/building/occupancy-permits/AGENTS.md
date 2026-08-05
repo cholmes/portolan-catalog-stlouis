@@ -35,6 +35,12 @@ gpio convert geopackage occupancy-permits-geo.parquet occupancy-permits.gpkg
 gpio convert shapefile occupancy-permits-geo.parquet occupancy-permits.shp
 ```
 
+## Links
+
+- [View on the data browser](https://cholmes.github.io/stlouis-data-browser/#/building/occupancy-permits/collection.json) — map, styles, legends, downloads
+- [Browse on Source Cooperative](https://source.coop/tge-labs/st-louis-open-data-mirror/building/occupancy-permits/) — rendered README and file listing
+- [Source dataset](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=6) on the City of St. Louis open data portal
+
 ## Provenance
 
-Mirror of [Occupancy Permits](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=6) from the City of St. Louis open data portal; source: https://www.stlouis-mo.gov/data/upload/data-files/occupancy-permits.zip. No explicit license is published — see the portal page. Synced 2026-08-05T19:58:51+00:00.
+Mirror of [Occupancy Permits](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=6) from the City of St. Louis; source: https://www.stlouis-mo.gov/data/upload/data-files/occupancy-permits.zip. No explicit license is published — see the source page. Synced 2026-08-05T19:58:51+00:00.

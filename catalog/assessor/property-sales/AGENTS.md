@@ -35,7 +35,7 @@ This collection is published as plain (non-geo) Parquet, exactly as the city pub
 ```sql
 INSTALL spatial; LOAD spatial; INSTALL httpfs; LOAD httpfs;
 COPY (
-  SELECT t.AsrParcelId, t.SalePrice, t.SaleTypeDescr, TRY_CAST(substr(strptime(t.SaleDate, '%m/%d/%y %H:%M:%S')::VARCHAR, 1, 4) AS INT) AS SALE_YEAR, p.geometry
+  SELECT t.AsrParcelId, t.SalePrice, t.SaleTypeDescr, TRY_CAST(substr(strptime(t.SaleDate, '%m/%d/%y %H:%M:%S')::VARCHAR, 1, 4) AS INT) AS SALE_YEAR, round(t.SalePrice / NULLIF(p.LANDAREA, 0), 2) AS PricePerSqFt, p.geometry
   FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/assessor/property-sales/property-sales.parquet' t
   JOIN 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/assessor/parcels/parcels.parquet' p
     ON t.AsrParcelId = p.ParcelId
@@ -62,6 +62,12 @@ WHERE s.SalePrice > 1000 AND strptime(s.SaleDate, '%m/%d/%y %H:%M:%S') >= DATE '
 GROUP BY 1 ORDER BY 2 DESC LIMIT 15;
 ```
 
+## Links
+
+- [View on the data browser](https://cholmes.github.io/stlouis-data-browser/#/assessor/property-sales/collection.json) — map, styles, legends, downloads
+- [Browse on Source Cooperative](https://source.coop/tge-labs/st-louis-open-data-mirror/assessor/property-sales/) — rendered README and file listing
+- [Source dataset](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=31) on the City of St. Louis open data portal
+
 ## Provenance
 
-Mirror of [Property Sales](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=31) from the City of St. Louis open data portal; source: https://www.stlouis-mo.gov/data/upload/data-files/prclsale.zip. No explicit license is published — see the portal page. Synced 2026-08-05T19:58:51+00:00.
+Mirror of [Property Sales](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=31) from the City of St. Louis; source: https://www.stlouis-mo.gov/data/upload/data-files/prclsale.zip. No explicit license is published — see the source page. Synced 2026-08-05T19:58:51+00:00.

@@ -58,14 +58,16 @@ TILING = {
                     "Cost", "LRA_PRICING", "SQFT", "NEIGHBORHOOD_NUM", "WARD"]},
     "lead-service-lines": {
         "maxzoom": 15, "cap": 800_000,
-        "columns": ["address", "utilmaterial", "utilstatus", "custmaterial",
-                    "custstatus", "utilsource", "custsource"]},
+        "columns": ["address", "utilmaterial_desc", "utilstatus_desc",
+                    "custmaterial_desc", "custstatus_desc",
+                    "utilsource", "custsource"]},
     "vacancy-composite": {"maxzoom": 15, "cap": 800_000, "columns": None},
     "land-use": {"maxzoom": 15, "cap": 800_000, "columns": None},
     # Full parquet holds all 24 yearly snapshots (3.1M rows); tiles carry
     # 5-year snapshots only, or 24 overlapping fabrics turn to soup.
-    "parcels-history": {"maxzoom": 15, "cap": 800_000, "columns": ["era"],
-                        "where": "era IN ('1997','2000','2005','2010','2015','2020')"},
+    "parcels-history": {"maxzoom": 15, "cap": 800_000,
+                        "columns": ["era", "ZONING1", "ASRUSE1", "HANDLE"],
+                        "where": "era IN ('1997','2000','2005','2010','2015','2016-2020')"},
     "crime": {
         "maxzoom": 15, "cap": 800_000,
         "columns": ["IncidentDate", "Offense", "NIBRSCategory", "CrimeAgainst",

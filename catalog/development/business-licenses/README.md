@@ -1,6 +1,6 @@
 # Business Licenses
 
-Business licenses as of October 2025, from SLDC.
+Business licenses as of October 2025, from SLDC. Mirrored from [the city's open data portal](https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/Business_Licenses_as_of_October_2025/FeatureServer); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/development/business-licenses/collection.json).
 
 ![st-louis](https://img.shields.io/badge/st--louis-blue) ![missouri](https://img.shields.io/badge/missouri-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![business](https://img.shields.io/badge/business-blue) ![licenses](https://img.shields.io/badge/licenses-blue)
 
@@ -64,6 +64,7 @@ Business licenses as of October 2025, from SLDC.
 | ./styles/default.json | 823 B | 1220d8f7e518... |
 | ./styles/style-bold.json | 810 B | 1220e49e649b... |
 | ./styles/style-plain.json | 726 B | 122030df7de8... |
+| ./thumbnail.png | 369.4 KB | 12208c602842... |
 
 ## Quick Start
 

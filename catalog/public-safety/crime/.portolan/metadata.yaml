@@ -1,5 +1,5 @@
 title: "Crime (NIBRS)"
-description: "Downloadable NIBRS crime data published by the St. Louis Metropolitan Police Department."
+description: "Downloadable NIBRS crime data published by the St. Louis Metropolitan Police Department. Mirrored from [the city's open data portal](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=69); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/public-safety/crime/collection.json)."
 contact:
   name: "Chris Holmes"
   email: "cholmes@9eo.org"
@@ -12,3 +12,11 @@ processing_notes: |
   Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=69).
   Source: https://www.slmpd.org/crime_stats.shtml (portal download),
   converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.
+examples:
+  - engine: duckdb
+    description: "Count rows by NIBRSCategory, straight off the published file"
+    code: |
+      INSTALL httpfs; LOAD httpfs;
+      SELECT NIBRSCategory, count(*) AS n
+      FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/public-safety/crime/crime.parquet'
+      GROUP BY 1 ORDER BY 2 DESC LIMIT 10;

@@ -1,6 +1,6 @@
 # Lead Service Line Inventory
 
-Lead Service Line Inventory Feature Layer Service
+Lead Service Line Inventory Feature Layer Service Mirrored from [the city's open data portal](https://stlcity.maps.arcgis.com/home/item.html?id=80c69343cc2d418fb1796a342a863aac); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/water/lead-service-lines/collection.json).
 
 ![st-louis](https://img.shields.io/badge/st--louis-blue) ![missouri](https://img.shields.io/badge/missouri-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![lead](https://img.shields.io/badge/lead-blue) ![service](https://img.shields.io/badge/service-blue) ![lines](https://img.shields.io/badge/lines-blue)
 
@@ -33,12 +33,12 @@ Lead Service Line Inventory Feature Layer Service
 
 | File | Size | Checksum |
 |------|------|----------|
-| ./lead-service-lines.parquet | 8.4 MB | 1220ac80f73d... |
-| ./lead-service-lines.pmtiles | 2.2 MB | 12208d4ec4b4... |
-| ./styles/city-renderer.json | 2.2 KB | 12203812f50e... |
-| ./styles/default.json | 1.8 KB | 122012ecec15... |
-| ./styles/style-customer-side.json | 1.5 KB | 12205173f9f8... |
-| ./styles/style-material.json | 2.0 KB | 1220dfbbd860... |
+| ./lead-service-lines.parquet | 8.5 MB | 1220c3f37a64... |
+| ./lead-service-lines.pmtiles | 2.2 MB | 12208189bee6... |
+| ./styles/city-renderer.json | 1.1 KB | 12202932c681... |
+| ./styles/default.json | 1.8 KB | 122090dd0be2... |
+| ./styles/style-customer-side.json | 1.7 KB | 1220e2ad8bc9... |
+| ./styles/style-material.json | 2.2 KB | 1220b6416e1b... |
 | ./thumbnail.png | 379.8 KB | 1220af3eb899... |
 
 ## Quick Start

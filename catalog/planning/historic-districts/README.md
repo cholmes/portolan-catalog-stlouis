@@ -1,6 +1,6 @@
 # Historic Districts
 
-Data on St. Louis certified local historic districts
+Data on St. Louis certified local historic districts Mirrored from [the city's open data portal](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=73); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/planning/historic-districts/collection.json).
 
 ![st-louis](https://img.shields.io/badge/st--louis-blue) ![missouri](https://img.shields.io/badge/missouri-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![historic](https://img.shields.io/badge/historic-blue) ![districts](https://img.shields.io/badge/districts-blue)
 

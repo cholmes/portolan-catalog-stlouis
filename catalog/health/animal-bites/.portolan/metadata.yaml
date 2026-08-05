@@ -1,5 +1,5 @@
 title: "Animal Bites"
-description: "Animal bite reports made to the City of Saint Louis Department of Health and its Animal Care and Control section."
+description: "Animal bite reports made to the City of Saint Louis Department of Health and its Animal Care and Control section. Mirrored from [the city's open data portal](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=130); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/health/animal-bites/collection.json)."
 contact:
   name: "Chris Holmes"
   email: "cholmes@9eo.org"
@@ -12,3 +12,11 @@ processing_notes: |
   Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=130).
   Source: https://static.stlouis-mo.gov/open-data/HEALTH/ANIMAL-CONTROL/ANIMAL_BITES.csv (portal download),
   converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.
+examples:
+  - engine: duckdb
+    description: "Count rows by ANIMAL_TYPE, straight off the published file"
+    code: |
+      INSTALL httpfs; LOAD httpfs;
+      SELECT ANIMAL_TYPE, count(*) AS n
+      FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/health/animal-bites/animal-bites.parquet'
+      GROUP BY 1 ORDER BY 2 DESC LIMIT 10;

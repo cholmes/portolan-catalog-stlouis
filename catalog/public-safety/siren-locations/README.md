@@ -1,6 +1,6 @@
 # Siren Locations
 
-Public emergency siren locations. While these sirens are generally thought of as "tornado sirens" they can be used in other circumstances/emergencies.
+Public emergency siren locations. While these sirens are generally thought of as "tornado sirens" they can be used in other circumstances/emergencies. Mirrored from [the city's open data portal](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=132); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/public-safety/siren-locations/collection.json).
 
 ![st-louis](https://img.shields.io/badge/st--louis-blue) ![missouri](https://img.shields.io/badge/missouri-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![siren](https://img.shields.io/badge/siren-blue) ![locations](https://img.shields.io/badge/locations-blue)
 

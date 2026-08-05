@@ -1,6 +1,6 @@
 # Parcel Vacancy Composite
 
-Parcel-level vacancy indicators for St. Louis: vacant buildings, condemnations, tax delinquency, LRA ownership, and private vacancy, compiled by SLDC.
+Parcel-level vacancy indicators for St. Louis: vacant buildings, condemnations, tax delinquency, LRA ownership, and private vacancy, compiled by SLDC. Mirrored from [the city's open data portal](https://stlcity.maps.arcgis.com/home/item.html?id=98a6f429617546be9d9b467c5ad1dafc); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/development/vacancy-composite/collection.json).
 
 ![st-louis](https://img.shields.io/badge/st--louis-blue) ![missouri](https://img.shields.io/badge/missouri-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![vacancy](https://img.shields.io/badge/vacancy-blue) ![composite](https://img.shields.io/badge/composite-blue)
 

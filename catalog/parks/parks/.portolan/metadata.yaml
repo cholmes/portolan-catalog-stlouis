@@ -1,5 +1,5 @@
 title: "City Parks"
-description: "A database containing information on city parks, park amenities, and amenity attributes"
+description: "A database containing information on city parks, park amenities, and amenity attributes Mirrored from [the city's open data portal](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=46); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/parks/parks/collection.json)."
 contact:
   name: "Chris Holmes"
   email: "cholmes@9eo.org"
@@ -12,3 +12,11 @@ processing_notes: |
   Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=46).
   Source: https://maps9.stlouis-mo.gov/arcgis/rest/services/PARKS/Reservable_Park_Amenities/FeatureServer (ArcGIS REST service),
   converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.
+examples:
+  - engine: duckdb
+    description: "Count rows by NEW_CLASS, straight off the published file"
+    code: |
+      INSTALL httpfs; LOAD httpfs;
+      SELECT NEW_CLASS, count(*) AS n
+      FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/parks/parks/parks.parquet'
+      GROUP BY 1 ORDER BY 2 DESC LIMIT 10;

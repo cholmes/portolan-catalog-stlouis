@@ -1,6 +1,6 @@
 # May 2025 Tornado Damage
 
-NWS/NOAA damage assessment data for the May 2025 St. Louis tornado, with Prop NS property stabilization and sales status.
+NWS/NOAA damage assessment data for the May 2025 St. Louis tornado, with Prop NS property stabilization and sales status. Mirrored from [the city's open data portal](https://stlcity.maps.arcgis.com/home/item.html?id=d2f73ad3cd2b434b91c6eacaef94df32); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/public-safety/tornado-damage-2025/collection.json).
 
 ![st-louis](https://img.shields.io/badge/st--louis-blue) ![missouri](https://img.shields.io/badge/missouri-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![tornado](https://img.shields.io/badge/tornado-blue) ![damage](https://img.shields.io/badge/damage-blue) ![2025](https://img.shields.io/badge/2025-blue)
 

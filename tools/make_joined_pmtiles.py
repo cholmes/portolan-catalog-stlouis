@@ -39,10 +39,11 @@ JOINS = {
         select="t.AsrParcelId, t.AsdTotal, t.AsdLand, t.AsdImprove, "
                "t.BillYear, t.OwnerName"),
     "property-sales": dict(
-        mode="rows", right="parcels", dedupe_key="ParcelId",
+        mode="rows", right="parcels", dedupe_key="ParcelId", dedupe_extra="LANDAREA",
         on="t.AsrParcelId = p.ParcelId",
         select="t.AsrParcelId, t.SalePrice, t.SaleTypeDescr, "
-               "TRY_CAST(substr(strptime(t.SaleDate, '%m/%d/%y %H:%M:%S')::VARCHAR, 1, 4) AS INT) AS SALE_YEAR"),
+               "TRY_CAST(substr(strptime(t.SaleDate, '%m/%d/%y %H:%M:%S')::VARCHAR, 1, 4) AS INT) AS SALE_YEAR, "
+               "round(t.SalePrice / NULLIF(p.LANDAREA, 0), 2) AS PricePerSqFt"),
     "electrical-permits": dict(mode="rows", right="parcels", dedupe_key="HANDLE",
                                on="t.HANDLE = p.HANDLE", select=PERMIT_SELECT),
     "mechanical-permits": dict(mode="rows", right="parcels", dedupe_key="HANDLE",
@@ -63,7 +64,13 @@ JOINS = {
            "TRY_CAST(regexp_extract(p.name, 'P (\\d+)', 1) AS INT)",
         select="p.name, any_value(t.Registered_Voters) AS Registered_Voters, "
                "any_value(t.Ballots_Cast) AS Ballots_Cast, "
-               "TRY_CAST(any_value(t.Turnout_Percentage) AS DOUBLE) AS Turnout_Percentage",
+               "TRY_CAST(any_value(t.Turnout_Percentage) AS DOUBLE) AS Turnout_Percentage, "
+               "sum(t.Total_Votes) FILTER (t.Choice_Name LIKE '%HARRIS%') AS Pres_Harris, "
+               "sum(t.Total_Votes) FILTER (t.Choice_Name LIKE '%TRUMP%') AS Pres_Trump, "
+               "round(sum(t.Total_Votes) FILTER (t.Choice_Name LIKE '%HARRIS%') * 1.0 / "
+               "NULLIF(sum(t.Total_Votes) FILTER (t.Choice_Name LIKE '%HARRIS%') + "
+               "sum(t.Total_Votes) FILTER (t.Choice_Name LIKE '%TRUMP%'), 0), 4) "
+               "AS Pres_Dem_TwoPartyShare",
         group="p.name, p.geometry"),
 }
 
@@ -79,7 +86,9 @@ def make(coll_id: str) -> None:
         # Parcels can repeat a join key (condo/sub-account rows share a
         # HANDLE) — dedupe to one geometry per key so the join cannot fan out.
         dk = spec.get("dedupe_key")
-        right_rel = (f"(SELECT {dk}, any_value(geometry) AS geometry "
+        extra = spec.get("dedupe_extra", "")
+        extra_sel = "".join(f", any_value({c}) AS {c}" for c in extra.split(",") if c)
+        right_rel = (f"(SELECT {dk}{extra_sel}, any_value(geometry) AS geometry "
                      f"FROM '{right}' GROUP BY {dk})" if dk else f"'{right}'")
         sql = (f"SELECT {spec['select']}, p.geometry FROM '{left}' t "
                f"JOIN {right_rel} p ON {spec['on']}")

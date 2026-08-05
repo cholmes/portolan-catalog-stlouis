@@ -1,8 +1,8 @@
 {
   "version": 8,
-  "name": "2020 fabric",
+  "name": "Parcels in 2016-2020",
   "metadata": {
-    "description": "The newest snapshot in the archive."
+    "description": "The newest snapshot in the archive (published as a single 2016-2020 era file)."
   },
   "sources": {
     "data": {
@@ -23,7 +23,7 @@
             "get",
             "era"
           ],
-          "2020",
+          "2016-2020",
           "#174054",
           "#00000000"
         ],
@@ -42,7 +42,7 @@
             "get",
             "era"
           ],
-          "2020",
+          "2016-2020",
           "#174054",
           "#00000000"
         ],

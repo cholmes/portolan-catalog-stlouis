@@ -18,6 +18,9 @@ from sources import SOURCES, coll_rel
 ROOT = Path(__file__).resolve().parent.parent
 CATALOG = ROOT / "catalog"
 BASE = "https://data.source.coop/tge-labs/st-louis-open-data-mirror"
+# Human-facing markdown links use source.coop so pages render in the browser
+BROWSE = "https://source.coop/tge-labs/st-louis-open-data-mirror"
+BROWSER = "https://cholmes.github.io/stlouis-data-browser"
 DESCRIPTIONS = json.loads((ROOT / "docs" / "portal-descriptions.json").read_text())
 
 # fields: worth-knowing columns; quirks: caveats found in profiling;
@@ -298,10 +301,18 @@ def collection_agents(coll_id: str) -> str:
     out += join_section(coll_id)
     if notes.get("example"):
         out += ["## Example", "", "```sql", notes["example"], "```", ""]
-    out += ["## Provenance", "",
+    rel = coll_rel(coll_id)
+    out += ["## Links", "",
+            f"- [View on the data browser]({BROWSER}/#/{rel}/collection.json) "
+            "— map, styles, legends, downloads",
+            f"- [Browse on Source Cooperative]({BROWSE}/{rel}/) — rendered "
+            "README and file listing",
+            f"- [Source dataset]({src['portal_page']}) on the City of "
+            "St. Louis open data portal",
+            "", "## Provenance", "",
             f"Mirror of [{src['title']}]({src['portal_page']}) from the City "
-            f"of St. Louis open data portal; source: {src.get('service') or src.get('url')}. "
-            "No explicit license is published — see the portal page. "
+            f"of St. Louis; source: {src.get('service') or src.get('url')}. "
+            "No explicit license is published — see the source page. "
             f"Synced {coll.get('updated', '')}.", ""]
     return "\n".join(out)
 

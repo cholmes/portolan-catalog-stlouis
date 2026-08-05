@@ -1,6 +1,6 @@
 # Neighborhood Organizations
 
-Neighborhood Organizations as exported 6-20-20
+Neighborhood Organizations as exported 6-20-20 Mirrored from [the city's open data portal](https://stlcity.maps.arcgis.com/home/item.html?id=ac198aeb9592458b8591c7258e719ad1); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/community/neighborhood-organizations/collection.json).
 
 ![st-louis](https://img.shields.io/badge/st--louis-blue) ![missouri](https://img.shields.io/badge/missouri-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![neighborhood](https://img.shields.io/badge/neighborhood-blue) ![organizations](https://img.shields.io/badge/organizations-blue)
 

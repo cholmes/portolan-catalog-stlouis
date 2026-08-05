@@ -6,7 +6,7 @@ City parks from the Parks Department.
 
 ### [City Parks](parks/parks/parks/)
 
-A database containing information on city parks, park amenities, and amenity attributes
+A database containing information on city parks, park amenities, and amenity attributes Mirrored from [the city's open data portal](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=46); expl...
 
 ## Coverage
 

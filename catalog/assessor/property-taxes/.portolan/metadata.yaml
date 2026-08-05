@@ -1,5 +1,5 @@
 title: "Property Taxes"
-description: "Property tax records by parcel"
+description: "Property tax records by parcel Mirrored from [the city's open data portal](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=3); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/assessor/property-taxes/collection.json)."
 contact:
   name: "Chris Holmes"
   email: "cholmes@9eo.org"
@@ -12,3 +12,11 @@ processing_notes: |
   Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=3).
   Source: https://www.stlouis-mo.gov/data/upload/data-files/prcl.zip (portal download),
   converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.
+examples:
+  - engine: duckdb
+    description: "Count rows by BillYear, straight off the published file"
+    code: |
+      INSTALL httpfs; LOAD httpfs;
+      SELECT BillYear, count(*) AS n
+      FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/assessor/property-taxes/property-taxes.parquet'
+      GROUP BY 1 ORDER BY 2 DESC LIMIT 10;

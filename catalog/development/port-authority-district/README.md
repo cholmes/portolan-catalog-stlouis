@@ -1,6 +1,6 @@
 # Port Authority District
 
-This feature represents the District boundary for the St. Louis Port Authority. It was created from Section One text in Ordinance 71179 from May 15, 2020.
+This feature represents the District boundary for the St. Louis Port Authority. It was created from Section One text in Ordinance 71179 from May 15, 2020. Mirrored from [the city's open data portal](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=55); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/development/port-authority-district/collection.json).
 
 ![st-louis](https://img.shields.io/badge/st--louis-blue) ![missouri](https://img.shields.io/badge/missouri-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![port](https://img.shields.io/badge/port-blue) ![authority](https://img.shields.io/badge/authority-blue) ![district](https://img.shields.io/badge/district-blue)
 

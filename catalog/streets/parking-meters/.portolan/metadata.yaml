@@ -1,5 +1,5 @@
 title: "Parking Meters"
-description: "Parking meters from the Streets Division parking services map."
+description: "Parking meters from the Streets Division parking services map. Mirrored from [the city's open data portal](https://maps8.stlouis-mo.gov/arcgis/rest/services/STREETS/ParkingServices/MapServer); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/streets/parking-meters/collection.json)."
 contact:
   name: "Chris Holmes"
   email: "cholmes@9eo.org"
@@ -12,3 +12,9 @@ processing_notes: |
   Mirrored from the City of St. Louis open data portal (https://maps8.stlouis-mo.gov/arcgis/rest/services/STREETS/ParkingServices/MapServer).
   Source: https://maps8.stlouis-mo.gov/arcgis/rest/services/STREETS/ParkingServices/MapServer (ArcGIS REST service),
   converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.
+examples:
+  - engine: duckdb
+    description: "Preview the first rows, straight off the published file"
+    code: |
+      INSTALL httpfs; LOAD httpfs;
+      SELECT * FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/streets/parking-meters/parking-meters.parquet' LIMIT 5;

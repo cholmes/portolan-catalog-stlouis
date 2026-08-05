@@ -1,6 +1,6 @@
 # City Blocks
 
-Information about city blocks. A city block, residential block, urban block, or simply "block" is a central element of urban planning and urban design.
+Information about city blocks. A city block, residential block, urban block, or simply "block" is a central element of urban planning and urban design. Mirrored from [the city's open data portal](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=12); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/assessor/city-blocks/collection.json).
 
 ![st-louis](https://img.shields.io/badge/st--louis-blue) ![missouri](https://img.shields.io/badge/missouri-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![city](https://img.shields.io/badge/city-blue) ![blocks](https://img.shields.io/badge/blocks-blue)
 

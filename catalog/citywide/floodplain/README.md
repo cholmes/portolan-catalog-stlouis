@@ -1,6 +1,6 @@
 # Floodplain
 
-Floodplain areas for the City of St. Louis, from the city's Floodplain map service.
+Floodplain areas for the City of St. Louis, from the city's Floodplain map service. Mirrored from [the city's open data portal](https://maps8.stlouis-mo.gov/arcgis/rest/services/STLOUIS/Floodplain/MapServer); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/citywide/floodplain/collection.json).
 
 ![st-louis](https://img.shields.io/badge/st--louis-blue) ![missouri](https://img.shields.io/badge/missouri-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![floodplain](https://img.shields.io/badge/floodplain-blue)
 

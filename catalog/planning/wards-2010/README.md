@@ -1,6 +1,6 @@
 # Ward Boundaries (2010)
 
-Boundaries of City of St. Louis wards
+Boundaries of City of St. Louis wards Mirrored from [the city's open data portal](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=131); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/planning/wards-2010/collection.json).
 
 ![st-louis](https://img.shields.io/badge/st--louis-blue) ![missouri](https://img.shields.io/badge/missouri-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![wards](https://img.shields.io/badge/wards-blue) ![2010](https://img.shields.io/badge/2010-blue)
 

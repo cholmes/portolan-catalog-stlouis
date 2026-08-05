@@ -35,6 +35,12 @@ gpio convert geopackage mechanical-permits-geo.parquet mechanical-permits.gpkg
 gpio convert shapefile mechanical-permits-geo.parquet mechanical-permits.shp
 ```
 
+## Links
+
+- [View on the data browser](https://cholmes.github.io/stlouis-data-browser/#/building/mechanical-permits/collection.json) — map, styles, legends, downloads
+- [Browse on Source Cooperative](https://source.coop/tge-labs/st-louis-open-data-mirror/building/mechanical-permits/) — rendered README and file listing
+- [Source dataset](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=52) on the City of St. Louis open data portal
+
 ## Provenance
 
-Mirror of [Mechanical Permits](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=52) from the City of St. Louis open data portal; source: https://www.stlouis-mo.gov/data/upload/data-files/mechanical-permits.zip. No explicit license is published — see the portal page. Synced 2026-08-05T19:58:51+00:00.
+Mirror of [Mechanical Permits](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=52) from the City of St. Louis; source: https://www.stlouis-mo.gov/data/upload/data-files/mechanical-permits.zip. No explicit license is published — see the source page. Synced 2026-08-05T19:58:51+00:00.

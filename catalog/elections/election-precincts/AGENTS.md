@@ -23,6 +23,12 @@ Full schema: `table:columns` in collection.json.
 
 The BOE FeatureServers reject paged queries, so this comes from the static shapefile (reprojected from MO State Plane East to WGS84).
 
+## Links
+
+- [View on the data browser](https://cholmes.github.io/stlouis-data-browser/#/elections/election-precincts/collection.json) — map, styles, legends, downloads
+- [Browse on Source Cooperative](https://source.coop/tge-labs/st-louis-open-data-mirror/elections/election-precincts/) — rendered README and file listing
+- [Source dataset](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=124) on the City of St. Louis open data portal
+
 ## Provenance
 
-Mirror of [Election Wards & Precincts](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=124) from the City of St. Louis open data portal; source: https://static.stlouis-mo.gov/open-data/BOEC/Precincts_Current.zip. No explicit license is published — see the portal page. Synced 2026-08-05T19:58:51+00:00.
+Mirror of [Election Wards & Precincts](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=124) from the City of St. Louis; source: https://static.stlouis-mo.gov/open-data/BOEC/Precincts_Current.zip. No explicit license is published — see the source page. Synced 2026-08-05T19:58:51+00:00.

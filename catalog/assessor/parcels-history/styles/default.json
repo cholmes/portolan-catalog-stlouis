@@ -1,8 +1,8 @@
 {
   "version": 8,
-  "name": "Parcel fabric by era",
+  "name": "Parcels by era",
   "metadata": {
-    "description": "Five-year snapshots of the parcel fabric (tiles carry 1997-2020 snapshots; the full Parquet holds every yearly snapshot 1997-2020, 3.1M rows)."
+    "description": "Five-year snapshots of the city's parcel boundaries (the map shows 1997, 2000, 2005, 2010, 2015, and 2016-2020; the full Parquet holds every yearly snapshot, 3.1M rows)."
   },
   "sources": {
     "data": {
@@ -33,7 +33,7 @@
           "#5591b5",
           "2015",
           "#2d6a8e",
-          "2020",
+          "2016-2020",
           "#174054",
           "#dfe6ea"
         ],
@@ -62,7 +62,7 @@
           "#5591b5",
           "2015",
           "#2d6a8e",
-          "2020",
+          "2016-2020",
           "#174054",
           "#dfe6ea"
         ],

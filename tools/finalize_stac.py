@@ -53,6 +53,8 @@ def slugify(s: str) -> str:
     return "".join(c if c.isalnum() else "-" for c in s.lower()).strip("-").replace("--", "-")
 
 DESCRIPTIONS = json.loads((ROOT / "docs" / "portal-descriptions.json").read_text())
+_cn = ROOT / "docs" / "column-notes.json"
+COLUMN_NOTES = json.loads(_cn.read_text()) if _cn.exists() else {}
 
 # Arrow → table-extension-ish type names already handled by CLI; for the
 # hand-authored tabular collection we map duckdb types.
@@ -134,7 +136,9 @@ def build_tabular(cid: str) -> None:
         },
         "table:row_count": n,
         "table:columns": [
-            {"name": c["n"], "type": DUCK_TO_TABLE.get(c["t"], c["t"].lower())}
+            {"name": c["n"], "type": DUCK_TO_TABLE.get(c["t"], c["t"].lower()),
+             **({"description": COLUMN_NOTES[cid][c["n"]]}
+                if COLUMN_NOTES.get(cid, {}).get(c["n"]) else {})}
             for c in cols
         ],
         "links": [
@@ -200,6 +204,13 @@ def finalize_collection(coll_id: str) -> None:
         coll["keywords"] = tags
     else:
         coll.pop("keywords", None)
+
+    # Researched column meanings (docs/column-notes.json) → table:columns
+    notes = COLUMN_NOTES.get(coll_id, {})
+    if notes and coll.get("table:columns"):
+        for col in coll["table:columns"]:
+            if col["name"] in notes:
+                col["description"] = notes[col["name"]]
 
     # Recompute the spatial extent from the parquet itself — the CLI's
     # tracked extent can go stale when files are rewritten out from under it.

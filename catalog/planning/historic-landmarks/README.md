@@ -1,6 +1,6 @@
 # Historic Landmarks
 
-Historic sites and landmarks from the city's Historic Landmarks map service.
+Historic sites and landmarks from the city's Historic Landmarks map service. Mirrored from [the city's open data portal](https://maps8.stlouis-mo.gov/arcgis/rest/services/PDA/Historic_Landmarks/FeatureServer); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/planning/historic-landmarks/collection.json).
 
 ![st-louis](https://img.shields.io/badge/st--louis-blue) ![missouri](https://img.shields.io/badge/missouri-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![historic](https://img.shields.io/badge/historic-blue) ![landmarks](https://img.shields.io/badge/landmarks-blue)
 
@@ -49,8 +49,9 @@ Historic sites and landmarks from the city's Historic Landmarks map service.
 | ./historic-landmarks.pmtiles | 157.0 KB | 122081ac9a9e... |
 | ./styles/city-renderer.json | 1.3 KB | 1220572c1b30... |
 | ./styles/default.json | 1.6 KB | 122004b242f6... |
-| ./styles/style-national-register.json | 869 B | 1220a2458274... |
+| ./styles/style-national-register.json | 1.2 KB | 12209f2ecea8... |
 | ./styles/style-plain.json | 741 B | 122059d0cb75... |
+| ./thumbnail.png | 364.6 KB | 122018dd4b84... |
 
 ## Quick Start
 

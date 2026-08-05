@@ -451,8 +451,8 @@
         "visual"
       ],
       "title": "Parcels (Historical, 1997-2020) (PMTiles)",
-      "file:size": 20995990,
-      "file:checksum": "1220a119b32793a51db64a09556699e1071fd6ebed471140e7b0272d0c38741a31a8"
+      "file:size": 34762579,
+      "file:checksum": "1220f9b01b0c250c7d19dfc74045b5fcd83a412353fffc0ed2a89f5ce47eb2c50784"
     },
     "styles/default": {
       "href": "./styles/default.json",
@@ -461,10 +461,10 @@
         "default",
         "style"
       ],
-      "title": "Parcel fabric by era",
-      "description": "Five-year snapshots of the parcel fabric (tiles carry 1997-2020 snapshots; the full Parquet holds every yearly snapshot 1997-2020, 3.1M rows).",
-      "file:size": 1501,
-      "file:checksum": "1220fdb400163c4ee2f816ec729f3975aa2115de3d0feee115c75c6dde3a0c10aa7f"
+      "title": "Parcels by era",
+      "description": "Five-year snapshots of the city's parcel boundaries (the map shows 1997, 2000, 2005, 2010, 2015, and 2016-2020; the full Parquet holds every yearly snapshot, 3.1M rows).",
+      "file:size": 1532,
+      "file:checksum": "1220689b28baa67dd5cb79fa3d47d2a66ec248ab7cbb4a8d6187b08a14215a0e574d"
     },
     "styles/style-1997": {
       "href": "./styles/style-1997.json",
@@ -472,10 +472,10 @@
       "roles": [
         "style"
       ],
-      "title": "1997 fabric",
+      "title": "Parcels in 1997",
       "description": "The oldest snapshot alone \u2014 compare against the current parcels collection to see consolidation and demolition.",
-      "file:size": 1080,
-      "file:checksum": "122006504f8e0d2c399e3f3909a1a32c5ea163b3acba86a21b25fb7dc47caffa3b61"
+      "file:size": 1084,
+      "file:checksum": "122005ebd500476c0a8bd2eaf77a71157588c145c623892f9d8fcc51798893a88694"
     },
     "styles/style-2020": {
       "href": "./styles/style-2020.json",
@@ -483,10 +483,10 @@
       "roles": [
         "style"
       ],
-      "title": "2020 fabric",
-      "description": "The newest snapshot in the archive.",
-      "file:size": 999,
-      "file:checksum": "122089823f3a1de36760ed717072d1c00669519186cea88481ca647b56e9d9964402"
+      "title": "Parcels in 2016-2020",
+      "description": "The newest snapshot in the archive (published as a single 2016-2020 era file).",
+      "file:size": 1061,
+      "file:checksum": "1220cdd8fb560d6db971ea5370df053dab1141c3f69cf0f4c9108a85f29b6abe8ffa"
     },
     "thumbnail": {
       "href": "./thumbnail.png",
@@ -497,6 +497,17 @@
       "title": "Parcels (Historical, 1997-2020) rendered with the default style",
       "file:size": 613201,
       "file:checksum": "12205e8080d7277c6c39f49d2bb06d9689c623c542e85251d9067aa3c7d40c6383bd"
+    },
+    "styles/style-zoning-1997": {
+      "href": "./styles/style-zoning-1997.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "style"
+      ],
+      "title": "Zoning in 1997",
+      "description": "Each 1997 parcel filled by its zoning letter \u2014 compare with the current parcels collection's zoning view to see three decades of rezoning.",
+      "file:size": 2174,
+      "file:checksum": "122034b4142c75246d0e6a06ef066f51f1a8b67dd36b40dbb55cb16443bc11ef1da9"
     }
   },
   "updated": "2026-08-05T19:58:51+00:00",

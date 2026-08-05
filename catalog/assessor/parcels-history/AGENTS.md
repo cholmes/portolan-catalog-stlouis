@@ -15,6 +15,12 @@ PMTiles for maps: `https://data.source.coop/tge-labs/st-louis-open-data-mirror/a
 
 Full schema: `table:columns` in collection.json.
 
+## Links
+
+- [View on the data browser](https://cholmes.github.io/stlouis-data-browser/#/assessor/parcels-history/collection.json) — map, styles, legends, downloads
+- [Browse on Source Cooperative](https://source.coop/tge-labs/st-louis-open-data-mirror/assessor/parcels-history/) — rendered README and file listing
+- [Source dataset](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=82) on the City of St. Louis open data portal
+
 ## Provenance
 
-Mirror of [Parcels (Historical, 1997-2020)](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=82) from the City of St. Louis open data portal; source: https://www.stlouis-mo.gov/data/upload/data-files/stl_parcels_1997-2000.zip. No explicit license is published — see the portal page. Synced 2026-08-05T19:58:51+00:00.
+Mirror of [Parcels (Historical, 1997-2020)](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=82) from the City of St. Louis; source: https://www.stlouis-mo.gov/data/upload/data-files/stl_parcels_1997-2000.zip. No explicit license is published — see the source page. Synced 2026-08-05T19:58:51+00:00.

@@ -1,6 +1,6 @@
 # Bike Infrastructure
 
-Bicycle infrastructure from the city's Biking Infrastructure Map service: existing bike facilities by type, the Brickline Greenway and Hodiamont Trail, park paths, multi-use paths, and planned and funded major bike facility projects.
+Bicycle infrastructure from the city's Biking Infrastructure Map service: existing bike facilities by type, the Brickline Greenway and Hodiamont Trail, park paths, multi-use paths, and planned and funded major bike facility projects. Mirrored from [the city's open data portal](https://maps8.stlouis-mo.gov/arcgis/rest/services/PDA/Biking_Infrastructure_Map/MapServer); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/planning/bike-infrastructure/collection.json).
 
 ![st-louis](https://img.shields.io/badge/st--louis-blue) ![missouri](https://img.shields.io/badge/missouri-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![bike](https://img.shields.io/badge/bike-blue) ![infrastructure](https://img.shields.io/badge/infrastructure-blue)
 

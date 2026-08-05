@@ -35,6 +35,12 @@ gpio convert geopackage plumbing-permits-geo.parquet plumbing-permits.gpkg
 gpio convert shapefile plumbing-permits-geo.parquet plumbing-permits.shp
 ```
 
+## Links
+
+- [View on the data browser](https://cholmes.github.io/stlouis-data-browser/#/building/plumbing-permits/collection.json) — map, styles, legends, downloads
+- [Browse on Source Cooperative](https://source.coop/tge-labs/st-louis-open-data-mirror/building/plumbing-permits/) — rendered README and file listing
+- [Source dataset](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=53) on the City of St. Louis open data portal
+
 ## Provenance
 
-Mirror of [Plumbing Permits](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=53) from the City of St. Louis open data portal; source: https://www.stlouis-mo.gov/data/upload/data-files/plumbing-permits.zip. No explicit license is published — see the portal page. Synced 2026-08-05T19:58:51+00:00.
+Mirror of [Plumbing Permits](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=53) from the City of St. Louis; source: https://www.stlouis-mo.gov/data/upload/data-files/plumbing-permits.zip. No explicit license is published — see the source page. Synced 2026-08-05T19:58:51+00:00.

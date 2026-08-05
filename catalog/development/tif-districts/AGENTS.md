@@ -19,6 +19,12 @@ PMTiles for maps: `https://data.source.coop/tge-labs/st-louis-open-data-mirror/d
 
 Full schema: `table:columns` in collection.json.
 
+## Links
+
+- [View on the data browser](https://cholmes.github.io/stlouis-data-browser/#/development/tif-districts/collection.json) — map, styles, legends, downloads
+- [Browse on Source Cooperative](https://source.coop/tge-labs/st-louis-open-data-mirror/development/tif-districts/) — rendered README and file listing
+- [Source dataset](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=56) on the City of St. Louis open data portal
+
 ## Provenance
 
-Mirror of [Tax Increment Financing (TIF) Districts](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=56) from the City of St. Louis open data portal; source: https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/TIF_Districts/FeatureServer. No explicit license is published — see the portal page. Synced 2026-08-05T19:58:51+00:00.
+Mirror of [Tax Increment Financing (TIF) Districts](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=56) from the City of St. Louis; source: https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/TIF_Districts/FeatureServer. No explicit license is published — see the source page. Synced 2026-08-05T19:58:51+00:00.

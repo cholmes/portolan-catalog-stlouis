@@ -1,6 +1,6 @@
 # City Trees (Planting Sites)
 
-All mapped planting sites within the city for tree plantings managed by the Forestry Division. Street tree planting sites are re-used, while park tree sites tend not to be. This data contains vacant sites, as well.
+All mapped planting sites within the city for tree plantings managed by the Forestry Division. Street tree planting sites are re-used, while park tree sites tend not to be. This data contains vacant sites, as well. Mirrored from [the city's open data portal](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=121); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/forestry/city-trees/collection.json).
 
 ![st-louis](https://img.shields.io/badge/st--louis-blue) ![missouri](https://img.shields.io/badge/missouri-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![city](https://img.shields.io/badge/city-blue) ![trees](https://img.shields.io/badge/trees-blue)
 

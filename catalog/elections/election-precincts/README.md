@@ -1,6 +1,6 @@
 # Election Wards & Precincts
 
-Wards & current election precincts for the City of St. Louis.
+Wards & current election precincts for the City of St. Louis. Mirrored from [the city's open data portal](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=124); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/elections/election-precincts/collection.json).
 
 ![st-louis](https://img.shields.io/badge/st--louis-blue) ![missouri](https://img.shields.io/badge/missouri-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![election](https://img.shields.io/badge/election-blue) ![precincts](https://img.shields.io/badge/precincts-blue)
 
@@ -31,7 +31,7 @@ Wards & current election precincts for the City of St. Louis.
 | ./styles/default.json | 3.2 KB | 12201a21287c... |
 | ./styles/style-boundaries.json | 482 B | 122014e02715... |
 | ./styles/style-tint.json | 510 B | 122016607d55... |
-| ./README.md | 2.2 KB | 1220295e9bad... |
+| ./README.md | 2.2 KB | 1220efe3b685... |
 | ./thumbnail.png | 328.4 KB | 12203c318c7f... |
 
 ## Quick Start

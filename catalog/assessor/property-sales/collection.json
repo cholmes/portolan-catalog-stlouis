@@ -152,8 +152,8 @@
         "visual"
       ],
       "title": "Property Sales (PMTiles)",
-      "file:size": 14032593,
-      "file:checksum": "1220f944ade8d734b38dec2526bb70d8dbefebe2e5bb3bfa45cda229b5e937cf6dc6"
+      "file:size": 14441107,
+      "file:checksum": "122098554acf69f5c1d61d08668e7c3082468b8b68daf0a85136aa08d8b89ae39108"
     },
     "thumbnail": {
       "href": "./thumbnail.png",
@@ -176,6 +176,17 @@
       "description": "Recorded sales joined to parcel geometry, stepped by sale price; a parcel appears once per sale.",
       "file:size": 1386,
       "file:checksum": "12209323c67f7f71325303f4f27a7ed69527dd4a91a5952f79d6f6cae0ef315e9103"
+    },
+    "styles/style-price-per-sqft": {
+      "href": "./styles/style-price-per-sqft.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "style"
+      ],
+      "title": "Price per square foot",
+      "description": "Sale price divided by the parcel's lot area \u2014 the cleanest way to compare land value across parcel sizes (steps at $1, $4, $10, $25, $60 per sq ft of lot).",
+      "file:size": 1541,
+      "file:checksum": "12201bc2360ac354d06b4b00b5065d90deec331a10a4f8b97648f436bfabd2f65d43"
     },
     "styles/style-solid": {
       "href": "./styles/style-solid.json",

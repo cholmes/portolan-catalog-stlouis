@@ -1,6 +1,6 @@
 # Animal Bites
 
-Animal bite reports made to the City of Saint Louis Department of Health and its Animal Care and Control section.
+Animal bite reports made to the City of Saint Louis Department of Health and its Animal Care and Control section. Mirrored from [the city's open data portal](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=130); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/health/animal-bites/collection.json).
 
 ![st-louis](https://img.shields.io/badge/st--louis-blue) ![missouri](https://img.shields.io/badge/missouri-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![animal](https://img.shields.io/badge/animal-blue) ![bites](https://img.shields.io/badge/bites-blue)
 

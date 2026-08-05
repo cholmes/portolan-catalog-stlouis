@@ -15,6 +15,12 @@ PMTiles for maps: `https://data.source.coop/tge-labs/st-louis-open-data-mirror/h
 
 Full schema: `table:columns` in collection.json.
 
+## Links
+
+- [View on the data browser](https://cholmes.github.io/stlouis-data-browser/#/health/animal-bites/collection.json) — map, styles, legends, downloads
+- [Browse on Source Cooperative](https://source.coop/tge-labs/st-louis-open-data-mirror/health/animal-bites/) — rendered README and file listing
+- [Source dataset](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=130) on the City of St. Louis open data portal
+
 ## Provenance
 
-Mirror of [Animal Bites](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=130) from the City of St. Louis open data portal; source: https://static.stlouis-mo.gov/open-data/HEALTH/ANIMAL-CONTROL/ANIMAL_BITES.csv. No explicit license is published — see the portal page. Synced 2026-08-05T19:58:51+00:00.
+Mirror of [Animal Bites](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=130) from the City of St. Louis; source: https://static.stlouis-mo.gov/open-data/HEALTH/ANIMAL-CONTROL/ANIMAL_BITES.csv. No explicit license is published — see the source page. Synced 2026-08-05T19:58:51+00:00.

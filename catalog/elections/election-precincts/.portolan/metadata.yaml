@@ -1,5 +1,5 @@
 title: "Election Wards & Precincts"
-description: "Wards & current election precincts for the City of St. Louis."
+description: "Wards & current election precincts for the City of St. Louis. Mirrored from [the city's open data portal](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=124); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/elections/election-precincts/collection.json)."
 contact:
   name: "Chris Holmes"
   email: "cholmes@9eo.org"
@@ -12,3 +12,9 @@ processing_notes: |
   Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=124).
   Source: https://static.stlouis-mo.gov/open-data/BOEC/Precincts_Current.zip (portal download),
   converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.
+examples:
+  - engine: duckdb
+    description: "Preview the first rows, straight off the published file"
+    code: |
+      INSTALL httpfs; LOAD httpfs;
+      SELECT * FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/elections/election-precincts/election-precincts.parquet' LIMIT 5;

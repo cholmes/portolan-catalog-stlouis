@@ -1,6 +1,6 @@
 # Street Sweeping Schedule
 
-Street sweeping area schedules from the Streets Division.
+Street sweeping area schedules from the Streets Division. Mirrored from [the city's open data portal](https://maps8.stlouis-mo.gov/arcgis/rest/services/STREETS/Street_Sweeping/MapServer); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/streets/street-sweeping/collection.json).
 
 ![st-louis](https://img.shields.io/badge/st--louis-blue) ![missouri](https://img.shields.io/badge/missouri-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![street](https://img.shields.io/badge/street-blue) ![sweeping](https://img.shields.io/badge/sweeping-blue)
 
@@ -44,6 +44,7 @@ Street sweeping area schedules from the Streets Division.
 | ./styles/default.json | 1.6 KB | 1220336ae297... |
 | ./styles/style-boundaries.json | 472 B | 1220b4d41bac... |
 | ./styles/style-labeled.json | 981 B | 1220a48516e5... |
+| ./thumbnail.png | 371.6 KB | 12207f7535d4... |
 
 ## Quick Start
 

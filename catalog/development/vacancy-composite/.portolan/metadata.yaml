@@ -1,5 +1,5 @@
 title: "Parcel Vacancy Composite"
-description: "Parcel-level vacancy indicators for St. Louis: vacant buildings, condemnations, tax delinquency, LRA ownership, and private vacancy, compiled by SLDC."
+description: "Parcel-level vacancy indicators for St. Louis: vacant buildings, condemnations, tax delinquency, LRA ownership, and private vacancy, compiled by SLDC. Mirrored from [the city's open data portal](https://stlcity.maps.arcgis.com/home/item.html?id=98a6f429617546be9d9b467c5ad1dafc); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/development/vacancy-composite/collection.json)."
 contact:
   name: "Chris Holmes"
   email: "cholmes@9eo.org"
@@ -12,3 +12,11 @@ processing_notes: |
   Mirrored from the City of St. Louis open data portal (https://stlcity.maps.arcgis.com/home/item.html?id=98a6f429617546be9d9b467c5ad1dafc).
   Source: https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/SLDC_SLDC_Tol_Def_Vac_NP/FeatureServer (ArcGIS REST service),
   converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.
+examples:
+  - engine: duckdb
+    description: "Count rows by TOLEMI_DEF, straight off the published file"
+    code: |
+      INSTALL httpfs; LOAD httpfs;
+      SELECT TOLEMI_DEF, count(*) AS n
+      FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/development/vacancy-composite/vacancy-composite.parquet'
+      GROUP BY 1 ORDER BY 2 DESC LIMIT 10;

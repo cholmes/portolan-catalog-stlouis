@@ -1,6 +1,6 @@
 # November 2024 Election Results by Precinct
 
-This is the detailed vote extract (dve) from the November 5, 2024, General Municipal Election for the City of St. Louis.
+This is the detailed vote extract (dve) from the November 5, 2024, General Municipal Election for the City of St. Louis. Mirrored from [the city's open data portal](https://stlcity.maps.arcgis.com/home/item.html?id=6e72fa855cd445f7af37d79615f602d0); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/elections/election-results-nov-2024/collection.json).
 
 ![st-louis](https://img.shields.io/badge/st--louis-blue) ![missouri](https://img.shields.io/badge/missouri-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![election](https://img.shields.io/badge/election-blue) ![results](https://img.shields.io/badge/results-blue) ![nov](https://img.shields.io/badge/nov-blue) ![2024](https://img.shields.io/badge/2024-blue)
 
@@ -60,10 +60,11 @@ This is the detailed vote extract (dve) from the November 5, 2024, General Munic
 | File | Size | Checksum |
 |------|------|----------|
 | ./election-results-nov-2024.parquet | 318.9 KB | 1220e10febd3... |
-| ./election-results-nov-2024.pmtiles | 404.9 KB | 1220ff54aa64... |
+| ./election-results-nov-2024.pmtiles | 482.6 KB | 122077fec398... |
 | ./thumbnail.png | 377.7 KB | 12209d524265... |
 | ./styles/default.json | 1.6 KB | 1220e244bdbb... |
 | ./styles/style-ballots.json | 1.2 KB | 1220a466882d... |
+| ./styles/style-presidential.json | 1.6 KB | 1220a85d668f... |
 | ./styles/style-registered.json | 1.3 KB | 12203cc4b6de... |
 
 ## Quick Start

@@ -1,6 +1,6 @@
 # City Streets
 
-City street GIS data
+City street GIS data Mirrored from [the city's open data portal](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=68); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/streets/streets/collection.json).
 
 ![st-louis](https://img.shields.io/badge/st--louis-blue) ![missouri](https://img.shields.io/badge/missouri-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![streets](https://img.shields.io/badge/streets-blue)
 

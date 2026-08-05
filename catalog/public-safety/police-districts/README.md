@@ -1,6 +1,6 @@
 # Police District Boundaries
 
-GIS data for police district boundaries
+GIS data for police district boundaries Mirrored from [the city's open data portal](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=83); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/public-safety/police-districts/collection.json).
 
 ![st-louis](https://img.shields.io/badge/st--louis-blue) ![missouri](https://img.shields.io/badge/missouri-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![police](https://img.shields.io/badge/police-blue) ![districts](https://img.shields.io/badge/districts-blue)
 

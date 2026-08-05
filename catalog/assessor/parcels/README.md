@@ -1,6 +1,6 @@
 # Parcels
 
-Current and historic parcel data
+Current and historic parcel data Mirrored from [the city's open data portal](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=82); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/assessor/parcels/collection.json).
 
 ![st-louis](https://img.shields.io/badge/st--louis-blue) ![missouri](https://img.shields.io/badge/missouri-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![parcels](https://img.shields.io/badge/parcels-blue)
 
@@ -165,12 +165,13 @@ Current and historic parcel data
 | ./parcels.parquet | 29.9 MB | 122004b0a978... |
 | ./parcels.pmtiles | 34.4 MB | 1220e8854ee2... |
 | ./styles/city-renderer.json | 525 B | 1220d4ff4909... |
-| ./styles/default.json | 797 B | 12205582023a... |
+| ./styles/default.json | 801 B | 12207be6f755... |
 | ./styles/style-assessed-value.json | 1.4 KB | 1220fd5b0b12... |
 | ./styles/style-city-assessor.json | 545 B | 12200930a396... |
 | ./styles/style-vacant-lots.json | 1.1 KB | 122092b73432... |
 | ./styles/style-year-built.json | 1.3 KB | 122071ceff97... |
 | ./thumbnail.png | 378.5 KB | 1220875a6b28... |
+| ./styles/style-zoning.json | 1.9 KB | 1220d402120c... |
 
 ## Quick Start
 

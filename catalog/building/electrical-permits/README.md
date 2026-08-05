@@ -1,6 +1,6 @@
 # Electrical Permits
 
-Data on commercial, industrial, and residential electrical permits in the City of St. Louis
+Data on commercial, industrial, and residential electrical permits in the City of St. Louis Mirrored from [the city's open data portal](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=51); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/building/electrical-permits/collection.json).
 
 ![st-louis](https://img.shields.io/badge/st--louis-blue) ![missouri](https://img.shields.io/badge/missouri-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![electrical](https://img.shields.io/badge/electrical-blue) ![permits](https://img.shields.io/badge/permits-blue)
 

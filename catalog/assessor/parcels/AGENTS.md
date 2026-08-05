@@ -35,6 +35,12 @@ Full schema: `table:columns` in collection.json.
 
 property-sales.AsrParcelId = parcels.ParcelId; tax-abated-parcels and lra-property share HANDLE; neighborhoods via NBRHD = NHD_NUM; wards via WARD.
 
+## Links
+
+- [View on the data browser](https://cholmes.github.io/stlouis-data-browser/#/assessor/parcels/collection.json) — map, styles, legends, downloads
+- [Browse on Source Cooperative](https://source.coop/tge-labs/st-louis-open-data-mirror/assessor/parcels/) — rendered README and file listing
+- [Source dataset](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=82) on the City of St. Louis open data portal
+
 ## Provenance
 
-Mirror of [Parcels](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=82) from the City of St. Louis open data portal; source: https://maps8.stlouis-mo.gov/arcgis/rest/services/PDA/PARCELS_PUBLIC/MapServer. No explicit license is published — see the portal page. Synced 2026-08-05T19:58:51+00:00.
+Mirror of [Parcels](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=82) from the City of St. Louis; source: https://maps8.stlouis-mo.gov/arcgis/rest/services/PDA/PARCELS_PUBLIC/MapServer. No explicit license is published — see the source page. Synced 2026-08-05T19:58:51+00:00.
