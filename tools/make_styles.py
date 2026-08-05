@@ -44,6 +44,11 @@ POLY = ["#7fb3d0", "#e2a76f", "#95c68f", "#d98d8d", "#a99bd0",
         "#c9b970", "#8fc6c0", "#d093b5", "#b0a377", "#9cb0e0",
         "#e0b394", "#88b8a3", "#c99ac0", "#adc487"]
 
+# Bolder, saturated palette (wards) so wards and precincts read differently.
+BOLD = ["#1e6f9c", "#c0392b", "#1e8449", "#d68910", "#6c3483",
+        "#148f77", "#a04000", "#884ea0", "#2874a6", "#7d8f2f",
+        "#b03a5b", "#3b6f43", "#b7752c", "#4a5d8f"]
+
 
 def repeat_fill(prop_num_expr, n=10):
     """Repeating color sets keyed on a numeric expression modulo n."""
@@ -287,8 +292,9 @@ emit("csb-311-requests", "default", style(
     "csb-311-requests", "311 service requests",
     "1.48 million Citizens' Service Bureau requests since 2008, as a dense "
     "point field.",
-    [circle("csb-311-requests", BLUE, zoom_radius(1.6), opacity=0.5)]),
-    default=True)
+    [circle("csb-311-requests", BLUE,
+            ["interpolate", ["linear"], ["zoom"], 8, 1.6, 12, 2.2, 16, 4.5],
+            opacity=0.75, stroke="#FFFFFF")]), default=True)
 emit("csb-311-requests", "style-category", style(
     "csb-311-requests", "Request category",
     "The eight biggest request groups — trash/debris leads with 400k, then "
@@ -400,12 +406,22 @@ def ward_match(get_expr):
     return expr
 
 
-WARD = ward_match(["get", "DISTRICT"])
+def ward_match_bold(get_expr):
+    expr = ["match", get_expr]
+    for i in range(14):
+        expr += [str(i + 1), BOLD[i]]
+    expr.append(GRAY)
+    return expr
+
+
+WARD = ward_match_bold(["get", "DISTRICT"])
 emit("wards", "default", style(
     "wards", "Wards (2020)",
-    "The fourteen wards from 2020 redistricting, one color each, labeled.",
-    [fill("wards", WARD, 0.6, "#FFFFFF"), line("wards", "#FFFFFF", 1.2),
-     label("wards", "NAME", 12, 9)], legend=WARD), default=True)
+    "The fourteen wards from 2020 redistricting in bold saturated colors "
+    "with heavy dark borders, labeled — deliberately weightier than the "
+    "pastel precinct map.",
+    [fill("wards", WARD, 0.72, DARK), line("wards", DARK, 2.5),
+     label("wards", "NAME", 13, 9)], legend=WARD), default=True)
 emit("wards", "style-boundaries", style(
     "wards", "Ward boundaries",
     "Outlines only.", [line("wards", RED, 2.0)]))
@@ -438,17 +454,37 @@ BLOCKNUM = ["step", ["to-number", ["get", "Name"]], "#e3ecf1",
             1000, "#b9d3e2", 2500, "#88b3cd", 4000, "#5591b5", 5500, DARK]
 emit("city-blocks", "default", style(
     "city-blocks", "City blocks",
-    "The city's 5,857 numbered blocks as a hairline mesh.",
-    [line("city-blocks", "#7a8489", 0.5)]), default=True)
+    "Every numbered block as a readable unit: semi-transparent city-blue "
+    "fill, white borders, and the block number labeled at high zoom.",
+    [fill("city-blocks", "#5b8db0", 0.45, "#FFFFFF"),
+     line("city-blocks", "#FFFFFF", 1.0),
+     label("city-blocks", "Name", 10, 14)]), default=True)
 emit("city-blocks", "style-block-number", style(
     "city-blocks", "Block numbering",
     "Block numbers in steps — numbering began downtown by the river and "
     "grew outward, so the gradient replays the city's expansion.",
     [fill("city-blocks", BLOCKNUM, 0.8, "#FFFFFF")], legend=BLOCKNUM))
-emit("city-blocks", "style-tint", style(
-    "city-blocks", "Tinted blocks",
-    "Light fill with block outlines for reference use.",
-    [fill("city-blocks", LIGHT, 0.4, "#7a8489")]))
+emit("city-blocks", "style-by-ward", style(
+    "city-blocks", "Blocks by ward (2010)",
+    "Blocks tinted by their 2010 ward (WARD10, repeating colors) with "
+    "block-number labels — see which ward each block sat in.",
+    [fill("city-blocks", repeat_fill(["get", "WARD10"], 10), 0.65, "#FFFFFF"),
+     line("city-blocks", "#FFFFFF", 0.6),
+     label("city-blocks", "Name", 10, 14)], no_legend=True))
+emit("city-blocks", "style-by-precinct", style(
+    "city-blocks", "Blocks by precinct (2010)",
+    "Blocks tinted by 2010 precinct (PRECINCT10, repeating colors), "
+    "labeled with the block number.",
+    [fill("city-blocks", repeat_fill(["get", "PRECINCT10"], 12), 0.65, "#FFFFFF"),
+     line("city-blocks", "#FFFFFF", 0.6),
+     label("city-blocks", "Name", 10, 14)], no_legend=True))
+emit("city-blocks", "style-by-census-tract", style(
+    "city-blocks", "Blocks by census tract (2010)",
+    "Blocks tinted by 2010 census tract (CensTract10, repeating colors), "
+    "labeled with the block number.",
+    [fill("city-blocks", repeat_fill(["to-number", ["get", "CensTract10"]], 14), 0.65, "#FFFFFF"),
+     line("city-blocks", "#FFFFFF", 0.6),
+     label("city-blocks", "Name", 10, 14)], no_legend=True))
 
 # --------------------------------------------------------------------------
 # police-districts — 6 polygons

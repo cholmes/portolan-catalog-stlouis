@@ -1,8 +1,9 @@
 {
   "version": 8,
-  "name": "City blocks",
+  "name": "Blocks by census tract (2010)",
   "metadata": {
-    "description": "Every numbered block as a readable unit: semi-transparent city-blue fill, white borders, and the block number labeled at high zoom."
+    "description": "Blocks tinted by 2010 census tract (CensTract10, repeating colors), labeled with the block number.",
+    "legend": "none"
   },
   "sources": {
     "data": {
@@ -17,8 +18,50 @@
       "source": "data",
       "source-layer": "city-blocks",
       "paint": {
-        "fill-color": "#5b8db0",
-        "fill-opacity": 0.45,
+        "fill-color": [
+          "match",
+          [
+            "%",
+            [
+              "to-number",
+              [
+                "get",
+                "CensTract10"
+              ]
+            ],
+            14
+          ],
+          0,
+          "#7fb3d0",
+          1,
+          "#e2a76f",
+          2,
+          "#95c68f",
+          3,
+          "#d98d8d",
+          4,
+          "#a99bd0",
+          5,
+          "#c9b970",
+          6,
+          "#8fc6c0",
+          7,
+          "#d093b5",
+          8,
+          "#b0a377",
+          9,
+          "#9cb0e0",
+          10,
+          "#e0b394",
+          11,
+          "#88b8a3",
+          12,
+          "#c99ac0",
+          13,
+          "#adc487",
+          "#9aa3a8"
+        ],
+        "fill-opacity": 0.65,
         "fill-outline-color": "#FFFFFF"
       }
     },
@@ -29,7 +72,7 @@
       "source-layer": "city-blocks",
       "paint": {
         "line-color": "#FFFFFF",
-        "line-width": 1.0,
+        "line-width": 0.6,
         "line-opacity": 1.0
       }
     },

@@ -101,18 +101,42 @@ PYSTYLE
     fi
 done < <(CATALOG_DIR="$CATALOG_DIR" python3 - <<'PYLIST'
 import json, os, pathlib
+
+# Thumbnail framing per collection, so the cards don't all show the same
+# tall skinny city sliver:
+#   extent — full data extent (boundaries and city-wide continuous layers)
+#   fill   — square window over the central bulk of the data ("get most of
+#            it"), cropping the north/south tips
+#   (w,s,e,n) — explicit detail window for layers that read best zoomed in
+DETAIL = {
+    "city-blocks": (-90.215, 38.615, -90.175, 38.645),   # downtown blocks
+    "parcels": (-90.27, 38.60, -90.23, 38.63),           # Shaw/Tower Grove
+    "streets": (-90.26, 38.62, -90.20, 38.66),           # midtown grid
+}
+FILL = {"historic-districts", "tif-districts", "opportunity-zones",
+        "lra-property", "tax-abated-parcels", "community-improvement-districts",
+        "special-business-districts", "bike-infrastructure", "parks",
+        "city-trees"}
+
 cat = pathlib.Path(os.environ["CATALOG_DIR"])
 for coll in sorted(cat.iterdir()):
     cj = coll / "collection.json"
     if not cj.exists():
         continue
     c = json.loads(cj.read_text())
+    cid = c["id"]
     try:
         w, s, e, n = c["extent"]["spatial"]["bbox"][0]
     except Exception:
         continue
+    if cid in DETAIL:
+        w, s, e, n = DETAIL[cid]
+    elif cid in FILL:
+        cx, cy = (w + e) / 2, (s + n) / 2
+        half = max(e - w, n - s) * 0.30
+        w, e, s, n = cx - half, cx + half, cy - half, cy + half
     pad = max(e - w, n - s) * 0.04
-    print(f'{c["id"]}|{w-pad:.6f},{s-pad:.6f},{e+pad:.6f},{n+pad:.6f}')
+    print(f'{cid}|{w-pad:.6f},{s-pad:.6f},{e+pad:.6f},{n+pad:.6f}')
 PYLIST
 )
 

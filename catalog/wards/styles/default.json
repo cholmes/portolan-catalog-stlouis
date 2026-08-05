@@ -2,7 +2,7 @@
   "version": 8,
   "name": "Wards (2020)",
   "metadata": {
-    "description": "The fourteen wards from 2020 redistricting, one color each, labeled."
+    "description": "The fourteen wards from 2020 redistricting in bold saturated colors with heavy dark borders, labeled \u2014 deliberately weightier than the pastel precinct map."
   },
   "sources": {
     "data": {
@@ -24,33 +24,33 @@
             "DISTRICT"
           ],
           "1",
-          "#7fb3d0",
+          "#1e6f9c",
           "2",
-          "#e2a76f",
+          "#c0392b",
           "3",
-          "#95c68f",
+          "#1e8449",
           "4",
-          "#d98d8d",
+          "#d68910",
           "5",
-          "#a99bd0",
+          "#6c3483",
           "6",
-          "#c9b970",
+          "#148f77",
           "7",
-          "#8fc6c0",
+          "#a04000",
           "8",
-          "#d093b5",
+          "#884ea0",
           "9",
-          "#b0a377",
+          "#2874a6",
           "10",
-          "#9cb0e0",
+          "#7d8f2f",
           "11",
-          "#e0b394",
+          "#b03a5b",
           "12",
-          "#88b8a3",
+          "#3b6f43",
           "13",
-          "#c99ac0",
+          "#b7752c",
           "14",
-          "#adc487",
+          "#4a5d8f",
           "#9aa3a8"
         ],
         "fill-opacity": 0
@@ -69,37 +69,37 @@
             "DISTRICT"
           ],
           "1",
-          "#7fb3d0",
+          "#1e6f9c",
           "2",
-          "#e2a76f",
+          "#c0392b",
           "3",
-          "#95c68f",
+          "#1e8449",
           "4",
-          "#d98d8d",
+          "#d68910",
           "5",
-          "#a99bd0",
+          "#6c3483",
           "6",
-          "#c9b970",
+          "#148f77",
           "7",
-          "#8fc6c0",
+          "#a04000",
           "8",
-          "#d093b5",
+          "#884ea0",
           "9",
-          "#b0a377",
+          "#2874a6",
           "10",
-          "#9cb0e0",
+          "#7d8f2f",
           "11",
-          "#e0b394",
+          "#b03a5b",
           "12",
-          "#88b8a3",
+          "#3b6f43",
           "13",
-          "#c99ac0",
+          "#b7752c",
           "14",
-          "#adc487",
+          "#4a5d8f",
           "#9aa3a8"
         ],
-        "fill-opacity": 0.6,
-        "fill-outline-color": "#FFFFFF"
+        "fill-opacity": 0.72,
+        "fill-outline-color": "#174054"
       }
     },
     {
@@ -108,8 +108,8 @@
       "source": "data",
       "source-layer": "wards",
       "paint": {
-        "line-color": "#FFFFFF",
-        "line-width": 1.2,
+        "line-color": "#174054",
+        "line-width": 2.5,
         "line-opacity": 1.0
       }
     },
@@ -127,7 +127,7 @@
         "text-font": [
           "Noto Sans Regular"
         ],
-        "text-size": 12,
+        "text-size": 13,
         "text-max-width": 9
       },
       "paint": {
