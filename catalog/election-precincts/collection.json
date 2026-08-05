@@ -1,0 +1,200 @@
+{
+  "type": "Collection",
+  "id": "election-precincts",
+  "stac_version": "1.1.0",
+  "description": "Wards & current election precincts for the City of St. Louis.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown",
+      "title": "Agent/LLM usage guide"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "./election-precincts.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "pmtiles:layers": [
+        "election-precincts"
+      ]
+    },
+    {
+      "rel": "license",
+      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=124",
+      "type": "text/html",
+      "title": "Dataset page on the City of St. Louis open data portal"
+    },
+    {
+      "rel": "via",
+      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=124",
+      "type": "text/html",
+      "title": "Source dataset on stlouis-mo.gov"
+    },
+    {
+      "rel": "describedby",
+      "href": "./README.md",
+      "type": "text/markdown"
+    }
+  ],
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
+  ],
+  "geoparquet:geometry_type": "Polygon",
+  "geoparquet:feature_count": 209,
+  "table:row_count": 209,
+  "table:primary_geometry": "geometry",
+  "table:columns": [
+    {
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "name": "globalid",
+      "type": "string"
+    },
+    {
+      "name": "geometry",
+      "type": "binary"
+    },
+    {
+      "name": "geometry_bbox",
+      "type": "struct<xmin: float not null, ymin: float not null, xmax: float not null, ymax: float not null>"
+    }
+  ],
+  "portolan:total_size_bytes": 939891,
+  "portolan:asset_count": 7,
+  "portolan:styles": [
+    "styles/default",
+    "styles/style-boundaries",
+    "styles/style-tint"
+  ],
+  "updated": "2026-08-05T01:13:22+00:00",
+  "title": "Election Wards & Precincts",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -90.32051059298894,
+          38.532024890458636,
+          -90.16636362934655,
+          38.774375299544545
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "license": "other",
+  "providers": [
+    {
+      "name": "City of St. Louis \u2014 Board of Election Commissioners",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=124"
+    },
+    {
+      "name": "TGE Labs",
+      "roles": [
+        "host"
+      ],
+      "url": "https://github.com/cholmes/portolan-catalog-stlouis"
+    }
+  ],
+  "assets": {
+    "election-precincts": {
+      "href": "./election-precincts.parquet",
+      "type": "application/vnd.apache.parquet",
+      "title": "Election Wards & Precincts (GeoParquet)",
+      "file:size": 283116,
+      "file:checksum": "1220eb483e9f543ae7f3dc75d38eb5cb7ac7426e64a1b7fb0d3369f3b52a524bb0e1",
+      "roles": [
+        "data"
+      ]
+    },
+    "election-precincts-tiles": {
+      "href": "./election-precincts.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "election-precincts (vector tiles)",
+      "file:size": 292105,
+      "file:checksum": "12204325b96a44336adaadaf05e1cdb7ea0ae08f45d1660769af5d769045e4a7ac15",
+      "roles": [
+        "visual"
+      ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Election precincts",
+      "roles": [
+        "default",
+        "style"
+      ],
+      "description": "The 209 current voting precincts, labeled 'W <ward> P <precinct>'.",
+      "file:size": 1271,
+      "file:checksum": "1220b436e5e784df275129e7647a313b10a1ee48d26038e291930b388c2b03790f41"
+    },
+    "styles/style-boundaries": {
+      "href": "./styles/style-boundaries.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Precinct boundaries",
+      "roles": [
+        "style"
+      ],
+      "description": "Outlines only.",
+      "file:size": 482,
+      "file:checksum": "122014e0271561215e79e81a8817f57542ee436f10f3ea29dd6bb37d76237e9d2543"
+    },
+    "styles/style-tint": {
+      "href": "./styles/style-tint.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Tinted precincts",
+      "roles": [
+        "style"
+      ],
+      "description": "Solid light fill for reference.",
+      "file:size": 510,
+      "file:checksum": "122016607d559e27a327b45c2fec416c6bcf21763247f3dd0873f9ce89b6be564731"
+    },
+    "documentation": {
+      "href": "./README.md",
+      "type": "text/markdown",
+      "file:size": 2269,
+      "file:checksum": "12201e7cd2162e9b52f8410393d5bd7b5c56b605f933e8433204ac7d1b706cb7c838",
+      "roles": [
+        "documentation"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "file:size": 360230,
+      "file:checksum": "12206d689e28214ec953d64989c3318ff836453a4ab2bd9ce639e60627a20ac2c465",
+      "roles": [
+        "thumbnail"
+      ]
+    }
+  }
+}

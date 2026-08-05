@@ -1,0 +1,41 @@
+{
+  "extraction_date": "2026-08-05T01:07:29.066407+00:00",
+  "source_url": "https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/Streets/FeatureServer",
+  "portolan_version": "0.7.0",
+  "gpio_version": "1.3.0",
+  "metadata_extracted": {
+    "source_url": "https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/Streets/FeatureServer",
+    "description": null,
+    "attribution": null,
+    "keywords": [
+      "street",
+      "interstate"
+    ],
+    "contact_name": null,
+    "processing_notes": null,
+    "known_issues": null,
+    "license_info_raw": null
+  },
+  "layers": [
+    {
+      "id": 3,
+      "name": "STREETS",
+      "status": "success",
+      "warnings": [],
+      "attempts": 1,
+      "features": 19858,
+      "size_bytes": 2106949,
+      "duration_seconds": 14.493818833958358,
+      "output_path": "streets/streets.parquet"
+    }
+  ],
+  "summary": {
+    "total_layers": 1,
+    "succeeded": 1,
+    "failed": 0,
+    "skipped": 0,
+    "total_features": 19858,
+    "total_size_bytes": 2106949,
+    "total_duration_seconds": 14.493818833958358
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "version": 8,
+  "name": "Categorical Style",
+  "sources": {
+    "data": {
+      "type": "vector"
+    }
+  },
+  "layers": [
+    {
+      "id": "categorical-fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "tif-districts",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "Incentive_Status"
+          ],
+          "Active",
+          "#149ecc",
+          "Terminated",
+          "#eb5252",
+          "Never Approved",
+          "#a9c238",
+          "Retired",
+          "#7d7d7d",
+          "On Hold",
+          "#fa9120",
+          "MODESA",
+          "#ffdc42",
+          "#cccccc"
+        ],
+        "fill-opacity": 0.4980392156862745
+      }
+    }
+  ]
+}

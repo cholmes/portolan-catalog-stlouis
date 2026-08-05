@@ -1,0 +1,353 @@
+{
+  "type": "Collection",
+  "id": "city-blocks",
+  "stac_version": "1.1.0",
+  "description": "Information about city blocks. A city block, residential block, urban block, or simply \"block\" is a central element of urban planning and urban design.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "./city-blocks.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "pmtiles:layers": [
+        "city-blocks"
+      ]
+    },
+    {
+      "rel": "license",
+      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=12",
+      "type": "text/html",
+      "title": "Dataset page on the City of St. Louis open data portal"
+    },
+    {
+      "rel": "via",
+      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=12",
+      "type": "text/html",
+      "title": "Source dataset on stlouis-mo.gov"
+    },
+    {
+      "rel": "via",
+      "href": "https://maps8.stlouis-mo.gov/arcgis/rest/services/STLOUIS/BOUNDARIES/MapServer",
+      "type": "text/html",
+      "title": "Source ArcGIS service"
+    },
+    {
+      "rel": "describedby",
+      "href": "./README.md",
+      "type": "text/markdown"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown"
+    }
+  ],
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
+  ],
+  "geoparquet:geometry_type": "MultiPolygon",
+  "geoparquet:feature_count": 5857,
+  "table:row_count": 5857,
+  "table:primary_geometry": "geometry",
+  "table:columns": [
+    {
+      "name": "OBJECTID",
+      "type": "int64"
+    },
+    {
+      "name": "Join_Count",
+      "type": "int32"
+    },
+    {
+      "name": "TARGET_FID",
+      "type": "int32"
+    },
+    {
+      "name": "Name",
+      "type": "string"
+    },
+    {
+      "name": "BLOCK_HANDLE",
+      "type": "string"
+    },
+    {
+      "name": "GeoCityBlockPart",
+      "type": "double"
+    },
+    {
+      "name": "WARD10",
+      "type": "int16"
+    },
+    {
+      "name": "PRECINCT10",
+      "type": "int16"
+    },
+    {
+      "name": "INSPAREA10",
+      "type": "int16"
+    },
+    {
+      "name": "Ward00",
+      "type": "int16"
+    },
+    {
+      "name": "PRECINCT02",
+      "type": "int16"
+    },
+    {
+      "name": "PRECINCT04",
+      "type": "int16"
+    },
+    {
+      "name": "NBRHD",
+      "type": "int16"
+    },
+    {
+      "name": "CDADIST",
+      "type": "int16"
+    },
+    {
+      "name": "CDASUBDIST",
+      "type": "int16"
+    },
+    {
+      "name": "POLICEDIST",
+      "type": "int16"
+    },
+    {
+      "name": "CensTract10",
+      "type": "double"
+    },
+    {
+      "name": "CensBlock10",
+      "type": "int16"
+    },
+    {
+      "name": "CensBlock00",
+      "type": "double"
+    },
+    {
+      "name": "Ward90",
+      "type": "int16"
+    },
+    {
+      "name": "Precinct90",
+      "type": "int16"
+    },
+    {
+      "name": "CensBlock90",
+      "type": "double"
+    },
+    {
+      "name": "HouseConsDist",
+      "type": "int16"
+    },
+    {
+      "name": "ASRNBRHD",
+      "type": "int16"
+    },
+    {
+      "name": "EntZone",
+      "type": "int16"
+    },
+    {
+      "name": "IMPACTAREA",
+      "type": "int16"
+    },
+    {
+      "name": "CTDArea",
+      "type": "int16"
+    },
+    {
+      "name": "OnFloodBlock",
+      "type": "int16"
+    },
+    {
+      "name": "SpecBusDist3",
+      "type": "int16"
+    },
+    {
+      "name": "Ward20",
+      "type": "int16"
+    },
+    {
+      "name": "Precinct20",
+      "type": "int16"
+    },
+    {
+      "name": "InspArea20",
+      "type": "int16"
+    },
+    {
+      "name": "CensTract20",
+      "type": "int16"
+    },
+    {
+      "name": "CensBlock20",
+      "type": "int16"
+    },
+    {
+      "name": "MaintZoneWC",
+      "type": "int16"
+    },
+    {
+      "name": "TransDevDist",
+      "type": "int16"
+    },
+    {
+      "name": "Shape",
+      "type": "binary"
+    },
+    {
+      "name": "Shape_Length",
+      "type": "double"
+    },
+    {
+      "name": "Shape_Area",
+      "type": "double"
+    },
+    {
+      "name": "geometry",
+      "type": "binary"
+    },
+    {
+      "name": "geometry_bbox",
+      "type": "struct<xmin: float not null, ymin: float not null, xmax: float not null, ymax: float not null>"
+    }
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -90.32058220569718,
+          38.53358364730386,
+          -90.1753971881761,
+          38.774362902635474
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "license": "other",
+  "assets": {
+    "city-blocks": {
+      "href": "./city-blocks.parquet",
+      "type": "application/vnd.apache.parquet",
+      "roles": [
+        "data"
+      ],
+      "title": "City Blocks (GeoParquet)",
+      "file:size": 7161540,
+      "file:checksum": "1220c1b9077f6c49e4eb307dcba065c9776f66e23c77d82f6a47cb0e2d995e2f99d6"
+    },
+    "city-blocks-tiles": {
+      "href": "./city-blocks.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "city-blocks (vector tiles)",
+      "roles": [
+        "visual"
+      ],
+      "file:size": 5949650,
+      "file:checksum": "12201b504cbe9ea5fb1e7114f0d317dca6081261c1eb9aee73fd31079b59ef85034e"
+    },
+    "styles/city-renderer": {
+      "href": "./styles/city-renderer.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "City renderer",
+      "roles": [
+        "style"
+      ],
+      "file:size": 533,
+      "file:checksum": "1220d9fd71626289e3f657af2d40f2b02dd1f0ae6fdd0ce523b126863985fbbaa67d",
+      "description": "The city's own symbology, extracted from the source ArcGIS renderer."
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "City blocks",
+      "roles": [
+        "default",
+        "style"
+      ],
+      "description": "The city's 5,857 numbered blocks as a hairline mesh.",
+      "file:size": 498,
+      "file:checksum": "12200af8636b14c3e77a6dc4cd10ba5474aedafd6fd0177ea41bea5a5c3f4b4064f2"
+    },
+    "styles/style-block-number": {
+      "href": "./styles/style-block-number.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "style"
+      ],
+      "title": "Block numbering",
+      "description": "Block numbers in steps \u2014 numbering began downtown by the river and grew outward, so the gradient replays the city's expansion.",
+      "file:size": 1425,
+      "file:checksum": "12205bcd2c5f30e0c034ab9bfd26ffe65b4ee6243cc3092060b0085e847e5c967433"
+    },
+    "styles/style-tint": {
+      "href": "./styles/style-tint.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "style"
+      ],
+      "title": "Tinted blocks",
+      "description": "Light fill with block outlines for reference use.",
+      "file:size": 511,
+      "file:checksum": "1220bb0e5e3f62df9ee0e7d27adbdcdd89dd620c6b99153f4edbd12b7c3e5bb05d73"
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ],
+      "title": "City Blocks rendered with the default style",
+      "file:size": 392631,
+      "file:checksum": "12206d6bf9f3135d595fd02315ed92c15455f50df753795a67a815aaff0d859209cd"
+    }
+  },
+  "portolan:styles": [
+    "styles/default",
+    "styles/city-renderer"
+  ],
+  "title": "City Blocks",
+  "updated": "2026-08-05T01:13:22+00:00",
+  "providers": [
+    {
+      "name": "City of St. Louis \u2014 Assessor's Office",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=12"
+    },
+    {
+      "name": "TGE Labs",
+      "roles": [
+        "host"
+      ],
+      "url": "https://github.com/cholmes/portolan-catalog-stlouis"
+    }
+  ]
+}

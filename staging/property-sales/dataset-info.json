@@ -1,0 +1,18 @@
+{
+ "collection": "property-sales",
+ "title": "Property Sales",
+ "portal_page": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=31",
+ "department": "Assessor's Office",
+ "source": "https://www.stlouis-mo.gov/data/upload/data-files/prclsale.zip",
+ "source_type": "static",
+ "synced": "2026-08-05T01:04:57+00:00",
+ "fetch": {
+  "status": "ok",
+  "file": "prclsale.zip",
+  "sha256": "0f98ee3c4c4e08a02a8bc35377cbafd9db66f063e60c19b847d05e6fa8e99c6a",
+  "bytes": 6704887,
+  "unpacked": [
+   "prclsale.mdb"
+  ]
+ }
+}

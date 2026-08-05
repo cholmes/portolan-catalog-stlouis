@@ -1,0 +1,14 @@
+title: "CSB Service Requests (311)"
+description: "The Citizens' Service Bureau (CSB) is the customer service department for the City of St. Louis. This dataset provides access to some of the data collected when services are requested. The X/Y coordinates are in WGS 84 Web Mercator (EPSG:3857). File new service request here: https://www.stlouis-mo.gov/government/departments/public-safety/neighborhood-stabilization-office/citizens-service-bureau/csb-request-submit.cfm"
+contact:
+  name: "Chris Holmes"
+  email: "cholmes@9eo.org"
+license: "other"
+license_url: "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5"
+attribution: "City of St. Louis — Neighborhood Stabilization / CSB"
+source_url: "https://www.stlouis-mo.gov/data/upload/data-files/csb.zip"
+keywords: [st-louis, missouri, open-data, csb, 311, requests]
+processing_notes: |
+  Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5).
+  Source: https://www.stlouis-mo.gov/data/upload/data-files/csb.zip (portal download),
+  converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.

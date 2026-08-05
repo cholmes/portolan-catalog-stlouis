@@ -1,0 +1,45 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.1",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-05T01:18:33.847110Z",
+      "breaking": false,
+      "assets": {
+        "police-districts.parquet": {
+          "sha256": "c60e6203340887c0715fa6e81d6157a32d40be7417f7a0ce05ddf2579cb32030",
+          "size_bytes": 16896,
+          "href": "police-districts/police-districts.parquet",
+          "mtime": 1785892491.2398744
+        }
+      },
+      "changes": [
+        "police-districts.parquet"
+      ]
+    },
+    {
+      "version": "1.0.1",
+      "created": "2026-08-05T01:22:30.806154Z",
+      "breaking": false,
+      "assets": {
+        "police-districts.parquet": {
+          "sha256": "c60e6203340887c0715fa6e81d6157a32d40be7417f7a0ce05ddf2579cb32030",
+          "size_bytes": 16896,
+          "href": "police-districts/police-districts.parquet",
+          "mtime": 1785892491.2398744
+        },
+        "police-districts.pmtiles": {
+          "sha256": "ec123d6aaca8e0142f98121ba34e37d54d6cf9d0d28cdd4972fb57fa3934bb7a",
+          "size_bytes": 14092,
+          "href": "police-districts/police-districts.pmtiles",
+          "mtime": 1785892950.8021722
+        }
+      },
+      "changes": [
+        "police-districts.pmtiles"
+      ],
+      "message": "Generated PMTiles: police-districts.pmtiles"
+    }
+  ]
+}

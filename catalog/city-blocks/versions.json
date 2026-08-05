@@ -1,0 +1,45 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.1",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-05T01:18:33.803549Z",
+      "breaking": false,
+      "assets": {
+        "city-blocks.parquet": {
+          "sha256": "c1b9077f6c49e4eb307dcba065c9776f66e23c77d82f6a47cb0e2d995e2f99d6",
+          "size_bytes": 7161540,
+          "href": "city-blocks/city-blocks.parquet",
+          "mtime": 1785892490.574104
+        }
+      },
+      "changes": [
+        "city-blocks.parquet"
+      ]
+    },
+    {
+      "version": "1.0.1",
+      "created": "2026-08-05T01:20:23.278296Z",
+      "breaking": false,
+      "assets": {
+        "city-blocks.parquet": {
+          "sha256": "c1b9077f6c49e4eb307dcba065c9776f66e23c77d82f6a47cb0e2d995e2f99d6",
+          "size_bytes": 7161540,
+          "href": "city-blocks/city-blocks.parquet",
+          "mtime": 1785892490.574104
+        },
+        "city-blocks.pmtiles": {
+          "sha256": "1b504cbe9ea5fb1e7114f0d317dca6081261c1eb9aee73fd31079b59ef85034e",
+          "size_bytes": 5949650,
+          "href": "city-blocks/city-blocks.pmtiles",
+          "mtime": 1785892823.264055
+        }
+      },
+      "changes": [
+        "city-blocks.pmtiles"
+      ],
+      "message": "Generated PMTiles: city-blocks.pmtiles"
+    }
+  ]
+}

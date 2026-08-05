@@ -1,0 +1,158 @@
+{
+  "type": "Collection",
+  "id": "property-sales",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json"
+  ],
+  "description": "Dataset describes real estate sale prices for recent property sales in the city. A separate table describes codes for different type of sales.",
+  "license": "other",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -90.320522,
+          38.531907,
+          -90.166409,
+          38.774362
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "1986-12-31T00:00:00Z",
+          "2026-01-01T00:00:00Z"
+        ]
+      ]
+    }
+  },
+  "table:row_count": 191829,
+  "table:columns": [
+    {
+      "name": "CityBlock",
+      "type": "double"
+    },
+    {
+      "name": "Parcel",
+      "type": "int64"
+    },
+    {
+      "name": "OwnerCode",
+      "type": "int64"
+    },
+    {
+      "name": "SaleNum",
+      "type": "int64"
+    },
+    {
+      "name": "AsrParcelId",
+      "type": "string"
+    },
+    {
+      "name": "SaleType",
+      "type": "int64"
+    },
+    {
+      "name": "SaleTypeOther",
+      "type": "string"
+    },
+    {
+      "name": "SaleDate",
+      "type": "string"
+    },
+    {
+      "name": "SalePrice",
+      "type": "double"
+    },
+    {
+      "name": "NbrOfParcels",
+      "type": "int64"
+    },
+    {
+      "name": "SalePricePerParcel",
+      "type": "double"
+    },
+    {
+      "name": "SaleDocNum",
+      "type": "int64"
+    },
+    {
+      "name": "LRMSSaleDate",
+      "type": "string"
+    },
+    {
+      "name": "SaleTypeDescr",
+      "type": "string"
+    }
+  ],
+  "links": [
+    {
+      "rel": "root",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
+    },
+    {
+      "rel": "describedby",
+      "href": "./README.md",
+      "type": "text/markdown"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown"
+    },
+    {
+      "rel": "license",
+      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=31",
+      "type": "text/html",
+      "title": "Dataset page on the City of St. Louis open data portal"
+    },
+    {
+      "rel": "via",
+      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=31",
+      "type": "text/html",
+      "title": "Source dataset on stlouis-mo.gov"
+    }
+  ],
+  "assets": {
+    "property-sales": {
+      "href": "./property-sales.parquet",
+      "type": "application/vnd.apache.parquet",
+      "roles": [
+        "data"
+      ],
+      "title": "Property sales (Parquet)",
+      "file:size": 2462849,
+      "file:checksum": "122075bf909a9474e0f8d730a68cf37afd23b12f23ad60aa2bac77f799757497a327"
+    }
+  },
+  "title": "Property Sales",
+  "updated": "2026-08-05T01:13:22+00:00",
+  "providers": [
+    {
+      "name": "City of St. Louis \u2014 Assessor's Office",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=31"
+    },
+    {
+      "name": "TGE Labs",
+      "roles": [
+        "host"
+      ],
+      "url": "https://github.com/cholmes/portolan-catalog-stlouis"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "extraction_date": "2026-08-05T01:07:12.160416+00:00",
+  "source_url": "https://maps8.stlouis-mo.gov/arcgis/rest/services/STLOUIS/BOUNDARIES/MapServer",
+  "portolan_version": "0.7.0",
+  "gpio_version": "1.3.0",
+  "metadata_extracted": {
+    "source_url": "https://maps8.stlouis-mo.gov/arcgis/rest/services/STLOUIS/BOUNDARIES/MapServer",
+    "description": "NOTE: Statically published. Must be republished for updates.",
+    "attribution": null,
+    "keywords": [
+      "boundaries",
+      "costl",
+      "city of st. louis"
+    ],
+    "contact_name": null,
+    "processing_notes": "NOTE: Statically published. Must be republished for updates.",
+    "known_issues": null,
+    "license_info_raw": null
+  },
+  "layers": [
+    {
+      "id": 7,
+      "name": "City Blocks",
+      "status": "success",
+      "warnings": [],
+      "attempts": 1,
+      "features": 5857,
+      "size_bytes": 6792865,
+      "duration_seconds": 8.52309454092756,
+      "output_path": "city_blocks/city_blocks.parquet"
+    }
+  ],
+  "summary": {
+    "total_layers": 1,
+    "succeeded": 1,
+    "failed": 0,
+    "skipped": 0,
+    "total_features": 5857,
+    "total_size_bytes": 6792865,
+    "total_duration_seconds": 8.52309454092756
+  }
+}

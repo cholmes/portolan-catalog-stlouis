@@ -1,0 +1,50 @@
+{
+ "collection": "police-districts",
+ "title": "Police District Boundaries",
+ "portal_page": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=83",
+ "department": "Police Department",
+ "source": "https://maps8.stlouis-mo.gov/arcgis/rest/services/STLOUIS/POLICE_DISTRICT/FeatureServer",
+ "source_type": "arcgis",
+ "synced": "2026-08-05T01:04:57+00:00",
+ "fetch": {
+  "status": "ok",
+  "parquets": [
+   "staging/extracts/police-districts/police_district/police_district.parquet"
+  ],
+  "layer_url": "https://maps8.stlouis-mo.gov/arcgis/rest/services/STLOUIS/POLICE_DISTRICT/FeatureServer/0",
+  "layer_description": null,
+  "fields": [
+   {
+    "name": "OBJECTID",
+    "alias": "OBJECTID",
+    "type": "esriFieldTypeOID"
+   },
+   {
+    "name": "DISTNO",
+    "alias": "DISTNO",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "ID1",
+    "alias": "ID1",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "DISTNUM",
+    "alias": "DISTNUM",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Shape__Area",
+    "alias": "Shape.STArea()",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Shape__Length",
+    "alias": "Shape.STLength()",
+    "type": "esriFieldTypeDouble"
+   }
+  ],
+  "city_style": "staging/extracts/police-districts/styles/city-renderer.json"
+ }
+}

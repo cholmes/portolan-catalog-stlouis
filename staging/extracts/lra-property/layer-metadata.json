@@ -1,0 +1,3214 @@
+{
+ "currentVersion": 11.2,
+ "cimVersion": "3.2.0",
+ "id": 0,
+ "name": "LRA Inventory",
+ "type": "Feature Layer",
+ "parentLayer": null,
+ "defaultVisibility": true,
+ "minScale": 0,
+ "maxScale": 0,
+ "canScaleSymbols": false,
+ "geometryType": "esriGeometryPolygon",
+ "description": "",
+ "copyrightText": "",
+ "editFieldsInfo": null,
+ "ownershipBasedAccessControlForFeatures": null,
+ "syncCanReturnChanges": false,
+ "relationships": [],
+ "isDataVersioned": false,
+ "isDataArchived": false,
+ "infoInEstimates": [
+  "extent",
+  "count"
+ ],
+ "isDataBranchVersioned": false,
+ "isDataReplicaTracked": false,
+ "isCoGoEnabled": false,
+ "supportsRollbackOnFailureParameter": true,
+ "archivingInfo": {
+  "supportsQueryWithHistoricMoment": false,
+  "startArchivingMoment": -1
+ },
+ "supportsStatistics": true,
+ "supportsExceedsLimitStatistics": true,
+ "supportsAdvancedQueries": true,
+ "supportsValidateSQL": true,
+ "supportsCoordinatesQuantization": true,
+ "supportsQuantizationEditMode": true,
+ "supportsCalculate": true,
+ "supportsASyncCalculate": true,
+ "supportsDatumTransformation": true,
+ "advancedQueryCapabilities": {
+  "supportsPagination": true,
+  "supportsTrueCurve": true,
+  "supportsQueryWithDistance": true,
+  "supportsReturningQueryExtent": true,
+  "supportsStatistics": true,
+  "supportsPercentileStatistics": true,
+  "supportsHavingClause": true,
+  "supportsOrderBy": true,
+  "supportsDistinct": true,
+  "supportsCountDistinct": true,
+  "supportsAdvancedQueryRelated": true,
+  "supportsQueryRelatedPagination": true,
+  "supportsCurrentUserQueries": true,
+  "supportsQueryWithResultType": true,
+  "supportsReturningGeometryCentroid": true,
+  "supportsSqlExpression": true,
+  "supportsQueryWithDatumTransformation": true,
+  "supportsLod": false,
+  "supportsQueryWithLodSR": false,
+  "supportsQueryAnalytic": true
+ },
+ "advancedQueryAnalyticCapabilities": {
+  "supportsLinearRegression": true,
+  "supportsAsync": false,
+  "supportsPercentileAnalytic": true
+ },
+ "advancedEditingCapabilities": {
+  "supportedSqlFormatsInCalculate": [
+   "standard"
+  ],
+  "supportsAsyncApplyEdits": true,
+  "supportsApplyEditsbyUploadID": true,
+  "supportedApplyEditsUploadIDFormats": "JSON"
+ },
+ "hasGeometryProperties": true,
+ "geometryProperties": {
+  "shapeAreaFieldName": "Shape__Area",
+  "shapeLengthFieldName": "Shape__Length",
+  "units": "esriMeters"
+ },
+ "hasMetadata": true,
+ "extent": {
+  "xmin": -10053484.242661506,
+  "ymin": 4657783.928114528,
+  "xmax": -10039618.331395306,
+  "ymax": 4681840.861753457,
+  "spatialReference": {
+   "wkid": 102100,
+   "latestWkid": 3857,
+   "xyTolerance": 0.001,
+   "zTolerance": 0.001,
+   "mTolerance": 0.001,
+   "falseX": -20037700,
+   "falseY": -30241100,
+   "xyUnits": 148923141.92838538,
+   "falseZ": -100000,
+   "zUnits": 10000,
+   "falseM": -100000,
+   "mUnits": 10000
+  }
+ },
+ "sourceSpatialReference": {
+  "wkid": 102696,
+  "latestWkid": 102696,
+  "xyTolerance": 0.003280833333333333,
+  "zTolerance": 0.001,
+  "mTolerance": 0.001,
+  "falseX": -17627100,
+  "falseY": -45827300,
+  "xyUnits": 3048.0060960121928,
+  "falseZ": 0,
+  "zUnits": 1,
+  "falseM": 0,
+  "mUnits": 1
+ },
+ "drawingInfo": {
+  "renderer": {
+   "type": "uniqueValue",
+   "field1": "Case_Status",
+   "uniqueValueGroups": [
+    {
+     "heading": "Case_Status",
+     "classes": [
+      {
+       "label": "Available",
+       "description": "Available",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         95,
+         173,
+         81,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          110,
+          110,
+          110,
+          255
+         ],
+         "width": 0.7
+        }
+       },
+       "values": [
+        [
+         "Available"
+        ]
+       ]
+      },
+      {
+       "label": "CDA Option",
+       "description": "CDA Option",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         107,
+         242,
+         109,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          110,
+          110,
+          110,
+          255
+         ],
+         "width": 0.7
+        }
+       },
+       "values": [
+        [
+         "CDA Option"
+        ]
+       ]
+      },
+      {
+       "label": "Development Hold",
+       "description": "Development Hold",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         96,
+         195,
+         247,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          110,
+          110,
+          110,
+          255
+         ],
+         "width": 0.7
+        }
+       },
+       "values": [
+        [
+         "Development Hold"
+        ]
+       ]
+      },
+      {
+       "label": "Garden Lease",
+       "description": "Garden Lease",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         0,
+         149,
+         168,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          110,
+          110,
+          110,
+          255
+         ],
+         "width": 0.7
+        }
+       },
+       "values": [
+        [
+         "Garden Lease"
+        ]
+       ]
+      },
+      {
+       "label": "Greenspace Hold",
+       "description": "Greenspace Hold",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         197,
+         0,
+         255,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          110,
+          110,
+          110,
+          255
+         ],
+         "width": 0.7
+        }
+       },
+       "values": [
+        [
+         "Greenspace Hold"
+        ]
+       ]
+      },
+      {
+       "label": "Lease",
+       "description": "Lease",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         214,
+         157,
+         188,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          110,
+          110,
+          110,
+          255
+         ],
+         "width": 0.7
+        }
+       },
+       "values": [
+        [
+         "Lease"
+        ]
+       ]
+      },
+      {
+       "label": "Legal Hold",
+       "description": "Legal Hold",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         88,
+         76,
+         133,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          110,
+          110,
+          110,
+          255
+         ],
+         "width": 0.7
+        }
+       },
+       "values": [
+        [
+         "Legal Hold"
+        ]
+       ]
+      },
+      {
+       "label": "Offer",
+       "description": "Offer",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         255,
+         170,
+         0,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          110,
+          110,
+          110,
+          255
+         ],
+         "width": 0.7
+        }
+       },
+       "values": [
+        [
+         "Offer"
+        ]
+       ]
+      },
+      {
+       "label": "Option",
+       "description": "Option",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         242,
+         115,
+         92,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          110,
+          110,
+          110,
+          255
+         ],
+         "width": 0.7
+        }
+       },
+       "values": [
+        [
+         "Option"
+        ]
+       ]
+      },
+      {
+       "label": "PROPNS",
+       "description": "PROPNS",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         168,
+         168,
+         0,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          110,
+          110,
+          110,
+          255
+         ],
+         "width": 0.7
+        }
+       },
+       "values": [
+        [
+         "PROPNS"
+        ]
+       ]
+      },
+      {
+       "label": "PROPNS Available",
+       "description": "PROPNS Available",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         255,
+         255,
+         115,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          110,
+          110,
+          110,
+          255
+         ],
+         "width": 0.7
+        }
+       },
+       "values": [
+        [
+         "PROPNS Available"
+        ]
+       ]
+      },
+      {
+       "label": "Pending Closed",
+       "description": "Pending Closed",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         157,
+         145,
+         242,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          110,
+          110,
+          110,
+          255
+         ],
+         "width": 0.7
+        }
+       },
+       "values": [
+        [
+         "Pending Closed"
+        ]
+       ]
+      },
+      {
+       "label": "Unavailable",
+       "description": "Unavailable",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         168,
+         115,
+         62,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          110,
+          110,
+          110,
+          255
+         ],
+         "width": 0.7
+        }
+       },
+       "values": [
+        [
+         "Unavailable"
+        ]
+       ]
+      },
+      {
+       "label": "Unknown",
+       "description": "Unknown",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         255,
+         115,
+         223,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          110,
+          110,
+          110,
+          255
+         ],
+         "width": 0.7
+        }
+       },
+       "values": [
+        [
+         "Unknown"
+        ]
+       ]
+      },
+      {
+       "label": "SOLD (Title Issue)",
+       "description": "SOLD (Title Issue)",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         148,
+         68,
+         80,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          110,
+          110,
+          110,
+          255
+         ],
+         "width": 0.7
+        }
+       },
+       "values": [
+        [
+         "SOLD"
+        ]
+       ]
+      }
+     ]
+    }
+   ],
+   "uniqueValueInfos": [
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       95,
+       173,
+       81,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        110,
+        110,
+        110,
+        255
+       ],
+       "width": 0.7
+      }
+     },
+     "value": "Available",
+     "label": "Available"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       107,
+       242,
+       109,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        110,
+        110,
+        110,
+        255
+       ],
+       "width": 0.7
+      }
+     },
+     "value": "CDA Option",
+     "label": "CDA Option"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       96,
+       195,
+       247,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        110,
+        110,
+        110,
+        255
+       ],
+       "width": 0.7
+      }
+     },
+     "value": "Development Hold",
+     "label": "Development Hold"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       0,
+       149,
+       168,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        110,
+        110,
+        110,
+        255
+       ],
+       "width": 0.7
+      }
+     },
+     "value": "Garden Lease",
+     "label": "Garden Lease"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       197,
+       0,
+       255,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        110,
+        110,
+        110,
+        255
+       ],
+       "width": 0.7
+      }
+     },
+     "value": "Greenspace Hold",
+     "label": "Greenspace Hold"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       214,
+       157,
+       188,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        110,
+        110,
+        110,
+        255
+       ],
+       "width": 0.7
+      }
+     },
+     "value": "Lease",
+     "label": "Lease"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       88,
+       76,
+       133,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        110,
+        110,
+        110,
+        255
+       ],
+       "width": 0.7
+      }
+     },
+     "value": "Legal Hold",
+     "label": "Legal Hold"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       255,
+       170,
+       0,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        110,
+        110,
+        110,
+        255
+       ],
+       "width": 0.7
+      }
+     },
+     "value": "Offer",
+     "label": "Offer"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       242,
+       115,
+       92,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        110,
+        110,
+        110,
+        255
+       ],
+       "width": 0.7
+      }
+     },
+     "value": "Option",
+     "label": "Option"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       168,
+       168,
+       0,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        110,
+        110,
+        110,
+        255
+       ],
+       "width": 0.7
+      }
+     },
+     "value": "PROPNS",
+     "label": "PROPNS"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       255,
+       255,
+       115,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        110,
+        110,
+        110,
+        255
+       ],
+       "width": 0.7
+      }
+     },
+     "value": "PROPNS Available",
+     "label": "PROPNS Available"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       157,
+       145,
+       242,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        110,
+        110,
+        110,
+        255
+       ],
+       "width": 0.7
+      }
+     },
+     "value": "Pending Closed",
+     "label": "Pending Closed"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       168,
+       115,
+       62,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        110,
+        110,
+        110,
+        255
+       ],
+       "width": 0.7
+      }
+     },
+     "value": "Unavailable",
+     "label": "Unavailable"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       255,
+       115,
+       223,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        110,
+        110,
+        110,
+        255
+       ],
+       "width": 0.7
+      }
+     },
+     "value": "Unknown",
+     "label": "Unknown"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       148,
+       68,
+       80,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        110,
+        110,
+        110,
+        255
+       ],
+       "width": 0.7
+      }
+     },
+     "value": "SOLD",
+     "label": "SOLD (Title Issue)"
+    }
+   ],
+   "fieldDelimiter": ",",
+   "authoringInfo": {
+    "colorRamp": {
+     "type": "multipart",
+     "colorRamps": [
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        66,
+        88,
+        135,
+        255
+       ],
+       "toColor": [
+        66,
+        88,
+        135,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        154,
+        245,
+        93,
+        255
+       ],
+       "toColor": [
+        154,
+        245,
+        93,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        247,
+        156,
+        126,
+        255
+       ],
+       "toColor": [
+        247,
+        156,
+        126,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        247,
+        87,
+        234,
+        255
+       ],
+       "toColor": [
+        247,
+        87,
+        234,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        111,
+        237,
+        220,
+        255
+       ],
+       "toColor": [
+        111,
+        237,
+        220,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        107,
+        133,
+        68,
+        255
+       ],
+       "toColor": [
+        107,
+        133,
+        68,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        245,
+        162,
+        217,
+        255
+       ],
+       "toColor": [
+        245,
+        162,
+        217,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        92,
+        72,
+        207,
+        255
+       ],
+       "toColor": [
+        92,
+        72,
+        207,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        130,
+        46,
+        58,
+        255
+       ],
+       "toColor": [
+        130,
+        46,
+        58,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        227,
+        227,
+        129,
+        255
+       ],
+       "toColor": [
+        227,
+        227,
+        129,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        162,
+        203,
+        245,
+        255
+       ],
+       "toColor": [
+        162,
+        203,
+        245,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        133,
+        61,
+        123,
+        255
+       ],
+       "toColor": [
+        133,
+        61,
+        123,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        240,
+        84,
+        118,
+        255
+       ],
+       "toColor": [
+        240,
+        84,
+        118,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        59,
+        136,
+        140,
+        255
+       ],
+       "toColor": [
+        59,
+        136,
+        140,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        116,
+        152,
+        242,
+        255
+       ],
+       "toColor": [
+        116,
+        152,
+        242,
+        255
+       ]
+      }
+     ]
+    }
+   }
+  },
+  "scaleSymbols": true,
+  "transparency": 0,
+  "labelingInfo": null
+ },
+ "hasM": false,
+ "hasZ": false,
+ "allowGeometryUpdates": true,
+ "allowTrueCurvesUpdates": true,
+ "onlyAllowTrueCurveUpdatesByTrueCurveClients": true,
+ "hasAttachments": false,
+ "supportsApplyEditsWithGlobalIds": false,
+ "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+ "objectIdField": "OBJECTID",
+ "globalIdField": "",
+ "displayField": "StName",
+ "typeIdField": "Case_Status",
+ "subtypeField": "",
+ "fields": [
+  {
+   "name": "PropNS_Status",
+   "type": "esriFieldTypeString",
+   "alias": "PropNS_Status",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 255,
+   "defaultValue": null,
+   "modelName": "PropNS_Status"
+  },
+  {
+   "name": "Case_Status",
+   "type": "esriFieldTypeString",
+   "alias": "Case_Status",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 255,
+   "defaultValue": null,
+   "modelName": "Case_Status"
+  },
+  {
+   "name": "Address",
+   "type": "esriFieldTypeString",
+   "alias": "Address",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 255,
+   "defaultValue": null,
+   "modelName": "Address"
+  },
+  {
+   "name": "AddrNum",
+   "type": "esriFieldTypeString",
+   "alias": "AddrNum",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 255,
+   "defaultValue": null,
+   "modelName": "AddrNum"
+  },
+  {
+   "name": "LowAddrNum",
+   "type": "esriFieldTypeInteger",
+   "alias": "LowAddrNum",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "LowAddrNum"
+  },
+  {
+   "name": "LowAddrSuf",
+   "type": "esriFieldTypeString",
+   "alias": "LowAddrSuf",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 3,
+   "defaultValue": null,
+   "modelName": "LowAddrSuf"
+  },
+  {
+   "name": "HighAddrNum",
+   "type": "esriFieldTypeInteger",
+   "alias": "HighAddrNum",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "HighAddrNum"
+  },
+  {
+   "name": "HighAddrSuf",
+   "type": "esriFieldTypeString",
+   "alias": "HighAddrSuf",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 3,
+   "defaultValue": null,
+   "modelName": "HighAddrSuf"
+  },
+  {
+   "name": "StPreDir",
+   "type": "esriFieldTypeString",
+   "alias": "StPreDir",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 2,
+   "defaultValue": null,
+   "modelName": "StPreDir"
+  },
+  {
+   "name": "StName",
+   "type": "esriFieldTypeString",
+   "alias": "StName",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 40,
+   "defaultValue": null,
+   "modelName": "StName"
+  },
+  {
+   "name": "StType",
+   "type": "esriFieldTypeString",
+   "alias": "StType",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 4,
+   "defaultValue": null,
+   "modelName": "StType"
+  },
+  {
+   "name": "StSufDir",
+   "type": "esriFieldTypeString",
+   "alias": "StSufDir",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 2,
+   "defaultValue": null,
+   "modelName": "StSufDir"
+  },
+  {
+   "name": "Handle",
+   "type": "esriFieldTypeString",
+   "alias": "Handle",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 50,
+   "defaultValue": null,
+   "modelName": "Handle"
+  },
+  {
+   "name": "CityBlock",
+   "type": "esriFieldTypeDouble",
+   "alias": "CityBlock",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "CityBlock"
+  },
+  {
+   "name": "Parcel",
+   "type": "esriFieldTypeInteger",
+   "alias": "Parcel",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "Parcel"
+  },
+  {
+   "name": "ParcelId",
+   "type": "esriFieldTypeString",
+   "alias": "ParcelId",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 15,
+   "defaultValue": null,
+   "modelName": "ParcelId"
+  },
+  {
+   "name": "GUID",
+   "type": "esriFieldTypeString",
+   "alias": "GUID",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 38,
+   "defaultValue": null,
+   "modelName": "GUID"
+  },
+  {
+   "name": "LRA",
+   "type": "esriFieldTypeString",
+   "alias": "LRA",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 3,
+   "defaultValue": null,
+   "modelName": "LRA"
+  },
+  {
+   "name": "WARD",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "WARD",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "WARD"
+  },
+  {
+   "name": "NEIGHBORHOOD_NUM",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "NEIGHBORHOOD_NUM",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "NEIGHBORHOOD_NUM"
+  },
+  {
+   "name": "ZipCode",
+   "type": "esriFieldTypeDouble",
+   "alias": "ZipCode",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "ZipCode"
+  },
+  {
+   "name": "SQFT",
+   "type": "esriFieldTypeInteger",
+   "alias": "SQFT",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "SQFT"
+  },
+  {
+   "name": "Suit_Number",
+   "type": "esriFieldTypeString",
+   "alias": "Suit_Number",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 255,
+   "defaultValue": null,
+   "modelName": "Suit_Number"
+  },
+  {
+   "name": "Cost",
+   "type": "esriFieldTypeDouble",
+   "alias": "Cost",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "Cost"
+  },
+  {
+   "name": "Property_Source",
+   "type": "esriFieldTypeString",
+   "alias": "Property_Source",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 255,
+   "defaultValue": null,
+   "modelName": "Property_Source"
+  },
+  {
+   "name": "Irregular_Lot",
+   "type": "esriFieldTypeString",
+   "alias": "Irregular_Lot",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 255,
+   "defaultValue": null,
+   "modelName": "Irregular_Lot"
+  },
+  {
+   "name": "Description",
+   "type": "esriFieldTypeString",
+   "alias": "Description",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 255,
+   "defaultValue": null,
+   "modelName": "Description"
+  },
+  {
+   "name": "Acres",
+   "type": "esriFieldTypeDouble",
+   "alias": "Acres",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "Acres"
+  },
+  {
+   "name": "Status",
+   "type": "esriFieldTypeString",
+   "alias": "Status",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 255,
+   "defaultValue": null,
+   "modelName": "Status"
+  },
+  {
+   "name": "Usage",
+   "type": "esriFieldTypeString",
+   "alias": "Usage",
+   "domain": {
+    "type": "codedValue",
+    "name": "Usage",
+    "description": "Usage of Property",
+    "codedValues": [
+     {
+      "name": "Billboard",
+      "code": "Billboard"
+     },
+     {
+      "name": "Cemetery",
+      "code": "Cemetery"
+     },
+     {
+      "name": "Commercial",
+      "code": "Commercial"
+     },
+     {
+      "name": "Garage",
+      "code": "Garage"
+     },
+     {
+      "name": "Industrial",
+      "code": "Industrial"
+     },
+     {
+      "name": "Mixed",
+      "code": "Mixed"
+     },
+     {
+      "name": "Residential",
+      "code": "Residential"
+     },
+     {
+      "name": "Vacant Lot",
+      "code": "Vacant Lot"
+     },
+     {
+      "name": "Alley",
+      "code": "Alley"
+     }
+    ],
+    "mergePolicy": "esriMPTDefaultValue",
+    "splitPolicy": "esriSPTDefaultValue"
+   },
+   "editable": true,
+   "nullable": true,
+   "length": 255,
+   "defaultValue": null,
+   "modelName": "Usage"
+  },
+  {
+   "name": "Demolition",
+   "type": "esriFieldTypeString",
+   "alias": "Demolition",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 255,
+   "defaultValue": null,
+   "modelName": "Demolition"
+  },
+  {
+   "name": "Environmental",
+   "type": "esriFieldTypeString",
+   "alias": "Environmental",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 255,
+   "defaultValue": null,
+   "modelName": "Environmental"
+  },
+  {
+   "name": "Value",
+   "type": "esriFieldTypeInteger",
+   "alias": "Value",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "Value"
+  },
+  {
+   "name": "Value_Estimated",
+   "type": "esriFieldTypeInteger",
+   "alias": "Value_Estimated",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "Value_Estimated"
+  },
+  {
+   "name": "Class",
+   "type": "esriFieldTypeString",
+   "alias": "Class",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 255,
+   "defaultValue": null,
+   "modelName": "Class"
+  },
+  {
+   "name": "AppraisedVal",
+   "type": "esriFieldTypeString",
+   "alias": "AppraisedVal",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 255,
+   "defaultValue": null,
+   "modelName": "AppraisedVal"
+  },
+  {
+   "name": "LRA_PRICING",
+   "type": "esriFieldTypeDouble",
+   "alias": "LRA_PRICING",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "LRA_PRICING"
+  },
+  {
+   "name": "Featured",
+   "type": "esriFieldTypeString",
+   "alias": "Featured",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 3,
+   "defaultValue": null,
+   "modelName": "Featured"
+  },
+  {
+   "name": "ACQUISITION_DATE",
+   "type": "esriFieldTypeDate",
+   "alias": "ACQUISITION_DATE",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 8,
+   "defaultValue": null,
+   "modelName": "ACQUISITION_DATE"
+  },
+  {
+   "name": "AssessorsTotal",
+   "type": "esriFieldTypeDouble",
+   "alias": "AssessorsTotal",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "AssessorsTotal"
+  },
+  {
+   "name": "Frontage",
+   "type": "esriFieldTypeDouble",
+   "alias": "Frontage",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "Frontage"
+  },
+  {
+   "name": "NbrOfUnits",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "NbrOfUnits",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "NbrOfUnits"
+  },
+  {
+   "name": "LegalDescription",
+   "type": "esriFieldTypeString",
+   "alias": "LegalDescription",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 255,
+   "defaultValue": null,
+   "modelName": "LegalDescription"
+  },
+  {
+   "name": "AssessorsNbrhdNum",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "AssessorsNbrhdNum",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "AssessorsNbrhdNum"
+  },
+  {
+   "name": "LOCATION",
+   "type": "esriFieldTypeString",
+   "alias": "LOCATION",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 255,
+   "defaultValue": null,
+   "modelName": "LOCATION"
+  },
+  {
+   "name": "Sequence",
+   "type": "esriFieldTypeInteger",
+   "alias": "Sequence",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "Sequence"
+  },
+  {
+   "name": "Notes",
+   "type": "esriFieldTypeString",
+   "alias": "Notes",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 255,
+   "defaultValue": null,
+   "modelName": "Notes"
+  },
+  {
+   "name": "PublicNotice",
+   "type": "esriFieldTypeString",
+   "alias": "PublicNotice",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 255,
+   "defaultValue": null,
+   "modelName": "PublicNotice"
+  },
+  {
+   "name": "BuildingCount",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "BuildingCount",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "BuildingCount"
+  },
+  {
+   "name": "GreenLienStatus",
+   "type": "esriFieldTypeString",
+   "alias": "GreenLienStatus",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 10,
+   "defaultValue": null,
+   "modelName": "GreenLienStatus"
+  },
+  {
+   "name": "BuriedMaterials",
+   "type": "esriFieldTypeString",
+   "alias": "BuriedMaterials",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 3,
+   "defaultValue": null,
+   "modelName": "BuriedMaterials"
+  },
+  {
+   "name": "PropertyType",
+   "type": "esriFieldTypeString",
+   "alias": "PropertyType",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 255,
+   "defaultValue": null,
+   "modelName": "PropertyType"
+  },
+  {
+   "name": "SideLotEligible",
+   "type": "esriFieldTypeString",
+   "alias": "SideLotEligible",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 3,
+   "defaultValue": null,
+   "modelName": "SideLotEligible"
+  },
+  {
+   "name": "Stories",
+   "type": "esriFieldTypeSingle",
+   "alias": "Stories",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "Stories"
+  },
+  {
+   "name": "CDBG_Source",
+   "type": "esriFieldTypeString",
+   "alias": "CDBG_Source",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 12,
+   "defaultValue": null,
+   "modelName": "CDBG_Source"
+  },
+  {
+   "name": "CDBG_Amount",
+   "type": "esriFieldTypeInteger",
+   "alias": "CDBG_Amount",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "CDBG_Amount"
+  },
+  {
+   "name": "SALEPRICE",
+   "type": "esriFieldTypeDouble",
+   "alias": "SALEPRICE",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "SALEPRICE"
+  },
+  {
+   "name": "CLOSING_COMPLETED",
+   "type": "esriFieldTypeDate",
+   "alias": "CLOSING_COMPLETED",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 8,
+   "defaultValue": null,
+   "modelName": "CLOSING_COMPLETED"
+  },
+  {
+   "name": "CASE_NUMBER",
+   "type": "esriFieldTypeString",
+   "alias": "CASE_NUMBER",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 20,
+   "defaultValue": null,
+   "modelName": "CASE_NUMBER"
+  },
+  {
+   "name": "Maintenance",
+   "type": "esriFieldTypeString",
+   "alias": "Maintenance",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 255,
+   "defaultValue": null,
+   "modelName": "Maintenance"
+  },
+  {
+   "name": "PCA_Date",
+   "type": "esriFieldTypeDate",
+   "alias": "PCA_Date",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 8,
+   "defaultValue": null,
+   "modelName": "PCA_Date"
+  },
+  {
+   "name": "OBJECTID",
+   "type": "esriFieldTypeOID",
+   "alias": "OBJECTID",
+   "domain": null,
+   "editable": false,
+   "nullable": false,
+   "defaultValue": null,
+   "modelName": "OBJECTID"
+  },
+  {
+   "name": "Shape__Area",
+   "type": "esriFieldTypeDouble",
+   "alias": "Shape.STArea()",
+   "domain": null,
+   "editable": false,
+   "required": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "Shape.STArea()"
+  },
+  {
+   "name": "Shape__Length",
+   "type": "esriFieldTypeDouble",
+   "alias": "Shape.STLength()",
+   "domain": null,
+   "editable": false,
+   "required": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "Shape.STLength()"
+  }
+ ],
+ "geometryField": {
+  "name": "Shape",
+  "type": "esriFieldTypeGeometry",
+  "alias": "SHAPE",
+  "domain": null,
+  "editable": true,
+  "nullable": true,
+  "defaultValue": null,
+  "modelName": "Shape"
+ },
+ "indexes": [
+  {
+   "name": "ClusteredIndex-20260626-094456",
+   "fields": "ParcelId,LRA",
+   "isAscending": true,
+   "isUnique": false,
+   "description": ""
+  }
+ ],
+ "datesInUnknownTimezone": false,
+ "dateFieldsTimeReference": {
+  "timeZone": "UTC",
+  "respectsDaylightSaving": false
+ },
+ "preferredTimeReference": null,
+ "types": [
+  {
+   "id": "Available",
+   "name": "Available",
+   "domains": {
+    "Usage": {
+     "type": "inherited"
+    }
+   },
+   "templates": [
+    {
+     "name": "Available",
+     "description": "",
+     "prototype": {
+      "attributes": {
+       "PCA_Date": null,
+       "PropNS_Status": null,
+       "Case_Status": "Available",
+       "Address": null,
+       "AddrNum": null,
+       "LowAddrNum": null,
+       "LowAddrSuf": null,
+       "HighAddrNum": null,
+       "HighAddrSuf": null,
+       "StPreDir": null,
+       "StName": null,
+       "StType": null,
+       "StSufDir": null,
+       "Handle": null,
+       "CityBlock": null,
+       "Parcel": null,
+       "ParcelId": null,
+       "GUID": null,
+       "LRA": null,
+       "WARD": null,
+       "NEIGHBORHOOD_NUM": null,
+       "ZipCode": null,
+       "SQFT": null,
+       "Suit_Number": null,
+       "Cost": null,
+       "Property_Source": null,
+       "Irregular_Lot": null,
+       "Description": null,
+       "Acres": null,
+       "Status": null,
+       "Usage": null,
+       "Demolition": null,
+       "Environmental": null,
+       "Value": null,
+       "Value_Estimated": null,
+       "Class": null,
+       "AppraisedVal": null,
+       "LRA_PRICING": null,
+       "Featured": null,
+       "ACQUISITION_DATE": null,
+       "AssessorsTotal": null,
+       "Frontage": null,
+       "NbrOfUnits": null,
+       "LegalDescription": null,
+       "AssessorsNbrhdNum": null,
+       "LOCATION": null,
+       "Sequence": null,
+       "Notes": null,
+       "PublicNotice": null,
+       "BuildingCount": null,
+       "GreenLienStatus": null,
+       "BuriedMaterials": null,
+       "PropertyType": null,
+       "SideLotEligible": null,
+       "Stories": null,
+       "CDBG_Source": null,
+       "CDBG_Amount": null,
+       "SALEPRICE": null,
+       "CLOSING_COMPLETED": null,
+       "CASE_NUMBER": null,
+       "Maintenance": null
+      }
+     },
+     "drawingTool": "esriFeatureEditToolPolygon"
+    }
+   ]
+  },
+  {
+   "id": "CDA Option",
+   "name": "CDA Option",
+   "domains": {
+    "Usage": {
+     "type": "inherited"
+    }
+   },
+   "templates": [
+    {
+     "name": "CDA Option",
+     "description": "",
+     "prototype": {
+      "attributes": {
+       "PCA_Date": null,
+       "PropNS_Status": null,
+       "Case_Status": "CDA Option",
+       "Address": null,
+       "AddrNum": null,
+       "LowAddrNum": null,
+       "LowAddrSuf": null,
+       "HighAddrNum": null,
+       "HighAddrSuf": null,
+       "StPreDir": null,
+       "StName": null,
+       "StType": null,
+       "StSufDir": null,
+       "Handle": null,
+       "CityBlock": null,
+       "Parcel": null,
+       "ParcelId": null,
+       "GUID": null,
+       "LRA": null,
+       "WARD": null,
+       "NEIGHBORHOOD_NUM": null,
+       "ZipCode": null,
+       "SQFT": null,
+       "Suit_Number": null,
+       "Cost": null,
+       "Property_Source": null,
+       "Irregular_Lot": null,
+       "Description": null,
+       "Acres": null,
+       "Status": null,
+       "Usage": null,
+       "Demolition": null,
+       "Environmental": null,
+       "Value": null,
+       "Value_Estimated": null,
+       "Class": null,
+       "AppraisedVal": null,
+       "LRA_PRICING": null,
+       "Featured": null,
+       "ACQUISITION_DATE": null,
+       "AssessorsTotal": null,
+       "Frontage": null,
+       "NbrOfUnits": null,
+       "LegalDescription": null,
+       "AssessorsNbrhdNum": null,
+       "LOCATION": null,
+       "Sequence": null,
+       "Notes": null,
+       "PublicNotice": null,
+       "BuildingCount": null,
+       "GreenLienStatus": null,
+       "BuriedMaterials": null,
+       "PropertyType": null,
+       "SideLotEligible": null,
+       "Stories": null,
+       "CDBG_Source": null,
+       "CDBG_Amount": null,
+       "SALEPRICE": null,
+       "CLOSING_COMPLETED": null,
+       "CASE_NUMBER": null,
+       "Maintenance": null
+      }
+     },
+     "drawingTool": "esriFeatureEditToolPolygon"
+    }
+   ]
+  },
+  {
+   "id": "Development Hold",
+   "name": "Development Hold",
+   "domains": {
+    "Usage": {
+     "type": "inherited"
+    }
+   },
+   "templates": [
+    {
+     "name": "Development Hold",
+     "description": "",
+     "prototype": {
+      "attributes": {
+       "PCA_Date": null,
+       "PropNS_Status": null,
+       "Case_Status": "Development Hold",
+       "Address": null,
+       "AddrNum": null,
+       "LowAddrNum": null,
+       "LowAddrSuf": null,
+       "HighAddrNum": null,
+       "HighAddrSuf": null,
+       "StPreDir": null,
+       "StName": null,
+       "StType": null,
+       "StSufDir": null,
+       "Handle": null,
+       "CityBlock": null,
+       "Parcel": null,
+       "ParcelId": null,
+       "GUID": null,
+       "LRA": null,
+       "WARD": null,
+       "NEIGHBORHOOD_NUM": null,
+       "ZipCode": null,
+       "SQFT": null,
+       "Suit_Number": null,
+       "Cost": null,
+       "Property_Source": null,
+       "Irregular_Lot": null,
+       "Description": null,
+       "Acres": null,
+       "Status": null,
+       "Usage": null,
+       "Demolition": null,
+       "Environmental": null,
+       "Value": null,
+       "Value_Estimated": null,
+       "Class": null,
+       "AppraisedVal": null,
+       "LRA_PRICING": null,
+       "Featured": null,
+       "ACQUISITION_DATE": null,
+       "AssessorsTotal": null,
+       "Frontage": null,
+       "NbrOfUnits": null,
+       "LegalDescription": null,
+       "AssessorsNbrhdNum": null,
+       "LOCATION": null,
+       "Sequence": null,
+       "Notes": null,
+       "PublicNotice": null,
+       "BuildingCount": null,
+       "GreenLienStatus": null,
+       "BuriedMaterials": null,
+       "PropertyType": null,
+       "SideLotEligible": null,
+       "Stories": null,
+       "CDBG_Source": null,
+       "CDBG_Amount": null,
+       "SALEPRICE": null,
+       "CLOSING_COMPLETED": null,
+       "CASE_NUMBER": null,
+       "Maintenance": null
+      }
+     },
+     "drawingTool": "esriFeatureEditToolPolygon"
+    }
+   ]
+  },
+  {
+   "id": "Garden Lease",
+   "name": "Garden Lease",
+   "domains": {
+    "Usage": {
+     "type": "inherited"
+    }
+   },
+   "templates": [
+    {
+     "name": "Garden Lease",
+     "description": "",
+     "prototype": {
+      "attributes": {
+       "PCA_Date": null,
+       "PropNS_Status": null,
+       "Case_Status": "Garden Lease",
+       "Address": null,
+       "AddrNum": null,
+       "LowAddrNum": null,
+       "LowAddrSuf": null,
+       "HighAddrNum": null,
+       "HighAddrSuf": null,
+       "StPreDir": null,
+       "StName": null,
+       "StType": null,
+       "StSufDir": null,
+       "Handle": null,
+       "CityBlock": null,
+       "Parcel": null,
+       "ParcelId": null,
+       "GUID": null,
+       "LRA": null,
+       "WARD": null,
+       "NEIGHBORHOOD_NUM": null,
+       "ZipCode": null,
+       "SQFT": null,
+       "Suit_Number": null,
+       "Cost": null,
+       "Property_Source": null,
+       "Irregular_Lot": null,
+       "Description": null,
+       "Acres": null,
+       "Status": null,
+       "Usage": null,
+       "Demolition": null,
+       "Environmental": null,
+       "Value": null,
+       "Value_Estimated": null,
+       "Class": null,
+       "AppraisedVal": null,
+       "LRA_PRICING": null,
+       "Featured": null,
+       "ACQUISITION_DATE": null,
+       "AssessorsTotal": null,
+       "Frontage": null,
+       "NbrOfUnits": null,
+       "LegalDescription": null,
+       "AssessorsNbrhdNum": null,
+       "LOCATION": null,
+       "Sequence": null,
+       "Notes": null,
+       "PublicNotice": null,
+       "BuildingCount": null,
+       "GreenLienStatus": null,
+       "BuriedMaterials": null,
+       "PropertyType": null,
+       "SideLotEligible": null,
+       "Stories": null,
+       "CDBG_Source": null,
+       "CDBG_Amount": null,
+       "SALEPRICE": null,
+       "CLOSING_COMPLETED": null,
+       "CASE_NUMBER": null,
+       "Maintenance": null
+      }
+     },
+     "drawingTool": "esriFeatureEditToolPolygon"
+    }
+   ]
+  },
+  {
+   "id": "Greenspace Hold",
+   "name": "Greenspace Hold",
+   "domains": {
+    "Usage": {
+     "type": "inherited"
+    }
+   },
+   "templates": [
+    {
+     "name": "Greenspace Hold",
+     "description": "",
+     "prototype": {
+      "attributes": {
+       "PCA_Date": null,
+       "PropNS_Status": null,
+       "Case_Status": "Greenspace Hold",
+       "Address": null,
+       "AddrNum": null,
+       "LowAddrNum": null,
+       "LowAddrSuf": null,
+       "HighAddrNum": null,
+       "HighAddrSuf": null,
+       "StPreDir": null,
+       "StName": null,
+       "StType": null,
+       "StSufDir": null,
+       "Handle": null,
+       "CityBlock": null,
+       "Parcel": null,
+       "ParcelId": null,
+       "GUID": null,
+       "LRA": null,
+       "WARD": null,
+       "NEIGHBORHOOD_NUM": null,
+       "ZipCode": null,
+       "SQFT": null,
+       "Suit_Number": null,
+       "Cost": null,
+       "Property_Source": null,
+       "Irregular_Lot": null,
+       "Description": null,
+       "Acres": null,
+       "Status": null,
+       "Usage": null,
+       "Demolition": null,
+       "Environmental": null,
+       "Value": null,
+       "Value_Estimated": null,
+       "Class": null,
+       "AppraisedVal": null,
+       "LRA_PRICING": null,
+       "Featured": null,
+       "ACQUISITION_DATE": null,
+       "AssessorsTotal": null,
+       "Frontage": null,
+       "NbrOfUnits": null,
+       "LegalDescription": null,
+       "AssessorsNbrhdNum": null,
+       "LOCATION": null,
+       "Sequence": null,
+       "Notes": null,
+       "PublicNotice": null,
+       "BuildingCount": null,
+       "GreenLienStatus": null,
+       "BuriedMaterials": null,
+       "PropertyType": null,
+       "SideLotEligible": null,
+       "Stories": null,
+       "CDBG_Source": null,
+       "CDBG_Amount": null,
+       "SALEPRICE": null,
+       "CLOSING_COMPLETED": null,
+       "CASE_NUMBER": null,
+       "Maintenance": null
+      }
+     },
+     "drawingTool": "esriFeatureEditToolPolygon"
+    }
+   ]
+  },
+  {
+   "id": "Lease",
+   "name": "Lease",
+   "domains": {
+    "Usage": {
+     "type": "inherited"
+    }
+   },
+   "templates": [
+    {
+     "name": "Lease",
+     "description": "",
+     "prototype": {
+      "attributes": {
+       "PCA_Date": null,
+       "PropNS_Status": null,
+       "Case_Status": "Lease",
+       "Address": null,
+       "AddrNum": null,
+       "LowAddrNum": null,
+       "LowAddrSuf": null,
+       "HighAddrNum": null,
+       "HighAddrSuf": null,
+       "StPreDir": null,
+       "StName": null,
+       "StType": null,
+       "StSufDir": null,
+       "Handle": null,
+       "CityBlock": null,
+       "Parcel": null,
+       "ParcelId": null,
+       "GUID": null,
+       "LRA": null,
+       "WARD": null,
+       "NEIGHBORHOOD_NUM": null,
+       "ZipCode": null,
+       "SQFT": null,
+       "Suit_Number": null,
+       "Cost": null,
+       "Property_Source": null,
+       "Irregular_Lot": null,
+       "Description": null,
+       "Acres": null,
+       "Status": null,
+       "Usage": null,
+       "Demolition": null,
+       "Environmental": null,
+       "Value": null,
+       "Value_Estimated": null,
+       "Class": null,
+       "AppraisedVal": null,
+       "LRA_PRICING": null,
+       "Featured": null,
+       "ACQUISITION_DATE": null,
+       "AssessorsTotal": null,
+       "Frontage": null,
+       "NbrOfUnits": null,
+       "LegalDescription": null,
+       "AssessorsNbrhdNum": null,
+       "LOCATION": null,
+       "Sequence": null,
+       "Notes": null,
+       "PublicNotice": null,
+       "BuildingCount": null,
+       "GreenLienStatus": null,
+       "BuriedMaterials": null,
+       "PropertyType": null,
+       "SideLotEligible": null,
+       "Stories": null,
+       "CDBG_Source": null,
+       "CDBG_Amount": null,
+       "SALEPRICE": null,
+       "CLOSING_COMPLETED": null,
+       "CASE_NUMBER": null,
+       "Maintenance": null
+      }
+     },
+     "drawingTool": "esriFeatureEditToolPolygon"
+    }
+   ]
+  },
+  {
+   "id": "Legal Hold",
+   "name": "Legal Hold",
+   "domains": {
+    "Usage": {
+     "type": "inherited"
+    }
+   },
+   "templates": [
+    {
+     "name": "Legal Hold",
+     "description": "",
+     "prototype": {
+      "attributes": {
+       "PCA_Date": null,
+       "PropNS_Status": null,
+       "Case_Status": "Legal Hold",
+       "Address": null,
+       "AddrNum": null,
+       "LowAddrNum": null,
+       "LowAddrSuf": null,
+       "HighAddrNum": null,
+       "HighAddrSuf": null,
+       "StPreDir": null,
+       "StName": null,
+       "StType": null,
+       "StSufDir": null,
+       "Handle": null,
+       "CityBlock": null,
+       "Parcel": null,
+       "ParcelId": null,
+       "GUID": null,
+       "LRA": null,
+       "WARD": null,
+       "NEIGHBORHOOD_NUM": null,
+       "ZipCode": null,
+       "SQFT": null,
+       "Suit_Number": null,
+       "Cost": null,
+       "Property_Source": null,
+       "Irregular_Lot": null,
+       "Description": null,
+       "Acres": null,
+       "Status": null,
+       "Usage": null,
+       "Demolition": null,
+       "Environmental": null,
+       "Value": null,
+       "Value_Estimated": null,
+       "Class": null,
+       "AppraisedVal": null,
+       "LRA_PRICING": null,
+       "Featured": null,
+       "ACQUISITION_DATE": null,
+       "AssessorsTotal": null,
+       "Frontage": null,
+       "NbrOfUnits": null,
+       "LegalDescription": null,
+       "AssessorsNbrhdNum": null,
+       "LOCATION": null,
+       "Sequence": null,
+       "Notes": null,
+       "PublicNotice": null,
+       "BuildingCount": null,
+       "GreenLienStatus": null,
+       "BuriedMaterials": null,
+       "PropertyType": null,
+       "SideLotEligible": null,
+       "Stories": null,
+       "CDBG_Source": null,
+       "CDBG_Amount": null,
+       "SALEPRICE": null,
+       "CLOSING_COMPLETED": null,
+       "CASE_NUMBER": null,
+       "Maintenance": null
+      }
+     },
+     "drawingTool": "esriFeatureEditToolPolygon"
+    }
+   ]
+  },
+  {
+   "id": "Offer",
+   "name": "Offer",
+   "domains": {
+    "Usage": {
+     "type": "inherited"
+    }
+   },
+   "templates": [
+    {
+     "name": "Offer",
+     "description": "",
+     "prototype": {
+      "attributes": {
+       "PCA_Date": null,
+       "PropNS_Status": null,
+       "Case_Status": "Offer",
+       "Address": null,
+       "AddrNum": null,
+       "LowAddrNum": null,
+       "LowAddrSuf": null,
+       "HighAddrNum": null,
+       "HighAddrSuf": null,
+       "StPreDir": null,
+       "StName": null,
+       "StType": null,
+       "StSufDir": null,
+       "Handle": null,
+       "CityBlock": null,
+       "Parcel": null,
+       "ParcelId": null,
+       "GUID": null,
+       "LRA": null,
+       "WARD": null,
+       "NEIGHBORHOOD_NUM": null,
+       "ZipCode": null,
+       "SQFT": null,
+       "Suit_Number": null,
+       "Cost": null,
+       "Property_Source": null,
+       "Irregular_Lot": null,
+       "Description": null,
+       "Acres": null,
+       "Status": null,
+       "Usage": null,
+       "Demolition": null,
+       "Environmental": null,
+       "Value": null,
+       "Value_Estimated": null,
+       "Class": null,
+       "AppraisedVal": null,
+       "LRA_PRICING": null,
+       "Featured": null,
+       "ACQUISITION_DATE": null,
+       "AssessorsTotal": null,
+       "Frontage": null,
+       "NbrOfUnits": null,
+       "LegalDescription": null,
+       "AssessorsNbrhdNum": null,
+       "LOCATION": null,
+       "Sequence": null,
+       "Notes": null,
+       "PublicNotice": null,
+       "BuildingCount": null,
+       "GreenLienStatus": null,
+       "BuriedMaterials": null,
+       "PropertyType": null,
+       "SideLotEligible": null,
+       "Stories": null,
+       "CDBG_Source": null,
+       "CDBG_Amount": null,
+       "SALEPRICE": null,
+       "CLOSING_COMPLETED": null,
+       "CASE_NUMBER": null,
+       "Maintenance": null
+      }
+     },
+     "drawingTool": "esriFeatureEditToolPolygon"
+    }
+   ]
+  },
+  {
+   "id": "Option",
+   "name": "Option",
+   "domains": {
+    "Usage": {
+     "type": "inherited"
+    }
+   },
+   "templates": [
+    {
+     "name": "Option",
+     "description": "",
+     "prototype": {
+      "attributes": {
+       "PCA_Date": null,
+       "PropNS_Status": null,
+       "Case_Status": "Option",
+       "Address": null,
+       "AddrNum": null,
+       "LowAddrNum": null,
+       "LowAddrSuf": null,
+       "HighAddrNum": null,
+       "HighAddrSuf": null,
+       "StPreDir": null,
+       "StName": null,
+       "StType": null,
+       "StSufDir": null,
+       "Handle": null,
+       "CityBlock": null,
+       "Parcel": null,
+       "ParcelId": null,
+       "GUID": null,
+       "LRA": null,
+       "WARD": null,
+       "NEIGHBORHOOD_NUM": null,
+       "ZipCode": null,
+       "SQFT": null,
+       "Suit_Number": null,
+       "Cost": null,
+       "Property_Source": null,
+       "Irregular_Lot": null,
+       "Description": null,
+       "Acres": null,
+       "Status": null,
+       "Usage": null,
+       "Demolition": null,
+       "Environmental": null,
+       "Value": null,
+       "Value_Estimated": null,
+       "Class": null,
+       "AppraisedVal": null,
+       "LRA_PRICING": null,
+       "Featured": null,
+       "ACQUISITION_DATE": null,
+       "AssessorsTotal": null,
+       "Frontage": null,
+       "NbrOfUnits": null,
+       "LegalDescription": null,
+       "AssessorsNbrhdNum": null,
+       "LOCATION": null,
+       "Sequence": null,
+       "Notes": null,
+       "PublicNotice": null,
+       "BuildingCount": null,
+       "GreenLienStatus": null,
+       "BuriedMaterials": null,
+       "PropertyType": null,
+       "SideLotEligible": null,
+       "Stories": null,
+       "CDBG_Source": null,
+       "CDBG_Amount": null,
+       "SALEPRICE": null,
+       "CLOSING_COMPLETED": null,
+       "CASE_NUMBER": null,
+       "Maintenance": null
+      }
+     },
+     "drawingTool": "esriFeatureEditToolPolygon"
+    }
+   ]
+  },
+  {
+   "id": "PROPNS",
+   "name": "PROPNS",
+   "domains": {
+    "Usage": {
+     "type": "inherited"
+    }
+   },
+   "templates": [
+    {
+     "name": "PROPNS",
+     "description": "",
+     "prototype": {
+      "attributes": {
+       "PCA_Date": null,
+       "PropNS_Status": null,
+       "Case_Status": "PROPNS",
+       "Address": null,
+       "AddrNum": null,
+       "LowAddrNum": null,
+       "LowAddrSuf": null,
+       "HighAddrNum": null,
+       "HighAddrSuf": null,
+       "StPreDir": null,
+       "StName": null,
+       "StType": null,
+       "StSufDir": null,
+       "Handle": null,
+       "CityBlock": null,
+       "Parcel": null,
+       "ParcelId": null,
+       "GUID": null,
+       "LRA": null,
+       "WARD": null,
+       "NEIGHBORHOOD_NUM": null,
+       "ZipCode": null,
+       "SQFT": null,
+       "Suit_Number": null,
+       "Cost": null,
+       "Property_Source": null,
+       "Irregular_Lot": null,
+       "Description": null,
+       "Acres": null,
+       "Status": null,
+       "Usage": null,
+       "Demolition": null,
+       "Environmental": null,
+       "Value": null,
+       "Value_Estimated": null,
+       "Class": null,
+       "AppraisedVal": null,
+       "LRA_PRICING": null,
+       "Featured": null,
+       "ACQUISITION_DATE": null,
+       "AssessorsTotal": null,
+       "Frontage": null,
+       "NbrOfUnits": null,
+       "LegalDescription": null,
+       "AssessorsNbrhdNum": null,
+       "LOCATION": null,
+       "Sequence": null,
+       "Notes": null,
+       "PublicNotice": null,
+       "BuildingCount": null,
+       "GreenLienStatus": null,
+       "BuriedMaterials": null,
+       "PropertyType": null,
+       "SideLotEligible": null,
+       "Stories": null,
+       "CDBG_Source": null,
+       "CDBG_Amount": null,
+       "SALEPRICE": null,
+       "CLOSING_COMPLETED": null,
+       "CASE_NUMBER": null,
+       "Maintenance": null
+      }
+     },
+     "drawingTool": "esriFeatureEditToolPolygon"
+    }
+   ]
+  },
+  {
+   "id": "PROPNS Available",
+   "name": "PROPNS Available",
+   "domains": {
+    "Usage": {
+     "type": "inherited"
+    }
+   },
+   "templates": [
+    {
+     "name": "PROPNS Available",
+     "description": "",
+     "prototype": {
+      "attributes": {
+       "PCA_Date": null,
+       "PropNS_Status": null,
+       "Case_Status": "PROPNS Available",
+       "Address": null,
+       "AddrNum": null,
+       "LowAddrNum": null,
+       "LowAddrSuf": null,
+       "HighAddrNum": null,
+       "HighAddrSuf": null,
+       "StPreDir": null,
+       "StName": null,
+       "StType": null,
+       "StSufDir": null,
+       "Handle": null,
+       "CityBlock": null,
+       "Parcel": null,
+       "ParcelId": null,
+       "GUID": null,
+       "LRA": null,
+       "WARD": null,
+       "NEIGHBORHOOD_NUM": null,
+       "ZipCode": null,
+       "SQFT": null,
+       "Suit_Number": null,
+       "Cost": null,
+       "Property_Source": null,
+       "Irregular_Lot": null,
+       "Description": null,
+       "Acres": null,
+       "Status": null,
+       "Usage": null,
+       "Demolition": null,
+       "Environmental": null,
+       "Value": null,
+       "Value_Estimated": null,
+       "Class": null,
+       "AppraisedVal": null,
+       "LRA_PRICING": null,
+       "Featured": null,
+       "ACQUISITION_DATE": null,
+       "AssessorsTotal": null,
+       "Frontage": null,
+       "NbrOfUnits": null,
+       "LegalDescription": null,
+       "AssessorsNbrhdNum": null,
+       "LOCATION": null,
+       "Sequence": null,
+       "Notes": null,
+       "PublicNotice": null,
+       "BuildingCount": null,
+       "GreenLienStatus": null,
+       "BuriedMaterials": null,
+       "PropertyType": null,
+       "SideLotEligible": null,
+       "Stories": null,
+       "CDBG_Source": null,
+       "CDBG_Amount": null,
+       "SALEPRICE": null,
+       "CLOSING_COMPLETED": null,
+       "CASE_NUMBER": null,
+       "Maintenance": null
+      }
+     },
+     "drawingTool": "esriFeatureEditToolPolygon"
+    }
+   ]
+  },
+  {
+   "id": "Pending Closed",
+   "name": "Pending Closed",
+   "domains": {
+    "Usage": {
+     "type": "inherited"
+    }
+   },
+   "templates": [
+    {
+     "name": "Pending Closed",
+     "description": "",
+     "prototype": {
+      "attributes": {
+       "PCA_Date": null,
+       "PropNS_Status": null,
+       "Case_Status": "Pending Closed",
+       "Address": null,
+       "AddrNum": null,
+       "LowAddrNum": null,
+       "LowAddrSuf": null,
+       "HighAddrNum": null,
+       "HighAddrSuf": null,
+       "StPreDir": null,
+       "StName": null,
+       "StType": null,
+       "StSufDir": null,
+       "Handle": null,
+       "CityBlock": null,
+       "Parcel": null,
+       "ParcelId": null,
+       "GUID": null,
+       "LRA": null,
+       "WARD": null,
+       "NEIGHBORHOOD_NUM": null,
+       "ZipCode": null,
+       "SQFT": null,
+       "Suit_Number": null,
+       "Cost": null,
+       "Property_Source": null,
+       "Irregular_Lot": null,
+       "Description": null,
+       "Acres": null,
+       "Status": null,
+       "Usage": null,
+       "Demolition": null,
+       "Environmental": null,
+       "Value": null,
+       "Value_Estimated": null,
+       "Class": null,
+       "AppraisedVal": null,
+       "LRA_PRICING": null,
+       "Featured": null,
+       "ACQUISITION_DATE": null,
+       "AssessorsTotal": null,
+       "Frontage": null,
+       "NbrOfUnits": null,
+       "LegalDescription": null,
+       "AssessorsNbrhdNum": null,
+       "LOCATION": null,
+       "Sequence": null,
+       "Notes": null,
+       "PublicNotice": null,
+       "BuildingCount": null,
+       "GreenLienStatus": null,
+       "BuriedMaterials": null,
+       "PropertyType": null,
+       "SideLotEligible": null,
+       "Stories": null,
+       "CDBG_Source": null,
+       "CDBG_Amount": null,
+       "SALEPRICE": null,
+       "CLOSING_COMPLETED": null,
+       "CASE_NUMBER": null,
+       "Maintenance": null
+      }
+     },
+     "drawingTool": "esriFeatureEditToolPolygon"
+    }
+   ]
+  },
+  {
+   "id": "Unavailable",
+   "name": "Unavailable",
+   "domains": {
+    "Usage": {
+     "type": "inherited"
+    }
+   },
+   "templates": [
+    {
+     "name": "Unavailable",
+     "description": "",
+     "prototype": {
+      "attributes": {
+       "PCA_Date": null,
+       "PropNS_Status": null,
+       "Case_Status": "Unavailable",
+       "Address": null,
+       "AddrNum": null,
+       "LowAddrNum": null,
+       "LowAddrSuf": null,
+       "HighAddrNum": null,
+       "HighAddrSuf": null,
+       "StPreDir": null,
+       "StName": null,
+       "StType": null,
+       "StSufDir": null,
+       "Handle": null,
+       "CityBlock": null,
+       "Parcel": null,
+       "ParcelId": null,
+       "GUID": null,
+       "LRA": null,
+       "WARD": null,
+       "NEIGHBORHOOD_NUM": null,
+       "ZipCode": null,
+       "SQFT": null,
+       "Suit_Number": null,
+       "Cost": null,
+       "Property_Source": null,
+       "Irregular_Lot": null,
+       "Description": null,
+       "Acres": null,
+       "Status": null,
+       "Usage": null,
+       "Demolition": null,
+       "Environmental": null,
+       "Value": null,
+       "Value_Estimated": null,
+       "Class": null,
+       "AppraisedVal": null,
+       "LRA_PRICING": null,
+       "Featured": null,
+       "ACQUISITION_DATE": null,
+       "AssessorsTotal": null,
+       "Frontage": null,
+       "NbrOfUnits": null,
+       "LegalDescription": null,
+       "AssessorsNbrhdNum": null,
+       "LOCATION": null,
+       "Sequence": null,
+       "Notes": null,
+       "PublicNotice": null,
+       "BuildingCount": null,
+       "GreenLienStatus": null,
+       "BuriedMaterials": null,
+       "PropertyType": null,
+       "SideLotEligible": null,
+       "Stories": null,
+       "CDBG_Source": null,
+       "CDBG_Amount": null,
+       "SALEPRICE": null,
+       "CLOSING_COMPLETED": null,
+       "CASE_NUMBER": null,
+       "Maintenance": null
+      }
+     },
+     "drawingTool": "esriFeatureEditToolPolygon"
+    }
+   ]
+  },
+  {
+   "id": "Unknown",
+   "name": "Unknown",
+   "domains": {
+    "Usage": {
+     "type": "inherited"
+    }
+   },
+   "templates": [
+    {
+     "name": "Unknown",
+     "description": "",
+     "prototype": {
+      "attributes": {
+       "PCA_Date": null,
+       "PropNS_Status": null,
+       "Case_Status": "Unknown",
+       "Address": null,
+       "AddrNum": null,
+       "LowAddrNum": null,
+       "LowAddrSuf": null,
+       "HighAddrNum": null,
+       "HighAddrSuf": null,
+       "StPreDir": null,
+       "StName": null,
+       "StType": null,
+       "StSufDir": null,
+       "Handle": null,
+       "CityBlock": null,
+       "Parcel": null,
+       "ParcelId": null,
+       "GUID": null,
+       "LRA": null,
+       "WARD": null,
+       "NEIGHBORHOOD_NUM": null,
+       "ZipCode": null,
+       "SQFT": null,
+       "Suit_Number": null,
+       "Cost": null,
+       "Property_Source": null,
+       "Irregular_Lot": null,
+       "Description": null,
+       "Acres": null,
+       "Status": null,
+       "Usage": null,
+       "Demolition": null,
+       "Environmental": null,
+       "Value": null,
+       "Value_Estimated": null,
+       "Class": null,
+       "AppraisedVal": null,
+       "LRA_PRICING": null,
+       "Featured": null,
+       "ACQUISITION_DATE": null,
+       "AssessorsTotal": null,
+       "Frontage": null,
+       "NbrOfUnits": null,
+       "LegalDescription": null,
+       "AssessorsNbrhdNum": null,
+       "LOCATION": null,
+       "Sequence": null,
+       "Notes": null,
+       "PublicNotice": null,
+       "BuildingCount": null,
+       "GreenLienStatus": null,
+       "BuriedMaterials": null,
+       "PropertyType": null,
+       "SideLotEligible": null,
+       "Stories": null,
+       "CDBG_Source": null,
+       "CDBG_Amount": null,
+       "SALEPRICE": null,
+       "CLOSING_COMPLETED": null,
+       "CASE_NUMBER": null,
+       "Maintenance": null
+      }
+     },
+     "drawingTool": "esriFeatureEditToolPolygon"
+    }
+   ]
+  },
+  {
+   "id": "SOLD",
+   "name": "SOLD (Title Issue)",
+   "domains": {
+    "Usage": {
+     "type": "inherited"
+    }
+   },
+   "templates": [
+    {
+     "name": "SOLD",
+     "description": "",
+     "prototype": {
+      "attributes": {
+       "PCA_Date": null,
+       "PropNS_Status": null,
+       "Case_Status": "SOLD",
+       "Address": null,
+       "AddrNum": null,
+       "LowAddrNum": null,
+       "LowAddrSuf": null,
+       "HighAddrNum": null,
+       "HighAddrSuf": null,
+       "StPreDir": null,
+       "StName": null,
+       "StType": null,
+       "StSufDir": null,
+       "Handle": null,
+       "CityBlock": null,
+       "Parcel": null,
+       "ParcelId": null,
+       "GUID": null,
+       "LRA": null,
+       "WARD": null,
+       "NEIGHBORHOOD_NUM": null,
+       "ZipCode": null,
+       "SQFT": null,
+       "Suit_Number": null,
+       "Cost": null,
+       "Property_Source": null,
+       "Irregular_Lot": null,
+       "Description": null,
+       "Acres": null,
+       "Status": null,
+       "Usage": null,
+       "Demolition": null,
+       "Environmental": null,
+       "Value": null,
+       "Value_Estimated": null,
+       "Class": null,
+       "AppraisedVal": null,
+       "LRA_PRICING": null,
+       "Featured": null,
+       "ACQUISITION_DATE": null,
+       "AssessorsTotal": null,
+       "Frontage": null,
+       "NbrOfUnits": null,
+       "LegalDescription": null,
+       "AssessorsNbrhdNum": null,
+       "LOCATION": null,
+       "Sequence": null,
+       "Notes": null,
+       "PublicNotice": null,
+       "BuildingCount": null,
+       "GreenLienStatus": null,
+       "BuriedMaterials": null,
+       "PropertyType": null,
+       "SideLotEligible": null,
+       "Stories": null,
+       "CDBG_Source": null,
+       "CDBG_Amount": null,
+       "SALEPRICE": null,
+       "CLOSING_COMPLETED": null,
+       "CASE_NUMBER": null,
+       "Maintenance": null
+      }
+     },
+     "drawingTool": "esriFeatureEditToolPolygon"
+    }
+   ]
+  }
+ ],
+ "templates": [],
+ "maxRecordCount": 2000,
+ "supportedQueryFormats": "JSON, geoJSON, PBF",
+ "supportedExportFormats": "sqlite,filegdb,shapefile,csv,geojson",
+ "capabilities": "Query,Create,Update,Delete,Uploads,Editing",
+ "useStandardizedQueries": true,
+ "bigIntegerRestrictedTo53Bits": true,
+ "supportedSpatialRelationships": [
+  "esriSpatialRelIntersects",
+  "esriSpatialRelContains",
+  "esriSpatialRelCrosses",
+  "esriSpatialRelEnvelopeIntersects",
+  "esriSpatialRelIndexIntersects",
+  "esriSpatialRelOverlaps",
+  "esriSpatialRelTouches",
+  "esriSpatialRelWithin",
+  "esriSpatialRelRelation"
+ ],
+ "standardMaxRecordCount": 4000,
+ "tileMaxRecordCount": 4000,
+ "standardMaxRecordCountNoGeometry": 32000,
+ "maxRecordCountFactor": 1,
+ "serviceItemId": "716da31a79964dde901944cb94726859"
+}

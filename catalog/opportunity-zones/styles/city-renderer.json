@@ -1,0 +1,26 @@
+{
+  "version": 8,
+  "name": "City renderer",
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../opportunity-zones.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "layer-0",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "opportunity-zones",
+      "paint": {
+        "fill-color": "#73ffdf",
+        "fill-opacity": 1.0,
+        "fill-outline-color": "#73ffdf"
+      }
+    }
+  ],
+  "metadata": {
+    "description": "The city's own symbology, extracted from the source ArcGIS renderer."
+  }
+}

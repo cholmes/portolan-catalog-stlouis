@@ -1,0 +1,1039 @@
+{
+ "currentVersion": 11.2,
+ "cimVersion": "3.2.0",
+ "id": 1,
+ "name": "Districts TIF",
+ "type": "Feature Layer",
+ "parentLayer": null,
+ "defaultVisibility": true,
+ "minScale": 0,
+ "maxScale": 0,
+ "canScaleSymbols": false,
+ "geometryType": "esriGeometryPolygon",
+ "description": "Field DefinitionsCase Number: Project code created in CityworksProject Name: TIF name, abbreviated as necessary; No. = north, Dt. = Downtown, R. = RiverTIF Location: Cross-streets, neighborhood, address, etc. as appropriateIncentive Status: (see required symbolgy below)Active: Currently activeNever Approved: process initiated but not approvedOn Hold: process started but not completedRetired: life span of TIF completeTerminated: approved then cancelledMODESA:  MODESA was created to facilitate the redevelopment of downtown areas and the creation of jobs by providing essential public infrastructure. The Missouri Revised Statues guiding MODESA are sections 99.915 to 99.980. More info:   https://ded.mo.gov/sites/default/files/programs/flyers/MODESA.pdfProject StatusProposed only: project is likely an idea, concept, or exploratory; typically unfunded.  For example, a developer is pursuing a project, but may not have site control or financing in placePlanned: approved, but the project has not started yet.  For TIF, this is the pre-development stage when the developer has site control, possibly plans and some financing.Underway: project is active; For TIF this means the project is under construction.Recently completed: project has completedMODOR ID: State issued ID for the TIF District as a wholeMODOR PG: State issued ID for RPAs within a TIF DistrictSymbology should be shown based on incentive status and the colors below:Status #HEX Color Code (RGB Color Code)Active #0070FF (0, 112, 255)Never Approved #9C9C9C  (156, 156, 156)On Hold #6DDC6B (109, 220, 107)Retired #856E40 (133, 110, 64)Terminated #FFAA00 (255, 170, 0)MoDESA  #FF0000 (255,0,0)",
+ "copyrightText": "Carrie Zind Bouche 1/31/2020",
+ "editFieldsInfo": null,
+ "ownershipBasedAccessControlForFeatures": null,
+ "syncCanReturnChanges": false,
+ "relationships": [],
+ "isDataVersioned": false,
+ "isDataArchived": false,
+ "infoInEstimates": [
+  "extent",
+  "count"
+ ],
+ "isDataBranchVersioned": false,
+ "isDataReplicaTracked": false,
+ "isCoGoEnabled": false,
+ "supportsRollbackOnFailureParameter": true,
+ "archivingInfo": {
+  "supportsQueryWithHistoricMoment": false,
+  "startArchivingMoment": -1
+ },
+ "supportsStatistics": true,
+ "supportsExceedsLimitStatistics": true,
+ "supportsAdvancedQueries": true,
+ "supportsValidateSQL": true,
+ "supportsCoordinatesQuantization": true,
+ "supportsQuantizationEditMode": true,
+ "supportsCalculate": true,
+ "supportsASyncCalculate": true,
+ "supportsDatumTransformation": true,
+ "advancedQueryCapabilities": {
+  "supportsPagination": true,
+  "supportsTrueCurve": true,
+  "supportsQueryWithDistance": true,
+  "supportsReturningQueryExtent": true,
+  "supportsStatistics": true,
+  "supportsPercentileStatistics": true,
+  "supportsHavingClause": true,
+  "supportsOrderBy": true,
+  "supportsDistinct": true,
+  "supportsCountDistinct": true,
+  "supportsAdvancedQueryRelated": true,
+  "supportsQueryRelatedPagination": true,
+  "supportsCurrentUserQueries": true,
+  "supportsQueryWithResultType": true,
+  "supportsReturningGeometryCentroid": true,
+  "supportsSqlExpression": true,
+  "supportsQueryWithDatumTransformation": true,
+  "supportsLod": false,
+  "supportsQueryWithLodSR": false,
+  "supportsQueryAnalytic": true
+ },
+ "advancedQueryAnalyticCapabilities": {
+  "supportsLinearRegression": true,
+  "supportsAsync": false,
+  "supportsPercentileAnalytic": true
+ },
+ "advancedEditingCapabilities": {
+  "supportedSqlFormatsInCalculate": [
+   "standard"
+  ],
+  "supportsAsyncApplyEdits": true,
+  "supportsApplyEditsbyUploadID": true,
+  "supportedApplyEditsUploadIDFormats": "JSON"
+ },
+ "hasGeometryProperties": true,
+ "geometryProperties": {
+  "shapeAreaFieldName": "Shape__Area",
+  "shapeLengthFieldName": "Shape__Length",
+  "units": "esriFeet"
+ },
+ "hasMetadata": true,
+ "extent": {
+  "xmin": 874194.4451717474,
+  "ymin": 983210.5490672365,
+  "xmax": 912066.8779569119,
+  "ymax": 1043815.1939338222,
+  "spatialReference": {
+   "wkid": 102696,
+   "latestWkid": 102696,
+   "xyTolerance": 0.003280833333333333,
+   "zTolerance": 0.001,
+   "mTolerance": 0.001,
+   "falseX": -17627100,
+   "falseY": -45827300,
+   "xyUnits": 3048.0060960121928,
+   "falseZ": -100000,
+   "zUnits": 10000,
+   "falseM": -100000,
+   "mUnits": 10000
+  }
+ },
+ "sourceSpatialReference": {
+  "wkid": 102696,
+  "latestWkid": 102696,
+  "xyTolerance": 0.003280833333333333,
+  "zTolerance": 0.001,
+  "mTolerance": 0.001,
+  "falseX": -17627100,
+  "falseY": -45827300,
+  "xyUnits": 3048.0060960121928,
+  "falseZ": 0,
+  "zUnits": 1,
+  "falseM": 0,
+  "mUnits": 1
+ },
+ "drawingInfo": {
+  "renderer": {
+   "type": "uniqueValue",
+   "field1": "Incentive_Status",
+   "defaultSymbol": {
+    "type": "esriSFS",
+    "style": "esriSFSSolid",
+    "color": [
+     77,
+     77,
+     77,
+     230
+    ],
+    "outline": {
+     "type": "esriSLS",
+     "style": "esriSLSSolid",
+     "color": [
+      77,
+      77,
+      77,
+      255
+     ],
+     "width": 2
+    }
+   },
+   "defaultLabel": "<all other values>",
+   "uniqueValueGroups": [
+    {
+     "heading": "Incentive_Status",
+     "classes": [
+      {
+       "label": "Active",
+       "description": "Active",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         20,
+         158,
+         204,
+         127
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          20,
+          158,
+          204,
+          255
+         ],
+         "width": 2
+        }
+       },
+       "values": [
+        [
+         "Active"
+        ]
+       ]
+      },
+      {
+       "label": "Terminated",
+       "description": "Terminated",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         235,
+         82,
+         82,
+         127
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          237,
+          81,
+          81,
+          255
+         ],
+         "width": 2
+        }
+       },
+       "values": [
+        [
+         "Terminated"
+        ]
+       ]
+      },
+      {
+       "label": "Never Approved",
+       "description": "Never Approved",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         169,
+         194,
+         56,
+         127
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          168,
+          196,
+          55,
+          255
+         ],
+         "width": 2
+        }
+       },
+       "values": [
+        [
+         "Never Approved"
+        ]
+       ]
+      },
+      {
+       "label": "Retired",
+       "description": "Retired",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         125,
+         125,
+         125,
+         127
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          125,
+          125,
+          125,
+          255
+         ],
+         "width": 2
+        }
+       },
+       "values": [
+        [
+         "Retired"
+        ]
+       ]
+      },
+      {
+       "label": "On Hold",
+       "description": "On Hold",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         250,
+         145,
+         32,
+         127
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          250,
+          145,
+          32,
+          255
+         ],
+         "width": 2
+        }
+       },
+       "values": [
+        [
+         "On Hold"
+        ]
+       ]
+      },
+      {
+       "label": "MODESA",
+       "description": "MODESA",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         255,
+         220,
+         66,
+         127
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          255,
+          220,
+          64,
+          255
+         ],
+         "width": 2
+        }
+       },
+       "values": [
+        [
+         "MODESA"
+        ]
+       ]
+      }
+     ]
+    }
+   ],
+   "uniqueValueInfos": [
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       20,
+       158,
+       204,
+       127
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        20,
+        158,
+        204,
+        255
+       ],
+       "width": 2
+      }
+     },
+     "value": "Active",
+     "label": "Active"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       235,
+       82,
+       82,
+       127
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        237,
+        81,
+        81,
+        255
+       ],
+       "width": 2
+      }
+     },
+     "value": "Terminated",
+     "label": "Terminated"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       169,
+       194,
+       56,
+       127
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        168,
+        196,
+        55,
+        255
+       ],
+       "width": 2
+      }
+     },
+     "value": "Never Approved",
+     "label": "Never Approved"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       125,
+       125,
+       125,
+       127
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        125,
+        125,
+        125,
+        255
+       ],
+       "width": 2
+      }
+     },
+     "value": "Retired",
+     "label": "Retired"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       250,
+       145,
+       32,
+       127
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        250,
+        145,
+        32,
+        255
+       ],
+       "width": 2
+      }
+     },
+     "value": "On Hold",
+     "label": "On Hold"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       255,
+       220,
+       66,
+       127
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        255,
+        220,
+        64,
+        255
+       ],
+       "width": 2
+      }
+     },
+     "value": "MODESA",
+     "label": "MODESA"
+    }
+   ],
+   "fieldDelimiter": ",",
+   "authoringInfo": {
+    "colorRamp": {
+     "type": "multipart",
+     "colorRamps": [
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        215,
+        207,
+        252,
+        255
+       ],
+       "toColor": [
+        215,
+        207,
+        252,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        188,
+        252,
+        187,
+        255
+       ],
+       "toColor": [
+        188,
+        252,
+        187,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        252,
+        212,
+        187,
+        255
+       ],
+       "toColor": [
+        252,
+        212,
+        187,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        182,
+        249,
+        252,
+        255
+       ],
+       "toColor": [
+        182,
+        249,
+        252,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        252,
+        189,
+        218,
+        255
+       ],
+       "toColor": [
+        252,
+        189,
+        218,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        252,
+        252,
+        187,
+        255
+       ],
+       "toColor": [
+        252,
+        252,
+        187,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        247,
+        187,
+        252,
+        255
+       ],
+       "toColor": [
+        247,
+        187,
+        252,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        179,
+        222,
+        252,
+        255
+       ],
+       "toColor": [
+        179,
+        222,
+        252,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        192,
+        252,
+        221,
+        255
+       ],
+       "toColor": [
+        192,
+        252,
+        221,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        242,
+        252,
+        215,
+        255
+       ],
+       "toColor": [
+        242,
+        252,
+        215,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        185,
+        184,
+        252,
+        255
+       ],
+       "toColor": [
+        185,
+        184,
+        252,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        249,
+        215,
+        252,
+        255
+       ],
+       "toColor": [
+        249,
+        215,
+        252,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        252,
+        213,
+        212,
+        255
+       ],
+       "toColor": [
+        252,
+        213,
+        212,
+        255
+       ]
+      }
+     ]
+    }
+   }
+  },
+  "scaleSymbols": true,
+  "transparency": 0,
+  "labelingInfo": null
+ },
+ "hasM": false,
+ "hasZ": false,
+ "allowGeometryUpdates": true,
+ "allowTrueCurvesUpdates": true,
+ "onlyAllowTrueCurveUpdatesByTrueCurveClients": true,
+ "hasAttachments": false,
+ "supportsApplyEditsWithGlobalIds": false,
+ "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+ "objectIdField": "OBJECTID",
+ "globalIdField": "",
+ "displayField": "Project_Name",
+ "typeIdField": "Incentive_Status",
+ "subtypeField": "",
+ "fields": [
+  {
+   "name": "OBJECTID",
+   "type": "esriFieldTypeOID",
+   "alias": "OBJECTID",
+   "domain": null,
+   "editable": false,
+   "nullable": false,
+   "defaultValue": null,
+   "modelName": "OBJECTID"
+  },
+  {
+   "name": "Assessor_TIF_ID",
+   "type": "esriFieldTypeString",
+   "alias": "Assessor TIF ID",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 255,
+   "defaultValue": null,
+   "modelName": "Assessor_TIF_ID"
+  },
+  {
+   "name": "TIF_ID",
+   "type": "esriFieldTypeString",
+   "alias": "TIF ID",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 7,
+   "defaultValue": null,
+   "modelName": "TIF_ID"
+  },
+  {
+   "name": "Project_Name",
+   "type": "esriFieldTypeString",
+   "alias": "Project Name",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 255,
+   "defaultValue": null,
+   "modelName": "Project_Name"
+  },
+  {
+   "name": "Subgrouping",
+   "type": "esriFieldTypeString",
+   "alias": "Subgrouping (RPAs)",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 255,
+   "defaultValue": null,
+   "modelName": "Subgrouping"
+  },
+  {
+   "name": "TIF_Location",
+   "type": "esriFieldTypeString",
+   "alias": "TIF Location",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 255,
+   "defaultValue": null,
+   "modelName": "TIF_Location"
+  },
+  {
+   "name": "Ordinance",
+   "type": "esriFieldTypeInteger",
+   "alias": "Ordinance",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "Ordinance"
+  },
+  {
+   "name": "Incentive_Status",
+   "type": "esriFieldTypeString",
+   "alias": "Incentive_Status",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 255,
+   "defaultValue": null,
+   "modelName": "Incentive_Status"
+  },
+  {
+   "name": "GUID",
+   "type": "esriFieldTypeGUID",
+   "alias": "GUID",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 38,
+   "defaultValue": null,
+   "modelName": "GUID"
+  },
+  {
+   "name": "Shape__Area",
+   "type": "esriFieldTypeDouble",
+   "alias": "Shape.STArea()",
+   "domain": null,
+   "editable": false,
+   "required": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "Shape.STArea()"
+  },
+  {
+   "name": "Shape__Length",
+   "type": "esriFieldTypeDouble",
+   "alias": "Shape.STLength()",
+   "domain": null,
+   "editable": false,
+   "required": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "Shape.STLength()"
+  }
+ ],
+ "geometryField": {
+  "name": "Shape",
+  "type": "esriFieldTypeGeometry",
+  "alias": "Shape",
+  "domain": null,
+  "editable": true,
+  "nullable": true,
+  "defaultValue": null,
+  "modelName": "Shape"
+ },
+ "indexes": [
+  {
+   "name": "R518_pk",
+   "fields": "OBJECTID",
+   "isAscending": true,
+   "isUnique": true,
+   "description": ""
+  },
+  {
+   "name": "S495_idx",
+   "fields": "Shape",
+   "isAscending": true,
+   "isUnique": true,
+   "description": ""
+  }
+ ],
+ "datesInUnknownTimezone": false,
+ "dateFieldsTimeReference": {
+  "timeZone": "UTC",
+  "respectsDaylightSaving": false
+ },
+ "preferredTimeReference": null,
+ "types": [
+  {
+   "id": "Active",
+   "name": "Active",
+   "domains": {},
+   "templates": [
+    {
+     "name": "Active",
+     "description": "",
+     "prototype": {
+      "attributes": {
+       "Ordinance": null,
+       "GUID": null,
+       "Assessor_TIF_ID": null,
+       "TIF_ID": null,
+       "Project_Name": null,
+       "Subgrouping": null,
+       "TIF_Location": null,
+       "Incentive_Status": "Active"
+      }
+     },
+     "drawingTool": "esriFeatureEditToolPolygon"
+    }
+   ]
+  },
+  {
+   "id": "Terminated",
+   "name": "Terminated",
+   "domains": {},
+   "templates": [
+    {
+     "name": "Terminated",
+     "description": "",
+     "prototype": {
+      "attributes": {
+       "Ordinance": null,
+       "GUID": null,
+       "Assessor_TIF_ID": null,
+       "TIF_ID": null,
+       "Project_Name": null,
+       "Subgrouping": null,
+       "TIF_Location": null,
+       "Incentive_Status": "Terminated"
+      }
+     },
+     "drawingTool": "esriFeatureEditToolPolygon"
+    }
+   ]
+  },
+  {
+   "id": "Never Approved",
+   "name": "Never Approved",
+   "domains": {},
+   "templates": [
+    {
+     "name": "Never Approved",
+     "description": "",
+     "prototype": {
+      "attributes": {
+       "Ordinance": null,
+       "GUID": null,
+       "Assessor_TIF_ID": null,
+       "TIF_ID": null,
+       "Project_Name": null,
+       "Subgrouping": null,
+       "TIF_Location": null,
+       "Incentive_Status": "Never Approved"
+      }
+     },
+     "drawingTool": "esriFeatureEditToolPolygon"
+    }
+   ]
+  },
+  {
+   "id": "Retired",
+   "name": "Retired",
+   "domains": {},
+   "templates": [
+    {
+     "name": "Retired",
+     "description": "",
+     "prototype": {
+      "attributes": {
+       "Ordinance": null,
+       "GUID": null,
+       "Assessor_TIF_ID": null,
+       "TIF_ID": null,
+       "Project_Name": null,
+       "Subgrouping": null,
+       "TIF_Location": null,
+       "Incentive_Status": "Retired"
+      }
+     },
+     "drawingTool": "esriFeatureEditToolPolygon"
+    }
+   ]
+  },
+  {
+   "id": "On Hold",
+   "name": "On Hold",
+   "domains": {},
+   "templates": [
+    {
+     "name": "On Hold",
+     "description": "",
+     "prototype": {
+      "attributes": {
+       "Ordinance": null,
+       "GUID": null,
+       "Assessor_TIF_ID": null,
+       "TIF_ID": null,
+       "Project_Name": null,
+       "Subgrouping": null,
+       "TIF_Location": null,
+       "Incentive_Status": "On Hold"
+      }
+     },
+     "drawingTool": "esriFeatureEditToolPolygon"
+    }
+   ]
+  },
+  {
+   "id": "MODESA",
+   "name": "MODESA",
+   "domains": {},
+   "templates": [
+    {
+     "name": "MODESA",
+     "description": "",
+     "prototype": {
+      "attributes": {
+       "Ordinance": null,
+       "GUID": null,
+       "Assessor_TIF_ID": null,
+       "TIF_ID": null,
+       "Project_Name": null,
+       "Subgrouping": null,
+       "TIF_Location": null,
+       "Incentive_Status": "MODESA"
+      }
+     },
+     "drawingTool": "esriFeatureEditToolPolygon"
+    }
+   ]
+  }
+ ],
+ "templates": [],
+ "maxRecordCount": 2000,
+ "supportedQueryFormats": "JSON, geoJSON, PBF",
+ "supportedExportFormats": "sqlite,filegdb,shapefile,csv,geojson",
+ "capabilities": "Query,Create,Update,Delete,Uploads,Editing",
+ "useStandardizedQueries": true,
+ "bigIntegerRestrictedTo53Bits": true,
+ "supportedSpatialRelationships": [
+  "esriSpatialRelIntersects",
+  "esriSpatialRelContains",
+  "esriSpatialRelCrosses",
+  "esriSpatialRelEnvelopeIntersects",
+  "esriSpatialRelIndexIntersects",
+  "esriSpatialRelOverlaps",
+  "esriSpatialRelTouches",
+  "esriSpatialRelWithin",
+  "esriSpatialRelRelation"
+ ],
+ "standardMaxRecordCount": 4000,
+ "tileMaxRecordCount": 4000,
+ "standardMaxRecordCountNoGeometry": 32000,
+ "maxRecordCountFactor": 1,
+ "serviceItemId": "d106385f538f4189a287a4a4060be56d"
+}

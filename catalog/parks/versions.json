@@ -1,0 +1,45 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.1",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-05T01:18:33.839905Z",
+      "breaking": false,
+      "assets": {
+        "parks.parquet": {
+          "sha256": "39f5771fa587c6d44ff99ac55be6e971ac85afdc253a84b989e664d002c3835f",
+          "size_bytes": 53378,
+          "href": "parks/parks.parquet",
+          "mtime": 1785892491.1218822
+        }
+      },
+      "changes": [
+        "parks.parquet"
+      ]
+    },
+    {
+      "version": "1.0.1",
+      "created": "2026-08-05T01:20:10.692024Z",
+      "breaking": false,
+      "assets": {
+        "parks.parquet": {
+          "sha256": "39f5771fa587c6d44ff99ac55be6e971ac85afdc253a84b989e664d002c3835f",
+          "size_bytes": 53378,
+          "href": "parks/parks.parquet",
+          "mtime": 1785892491.1218822
+        },
+        "parks.pmtiles": {
+          "sha256": "0f890776d172d0c40fd2597a4f616f074c4c4762b52fd18e66625a60fad75433",
+          "size_bytes": 134760,
+          "href": "parks/parks.pmtiles",
+          "mtime": 1785892810.6889129
+        }
+      },
+      "changes": [
+        "parks.pmtiles"
+      ],
+      "message": "Generated PMTiles: parks.pmtiles"
+    }
+  ]
+}

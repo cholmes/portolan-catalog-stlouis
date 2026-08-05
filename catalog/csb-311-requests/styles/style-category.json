@@ -1,0 +1,96 @@
+{
+  "version": 8,
+  "name": "Request category",
+  "metadata": {
+    "description": "The eight biggest request groups \u2014 trash/debris leads with 400k, then right-of-way, trees, vehicles, street lights."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../csb-311-requests.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "csb-311-requests-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "csb-311-requests",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "GROUP"
+          ],
+          "Trash/Debris/Green Waste",
+          "#8b6f5e",
+          "Right of Way Issues",
+          "#9aa3a8",
+          "Trees",
+          "#538400",
+          "Vehicles",
+          "#7c5295",
+          "Street Lights",
+          "#e89d07",
+          "Weeds/Grass",
+          "#a6c96a",
+          "Animals",
+          "#c98bab",
+          "Street Sign/Painting",
+          "#a8d4e8",
+          "#dfe6ea"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "circle",
+      "type": "circle",
+      "source": "data",
+      "source-layer": "csb-311-requests",
+      "paint": {
+        "circle-color": [
+          "match",
+          [
+            "get",
+            "GROUP"
+          ],
+          "Trash/Debris/Green Waste",
+          "#8b6f5e",
+          "Right of Way Issues",
+          "#9aa3a8",
+          "Trees",
+          "#538400",
+          "Vehicles",
+          "#7c5295",
+          "Street Lights",
+          "#e89d07",
+          "Weeds/Grass",
+          "#a6c96a",
+          "Animals",
+          "#c98bab",
+          "Street Sign/Painting",
+          "#a8d4e8",
+          "#dfe6ea"
+        ],
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          10,
+          0.7200000000000001,
+          13,
+          1.8,
+          16,
+          3.9600000000000004
+        ],
+        "circle-opacity": 0.6
+      }
+    }
+  ]
+}

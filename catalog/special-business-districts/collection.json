@@ -1,0 +1,289 @@
+{
+  "type": "Collection",
+  "id": "special-business-districts",
+  "stac_version": "1.1.0",
+  "description": "Special business districts (SBDs) within the City of Saint Louis. SBDs are established by Missouri statute. More Info: http://revisor.mo.gov/main/OneChapter.aspx?chapter=67",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown",
+      "title": "Agent/LLM usage guide"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "./special-business-districts.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "pmtiles:layers": [
+        "special-business-districts"
+      ]
+    },
+    {
+      "rel": "license",
+      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=62",
+      "type": "text/html",
+      "title": "Dataset page on the City of St. Louis open data portal"
+    },
+    {
+      "rel": "via",
+      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=62",
+      "type": "text/html",
+      "title": "Source dataset on stlouis-mo.gov"
+    },
+    {
+      "rel": "describedby",
+      "href": "./README.md",
+      "type": "text/markdown"
+    }
+  ],
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
+  ],
+  "geoparquet:geometry_type": "Polygon Z",
+  "geoparquet:feature_count": 22,
+  "table:row_count": 22,
+  "table:primary_geometry": "geometry",
+  "table:columns": [
+    {
+      "name": "Name",
+      "type": "string"
+    },
+    {
+      "name": "ASR_ID",
+      "type": "int64"
+    },
+    {
+      "name": "Active",
+      "type": "string"
+    },
+    {
+      "name": "DistrictTy",
+      "type": "string"
+    },
+    {
+      "name": "MainContac",
+      "type": "string"
+    },
+    {
+      "name": "MainCont_1",
+      "type": "string"
+    },
+    {
+      "name": "AltContact",
+      "type": "string"
+    },
+    {
+      "name": "AltConta_1",
+      "type": "string"
+    },
+    {
+      "name": "GeneralEma",
+      "type": "string"
+    },
+    {
+      "name": "MtgDateTim",
+      "type": "string"
+    },
+    {
+      "name": "MtgLocatio",
+      "type": "string"
+    },
+    {
+      "name": "F501c3",
+      "type": "string"
+    },
+    {
+      "name": "SLACO_Memb",
+      "type": "string"
+    },
+    {
+      "name": "Notes",
+      "type": "string"
+    },
+    {
+      "name": "LastUpdate",
+      "type": "string"
+    },
+    {
+      "name": "ID",
+      "type": "int64"
+    },
+    {
+      "name": "Ordinance",
+      "type": "int64"
+    },
+    {
+      "name": "BoardBill",
+      "type": "int64"
+    },
+    {
+      "name": "Session",
+      "type": "string"
+    },
+    {
+      "name": "OrdLink",
+      "type": "string"
+    },
+    {
+      "name": "Wards",
+      "type": "int64"
+    },
+    {
+      "name": "Active0424",
+      "type": "int64"
+    },
+    {
+      "name": "Shape__Are",
+      "type": "decimal128(18, 11)"
+    },
+    {
+      "name": "Shape__Len",
+      "type": "decimal128(18, 11)"
+    },
+    {
+      "name": "geometry",
+      "type": "binary"
+    },
+    {
+      "name": "geometry_bbox",
+      "type": "struct<xmin: float not null, ymin: float not null, xmax: float not null, ymax: float not null>"
+    }
+  ],
+  "portolan:total_size_bytes": 75758,
+  "portolan:asset_count": 6,
+  "portolan:styles": [
+    "styles/default",
+    "styles/style-boundaries",
+    "styles/style-labeled"
+  ],
+  "updated": "2026-08-05T01:13:22+00:00",
+  "title": "Special Business Districts (SBDs)",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -90.31400927333445,
+          38.562374214383,
+          -90.18091174100911,
+          38.71616957108721
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "license": "other",
+  "providers": [
+    {
+      "name": "City of St. Louis \u2014 St. Louis Development Corporation",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=62"
+    },
+    {
+      "name": "TGE Labs",
+      "roles": [
+        "host"
+      ],
+      "url": "https://github.com/cholmes/portolan-catalog-stlouis"
+    }
+  ],
+  "assets": {
+    "special-business-districts": {
+      "href": "./special-business-districts.parquet",
+      "type": "application/vnd.apache.parquet",
+      "title": "Special Business Districts (SBDs) (GeoParquet)",
+      "file:size": 31128,
+      "file:checksum": "1220a3f7d4c86185afc770a1e2c12ce5a1df4bcc820b26871e604eb70aad1dd67509",
+      "roles": [
+        "data"
+      ]
+    },
+    "special-business-districts-tiles": {
+      "href": "./special-business-districts.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "special-business-districts (vector tiles)",
+      "file:size": 38985,
+      "file:checksum": "122081b1464aad8e2507b5808d4211473ad17640b12b9716f8a51164d40c38e1e610",
+      "roles": [
+        "data"
+      ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "SBDs by status",
+      "roles": [
+        "default",
+        "style"
+      ],
+      "description": "The 22 special business districts by active status.",
+      "file:size": 1144,
+      "file:checksum": "1220a8916942c62050a14d1f8744a15320e55b461993a61efd9dd960c4c6babce3c5"
+    },
+    "styles/style-boundaries": {
+      "href": "./styles/style-boundaries.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "District boundaries",
+      "roles": [
+        "style"
+      ],
+      "description": "Outlines only.",
+      "file:size": 498,
+      "file:checksum": "12203828e01c6cf2584c6eae2819d31d6c511b28ee2bed7b3676efa8c69a0af8cc8b"
+    },
+    "styles/style-labeled": {
+      "href": "./styles/style-labeled.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Labeled SBDs",
+      "roles": [
+        "style"
+      ],
+      "description": "Districts with names.",
+      "file:size": 1008,
+      "file:checksum": "1220cd21824e66e2b105c14bb5a36a5a596ddf989b21f9efe1c943820e4422b502f8"
+    },
+    "documentation": {
+      "href": "./README.md",
+      "type": "text/markdown",
+      "file:size": 3102,
+      "file:checksum": "122064091d95860e7bb0a803b7d7cf43a34cbc43f242a4c02a91ee426f9d81200715",
+      "roles": [
+        "documentation"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ],
+      "title": "Special Business Districts (SBDs) rendered with the default style",
+      "file:size": 408779,
+      "file:checksum": "1220c30bbfc7e33c7f812d184d937231d17a8bb2cc1aee562013d5cfb5d538038678"
+    }
+  }
+}

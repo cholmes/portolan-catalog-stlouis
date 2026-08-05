@@ -1,0 +1,50 @@
+{
+ "collection": "neighborhoods",
+ "title": "Neighborhood Boundaries",
+ "portal_page": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=85",
+ "department": "Planning and Urban Design",
+ "source": "https://maps6.stlouis-mo.gov/arcgis/rest/services/PublicDataStore/NEIGHBORHOOD_BOUNDARIES/FeatureServer",
+ "source_type": "arcgis",
+ "synced": "2026-08-05T01:04:57+00:00",
+ "fetch": {
+  "status": "ok",
+  "parquets": [
+   "staging/extracts/neighborhoods/neighborhood_boundaries/neighborhood_boundaries.parquet"
+  ],
+  "layer_url": "https://maps6.stlouis-mo.gov/arcgis/rest/services/PublicDataStore/NEIGHBORHOOD_BOUNDARIES/FeatureServer/0",
+  "layer_description": null,
+  "fields": [
+   {
+    "name": "OBJECTID",
+    "alias": "OBJECTID",
+    "type": "esriFieldTypeOID"
+   },
+   {
+    "name": "NHD_NUM",
+    "alias": "NHD_NUM",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "NHD_NAME",
+    "alias": "NHD_NAME",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "NHD_NUMTXT",
+    "alias": "NHD_NUMTXT",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Shape__Area",
+    "alias": "SHAPE.STArea()",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Shape__Length",
+    "alias": "SHAPE.STLength()",
+    "type": "esriFieldTypeDouble"
+   }
+  ],
+  "city_style": "staging/extracts/neighborhoods/styles/city-renderer.json"
+ }
+}

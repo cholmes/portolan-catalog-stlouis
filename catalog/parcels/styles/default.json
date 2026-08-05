@@ -1,0 +1,37 @@
+{
+  "version": 8,
+  "name": "Parcel fabric",
+  "metadata": {
+    "description": "Every parcel in the city: quiet fill with hairline lot lines, the base reference view of the assessor's parcel layer."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../parcels.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "parcels",
+      "paint": {
+        "fill-color": "#f4f1ea",
+        "fill-opacity": 0.85,
+        "fill-outline-color": "#b8b2a6"
+      }
+    },
+    {
+      "id": "lots",
+      "type": "line",
+      "source": "data",
+      "source-layer": "parcels",
+      "paint": {
+        "line-color": "#8f8878",
+        "line-width": 0.3,
+        "line-opacity": 1.0
+      }
+    }
+  ]
+}

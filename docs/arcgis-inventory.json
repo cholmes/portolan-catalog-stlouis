@@ -1,0 +1,5051 @@
+{
+ "maps6": {
+  "root_services": [
+   {
+    "name": "CDA_STABILIZATIONS",
+    "type": "MapServer"
+   },
+   {
+    "name": "Community_Asset_Bonus_Points_new",
+    "type": "FeatureServer"
+   },
+   {
+    "name": "Community_Asset_Bonus_Points_new",
+    "type": "MapServer"
+   },
+   {
+    "name": "Community_Wifi",
+    "type": "MapServer"
+   },
+   {
+    "name": "Condemned",
+    "type": "FeatureServer"
+   },
+   {
+    "name": "Condemned",
+    "type": "MapServer"
+   },
+   {
+    "name": "CR_2TO3",
+    "type": "MapServer"
+   },
+   {
+    "name": "CR_3TO5",
+    "type": "MapServer"
+   },
+   {
+    "name": "CR_LESS2",
+    "type": "MapServer"
+   },
+   {
+    "name": "CR_OVR5",
+    "type": "MapServer"
+   },
+   {
+    "name": "CURB_RAMP_GRAVOIS_GRAND_JEFFERSON_2TO3PERC",
+    "type": "MapServer"
+   },
+   {
+    "name": "CURB_RAMP_GRAVOIS_GRAND_JEFFERSON_3TO5PERC",
+    "type": "MapServer"
+   },
+   {
+    "name": "CURB_RAMP_GRAVOIS_GRAND_JEFFERSON_LESS2PERC",
+    "type": "MapServer"
+   },
+   {
+    "name": "CURB_RAMP_GRAVOIS_GRAND_JEFFERSON_OVER5PERC",
+    "type": "MapServer"
+   },
+   {
+    "name": "Definite_Vacant",
+    "type": "FeatureServer"
+   },
+   {
+    "name": "Definite_Vacant",
+    "type": "MapServer"
+   },
+   {
+    "name": "Demonstration_Areas_MIL1",
+    "type": "FeatureServer"
+   },
+   {
+    "name": "Demonstration_Areas_MIL1",
+    "type": "MapServer"
+   },
+   {
+    "name": "Down_Payment_Programs",
+    "type": "FeatureServer"
+   },
+   {
+    "name": "Down_Payment_Programs",
+    "type": "MapServer"
+   },
+   {
+    "name": "DRAFT_2025_SLUP_Parcel_Map_MIL1",
+    "type": "MapServer"
+   },
+   {
+    "name": "Empty",
+    "type": "MapServer"
+   },
+   {
+    "name": "Forestry_Maintenance_Districts",
+    "type": "MapServer"
+   },
+   {
+    "name": "LRA_Buildings_Scoring",
+    "type": "FeatureServer"
+   },
+   {
+    "name": "LRA_Buildings_Scoring",
+    "type": "MapServer"
+   },
+   {
+    "name": "LRA_Properties",
+    "type": "FeatureServer"
+   },
+   {
+    "name": "LRA_Properties",
+    "type": "MapServer"
+   },
+   {
+    "name": "LRA_Rehab",
+    "type": "FeatureServer"
+   },
+   {
+    "name": "LRA_Rehab",
+    "type": "MapServer"
+   },
+   {
+    "name": "Market_Value_Analysis_2020",
+    "type": "MapServer"
+   },
+   {
+    "name": "Mortgage_Assistance_Program",
+    "type": "MapServer"
+   },
+   {
+    "name": "No_slope_given",
+    "type": "MapServer"
+   },
+   {
+    "name": "NS_SS_Corridor_Investments_Map",
+    "type": "MapServer"
+   },
+   {
+    "name": "Pilot_Factors",
+    "type": "MapServer"
+   },
+   {
+    "name": "Plat_Map",
+    "type": "MapServer"
+   },
+   {
+    "name": "Preservation_Reivew_Area_MIL1",
+    "type": "MapServer"
+   },
+   {
+    "name": "Preservation_Review_Areas_MIL1",
+    "type": "MapServer"
+   },
+   {
+    "name": "Proactive_Development",
+    "type": "MapServer"
+   },
+   {
+    "name": "Proposed_North_South_Metrolink",
+    "type": "FeatureServer"
+   },
+   {
+    "name": "Proposed_North_South_Metrolink",
+    "type": "MapServer"
+   },
+   {
+    "name": "Public_Health_Facility_Survey_MIL1",
+    "type": "MapServer"
+   },
+   {
+    "name": "SCSTL_Stabilizations",
+    "type": "FeatureServer"
+   },
+   {
+    "name": "SCSTL_Stabilizations",
+    "type": "MapServer"
+   },
+   {
+    "name": "Significant_Sites",
+    "type": "MapServer"
+   },
+   {
+    "name": "Social_Vulnerability_Map_by_ZCTA_MIL1",
+    "type": "MapServer"
+   },
+   {
+    "name": "St_Louis_Flood_Risk_Map",
+    "type": "MapServer"
+   },
+   {
+    "name": "St_Louis_Parcels",
+    "type": "MapServer"
+   },
+   {
+    "name": "Traffic_OCC_Notification_Area",
+    "type": "FeatureServer"
+   },
+   {
+    "name": "Traffic_OCC_Notification_Area",
+    "type": "MapServer"
+   },
+   {
+    "name": "VSI_Vacancy_Layers",
+    "type": "FeatureServer"
+   },
+   {
+    "name": "VSI_Vacancy_Layers",
+    "type": "MapServer"
+   }
+  ],
+  "folders": {
+   "ASSESSOR": [],
+   "BOE": [
+    {
+     "name": "BOE/Polling_Place_Precincts",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 2,
+       "name": "STLOUIS.dbo.\"Polling Place Precincts\"",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 0,
+       "name": "Polling Centers",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "BOE/PRECINCTS_2023",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "PRECINCTS 2023",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "BOE/PRECINCTS_2023",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "PRECINCTS 2023",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    }
+   ],
+   "BPS": [],
+   "BUILDING_DIVISION": [],
+   "CDA": [],
+   "CITYWORKS": [
+    {
+     "name": "CITYWORKS/BASEMAP",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Streets",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 3,
+       "name": "Buildings",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 4,
+       "name": "Parcels",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 5,
+       "name": "Parks",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "CITYWORKS/BASEMAP",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Streets",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 3,
+       "name": "Buildings",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 5,
+       "name": "Parks",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 4,
+       "name": "Parcels",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "CITYWORKS/CW_BASE",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Streets",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 1,
+       "name": "Arterial Streets",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 2,
+       "name": "Highway Centerlines",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 3,
+       "name": "Buildings",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 5,
+       "name": "Parks",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 4,
+       "name": "Parcels",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    }
+   ],
+   "DEVNET": [],
+   "FIRE": [],
+   "FORESTRY": [],
+   "GEOCODERS": [
+    {
+     "name": "GEOCODERS/COMPOSITE_GEOCODE",
+     "type": "GeocodeServer"
+    },
+    {
+     "name": "GEOCODERS/PARCEL_GEOCODE",
+     "type": "GeocodeServer"
+    },
+    {
+     "name": "GEOCODERS/STREET_GEOCODE",
+     "type": "GeocodeServer"
+    }
+   ],
+   "HEALTH": [],
+   "Hosted": [
+    {
+     "name": "Hosted/Buildings_Over50Ksqft",
+     "type": "FeatureServer",
+     "layers": []
+    },
+    {
+     "name": "Hosted/c599bfab",
+     "type": "WorkspaceServer"
+    },
+    {
+     "name": "Hosted/CDAproperties_20220913",
+     "type": "FeatureServer",
+     "layers": []
+    },
+    {
+     "name": "Hosted/City_Blocks_209_and_210",
+     "type": "FeatureServer",
+     "layers": []
+    },
+    {
+     "name": "Hosted/City_Limits",
+     "type": "FeatureServer",
+     "layers": []
+    },
+    {
+     "name": "Hosted/CONTRACTOR",
+     "type": "VectorTileServer"
+    },
+    {
+     "name": "Hosted/Fire_Districts",
+     "type": "FeatureServer",
+     "layers": []
+    },
+    {
+     "name": "Hosted/Fire_Stations",
+     "type": "FeatureServer",
+     "layers": []
+    },
+    {
+     "name": "Hosted/Historic_Districts",
+     "type": "FeatureServer",
+     "layers": []
+    },
+    {
+     "name": "Hosted/Incentive_Projects_ak",
+     "type": "FeatureServer",
+     "layers": []
+    },
+    {
+     "name": "Hosted/LIHTC_Projects",
+     "type": "FeatureServer",
+     "layers": []
+    },
+    {
+     "name": "Hosted/Location_Tracking",
+     "type": "FeatureServer",
+     "layers": []
+    },
+    {
+     "name": "Hosted/LRAinventory_EOY2021",
+     "type": "FeatureServer",
+     "layers": []
+    },
+    {
+     "name": "Hosted/Neighborhoods_ak",
+     "type": "FeatureServer",
+     "layers": []
+    },
+    {
+     "name": "Hosted/Neighborhoods_that_contain_North_City_Commercial_Corridors",
+     "type": "FeatureServer",
+     "layers": []
+    },
+    {
+     "name": "Hosted/New_Market_Tax_Credits",
+     "type": "FeatureServer",
+     "layers": []
+    },
+    {
+     "name": "Hosted/NOFA_2022_WFL1",
+     "type": "FeatureServer",
+     "layers": []
+    },
+    {
+     "name": "Hosted/North_City_Commercial_Corridors",
+     "type": "FeatureServer",
+     "layers": []
+    },
+    {
+     "name": "Hosted/Office_of_Building_Performance_WFL1",
+     "type": "FeatureServer",
+     "layers": []
+    },
+    {
+     "name": "Hosted/QCTs_within_Neighborhoods_that_contain_North_City_Commercial_Corridors",
+     "type": "FeatureServer",
+     "layers": []
+    },
+    {
+     "name": "Hosted/Spring_2021_NOFA",
+     "type": "FeatureServer",
+     "layers": []
+    },
+    {
+     "name": "Hosted/Wards_ak",
+     "type": "FeatureServer",
+     "layers": []
+    }
+   ],
+   "Livedatabase": [
+    {
+     "name": "Livedatabase/AssessdValue",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Building Value Changes",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 1,
+       "name": "Land Value Change",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 2,
+       "name": "Total Value Change",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "Livedatabase/AssessedValue2",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Assessed Value Building",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 1,
+       "name": "Assessed Value Land",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 2,
+       "name": "Total Assessed Value",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "Livedatabase/AssessedValue3",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Parcels",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "Livedatabase/Commercial2",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Operating Expenses",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 1,
+       "name": "Effective Gross Income",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "Livedatabase/Corrections",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Net Tax",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 1,
+       "name": "Net Tax Change",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 2,
+       "name": "Original Tax Change",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 3,
+       "name": "Taxable Value",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 4,
+       "name": "Taxable Value Change",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 5,
+       "name": "Corrections",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    }
+   ],
+   "ORTHO": [],
+   "OVP": [],
+   "PDA": [
+    {
+     "name": "PDA/Transportation_Projects",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Hotspot Safety Intersections",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 1,
+       "name": "Traffic Signal Projects",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 2,
+       "name": "Planned MetroLink Greenline",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 3,
+       "name": "Bike Facilities",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 4,
+       "name": "Bridges",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 5,
+       "name": "ARPA Corridor Projects",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 6,
+       "name": "Roadway Improvements",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 7,
+       "name": "Traffic Study Implementation",
+       "geometryType": "esriGeometryPolyline"
+      }
+     ]
+    }
+   ],
+   "PDAGroup": [],
+   "Print_Services": [],
+   "Prints": [],
+   "PublicDataStore": [
+    {
+     "name": "PublicDataStore/NEIGHBORHOOD_BOUNDARIES",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "NEIGHBORHOOD_BOUNDARIES",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "PublicDataStore/NEIGHBORHOOD_BOUNDARIES",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "NEIGHBORHOOD_BOUNDARIES",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    }
+   ],
+   "ROUTING": [],
+   "SLDC": [],
+   "STLFD": [],
+   "STLOUIS": [
+    {
+     "name": "STLOUIS/CJEST_City_of_STL",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "CJESTCityofSTL_ExportFeature",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    }
+   ],
+   "STREETS": [],
+   "System": [],
+   "TESTING": [
+    {
+     "name": "TESTING/Appeal_Type",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 2,
+       "name": "Appeal Type",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "TESTING/Assessed_Value_Building",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 1,
+       "name": "Assessed Value Building",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "TESTING/Assessed_Value_Land",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Assessed Value Land",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "TESTING/Assessed_Value_Reduction",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Assessed Value Reduction",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "TESTING/BER_Parcel_Centers",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "BER Parcel Centers",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "TESTING/Building_Value_Change",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 3,
+       "name": "Building Value Change",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "TESTING/Cap_Rate",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 1,
+       "name": "Cap Rate",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "TESTING/Condition",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Condition",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "TESTING/Cost_Method",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Cost Method",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "TESTING/Effective_Gross_Income",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Effective Gross Income",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "TESTING/Land_Type",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 1,
+       "name": "Land Type",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "TESTING/Land_Value_Change",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 4,
+       "name": "Land Value Change",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "TESTING/Map",
+     "type": "MapServer",
+     "layers": []
+    },
+    {
+     "name": "TESTING/Neighborhood_Parcel_Testing",
+     "type": "MapServer",
+     "layers": []
+    },
+    {
+     "name": "TESTING/Net_Tax_Change",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 3,
+       "name": "Net Tax Change",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "TESTING/Net_Tax_New",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Net Tax",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "TESTING/Net_Tax",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 2,
+       "name": "Net Tax",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "TESTING/Original_Net_Tax",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 1,
+       "name": "Original Net Tax",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "TESTING/Original_Tax_Change",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 5,
+       "name": "Original Tax Change",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "TESTING/Original",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 4,
+       "name": "Original",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "TESTING/Parcel",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Parcel",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "TESTING/Parcels",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 4,
+       "name": "Parcels",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "TESTING/Percent_Value_Change",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 7,
+       "name": "Percent Value Change",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "TESTING/Property_Description",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Platted Parcels",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "TESTING/Property_Use",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 2,
+       "name": "Property Use",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "TESTING/Quality",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 1,
+       "name": "Quality",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "TESTING/Tax_Code",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 2,
+       "name": "Tax Code",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "TESTING/Taxable_Value_Change",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 6,
+       "name": "Taxable Value Change",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "TESTING/Taxable_Value",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 4,
+       "name": "Taxable Value",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "TESTING/Tif_Districts",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Tif Districts",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "TESTING/Total_Assessed_Values",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 2,
+       "name": "Total Assessed Values",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "TESTING/Total_Value_Change",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 5,
+       "name": "Total Value Change",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "TESTING/Value_Change",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 6,
+       "name": "Value Change",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    }
+   ],
+   "Utilities": [
+    {
+     "name": "Utilities/GeocodingTools",
+     "type": "GPServer"
+    },
+    {
+     "name": "Utilities/Geometry",
+     "type": "GeometryServer"
+    },
+    {
+     "name": "Utilities/OfflinePackaging",
+     "type": "GPServer"
+    },
+    {
+     "name": "Utilities/PrintingTools",
+     "type": "GPServer"
+    }
+   ],
+   "UtilityServices": [],
+   "VSI": [],
+   "WARDS": [],
+   "WATER": [],
+   "WEB": []
+  }
+ },
+ "maps8": {
+  "root_services": [
+   {
+    "name": "Capital_Improvement_Projects",
+    "type": "MapServer"
+   },
+   {
+    "name": "Christy_Boulevard_Cycle_Track_Improvement_Project",
+    "type": "MapServer"
+   },
+   {
+    "name": "Empty",
+    "type": "MapServer"
+   },
+   {
+    "name": "Precincts_for_the_2026_08_Primary_Election",
+    "type": "MapServer"
+   },
+   {
+    "name": "Tower_Grove___Cortex_Connector_Project",
+    "type": "MapServer"
+   }
+  ],
+  "folders": {
+   "ASSESSOR": [
+    {
+     "name": "ASSESSOR/ASR_PUBLIC_PARCELS",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Roads",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 1,
+       "name": "Dimension Lines",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 2,
+       "name": "Easement Lines",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 3,
+       "name": "Leasehold Improvement",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 4,
+       "name": "Railroad",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 5,
+       "name": "Wharf",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 6,
+       "name": "Vacated Ordinance",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 7,
+       "name": "Buildings",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 9,
+       "name": "Subdivision",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 11,
+       "name": "City Block",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 12,
+       "name": "Air Rights",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 13,
+       "name": "Sub Rights",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 14,
+       "name": "Lots",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 15,
+       "name": "City Boundary",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "ASSESSOR/Assessor_Public_Parcels",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Dimension Lines",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 1,
+       "name": "Easement Lines",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 2,
+       "name": "Leasehold Improvement",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 3,
+       "name": "Railroad",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 4,
+       "name": "Wharf",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 5,
+       "name": "Streets",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 6,
+       "name": "Air Rights",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 7,
+       "name": "Vacated Ordinance",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 8,
+       "name": "Sub Rights",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 9,
+       "name": "Buildings",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 10,
+       "name": "Condos",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 11,
+       "name": "Parcels",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 12,
+       "name": "Lots",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 13,
+       "name": "Subdivision",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 14,
+       "name": "City Block",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 15,
+       "name": "City Boundary",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "ASSESSOR/Parcel_Fabric_Annotations",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Notes",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 1,
+       "name": "Notes",
+       "geometryType": null
+      },
+      {
+       "id": 2,
+       "name": "Street Alley Vacations",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 3,
+       "name": "Street Alley Vacations",
+       "geometryType": null
+      },
+      {
+       "id": 4,
+       "name": "Easement Text",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 5,
+       "name": "Easement Text",
+       "geometryType": null
+      },
+      {
+       "id": 6,
+       "name": "Ordinance Number",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 7,
+       "name": "Ordinance Number",
+       "geometryType": null
+      },
+      {
+       "id": 8,
+       "name": "Map Dimensions",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 9,
+       "name": "Map Dimensions",
+       "geometryType": null
+      },
+      {
+       "id": 10,
+       "name": "Lot Dimensions",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 11,
+       "name": "Lot Dimensions",
+       "geometryType": null
+      }
+     ]
+    },
+    {
+     "name": "ASSESSOR/PARCEL_PTS",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "PARCEL_PTS",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    }
+   ],
+   "BOE": [
+    {
+     "name": "BOE/PRECINCTS_2023",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "PRECINCTS 2023",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "BOE/PRECINCTS_2023",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "PRECINCTS 2023",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "BOE/Precincts",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Precincts (Current)",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "BOE/Voting_Centers",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Polling Places",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    }
+   ],
+   "BPS": [
+    {
+     "name": "BPS/ADA_Access_Upgrades",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Project Number",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 1,
+       "name": "Curb Ramps",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 2,
+       "name": "Repaired Sidewalk",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 3,
+       "name": "New Sidewalk",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 4,
+       "name": "Parking Lot",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 5,
+       "name": "Grass",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 6,
+       "name": "New Asphalt",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "BPS/Capital_Improvement_Projects",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Public Building Projects",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 1,
+       "name": "ADA and Mobility Enhancement Projects",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 2,
+       "name": "Traffic Calming Projects",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 3,
+       "name": "Bridge Projects",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 4,
+       "name": "Transportation Projects",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 5,
+       "name": "Traffic Study Projects",
+       "geometryType": "esriGeometryPolyline"
+      }
+     ]
+    },
+    {
+     "name": "BPS/Cass_Avenue_Multimodal_Improvement_Project",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 1,
+       "name": "Phase 1 Route",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 0,
+       "name": "Phase 2 Route",
+       "geometryType": "esriGeometryPolyline"
+      }
+     ]
+    },
+    {
+     "name": "BPS/City_Hall_Wayfinding_Signage_Project",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "City Hall",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "BPS/City_of_St__Louis_Chouteau_Avenue_Traffic_Study",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Project Route",
+       "geometryType": "esriGeometryPolyline"
+      }
+     ]
+    },
+    {
+     "name": "BPS/City_of_St__Louis_Federally_Funded_Projects",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Federal Projects",
+       "geometryType": "esriGeometryPolyline"
+      }
+     ]
+    },
+    {
+     "name": "BPS/City_of_St__Louis_Firehouses_and_Outdoor_Warning_Sirens1",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Outdoor Warning Siren Locations",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 1,
+       "name": "St. Louis Fire House Locations",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 2,
+       "name": "City of St. Louis Ward Boundaries",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "BPS/Columbia_Southwest_Avenue_Bridge_Reconstruction_Project1",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Bridges",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 1,
+       "name": "Project Route",
+       "geometryType": "esriGeometryPolyline"
+      }
+     ]
+    },
+    {
+     "name": "BPS/Compton_Avenue_Bridge_Reconstruction_Project",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Compton Bridge Reconstruction",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 1,
+       "name": "Compton Ave",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "BPS/Compton_Avenue_Traffic_Study",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "COMPTON TRAFFIC STUDY",
+       "geometryType": "esriGeometryPolyline"
+      }
+     ]
+    },
+    {
+     "name": "BPS/Current_STL_Board_of_Public_Service_Projects___Master",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Accessibility Enhancements",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 1,
+       "name": "Public Buildings",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 2,
+       "name": "Transportation",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 3,
+       "name": "Bridges",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 4,
+       "name": "Traffic Studies",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 5,
+       "name": "Transportation Projects",
+       "geometryType": "esriGeometryPolyline"
+      }
+     ]
+    },
+    {
+     "name": "BPS/Downtown_Multimodal_Improvement_Project_Location_Map",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Downtown Project Route",
+       "geometryType": "esriGeometryPolyline"
+      }
+     ]
+    },
+    {
+     "name": "BPS/Francis_Park_Midblock_Crosswalk_Project",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Curb Ramps",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 1,
+       "name": "Bumpout",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 2,
+       "name": "Sidewalks",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 3,
+       "name": "Landscaping",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 4,
+       "name": "Crosswalks",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "BPS/Goodfellow_Traffic_Study",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Goodfellow Traffic Study Project Route",
+       "geometryType": "esriGeometryPolyline"
+      }
+     ]
+    },
+    {
+     "name": "BPS/Grand_Drive_Bridge_Reconstruction_Project",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Project Route - Grand Dr. Bridge over FPP",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 1,
+       "name": "Bridge - Grand Dr. Bridge over FPP",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "BPS/Hampton_Avenue_Traffic_Study",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "TrafficStudyProjects_ExportFeatures",
+       "geometryType": "esriGeometryPolyline"
+      }
+     ]
+    },
+    {
+     "name": "BPS/Hodiamont_Cycle_Track_Project",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Project Route",
+       "geometryType": "esriGeometryPolyline"
+      }
+     ]
+    },
+    {
+     "name": "BPS/Ivory_Triangle_Traffic_Study",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Traffic Calming Loctions",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 1,
+       "name": "Project Route",
+       "geometryType": "esriGeometryPolyline"
+      }
+     ]
+    },
+    {
+     "name": "BPS/Laurel_Waterman_Avenue_Bridge_Reconstruction_Project",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Project Route ",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 1,
+       "name": "Laurel_Waterman Bridge",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "BPS/Lindell_Boulevard_Safety_Improvements",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Project Route",
+       "geometryType": "esriGeometryPolyline"
+      }
+     ]
+    },
+    {
+     "name": "BPS/Loughborough_Avenue_Bridge_Reconstruction_Project",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "PROJECT ROUTE",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 1,
+       "name": "Loughborough_UPRR_METRO",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 2,
+       "name": "LOUGHBOROUGH BRIDGE OVER 155",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "BPS/Louisiana_Calm_Streets_Project",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Project Route",
+       "geometryType": "esriGeometryPolyline"
+      }
+     ]
+    },
+    {
+     "name": "BPS/Precision_Concrete",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "crew_sheet_49563_1731349131-point",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 1,
+       "name": "crew_sheet_49554_1731349111-point",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 2,
+       "name": "crew_sheet_49508_1731349086-point",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 3,
+       "name": "crew_sheet_49503_1731349068-point",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "BPS/Principal_Arterial_Improvement_Project",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "CONVENTION_PLAZA",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 1,
+       "name": "WASHINGTON_AVE",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 2,
+       "name": "FOURTH_STREET",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 3,
+       "name": "BROADWAY",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 4,
+       "name": "UNION_BLVD",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 5,
+       "name": "KINGSHIGHWAY_BLVD",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 6,
+       "name": "JEFFERSON_AVE",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 7,
+       "name": "GRAND_BLVD",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 8,
+       "name": "GOODFELLOW_BLVD",
+       "geometryType": "esriGeometryPolyline"
+      }
+     ]
+    },
+    {
+     "name": "BPS/PSAP_Construction",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Fire Dept Headquarters",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 1,
+       "name": "PSAP",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "BPS/PSAP",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "PSAP",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "BPS/River_Des_Peres_Boulevard_Improvement_Project",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "RDP_Improvements",
+       "geometryType": "esriGeometryPolyline"
+      }
+     ]
+    },
+    {
+     "name": "BPS/South_Broadway_Multimodal_Improvement_Project",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "South_Broadway_Multimodal",
+       "geometryType": "esriGeometryPolyline"
+      }
+     ]
+    },
+    {
+     "name": "BPS/TME_6",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "ProjectRoute_Project",
+       "geometryType": "esriGeometryPolyline"
+      }
+     ]
+    },
+    {
+     "name": "BPS/Traffic_Management_Enhancement_Project_Phase_7_South_Broadway",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "TME_7_SBroadway",
+       "geometryType": "esriGeometryPolyline"
+      }
+     ]
+    },
+    {
+     "name": "BPS/Traffic_Management_Enhancement_Project_Phase_8_North_Broadway",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Phase_8",
+       "geometryType": "esriGeometryPolyline"
+      }
+     ]
+    },
+    {
+     "name": "BPS/Transportation_Management_Enhancement_Project_Phase_4_Goodfellow_Boulevard",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "TME_GOODFELLOW",
+       "geometryType": "esriGeometryPolyline"
+      }
+     ]
+    },
+    {
+     "name": "BPS/Transportation_Management_Enhancement_Project_Phase_5_Delmar_Boulevard",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "TME_Delmar",
+       "geometryType": "esriGeometryPolyline"
+      }
+     ]
+    },
+    {
+     "name": "BPS/Tucker_Boulevard_Cycle_Track_Project",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Project Route",
+       "geometryType": "esriGeometryPolyline"
+      }
+     ]
+    },
+    {
+     "name": "BPS/Union_Lindell_Boulevard_Bridge_Reconstruction_Project",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Union Boulevard / Lindell Boulevard Bridge over MetroLink",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 1,
+       "name": "Union Boulevard  / Lindell Boulevard Bridge over Forest Park Parkway",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 2,
+       "name": "Project Area",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 3,
+       "name": "Project Area",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 4,
+       "name": "Roads",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 5,
+       "name": "LINDELL_ROADS",
+       "geometryType": "esriGeometryPolyline"
+      }
+     ]
+    },
+    {
+     "name": "BPS/Upgraded_Pedestrian_Signals",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Project Number",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 1,
+       "name": "Detectable Warning Panels",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 2,
+       "name": "Signal_Button",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 3,
+       "name": "Crosswalks",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    }
+   ],
+   "BUILDING_DIVISION": [
+    {
+     "name": "BUILDING_DIVISION/BldgDiv_Boardups",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "PARCELS_BOARDUPS",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "BUILDING_DIVISION/Demolitions",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Demolitions",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "BUILDING_DIVISION/Demolitions",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Demolitions",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    }
+   ],
+   "CDA": [
+    {
+     "name": "CDA/Beautification",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Beautification",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "CDA/CAPACITY_BUILDING",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 19,
+       "name": "CAPACITY BUILDING",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "CDA/CDA_Downpayment_Assistance",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 40,
+       "name": "CDA Downpayment Assistance",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "CDA/CDA_Stabilizations",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "CDA Stabilizations",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "CDA/CDBG_SUBRECIPIENTS",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 29,
+       "name": "CDBG SUBRECIPIENTS",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "CDA/CITY_CATALYTIC_PROJECTS",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 88,
+       "name": "Construction",
+       "geometryType": null
+      },
+      {
+       "id": 131,
+       "name": "CITY CATALYTIC PROJECTS",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "CDA/Commercial_Facade_Improvement_Grants",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 27,
+       "name": "Commercial Facade Improvement Grants",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "CDA/Community_Wifi",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Community Wifi",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "CDA/EARCLY_CHILDHOOD_EDUCATION_AWARDS",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 21,
+       "name": "EARCLY CHILDHOOD EDUCATION AWARDS",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "CDA/FEDERALLY_QUALIFIED_HEALTH_CENTERS",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 15,
+       "name": "FEDERALLY QUALIFIED HEALTH CENTERS",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "CDA/Home_Repair_Project_Sites",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 41,
+       "name": "Construction",
+       "geometryType": null
+      },
+      {
+       "id": 0,
+       "name": "Home Repair Project Sites",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "CDA/HOME_REPAIR",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 1,
+       "name": "Home Repair",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "CDA/Home_Repairs_By_Block",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 30,
+       "name": "Home Repairs By Block",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "CDA/Housing_Production",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 5,
+       "name": "Housing Production",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "CDA/PARKS__REC____FORESTRY_INVESTMENTS",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 20,
+       "name": "PARKS, REC, & FORESTRY INVESTMENTS",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "CDA/Proactive_Development",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Proactive Development",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "CDA/RAC_Murals",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 14,
+       "name": "RAC Murals",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "CDA/RAC_Organizations",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 17,
+       "name": "RAC Organizations",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "CDA/SLDC_Incentives",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 41,
+       "name": "Construction",
+       "geometryType": null
+      },
+      {
+       "id": 23,
+       "name": "SLDC Incentives",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    }
+   ],
+   "CITYWORKS": [
+    {
+     "name": "CITYWORKS/CW_PRINT",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "TREES",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 1,
+       "name": "PARK PATHS",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 2,
+       "name": "STREETS",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 3,
+       "name": "BUILDINGS",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 4,
+       "name": "PARCELS",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "CITYWORKS/Empty",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 3,
+       "name": "Empty",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    }
+   ],
+   "CUSTOM_BASEMAPS": [],
+   "DEVNET": [],
+   "FIRE": [],
+   "FORESTRY": [
+    {
+     "name": "FORESTRY/Ash_Density",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "ASH_DENSITY",
+       "geometryType": null
+      }
+     ]
+    },
+    {
+     "name": "FORESTRY/FOREST_PARK_TREES",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 2,
+       "name": "FOREST_PARK_TREES",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "FORESTRY/FOREST_PARK_TREES",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 2,
+       "name": "FOREST_PARK_TREES",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "FORESTRY/FORESTRY_CATEGORIZATION",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 2,
+       "name": "MAINTENANCE_CATEGORIZATION",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "FORESTRY/FORESTRY_CATEGORIZATION",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 2,
+       "name": "MAINTENANCE_CATEGORIZATION",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "FORESTRY/FORESTRY_MAINTENANCE_NSD",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 2,
+       "name": "MAINTENANCE_CATEGORIZATION",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 3,
+       "name": "MAINTENANCE_WARDS",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "FORESTRY/FORESTRY_MAINTENANCE_NSD",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 2,
+       "name": "MAINTENANCE_CATEGORIZATION",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 3,
+       "name": "MAINTENANCE_WARDS",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    }
+   ],
+   "GEOCODERS": [
+    {
+     "name": "GEOCODERS/COMPOSITE_GEOCODE",
+     "type": "GeocodeServer"
+    },
+    {
+     "name": "GEOCODERS/PARCEL_GEOCODE_TESTING",
+     "type": "GeocodeServer"
+    }
+   ],
+   "HEALTH": [
+    {
+     "name": "HEALTH/FOOD_BEVERAGE",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "INSPECTORS",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 1,
+       "name": "LILA CENSUS TRACTS",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "HEALTH/LILA",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Wards",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 1,
+       "name": "Neighborhoods",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 2,
+       "name": "LILA Census Tracts",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 3,
+       "name": "Basemap",
+       "geometryType": null
+      }
+     ]
+    }
+   ],
+   "Hosted": [
+    {
+     "name": "Hosted/Accessibility_and_Mobility_Enhancements_",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Accessibility and Mobility Enhancements",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "Hosted/Archival_Parcel_Points",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 6,
+       "name": "Parcels - 2025",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 5,
+       "name": "Parcels - 2020",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 4,
+       "name": "Parcels - 2015",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 3,
+       "name": "Parcels - 2010",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 2,
+       "name": "Parcels - 2005",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 1,
+       "name": "Parcels - 2000",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 0,
+       "name": "Parcels - 1997",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "Hosted/Bridges",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Bridges",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "Hosted/Buildings",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Buildings",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "Hosted/City_of_St__Louis_Ward_Boundaries",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "City of St. Louis Ward Boundaries",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "Hosted/Damage_Area",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "grid zone",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 1,
+       "name": "Damage_Area",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "Hosted/Greenway_Assets",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "ActiveProjectPoints",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 1,
+       "name": "ExistingGreenways",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 2,
+       "name": "ActiveGreenways",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 3,
+       "name": "GatewayBikePlan",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 4,
+       "name": "MasterPlan",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 5,
+       "name": "OtherTrails",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 6,
+       "name": "GRG_Parcels",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "Hosted/Metro_Bus_Route",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Metro Bus Route",
+       "geometryType": "esriGeometryPolyline"
+      }
+     ]
+    },
+    {
+     "name": "Hosted/Metro_Bus_Stops",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Metro Bus Stops",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "Hosted/Metrolink_Route",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Metrolink Route",
+       "geometryType": "esriGeometryPolyline"
+      }
+     ]
+    },
+    {
+     "name": "Hosted/Metrolink_Stations",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Metrolink Stations",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "Hosted/Previous_Qualified_Census_Tracts",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 1,
+       "name": "Previous Qualified Census Tracts",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "Hosted/Qualified_Census_Tracts",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 1,
+       "name": "Qualified Census Tracts",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "Hosted/River_Terminals",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 3,
+       "name": "River Terminals",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "Hosted/service_0a16eeccf97b4e3cbd2349150a6c04c4_form",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Form_1",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "Hosted/service_7fbb3f69b66c430788f453ea9d0aa691_form",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Form_2",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "Hosted/service_f1ce10ebe17843f68f7178c7ea4f7bed_form",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Form_1_REPEAT",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "Hosted/Traffic_Calming",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Traffic Calming",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "Hosted/Traffic_Studies",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Traffic Studies",
+       "geometryType": "esriGeometryPolyline"
+      }
+     ]
+    }
+   ],
+   "LICENSE_COLLECTOR": [],
+   "ORTHO": [
+    {
+     "name": "ORTHO/St_Louis_City_Limits_2024",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "St. Louis City Limits 2024",
+       "geometryType": null
+      }
+     ]
+    }
+   ],
+   "OVP": [],
+   "PDA": [
+    {
+     "name": "PDA/Biking_Infrastructure_Map",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Park Paths",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 1,
+       "name": "Brickline Greenway and Hodiamont Trail",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 2,
+       "name": "Bike Facilities",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 3,
+       "name": "Planned and Funded Major Bike Facility Projects",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 4,
+       "name": "Multi-use Path",
+       "geometryType": "esriGeometryPolyline"
+      }
+     ]
+    },
+    {
+     "name": "PDA/Black_History_Month",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Arterial_street_names",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 1,
+       "name": "Class 1",
+       "geometryType": null
+      },
+      {
+       "id": 2,
+       "name": "African-American Historical Sites",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 3,
+       "name": "ewg_arterial",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 4,
+       "name": "Neighborhood",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 5,
+       "name": "Arterial_street_names",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 6,
+       "name": "Class 1",
+       "geometryType": null
+      },
+      {
+       "id": 7,
+       "name": "African-American Historical Sites",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 8,
+       "name": "Neighborhood",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "PDA/CDA_Districts_and_Subdistricts",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "CDASubDist",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 1,
+       "name": "CDADist",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "PDA/City_of_Saint_Louis_Planted_Trees",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Planted last 365 days",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 1,
+       "name": "Current Trees",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 2,
+       "name": "zoning_I_L",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 3,
+       "name": "zoning_K",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 4,
+       "name": "Commercial Districts",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 5,
+       "name": "Parks",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 6,
+       "name": "City Limits",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 7,
+       "name": "Rivers",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 8,
+       "name": "Highways",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 9,
+       "name": "Streets",
+       "geometryType": "esriGeometryPolyline"
+      }
+     ]
+    },
+    {
+     "name": "PDA/Green_Line_BB13",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Proposed Green Line Stations",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 1,
+       "name": "Proposed Green Line",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 2,
+       "name": "Parcels Within Half-Mile of Green Line Stations",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 3,
+       "name": "Half Mile Green Line Buffer",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "PDA/Grocery_Stores",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Grocery & Convenience Stores",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "PDA/Grocery_Stores",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Grocery & Convenience Stores",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "PDA/Historic_Districts",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Historic Districts ",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "PDA/Historic_Landmarks",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 3,
+       "name": "Historic Sites",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "PDA/Historic_Landmarks",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 3,
+       "name": "Historic Sites",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "PDA/Midtown_Redevelopment_Chapter_353",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Midtown Redevelopment Chapter 353",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "PDA/Neighborhoods",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Neighborhoods",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "PDA/PARCELS_PUBLIC",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "PARCELS",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "PDA/Places_of_Worship",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Places of Worship",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "PDA/Places_of_Worship",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Places of Worship",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "PDA/Recreation_Centers",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Recreation Centers",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "PDA/Schools",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Schools",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "PDA/Schools",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Schools",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "PDA/SLPL_Libraries",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "SLPL Library Locations",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "PDA/SLPL_Libraries",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "SLPL Library Locations",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "PDA/SLUP_2025",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Designations - 2025 Strategic Land Use Plan",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 1,
+       "name": "Climate Readiness Priority Areas - 2025 Strategic Land Use Plan",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 2,
+       "name": "Waterfront Windows - 2025 Strategic Land Use Plan",
+       "geometryType": "esriGeometryPolyline"
+      }
+     ]
+    },
+    {
+     "name": "PDA/Snow_Routes_with_Schools",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Senior Service Centers",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 1,
+       "name": "St. Louis Schools",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "PDA/South_Downtown_Redevelopment_Area",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "South Downtown Redevelopment Area",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "PDA/South_Downtown_Redevelopment_Area",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "South Downtown Redevelopment Area",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "PDA/St__Louis_High_Injury_Network_Map",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "HIN_Regional_Corridors",
+       "geometryType": "esriGeometryPolyline"
+      }
+     ]
+    },
+    {
+     "name": "PDA/St__Louis_High_Injury_Network_Map",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "HIN_Regional_Corridors",
+       "geometryType": "esriGeometryPolyline"
+      }
+     ]
+    },
+    {
+     "name": "PDA/Street_Design_Framework",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Street Type",
+       "geometryType": "esriGeometryPolyline"
+      }
+     ]
+    },
+    {
+     "name": "PDA/Street_Design_Framework",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Street Type",
+       "geometryType": "esriGeometryPolyline"
+      }
+     ]
+    },
+    {
+     "name": "PDA/USPS_Retail_Post_Office_Locations",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "USPS Retail Post Office Locations",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "PDA/Zoning_Signage_Overlays",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Zoning Signage Overlays",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "PDA/Zoning_Signage_Overlays",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Zoning Signage Overlays",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    }
+   ],
+   "PRINT_SERVICES": [
+    {
+     "name": "PRINT_SERVICES/ExportWebMap_SLDC",
+     "type": "GPServer"
+    }
+   ],
+   "ROUTING": [],
+   "SLDC": [
+    {
+     "name": "SLDC/Building_Permits_2025",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 8,
+       "name": "Building Permits 2025",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Building_Permits",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 1,
+       "name": "Building Permits",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Building_Permits",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 1,
+       "name": "Building Permits",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Business_License_2022",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 3,
+       "name": "Business Licenses 2022",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Business_License_2022",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 3,
+       "name": "Business Licenses 2022",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Business_License_2024",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Business License 2024",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Business_License_2024",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Business License 2024",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Business_Licenses_as_of_October_2025",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Business Licenses as of October 2025",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Business_Licenses_as_of_October_2025",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Business Licenses as of October 2025",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/CDC_Environmental_Justice_Index_2024",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": " CDC Environmental Justice Index (2024)",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/CDC_Environmental_Justice_Index_2024",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": " CDC Environmental Justice Index (2024)",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Clipping_Feature",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Clipping Feature",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Clipping_Feature",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Clipping Feature",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Commercial_Areas",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Commercial Areas",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Commercial_Areas",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Commercial Areas",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Commercial_Corridors",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 8,
+       "name": "Commercial Corridors",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Definite_Vacant",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Definite Vacant",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Definite_Vacant",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Definite Vacant",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Demonstration_Areas",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Demonstration Areas",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Economic_Justice_Index",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Economic Justice Index",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Economic_Justice_Index",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Economic Justice Index",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Employment_Districts",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Employment Districts",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Employment_Districts",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Employment Districts",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Enhanced_Enterprise_Zone_2012",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Enhanced Enterprise Zone 2012",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/GCC_Project_Categories",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 5,
+       "name": "GCC Project Categories",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/GCC_Projects_Points",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "GCC Projects Points",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/GCC_Projects_Points",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "GCC Projects Points",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/GCC_Projects",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "GCC Projects",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/GCC_Projects",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "GCC Projects",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/HomesSTL",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "HomeSTL",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/HomesSTL",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "HomeSTL",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Incentives_02052026",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Incentives 02052026",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Local_Taxing_Districts",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Local Taxing Districts",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Local_Taxing_Districts",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Local Taxing Districts",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/LRA_and_LCRA_Properties",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "LRA and LCRA Properties",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/LRA_Block_Percentages",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "LRA Block Percentages by Parcels",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 1,
+       "name": "LRA Block Percentages by Area",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/LRA_Block_Percentages",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "LRA Block Percentages by Parcels",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 1,
+       "name": "LRA Block Percentages by Area",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/LRA_in_Path",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "LRA in Path",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/LRA_in_Path",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "LRA in Path",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/LRA_PIEA_LCRA_Real_Estate",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 3,
+       "name": "PIEA_Real_Estate",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 2,
+       "name": "LCRA_Real_Estate",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 0,
+       "name": "LRA_Real_Estate",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/NRSA",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 5,
+       "name": "NRSA",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/NSTL_Grant",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "NSTL Grant",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/NSTL_Grant",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "NSTL Grant",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Opportunity_Zones",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 4,
+       "name": "Opportunity Zones",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Opportunity_Zones",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 4,
+       "name": "Opportunity Zones",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Port_Authority_District_Boundary",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Port Authority District Boundary",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Port_Authority_District_Boundary",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Port Authority District Boundary",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Projects_Vacant_Building_Demolitions",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Projects Vacant Building Demolitions",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Projects_Vacant_Building_Demolitions",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Projects Vacant Building Demolitions",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Promise_Zone",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 6,
+       "name": "Promise Zone",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Promise_Zone",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 6,
+       "name": "Promise Zone",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Prop_NS_Eligible_Properties",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Prop NS Eligible Properties",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Prop_NS_Eligible_Properties",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Prop NS Eligible Properties",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Prop_NS_Major_Roads",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 1,
+       "name": "Prop NS Major Roads",
+       "geometryType": "esriGeometryPolyline"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Prop_NS_Major_Roads",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 1,
+       "name": "Prop NS Major Roads",
+       "geometryType": "esriGeometryPolyline"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/PROPNS_Nominations",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "PROPNS Nominations",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/PropNSMapServerForCityWorks",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "PropNS_Eligible_Properties",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 1,
+       "name": "Prop NS Major Roads",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 2,
+       "name": "UGP_Eligible_Blocks",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 3,
+       "name": "Historic Districts",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 4,
+       "name": "Opportunity_Zones",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 5,
+       "name": "NRSA",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 6,
+       "name": "Promise_Zone",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 7,
+       "name": "Commercial_Corridor_Analysis",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 8,
+       "name": "MetroLink_Stations",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 9,
+       "name": "MetroLink_Route",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 10,
+       "name": "North_Side_South_Side_Metro_Link_Stations",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 11,
+       "name": "North_Side_South_Side_Metro_Link_Route_Proposed",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 12,
+       "name": "Metro_Bus_Stops",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 13,
+       "name": "Metro_Bus_Routes",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 14,
+       "name": "Economic_Justice_Index",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 15,
+       "name": "Demonstration_Areas",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Recommended_Abatement_Map",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Residential Recommended Abatement Map 2025",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Recommended_Abatement_Map",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Residential Recommended Abatement Map 2025",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Redevelopment_Plans",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Redevelopment Plan",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Redevelopment_Plans",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Redevelopment Plan",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Response_Zones_Exec_Order_90",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 32,
+       "name": "Response Zones Exec. Order 90",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Response_Zones_Exec_Order_90",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 32,
+       "name": "Response Zones Exec. Order 90",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Response_Zones_V1",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 6,
+       "name": "Response Zones V1",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Response_Zones_V1",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 6,
+       "name": "Response Zones V1",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Response_Zones",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Response Zones",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/River_Mile_Marker",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 5,
+       "name": "River Mile Markers",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/River_Mile_Marker",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 5,
+       "name": "River Mile Markers",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/SCSTL_Stabilizations",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "SCSTL Stabilizations",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/SCSTL_Stabilizations",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "SCSTL Stabilizations",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/SLDC_Incentive_Projects",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "SLDC Incentive Projects",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/SLDC_Incentive_Projects",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "SLDC Incentive Projects",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/SLDC_Real_Estate",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "LRA Inventory",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 1,
+       "name": "LRA Sold (RORE)",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 2,
+       "name": "LCRA Inventory",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 3,
+       "name": "PIEA Inventory",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 4,
+       "name": "Port Authority Inventory",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/SLDC_Real_Estate",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "LRA Inventory",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 1,
+       "name": "LRA Sold (RORE)",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 2,
+       "name": "LCRA Inventory",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 3,
+       "name": "PIEA Inventory",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 4,
+       "name": "Port Authority Inventory",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Small_Business_Grant_5K",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Small Business Grant 5K",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Small_Business_Grant_5K",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Small Business Grant 5K",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/STL_Statistics_2023_Census_Tracts",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "STL Statistics 2023 (tracts)",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/STL_Statistics_2023_Census_Tracts",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "STL Statistics 2023 (tracts)",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Streets",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 3,
+       "name": "STREETS",
+       "geometryType": "esriGeometryPolyline"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Streets",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 3,
+       "name": "STREETS",
+       "geometryType": "esriGeometryPolyline"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Tax_Sales",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Tax Sales",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Tax_Sales",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Tax Sales",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/TIF_Districts",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 1,
+       "name": "Districts TIF",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/TIF_Districts",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 1,
+       "name": "Districts TIF",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Tornado_Development",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Tornado Development Projects",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 1,
+       "name": "Tornado Development Areas",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Tornado_Development",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Tornado Development Projects",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 1,
+       "name": "Tornado Development Areas",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Tornado_Paths",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 6,
+       "name": "Tornado Path",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 4,
+       "name": "Tornado Path - Quarter Mile Buffer",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 5,
+       "name": "Tornado Path - Half Mile Buffer",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Tornado_Priority_Projects",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 23,
+       "name": "Priority Projects",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Tornado_Priority_Projects",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 23,
+       "name": "Priority Projects",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Trades_Permits",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Trades Permits",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/Trades_Permits",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Trades Permits",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/UGP_Eligible_Blocks",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 3,
+       "name": "UGP Eligible Blocks",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/VSI_Parcels_in_Path",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "VSI Parcels in Path",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "SLDC/VSI_Parcels_in_Path",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "VSI Parcels in Path",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    }
+   ],
+   "STLFD": [],
+   "STLOUIS": [
+    {
+     "name": "STLOUIS/BOUNDARIES",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 16,
+       "name": "Tornado Path",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 19,
+       "name": "Response Zones",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 0,
+       "name": "Historic Districts",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 1,
+       "name": "Project Connect",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 2,
+       "name": "Neighborhoods",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 3,
+       "name": "Police Districts",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 4,
+       "name": "Wards",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 5,
+       "name": "Zip Codes",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 6,
+       "name": "Zoning Districts",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 7,
+       "name": "City Blocks",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 8,
+       "name": "City Limits",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 9,
+       "name": "TIF Districts",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 10,
+       "name": "Local Taxing Districts",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 12,
+       "name": "Climate and Economic Justice Analysis",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "STLOUIS/City_of_St_Louis_2021_Wards",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Wards_2020",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "STLOUIS/Floodplain",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "2011",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "STLOUIS/NIS_ASSIGNMENTS",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "NIS BY NEIGHBORHOOD",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "STLOUIS/POLICE_DISTRICT",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "POLICE_DISTRICT",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "STLOUIS/POLICE_DISTRICT",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "POLICE_DISTRICT",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "STLOUIS/Recycling_Centers_in_the_city_of_St_Louis",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "WARDS 2020",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 1,
+       "name": "Drop Off Recycling Location",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    }
+   ],
+   "STREETS": [
+    {
+     "name": "STREETS/Drop_Off_Recycling_Location",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Drop Off Recycling Location",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 1,
+       "name": "Wards 2020",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "STREETS/One_Call",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Street Light Substations",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 1,
+       "name": "Street Lights",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 2,
+       "name": "Traffic Signals",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 3,
+       "name": "Fiber",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 4,
+       "name": "Street Light Conduit",
+       "geometryType": "esriGeometryPolyline"
+      }
+     ]
+    },
+    {
+     "name": "STREETS/OneCall",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Street Light Substations",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 1,
+       "name": "Street Lights",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 2,
+       "name": "Traffic Signals",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 7,
+       "name": "Network Fiber",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 3,
+       "name": "Fiber",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 4,
+       "name": "Street Light Conduit",
+       "geometryType": "esriGeometryPolyline"
+      }
+     ]
+    },
+    {
+     "name": "STREETS/ParkingServices",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 1,
+       "name": "PARKING_METERS",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "STREETS/Reservable_IOT_Street_Lights",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Street Lights",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    },
+    {
+     "name": "STREETS/Snow_Routes",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Snow Routes",
+       "geometryType": "esriGeometryPolyline"
+      }
+     ]
+    },
+    {
+     "name": "STREETS/Street_Sweeping",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Street Sweeping Area Schedule",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "STREETS/Street_Volumes",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Streets",
+       "geometryType": "esriGeometryPolyline"
+      }
+     ]
+    },
+    {
+     "name": "STREETS/Streets_Permitting",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 2,
+       "name": "Street Lights",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 1,
+       "name": "Parking Meters",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 0,
+       "name": "Streets",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 4,
+       "name": "Parcels",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "STREETS/Traffic_OCC_Notification_Area",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Traffic OCC Notification Area",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "STREETS/Traffic_OCC_Notification_Area",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Traffic OCC Notification Area",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "STREETS/VEHICLE_TOWING_ASSIGNMENTS",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "VEHICLE_TOWING_ASSIGNMENTS",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    }
+   ],
+   "Utilities": [
+    {
+     "name": "Utilities/GeocodingTools",
+     "type": "GPServer"
+    },
+    {
+     "name": "Utilities/Geometry",
+     "type": "GeometryServer"
+    }
+   ],
+   "UTILITY_SERVICES": [],
+   "VSI": [],
+   "WARDS": [
+    {
+     "name": "WARDS/Wards_2010",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Wards_2010",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "WARDS/Wards_2020",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Wards_2020",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    }
+   ],
+   "WATER": [],
+   "WEB": []
+  }
+ },
+ "maps9": {
+  "root_services": [
+   {
+    "name": "BASEMAP",
+    "type": "FeatureServer"
+   },
+   {
+    "name": "BASEMAP",
+    "type": "MapServer"
+   }
+  ],
+  "folders": {
+   "ASSESSOR": [],
+   "BOE": [],
+   "BPS": [],
+   "BUILDING_DIVISION": [],
+   "CAD": [],
+   "CDA": [],
+   "CITYWORKS": [],
+   "DEVNET": [],
+   "FIRE": [],
+   "FORESTRY": [
+    {
+     "name": "FORESTRY/FORESTRY_MAINTENANCE_PRINT",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "FORESTRY.dbo.TREE_INSPECTION_ASSIGNMENTS_NEW",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 2,
+       "name": "MAINTENANCE_CATEGORIZATION",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 3,
+       "name": "MAINTENANCE_WARDS",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "FORESTRY/FORESTRY_TREES",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "CITY_TREES_ALL_SITES",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 1,
+       "name": "CITY_TREES",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 4,
+       "name": "FOREST_PARK_TREES",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 2,
+       "name": "VACANT_PLANTING_SITES",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 3,
+       "name": "CITY_ASH_TREES",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 5,
+       "name": "PLANTING_PLANNING",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 6,
+       "name": "PLANTED_WITHIN_LAST_365_DAYS",
+       "geometryType": "esriGeometryPoint"
+      }
+     ]
+    }
+   ],
+   "GEOCODERS": [],
+   "HEALTH": [],
+   "LICENSE_COLLECTOR": [],
+   "ORTHO": [],
+   "OVP": [],
+   "PARKS": [
+    {
+     "name": "PARKS/Reservable_Park_Amenities",
+     "type": "FeatureServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Reservable Amenities",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 1,
+       "name": "Parks",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    },
+    {
+     "name": "PARKS/Reservable_Park_Amenities",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Reservable Amenities",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 1,
+       "name": "Parks",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    }
+   ],
+   "PDA": [
+    {
+     "name": "PDA/Zoning",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Zoning Districts",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 1,
+       "name": "Multi-Zone",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 2,
+       "name": "Multi-Zone",
+       "geometryType": "esriGeometryPolygon"
+      },
+      {
+       "id": 3,
+       "name": "Zoning",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    }
+   ],
+   "PRINT_SERVICES": [],
+   "ROUTING": [],
+   "SLDC": [
+    {
+     "name": "SLDC/Available_LRA_Real_Estate",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Available_LRA_Real_Estate",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    }
+   ],
+   "SLMPD": [],
+   "STLFD": [],
+   "STLOUIS": [],
+   "STREETS": [
+    {
+     "name": "STREETS/OneCall",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Street Light Substations",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 1,
+       "name": "Street Lights",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 2,
+       "name": "Traffic Signals",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 3,
+       "name": "Fiber",
+       "geometryType": "esriGeometryPolyline"
+      },
+      {
+       "id": 4,
+       "name": "Street Light Conduit",
+       "geometryType": "esriGeometryPolyline"
+      }
+     ]
+    },
+    {
+     "name": "STREETS/Recycling_Centers",
+     "type": "MapServer",
+     "layers": [
+      {
+       "id": 0,
+       "name": "Drop Off Recycling Location",
+       "geometryType": "esriGeometryPoint"
+      },
+      {
+       "id": 1,
+       "name": "Wards 2020",
+       "geometryType": "esriGeometryPolygon"
+      }
+     ]
+    }
+   ],
+   "Utilities": [],
+   "UTILITY_SERVICES": [],
+   "UTILITY_WORK_PROJECTS": [],
+   "VSI": [],
+   "WARDS": [],
+   "WATER": [],
+   "WEB": []
+  }
+ }
+}

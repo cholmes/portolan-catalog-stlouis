@@ -1,0 +1,26 @@
+{
+  "version": 8,
+  "name": "Tinted blocks",
+  "metadata": {
+    "description": "Light fill with block outlines for reference use."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../city-blocks.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "city-blocks",
+      "paint": {
+        "fill-color": "#dfe6ea",
+        "fill-opacity": 0.4,
+        "fill-outline-color": "#7a8489"
+      }
+    }
+  ]
+}

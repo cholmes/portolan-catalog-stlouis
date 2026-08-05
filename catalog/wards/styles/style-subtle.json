@@ -1,0 +1,37 @@
+{
+  "version": 8,
+  "name": "Subtle wards",
+  "metadata": {
+    "description": "Light tint for use under other data."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../wards.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "wards",
+      "paint": {
+        "fill-color": "#a8d4e8",
+        "fill-opacity": 0.18,
+        "fill-outline-color": "#1e526b"
+      }
+    },
+    {
+      "id": "line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "wards",
+      "paint": {
+        "line-color": "#1e526b",
+        "line-width": 1.0,
+        "line-opacity": 1.0
+      }
+    }
+  ]
+}

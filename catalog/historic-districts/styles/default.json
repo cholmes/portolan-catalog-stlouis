@@ -1,0 +1,66 @@
+{
+  "version": 8,
+  "name": "Historic districts",
+  "metadata": {
+    "description": "All 109 districts by designation: National Register (85), Local, Certified Local, Landmark."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../historic-districts.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "historic-districts-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "historic-districts",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "DIS_TYPE"
+          ],
+          "National",
+          "#1e526b",
+          "Local",
+          "#c03221",
+          "Certified Local",
+          "#e89d07",
+          "Landmark",
+          "#7c5295",
+          "#9aa3a8"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "historic-districts",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "DIS_TYPE"
+          ],
+          "National",
+          "#1e526b",
+          "Local",
+          "#c03221",
+          "Certified Local",
+          "#e89d07",
+          "Landmark",
+          "#7c5295",
+          "#9aa3a8"
+        ],
+        "fill-opacity": 0.55,
+        "fill-outline-color": "#FFFFFF"
+      }
+    }
+  ]
+}

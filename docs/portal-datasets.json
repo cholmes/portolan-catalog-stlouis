@@ -1,0 +1,504 @@
+{
+ "1": {
+  "title": "Building Permits",
+  "desc": "",
+  "links": []
+ },
+ "2": {
+  "title": "City Expenditures",
+  "desc": "",
+  "links": []
+ },
+ "3": {
+  "title": "Property Taxes",
+  "desc": "",
+  "links": [
+   "https://www.stlouis-mo.gov/data/upload/data-files/prcl.zip"
+  ]
+ },
+ "4": {
+  "title": "SLPS District Data Profile",
+  "desc": "",
+  "links": []
+ },
+ "5": {
+  "title": "CSB Service Requests (311)",
+  "desc": "",
+  "links": [
+   "https://www.stlouis-mo.gov/data/upload/data-files/csb.zip"
+  ]
+ },
+ "6": {
+  "title": "Occupancy Permits",
+  "desc": "",
+  "links": [
+   "https://static.stlouis-mo.gov/open-data/BUILDING/certificates_of_inspection.csv",
+   "https://www.stlouis-mo.gov/data/upload/data-files/occupancy-permits.zip"
+  ]
+ },
+ "7": {
+  "title": "1990 Census Summary",
+  "desc": "",
+  "links": []
+ },
+ "8": {
+  "title": "2000 Census Summary",
+  "desc": "",
+  "links": [
+   "https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/Census_2000_Citywide/FeatureServer/query",
+   "https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/Census_2000_Neighborhoods/FeatureServer/query"
+  ]
+ },
+ "9": {
+  "title": "2010 Census Summary",
+  "desc": "",
+  "links": [
+   "https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/2010_Census_Neighborhoods/FeatureServer/query",
+   "https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/Census_2010_Citywide/FeatureServer/query",
+   "https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/Census_2010_in_2021_Wards/FeatureServer/query"
+  ]
+ },
+ "10": {
+  "title": "Board Bill Votes",
+  "desc": "",
+  "links": []
+ },
+ "11": {
+  "title": "Building Inspections - Existing Structures",
+  "desc": "",
+  "links": []
+ },
+ "12": {
+  "title": "City Blocks",
+  "desc": "",
+  "links": [
+   "https://www.stlouis-mo.gov/data/upload/data-files/CADDrawings.zip",
+   "https://www.stlouis-mo.gov/data/upload/data-files/blocks_shape.zip"
+  ]
+ },
+ "17": {
+  "title": "Street Permits",
+  "desc": "",
+  "links": [
+   "https://www.stlouis-mo.gov/data/upload/data-files/streets/street-permits.csv"
+  ]
+ },
+ "24": {
+  "title": "Demolition Permits",
+  "desc": "",
+  "links": []
+ },
+ "30": {
+  "title": "LRA Property",
+  "desc": "",
+  "links": [
+   "https://maps6.stlouis-mo.gov/arcgis/rest/services/SLDC/Available_LRA_Real_Estate/MapServer",
+   "https://static.stlouis-mo.gov/open-data/SLDC/REAL-ESTATE/LRA_Available_Properties.pdf",
+   "https://static.stlouis-mo.gov/open-data/SLDC/REAL-ESTATE/LRA_GARDEN_PERMITS.csv",
+   "https://static.stlouis-mo.gov/open-data/SLDC/REAL-ESTATE/LRA_INVENTORY.csv",
+   "https://static.stlouis-mo.gov/open-data/SLDC/REAL-ESTATE/LRA_INVENTORY_AVAILABLE.csv",
+   "https://static.stlouis-mo.gov/open-data/SLDC/REAL-ESTATE/LRA_OFFERS.csv",
+   "https://static.stlouis-mo.gov/open-data/SLDC/REAL-ESTATE/LRA_OFFERS_ARCHIVE_GEOSTL.csv"
+  ]
+ },
+ "31": {
+  "title": "Property Sales",
+  "desc": "",
+  "links": [
+   "https://www.stlouis-mo.gov/data/upload/data-files/prclsale.zip"
+  ]
+ },
+ "46": {
+  "title": "City Parks",
+  "desc": "",
+  "links": [
+   "https://www.stlouis-mo.gov/data/upload/data-files/parks.zip"
+  ]
+ },
+ "51": {
+  "title": "Electrical Permits",
+  "desc": "",
+  "links": [
+   "https://www.stlouis-mo.gov/data/upload/data-files/electrical-permits.zip"
+  ]
+ },
+ "52": {
+  "title": "Mechanical Permits",
+  "desc": "",
+  "links": [
+   "https://www.stlouis-mo.gov/data/upload/data-files/mechanical-permits.zip"
+  ]
+ },
+ "53": {
+  "title": "Plumbing Permits",
+  "desc": "",
+  "links": [
+   "https://www.stlouis-mo.gov/data/upload/data-files/plumbing-permits.zip"
+  ]
+ },
+ "55": {
+  "title": "Port Authority District",
+  "desc": "",
+  "links": [
+   "https://maps6.stlouis-mo.gov/arcgis/rest/services/SLDC/Districts_Port/FeatureServer",
+   "https://maps6.stlouis-mo.gov/arcgis/rest/services/SLDC/Districts_Port/MapServer"
+  ]
+ },
+ "56": {
+  "title": "Tax Increment Financing (TIF) Districts",
+  "desc": "",
+  "links": [
+   "https://static.stlouis-mo.gov/open-data/SLDC/INCENTIVES/TIF/STLTIFs.csv",
+   "https://static.stlouis-mo.gov/open-data/SLDC/INCENTIVES/TIF/STLTIFs.geojson",
+   "https://static.stlouis-mo.gov/open-data/SLDC/INCENTIVES/TIF/STLTIFs_Shapefile.zip"
+  ]
+ },
+ "57": {
+  "title": "Transportation Development Districts (TDDs)",
+  "desc": "",
+  "links": [
+   "https://static.stlouis-mo.gov/open-data/SLDC/TAXING-DISTRICTS/TDD/STLTDDs.geojson",
+   "https://static.stlouis-mo.gov/open-data/SLDC/TAXING-DISTRICTS/TDD/STLTDDs_Shapefile.zip"
+  ]
+ },
+ "58": {
+  "title": "Community Improvement Districts (CIDs)",
+  "desc": "",
+  "links": [
+   "https://static.stlouis-mo.gov/open-data/SLDC/TAXING-DISTRICTS/CID/STLCIDs.geojson",
+   "https://static.stlouis-mo.gov/open-data/SLDC/TAXING-DISTRICTS/CID/STLCIDs_Shapefile.zip"
+  ]
+ },
+ "59": {
+  "title": "Qualified Opportunity Zones",
+  "desc": "",
+  "links": [
+   "https://www.stlouis-mo.gov/data/upload/data-files/OpportunityZones.geojson",
+   "https://www.stlouis-mo.gov/data/upload/data-files/OpportunityZones.zip"
+  ]
+ },
+ "60": {
+  "title": "Neighborhood Revitalization Strategy Areas",
+  "desc": "",
+  "links": [
+   "https://www.stlouis-mo.gov/data/upload/data-files/NRSA.geojson",
+   "https://www.stlouis-mo.gov/data/upload/data-files/NRSA.zip"
+  ]
+ },
+ "61": {
+  "title": "Tax-abated Parcels",
+  "desc": "",
+  "links": [
+   "https://static.stlouis-mo.gov/open-data/SLDC/TAX-ABATEMENT/taxabatedparcels.geojson",
+   "https://static.stlouis-mo.gov/open-data/SLDC/TAX-ABATEMENT/taxabatedparcels.zip"
+  ]
+ },
+ "62": {
+  "title": "Special Business Districts (SBDs)",
+  "desc": "",
+  "links": [
+   "https://static.stlouis-mo.gov/open-data/SLDC/TAXING-DISTRICTS/SBD/STLSBDs.geojson",
+   "https://static.stlouis-mo.gov/open-data/SLDC/TAXING-DISTRICTS/SBD/STLSBDs_Shapefile.zip"
+  ]
+ },
+ "63": {
+  "title": "Milkweed for Monarchs Gardens",
+  "desc": "",
+  "links": []
+ },
+ "64": {
+  "title": "Forestry Property Maintenance, Grass Cuts",
+  "desc": "",
+  "links": [
+   "https://maps6.stlouis-mo.gov/arcgis/rest/services/FORESTRY/FORESTRY_CATEGORIZATION/MapServer/2",
+   "https://www.stlouis-mo.gov/data/upload/data-files/forestry-maintenance-properties.csv",
+   "https://www.stlouis-mo.gov/data/upload/data-files/forestry-service-records.csv"
+  ]
+ },
+ "66": {
+  "title": "Excise Establishments",
+  "desc": "",
+  "links": [
+   "https://work.stlouis-mo.gov/cityworks/gis/1/1/rest/services/qe/FeatureServer/65",
+   "https://www.stlouis-mo.gov/data/upload/data-files/excise-data/excise-agents.csv",
+   "https://www.stlouis-mo.gov/data/upload/data-files/excise-data/excise-establishments.csv",
+   "https://www.stlouis-mo.gov/data/upload/data-files/excise-data/excise-permits-licenses.csv"
+  ]
+ },
+ "67": {
+  "title": "City Boundary",
+  "desc": "",
+  "links": [
+   "https://www.stlouis-mo.gov/data/upload/data-files/stl_boundary.zip"
+  ]
+ },
+ "68": {
+  "title": "City Streets",
+  "desc": "",
+  "links": [
+   "https://www.stlouis-mo.gov/data/upload/data-files/streets.zip"
+  ]
+ },
+ "69": {
+  "title": "Crime Data",
+  "desc": "",
+  "links": [
+   "http://www.slmpd.org/Crimereports.shtml",
+   "http://www.slmpd.org/crime_stats.shtml"
+  ]
+ },
+ "71": {
+  "title": "Food Facility Inspections",
+  "desc": "",
+  "links": []
+ },
+ "72": {
+  "title": "Geocode Service",
+  "desc": "",
+  "links": [
+   "https://maps6.stlouis-mo.gov/arcgis/rest/services/GEOCODERS/CITYCOUNTYSTREET_GEOCODE/GeocodeServer",
+   "https://maps6.stlouis-mo.gov/arcgis/rest/services/GEOCODERS/COMPOSITE_GEOCODE/GeocodeServer",
+   "https://maps6.stlouis-mo.gov/arcgis/rest/services/GEOCODERS/PARCEL_GEOCODE/GeocodeServer",
+   "https://maps6.stlouis-mo.gov/arcgis/rest/services/GEOCODERS/STREET_GEOCODE/GeocodeServer"
+  ]
+ },
+ "73": {
+  "title": "Historic District Data",
+  "desc": "",
+  "links": [
+   "https://www.stlouis-mo.gov/data/upload/data-files/historic_dist.zip"
+  ]
+ },
+ "74": {
+  "title": "Home Mortgage Disclosure Act Reports",
+  "desc": "",
+  "links": []
+ },
+ "75": {
+  "title": "Homelessness Data",
+  "desc": "",
+  "links": []
+ },
+ "76": {
+  "title": "Influenza Reports",
+  "desc": "",
+  "links": []
+ },
+ "77": {
+  "title": "Inmate Population and Services",
+  "desc": "",
+  "links": []
+ },
+ "78": {
+  "title": "Land Use Data",
+  "desc": "",
+  "links": [
+   "https://static.stlouis-mo.gov/open-data/city-wide/codes.zip",
+   "https://www.stlouis-mo.gov/data/upload/data-files/SLUPShapefiles2019.zip",
+   "https://www.stlouis-mo.gov/data/upload/data-files/par.zip",
+   "https://www.stlouis-mo.gov/data/upload/data-files/zoning.zip"
+  ]
+ },
+ "79": {
+  "title": "Lead Poisoning Data",
+  "desc": "",
+  "links": []
+ },
+ "80": {
+  "title": "Obesity Data",
+  "desc": "",
+  "links": []
+ },
+ "82": {
+  "title": "Parcel Data",
+  "desc": "",
+  "links": [
+   "https://maps8.stlouis-mo.gov/arcgis/rest/services/ASSESSOR/Assessor_Public_Parcels/MapServer",
+   "https://static.stlouis-mo.gov/open-data/ASSESSOR/PARCELS.zip",
+   "https://static.stlouis-mo.gov/open-data/PLANNING/parcels/parcels-basic-info.csv",
+   "https://static.stlouis-mo.gov/open-data/assessor/Parcels-CSV-2017-2025.zip",
+   "https://www.stlouis-mo.gov/data/upload/data-files/StLouisCityData.zip",
+   "https://www.stlouis-mo.gov/data/upload/data-files/par.zip",
+   "https://www.stlouis-mo.gov/data/upload/data-files/prcl.zip",
+   "https://www.stlouis-mo.gov/data/upload/data-files/stl_parcels_1997-2000.zip",
+   "https://www.stlouis-mo.gov/data/upload/data-files/stl_parcels_2001-2005.zip",
+   "https://www.stlouis-mo.gov/data/upload/data-files/stl_parcels_2006-2010.zip",
+   "https://www.stlouis-mo.gov/data/upload/data-files/stl_parcels_2011-2015.zip",
+   "https://www.stlouis-mo.gov/data/upload/data-files/stl_parcels_2016-2020.zip",
+   "https://www.stlouis-mo.gov/data/upload/data-files/survey.zip"
+  ]
+ },
+ "83": {
+  "title": "Police District Boundaries",
+  "desc": "",
+  "links": [
+   "https://www.stlouis-mo.gov/data/boundaries/upload/STL-Police-Districts-2014-2.zip",
+   "https://www.stlouis-mo.gov/data/boundaries/upload/STL-Police-Districts-pre-2014.zip"
+  ]
+ },
+ "84": {
+  "title": "Resolution Voting Data",
+  "desc": "",
+  "links": []
+ },
+ "85": {
+  "title": "Neighborhood Boundaries",
+  "desc": "",
+  "links": [
+   "https://static.stlouis-mo.gov/open-data/planning/neighborhoods/neighborhoods.zip"
+  ]
+ },
+ "88": {
+  "title": "Assessor Building Sections",
+  "desc": "",
+  "links": []
+ },
+ "100": {
+  "title": "Parcel 2010 Census Blocks",
+  "desc": "",
+  "links": []
+ },
+ "102": {
+  "title": "DESE School District Data",
+  "desc": "",
+  "links": []
+ },
+ "104": {
+  "title": "COVID-19 Coronavirus Data",
+  "desc": "",
+  "links": []
+ },
+ "105": {
+  "title": "COVID-19 Coronavirus Financial Transparency",
+  "desc": "",
+  "links": []
+ },
+ "106": {
+  "title": "Fast-Track Cities HIV Data",
+  "desc": "",
+  "links": []
+ },
+ "107": {
+  "title": "Sprinkler Permits",
+  "desc": "",
+  "links": []
+ },
+ "108": {
+  "title": "Vacant Buildings",
+  "desc": "",
+  "links": []
+ },
+ "110": {
+  "title": "Commercial Occupancy Permits",
+  "desc": "",
+  "links": []
+ },
+ "113": {
+  "title": "Housing Conservation Inspections",
+  "desc": "",
+  "links": []
+ },
+ "117": {
+  "title": "Parcel 2020 Census Blocks",
+  "desc": "",
+  "links": []
+ },
+ "118": {
+  "title": "Equity Indicators",
+  "desc": "",
+  "links": []
+ },
+ "121": {
+  "title": "City Trees (Planting Sites)",
+  "desc": "",
+  "links": [
+   "https://maps9.stlouis-mo.gov/arcgis/rest/services/FORESTRY/FORESTRY_TREES/MapServer/0",
+   "https://maps9.stlouis-mo.gov/arcgis/rest/services/FORESTRY/FORESTRY_TREES/MapServer/5",
+   "https://maps9.stlouis-mo.gov/arcgis/services/FORESTRY/FORESTRY_TREES/MapServer/WMSServer",
+   "https://static.stlouis-mo.gov/open-data/FORESTRY/CITY_TREES.geojson",
+   "https://static.stlouis-mo.gov/open-data/FORESTRY/CITY_TREES.zip",
+   "https://static.stlouis-mo.gov/open-data/FORESTRY/PLANTING_PLANNING.csv"
+  ]
+ },
+ "122": {
+  "title": "American Rescue Plan Act (ARPA)",
+  "desc": "",
+  "links": []
+ },
+ "123": {
+  "title": "Forest Park Trees",
+  "desc": "",
+  "links": [
+   "https://maps6.stlouis-mo.gov/arcgis/rest/services/FORESTRY/FORESTRY_TREES/MapServer/4",
+   "https://maps6.stlouis-mo.gov/arcgis/services/FORESTRY/FORESTRY_TREES/MapServer/WMSServer"
+  ]
+ },
+ "124": {
+  "title": "Election Wards & Precincts",
+  "desc": "",
+  "links": [
+   "https://static.stlouis-mo.gov/open-data/BOEC/Precincts_Current.zip"
+  ]
+ },
+ "125": {
+  "title": "City Public Schools",
+  "desc": "",
+  "links": []
+ },
+ "128": {
+  "title": "LCRA Property",
+  "desc": "",
+  "links": [
+   "https://static.stlouis-mo.gov/open-data/SLDC/REAL-ESTATE/LCRA_INVENTORY.csv",
+   "https://static.stlouis-mo.gov/open-data/SLDC/REAL-ESTATE/LCRA_INVENTORY_AVAILABLE.csv"
+  ]
+ },
+ "129": {
+  "title": "Proposition NS Nominees",
+  "desc": "",
+  "links": [
+   "https://static.stlouis-mo.gov/open-data/SLDC/REAL-ESTATE/SLDC_LRA_PROPNS_NOMINEES.csv"
+  ]
+ },
+ "130": {
+  "title": "Animal Bites",
+  "desc": "",
+  "links": [
+   "https://static.stlouis-mo.gov/open-data/HEALTH/ANIMAL-CONTROL/ANIMAL_BITES.csv"
+  ]
+ },
+ "131": {
+  "title": "Ward Boundaries",
+  "desc": "",
+  "links": [
+   "https://maps8.stlouis-mo.gov/arcgis/rest/services/WARDS/Wards_2010/MapServer/0/query",
+   "https://maps8.stlouis-mo.gov/arcgis/rest/services/WARDS/Wards_2020/MapServer/0/query",
+   "https://static.stlouis-mo.gov/open-data/planning/wards/wards_2010.zip",
+   "https://static.stlouis-mo.gov/open-data/planning/wards/wards_2020.zip"
+  ]
+ },
+ "132": {
+  "title": "Siren Locations",
+  "desc": "",
+  "links": [
+   "https://maps6.stlouis-mo.gov/arcgis/rest/services/STREETS/Sirens/MapServer"
+  ]
+ },
+ "133": {
+  "title": "fly314.com Airport Privatization Website",
+  "desc": "",
+  "links": [
+   "https://static.stlouis-mo.gov/open-data/itsa/Fly314.com-Website-Files.zip"
+  ]
+ },
+ "136": {
+  "title": "2020 Census Summary",
+  "desc": "",
+  "links": [
+   "https://services6.arcgis.com/HZXbCkpCSqbGd0vK/ArcGIS/rest/services/2020_Census_Tracts/FeatureServer/query",
+   "https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/2020_Census_Neighborhoods/FeatureServer/query",
+   "https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/2020_Census_in_2011_Wards/FeatureServer/query",
+   "https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/Census_2020_Citywide/FeatureServer/query"
+  ]
+ }
+}

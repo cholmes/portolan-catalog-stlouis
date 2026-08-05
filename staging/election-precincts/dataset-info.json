@@ -1,0 +1,25 @@
+{
+ "collection": "election-precincts",
+ "title": "Election Wards & Precincts",
+ "portal_page": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=124",
+ "department": "Board of Election Commissioners",
+ "source": "https://static.stlouis-mo.gov/open-data/BOEC/Precincts_Current.zip",
+ "source_type": "static",
+ "synced": "2026-08-05T01:13:22+00:00",
+ "fetch": {
+  "status": "ok",
+  "file": "Precincts_Current.zip",
+  "sha256": "5b751cd8c63a0bed18907949bfc0fe0b91f6dba66a2731cb1a9f4babed3e46a6",
+  "bytes": 292503,
+  "unpacked": [
+   "Precincts.cpg",
+   "Precincts.dbf",
+   "Precincts.prj",
+   "Precincts.sbn",
+   "Precincts.sbx",
+   "Precincts.shp",
+   "Precincts.shp.xml",
+   "Precincts.shx"
+  ]
+ }
+}

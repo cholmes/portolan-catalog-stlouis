@@ -1,0 +1,20 @@
+title: "City of St. Louis Open Data (Cloud-Native Mirror)"
+description: |
+  Cloud-native mirror of datasets from the City of St. Louis open data portal
+  (https://www.stlouis-mo.gov/data/): GeoParquet, PMTiles, and STAC metadata
+  for the city's most-used geospatial and parcel-joinable datasets.
+  Not an official city service.
+contact:
+  name: "Chris Holmes"
+  email: "cholmes@9eo.org"
+license: "other"
+license_url: "https://www.stlouis-mo.gov/data/"
+attribution: "City of St. Louis"
+source_url: "https://www.stlouis-mo.gov/data/"
+keywords: [st-louis, missouri, open-data, city-government, parcels, boundaries, cloud-native, geoparquet, stac, pmtiles]
+processing_notes: |
+  Mirrored from the City of St. Louis open data portal and the city's public
+  ArcGIS REST services (maps6/maps8/maps9.stlouis-mo.gov). Source formats
+  (ArcGIS layers, Shapefile, GeoJSON, CSV, DBF) converted to cloud-native
+  GeoParquet and PMTiles. The city publishes no explicit data license;
+  see each dataset's page on the portal for its terms and context.

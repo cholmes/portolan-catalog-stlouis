@@ -1,0 +1,21 @@
+{
+  "version": 8,
+  "name": "Simple Style",
+  "sources": {
+    "data": {
+      "type": "vector"
+    }
+  },
+  "layers": [
+    {
+      "id": "layer-0",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "parks",
+      "paint": {
+        "fill-color": "#c6e2b2",
+        "fill-opacity": 1.0
+      }
+    }
+  ]
+}

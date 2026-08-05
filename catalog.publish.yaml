@@ -1,0 +1,8 @@
+# What publishes, and where. Everything under publish_dir is uploaded 1:1.
+# Source data lives in staging/ and is NEVER placed in publish_dir.
+write_prefix: s3://us-west-2.opendata.source.coop/tge-labs/st-louis-open-data-mirror
+public_base: https://data.source.coop/tge-labs/st-louis-open-data-mirror
+region: us-west-2
+
+# The catalog directory, synced 1:1 to write_prefix.
+publish_dir: catalog

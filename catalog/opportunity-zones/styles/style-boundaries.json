@@ -1,0 +1,26 @@
+{
+  "version": 8,
+  "name": "Zone boundaries",
+  "metadata": {
+    "description": "Outlines only."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../opportunity-zones.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "opportunity-zones",
+      "paint": {
+        "line-color": "#e89d07",
+        "line-width": 2.0,
+        "line-opacity": 1.0
+      }
+    }
+  ]
+}

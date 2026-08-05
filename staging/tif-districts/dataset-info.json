@@ -1,0 +1,75 @@
+{
+ "collection": "tif-districts",
+ "title": "Tax Increment Financing (TIF) Districts",
+ "portal_page": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=56",
+ "department": "St. Louis Development Corporation",
+ "source": "https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/TIF_Districts/FeatureServer",
+ "source_type": "arcgis",
+ "synced": "2026-08-05T01:04:57+00:00",
+ "fetch": {
+  "status": "ok",
+  "parquets": [
+   "staging/extracts/tif-districts/districts_tif/districts_tif.parquet"
+  ],
+  "layer_url": "https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/TIF_Districts/FeatureServer/1",
+  "layer_description": "Field DefinitionsCase Number: Project code created in CityworksProject Name: TIF name, abbreviated as necessary; No. = north, Dt. = Downtown, R. = RiverTIF Location: Cross-streets, neighborhood, address, etc. as appropriateIncentive Status: (see required symbolgy below)Active: Currently activeNever Approved: process initiated but not approvedOn Hold: process started but not completedRetired: life span of TIF completeTerminated: approved then cancelledMODESA:  MODESA was created to facilitate the redevelopment of downtown areas and the creation of jobs by providing essential public infrastructure. The Missouri Revised Statues guiding MODESA are sections 99.915 to 99.980. More info:   https://ded.mo.gov/sites/default/files/programs/flyers/MODESA.pdfProject StatusProposed only: project is likely an idea, concept, or exploratory; typically unfunded.  For example, a developer is pursuing a project, but may not have site control or financing in placePlanned: approved, but the project has not started yet.  For TIF, this is the pre-development stage when the developer has site control, possibly plans and some financing.Underway: project is active; For TIF this means the project is under construction.Recently completed: project has completedMODOR ID: State issued ID for the TIF District as a wholeMODOR PG: State issued ID for RPAs within a TIF DistrictSymbology should be shown based on incentive status and the colors below:Status #HEX Color Code (RGB Color Code)Active #0070FF (0, 112, 255)Never Approved #9C9C9C  (156, 156, 156)On Hold #6DDC6B (109, 220, 107)Retired #856E40 (133, 110, 64)Terminated #FFAA00 (255, 170, 0)MoDESA  #FF0000 (255,0,0)",
+  "fields": [
+   {
+    "name": "OBJECTID",
+    "alias": "OBJECTID",
+    "type": "esriFieldTypeOID"
+   },
+   {
+    "name": "Assessor_TIF_ID",
+    "alias": "Assessor TIF ID",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "TIF_ID",
+    "alias": "TIF ID",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Project_Name",
+    "alias": "Project Name",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Subgrouping",
+    "alias": "Subgrouping (RPAs)",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "TIF_Location",
+    "alias": "TIF Location",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Ordinance",
+    "alias": "Ordinance",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "Incentive_Status",
+    "alias": "Incentive_Status",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "GUID",
+    "alias": "GUID",
+    "type": "esriFieldTypeGUID"
+   },
+   {
+    "name": "Shape__Area",
+    "alias": "Shape.STArea()",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Shape__Length",
+    "alias": "Shape.STLength()",
+    "type": "esriFieldTypeDouble"
+   }
+  ],
+  "city_style": "staging/extracts/tif-districts/styles/city-renderer.json"
+ }
+}

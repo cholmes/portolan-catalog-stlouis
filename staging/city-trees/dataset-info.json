@@ -1,0 +1,125 @@
+{
+ "collection": "city-trees",
+ "title": "City Trees (Planting Sites)",
+ "portal_page": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=121",
+ "department": "Forestry",
+ "source": "https://maps9.stlouis-mo.gov/arcgis/rest/services/FORESTRY/FORESTRY_TREES/MapServer",
+ "source_type": "arcgis",
+ "synced": "2026-08-05T01:04:57+00:00",
+ "fetch": {
+  "status": "ok",
+  "parquets": [
+   "staging/extracts/city-trees/city_trees_all_sites/city_trees_all_sites.parquet"
+  ],
+  "layer_url": "https://maps9.stlouis-mo.gov/arcgis/rest/services/FORESTRY/FORESTRY_TREES/MapServer/0",
+  "layer_description": null,
+  "fields": [
+   {
+    "name": "OBJECTID",
+    "alias": "OBJECTID",
+    "type": "esriFieldTypeOID"
+   },
+   {
+    "name": "Shape",
+    "alias": "Shape",
+    "type": "esriFieldTypeGeometry"
+   },
+   {
+    "name": "GDB_GEOMATTR_DATA",
+    "alias": "GDB_GEOMATTR_DATA",
+    "type": "esriFieldTypeBlob"
+   },
+   {
+    "name": "GUID",
+    "alias": "GUID",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "ON_",
+    "alias": "ON_",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "STREET_NUM",
+    "alias": "STREET_NUM",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "STREET",
+    "alias": "STREET",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "COMMON",
+    "alias": "COMMON",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "DBH",
+    "alias": "DBH",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "STEMS",
+    "alias": "STEMS",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "CONDITION",
+    "alias": "CONDITION",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "STORM_DAMAGE",
+    "alias": "STORM_DAMAGE",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "HARDSCAPE_DAMAGE",
+    "alias": "HARDSCAPE_DAMAGE",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "OVERHEAD_UTILITY",
+    "alias": "OVERHEAD_UTILITY",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "CLEARANCE",
+    "alias": "CLEARANCE",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "ADDRESS",
+    "alias": "ADDRESS",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "ELIGIBLE",
+    "alias": "ELIGIBLE",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "REPLANT",
+    "alias": "REPLANT",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "TREATED",
+    "alias": "TREATED",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "LOCATION_TYPE",
+    "alias": "LOCATION_TYPE",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "LOCATION",
+    "alias": "LOCATION",
+    "type": "esriFieldTypeString"
+   }
+  ],
+  "city_style": "staging/extracts/city-trees/styles/city-renderer.json"
+ }
+}

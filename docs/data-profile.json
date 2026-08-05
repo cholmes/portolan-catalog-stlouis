@@ -1,0 +1,12021 @@
+{
+ "city-blocks": {
+  "rows": 5857,
+  "columns": {
+   "OBJECTID": {
+    "type": "BIGINT"
+   },
+   "Join_Count": {
+    "type": "INTEGER"
+   },
+   "TARGET_FID": {
+    "type": "INTEGER"
+   },
+   "Name": {
+    "type": "VARCHAR",
+    "distinct": 5832,
+    "top": [
+     [
+      "6401",
+      7
+     ],
+     [
+      "565",
+      6
+     ],
+     [
+      "5656",
+      5
+     ],
+     [
+      "3285",
+      3
+     ],
+     [
+      "2469.02",
+      2
+     ],
+     [
+      "2206.22",
+      2
+     ],
+     [
+      "5237",
+      2
+     ],
+     [
+      "3257",
+      2
+     ],
+     [
+      "3998.12",
+      2
+     ],
+     [
+      "5239",
+      2
+     ],
+     [
+      "6495",
+      2
+     ],
+     [
+      "981",
+      1
+     ]
+    ]
+   },
+   "BLOCK_HANDLE": {
+    "type": "VARCHAR",
+    "distinct": 5200,
+    "top": [
+     [
+      null,
+      627
+     ],
+     [
+      "1640100",
+      7
+     ],
+     [
+      "1056500",
+      6
+     ],
+     [
+      "1565600",
+      5
+     ],
+     [
+      "1328500",
+      3
+     ],
+     [
+      "1523900",
+      2
+     ],
+     [
+      "1399812",
+      2
+     ],
+     [
+      "1523700",
+      2
+     ],
+     [
+      "1153000",
+      2
+     ],
+     [
+      "1649500",
+      2
+     ],
+     [
+      "1475603",
+      2
+     ],
+     [
+      "1220622",
+      2
+     ]
+    ]
+   },
+   "GeoCityBlockPart": {
+    "type": "DOUBLE"
+   },
+   "WARD10": {
+    "type": "SMALLINT"
+   },
+   "PRECINCT10": {
+    "type": "SMALLINT"
+   },
+   "INSPAREA10": {
+    "type": "SMALLINT"
+   },
+   "Ward00": {
+    "type": "SMALLINT"
+   },
+   "PRECINCT02": {
+    "type": "SMALLINT"
+   },
+   "PRECINCT04": {
+    "type": "SMALLINT"
+   },
+   "NBRHD": {
+    "type": "SMALLINT"
+   },
+   "CDADIST": {
+    "type": "SMALLINT"
+   },
+   "CDASUBDIST": {
+    "type": "SMALLINT"
+   },
+   "POLICEDIST": {
+    "type": "SMALLINT"
+   },
+   "CensTract10": {
+    "type": "DOUBLE"
+   },
+   "CensBlock10": {
+    "type": "SMALLINT"
+   },
+   "CensBlock00": {
+    "type": "DOUBLE"
+   },
+   "Ward90": {
+    "type": "SMALLINT"
+   },
+   "Precinct90": {
+    "type": "SMALLINT"
+   },
+   "CensBlock90": {
+    "type": "DOUBLE"
+   },
+   "HouseConsDist": {
+    "type": "SMALLINT"
+   },
+   "ASRNBRHD": {
+    "type": "SMALLINT"
+   },
+   "EntZone": {
+    "type": "SMALLINT"
+   },
+   "IMPACTAREA": {
+    "type": "SMALLINT"
+   },
+   "CTDArea": {
+    "type": "SMALLINT"
+   },
+   "OnFloodBlock": {
+    "type": "SMALLINT"
+   },
+   "SpecBusDist3": {
+    "type": "SMALLINT"
+   },
+   "Ward20": {
+    "type": "SMALLINT"
+   },
+   "Precinct20": {
+    "type": "SMALLINT"
+   },
+   "InspArea20": {
+    "type": "SMALLINT"
+   },
+   "CensTract20": {
+    "type": "SMALLINT"
+   },
+   "CensBlock20": {
+    "type": "SMALLINT"
+   },
+   "MaintZoneWC": {
+    "type": "SMALLINT"
+   },
+   "TransDevDist": {
+    "type": "SMALLINT"
+   }
+  }
+ },
+ "city-boundary": {
+  "rows": 1,
+  "columns": {
+   "OBJECTID": {
+    "type": "BIGINT"
+   },
+   "LAYER": {
+    "type": "VARCHAR",
+    "distinct": 1,
+    "top": [
+     [
+      "--CITY_LIMIT_BOUND_2002--",
+      1
+     ]
+    ]
+   },
+   "AREA_SQMI": {
+    "type": "DOUBLE"
+   }
+  }
+ },
+ "city-trees": {
+  "rows": 134588,
+  "columns": {
+   "OBJECTID": {
+    "type": "BIGINT"
+   },
+   "GUID": {
+    "type": "VARCHAR",
+    "distinct": 134586,
+    "top": [
+     [
+      "{85578575-C7A7-4196-8169-14C164539BBC}",
+      2
+     ],
+     [
+      "7F04743C-4C9A-4D2E-A29A-D2B0F28540FD",
+      2
+     ],
+     [
+      "22F5E3EE-5359-4899-A03C-B534753A704B",
+      1
+     ],
+     [
+      "{2E44362E-9C1D-444A-A2A1-FD571A6315E6}",
+      1
+     ],
+     [
+      "BBDDE183-2F1A-457B-98E1-4F73767BD2E9",
+      1
+     ],
+     [
+      "7A527558-6523-4295-B1F6-E02C7F7D117A",
+      1
+     ],
+     [
+      "{0A5259F1-BC10-4AC2-B5FD-41D2D80BC3D2}",
+      1
+     ],
+     [
+      "{fddcc3ed-e049-4193-8673-5fd4956c114a}",
+      1
+     ],
+     [
+      "{68B248DC-1396-4F69-A7E0-ECE0E4BA7106}",
+      1
+     ],
+     [
+      "{E8B0DAC8-F0E6-4B44-9919-161483CD9601}",
+      1
+     ],
+     [
+      "{95f25ee7-e95e-43f1-be17-ae5fd975152f}",
+      1
+     ],
+     [
+      "{668e7fcb-4f39-4f74-a617-064f7e377ff4}",
+      1
+     ]
+    ]
+   },
+   "ON_": {
+    "type": "VARCHAR",
+    "distinct": 1734,
+    "top": [
+     [
+      " ",
+      21508
+     ],
+     [
+      null,
+      2498
+     ],
+     [
+      "KINGSHIGHWAY BLVD",
+      981
+     ],
+     [
+      "DELMAR BLVD",
+      975
+     ],
+     [
+      "S BROADWAY",
+      951
+     ],
+     [
+      "OLEATHA AVE",
+      894
+     ],
+     [
+      "MINNESOTA AVE",
+      794
+     ],
+     [
+      "DR MARTIN LUTHER KING DR",
+      788
+     ],
+     [
+      "MAGNOLIA AVE",
+      783
+     ],
+     [
+      "PENNSYLVANIA AVE",
+      709
+     ],
+     [
+      "ARSENAL ST",
+      692
+     ],
+     [
+      "OLIVE ST",
+      685
+     ]
+    ]
+   },
+   "STREET_NUM": {
+    "type": "VARCHAR",
+    "distinct": 6854,
+    "top": [
+     [
+      " ",
+      11722
+     ],
+     [
+      "3900",
+      2408
+     ],
+     [
+      null,
+      1597
+     ],
+     [
+      "1955",
+      1193
+     ],
+     [
+      "6201",
+      1175
+     ],
+     [
+      "2001",
+      938
+     ],
+     [
+      "5900",
+      530
+     ],
+     [
+      "5300",
+      426
+     ],
+     [
+      "3801",
+      421
+     ],
+     [
+      "5600",
+      406
+     ],
+     [
+      "3635",
+      383
+     ],
+     [
+      "4200",
+      330
+     ]
+    ]
+   },
+   "STREET": {
+    "type": "VARCHAR",
+    "distinct": 2137,
+    "top": [
+     [
+      " ",
+      11656
+     ],
+     [
+      "HOLLY HILLS BLVD",
+      2577
+     ],
+     [
+      null,
+      1612
+     ],
+     [
+      "ADELAIDE AV",
+      1179
+     ],
+     [
+      "S BROADWAY",
+      1074
+     ],
+     [
+      "DELMAR BLVD",
+      1050
+     ],
+     [
+      "JAMIESON AV",
+      1037
+     ],
+     [
+      "KINGSHIGHWAY BLVD",
+      931
+     ],
+     [
+      "OLEATHA AVE",
+      919
+     ],
+     [
+      "MINNESOTA AVE",
+      811
+     ],
+     [
+      "MAGNOLIA AVE",
+      796
+     ],
+     [
+      "S GRAND BLVD",
+      794
+     ]
+    ]
+   },
+   "COMMON": {
+    "type": "VARCHAR",
+    "distinct": 671,
+    "top": [
+     [
+      "Vacant",
+      30935
+     ],
+     [
+      "Maple, Red",
+      8446
+     ],
+     [
+      "Pear, Callery",
+      5907
+     ],
+     [
+      "Oak, Pin",
+      4593
+     ],
+     [
+      "Maple, Sugar",
+      4013
+     ],
+     [
+      "Redbud",
+      3501
+     ],
+     [
+      "Linden, Littleleaf",
+      3401
+     ],
+     [
+      "Ash, Green",
+      3161
+     ],
+     [
+      "Maple, Silver",
+      2344
+     ],
+     [
+      "Ash, White",
+      2163
+     ],
+     [
+      "Sweetgum (undesirable)",
+      2077
+     ],
+     [
+      "Elm, Hybrid",
+      2063
+     ]
+    ]
+   },
+   "DBH": {
+    "type": "INTEGER"
+   },
+   "STEMS": {
+    "type": "INTEGER"
+   },
+   "CONDITION": {
+    "type": "VARCHAR",
+    "distinct": 11,
+    "top": [
+     [
+      "Fair",
+      54767
+     ],
+     [
+      "N/A",
+      31921
+     ],
+     [
+      "Good",
+      30379
+     ],
+     [
+      "Poor",
+      7506
+     ],
+     [
+      "Stump",
+      5967
+     ],
+     [
+      "Dead",
+      1189
+     ],
+     [
+      null,
+      1000
+     ],
+     [
+      "Very Good",
+      788
+     ],
+     [
+      "Critical",
+      668
+     ],
+     [
+      "Excellent",
+      369
+     ],
+     [
+      "Vacant",
+      28
+     ],
+     [
+      "vacant",
+      6
+     ]
+    ]
+   },
+   "STORM_DAMAGE": {
+    "type": "VARCHAR",
+    "distinct": 7,
+    "top": [
+     [
+      "No",
+      105085
+     ],
+     [
+      " ",
+      23068
+     ],
+     [
+      "Yes",
+      3190
+     ],
+     [
+      null,
+      2809
+     ],
+     [
+      "",
+      432
+     ],
+     [
+      "yes",
+      2
+     ],
+     [
+      "NO",
+      1
+     ],
+     [
+      "no",
+      1
+     ]
+    ]
+   },
+   "HARDSCAPE_DAMAGE": {
+    "type": "VARCHAR",
+    "distinct": 12,
+    "top": [
+     [
+      "No",
+      91468
+     ],
+     [
+      " ",
+      21813
+     ],
+     [
+      "Yes Sidewalk",
+      13892
+     ],
+     [
+      "Yes",
+      3134
+     ],
+     [
+      null,
+      2823
+     ],
+     [
+      "Yes Curb",
+      1377
+     ],
+     [
+      "Yes Other",
+      47
+     ],
+     [
+      "Yes Driveway",
+      26
+     ],
+     [
+      "None",
+      3
+     ],
+     [
+      "no",
+      2
+     ],
+     [
+      "NO",
+      1
+     ],
+     [
+      "removed water pipe repair",
+      1
+     ]
+    ]
+   },
+   "OVERHEAD_UTILITY": {
+    "type": "VARCHAR",
+    "distinct": 7,
+    "top": [
+     [
+      "No",
+      102252
+     ],
+     [
+      " ",
+      20804
+     ],
+     [
+      "Yes",
+      8719
+     ],
+     [
+      null,
+      2808
+     ],
+     [
+      "no",
+      2
+     ],
+     [
+      "",
+      1
+     ],
+     [
+      "Other - see notes",
+      1
+     ],
+     [
+      "Vacant",
+      1
+     ]
+    ]
+   },
+   "CLEARANCE": {
+    "type": "VARCHAR",
+    "distinct": 14,
+    "top": [
+     [
+      "None needed",
+      85590
+     ],
+     [
+      " ",
+      23958
+     ],
+     [
+      "Vehicle",
+      15664
+     ],
+     [
+      "Ped",
+      4522
+     ],
+     [
+      null,
+      2963
+     ],
+     [
+      "Light",
+      1106
+     ],
+     [
+      "Building",
+      494
+     ],
+     [
+      "Sign or Signal",
+      278
+     ],
+     [
+      "Other - see notes",
+      5
+     ],
+     [
+      "Street light interference",
+      2
+     ],
+     [
+      "Sidewalk",
+      2
+     ],
+     [
+      "None Needed",
+      1
+     ]
+    ]
+   },
+   "ADDRESS": {
+    "type": "VARCHAR",
+    "distinct": 69811,
+    "top": [
+     [
+      "3900 HOLLY HILLS BLVD",
+      2116
+     ],
+     [
+      "1955 ADELAIDE AV",
+      1179
+     ],
+     [
+      "6201 JAMIESON AV",
+      1037
+     ],
+     [
+      "2001 LAFAYETTE AV",
+      785
+     ],
+     [
+      "5900 FYLER AV",
+      413
+     ],
+     [
+      "3635 N GRAND BLVD",
+      366
+     ],
+     [
+      "5300 DONOVAN AVE",
+      239
+     ],
+     [
+      " 1955 ADELAIDE AVE.",
+      233
+     ],
+     [
+      "5600 SOUTHWEST AV",
+      218
+     ],
+     [
+      "NORTH RIVERFRONT",
+      193
+     ],
+     [
+      "1 N KINGSHIGHWAY BLVD",
+      129
+     ],
+     [
+      "9500 RIVERVIEW DR",
+      127
+     ]
+    ]
+   },
+   "ELIGIBLE": {
+    "type": "VARCHAR",
+    "distinct": 2,
+    "top": [
+     [
+      "Yes",
+      131736
+     ],
+     [
+      "No",
+      2852
+     ]
+    ]
+   },
+   "REPLANT": {
+    "type": "VARCHAR",
+    "distinct": 162,
+    "top": [
+     [
+      " ",
+      105372
+     ],
+     [
+      "Blackgum",
+      2805
+     ],
+     [
+      "Lilac, Japanese Tree 'Ivory Silk'",
+      1580
+     ],
+     [
+      "Ginkgo 'Princeton Sentry'",
+      1476
+     ],
+     [
+      "Elm, Frontier",
+      1443
+     ],
+     [
+      "Kentucky Coffeetree",
+      1383
+     ],
+     [
+      null,
+      1375
+     ],
+     [
+      "Redbud, Eastern",
+      1267
+     ],
+     [
+      "Cypress, Bald",
+      959
+     ],
+     [
+      "Oak, English 'Fastigiata'",
+      886
+     ],
+     [
+      "Hackberry",
+      826
+     ],
+     [
+      "Birch River, 'Heritage'",
+      802
+     ]
+    ]
+   },
+   "TREATED": {
+    "type": "VARCHAR",
+    "distinct": 6,
+    "top": [
+     [
+      "FALSE",
+      109543
+     ],
+     [
+      " ",
+      21632
+     ],
+     [
+      null,
+      2825
+     ],
+     [
+      "TRUE",
+      585
+     ],
+     [
+      "False",
+      1
+     ],
+     [
+      "True",
+      1
+     ],
+     [
+      "",
+      1
+     ]
+    ]
+   },
+   "LOCATION_TYPE": {
+    "type": "VARCHAR",
+    "distinct": 6,
+    "top": [
+     [
+      "Easement",
+      114559
+     ],
+     [
+      "Park",
+      16815
+     ],
+     [
+      null,
+      2736
+     ],
+     [
+      " ",
+      450
+     ],
+     [
+      "Median",
+      19
+     ],
+     [
+      "Other",
+      6
+     ],
+     [
+      "Greenway",
+      3
+     ]
+    ]
+   },
+   "LOCATION": {
+    "type": "VARCHAR",
+    "distinct": 64643,
+    "top": [
+     [
+      "CARONDELET PARK",
+      2194
+     ],
+     [
+      "O'FALLON PARK",
+      1179
+     ],
+     [
+      "WILMORE PARK",
+      1072
+     ],
+     [
+      "DAVID R FRANCIS PARK",
+      950
+     ],
+     [
+      "LAFAYETTE PARK",
+      799
+     ],
+     [
+      "FAIRGROUND PARK",
+      635
+     ],
+     [
+      "RIVER DES PERES PARK",
+      592
+     ],
+     [
+      "COMPTON HILL RESERVOIR PARK",
+      522
+     ],
+     [
+      "PENROSE PARK",
+      500
+     ],
+     [
+      "NORTH RIVERFRONT",
+      478
+     ],
+     [
+      "TILLES PARK",
+      419
+     ],
+     [
+      "WILLMORE PARK",
+      347
+     ]
+    ]
+   }
+  }
+ },
+ "community-improvement-districts": {
+  "rows": 98,
+  "columns": {
+   "OBJECTID": {
+    "type": "INTEGER"
+   },
+   "Name": {
+    "type": "VARCHAR",
+    "distinct": 98,
+    "top": [
+     [
+      "Lafayette Square Townhouses CID",
+      1
+     ],
+     [
+      "Soda Fountain Square CID",
+      1
+     ],
+     [
+      "620 Market CID",
+      1
+     ],
+     [
+      "Carondelet Commons CID",
+      1
+     ],
+     [
+      "1831/2000 Sidney St CID",
+      1
+     ],
+     [
+      "Laurel CID",
+      1
+     ],
+     [
+      "4 Hands Brewery CID",
+      1
+     ],
+     [
+      "La Collina CID",
+      1
+     ],
+     [
+      "Newstead West Community CID",
+      1
+     ],
+     [
+      "Hampton/Berthold CID",
+      1
+     ],
+     [
+      "1201 Washington CID",
+      1
+     ],
+     [
+      "City Hospital Powerhouse CID",
+      1
+     ]
+    ]
+   },
+   "ASR_ID": {
+    "type": "INTEGER"
+   },
+   "Active": {
+    "type": "VARCHAR",
+    "distinct": 2,
+    "top": [
+     [
+      "Y",
+      70
+     ],
+     [
+      "N",
+      21
+     ],
+     [
+      null,
+      7
+     ]
+    ]
+   },
+   "DistrictTy": {
+    "type": "VARCHAR",
+    "distinct": 1,
+    "top": [
+     [
+      "CID",
+      98
+     ]
+    ]
+   },
+   "MainContac": {
+    "type": "VARCHAR",
+    "distinct": 9,
+    "top": [
+     [
+      " ",
+      75
+     ],
+     [
+      null,
+      14
+     ],
+     [
+      "Park Central - Kyle Oberle",
+      2
+     ],
+     [
+      "Rachelle L'Ecuyer",
+      1
+     ],
+     [
+      "Rich Simmons",
+      1
+     ],
+     [
+      "Rachel Witt",
+      1
+     ],
+     [
+      "Terry Hoffman",
+      1
+     ],
+     [
+      "Emily Thenhaus",
+      1
+     ],
+     [
+      "Jennifer Bess",
+      1
+     ],
+     [
+      "Caya Aufiero",
+      1
+     ]
+    ]
+   },
+   "MainCont_1": {
+    "type": "VARCHAR",
+    "distinct": 9,
+    "top": [
+     [
+      " ",
+      75
+     ],
+     [
+      null,
+      14
+     ],
+     [
+      "314-535-5311",
+      2
+     ],
+     [
+      "314-315-3443",
+      1
+     ],
+     [
+      "314-596-2292",
+      1
+     ],
+     [
+      "314-772-5750",
+      1
+     ],
+     [
+      "314-289-1504",
+      1
+     ],
+     [
+      "314-660-5788",
+      1
+     ],
+     [
+      "314-402-3943",
+      1
+     ],
+     [
+      "314-685-6160",
+      1
+     ]
+    ]
+   },
+   "AltContact": {
+    "type": "VARCHAR",
+    "distinct": 1,
+    "top": [
+     [
+      " ",
+      84
+     ],
+     [
+      null,
+      14
+     ]
+    ]
+   },
+   "AltConta_1": {
+    "type": "VARCHAR",
+    "distinct": 1,
+    "top": [
+     [
+      " ",
+      84
+     ],
+     [
+      null,
+      14
+     ]
+    ]
+   },
+   "GeneralEma": {
+    "type": "VARCHAR",
+    "distinct": 9,
+    "top": [
+     [
+      " ",
+      75
+     ],
+     [
+      null,
+      14
+     ],
+     [
+      "kyle@pcd-stl.org",
+      2
+     ],
+     [
+      "rachelle@thedelmarloop.com",
+      1
+     ],
+     [
+      "rachel@southgrand.org",
+      1
+     ],
+     [
+      "cayaa@dtcid.org",
+      1
+     ],
+     [
+      "rich@grandcenter.org",
+      1
+     ],
+     [
+      "emily@cherokeestreet.com",
+      1
+     ],
+     [
+      "bevoCID@gmail.com",
+      1
+     ],
+     [
+      "chair@soulardcid.org",
+      1
+     ]
+    ]
+   },
+   "MtgDateTim": {
+    "type": "VARCHAR",
+    "distinct": 1,
+    "top": [
+     [
+      " ",
+      84
+     ],
+     [
+      null,
+      14
+     ]
+    ]
+   },
+   "MtgLocatio": {
+    "type": "VARCHAR",
+    "distinct": 1,
+    "top": [
+     [
+      " ",
+      84
+     ],
+     [
+      null,
+      14
+     ]
+    ]
+   },
+   "F501c3": {
+    "type": "VARCHAR",
+    "distinct": 1,
+    "top": [
+     [
+      " ",
+      84
+     ],
+     [
+      null,
+      14
+     ]
+    ]
+   },
+   "SLACO_Memb": {
+    "type": "VARCHAR",
+    "distinct": 1,
+    "top": [
+     [
+      " ",
+      84
+     ],
+     [
+      null,
+      14
+     ]
+    ]
+   },
+   "Notes": {
+    "type": "VARCHAR",
+    "distinct": 16,
+    "top": [
+     [
+      "Correct according to legal description",
+      34
+     ],
+     [
+      "Inactive? Delete?",
+      16
+     ],
+     [
+      null,
+      12
+     ],
+     [
+      " ",
+      11
+     ],
+     [
+      "Correct based on description in ordinance",
+      6
+     ],
+     [
+      "Need legal description",
+      6
+     ],
+     [
+      "",
+      3
+     ],
+     [
+      "Inactive? Delete? LO: contact info confirmed with Rich.",
+      1
+     ],
+     [
+      "Only including Unit 150A, B, C of the Park East Condominium located at 4909 Laclede Avenue (and no other units of the Park East Condominium) and only including Lot C of the Park East Lofts 3d Subdivision (and no other lots of the Subdivision).",
+      1
+     ],
+     [
+      "Inactive? Delete? (multipart?)",
+      1
+     ],
+     [
+      "Unit 2 of Syndicate Building Condominiums",
+      1
+     ],
+     [
+      "Correct according to legal description. Drawn according to 2006 parcel boundaries.",
+      1
+     ]
+    ]
+   },
+   "LastUpdate": {
+    "type": "VARCHAR",
+    "distinct": 22,
+    "top": [
+     [
+      " ",
+      15
+     ],
+     [
+      "2/24/2020. CMZ.",
+      14
+     ],
+     [
+      "2/11/2020 CMZ",
+      13
+     ],
+     [
+      "2/10/2020 CMZ",
+      10
+     ],
+     [
+      "2/24/2020 CMZ",
+      6
+     ],
+     [
+      "2/12/2020 CMZ",
+      6
+     ],
+     [
+      "1/30/2020 CMZ",
+      5
+     ],
+     [
+      "1/31/2020 CMZ",
+      4
+     ],
+     [
+      "9/24/2024 JKD",
+      4
+     ],
+     [
+      "9/5/2024 JKD",
+      2
+     ],
+     [
+      "8/19/2024 JKD",
+      2
+     ],
+     [
+      "2/13/2020. CMZ.",
+      2
+     ]
+    ]
+   },
+   "ID": {
+    "type": "INTEGER"
+   },
+   "Ordinance": {
+    "type": "INTEGER"
+   },
+   "BoardBill": {
+    "type": "INTEGER"
+   },
+   "Session": {
+    "type": "VARCHAR",
+    "distinct": 24,
+    "top": [
+     [
+      "2009-2010",
+      11
+     ],
+     [
+      "2007-2008",
+      10
+     ],
+     [
+      "2006-2007",
+      10
+     ],
+     [
+      "2014-2015",
+      8
+     ],
+     [
+      "2016-2017",
+      8
+     ],
+     [
+      "2008-2009",
+      7
+     ],
+     [
+      "2019-2020",
+      6
+     ],
+     [
+      "2011-2012",
+      5
+     ],
+     [
+      "2013-2014",
+      4
+     ],
+     [
+      "2020-2021",
+      4
+     ],
+     [
+      "",
+      4
+     ],
+     [
+      "2012-2013",
+      3
+     ]
+    ]
+   },
+   "OrdLink": {
+    "type": "VARCHAR",
+    "distinct": 94,
+    "top": [
+     [
+      "",
+      4
+     ],
+     [
+      " ",
+      2
+     ],
+     [
+      "https://www.stlouis-mo.gov/government/city-laws/ordinances/ordinance.cfm?ord=67899",
+      1
+     ],
+     [
+      "https://www.stlouis-mo.gov/government/city-laws/ordinances/ordinance.cfm?ord=68366",
+      1
+     ],
+     [
+      "https://www.stlouis-mo.gov/government/city-laws/ordinances/ordinance.cfm?ord=66224",
+      1
+     ],
+     [
+      "https://www.stlouis-mo.gov/government/city-laws/ordinances/ordinance.cfm?ord=68325",
+      1
+     ],
+     [
+      "https://www.stlouis-mo.gov/government/city-laws/ordinances/ordinance.cfm?ord=67570",
+      1
+     ],
+     [
+      "https://www.stlouis-mo.gov/government/city-laws/ordinances/ordinance.cfm?ord=71586",
+      1
+     ],
+     [
+      "https://www.stlouis-mo.gov/government/city-laws/ordinances/ordinance.cfm?ord=69673",
+      1
+     ],
+     [
+      "https://www.stlouis-mo.gov/government/city-laws/ordinances/ordinance.cfm?ord=68434",
+      1
+     ],
+     [
+      "https://www.stlouis-mo.gov/government/city-laws/ordinances/ordinance.cfm?ord=70508",
+      1
+     ],
+     [
+      "https://www.stlouis-mo.gov/government/city-laws/ordinances/ordinance.cfm?ord=71338",
+      1
+     ]
+    ]
+   },
+   "Wards": {
+    "type": "INTEGER"
+   },
+   "Active0424": {
+    "type": "INTEGER"
+   }
+  }
+ },
+ "csb-311-requests": {
+  "rows": 1477057,
+  "columns": {
+   "CALLERTYPE": {
+    "type": "VARCHAR",
+    "distinct": 30,
+    "top": [
+     [
+      "WEB",
+      452292
+     ],
+     [
+      "PHONE",
+      365995
+     ],
+     [
+      "INDETERMINATE",
+      328686
+     ],
+     [
+      "NSO",
+      274004
+     ],
+     [
+      "TWITTER",
+      23674
+     ],
+     [
+      null,
+      15705
+     ],
+     [
+      "EMAIL",
+      8275
+     ],
+     [
+      "CSB VCML",
+      3193
+     ],
+     [
+      "DEPT_REF",
+      2713
+     ],
+     [
+      "CHAT",
+      1280
+     ],
+     [
+      "OTHER",
+      430
+     ],
+     [
+      "INTERNAL",
+      310
+     ]
+    ]
+   },
+   "CITY": {
+    "type": "VARCHAR",
+    "distinct": 68,
+    "top": [
+     [
+      "St. Louis",
+      1476959
+     ],
+     [
+      "St. Loiuis",
+      7
+     ],
+     [
+      "St. Loius",
+      6
+     ],
+     [
+      "St ",
+      4
+     ],
+     [
+      "Baden",
+      3
+     ],
+     [
+      "63139",
+      3
+     ],
+     [
+      "63115",
+      3
+     ],
+     [
+      "63116",
+      3
+     ],
+     [
+      "63107",
+      2
+     ],
+     [
+      "1st floor",
+      2
+     ],
+     [
+      "2E",
+      2
+     ],
+     [
+      "St Loiuis",
+      2
+     ]
+    ]
+   },
+   "DATECANCELLED": {
+    "type": "TIMESTAMP",
+    "mn": "2008-09-19 12:29:52",
+    "mx": "2026-08-02 21:45:19"
+   },
+   "DATEINVTDONE": {
+    "type": "TIMESTAMP",
+    "mn": "1900-01-01 00:00:00.001",
+    "mx": "7062-01-20 00:00:00"
+   },
+   "DATETIMECLOSED": {
+    "type": "TIMESTAMP",
+    "mn": "2008-09-09 11:07:20",
+    "mx": "2029-09-20 00:00:00"
+   },
+   "DATETIMEINIT": {
+    "type": "TIMESTAMP",
+    "mn": "2008-09-02 07:49:04",
+    "mx": "2026-08-03 05:19:02.293"
+   },
+   "DESCRIPTION": {
+    "type": "VARCHAR",
+    "distinct": 481,
+    "top": [
+     [
+      "Inspect City Tree",
+      65896
+     ],
+     [
+      "Vehicle Towing",
+      63266
+     ],
+     [
+      "Debris-alley/street",
+      48519
+     ],
+     [
+      "Refuse not collected",
+      46614
+     ],
+     [
+      "Potholes - Residnl",
+      40898
+     ],
+     [
+      "Container damaged",
+      38460
+     ],
+     [
+      "Illegl Use-Opn Storg",
+      37823
+     ],
+     [
+      "Single street light out",
+      37656
+     ],
+     [
+      "Sign needs attention",
+      36970
+     ],
+     [
+      "Weeds-Occupied Ppty",
+      32119
+     ],
+     [
+      "Whole block lights out",
+      29634
+     ],
+     [
+      "Ppty Maint Code-Ext",
+      28101
+     ]
+    ]
+   },
+   "EXPLANATION": {
+    "type": "VARCHAR",
+    "distinct": 58,
+    "top": [
+     [
+      null,
+      740717
+     ],
+     [
+      "The city maintains trees located in parks, medians, and in the \"tree lawn\" area located between the sidewalk and curb in front of properties. Request that a tree be inspected for health, trimming, or removal, as necessary, by a certified arborist.",
+      65896
+     ],
+     [
+      "Report derelict, vandalized, inoperable or abandoned vehicles",
+      63266
+     ],
+     [
+      "If you have a roll-out container, please leave it in the street until a Refuse maintenance crew comes to make repairs.",
+      56879
+     ],
+     [
+      "Do NOT file debris requests related to the May 2025 tornado here.",
+      48519
+     ],
+     [
+      "Do NOT file requests related to the May 2025 Tornado here.",
+      47936
+     ],
+     [
+      "Any zoning code violations, including derelict vehicles, appliances, etc. on private property",
+      37941
+     ],
+     [
+      "Just one or two lights out.",
+      37656
+     ],
+     [
+      "Select this option for non-critical signs (street cleaning, no parking, etc.)",
+      36970
+     ],
+     [
+      "Seasonal Only. Service is available from March 1 through September 30.",
+      35443
+     ],
+     [
+      "Every street light on the block is dark.",
+      29634
+     ],
+     [
+      "Trash, yard waste, or recycling container is overflowing and needs to be emptied.",
+      24695
+     ]
+    ]
+   },
+   "GRANDPARENT_ID": {
+    "type": "INTEGER"
+   },
+   "GRANDPARENT_NODE": {
+    "type": "VARCHAR",
+    "distinct": 8,
+    "top": [
+     [
+      "Citizen Requests",
+      747378
+     ],
+     [
+      "Trash/Debris/Green Waste",
+      394908
+     ],
+     [
+      "Right of Way Issues",
+      154334
+     ],
+     [
+      "Animals",
+      81783
+     ],
+     [
+      "Prpty Insp Exterior",
+      50858
+     ],
+     [
+      "Prpty Insp Interior",
+      27123
+     ],
+     [
+      "Recycling",
+      10214
+     ],
+     [
+      null,
+      5657
+     ],
+     [
+      "Parks",
+      4802
+     ]
+    ]
+   },
+   "GROUP": {
+    "type": "VARCHAR",
+    "distinct": 37,
+    "top": [
+     [
+      "Trash/Debris/Green Waste",
+      401770
+     ],
+     [
+      "Right of Way Issues",
+      154338
+     ],
+     [
+      "Trees",
+      134310
+     ],
+     [
+      "Vehicles",
+      127400
+     ],
+     [
+      "Street Lights",
+      97201
+     ],
+     [
+      "Weeds/Grass",
+      95389
+     ],
+     [
+      "Animals",
+      84031
+     ],
+     [
+      "Street Sign/Painting",
+      55557
+     ],
+     [
+      "Prpty Insp Comml",
+      53399
+     ],
+     [
+      "Prpty Insp Exterior",
+      50858
+     ],
+     [
+      "Graffiti",
+      33377
+     ],
+     [
+      "Traffic Signal",
+      29974
+     ]
+    ]
+   },
+   "NEIGHBORHOOD": {
+    "type": "VARCHAR",
+    "distinct": 125,
+    "top": [
+     [
+      "16",
+      64174
+     ],
+     [
+      "15",
+      53802
+     ],
+     [
+      "05",
+      51661
+     ],
+     [
+      null,
+      48588
+     ],
+     [
+      "74",
+      41029
+     ],
+     [
+      "01",
+      39850
+     ],
+     [
+      "09",
+      38684
+     ],
+     [
+      "38",
+      37647
+     ],
+     [
+      "04",
+      34112
+     ],
+     [
+      "69",
+      32623
+     ],
+     [
+      "08",
+      31266
+     ],
+     [
+      "56",
+      30145
+     ]
+    ]
+   },
+   "PARENT_ID": {
+    "type": "INTEGER"
+   },
+   "PARENT_NODE": {
+    "type": "VARCHAR",
+    "distinct": 56,
+    "top": [
+     [
+      "Trees",
+      134310
+     ],
+     [
+      "Dumping",
+      131279
+     ],
+     [
+      "Vehicles",
+      127400
+     ],
+     [
+      "Right of Way Repair",
+      104994
+     ],
+     [
+      "Street Lights",
+      97201
+     ],
+     [
+      "Weeds/Grass",
+      95389
+     ],
+     [
+      "Collection Missed",
+      79426
+     ],
+     [
+      "Cntainr Maintenance",
+      69652
+     ],
+     [
+      "Animals and Pets",
+      67722
+     ],
+     [
+      "Street Sign/Painting",
+      55557
+     ],
+     [
+      "Cntainr Loctn/Qty",
+      53677
+     ],
+     [
+      "Prpty Insp Comml",
+      53399
+     ]
+    ]
+   },
+   "PLAIN_ENGLISH_NAME_FOR_PROBLEMCODE": {
+    "type": "VARCHAR",
+    "distinct": 294,
+    "top": [
+     [
+      "Inspect city tree",
+      65896
+     ],
+     [
+      "Derelict, vandalized, inoperable, or abandoned vehicle",
+      63266
+     ],
+     [
+      "Container is damaged.",
+      56879
+     ],
+     [
+      "Debris dumped in the street or alley",
+      48519
+     ],
+     [
+      "Trash container not emptied on scheduled day",
+      46614
+     ],
+     [
+      "Inspect occupied property for high grass/weeds",
+      41458
+     ],
+     [
+      "Pothole in a residential street",
+      40898
+     ],
+     [
+      "Inspect for violation of zoning code (including open storage)",
+      37941
+     ],
+     [
+      "Single light(s) out on the block",
+      37656
+     ],
+     [
+      "Traffic sign needs repair",
+      36970
+     ],
+     [
+      "Inspect for exterior building damage and code violations",
+      36969
+     ],
+     [
+      "Whole block of lights out",
+      29634
+     ]
+    ]
+   },
+   "PRJCOMPLETEDATE": {
+    "type": "TIMESTAMP",
+    "mn": "1900-01-01 00:00:00.001",
+    "mx": "2026-12-31 12:37:00"
+   },
+   "PROBADDRESS": {
+    "type": "VARCHAR",
+    "distinct": 274031,
+    "top": [
+     [
+      null,
+      1303
+     ],
+     [
+      "5600 CLAYTON AVE",
+      521
+     ],
+     [
+      "1515 N KINGSHIGHWAY BLVD",
+      476
+     ],
+     [
+      "3900 HOLLY HILLS AVE",
+      431
+     ],
+     [
+      "1520 MARKET ST",
+      395
+     ],
+     [
+      "1200 MARKET ST",
+      331
+     ],
+     [
+      "HAMPTON AVE & FYLER AVE",
+      248
+     ],
+     [
+      "3715 NATURAL BRIDGE AVE",
+      241
+     ],
+     [
+      "5300 DONOVAN AVE",
+      240
+     ],
+     [
+      "4206 W KENNERLY AVE",
+      239
+     ],
+     [
+      "3200 POTOMAC ST",
+      236
+     ],
+     [
+      "RIVER DES PERES BLVD & CHIPPEWA ST",
+      235
+     ]
+    ]
+   },
+   "PROBADDTYPE": {
+    "type": "VARCHAR",
+    "distinct": 2,
+    "top": [
+     [
+      "B",
+      1341431
+     ],
+     [
+      "A",
+      135626
+     ]
+    ]
+   },
+   "PROBLEMCODE": {
+    "type": "VARCHAR",
+    "distinct": 383,
+    "top": [
+     [
+      "Inspect City Tree",
+      65896
+     ],
+     [
+      "Vehicle Towing",
+      63266
+     ],
+     [
+      "Containr damaged",
+      56879
+     ],
+     [
+      "Debris-alley/street",
+      48519
+     ],
+     [
+      "Refuse not collected",
+      46614
+     ],
+     [
+      "Weeds-Occupied Ppty",
+      41458
+     ],
+     [
+      "Potholes - Residnl",
+      40898
+     ],
+     [
+      "Illegl Use-Opn Storg",
+      37941
+     ],
+     [
+      "Single Light Out",
+      37656
+     ],
+     [
+      "Sign needs attention",
+      36970
+     ],
+     [
+      "Ppty Maint Code-Ext",
+      36969
+     ],
+     [
+      "Whole Blk Lights Out",
+      29634
+     ]
+    ]
+   },
+   "PROBLEMSID": {
+    "type": "INTEGER"
+   },
+   "PROBZIP": {
+    "type": "VARCHAR",
+    "distinct": 74,
+    "top": [
+     [
+      null,
+      769120
+     ],
+     [
+      "63116",
+      88288
+     ],
+     [
+      "63118",
+      68905
+     ],
+     [
+      "63109",
+      57221
+     ],
+     [
+      "63115",
+      53028
+     ],
+     [
+      "63139",
+      51331
+     ],
+     [
+      "63111",
+      49202
+     ],
+     [
+      "63112",
+      40614
+     ],
+     [
+      "63104",
+      39494
+     ],
+     [
+      "63113",
+      37452
+     ],
+     [
+      "63110",
+      37359
+     ],
+     [
+      "63107",
+      33103
+     ]
+    ]
+   },
+   "PUBLICRESOLUTION": {
+    "type": "VARCHAR",
+    "distinct": 337,
+    "top": [
+     [
+      null,
+      263906
+     ],
+     [
+      "work completed",
+      214734
+     ],
+     [
+      "collection made",
+      68170
+     ],
+     [
+      "issued notice of violation",
+      53981
+     ],
+     [
+      "no problem found",
+      40547
+     ],
+     [
+      "container(s) replaced with new",
+      37076
+     ],
+     [
+      "no evidence of violation",
+      30040
+     ],
+     [
+      "complete",
+      26449
+     ],
+     [
+      "Collection will be made next scheduled day",
+      23612
+     ],
+     [
+      "Please call CSB for details",
+      22486
+     ],
+     [
+      "no forestry violations",
+      22412
+     ],
+     [
+      "matter will be investigated and appropriate action taken",
+      21753
+     ]
+    ]
+   },
+   "REQUESTID": {
+    "type": "INTEGER"
+   },
+   "SRX": {
+    "type": "DOUBLE"
+   },
+   "SRY": {
+    "type": "DOUBLE"
+   },
+   "STATUS": {
+    "type": "VARCHAR",
+    "distinct": 17,
+    "top": [
+     [
+      "CLOSED",
+      1363662
+     ],
+     [
+      "CANCEL",
+      75946
+     ],
+     [
+      "Disptch",
+      10366
+     ],
+     [
+      "Pending",
+      8953
+     ],
+     [
+      "NEW",
+      8233
+     ],
+     [
+      "Closed",
+      4098
+     ],
+     [
+      "Cancel",
+      2381
+     ],
+     [
+      "Inspect",
+      2030
+     ],
+     [
+      "SCHEDULED",
+      724
+     ],
+     [
+      "Letter",
+      299
+     ],
+     [
+      "ON HOLD",
+      156
+     ],
+     [
+      "Reinsp",
+      98
+     ]
+    ]
+   },
+   "SUBMITTO": {
+    "type": "VARCHAR",
+    "distinct": 74,
+    "top": [
+     [
+      "REFUSE,",
+      308460
+     ],
+     [
+      "FORESTRY,",
+      268217
+     ],
+     [
+      "TRAFFIC DIVISION, 511",
+      185999
+     ],
+     [
+      "STREET DIVISION, 514",
+      162356
+     ],
+     [
+      "STREET DEPT, 510",
+      130773
+     ],
+     [
+      "BUILDING DIV,",
+      129546
+     ],
+     [
+      "ANIMAL CARE,",
+      56979
+     ],
+     [
+      "OP BRIGHTSIDE,",
+      29427
+     ],
+     [
+      "COMM SANITATION,",
+      27608
+     ],
+     [
+      "NST,",
+      25832
+     ],
+     [
+      "WATER DIV,",
+      24923
+     ],
+     [
+      "TREAS PRKG SVC,",
+      20812
+     ]
+    ]
+   },
+   "WARD": {
+    "type": "VARCHAR",
+    "distinct": 54,
+    "top": [
+     [
+      "13",
+      161076
+     ],
+     [
+      "12",
+      146406
+     ],
+     [
+      "07",
+      114394
+     ],
+     [
+      "04",
+      105018
+     ],
+     [
+      "01",
+      104997
+     ],
+     [
+      "08",
+      101482
+     ],
+     [
+      "14",
+      98092
+     ],
+     [
+      "03",
+      97448
+     ],
+     [
+      "05",
+      96641
+     ],
+     [
+      "10",
+      95138
+     ],
+     [
+      "02",
+      94344
+     ],
+     [
+      "06",
+      93139
+     ]
+    ]
+   }
+  }
+ },
+ "election-precincts": {
+  "rows": 209,
+  "columns": {
+   "name": {
+    "type": "VARCHAR",
+    "distinct": 208,
+    "top": [
+     [
+      "W 9 P 4",
+      2
+     ],
+     [
+      "W 6 P 7",
+      1
+     ],
+     [
+      "W 1 P 11",
+      1
+     ],
+     [
+      "W 7 P 9",
+      1
+     ],
+     [
+      "W 14 P 11",
+      1
+     ],
+     [
+      "W 1 P 9",
+      1
+     ],
+     [
+      "W 1 P 14",
+      1
+     ],
+     [
+      "W 13 P 6",
+      1
+     ],
+     [
+      "W 5 P 3",
+      1
+     ],
+     [
+      "W 14 P 20",
+      1
+     ],
+     [
+      "W 4 P 3",
+      1
+     ],
+     [
+      "W 2 P 5",
+      1
+     ]
+    ]
+   },
+   "globalid": {
+    "type": "VARCHAR",
+    "distinct": 209,
+    "top": [
+     [
+      "{D4A552CA-4BA4-4C55-BB7B-333EE657317F}",
+      1
+     ],
+     [
+      "{B2A4EE33-8CED-4860-A8E6-19D3FA1E7714}",
+      1
+     ],
+     [
+      "{0E84EF83-556F-4E13-A725-69701E96449E}",
+      1
+     ],
+     [
+      "{8BF0A6B1-0ECF-4B41-AB5F-8C383776C2BD}",
+      1
+     ],
+     [
+      "{FA372868-1B72-4FFA-B346-AFEFE71EF941}",
+      1
+     ],
+     [
+      "{967B76EF-9B35-4B63-8DCE-DAEC004FE8D9}",
+      1
+     ],
+     [
+      "{DC751B0D-9B30-4339-A116-7D7B0C300BE7}",
+      1
+     ],
+     [
+      "{733E3DFF-16F1-447B-BD5E-1738A01130F0}",
+      1
+     ],
+     [
+      "{EC085622-2BFA-4C97-9947-0B02000EFA76}",
+      1
+     ],
+     [
+      "{A0DFE4E4-16BF-49E5-AA3F-01E52D62542E}",
+      1
+     ],
+     [
+      "{3D535560-5C25-40C9-BF9A-B21520484568}",
+      1
+     ],
+     [
+      "{D2470A9D-D622-494F-A2B3-68FF55721FDD}",
+      1
+     ]
+    ]
+   }
+  }
+ },
+ "historic-districts": {
+  "rows": 109,
+  "columns": {
+   "OBJECTID": {
+    "type": "BIGINT"
+   },
+   "COUNT_": {
+    "type": "DOUBLE"
+   },
+   "LAYER": {
+    "type": "VARCHAR",
+    "distinct": 4,
+    "top": [
+     [
+      "NATLHISTDIST",
+      85
+     ],
+     [
+      "LOCAL",
+      11
+     ],
+     [
+      "CERTLOCALDIST",
+      8
+     ],
+     [
+      "LANDMARKDIST",
+      5
+     ]
+    ]
+   },
+   "DISNAME": {
+    "type": "VARCHAR",
+    "distinct": 104,
+    "top": [
+     [
+      "Soulard Neighborhood",
+      2
+     ],
+     [
+      "Benton Park",
+      2
+     ],
+     [
+      "Cupples Station",
+      2
+     ],
+     [
+      "Lafayette Square",
+      2
+     ],
+     [
+      "Hyde Park Expansion",
+      2
+     ],
+     [
+      "Midtown",
+      1
+     ],
+     [
+      "McKinley Fox",
+      1
+     ],
+     [
+      "Holy Cross Parish",
+      1
+     ],
+     [
+      "Speck",
+      1
+     ],
+     [
+      "West Pine Laclede",
+      1
+     ],
+     [
+      "Mansion House Center Historic District",
+      1
+     ],
+     [
+      "Koken Barbers Supply Company",
+      1
+     ]
+    ]
+   },
+   "COMMENT": {
+    "type": "VARCHAR",
+    "distinct": 51,
+    "top": [
+     [
+      " ",
+      46
+     ],
+     [
+      "Add via Gagen A",
+      5
+     ],
+     [
+      "GagenA email",
+      4
+     ],
+     [
+      "Add via GagenA",
+      3
+     ],
+     [
+      "ADD 20070601 by QuinnC frm GagenA CRS",
+      2
+     ],
+     [
+      "041223 ADD BND CAT DAT GagenA by QuinnC",
+      2
+     ],
+     [
+      "ADD 20071010 by QuinnC frm TaylorD shapefile",
+      2
+     ],
+     [
+      "Gagen A email",
+      2
+     ],
+     [
+      "060109 ADD BND CAT DAT GagenA by QuinnC",
+      1
+     ],
+     [
+      "MOD 20070719 by TaylorD MOD20080116",
+      1
+     ],
+     [
+      "AGagen via DTaylor",
+      1
+     ],
+     [
+      "ADD 20070719 by QuinnC frm GagenA",
+      1
+     ]
+    ]
+   },
+   "DIS_TYPE": {
+    "type": "VARCHAR",
+    "distinct": 4,
+    "top": [
+     [
+      "National",
+      85
+     ],
+     [
+      "Local",
+      11
+     ],
+     [
+      "Certified Local",
+      8
+     ],
+     [
+      "Landmark",
+      5
+     ]
+    ]
+   },
+   "DIS_NUM": {
+    "type": "VARCHAR",
+    "distinct": 108,
+    "top": [
+     [
+      "V",
+      2
+     ],
+     [
+      "26",
+      1
+     ],
+     [
+      "40",
+      1
+     ],
+     [
+      "19",
+      1
+     ],
+     [
+      "13",
+      1
+     ],
+     [
+      "32",
+      1
+     ],
+     [
+      "23",
+      1
+     ],
+     [
+      "T",
+      1
+     ],
+     [
+      "82",
+      1
+     ],
+     [
+      "47",
+      1
+     ],
+     [
+      "38",
+      1
+     ],
+     [
+      "Q",
+      1
+     ]
+    ]
+   },
+   "DIS_DATE": {
+    "type": "TIMESTAMP",
+    "mn": "1972-01-10 00:00:00",
+    "mx": "2019-11-14 00:00:00"
+   },
+   "DIS_SHRT_N": {
+    "type": "VARCHAR",
+    "distinct": 17,
+    "top": [
+     [
+      " ",
+      93
+     ],
+     [
+      "Locust St Auto Dist",
+      1
+     ],
+     [
+      "Reber Place",
+      1
+     ],
+     [
+      "Tower Grove East",
+      1
+     ],
+     [
+      "Central West End",
+      1
+     ],
+     [
+      "Grand-Bates Suburb",
+      1
+     ],
+     [
+      "Shaw's Garden",
+      1
+     ],
+     [
+      "Marine Villa",
+      1
+     ],
+     [
+      "N Broadway Warehouse",
+      1
+     ],
+     [
+      "McKinley Heights",
+      1
+     ],
+     [
+      "Wagoner Place",
+      1
+     ],
+     [
+      "Liggett Myers",
+      1
+     ]
+    ]
+   },
+   "GlobalID": {
+    "type": "VARCHAR",
+    "distinct": 109,
+    "top": [
+     [
+      "{CD799045-593A-4AF4-BB8A-39F5A2EA5ABE}",
+      1
+     ],
+     [
+      "{CBD4A753-BFB9-4D92-A0FA-84387559EEDE}",
+      1
+     ],
+     [
+      "{261AE2D1-6EEB-4F0B-A823-401CE628F95E}",
+      1
+     ],
+     [
+      "{968981CE-67DF-4F68-8343-3C224FAFDD1E}",
+      1
+     ],
+     [
+      "{4D73E278-532D-40EB-8F82-7B219A50AE54}",
+      1
+     ],
+     [
+      "{74072410-CEF2-41BB-8835-2163B1EFA18A}",
+      1
+     ],
+     [
+      "{7A9D1FD4-2F64-49E6-802D-7F39AD519945}",
+      1
+     ],
+     [
+      "{8EE286D3-0257-4BD8-8C84-6A344A0FCE2F}",
+      1
+     ],
+     [
+      "{C2AEC593-0F94-43DB-AA21-4E58F80B705E}",
+      1
+     ],
+     [
+      "{299FA0E0-4A26-4B27-A27B-A1CEA8EB2B9A}",
+      1
+     ],
+     [
+      "{B3CE7B6C-CB4E-407C-87CA-E63D47ACB0E8}",
+      1
+     ],
+     [
+      "{8E2D056D-B5CA-43AF-8ABF-815A29521AA0}",
+      1
+     ]
+    ]
+   }
+  }
+ },
+ "lra-property": {
+  "rows": 9467,
+  "columns": {
+   "PropNS_Status": {
+    "type": "VARCHAR",
+    "distinct": 10,
+    "top": [
+     [
+      null,
+      9362
+     ],
+     [
+      "Construction Complete",
+      40
+     ],
+     [
+      "Ineligible",
+      19
+     ],
+     [
+      "Board Approved",
+      15
+     ],
+     [
+      "Out to Bid",
+      8
+     ],
+     [
+      "Contract Awarded",
+      7
+     ],
+     [
+      "Under Construction",
+      7
+     ],
+     [
+      "",
+      3
+     ],
+     [
+      "Sold",
+      3
+     ],
+     [
+      "Denied",
+      2
+     ],
+     [
+      "Pending Inspection",
+      1
+     ]
+    ]
+   },
+   "Case_Status": {
+    "type": "VARCHAR",
+    "distinct": 14,
+    "top": [
+     [
+      "Available",
+      8606
+     ],
+     [
+      "Greenspace Hold",
+      190
+     ],
+     [
+      "Development Hold",
+      157
+     ],
+     [
+      "CDA Option",
+      151
+     ],
+     [
+      null,
+      90
+     ],
+     [
+      "PROPNS",
+      83
+     ],
+     [
+      "Legal Hold",
+      78
+     ],
+     [
+      "SOLD",
+      60
+     ],
+     [
+      "Unavailable",
+      41
+     ],
+     [
+      "SOLD (RORE)",
+      4
+     ],
+     [
+      "Lease",
+      3
+     ],
+     [
+      "Donation",
+      1
+     ]
+    ]
+   },
+   "Address": {
+    "type": "VARCHAR",
+    "distinct": 9450,
+    "top": [
+     [
+      "4821   NATURAL BRIDGE AV ",
+      5
+     ],
+     [
+      "4217   LABADIE AV ",
+      2
+     ],
+     [
+      "4232   COTE BRILLIANTE AV ",
+      2
+     ],
+     [
+      "4231   LABADIE AV ",
+      2
+     ],
+     [
+      "4210   COTE BRILLIANTE AV ",
+      2
+     ],
+     [
+      "4242   PAGE BLVD ",
+      2
+     ],
+     [
+      "5038   PAGE BLVD ",
+      2
+     ],
+     [
+      "8236   CHURCH RD ",
+      2
+     ],
+     [
+      "4533   MAFFITT AV ",
+      2
+     ],
+     [
+      "4237   LABADIE AV ",
+      2
+     ],
+     [
+      "1568   IRVING AV ",
+      2
+     ],
+     [
+      "4233   EVANS AV ",
+      2
+     ]
+    ]
+   },
+   "AddrNum": {
+    "type": "VARCHAR",
+    "distinct": 0,
+    "top": [
+     [
+      null,
+      9467
+     ]
+    ]
+   },
+   "LowAddrNum": {
+    "type": "INTEGER"
+   },
+   "LowAddrSuf": {
+    "type": "VARCHAR",
+    "distinct": 7,
+    "top": [
+     [
+      "",
+      9322
+     ],
+     [
+      "R",
+      101
+     ],
+     [
+      "H",
+      33
+     ],
+     [
+      "E",
+      5
+     ],
+     [
+      "A",
+      3
+     ],
+     [
+      "B",
+      2
+     ],
+     [
+      "C",
+      1
+     ]
+    ]
+   },
+   "HighAddrNum": {
+    "type": "INTEGER"
+   },
+   "HighAddrSuf": {
+    "type": "VARCHAR",
+    "distinct": 7,
+    "top": [
+     [
+      "",
+      9320
+     ],
+     [
+      "R",
+      101
+     ],
+     [
+      "H",
+      34
+     ],
+     [
+      "E",
+      5
+     ],
+     [
+      "A",
+      4
+     ],
+     [
+      "B",
+      2
+     ],
+     [
+      "C",
+      1
+     ]
+    ]
+   },
+   "StPreDir": {
+    "type": "VARCHAR",
+    "distinct": 5,
+    "top": [
+     [
+      "",
+      8378
+     ],
+     [
+      "N",
+      638
+     ],
+     [
+      "W",
+      274
+     ],
+     [
+      "E",
+      146
+     ],
+     [
+      "S",
+      31
+     ]
+    ]
+   },
+   "StName": {
+    "type": "VARCHAR",
+    "distinct": 472,
+    "top": [
+     [
+      "COTE BRILLIANTE",
+      294
+     ],
+     [
+      "KENNERLY",
+      222
+     ],
+     [
+      "LABADIE",
+      215
+     ],
+     [
+      "ST LOUIS",
+      195
+     ],
+     [
+      "MAFFITT",
+      193
+     ],
+     [
+      "ARLINGTON",
+      176
+     ],
+     [
+      "EVANS",
+      146
+     ],
+     [
+      "NORTH MARKET",
+      142
+     ],
+     [
+      "LEE",
+      142
+     ],
+     [
+      "ALDINE",
+      138
+     ],
+     [
+      "THEODOSIA",
+      138
+     ],
+     [
+      "GARFIELD",
+      130
+     ]
+    ]
+   },
+   "StType": {
+    "type": "VARCHAR",
+    "distinct": 11,
+    "top": [
+     [
+      "AV",
+      6940
+     ],
+     [
+      "ST",
+      1417
+     ],
+     [
+      "PL",
+      482
+     ],
+     [
+      "BLVD",
+      354
+     ],
+     [
+      "DR",
+      158
+     ],
+     [
+      "RD",
+      36
+     ],
+     [
+      "TER",
+      30
+     ],
+     [
+      "",
+      28
+     ],
+     [
+      "LA",
+      13
+     ],
+     [
+      "CT",
+      8
+     ],
+     [
+      "ROW",
+      1
+     ]
+    ]
+   },
+   "StSufDir": {
+    "type": "VARCHAR",
+    "distinct": 1,
+    "top": [
+     [
+      "",
+      9467
+     ]
+    ]
+   },
+   "Handle": {
+    "type": "VARCHAR",
+    "distinct": 9463,
+    "top": [
+     [
+      "15621008500",
+      5
+     ],
+     [
+      "10657000160",
+      1
+     ],
+     [
+      "10347000110",
+      1
+     ],
+     [
+      "10620000090",
+      1
+     ],
+     [
+      "11157000195",
+      1
+     ],
+     [
+      "10632000060",
+      1
+     ],
+     [
+      "11128000050",
+      1
+     ],
+     [
+      "11186000050",
+      1
+     ],
+     [
+      "12410000090",
+      1
+     ],
+     [
+      "11226000040",
+      1
+     ],
+     [
+      "11173060040",
+      1
+     ],
+     [
+      "11174000120",
+      1
+     ]
+    ]
+   },
+   "CityBlock": {
+    "type": "DOUBLE"
+   },
+   "Parcel": {
+    "type": "INTEGER"
+   },
+   "ParcelId": {
+    "type": "VARCHAR",
+    "distinct": 9466,
+    "top": [
+     [
+      "56219500001",
+      2
+     ],
+     [
+      "11839020000",
+      1
+     ],
+     [
+      "11829125000",
+      1
+     ],
+     [
+      "11929040000",
+      1
+     ],
+     [
+      "24089340000",
+      1
+     ],
+     [
+      "06659015000",
+      1
+     ],
+     [
+      "24119240000",
+      1
+     ],
+     [
+      "11879140000",
+      1
+     ],
+     [
+      "24389130000",
+      1
+     ],
+     [
+      "08729020000",
+      1
+     ],
+     [
+      "11199080000",
+      1
+     ],
+     [
+      "11099450000",
+      1
+     ]
+    ]
+   },
+   "GUID": {
+    "type": "VARCHAR",
+    "distinct": 9466,
+    "top": [
+     [
+      "E01C87DB-CA2E-463C-B855-0ACDAD542D54",
+      2
+     ],
+     [
+      "3EB85FD5-B50A-4155-AEC2-39EB25A07A58",
+      1
+     ],
+     [
+      "F7F85C50-F36A-48C6-AEC1-F1FE53B87E12",
+      1
+     ],
+     [
+      "433745AC-76B4-4696-B7DC-22D9456AE925",
+      1
+     ],
+     [
+      "88A5146F-85B2-45F3-B581-0F144354F1E3",
+      1
+     ],
+     [
+      "8CF54A33-B1FF-4B52-AF1A-A642CD8643A2",
+      1
+     ],
+     [
+      "D0ABD91B-4CB4-4A07-97CE-CF180BEC7E0C",
+      1
+     ],
+     [
+      "3F93D23B-CF9E-4622-BD57-B954C205D828",
+      1
+     ],
+     [
+      "63EB4EEA-26F5-4450-9929-6757B0A747DF",
+      1
+     ],
+     [
+      "96DFD87D-ECDD-469A-8F81-8AEC26F3FB17",
+      1
+     ],
+     [
+      "4039C58D-2B55-42C6-BACB-AD47466D776A",
+      1
+     ],
+     [
+      "6998FB11-FB75-446A-ADEE-EADC9C8E9DAA",
+      1
+     ]
+    ]
+   },
+   "LRA": {
+    "type": "VARCHAR",
+    "distinct": 1,
+    "top": [
+     [
+      "YES",
+      9467
+     ]
+    ]
+   },
+   "WARD": {
+    "type": "SMALLINT"
+   },
+   "NEIGHBORHOOD_NUM": {
+    "type": "SMALLINT"
+   },
+   "ZipCode": {
+    "type": "DOUBLE"
+   },
+   "SQFT": {
+    "type": "INTEGER"
+   },
+   "Suit_Number": {
+    "type": "VARCHAR",
+    "distinct": 783,
+    "top": [
+     [
+      null,
+      1286
+     ],
+     [
+      "161",
+      135
+     ],
+     [
+      "166",
+      131
+     ],
+     [
+      "172",
+      120
+     ],
+     [
+      "167",
+      119
+     ],
+     [
+      "177",
+      117
+     ],
+     [
+      "178",
+      116
+     ],
+     [
+      "100",
+      112
+     ],
+     [
+      "162",
+      106
+     ],
+     [
+      "96",
+      101
+     ],
+     [
+      "103",
+      95
+     ],
+     [
+      "93",
+      94
+     ]
+    ]
+   },
+   "Cost": {
+    "type": "DOUBLE"
+   },
+   "Property_Source": {
+    "type": "VARCHAR",
+    "distinct": 17,
+    "top": [
+     [
+      "Tax Suit",
+      7838
+     ],
+     [
+      "Donations",
+      676
+     ],
+     [
+      null,
+      363
+     ],
+     [
+      "Tax Sale",
+      248
+     ],
+     [
+      "CDA",
+      165
+     ],
+     [
+      "HUD Donations",
+      76
+     ],
+     [
+      "TAX SALE",
+      48
+     ],
+     [
+      "Donation",
+      15
+     ],
+     [
+      "Trade",
+      14
+     ],
+     [
+      "Direct Purchase",
+      8
+     ],
+     [
+      "Split Parcel",
+      5
+     ],
+     [
+      "",
+      3
+     ]
+    ]
+   },
+   "Irregular_Lot": {
+    "type": "VARCHAR",
+    "distinct": 3,
+    "top": [
+     [
+      null,
+      9023
+     ],
+     [
+      "Yes",
+      436
+     ],
+     [
+      "",
+      7
+     ],
+     [
+      "YES",
+      1
+     ]
+    ]
+   },
+   "Description": {
+    "type": "VARCHAR",
+    "distinct": 252,
+    "top": [
+     [
+      "",
+      6403
+     ],
+     [
+      "vacant lot w/ green lien",
+      532
+     ],
+     [
+      null,
+      392
+     ],
+     [
+      "Demolished: 2 story brick",
+      345
+     ],
+     [
+      "2 story 2 unit brick",
+      296
+     ],
+     [
+      "1 story 1 unit brick",
+      205
+     ],
+     [
+      "2 story 1 unit brick",
+      132
+     ],
+     [
+      "1 story 1 unit frame",
+      102
+     ],
+     [
+      "Demolished: 1 story brick",
+      101
+     ],
+     [
+      "Demolished: 1 story frame",
+      68
+     ],
+     [
+      "2 story 4 unit brick",
+      64
+     ],
+     [
+      "vacant lot",
+      61
+     ]
+    ]
+   },
+   "Acres": {
+    "type": "DOUBLE"
+   },
+   "Status": {
+    "type": "VARCHAR",
+    "distinct": 13,
+    "top": [
+     [
+      "Available",
+      8762
+     ],
+     [
+      "Greenspace Hold",
+      190
+     ],
+     [
+      "CDA Option",
+      160
+     ],
+     [
+      "Development Hold",
+      155
+     ],
+     [
+      "Legal Hold",
+      78
+     ],
+     [
+      "SOLD",
+      60
+     ],
+     [
+      "Unavailable",
+      51
+     ],
+     [
+      "SOLD (RORE)",
+      4
+     ],
+     [
+      "Lease",
+      3
+     ],
+     [
+      "Option",
+      1
+     ],
+     [
+      "Unknown",
+      1
+     ],
+     [
+      "Development Hold ",
+      1
+     ]
+    ]
+   },
+   "Usage": {
+    "type": "VARCHAR",
+    "distinct": 19,
+    "top": [
+     [
+      "Vacant Lot",
+      7933
+     ],
+     [
+      "Residential",
+      952
+     ],
+     [
+      null,
+      378
+     ],
+     [
+      "residential",
+      61
+     ],
+     [
+      "vacant lot",
+      57
+     ],
+     [
+      "Mixed-Use",
+      25
+     ],
+     [
+      "Condo",
+      17
+     ],
+     [
+      "Commercial",
+      13
+     ],
+     [
+      "Alley",
+      10
+     ],
+     [
+      "",
+      5
+     ],
+     [
+      "Industrial",
+      4
+     ],
+     [
+      "VACANT LOT",
+      3
+     ]
+    ]
+   },
+   "Demolition": {
+    "type": "VARCHAR",
+    "distinct": 24,
+    "top": [
+     [
+      "Yes",
+      4699
+     ],
+     [
+      null,
+      4545
+     ],
+     [
+      "Complete",
+      80
+     ],
+     [
+      "No",
+      66
+     ],
+     [
+      "Pending (DED)",
+      22
+     ],
+     [
+      "",
+      15
+     ],
+     [
+      "Complete (BD)",
+      6
+     ],
+     [
+      "YES - 4/5/23",
+      4
+     ],
+     [
+      "YES",
+      4
+     ],
+     [
+      "YES - 4/14/23",
+      3
+     ],
+     [
+      "YES - 7/21/23",
+      3
+     ],
+     [
+      "YES - 7/18/23",
+      3
+     ]
+    ]
+   },
+   "Environmental": {
+    "type": "VARCHAR",
+    "distinct": 6,
+    "top": [
+     [
+      "NO",
+      8532
+     ],
+     [
+      null,
+      815
+     ],
+     [
+      "YES",
+      73
+     ],
+     [
+      "Assessment Ongoing",
+      20
+     ],
+     [
+      "",
+      15
+     ],
+     [
+      "Assessed",
+      11
+     ],
+     [
+      "needs review",
+      1
+     ]
+    ]
+   },
+   "Value": {
+    "type": "INTEGER"
+   },
+   "Value_Estimated": {
+    "type": "INTEGER"
+   },
+   "Class": {
+    "type": "VARCHAR",
+    "distinct": 6,
+    "top": [
+     [
+      "A",
+      5998
+     ],
+     [
+      "C",
+      2781
+     ],
+     [
+      null,
+      575
+     ],
+     [
+      "",
+      82
+     ],
+     [
+      "CC",
+      21
+     ],
+     [
+      "B",
+      8
+     ],
+     [
+      "AA",
+      2
+     ]
+    ]
+   },
+   "AppraisedVal": {
+    "type": "VARCHAR",
+    "distinct": 51,
+    "top": [
+     [
+      null,
+      9378
+     ],
+     [
+      "",
+      8
+     ],
+     [
+      "4000",
+      6
+     ],
+     [
+      "5000",
+      6
+     ],
+     [
+      "3500",
+      5
+     ],
+     [
+      "2500",
+      4
+     ],
+     [
+      "2000",
+      3
+     ],
+     [
+      "3000",
+      3
+     ],
+     [
+      "3850",
+      2
+     ],
+     [
+      "5250",
+      2
+     ],
+     [
+      "7000",
+      2
+     ],
+     [
+      "4400",
+      2
+     ]
+    ]
+   },
+   "LRA_PRICING": {
+    "type": "DOUBLE"
+   },
+   "Featured": {
+    "type": "VARCHAR",
+    "distinct": 3,
+    "top": [
+     [
+      "NO",
+      8626
+     ],
+     [
+      null,
+      824
+     ],
+     [
+      "",
+      9
+     ],
+     [
+      "YES",
+      8
+     ]
+    ]
+   },
+   "ACQUISITION_DATE": {
+    "type": "TIMESTAMP",
+    "mn": "1973-04-05 00:00:00",
+    "mx": "2025-02-28 18:00:00"
+   },
+   "AssessorsTotal": {
+    "type": "DOUBLE"
+   },
+   "Frontage": {
+    "type": "DOUBLE"
+   },
+   "NbrOfUnits": {
+    "type": "SMALLINT"
+   },
+   "LegalDescription": {
+    "type": "VARCHAR",
+    "distinct": 9462,
+    "top": [
+     [
+      "C. B. 5621  NATURAL BRIDGE AVUNIT 4821BENTZENS ADDNMABRY CONDOMINUIMBTO SEE 5621-00-03100",
+      5
+     ],
+     [
+      "C B 5088 UNION BLVD11 FT 6 IN X 123 FT 10 INBLK 9  HARNEY HTS ADDNLOT PT 14",
+      2
+     ],
+     [
+      "C B 633 MONROE ST34 FT X 112.70 FTNORTH MARKET STREET RESUBDLOT 29",
+      1
+     ],
+     [
+      "C. B. 1173 S DESTREHAN ST25 FT 6 IN X 86 FT 3 INFARRARS ADDNBLOCK 22 LOT 25",
+      1
+     ],
+     [
+      "C. B. 1183 E 14TH ST83 FT 1 3/8 IN X 30 FTFARRAR=S ADDNBND N-150 FT SSL OF ANGELRODT",
+      1
+     ],
+     [
+      "C. B. 1119 BLAIR AVE24 FT X 140 FT WELLS ADDNLOT 14",
+      1
+     ],
+     [
+      "C. B. 1173S DESTREHAN25 FT 6 IN X 87 FTFARRARS ADDNBLOCK 22 LOT 24",
+      1
+     ],
+     [
+      "C. B. 2412 ANGELICA25 FT / 29 FT 1 1/2 IN X 130 FT 1 INNEWHOUSE ADDNBND E-ALLEY",
+      1
+     ],
+     [
+      "C B 2410 NEWHOUSE AV28 FT X 130 FTHOLMES ADDNBND W-451 FT E EL BLAIR AV",
+      1
+     ],
+     [
+      "C B 474E 11TH ST0.0336 ACRESMORTON ADDNBND S-30.210 FT N OF PARK AV",
+      1
+     ],
+     [
+      "C.B. 1180 19TH ST112 FT X 30 FTTERRACE ADDN BLOCK 29LOT SW-13 & LOT ADJ ON W",
+      1
+     ],
+     [
+      "C. B. 2408 BREMEN AVE25 FT X 123 FTBAKERS ADDNLOT 7",
+      1
+     ]
+    ]
+   },
+   "AssessorsNbrhdNum": {
+    "type": "SMALLINT"
+   },
+   "LOCATION": {
+    "type": "VARCHAR",
+    "distinct": 9450,
+    "top": [
+     [
+      "4821   NATURAL BRIDGE AV ",
+      5
+     ],
+     [
+      "4533   MAFFITT AV ",
+      2
+     ],
+     [
+      "4242   PAGE BLVD ",
+      2
+     ],
+     [
+      "8236   CHURCH RD ",
+      2
+     ],
+     [
+      "4217   LABADIE AV ",
+      2
+     ],
+     [
+      "4232   COTE BRILLIANTE AV ",
+      2
+     ],
+     [
+      "5038   PAGE BLVD ",
+      2
+     ],
+     [
+      "4210   COTE BRILLIANTE AV ",
+      2
+     ],
+     [
+      "4233   EVANS AV ",
+      2
+     ],
+     [
+      "1568   IRVING AV ",
+      2
+     ],
+     [
+      "4231   LABADIE AV ",
+      2
+     ],
+     [
+      "4230   COTE BRILLIANTE AV ",
+      2
+     ]
+    ]
+   },
+   "Sequence": {
+    "type": "INTEGER"
+   },
+   "Notes": {
+    "type": "VARCHAR",
+    "distinct": 76,
+    "top": [
+     [
+      null,
+      9207
+     ],
+     [
+      "",
+      90
+     ],
+     [
+      "Green lien recorded. \r\nAvailable for purchase with no additional restrictions.",
+      46
+     ],
+     [
+      "Green Lien recorded and attached. Available for purchase with no additional restrictions.\r\n",
+      18
+     ],
+     [
+      "hold for green lien to be recorded, then available for purchase with no additional restrictions",
+      17
+     ],
+     [
+      "Green Lien recorded and attached. Continue to hold for strategic development.\r\n",
+      6
+     ],
+     [
+      "tornado damaged - site assessment pending",
+      4
+     ],
+     [
+      "Belt Loop Orchard",
+      3
+     ],
+     [
+      "Green lien recorded. \r\nContinue to hold for potential commercial development",
+      2
+     ],
+     [
+      "sold 1997, donated 2001",
+      2
+     ],
+     [
+      "Peace Park - purchased with GCC grant funds",
+      2
+     ],
+     [
+      "Green lien recorded. Continue to hold for potential commercial development",
+      2
+     ]
+    ]
+   },
+   "PublicNotice": {
+    "type": "VARCHAR",
+    "distinct": 1,
+    "top": [
+     [
+      null,
+      9378
+     ],
+     [
+      "",
+      89
+     ]
+    ]
+   },
+   "BuildingCount": {
+    "type": "SMALLINT"
+   },
+   "GreenLienStatus": {
+    "type": "VARCHAR",
+    "distinct": 5,
+    "top": [
+     [
+      null,
+      9224
+     ],
+     [
+      "Recorded",
+      209
+     ],
+     [
+      "Pending",
+      17
+     ],
+     [
+      "",
+      14
+     ],
+     [
+      "N/A",
+      2
+     ],
+     [
+      "Test",
+      1
+     ]
+    ]
+   },
+   "BuriedMaterials": {
+    "type": "VARCHAR",
+    "distinct": 4,
+    "top": [
+     [
+      null,
+      9366
+     ],
+     [
+      "Yes",
+      86
+     ],
+     [
+      "",
+      8
+     ],
+     [
+      "No",
+      6
+     ],
+     [
+      "NO",
+      1
+     ]
+    ]
+   },
+   "PropertyType": {
+    "type": "VARCHAR",
+    "distinct": 3,
+    "top": [
+     [
+      "Lot",
+      7993
+     ],
+     [
+      "Building",
+      1075
+     ],
+     [
+      null,
+      387
+     ],
+     [
+      "Other",
+      12
+     ]
+    ]
+   },
+   "SideLotEligible": {
+    "type": "VARCHAR",
+    "distinct": 2,
+    "top": [
+     [
+      null,
+      8593
+     ],
+     [
+      "Yes",
+      868
+     ],
+     [
+      "",
+      6
+     ]
+    ]
+   },
+   "Stories": {
+    "type": "FLOAT"
+   },
+   "CDBG_Source": {
+    "type": "VARCHAR",
+    "distinct": 0,
+    "top": [
+     [
+      null,
+      9467
+     ]
+    ]
+   },
+   "CDBG_Amount": {
+    "type": "INTEGER"
+   },
+   "SALEPRICE": {
+    "type": "DOUBLE"
+   },
+   "CLOSING_COMPLETED": {
+    "type": "TIMESTAMP",
+    "mn": "2024-01-12 06:00:00",
+    "mx": "2024-09-12 05:00:00"
+   },
+   "CASE_NUMBER": {
+    "type": "VARCHAR",
+    "distinct": 0,
+    "top": [
+     [
+      null,
+      9467
+     ]
+    ]
+   },
+   "Maintenance": {
+    "type": "VARCHAR",
+    "distinct": 1,
+    "top": [
+     [
+      null,
+      9466
+     ],
+     [
+      "",
+      1
+     ]
+    ]
+   },
+   "PCA_Date": {
+    "type": "TIMESTAMP",
+    "mn": "2024-06-25 17:25:48",
+    "mx": "2025-04-20 17:54:12"
+   },
+   "OBJECTID": {
+    "type": "BIGINT"
+   }
+  }
+ },
+ "neighborhoods": {
+  "rows": 88,
+  "columns": {
+   "OBJECTID": {
+    "type": "BIGINT"
+   },
+   "NHD_NUM": {
+    "type": "SMALLINT"
+   },
+   "NHD_NAME": {
+    "type": "VARCHAR",
+    "distinct": 88,
+    "top": [
+     [
+      "O'Fallon",
+      1
+     ],
+     [
+      "Fairground Park",
+      1
+     ],
+     [
+      "Downtown West",
+      1
+     ],
+     [
+      "Downtown",
+      1
+     ],
+     [
+      "Benton Park",
+      1
+     ],
+     [
+      "Academy",
+      1
+     ],
+     [
+      "Southampton",
+      1
+     ],
+     [
+      "Penrose Park",
+      1
+     ],
+     [
+      "Near North Riverfront",
+      1
+     ],
+     [
+      "McKinley Heights",
+      1
+     ],
+     [
+      "Hamilton Heights",
+      1
+     ],
+     [
+      "Lindenwood Park",
+      1
+     ]
+    ]
+   },
+   "NHD_NUMTXT": {
+    "type": "VARCHAR",
+    "distinct": 88,
+    "top": [
+     [
+      "63 Old North St. Louis",
+      1
+     ],
+     [
+      "82 Forest Park",
+      1
+     ],
+     [
+      "46 Skinker DeBaliviere",
+      1
+     ],
+     [
+      "70 Mark Twain I-70 Industrial",
+      1
+     ],
+     [
+      "11 Clifton Heights",
+      1
+     ],
+     [
+      "73 North Pointe",
+      1
+     ],
+     [
+      "36 Downtown West",
+      1
+     ],
+     [
+      "23 McKinley Heights",
+      1
+     ],
+     [
+      "71 Mark Twain",
+      1
+     ],
+     [
+      "29 Tiffany",
+      1
+     ],
+     [
+      "18 Marine Villa",
+      1
+     ],
+     [
+      "47 DeBaliviere Place",
+      1
+     ]
+    ]
+   }
+  }
+ },
+ "opportunity-zones": {
+  "rows": 16,
+  "columns": {
+   "OBJECTID": {
+    "type": "BIGINT"
+   },
+   "Case_Number": {
+    "type": "VARCHAR",
+    "distinct": 0,
+    "top": [
+     [
+      null,
+      16
+     ]
+    ]
+   },
+   "District_Name": {
+    "type": "VARCHAR",
+    "distinct": 16,
+    "top": [
+     [
+      "South Riverfront",
+      1
+     ],
+     [
+      "NGA/Project Connect",
+      1
+     ],
+     [
+      "Carondelet/Patch",
+      1
+     ],
+     [
+      "Bevo",
+      1
+     ],
+     [
+      "Grand Center (West)",
+      1
+     ],
+     [
+      "Delmar/MLK Corridor",
+      1
+     ],
+     [
+      "North Riverfront",
+      1
+     ],
+     [
+      "Grand Center (East)",
+      1
+     ],
+     [
+      "Greater Downtown (North)",
+      1
+     ],
+     [
+      "The Grove",
+      1
+     ],
+     [
+      "I-70 Industrial/Natural Bridge",
+      1
+     ],
+     [
+      "Greater Downtown (South)",
+      1
+     ]
+    ]
+   },
+   "District_Location": {
+    "type": "VARCHAR",
+    "distinct": 0,
+    "top": [
+     [
+      null,
+      16
+     ]
+    ]
+   },
+   "District_Type": {
+    "type": "VARCHAR",
+    "distinct": 1,
+    "top": [
+     [
+      "6",
+      16
+     ]
+    ]
+   }
+  }
+ },
+ "parcels": {
+  "rows": 134362,
+  "columns": {
+   "OBJECTID": {
+    "type": "BIGINT"
+   },
+   "LowerAsrParcelId": {
+    "type": "VARCHAR",
+    "distinct": 126438,
+    "top": [
+     [
+      "08329011",
+      270
+     ],
+     [
+      "08279001",
+      258
+     ],
+     [
+      "39019461",
+      160
+     ],
+     [
+      "05089021",
+      151
+     ],
+     [
+      "39179170",
+      123
+     ],
+     [
+      "39099520",
+      123
+     ],
+     [
+      "00999011",
+      120
+     ],
+     [
+      "12529011",
+      118
+     ],
+     [
+      "02739021",
+      111
+     ],
+     [
+      "05179011",
+      105
+     ],
+     [
+      "20059011",
+      103
+     ],
+     [
+      "08279040",
+      102
+     ]
+    ]
+   },
+   "ColParcelId": {
+    "type": "VARCHAR",
+    "distinct": 126878,
+    "top": [
+     [
+      "08320000110",
+      270
+     ],
+     [
+      "08270000010",
+      258
+     ],
+     [
+      "39010004610",
+      160
+     ],
+     [
+      "05080000210",
+      151
+     ],
+     [
+      "39090005200",
+      123
+     ],
+     [
+      "39170001700",
+      123
+     ],
+     [
+      "00990001610",
+      120
+     ],
+     [
+      "12520000110",
+      118
+     ],
+     [
+      "02730000210",
+      111
+     ],
+     [
+      "05170000110",
+      105
+     ],
+     [
+      "20050000110",
+      103
+     ],
+     [
+      "08270000400",
+      102
+     ]
+    ]
+   },
+   "ColCityBlock": {
+    "type": "INTEGER"
+   },
+   "ColParcel": {
+    "type": "INTEGER"
+   },
+   "PrimAddrRecNum": {
+    "type": "SMALLINT"
+   },
+   "AddrType": {
+    "type": "VARCHAR",
+    "distinct": 4,
+    "top": [
+     [
+      "3",
+      132953
+     ],
+     [
+      "1",
+      1281
+     ],
+     [
+      "2",
+      113
+     ],
+     [
+      "X",
+      15
+     ]
+    ]
+   },
+   "LowAddrNum": {
+    "type": "INTEGER"
+   },
+   "LowAddrSuf": {
+    "type": "VARCHAR",
+    "distinct": 15,
+    "top": [
+     [
+      "",
+      133012
+     ],
+     [
+      "R",
+      934
+     ],
+     [
+      "H",
+      142
+     ],
+     [
+      "A",
+      100
+     ],
+     [
+      "E",
+      67
+     ],
+     [
+      "F",
+      45
+     ],
+     [
+      "B",
+      21
+     ],
+     [
+      "C",
+      11
+     ],
+     [
+      "D",
+      9
+     ],
+     [
+      "W",
+      7
+     ],
+     [
+      "#A",
+      6
+     ],
+     [
+      "G",
+      5
+     ]
+    ]
+   },
+   "HighAddrNum": {
+    "type": "INTEGER"
+   },
+   "HighAddrSuf": {
+    "type": "VARCHAR",
+    "distinct": 15,
+    "top": [
+     [
+      "",
+      133011
+     ],
+     [
+      "R",
+      920
+     ],
+     [
+      "H",
+      145
+     ],
+     [
+      "A",
+      112
+     ],
+     [
+      "E",
+      67
+     ],
+     [
+      "F",
+      45
+     ],
+     [
+      "B",
+      21
+     ],
+     [
+      "C",
+      11
+     ],
+     [
+      "D",
+      9
+     ],
+     [
+      "W",
+      7
+     ],
+     [
+      "#A",
+      6
+     ],
+     [
+      "G",
+      5
+     ]
+    ]
+   },
+   "NLC": {
+    "type": "DOUBLE"
+   },
+   "PARITY": {
+    "type": "VARCHAR",
+    "distinct": 2,
+    "top": [
+     [
+      "O",
+      67738
+     ],
+     [
+      "E",
+      66624
+     ]
+    ]
+   },
+   "StPreDir": {
+    "type": "VARCHAR",
+    "distinct": 6,
+    "top": [
+     [
+      "",
+      121302
+     ],
+     [
+      "N",
+      5774
+     ],
+     [
+      "S",
+      5398
+     ],
+     [
+      "W",
+      1264
+     ],
+     [
+      "E",
+      617
+     ],
+     [
+      "WW",
+      7
+     ]
+    ]
+   },
+   "StName": {
+    "type": "VARCHAR",
+    "distinct": 1218,
+    "top": [
+     [
+      "WASHINGTON",
+      1812
+     ],
+     [
+      "BROADWAY",
+      1268
+     ],
+     [
+      "ST LOUIS",
+      996
+     ],
+     [
+      "MINNESOTA",
+      939
+     ],
+     [
+      "PENNSYLVANIA",
+      914
+     ],
+     [
+      "MICHIGAN",
+      902
+     ],
+     [
+      "GRAND",
+      893
+     ],
+     [
+      "ARSENAL",
+      818
+     ],
+     [
+      "VIRGINIA",
+      816
+     ],
+     [
+      "MAFFITT",
+      795
+     ],
+     [
+      "KINGSHIGHWAY",
+      777
+     ],
+     [
+      "LOCUST",
+      759
+     ]
+    ]
+   },
+   "StType": {
+    "type": "VARCHAR",
+    "distinct": 16,
+    "top": [
+     [
+      "AV",
+      81310
+     ],
+     [
+      "ST",
+      31221
+     ],
+     [
+      "BLVD",
+      8586
+     ],
+     [
+      "PL",
+      5875
+     ],
+     [
+      "DR",
+      2034
+     ],
+     [
+      "",
+      1577
+     ],
+     [
+      "CT",
+      1308
+     ],
+     [
+      "RD",
+      1158
+     ],
+     [
+      "LA",
+      867
+     ],
+     [
+      "TER",
+      329
+     ],
+     [
+      "PLZ",
+      22
+     ],
+     [
+      "MALL",
+      18
+     ]
+    ]
+   },
+   "StSufDir": {
+    "type": "VARCHAR",
+    "distinct": 3,
+    "top": [
+     [
+      "",
+      134349
+     ],
+     [
+      "SE",
+      9
+     ],
+     [
+      "W",
+      4
+     ]
+    ]
+   },
+   "StdUnitNum": {
+    "type": "VARCHAR",
+    "distinct": 196,
+    "top": [
+     [
+      "",
+      126989
+     ],
+     [
+      "101",
+      1325
+     ],
+     [
+      "1",
+      1313
+     ],
+     [
+      "A",
+      616
+     ],
+     [
+      "201",
+      447
+     ],
+     [
+      "1A",
+      256
+     ],
+     [
+      "1E",
+      238
+     ],
+     [
+      "1B",
+      165
+     ],
+     [
+      "2A",
+      164
+     ],
+     [
+      "111",
+      142
+     ],
+     [
+      "1W",
+      132
+     ],
+     [
+      "UNITC101",
+      123
+     ]
+    ]
+   },
+   "OWNERNAME": {
+    "type": "VARCHAR",
+    "distinct": 88321,
+    "top": [
+     [
+      "LRA",
+      8764
+     ],
+     [
+      "NORTHSIDE REGENERATION LLC",
+      1589
+     ],
+     [
+      "CITY OF ST LOUIS",
+      821
+     ],
+     [
+      "L R A",
+      644
+     ],
+     [
+      "STATE OF MISSOURI",
+      467
+     ],
+     [
+      "MARTINDALE, DAVID",
+      270
+     ],
+     [
+      "ACONCAGUA ONE LLC",
+      258
+     ],
+     [
+      "ST LOUIS UNIVERSITY",
+      245
+     ],
+     [
+      "UNION PACIFIC RAILROAD",
+      217
+     ],
+     [
+      "METROPOLITAN ST LOUIS SEWER DISTRICT",
+      206
+     ],
+     [
+      "BATHON, ELIZABETH",
+      160
+     ],
+     [
+      "ST LOUIS HOUSING AUTHORITY",
+      151
+     ]
+    ]
+   },
+   "OWNERNAME2": {
+    "type": "VARCHAR",
+    "distinct": 8552,
+    "top": [
+     [
+      " ",
+      120521
+     ],
+     [
+      "ATTN: CHIEF MGR",
+      520
+     ],
+     [
+      "C/O ASPRIENT PROPERTIES",
+      258
+     ],
+     [
+      "STATES CANADA PROVINCE INC",
+      123
+     ],
+     [
+      "LLC",
+      116
+     ],
+     [
+      "ATTN  MANAGER",
+      111
+     ],
+     [
+      "CHIEF MGR",
+      111
+     ],
+     [
+      "CONDO LLC",
+      105
+     ],
+     [
+      "C/O RYAN PTS DEPT 124",
+      87
+     ],
+     [
+      "ATTN: TAX DEPARTMENT",
+      76
+     ],
+     [
+      "BUILDINGS AND GROUNDS DEPT",
+      73
+     ],
+     [
+      "KEYSTONE PROPERTY MANAGEMENT",
+      72
+     ]
+    ]
+   },
+   "OWNERADDR": {
+    "type": "VARCHAR",
+    "distinct": 84891,
+    "top": [
+     [
+      "1520 MARKET ST   SUITE 2000",
+      5625
+     ],
+     [
+      "1520 MARKET ST   STE 2000",
+      2004
+     ],
+     [
+      " ",
+      1086
+     ],
+     [
+      "1001 BOARDWALK SPRINGS PL #200",
+      785
+     ],
+     [
+      "1520 MARKET ST  STE 2000",
+      730
+     ],
+     [
+      "1001 BOARDWALK SPRINGS PL STE 200",
+      514
+     ],
+     [
+      "1200 MARKET ST",
+      440
+     ],
+     [
+      "1520 MARKET ST STE 2000",
+      420
+     ],
+     [
+      "P O BOX 28514",
+      289
+     ],
+     [
+      "1520 WASHINGTON AVE UNIT 201",
+      270
+     ],
+     [
+      "3520 PAGE BLVD",
+      231
+     ],
+     [
+      "1015 LOCUST ST  SUITE 1200",
+      224
+     ]
+    ]
+   },
+   "OWNERCITY": {
+    "type": "VARCHAR",
+    "distinct": 1954,
+    "top": [
+     [
+      "ST LOUIS",
+      111347
+     ],
+     [
+      "FLORISSANT",
+      1717
+     ],
+     [
+      "O'FALLON",
+      1243
+     ],
+     [
+      " ",
+      1098
+     ],
+     [
+      "ST LOUIS MO",
+      881
+     ],
+     [
+      "CHESTERFIELD",
+      875
+     ],
+     [
+      "BALLWIN",
+      730
+     ],
+     [
+      "ST. LOUIS",
+      524
+     ],
+     [
+      "O FALLON",
+      520
+     ],
+     [
+      "ST CHARLES",
+      483
+     ],
+     [
+      "FENTON",
+      394
+     ],
+     [
+      "ST PETERS",
+      265
+     ]
+    ]
+   },
+   "OWNERSTATE": {
+    "type": "VARCHAR",
+    "distinct": 82,
+    "top": [
+     [
+      "MO",
+      122172
+     ],
+     [
+      " ",
+      2509
+     ],
+     [
+      "IL",
+      1523
+     ],
+     [
+      "CA",
+      1500
+     ],
+     [
+      "TX",
+      806
+     ],
+     [
+      "FL",
+      744
+     ],
+     [
+      "GA",
+      496
+     ],
+     [
+      "NY",
+      476
+     ],
+     [
+      "VA",
+      339
+     ],
+     [
+      "UT",
+      243
+     ],
+     [
+      "NV",
+      228
+     ],
+     [
+      "CO",
+      214
+     ]
+    ]
+   },
+   "OwnerCountry": {
+    "type": "VARCHAR",
+    "distinct": 34,
+    "top": [
+     [
+      null,
+      74554
+     ],
+     [
+      "USA",
+      59337
+     ],
+     [
+      "MO",
+      390
+     ],
+     [
+      " ",
+      20
+     ],
+     [
+      "FL",
+      6
+     ],
+     [
+      "CANADA",
+      5
+     ],
+     [
+      "CA",
+      5
+     ],
+     [
+      "GA",
+      4
+     ],
+     [
+      "ISRAEL",
+      4
+     ],
+     [
+      "VA",
+      4
+     ],
+     [
+      "KOREA",
+      3
+     ],
+     [
+      "IL",
+      2
+     ]
+    ]
+   },
+   "OWNERZIP": {
+    "type": "VARCHAR",
+    "distinct": 3391,
+    "top": [
+     [
+      "63103",
+      12620
+     ],
+     [
+      "63116",
+      12609
+     ],
+     [
+      "63109",
+      9175
+     ],
+     [
+      "63139",
+      8183
+     ],
+     [
+      "63118",
+      6395
+     ],
+     [
+      "63104",
+      6196
+     ],
+     [
+      "63110",
+      5501
+     ],
+     [
+      "63112",
+      5146
+     ],
+     [
+      "63108",
+      5113
+     ],
+     [
+      "63115",
+      4886
+     ],
+     [
+      "63111",
+      4468
+     ],
+     [
+      "63113",
+      3782
+     ]
+    ]
+   },
+   "OwnerRank": {
+    "type": "VARCHAR",
+    "distinct": 4,
+    "top": [
+     [
+      "3",
+      134328
+     ],
+     [
+      "2",
+      16
+     ],
+     [
+      "8",
+      15
+     ],
+     [
+      "0",
+      3
+     ]
+    ]
+   },
+   "LegalDesc1": {
+    "type": "VARCHAR",
+    "distinct": 46296,
+    "top": [
+     [
+      "C B 0832 WASHINGTON AV",
+      270
+     ],
+     [
+      "C B 0827 LOCUST ST",
+      258
+     ],
+     [
+      "C. B. 3901 WEST PINE BLVD",
+      160
+     ],
+     [
+      null,
+      158
+     ],
+     [
+      "C.B. 3873 PERSHING AVE",
+      157
+     ],
+     [
+      "C.B. 0508 PLAZA SQUARE",
+      151
+     ],
+     [
+      "C.B. 3917 FOREST PARK AVE",
+      125
+     ],
+     [
+      "CB 3909 MARYLAND AV",
+      123
+     ],
+     [
+      "C.B. 0099 BROADWAY ST",
+      120
+     ],
+     [
+      "C.B. 1252 LAFAYETTE AVE",
+      118
+     ],
+     [
+      "C.B. 0273 OLIVE ST",
+      111
+     ],
+     [
+      "C.B. 0517 WASHINGTON AVE",
+      106
+     ]
+    ]
+   },
+   "LegalDesc2": {
+    "type": "VARCHAR",
+    "distinct": 55663,
+    "top": [
+     [
+      "30 FT X 125 FT",
+      3492
+     ],
+     [
+      "25 FT X 125 FT",
+      2702
+     ],
+     [
+      "35 FT X 125 FT",
+      2214
+     ],
+     [
+      "35 FT X 120 FT",
+      1327
+     ],
+     [
+      "30 FT X 120 FT",
+      1088
+     ],
+     [
+      "50 FT X 125 FT",
+      961
+     ],
+     [
+      "25 FT X 120 FT",
+      942
+     ],
+     [
+      "40 FT X 125 FT",
+      760
+     ],
+     [
+      "30 FT X 127 FT 6 IN",
+      573
+     ],
+     [
+      "25 FT X 140 FT",
+      573
+     ],
+     [
+      "25 FT X 127 FT 6 IN",
+      514
+     ],
+     [
+      "40 FT X 120 FT",
+      479
+     ]
+    ]
+   },
+   "LegalDesc3": {
+    "type": "VARCHAR",
+    "distinct": 33233,
+    "top": [
+     [
+      "ST LOUIS HILLS ADDN",
+      1198
+     ],
+     [
+      "ST LOUIS COMMONS ADDN",
+      1113
+     ],
+     [
+      "UNIT 101",
+      1056
+     ],
+     [
+      "UNIT 1",
+      954
+     ],
+     [
+      "TYLER PL ADDN",
+      713
+     ],
+     [
+      "CHOUTEAU PL ADDN",
+      578
+     ],
+     [
+      "TYLER PLACE ADDN",
+      575
+     ],
+     [
+      "STODDARD ADDN",
+      574
+     ],
+     [
+      "WASHINGTON HTS ADDN",
+      550
+     ],
+     [
+      "LUCAS & HUNT ADDN",
+      543
+     ],
+     [
+      null,
+      500
+     ],
+     [
+      "ALLENS ADDN",
+      454
+     ]
+    ]
+   },
+   "LegalDesc4": {
+    "type": "VARCHAR",
+    "distinct": 49012,
+    "top": [
+     [
+      null,
+      8616
+     ],
+     [
+      "BLOCK 2",
+      3419
+     ],
+     [
+      "BLOCK 1",
+      2882
+     ],
+     [
+      "BLOCK 3",
+      2134
+     ],
+     [
+      "BLOCK 4",
+      1613
+     ],
+     [
+      "BLOCK 5",
+      1224
+     ],
+     [
+      "BLOCK 6",
+      1190
+     ],
+     [
+      "LOT A",
+      902
+     ],
+     [
+      "BLOCK 7",
+      799
+     ],
+     [
+      "LOT 1",
+      697
+     ],
+     [
+      "BLOCK 8",
+      679
+     ],
+     [
+      "LOT B",
+      666
+     ]
+    ]
+   },
+   "LegalDesc5": {
+    "type": "VARCHAR",
+    "distinct": 19170,
+    "top": [
+     [
+      null,
+      95971
+     ],
+     [
+      "LOT 6",
+      380
+     ],
+     [
+      "LOT 7",
+      355
+     ],
+     [
+      "LOT 8",
+      350
+     ],
+     [
+      "LOT 10",
+      346
+     ],
+     [
+      "LOT 9",
+      343
+     ],
+     [
+      "LOT 5",
+      338
+     ],
+     [
+      "LOT 4",
+      333
+     ],
+     [
+      "LOT 11",
+      331
+     ],
+     [
+      "LOT 3",
+      323
+     ],
+     [
+      "LOT 12",
+      322
+     ],
+     [
+      "LOT 1",
+      317
+     ]
+    ]
+   },
+   "AsrClassCode": {
+    "type": "SMALLINT"
+   },
+   "AsrLandUse1": {
+    "type": "SMALLINT"
+   },
+   "AsrLanduse2": {
+    "type": "SMALLINT"
+   },
+   "RedevPhase": {
+    "type": "SMALLINT"
+   },
+   "RedevYearEnd": {
+    "type": "SMALLINT"
+   },
+   "RedevPhase2": {
+    "type": "SMALLINT"
+   },
+   "RedevYearEnd2": {
+    "type": "SMALLINT"
+   },
+   "VacantLot": {
+    "type": "SMALLINT"
+   },
+   "SpecBusDist": {
+    "type": "SMALLINT"
+   },
+   "SpecBusDist2": {
+    "type": "SMALLINT"
+   },
+   "TIFDist": {
+    "type": "SMALLINT"
+   },
+   "LendingAgcy": {
+    "type": "SMALLINT"
+   },
+   "Condominium": {
+    "type": "SMALLINT"
+   },
+   "NbrOfUnits": {
+    "type": "SMALLINT"
+   },
+   "NbrOfApts": {
+    "type": "SMALLINT"
+   },
+   "FRONTAGE": {
+    "type": "DOUBLE"
+   },
+   "LANDAREA": {
+    "type": "INTEGER"
+   },
+   "RecDailyDate": {
+    "type": "TIMESTAMP",
+    "mn": "1950-03-29 00:00:00.001",
+    "mx": "2260-04-15 00:00:00"
+   },
+   "RecDailyNum": {
+    "type": "INTEGER"
+   },
+   "RecBookNum": {
+    "type": "VARCHAR",
+    "distinct": 1885,
+    "top": [
+     [
+      null,
+      51987
+     ],
+     [
+      "0000",
+      22712
+     ],
+     [
+      " CVN",
+      2968
+     ],
+     [
+      "1858",
+      2684
+     ],
+     [
+      "1856",
+      2546
+     ],
+     [
+      "1857",
+      2520
+     ],
+     [
+      "1854",
+      2457
+     ],
+     [
+      "1855",
+      2393
+     ],
+     [
+      "1850",
+      2364
+     ],
+     [
+      "1853",
+      2286
+     ],
+     [
+      "1849",
+      2206
+     ],
+     [
+      "1852",
+      2200
+     ]
+    ]
+   },
+   "RecPageNum": {
+    "type": "SMALLINT"
+   },
+   "AsdLand": {
+    "type": "DOUBLE"
+   },
+   "AsdImprove": {
+    "type": "DOUBLE"
+   },
+   "AsdTotal": {
+    "type": "DOUBLE"
+   },
+   "BillLand": {
+    "type": "DOUBLE"
+   },
+   "BillImprove": {
+    "type": "DOUBLE"
+   },
+   "BillTotal": {
+    "type": "DOUBLE"
+   },
+   "AprLand": {
+    "type": "DOUBLE"
+   },
+   "CostAprImprove": {
+    "type": "DOUBLE"
+   },
+   "AsmtAppealYear": {
+    "type": "SMALLINT"
+   },
+   "AsmtAppealNum": {
+    "type": "INTEGER"
+   },
+   "AsmtAppealType": {
+    "type": "VARCHAR",
+    "distinct": 0,
+    "top": [
+     [
+      null,
+      134362
+     ]
+    ]
+   },
+   "PriorAsdDate": {
+    "type": "TIMESTAMP",
+    "mn": "2015-10-04 00:00:00",
+    "mx": "2015-10-04 00:00:00"
+   },
+   "PriorAsdLand": {
+    "type": "DOUBLE"
+   },
+   "PriorAsdImprove": {
+    "type": "DOUBLE"
+   },
+   "PriorAsdTotal": {
+    "type": "DOUBLE"
+   },
+   "PriorTaxAmt": {
+    "type": "DOUBLE"
+   },
+   "CDALandUse1": {
+    "type": "SMALLINT"
+   },
+   "CDALandUse2": {
+    "type": "SMALLINT"
+   },
+   "LRMSUnitNum": {
+    "type": "VARCHAR",
+    "distinct": 208,
+    "top": [
+     [
+      "",
+      127147
+     ],
+     [
+      "101",
+      1325
+     ],
+     [
+      "1",
+      1274
+     ],
+     [
+      "A",
+      618
+     ],
+     [
+      "201",
+      447
+     ],
+     [
+      "1A",
+      192
+     ],
+     [
+      "2-A",
+      164
+     ],
+     [
+      "1E",
+      163
+     ],
+     [
+      "1B",
+      151
+     ],
+     [
+      "111",
+      142
+     ],
+     [
+      "804",
+      120
+     ],
+     [
+      "100",
+      117
+     ]
+    ]
+   },
+   "Zoning": {
+    "type": "VARCHAR",
+    "distinct": 98,
+    "top": [
+     [
+      "A",
+      50679
+     ],
+     [
+      "B",
+      34483
+     ],
+     [
+      "C",
+      17888
+     ],
+     [
+      "F",
+      7850
+     ],
+     [
+      "D",
+      4873
+     ],
+     [
+      "J",
+      3363
+     ],
+     [
+      "I",
+      3301
+     ],
+     [
+      "G",
+      3250
+     ],
+     [
+      "E",
+      2753
+     ],
+     [
+      "K",
+      2431
+     ],
+     [
+      "H",
+      1903
+     ],
+     [
+      null,
+      643
+     ]
+    ]
+   },
+   "NbrOfBldgsRes": {
+    "type": "SMALLINT"
+   },
+   "NbrOfBldgsCom": {
+    "type": "SMALLINT"
+   },
+   "FirstYearBuilt": {
+    "type": "SMALLINT"
+   },
+   "LastYearBuilt": {
+    "type": "SMALLINT"
+   },
+   "ResSalePrice": {
+    "type": "DOUBLE"
+   },
+   "ResSaleDate": {
+    "type": "TIMESTAMP",
+    "mn": "1968-12-16 00:00:00.001",
+    "mx": "2025-11-26 00:00:00"
+   },
+   "VacBldgYear": {
+    "type": "SMALLINT"
+   },
+   "GeoCityBlockPart": {
+    "type": "DOUBLE"
+   },
+   "WARD10": {
+    "type": "SMALLINT"
+   },
+   "PRECINCT10": {
+    "type": "SMALLINT"
+   },
+   "INSPAREA10": {
+    "type": "SMALLINT"
+   },
+   "Ward00": {
+    "type": "SMALLINT"
+   },
+   "PRECINCT02": {
+    "type": "SMALLINT"
+   },
+   "PRECINCT04": {
+    "type": "SMALLINT"
+   },
+   "NBRHD": {
+    "type": "SMALLINT"
+   },
+   "CDADIST": {
+    "type": "SMALLINT"
+   },
+   "CDASUBDIST": {
+    "type": "SMALLINT"
+   },
+   "POLICEDIST": {
+    "type": "SMALLINT"
+   },
+   "CensTract10": {
+    "type": "DOUBLE"
+   },
+   "CensBlock10": {
+    "type": "SMALLINT"
+   },
+   "CensBlock00": {
+    "type": "DOUBLE"
+   },
+   "Ward90": {
+    "type": "SMALLINT"
+   },
+   "Precinct90": {
+    "type": "SMALLINT"
+   },
+   "CensBlock90": {
+    "type": "DOUBLE"
+   },
+   "HouseConsDist": {
+    "type": "SMALLINT"
+   },
+   "ASRNBRHD": {
+    "type": "SMALLINT"
+   },
+   "EntZone": {
+    "type": "SMALLINT"
+   },
+   "IMPACTAREA": {
+    "type": "SMALLINT"
+   },
+   "CTDArea": {
+    "type": "SMALLINT"
+   },
+   "LEAFAREA": {
+    "type": "SMALLINT"
+   },
+   "ZIP": {
+    "type": "INTEGER"
+   },
+   "OnFloodBlock": {
+    "type": "SMALLINT"
+   },
+   "SpecParcelType": {
+    "type": "VARCHAR",
+    "distinct": 2,
+    "top": [
+     [
+      null,
+      134347
+     ],
+     [
+      "X",
+      11
+     ],
+     [
+      "C",
+      4
+     ]
+    ]
+   },
+   "SubParcelType": {
+    "type": "VARCHAR",
+    "distinct": 6,
+    "top": [
+     [
+      null,
+      126249
+     ],
+     [
+      "C",
+      6698
+     ],
+     [
+      "K",
+      1045
+     ],
+     [
+      "G",
+      279
+     ],
+     [
+      "Q",
+      88
+     ],
+     [
+      "S",
+      2
+     ],
+     [
+      "E",
+      1
+     ]
+    ]
+   },
+   "NbrOfSubAccts": {
+    "type": "SMALLINT"
+   },
+   "NbrOfCondos": {
+    "type": "SMALLINT"
+   },
+   "LRMSParcel": {
+    "type": "SMALLINT"
+   },
+   "AcctPrimary": {
+    "type": "SMALLINT"
+   },
+   "HANDLE": {
+    "type": "VARCHAR",
+    "distinct": 126866,
+    "top": [
+     [
+      "10832008011",
+      270
+     ],
+     [
+      "10827008001",
+      258
+     ],
+     [
+      "13901008461",
+      160
+     ],
+     [
+      "10508008021",
+      151
+     ],
+     [
+      "13909008520",
+      123
+     ],
+     [
+      "13917008170",
+      123
+     ],
+     [
+      "10099008011",
+      120
+     ],
+     [
+      "11252008011",
+      118
+     ],
+     [
+      "10273008021",
+      111
+     ],
+     [
+      "10517008011",
+      105
+     ],
+     [
+      "12005008011",
+      103
+     ],
+     [
+      "10827008040",
+      102
+     ]
+    ]
+   },
+   "OWNEROCC": {
+    "type": "VARCHAR",
+    "distinct": 6,
+    "top": [
+     [
+      null,
+      72142
+     ],
+     [
+      "1",
+      48708
+     ],
+     [
+      "2",
+      4957
+     ],
+     [
+      "C",
+      4112
+     ],
+     [
+      "X",
+      3082
+     ],
+     [
+      "4",
+      858
+     ],
+     [
+      "5",
+      503
+     ]
+    ]
+   },
+   "FirstDate": {
+    "type": "TIMESTAMP",
+    "mn": "2001-10-07 00:00:00",
+    "mx": "2026-08-02 00:00:00"
+   },
+   "LastDate": {
+    "type": "TIMESTAMP",
+    "mn": "2026-08-02 00:00:00",
+    "mx": "2026-08-02 00:00:00"
+   },
+   "OwnerUpdate": {
+    "type": "TIMESTAMP",
+    "mn": "1983-05-10 00:00:00",
+    "mx": "2023-03-06 00:00:00"
+   },
+   "OwnerCode": {
+    "type": "SMALLINT"
+   },
+   "SITEADDR": {
+    "type": "VARCHAR",
+    "distinct": 126619,
+    "top": [
+     [
+      "1520   WASHINGTON AV ",
+      270
+     ],
+     [
+      "1523   LOCUST ST ",
+      258
+     ],
+     [
+      "4466   WEST PINE BLVD ",
+      160
+     ],
+     [
+      "210  N 17TH ST ",
+      151
+     ],
+     [
+      "4355   MARYLAND AV ",
+      123
+     ],
+     [
+      "4100   FOREST PARK AV ",
+      123
+     ],
+     [
+      "300  N BROADWAY  ",
+      120
+     ],
+     [
+      "1515   LAFAYETTE AV ",
+      118
+     ],
+     [
+      "915   OLIVE ST ",
+      111
+     ],
+     [
+      "1113   WASHINGTON AV ",
+      105
+     ],
+     [
+      "2020   WASHINGTON AV ",
+      103
+     ],
+     [
+      "1501   LOCUST ST ",
+      102
+     ]
+    ]
+   },
+   "SQFT": {
+    "type": "INTEGER"
+   },
+   "ParcelId": {
+    "type": "VARCHAR",
+    "distinct": 134351,
+    "top": [
+     [
+      "18019015015",
+      2
+     ],
+     [
+      "41839230005",
+      2
+     ],
+     [
+      "05289001001",
+      2
+     ],
+     [
+      "38889080001",
+      2
+     ],
+     [
+      "45819105003",
+      2
+     ],
+     [
+      "56219500001",
+      2
+     ],
+     [
+      "38889080003",
+      2
+     ],
+     [
+      "04429010001",
+      2
+     ],
+     [
+      "38889080002",
+      2
+     ],
+     [
+      "18019015014",
+      2
+     ],
+     [
+      "54169431001",
+      2
+     ],
+     [
+      "63129100000",
+      1
+     ]
+    ]
+   },
+   "WARD": {
+    "type": "SMALLINT"
+   },
+   "TaxBalance": {
+    "type": "DOUBLE"
+   },
+   "PropertyClassCode": {
+    "type": "SMALLINT"
+   },
+   "IsAbatedProperty": {
+    "type": "SMALLINT"
+   },
+   "AbatementStartYear": {
+    "type": "SMALLINT"
+   },
+   "AbatementEndYear": {
+    "type": "SMALLINT"
+   },
+   "SpecBusDist3": {
+    "type": "SMALLINT"
+   },
+   "Ward20": {
+    "type": "SMALLINT"
+   },
+   "Precinct20": {
+    "type": "SMALLINT"
+   },
+   "InspArea20": {
+    "type": "SMALLINT"
+   },
+   "CensTract20": {
+    "type": "SMALLINT"
+   },
+   "CensBlock20": {
+    "type": "SMALLINT"
+   },
+   "MaintZoneWC": {
+    "type": "SMALLINT"
+   },
+   "TransDevDist": {
+    "type": "SMALLINT"
+   },
+   "CityBlock": {
+    "type": "DOUBLE"
+   },
+   "Parcel": {
+    "type": "DOUBLE"
+   }
+  }
+ },
+ "parks": {
+  "rows": 117,
+  "columns": {
+   "OBJECTID": {
+    "type": "BIGINT"
+   },
+   "CLASS": {
+    "type": "VARCHAR",
+    "distinct": 12,
+    "top": [
+     [
+      "Neighborhood",
+      62
+     ],
+     [
+      "Passive",
+      20
+     ],
+     [
+      null,
+      15
+     ],
+     [
+      " ",
+      9
+     ],
+     [
+      "Regional",
+      2
+     ],
+     [
+      "Mini",
+      2
+     ],
+     [
+      "1120 N. 11TH",
+      1
+     ],
+     [
+      "Undeveloped",
+      1
+     ],
+     [
+      "Plaza",
+      1
+     ],
+     [
+      "6100 SIMPSON",
+      1
+     ],
+     [
+      "",
+      1
+     ],
+     [
+      "1700 S. GRAND",
+      1
+     ]
+    ]
+   },
+   "NEW_CLASS": {
+    "type": "VARCHAR",
+    "distinct": 9,
+    "top": [
+     [
+      "Neighborhood",
+      59
+     ],
+     [
+      "Special Use",
+      13
+     ],
+     [
+      "Community",
+      11
+     ],
+     [
+      "Mini",
+      10
+     ],
+     [
+      "Cemetery",
+      6
+     ],
+     [
+      null,
+      6
+     ],
+     [
+      "Regional",
+      5
+     ],
+     [
+      "Independent",
+      5
+     ],
+     [
+      "Not City",
+      1
+     ],
+     [
+      "Commemorative",
+      1
+     ]
+    ]
+   },
+   "YR_ACQRD": {
+    "type": "SMALLINT"
+   },
+   "TEXT_": {
+    "type": "VARCHAR",
+    "distinct": 117,
+    "top": [
+     [
+      "Aboussie Park",
+      1
+     ],
+     [
+      "Chambers Park",
+      1
+     ],
+     [
+      "Carnegie Park",
+      1
+     ],
+     [
+      "Lindenwood Park",
+      1
+     ],
+     [
+      "Chouteau Park",
+      1
+     ],
+     [
+      "Penrose Park",
+      1
+     ],
+     [
+      "Fanetti Plaza",
+      1
+     ],
+     [
+      "Windsor Park",
+      1
+     ],
+     [
+      "Kaufmann Park",
+      1
+     ],
+     [
+      "Unity Park",
+      1
+     ],
+     [
+      "Alaska Park",
+      1
+     ],
+     [
+      "St. Marcus Commemorative Park",
+      1
+     ]
+    ]
+   },
+   "WARD10": {
+    "type": "SMALLINT"
+   },
+   "PARK_ID": {
+    "type": "VARCHAR",
+    "distinct": 105,
+    "top": [
+     [
+      null,
+      12
+     ],
+     [
+      "82",
+      1
+     ],
+     [
+      "40",
+      1
+     ],
+     [
+      "19",
+      1
+     ],
+     [
+      "92",
+      1
+     ],
+     [
+      "26",
+      1
+     ],
+     [
+      "64",
+      1
+     ],
+     [
+      "100",
+      1
+     ],
+     [
+      "13",
+      1
+     ],
+     [
+      "38",
+      1
+     ],
+     [
+      "47",
+      1
+     ],
+     [
+      "23",
+      1
+     ]
+    ]
+   },
+   "ACRES": {
+    "type": "DOUBLE"
+   },
+   "AREA_SQFT": {
+    "type": "DOUBLE"
+   },
+   "AREA_ACRES": {
+    "type": "DOUBLE"
+   },
+   "CENSUS_POP": {
+    "type": "DOUBLE"
+   },
+   "PARCEL_POP": {
+    "type": "DOUBLE"
+   }
+  }
+ },
+ "police-districts": {
+  "rows": 6,
+  "columns": {
+   "OBJECTID": {
+    "type": "BIGINT"
+   },
+   "DISTNO": {
+    "type": "VARCHAR",
+    "distinct": 6,
+    "top": [
+     [
+      "6",
+      1
+     ],
+     [
+      "5",
+      1
+     ],
+     [
+      "1",
+      1
+     ],
+     [
+      "4",
+      1
+     ],
+     [
+      "3",
+      1
+     ],
+     [
+      "2",
+      1
+     ]
+    ]
+   },
+   "ID1": {
+    "type": "INTEGER"
+   },
+   "DISTNUM": {
+    "type": "VARCHAR",
+    "distinct": 6,
+    "top": [
+     [
+      "DIST 4",
+      1
+     ],
+     [
+      "DIST 1",
+      1
+     ],
+     [
+      "DIST 6",
+      1
+     ],
+     [
+      "DIST 3",
+      1
+     ],
+     [
+      "DIST 2",
+      1
+     ],
+     [
+      "DIST 5",
+      1
+     ]
+    ]
+   }
+  }
+ },
+ "property-sales": {
+  "rows": 191829,
+  "columns": {
+   "CityBlock": {
+    "type": "DOUBLE"
+   },
+   "Parcel": {
+    "type": "BIGINT"
+   },
+   "OwnerCode": {
+    "type": "BIGINT"
+   },
+   "SaleNum": {
+    "type": "BIGINT"
+   },
+   "AsrParcelId": {
+    "type": "VARCHAR",
+    "distinct": 78480,
+    "top": [
+     [
+      "15039190000",
+      16
+     ],
+     [
+      "16189080000",
+      15
+     ],
+     [
+      "15769370000",
+      15
+     ],
+     [
+      "45719330000",
+      14
+     ],
+     [
+      "25699010000",
+      14
+     ],
+     [
+      "16259270000",
+      13
+     ],
+     [
+      "17569030000",
+      13
+     ],
+     [
+      "44059140000",
+      13
+     ],
+     [
+      "27469020000",
+      13
+     ],
+     [
+      "52099110000",
+      13
+     ],
+     [
+      "44809340000",
+      13
+     ],
+     [
+      "16259200000",
+      13
+     ]
+    ]
+   },
+   "SaleType": {
+    "type": "BIGINT"
+   },
+   "SaleTypeOther": {
+    "type": "VARCHAR",
+    "distinct": 23,
+    "top": [
+     [
+      null,
+      191400
+     ],
+     [
+      "MISC",
+      250
+     ],
+     [
+      "NOTAD",
+      47
+     ],
+     [
+      "FAMILY",
+      26
+     ],
+     [
+      "DHUD",
+      18
+     ],
+     [
+      "NS IMPRV",
+      16
+     ],
+     [
+      "TRD",
+      13
+     ],
+     [
+      "FAM",
+      12
+     ],
+     [
+      "MULTI",
+      6
+     ],
+     [
+      "VETDEED",
+      5
+     ],
+     [
+      "BENE",
+      5
+     ],
+     [
+      "DINT",
+      4
+     ]
+    ]
+   },
+   "SaleDate": {
+    "type": "VARCHAR",
+    "distinct": 6441,
+    "top": [
+     [
+      "11/01/04 00:00:00",
+      200
+     ],
+     [
+      "01/10/08 00:00:00",
+      174
+     ],
+     [
+      "11/26/03 00:00:00",
+      150
+     ],
+     [
+      "04/09/25 00:00:00",
+      147
+     ],
+     [
+      "06/22/06 00:00:00",
+      131
+     ],
+     [
+      "11/02/05 00:00:00",
+      118
+     ],
+     [
+      "03/04/04 00:00:00",
+      115
+     ],
+     [
+      "09/07/05 00:00:00",
+      112
+     ],
+     [
+      "06/11/25 00:00:00",
+      112
+     ],
+     [
+      "10/12/05 00:00:00",
+      112
+     ],
+     [
+      "07/07/04 00:00:00",
+      110
+     ],
+     [
+      "09/02/04 00:00:00",
+      110
+     ]
+    ]
+   },
+   "SalePrice": {
+    "type": "DOUBLE"
+   },
+   "NbrOfParcels": {
+    "type": "BIGINT"
+   },
+   "SalePricePerParcel": {
+    "type": "DOUBLE"
+   },
+   "SaleDocNum": {
+    "type": "BIGINT"
+   },
+   "LRMSSaleDate": {
+    "type": "VARCHAR",
+    "distinct": 0,
+    "top": [
+     [
+      null,
+      191829
+     ]
+    ]
+   },
+   "SaleTypeDescr": {
+    "type": "VARCHAR",
+    "distinct": 56,
+    "top": [
+     [
+      "Valid",
+      56897
+     ],
+     [
+      "Not Open",
+      27374
+     ],
+     [
+      "Foreclosure",
+      18076
+     ],
+     [
+      "Misc.",
+      11408
+     ],
+     [
+      "Investor",
+      11112
+     ],
+     [
+      "Zero Value",
+      10362
+     ],
+     [
+      "Unver. Valid",
+      7771
+     ],
+     [
+      "Rehab Before",
+      7052
+     ],
+     [
+      "Forec. Sale",
+      5937
+     ],
+     [
+      "Related Parties",
+      5574
+     ],
+     [
+      "Unresearched",
+      5313
+     ],
+     [
+      "Unverified",
+      2659
+     ]
+    ]
+   }
+  }
+ },
+ "special-business-districts": {
+  "rows": 22,
+  "columns": {
+   "Name": {
+    "type": "VARCHAR",
+    "distinct": 22,
+    "top": [
+     [
+      "Shaw SBD",
+      1
+     ],
+     [
+      "Downtown SBD",
+      1
+     ],
+     [
+      "DeBaliviere Place SBD",
+      1
+     ],
+     [
+      "Downtown Parks SBD",
+      1
+     ],
+     [
+      "Tower Grove South Concerned Citizens SBD",
+      1
+     ],
+     [
+      "Cathedral Square SBD",
+      1
+     ],
+     [
+      "Westminster/Lake SBD",
+      1
+     ],
+     [
+      "Kingsway Center SBD",
+      1
+     ],
+     [
+      "Soulard SBD",
+      1
+     ],
+     [
+      "Gardenside Subdivision SBD",
+      1
+     ],
+     [
+      "Locust Central SBD",
+      1
+     ],
+     [
+      "Holly Hills SBD",
+      1
+     ]
+    ]
+   },
+   "ASR_ID": {
+    "type": "BIGINT"
+   },
+   "Active": {
+    "type": "VARCHAR",
+    "distinct": 2,
+    "top": [
+     [
+      "Y",
+      14
+     ],
+     [
+      "N",
+      6
+     ],
+     [
+      null,
+      2
+     ]
+    ]
+   },
+   "DistrictTy": {
+    "type": "VARCHAR",
+    "distinct": 1,
+    "top": [
+     [
+      "SBD",
+      22
+     ]
+    ]
+   },
+   "MainContac": {
+    "type": "VARCHAR",
+    "distinct": 4,
+    "top": [
+     [
+      null,
+      18
+     ],
+     [
+      "Jim Dwyer",
+      1
+     ],
+     [
+      "Park Central - Kyle Oberle",
+      1
+     ],
+     [
+      "Luke Reynolds",
+      1
+     ],
+     [
+      "Ray Simon",
+      1
+     ]
+    ]
+   },
+   "MainCont_1": {
+    "type": "VARCHAR",
+    "distinct": 3,
+    "top": [
+     [
+      null,
+      19
+     ],
+     [
+      "314-776-3638",
+      1
+     ],
+     [
+      "314-535-5311",
+      1
+     ],
+     [
+      "314-813-7474",
+      1
+     ]
+    ]
+   },
+   "AltContact": {
+    "type": "VARCHAR",
+    "distinct": 0,
+    "top": [
+     [
+      null,
+      22
+     ]
+    ]
+   },
+   "AltConta_1": {
+    "type": "VARCHAR",
+    "distinct": 0,
+    "top": [
+     [
+      null,
+      22
+     ]
+    ]
+   },
+   "GeneralEma": {
+    "type": "VARCHAR",
+    "distinct": 5,
+    "top": [
+     [
+      null,
+      17
+     ],
+     [
+      "chair@tgscc-stl.org http://tgscc-stl.org/",
+      1
+     ],
+     [
+      "jacomo@sbcglobal.net",
+      1
+     ],
+     [
+      "chairman@soulard-sbd.org communications@soulard-sbd.org http://www.soulard-sbd.org/",
+      1
+     ],
+     [
+      "kyle@pcd-stl.org",
+      1
+     ],
+     [
+      "cherokee.chief@iclooud.com",
+      1
+     ]
+    ]
+   },
+   "MtgDateTim": {
+    "type": "VARCHAR",
+    "distinct": 2,
+    "top": [
+     [
+      null,
+      20
+     ],
+     [
+      "2nd Monday, 6:30 pm",
+      1
+     ],
+     [
+      "3rd Monday, 6:30 pm",
+      1
+     ]
+    ]
+   },
+   "MtgLocatio": {
+    "type": "VARCHAR",
+    "distinct": 1,
+    "top": [
+     [
+      null,
+      20
+     ],
+     [
+      "Zoom",
+      2
+     ]
+    ]
+   },
+   "F501c3": {
+    "type": "VARCHAR",
+    "distinct": 0,
+    "top": [
+     [
+      null,
+      22
+     ]
+    ]
+   },
+   "SLACO_Memb": {
+    "type": "VARCHAR",
+    "distinct": 0,
+    "top": [
+     [
+      null,
+      22
+     ]
+    ]
+   },
+   "Notes": {
+    "type": "VARCHAR",
+    "distinct": 7,
+    "top": [
+     [
+      "Correct according to legal description",
+      9
+     ],
+     [
+      null,
+      7
+     ],
+     [
+      "Correct based on description in ordinance",
+      1
+     ],
+     [
+      "Correct according to legal description LO: per Kate at CWE North CID",
+      1
+     ],
+     [
+      "Need legal description",
+      1
+     ],
+     [
+      "Inactive? Delete?",
+      1
+     ],
+     [
+      "Possibly active but not fully in complience via talking to Lisa Otke",
+      1
+     ],
+     [
+      "Possibly active but not in complience via talk with Lisa Otke",
+      1
+     ]
+    ]
+   },
+   "LastUpdate": {
+    "type": "VARCHAR",
+    "distinct": 8,
+    "top": [
+     [
+      "2/12/2020 CMZ",
+      9
+     ],
+     [
+      null,
+      4
+     ],
+     [
+      "2019 CMZ",
+      2
+     ],
+     [
+      "9/5/2024 JKD",
+      2
+     ],
+     [
+      "9/16/2024 JKD",
+      1
+     ],
+     [
+      "8/26/2024 JKD",
+      1
+     ],
+     [
+      "9/11/2024 JKD",
+      1
+     ],
+     [
+      "2/24/2020 CMZ",
+      1
+     ],
+     [
+      "9/24/2024 JKD",
+      1
+     ]
+    ]
+   },
+   "ID": {
+    "type": "BIGINT"
+   },
+   "Ordinance": {
+    "type": "BIGINT"
+   },
+   "BoardBill": {
+    "type": "BIGINT"
+   },
+   "Session": {
+    "type": "VARCHAR",
+    "distinct": 10,
+    "top": [
+     [
+      "1995-1996",
+      5
+     ],
+     [
+      null,
+      4
+     ],
+     [
+      "1996-1997",
+      2
+     ],
+     [
+      "2008-2009",
+      2
+     ],
+     [
+      "1994-1995",
+      2
+     ],
+     [
+      "2022-2023",
+      2
+     ],
+     [
+      "1992-1993",
+      1
+     ],
+     [
+      "2011-2012",
+      1
+     ],
+     [
+      "2014-2015",
+      1
+     ],
+     [
+      "1983",
+      1
+     ],
+     [
+      "2012-2013",
+      1
+     ]
+    ]
+   },
+   "OrdLink": {
+    "type": "VARCHAR",
+    "distinct": 17,
+    "top": [
+     [
+      null,
+      5
+     ],
+     [
+      "https://www.stlouis-mo.gov/government/city-laws/ordinances/ordinance.cfm?ord=63634",
+      1
+     ],
+     [
+      "https://www.stlouis-mo.gov/government/city-laws/ordinances/ordinance.cfm?ord=69343",
+      1
+     ],
+     [
+      "https://www.stlouis-mo.gov/government/city-laws/ordinances/ordinance.cfm?ord=63780",
+      1
+     ],
+     [
+      "https://www.stlouis-mo.gov/government/city-laws/ordinances/ordinance.cfm?ord=63777",
+      1
+     ],
+     [
+      "https://www.stlouis-mo.gov/government/city-laws/ordinances/ordinance.cfm?ord=69915",
+      1
+     ],
+     [
+      "https://www.stlouis-mo.gov/government/city-laws/ordinances/ordinance.cfm?ord=71507",
+      1
+     ],
+     [
+      "https://www.stlouis-mo.gov/government/city-laws/ordinances/ordinance.cfm?ord=63156",
+      1
+     ],
+     [
+      "https://www.stlouis-mo.gov/government/city-laws/ordinances/ordinance.cfm?ord=63479",
+      1
+     ],
+     [
+      "https://www.stlouis-mo.gov/government/city-laws/ordinances/ordinance.cfm?ord=63481",
+      1
+     ],
+     [
+      "https://www.stlouis-mo.gov/government/city-laws/ordinances/ordinance.cfm?ord=69099",
+      1
+     ],
+     [
+      "https://www.stlouis-mo.gov/government/city-laws/ordinances/ordinance.cfm?ord=63483",
+      1
+     ]
+    ]
+   },
+   "Wards": {
+    "type": "BIGINT"
+   },
+   "Active0424": {
+    "type": "BIGINT"
+   }
+  }
+ },
+ "streets": {
+  "rows": 19858,
+  "columns": {
+   "OBJECTID": {
+    "type": "BIGINT"
+   },
+   "FULLNAME": {
+    "type": "VARCHAR",
+    "distinct": 1699,
+    "top": [
+     [
+      " ",
+      5663
+     ],
+     [
+      "GRAVOIS AVE",
+      120
+     ],
+     [
+      "N BROADWAY",
+      109
+     ],
+     [
+      "S BROADWAY",
+      106
+     ],
+     [
+      "S KINGSHIGHWAY BLVD",
+      98
+     ],
+     [
+      "N KINGSHIGHWAY BLVD",
+      96
+     ],
+     [
+      "S GRAND BLVD",
+      94
+     ],
+     [
+      "RIVERVIEW BLVD",
+      85
+     ],
+     [
+      "MORGAN FORD RD",
+      82
+     ],
+     [
+      "GOODFELLOW BLVD",
+      78
+     ],
+     [
+      "HAMPTON AVE",
+      76
+     ],
+     [
+      "VIRGINIA AVE",
+      74
+     ]
+    ]
+   },
+   "Road_Segment_ID": {
+    "type": "VARCHAR",
+    "distinct": 11471,
+    "top": [
+     [
+      null,
+      6267
+     ],
+     [
+      "RIVERVIEW_SPRING GARDEN DR_I-270",
+      12
+     ],
+     [
+      "RIVER DES PERES_PARKWAY LANE_CHIPPEWA",
+      11
+     ],
+     [
+      "KINGSHIGHWAY_OAKLAND AVE_BARNES HOSPITAL PLAZA",
+      10
+     ],
+     [
+      "BROADWAY_MT PLEASANT ST_OSCEOLA ST",
+      10
+     ],
+     [
+      "RIVER DES PERES_CHIPPEWA ST_LANSDOWNE",
+      9
+     ],
+     [
+      "RIVERVIEW_I-270_COAL BANK RD",
+      8
+     ],
+     [
+      "CHIPPEWA_HOLT AVE_MEREMAC",
+      6
+     ],
+     [
+      "NATURAL BRIDGE_SALISBURY AVE_GLASGOW AVE",
+      6
+     ],
+     [
+      "OAKLAND_MACKLIND_OAKVIEW PL",
+      6
+     ],
+     [
+      "16TH_O'FALLON ST_CASS AVE",
+      6
+     ],
+     [
+      "13TH_O'FALLON ST_CASS AVE",
+      6
+     ]
+    ]
+   },
+   "From_Stree": {
+    "type": "VARCHAR",
+    "distinct": 1854,
+    "top": [
+     [
+      " ",
+      6218
+     ],
+     [
+      "DEADEND",
+      276
+     ],
+     [
+      "BROADWAY ST",
+      152
+     ],
+     [
+      "KINGSHIGHWAY",
+      122
+     ],
+     [
+      "GRAND BLVD",
+      112
+     ],
+     [
+      "GRAVOIS AVE",
+      78
+     ],
+     [
+      "TAYLOR AVE",
+      76
+     ],
+     [
+      "EUCLID AVE",
+      74
+     ],
+     [
+      "ELEVENTH ST",
+      72
+     ],
+     [
+      "NEWSTEAD AVE",
+      70
+     ],
+     [
+      "COMPTON AVE",
+      67
+     ],
+     [
+      "NINTH ST",
+      64
+     ]
+    ]
+   },
+   "To_Street": {
+    "type": "VARCHAR",
+    "distinct": 1868,
+    "top": [
+     [
+      " ",
+      6221
+     ],
+     [
+      "DEADEND",
+      301
+     ],
+     [
+      "BROADWAY ST",
+      130
+     ],
+     [
+      "CITY LIMITS",
+      122
+     ],
+     [
+      "KINGSHIGHWAY",
+      110
+     ],
+     [
+      "SPRING AVE",
+      79
+     ],
+     [
+      "GRAND AVE",
+      78
+     ],
+     [
+      "NEWSTEAD AVE",
+      70
+     ],
+     [
+      "FLORISSANT AVE",
+      67
+     ],
+     [
+      "TAYLOR AVE",
+      66
+     ],
+     [
+      "PENNSYLVANIA AVE",
+      64
+     ],
+     [
+      "GRAVOIS AVE",
+      63
+     ]
+    ]
+   },
+   "Street": {
+    "type": "VARCHAR",
+    "distinct": 1310,
+    "top": [
+     [
+      " ",
+      5667
+     ],
+     [
+      "BROADWAY",
+      216
+     ],
+     [
+      "GRAND",
+      214
+     ],
+     [
+      "KINGSHIGHWAY",
+      195
+     ],
+     [
+      "RIVERVIEW",
+      123
+     ],
+     [
+      "GRAVOIS",
+      120
+     ],
+     [
+      "64",
+      109
+     ],
+     [
+      "FLORISSANT",
+      106
+     ],
+     [
+      "70",
+      105
+     ],
+     [
+      "44",
+      104
+     ],
+     [
+      "PARK",
+      103
+     ],
+     [
+      "JEFFERSON",
+      101
+     ]
+    ]
+   },
+   "Street_Name_Pre_Directional": {
+    "type": "VARCHAR",
+    "distinct": 6,
+    "top": [
+     [
+      " ",
+      16374
+     ],
+     [
+      "N",
+      1405
+     ],
+     [
+      "S",
+      1069
+     ],
+     [
+      "Interstate",
+      420
+     ],
+     [
+      "E",
+      315
+     ],
+     [
+      "W",
+      251
+     ],
+     [
+      null,
+      24
+     ]
+    ]
+   },
+   "Street_Name_Post_Type": {
+    "type": "VARCHAR",
+    "distinct": 28,
+    "top": [
+     [
+      "AVE",
+      6929
+     ],
+     [
+      " ",
+      6116
+     ],
+     [
+      "ST",
+      3917
+     ],
+     [
+      "BLVD",
+      1129
+     ],
+     [
+      "DR",
+      504
+     ],
+     [
+      "PL",
+      409
+     ],
+     [
+      "RD",
+      192
+     ],
+     [
+      "CT",
+      133
+     ],
+     [
+      "LN",
+      122
+     ],
+     [
+      "Off-Ramp",
+      118
+     ],
+     [
+      "On-Ramp",
+      116
+     ],
+     [
+      "PKY",
+      33
+     ]
+    ]
+   },
+   "Street_Name_Post_Direction": {
+    "type": "VARCHAR",
+    "distinct": 8,
+    "top": [
+     [
+      " ",
+      19824
+     ],
+     [
+      null,
+      24
+     ],
+     [
+      "DR",
+      3
+     ],
+     [
+      "WEST",
+      2
+     ],
+     [
+      "DR EAST",
+      1
+     ],
+     [
+      "NE",
+      1
+     ],
+     [
+      "EAST",
+      1
+     ],
+     [
+      "DR WEST",
+      1
+     ],
+     [
+      "SE",
+      1
+     ]
+    ]
+   },
+   "FromLeft": {
+    "type": "DOUBLE"
+   },
+   "ToLeft": {
+    "type": "DOUBLE"
+   },
+   "FromRight": {
+    "type": "DOUBLE"
+   },
+   "ToRight": {
+    "type": "DOUBLE"
+   },
+   "Class": {
+    "type": "VARCHAR",
+    "distinct": 6,
+    "top": [
+     [
+      "A41",
+      9399
+     ],
+     [
+      "A73",
+      5702
+     ],
+     [
+      "A31",
+      4269
+     ],
+     [
+      "A63",
+      239
+     ],
+     [
+      "A61",
+      157
+     ],
+     [
+      "A62",
+      91
+     ],
+     [
+      null,
+      1
+     ]
+    ]
+   },
+   "County": {
+    "type": "VARCHAR",
+    "distinct": 2,
+    "top": [
+     [
+      "City of St. Louis",
+      19842
+     ],
+     [
+      " ",
+      16
+     ]
+    ]
+   },
+   "Notes": {
+    "type": "VARCHAR",
+    "distinct": 14,
+    "top": [
+     [
+      " ",
+      19802
+     ],
+     [
+      null,
+      14
+     ],
+     [
+      "JD: created 1/25/23",
+      8
+     ],
+     [
+      "JD: Rock Island vs Forest Park for Street Column?",
+      8
+     ],
+     [
+      "JD: Private?",
+      6
+     ],
+     [
+      " Should SQ be a suffix? These are all different",
+      6
+     ],
+     [
+      "JD: Should make Highlands Plaza and suffix Dr",
+      4
+     ],
+     [
+      "JD: created 1/26/23",
+      3
+     ],
+     [
+      "DJ: Should this be listed as Lebanon Dr?",
+      1
+     ],
+     [
+      "JD: Why is this not Tamm Ave like the signage?",
+      1
+     ],
+     [
+      "JD: should the Street name be Newstead?",
+      1
+     ],
+     [
+      "",
+      1
+     ]
+    ]
+   },
+   "NHD_NUM": {
+    "type": "VARCHAR",
+    "distinct": 91,
+    "top": [
+     [
+      " ",
+      2134
+     ],
+     [
+      "16",
+      703
+     ],
+     [
+      "5",
+      606
+     ],
+     [
+      "1",
+      597
+     ],
+     [
+      "15",
+      524
+     ],
+     [
+      "4",
+      522
+     ],
+     [
+      "9",
+      506
+     ],
+     [
+      "35",
+      409
+     ],
+     [
+      "38",
+      393
+     ],
+     [
+      "50",
+      393
+     ],
+     [
+      "59",
+      389
+     ],
+     [
+      "36",
+      389
+     ]
+    ]
+   },
+   "NHD_NAME": {
+    "type": "VARCHAR",
+    "distinct": 92,
+    "top": [
+     [
+      " ",
+      2415
+     ],
+     [
+      "Dutchtown",
+      703
+     ],
+     [
+      "Bevo Mill",
+      606
+     ],
+     [
+      "Carondelet",
+      597
+     ],
+     [
+      "Tower Grove South",
+      524
+     ],
+     [
+      "Boulevard Heights",
+      522
+     ],
+     [
+      "Lindenwood Park",
+      506
+     ],
+     [
+      "Downtown",
+      409
+     ],
+     [
+      "Central West End",
+      393
+     ],
+     [
+      "Downtown West",
+      389
+     ],
+     [
+      "Jeff Vanderlou",
+      389
+     ],
+     [
+      "Princeton Heights",
+      354
+     ]
+    ]
+   },
+   "NHD_NUMTXT": {
+    "type": "VARCHAR",
+    "distinct": 92,
+    "top": [
+     [
+      " ",
+      6017
+     ],
+     [
+      "16 Dutchtown",
+      415
+     ],
+     [
+      "  1 Carondelet",
+      405
+     ],
+     [
+      "59 Jeff Vanderlou",
+      389
+     ],
+     [
+      "  4 Boulevard Heights",
+      383
+     ],
+     [
+      "  5 Bevo Mill",
+      359
+     ],
+     [
+      "35 Downtown",
+      357
+     ],
+     [
+      "36 Downtown West",
+      348
+     ],
+     [
+      "64 Near North Riverfront",
+      344
+     ],
+     [
+      "  9 Lindenwood Park",
+      335
+     ],
+     [
+      "15 Tower Grove South",
+      325
+     ],
+     [
+      "74 Baden",
+      320
+     ]
+    ]
+   },
+   "ANGLE": {
+    "type": "VARCHAR",
+    "distinct": 19429,
+    "top": [
+     [
+      null,
+      25
+     ],
+     [
+      "188.63808998635",
+      8
+     ],
+     [
+      "90",
+      7
+     ],
+     [
+      "190.488955232383",
+      6
+     ],
+     [
+      "11.1822832525575",
+      6
+     ],
+     [
+      "210.857823515905",
+      5
+     ],
+     [
+      "288.710474954055",
+      5
+     ],
+     [
+      "278.147351561047",
+      5
+     ],
+     [
+      "190.60753341377",
+      5
+     ],
+     [
+      "189.098557434471",
+      4
+     ],
+     [
+      "299.2203711536",
+      4
+     ],
+     [
+      "189.021173006868",
+      4
+     ]
+    ]
+   },
+   "PRECINCT": {
+    "type": "VARCHAR",
+    "distinct": 14,
+    "top": [
+     [
+      " ",
+      6210
+     ],
+     [
+      "4",
+      2555
+     ],
+     [
+      "5",
+      1989
+     ],
+     [
+      "2",
+      1949
+     ],
+     [
+      "1",
+      1704
+     ],
+     [
+      "3",
+      1591
+     ],
+     [
+      "6",
+      1468
+     ],
+     [
+      "8",
+      1004
+     ],
+     [
+      "7",
+      983
+     ],
+     [
+      "10",
+      231
+     ],
+     [
+      "9",
+      135
+     ],
+     [
+      null,
+      24
+     ]
+    ]
+   },
+   "ZIP_CODE": {
+    "type": "VARCHAR",
+    "distinct": 32,
+    "top": [
+     [
+      " ",
+      6210
+     ],
+     [
+      "63116",
+      1357
+     ],
+     [
+      "63104",
+      1073
+     ],
+     [
+      "63139",
+      922
+     ],
+     [
+      "63118",
+      921
+     ],
+     [
+      "63111",
+      864
+     ],
+     [
+      "63110",
+      847
+     ],
+     [
+      "63115",
+      799
+     ],
+     [
+      "63107",
+      785
+     ],
+     [
+      "63106",
+      764
+     ],
+     [
+      "63147",
+      754
+     ],
+     [
+      "63109",
+      739
+     ]
+    ]
+   },
+   "ZCTA": {
+    "type": "VARCHAR",
+    "distinct": 32,
+    "top": [
+     [
+      " ",
+      6210
+     ],
+     [
+      "63116",
+      1357
+     ],
+     [
+      "63104",
+      1073
+     ],
+     [
+      "63139",
+      922
+     ],
+     [
+      "63118",
+      921
+     ],
+     [
+      "63111",
+      864
+     ],
+     [
+      "63110",
+      847
+     ],
+     [
+      "63115",
+      799
+     ],
+     [
+      "63107",
+      785
+     ],
+     [
+      "63106",
+      764
+     ],
+     [
+      "63147",
+      754
+     ],
+     [
+      "63109",
+      739
+     ]
+    ]
+   },
+   "WARD": {
+    "type": "VARCHAR",
+    "distinct": 31,
+    "top": [
+     [
+      " ",
+      6210
+     ],
+     [
+      "7",
+      1146
+     ],
+     [
+      "5",
+      1015
+     ],
+     [
+      "2",
+      753
+     ],
+     [
+      "6",
+      703
+     ],
+     [
+      "11",
+      669
+     ],
+     [
+      "24",
+      636
+     ],
+     [
+      "3",
+      558
+     ],
+     [
+      "9",
+      547
+     ],
+     [
+      "19",
+      461
+     ],
+     [
+      "10",
+      456
+     ],
+     [
+      "12",
+      454
+     ]
+    ]
+   },
+   "Road_Type": {
+    "type": "VARCHAR",
+    "distinct": 5,
+    "top": [
+     [
+      "Road",
+      13578
+     ],
+     [
+      "Alley",
+      5702
+     ],
+     [
+      "Interstate",
+      428
+     ],
+     [
+      "Remove",
+      135
+     ],
+     [
+      null,
+      11
+     ],
+     [
+      " ",
+      4
+     ]
+    ]
+   },
+   "Width_Min": {
+    "type": "DOUBLE"
+   },
+   "Width_Max": {
+    "type": "DOUBLE"
+   },
+   "Access_Typ": {
+    "type": "VARCHAR",
+    "distinct": 3,
+    "top": [
+     [
+      " ",
+      19701
+     ],
+     [
+      "Private",
+      129
+     ],
+     [
+      null,
+      24
+     ],
+     [
+      "Gated",
+      4
+     ]
+    ]
+   },
+   "FUNC_CLASS": {
+    "type": "VARCHAR",
+    "distinct": 9,
+    "top": [
+     [
+      " ",
+      8747
+     ],
+     [
+      "ALLEY",
+      5440
+     ],
+     [
+      "MINOR ARTERIAL",
+      1467
+     ],
+     [
+      "MAJOR COLLECTOR",
+      1395
+     ],
+     [
+      "PRINCIPAL ARTERIAL",
+      1143
+     ],
+     [
+      "LOCAL",
+      623
+     ],
+     [
+      "MINOR COLLECTOR",
+      577
+     ],
+     [
+      "INTERSTATE",
+      430
+     ],
+     [
+      null,
+      35
+     ],
+     [
+      "",
+      1
+     ]
+    ]
+   },
+   "SPEED_LIMI": {
+    "type": "INTEGER"
+   },
+   "LANE_COUNT": {
+    "type": "INTEGER"
+   },
+   "BI_DIRECTI": {
+    "type": "INTEGER"
+   },
+   "OVERPASS": {
+    "type": "INTEGER"
+   },
+   "X": {
+    "type": "INTEGER"
+   },
+   "Y": {
+    "type": "INTEGER"
+   },
+   "Bus_Truck": {
+    "type": "INTEGER"
+   },
+   "State_Stre": {
+    "type": "INTEGER"
+   },
+   "P_Type": {
+    "type": "VARCHAR",
+    "distinct": 3,
+    "top": [
+     [
+      "A",
+      19817
+     ],
+     [
+      null,
+      24
+     ],
+     [
+      " ",
+      16
+     ],
+     [
+      "B",
+      1
+     ]
+    ]
+   },
+   "Date_Insta": {
+    "type": "TIMESTAMP",
+    "mn": null,
+    "mx": null
+   },
+   "Date_Rated": {
+    "type": "TIMESTAMP",
+    "mn": null,
+    "mx": null
+   },
+   "PCR": {
+    "type": "INTEGER"
+   },
+   "MoDOT_MJR": {
+    "type": "VARCHAR",
+    "distinct": 3,
+    "top": [
+     [
+      " ",
+      19163
+     ],
+     [
+      "Full MoDot",
+      594
+     ],
+     [
+      "Surface Only MoDot",
+      77
+     ],
+     [
+      null,
+      24
+     ]
+    ]
+   },
+   "Snow_Prior": {
+    "type": "VARCHAR",
+    "distinct": 1,
+    "top": [
+     [
+      " ",
+      19834
+     ],
+     [
+      null,
+      24
+     ]
+    ]
+   },
+   "Snow_Type": {
+    "type": "VARCHAR",
+    "distinct": 1,
+    "top": [
+     [
+      " ",
+      19834
+     ],
+     [
+      null,
+      24
+     ]
+    ]
+   },
+   "Volume": {
+    "type": "VARCHAR",
+    "distinct": 3,
+    "top": [
+     [
+      "Low",
+      15880
+     ],
+     [
+      "High",
+      3951
+     ],
+     [
+      null,
+      19
+     ],
+     [
+      " ",
+      8
+     ]
+    ]
+   },
+   "Honorary_N": {
+    "type": "VARCHAR",
+    "distinct": 5,
+    "top": [
+     [
+      " ",
+      19742
+     ],
+     [
+      "BARACK OBAMA BLVD",
+      72
+     ],
+     [
+      null,
+      24
+     ],
+     [
+      "OFFICER NORVELLE T BROWN AVE",
+      18
+     ],
+     [
+      "Pastor Bennie Lee Thompson, Sr. Avenue",
+      1
+     ],
+     [
+      "Estella M. Daly Way",
+      1
+     ]
+    ]
+   },
+   "Vacated": {
+    "type": "INTEGER"
+   },
+   "Vac_Ordinance": {
+    "type": "VARCHAR",
+    "distinct": 0,
+    "top": [
+     [
+      null,
+      19858
+     ]
+    ]
+   },
+   "Google_Ima": {
+    "type": "TIMESTAMP",
+    "mn": "2012-05-01 00:00:00",
+    "mx": "2022-08-01 00:00:00"
+   },
+   "Commercial": {
+    "type": "INTEGER"
+   },
+   "Loc_rd_cls": {
+    "type": "VARCHAR",
+    "distinct": 5,
+    "top": [
+     [
+      " ",
+      16415
+     ],
+     [
+      "C",
+      1390
+     ],
+     [
+      "B",
+      1202
+     ],
+     [
+      "A",
+      826
+     ],
+     [
+      null,
+      24
+     ],
+     [
+      "H",
+      1
+     ]
+    ]
+   },
+   "HONORARY_1": {
+    "type": "VARCHAR",
+    "distinct": 62,
+    "top": [
+     [
+      " ",
+      19565
+     ],
+     [
+      "SHANNONS",
+      47
+     ],
+     [
+      "BARACK OBAMA",
+      38
+     ],
+     [
+      "CHERAMARA MOTLEY",
+      28
+     ],
+     [
+      null,
+      24
+     ],
+     [
+      "FR BIONDI SJ",
+      22
+     ],
+     [
+      "FATHER JOE ROELKE",
+      14
+     ],
+     [
+      "ABOUSSIE\r\n",
+      12
+     ],
+     [
+      "PASTOR MICHAEL JONES",
+      11
+     ],
+     [
+      "BOB GIBSON",
+      6
+     ],
+     [
+      "HALLER ED NUTT",
+      6
+     ],
+     [
+      "NOBLE DREW ALI",
+      5
+     ]
+    ]
+   },
+   "HN_TYPE": {
+    "type": "VARCHAR",
+    "distinct": 10,
+    "top": [
+     [
+      " ",
+      19569
+     ],
+     [
+      "WAY",
+      101
+     ],
+     [
+      "BLVD",
+      58
+     ],
+     [
+      "ST",
+      32
+     ],
+     [
+      "PL",
+      26
+     ],
+     [
+      "AVE",
+      25
+     ],
+     [
+      null,
+      24
+     ],
+     [
+      "PL\r\n",
+      12
+     ],
+     [
+      "DR",
+      5
+     ],
+     [
+      "LN",
+      5
+     ],
+     [
+      "Pl",
+      1
+     ]
+    ]
+   },
+   "Hon_Ord_Nu": {
+    "type": "VARCHAR",
+    "distinct": 40,
+    "top": [
+     [
+      " ",
+      19717
+     ],
+     [
+      null,
+      24
+     ],
+     [
+      "68165\r\n",
+      24
+     ],
+     [
+      "67260",
+      13
+     ],
+     [
+      "65699\r\n",
+      12
+     ],
+     [
+      "68394\r\n",
+      11
+     ],
+     [
+      "70887\r\n",
+      6
+     ],
+     [
+      "68272\r\n",
+      5
+     ],
+     [
+      "68796\r\n",
+      4
+     ],
+     [
+      "68763\r\n",
+      3
+     ],
+     [
+      "70610\r\n",
+      2
+     ],
+     [
+      "70860\r\n",
+      2
+     ]
+    ]
+   },
+   "HON_BOARD_": {
+    "type": "VARCHAR",
+    "distinct": 40,
+    "top": [
+     [
+      " ",
+      19717
+     ],
+     [
+      null,
+      24
+     ],
+     [
+      "8.222\r\n",
+      24
+     ],
+     [
+      "6.228\r\n",
+      13
+     ],
+     [
+      "2.266\r\n",
+      12
+     ],
+     [
+      "9.077\r\n",
+      11
+     ],
+     [
+      "18.16\r\n",
+      6
+     ],
+     [
+      "8.234\r\n",
+      5
+     ],
+     [
+      "10.193\r\n",
+      4
+     ],
+     [
+      "10.131\r\n",
+      3
+     ],
+     [
+      "16.147\r\n",
+      2
+     ],
+     [
+      "10.077\r\n",
+      2
+     ]
+    ]
+   },
+   "DIRECTION": {
+    "type": "VARCHAR",
+    "distinct": 5,
+    "top": [
+     [
+      " ",
+      16402
+     ],
+     [
+      "W",
+      932
+     ],
+     [
+      "E",
+      904
+     ],
+     [
+      "N",
+      817
+     ],
+     [
+      "S",
+      739
+     ],
+     [
+      null,
+      64
+     ]
+    ]
+   },
+   "LEVEL_": {
+    "type": "INTEGER"
+   },
+   "RECLENGTH": {
+    "type": "DOUBLE"
+   },
+   "created_user": {
+    "type": "VARCHAR",
+    "distinct": 1,
+    "top": [
+     [
+      null,
+      19759
+     ],
+     [
+      "SDE@STLOUIS-MO",
+      99
+     ]
+    ]
+   },
+   "created_date": {
+    "type": "TIMESTAMP",
+    "mn": "2023-03-14 14:02:52",
+    "mx": "2025-10-31 20:03:26"
+   },
+   "last_edited_user": {
+    "type": "VARCHAR",
+    "distinct": 1,
+    "top": [
+     [
+      "SDE@STLOUIS-MO",
+      19858
+     ]
+    ]
+   },
+   "last_edited_date": {
+    "type": "TIMESTAMP",
+    "mn": "2025-03-11 16:57:29",
+    "mx": "2025-10-31 21:14:20"
+   },
+   "OneWayCode": {
+    "type": "VARCHAR",
+    "distinct": 2,
+    "top": [
+     [
+      "B",
+      16459
+     ],
+     [
+      "F",
+      3399
+     ]
+    ]
+   },
+   "FromElevation": {
+    "type": "INTEGER"
+   },
+   "ToElevation": {
+    "type": "INTEGER"
+   },
+   "Time": {
+    "type": "DOUBLE"
+   }
+  }
+ },
+ "tax-abated-parcels": {
+  "rows": 1440,
+  "columns": {
+   "OBJECTID": {
+    "type": "INTEGER"
+   },
+   "LowerAsrParcelId": {
+    "type": "VARCHAR",
+    "distinct": 1174,
+    "top": [
+     [
+      "38842303",
+      89
+     ],
+     [
+      "40859011",
+      28
+     ],
+     [
+      "01920000",
+      14
+     ],
+     [
+      "39150004",
+      14
+     ],
+     [
+      "39150005",
+      13
+     ],
+     [
+      "39150003",
+      13
+     ],
+     [
+      "39100500",
+      13
+     ],
+     [
+      "21670002",
+      12
+     ],
+     [
+      "22689316",
+      10
+     ],
+     [
+      "39150002",
+      10
+     ],
+     [
+      "45839225",
+      9
+     ],
+     [
+      "39100501",
+      8
+     ]
+    ]
+   },
+   "ColParcelId": {
+    "type": "VARCHAR",
+    "distinct": 1440,
+    "top": [
+     [
+      "45830003081",
+      1
+     ],
+     [
+      "45830002981",
+      1
+     ],
+     [
+      "39100500701",
+      1
+     ],
+     [
+      "40760003711",
+      1
+     ],
+     [
+      "45440000641",
+      1
+     ],
+     [
+      "45460000351",
+      1
+     ],
+     [
+      "38640403300",
+      1
+     ],
+     [
+      "20090000401",
+      1
+     ],
+     [
+      "16680000201",
+      1
+     ],
+     [
+      "23380001100",
+      1
+     ],
+     [
+      "06180001530",
+      1
+     ],
+     [
+      "05030001720",
+      1
+     ]
+    ]
+   },
+   "ColCityBlock": {
+    "type": "INTEGER"
+   },
+   "ColParcel": {
+    "type": "INTEGER"
+   },
+   "PrimAddrRecNum": {
+    "type": "INTEGER"
+   },
+   "AddrType": {
+    "type": "VARCHAR",
+    "distinct": 3,
+    "top": [
+     [
+      "3",
+      1423
+     ],
+     [
+      "1",
+      15
+     ],
+     [
+      "2",
+      2
+     ]
+    ]
+   },
+   "LowAddrNum": {
+    "type": "INTEGER"
+   },
+   "LowAddrSuf": {
+    "type": "VARCHAR",
+    "distinct": 3,
+    "top": [
+     [
+      "",
+      1435
+     ],
+     [
+      "R",
+      4
+     ],
+     [
+      "F",
+      1
+     ]
+    ]
+   },
+   "HighAddrNum": {
+    "type": "INTEGER"
+   },
+   "HighAddrSuf": {
+    "type": "VARCHAR",
+    "distinct": 4,
+    "top": [
+     [
+      "",
+      1434
+     ],
+     [
+      "R",
+      4
+     ],
+     [
+      "F",
+      1
+     ],
+     [
+      "A",
+      1
+     ]
+    ]
+   },
+   "NLC": {
+    "type": "INTEGER"
+   },
+   "PARITY": {
+    "type": "VARCHAR",
+    "distinct": 2,
+    "top": [
+     [
+      "O",
+      794
+     ],
+     [
+      "E",
+      646
+     ]
+    ]
+   },
+   "StPreDir": {
+    "type": "VARCHAR",
+    "distinct": 5,
+    "top": [
+     [
+      "",
+      1250
+     ],
+     [
+      "N",
+      101
+     ],
+     [
+      "S",
+      55
+     ],
+     [
+      "W",
+      31
+     ],
+     [
+      "E",
+      3
+     ]
+    ]
+   },
+   "StName": {
+    "type": "VARCHAR",
+    "distinct": 260,
+    "top": [
+     [
+      "LACLEDE",
+      150
+     ],
+     [
+      "OLIVE",
+      83
+     ],
+     [
+      "BOARDMAN",
+      33
+     ],
+     [
+      "MCREE",
+      32
+     ],
+     [
+      "MCPHERSON",
+      32
+     ],
+     [
+      "CATES",
+      29
+     ],
+     [
+      "LAFAYETTE",
+      27
+     ],
+     [
+      "BLAINE",
+      26
+     ],
+     [
+      "22ND",
+      25
+     ],
+     [
+      "DAGGETT",
+      23
+     ],
+     [
+      "FINNEY",
+      23
+     ],
+     [
+      "VISTA",
+      21
+     ]
+    ]
+   },
+   "StType": {
+    "type": "VARCHAR",
+    "distinct": 9,
+    "top": [
+     [
+      "AV",
+      833
+     ],
+     [
+      "ST",
+      417
+     ],
+     [
+      "BLVD",
+      92
+     ],
+     [
+      "PL",
+      52
+     ],
+     [
+      "DR",
+      19
+     ],
+     [
+      "",
+      15
+     ],
+     [
+      "CT",
+      7
+     ],
+     [
+      "LA",
+      3
+     ],
+     [
+      "RD",
+      2
+     ]
+    ]
+   },
+   "StSufDir": {
+    "type": "VARCHAR",
+    "distinct": 2,
+    "top": [
+     [
+      "",
+      1437
+     ],
+     [
+      "W",
+      3
+     ]
+    ]
+   },
+   "StdUnitNum": {
+    "type": "VARCHAR",
+    "distinct": 184,
+    "top": [
+     [
+      "",
+      1220
+     ],
+     [
+      "MO",
+      6
+     ],
+     [
+      "2",
+      6
+     ],
+     [
+      "1",
+      5
+     ],
+     [
+      "328",
+      3
+     ],
+     [
+      "102",
+      2
+     ],
+     [
+      "402",
+      2
+     ],
+     [
+      "10",
+      2
+     ],
+     [
+      "C",
+      2
+     ],
+     [
+      "301",
+      2
+     ],
+     [
+      "5",
+      2
+     ],
+     [
+      "302",
+      2
+     ]
+    ]
+   },
+   "OWNERNAME": {
+    "type": "VARCHAR",
+    "distinct": 1114,
+    "top": [
+     [
+      "BREMEN HOMES LP",
+      37
+     ],
+     [
+      "FINNEY PLACE LP",
+      36
+     ],
+     [
+      "BLAIR HOMES PARTNERS LP",
+      32
+     ],
+     [
+      "HYDE PARK SOUTH APARTMENTS LP",
+      26
+     ],
+     [
+      "DESALES PRESERVATION LLC",
+      19
+     ],
+     [
+      "ELIOT SCHOOL LP",
+      18
+     ],
+     [
+      "MAVRENT LLC",
+      14
+     ],
+     [
+      "ST LOUIS LEASED HOUSING",
+      13
+     ],
+     [
+      "EAST FOX HOMES LP",
+      12
+     ],
+     [
+      "DESALES IMPACT LLC",
+      12
+     ],
+     [
+      "CHIPPEWA PARK PARTNERS LP",
+      12
+     ],
+     [
+      "ST FERDINAND HOMES II LP",
+      10
+     ]
+    ]
+   },
+   "OWNERNAME2": {
+    "type": "VARCHAR",
+    "distinct": 148,
+    "top": [
+     [
+      " ",
+      1250
+     ],
+     [
+      "ASSOCIATES LIHTC V LLLP",
+      11
+     ],
+     [
+      "INVESTORS LP",
+      8
+     ],
+     [
+      "C/O ST FERDINAND HOMES II LP",
+      7
+     ],
+     [
+      "COMMERCIAL LLC",
+      5
+     ],
+     [
+      "C/O THAO TRUONG",
+      4
+     ],
+     [
+      "C/O HELIX REALTY",
+      3
+     ],
+     [
+      "C/O OMNI MANAGEMENT LLC",
+      3
+     ],
+     [
+      "C/O CHRISTOPHER LONG",
+      3
+     ],
+     [
+      "HAYDEE GORDILLO CRUZ",
+      2
+     ],
+     [
+      "ATTN: TAX DEPARTMENT",
+      2
+     ],
+     [
+      "C/O EAST FOX HOMES LP",
+      2
+     ]
+    ]
+   },
+   "OWNERADDR": {
+    "type": "VARCHAR",
+    "distinct": 1068,
+    "top": [
+     [
+      "2153 SALISBURY ST   STE A",
+      37
+     ],
+     [
+      "1425 S 18TH ST",
+      36
+     ],
+     [
+      "25 WINDERMERE PL",
+      35
+     ],
+     [
+      "2759 RUSSELL BLVD",
+      32
+     ],
+     [
+      "2700 MACKLIND",
+      27
+     ],
+     [
+      "2700 MACKLIND AVE",
+      20
+     ],
+     [
+      "1627 WASHINGTON AV",
+      14
+     ],
+     [
+      "18 COVENT GARDEN CT",
+      14
+     ],
+     [
+      "2846 S GRAND BLVD",
+      12
+     ],
+     [
+      "2905 NORTHWEST BLVD STE 150",
+      12
+     ],
+     [
+      "4067 LINCOLN AV",
+      10
+     ],
+     [
+      "3114 FRANKLIN AV",
+      8
+     ]
+    ]
+   },
+   "OWNERCITY": {
+    "type": "VARCHAR",
+    "distinct": 89,
+    "top": [
+     [
+      "ST LOUIS",
+      1263
+     ],
+     [
+      "O FALLON",
+      18
+     ],
+     [
+      "PLYMOUTH",
+      14
+     ],
+     [
+      "CHESTERFIELD",
+      13
+     ],
+     [
+      "NEW YORK",
+      8
+     ],
+     [
+      "SPRINGFIELD",
+      5
+     ],
+     [
+      "BALLWIN",
+      5
+     ],
+     [
+      "CHICAGO",
+      5
+     ],
+     [
+      "HOUSTON",
+      4
+     ],
+     [
+      "LEES SUMMIT",
+      4
+     ],
+     [
+      "SCOTTSDALE",
+      3
+     ],
+     [
+      "MAKANDA",
+      3
+     ]
+    ]
+   },
+   "OWNERSTATE": {
+    "type": "VARCHAR",
+    "distinct": 27,
+    "top": [
+     [
+      "MO",
+      1327
+     ],
+     [
+      "IL",
+      19
+     ],
+     [
+      "MN",
+      16
+     ],
+     [
+      "CA",
+      11
+     ],
+     [
+      "FL",
+      9
+     ],
+     [
+      "TX",
+      8
+     ],
+     [
+      "NY",
+      8
+     ],
+     [
+      "GA",
+      5
+     ],
+     [
+      "AZ",
+      5
+     ],
+     [
+      "PA",
+      4
+     ],
+     [
+      "OH",
+      4
+     ],
+     [
+      "MA",
+      3
+     ]
+    ]
+   },
+   "OwnerCountry": {
+    "type": "VARCHAR",
+    "distinct": 2,
+    "top": [
+     [
+      "USA",
+      989
+     ],
+     [
+      null,
+      450
+     ],
+     [
+      "MO",
+      1
+     ]
+    ]
+   },
+   "OWNERZIP": {
+    "type": "VARCHAR",
+    "distinct": 146,
+    "top": [
+     [
+      "63110",
+      254
+     ],
+     [
+      "63108",
+      206
+     ],
+     [
+      "63104",
+      191
+     ],
+     [
+      "63112",
+      122
+     ],
+     [
+      "63139",
+      74
+     ],
+     [
+      "63118",
+      67
+     ],
+     [
+      "63107",
+      49
+     ],
+     [
+      "63103",
+      41
+     ],
+     [
+      "63113",
+      40
+     ],
+     [
+      "63111",
+      25
+     ],
+     [
+      "63106",
+      25
+     ],
+     [
+      "63116",
+      20
+     ]
+    ]
+   },
+   "OwnerRank": {
+    "type": "VARCHAR",
+    "distinct": 1,
+    "top": [
+     [
+      "3",
+      1440
+     ]
+    ]
+   },
+   "LegalDesc1": {
+    "type": "VARCHAR",
+    "distinct": 817,
+    "top": [
+     [
+      "C.B. 3915 LACLEDE AVE",
+      50
+     ],
+     [
+      "C.B. 3884 ABC LACLEDE AVE",
+      33
+     ],
+     [
+      "C B 3884 ABC LACLEDE AV",
+      26
+     ],
+     [
+      "C.B. 3884 ABC LACLEDE AV",
+      25
+     ],
+     [
+      "CB 4084 BOARDMAN ST",
+      22
+     ],
+     [
+      "C.B. 3910 N OLIVE ST",
+      18
+     ],
+     [
+      "C.B. 3746 FINNEY AVE",
+      18
+     ],
+     [
+      "CB 4085 DAGGETT AV",
+      14
+     ],
+     [
+      "CB 4085 CHARLIE MILANI PRVT PL",
+      13
+     ],
+     [
+      "C.B. 0192 OLIVE ST",
+      13
+     ],
+     [
+      "CB 2167 PARK AV",
+      12
+     ],
+     [
+      "CB 4084 HEREFORD ST",
+      11
+     ]
+    ]
+   },
+   "LegalDesc2": {
+    "type": "VARCHAR",
+    "distinct": 929,
+    "top": [
+     [
+      "PARK EAST TOWER CONDO",
+      92
+     ],
+     [
+      "4101 LACLEDE CONDOMINIUMS",
+      51
+     ],
+     [
+      "26 FT X 96 FT",
+      26
+     ],
+     [
+      "25 FT X 125 FT",
+      23
+     ],
+     [
+      "25 FT X 128 FT",
+      21
+     ],
+     [
+      "GASLIGHT SQUARE CONDO",
+      12
+     ],
+     [
+      "22 FT X 47 FT",
+      12
+     ],
+     [
+      "PARK AVE CONDO PLAT 3 ADDENDUM",
+      12
+     ],
+     [
+      "MCPHERSON CT TOWNHOMES CONDO",
+      10
+     ],
+     [
+      "0.12 ACRES",
+      10
+     ],
+     [
+      "18 FT X 47 FT",
+      10
+     ],
+     [
+      "40 FT X 135 FT",
+      9
+     ]
+    ]
+   },
+   "LegalDesc3": {
+    "type": "VARCHAR",
+    "distinct": 880,
+    "top": [
+     [
+      "LA COLLINA TERRACE ADDN",
+      28
+     ],
+     [
+      "BREMEN HOMES PLAT ONE",
+      23
+     ],
+     [
+      "LA COLLINA SUBD PLAT",
+      21
+     ],
+     [
+      "RESUBDN PLAT OF FINNEY PL",
+      20
+     ],
+     [
+      "LA COLLINA ADDN",
+      19
+     ],
+     [
+      "LA COLLINA SUBDN ADDN",
+      18
+     ],
+     [
+      "TERRY PARK SUBD",
+      18
+     ],
+     [
+      "FARRARS ADDN",
+      15
+     ],
+     [
+      "BLAIR RESUBDN PLAT TRACT B &",
+      13
+     ],
+     [
+      "WASHINGTON HTS ADDN",
+      13
+     ],
+     [
+      "PARK AVENUE HTS ADDN",
+      11
+     ],
+     [
+      "ST LOUIS COMMONS ADDN",
+      11
+     ]
+    ]
+   },
+   "LegalDesc4": {
+    "type": "VARCHAR",
+    "distinct": 716,
+    "top": [
+     [
+      null,
+      261
+     ],
+     [
+      "LOT A",
+      55
+     ],
+     [
+      "LOT 1",
+      30
+     ],
+     [
+      "LOT B",
+      21
+     ],
+     [
+      "LOT 2",
+      17
+     ],
+     [
+      "LOT 4",
+      16
+     ],
+     [
+      "LOT C",
+      13
+     ],
+     [
+      "LOT 3",
+      13
+     ],
+     [
+      "LOT 9",
+      13
+     ],
+     [
+      "LOT 15",
+      12
+     ],
+     [
+      "LOT 6",
+      11
+     ],
+     [
+      "LOT 24",
+      10
+     ]
+    ]
+   },
+   "LegalDesc5": {
+    "type": "VARCHAR",
+    "distinct": 127,
+    "top": [
+     [
+      null,
+      1304
+     ],
+     [
+      "LOT 17",
+      4
+     ],
+     [
+      "LOT 19",
+      2
+     ],
+     [
+      "LOT 3",
+      2
+     ],
+     [
+      "LOT 16",
+      2
+     ],
+     [
+      "LOT 1",
+      2
+     ],
+     [
+      "LOT 24",
+      2
+     ],
+     [
+      "LOT 22",
+      2
+     ],
+     [
+      "S-WINTERS W-HAMILTON",
+      1
+     ],
+     [
+      "& VAC DEKALB & 2ND ST",
+      1
+     ],
+     [
+      "LOTS 1 E-2",
+      1
+     ],
+     [
+      "CONSOLIDATED LOT A",
+      1
+     ]
+    ]
+   },
+   "AsrClassCode": {
+    "type": "INTEGER"
+   },
+   "AsrLandUse1": {
+    "type": "INTEGER"
+   },
+   "AsrLanduse2": {
+    "type": "INTEGER"
+   },
+   "RedevPhase": {
+    "type": "INTEGER"
+   },
+   "RedevYearEnd": {
+    "type": "INTEGER"
+   },
+   "RedevPhase2": {
+    "type": "INTEGER"
+   },
+   "RedevYearEnd2": {
+    "type": "INTEGER"
+   },
+   "VacantLot": {
+    "type": "INTEGER"
+   },
+   "SpecBusDist": {
+    "type": "INTEGER"
+   },
+   "SpecBusDist2": {
+    "type": "INTEGER"
+   },
+   "TIFDist": {
+    "type": "INTEGER"
+   },
+   "LendingAgcy": {
+    "type": "INTEGER"
+   },
+   "Condominium": {
+    "type": "INTEGER"
+   },
+   "NbrOfUnits": {
+    "type": "INTEGER"
+   },
+   "NbrOfApts": {
+    "type": "INTEGER"
+   },
+   "FRONTAGE": {
+    "type": "DOUBLE"
+   },
+   "LANDAREA": {
+    "type": "INTEGER"
+   },
+   "RecDailyDate": {
+    "type": "BIGINT"
+   },
+   "RecDailyNum": {
+    "type": "INTEGER"
+   },
+   "RecBookNum": {
+    "type": "VARCHAR",
+    "distinct": 47,
+    "top": [
+     [
+      null,
+      736
+     ],
+     [
+      "1847",
+      68
+     ],
+     [
+      "1849",
+      65
+     ],
+     [
+      "1857",
+      52
+     ],
+     [
+      "1848",
+      48
+     ],
+     [
+      "1853",
+      41
+     ],
+     [
+      "1854",
+      38
+     ],
+     [
+      "0000",
+      36
+     ],
+     [
+      "1856",
+      36
+     ],
+     [
+      "1846",
+      33
+     ],
+     [
+      "1851",
+      30
+     ],
+     [
+      "1845",
+      30
+     ]
+    ]
+   },
+   "RecPageNum": {
+    "type": "INTEGER"
+   },
+   "AsdLand": {
+    "type": "INTEGER"
+   },
+   "AsdImprove": {
+    "type": "INTEGER"
+   },
+   "AsdTotal": {
+    "type": "INTEGER"
+   },
+   "BillLand": {
+    "type": "INTEGER"
+   },
+   "BillImprove": {
+    "type": "INTEGER"
+   },
+   "BillTotal": {
+    "type": "INTEGER"
+   },
+   "AprLand": {
+    "type": "INTEGER"
+   },
+   "CostAprImprove": {
+    "type": "INTEGER"
+   },
+   "AsmtAppealYear": {
+    "type": "INTEGER"
+   },
+   "AsmtAppealNum": {
+    "type": "INTEGER"
+   },
+   "AsmtAppealType": {
+    "type": "VARCHAR",
+    "distinct": 0,
+    "top": [
+     [
+      null,
+      1440
+     ]
+    ]
+   },
+   "PriorAsdDate": {
+    "type": "VARCHAR",
+    "distinct": 0,
+    "top": [
+     [
+      null,
+      1440
+     ]
+    ]
+   },
+   "PriorAsdLand": {
+    "type": "INTEGER"
+   },
+   "PriorAsdImprove": {
+    "type": "INTEGER"
+   },
+   "PriorAsdTotal": {
+    "type": "INTEGER"
+   },
+   "PriorTaxAmt": {
+    "type": "INTEGER"
+   },
+   "CDALandUse1": {
+    "type": "INTEGER"
+   },
+   "CDALandUse2": {
+    "type": "INTEGER"
+   },
+   "LRMSUnitNum": {
+    "type": "VARCHAR",
+    "distinct": 184,
+    "top": [
+     [
+      "",
+      1220
+     ],
+     [
+      "MO",
+      6
+     ],
+     [
+      "2",
+      6
+     ],
+     [
+      "1",
+      5
+     ],
+     [
+      "328",
+      3
+     ],
+     [
+      "401",
+      2
+     ],
+     [
+      "3",
+      2
+     ],
+     [
+      "406",
+      2
+     ],
+     [
+      "10",
+      2
+     ],
+     [
+      "405",
+      2
+     ],
+     [
+      "4",
+      2
+     ],
+     [
+      "1401",
+      2
+     ]
+    ]
+   },
+   "Zoning": {
+    "type": "VARCHAR",
+    "distinct": 19,
+    "top": [
+     [
+      "C",
+      446
+     ],
+     [
+      "B",
+      236
+     ],
+     [
+      "D",
+      205
+     ],
+     [
+      "H",
+      147
+     ],
+     [
+      "A",
+      102
+     ],
+     [
+      "F",
+      83
+     ],
+     [
+      "G",
+      83
+     ],
+     [
+      "I",
+      47
+     ],
+     [
+      "J",
+      36
+     ],
+     [
+      "K",
+      23
+     ],
+     [
+      "E",
+      18
+     ],
+     [
+      "L",
+      6
+     ]
+    ]
+   },
+   "NbrOfBldgsRes": {
+    "type": "INTEGER"
+   },
+   "NbrOfBldgsCom": {
+    "type": "INTEGER"
+   },
+   "FirstYearBuilt": {
+    "type": "INTEGER"
+   },
+   "LastYearBuilt": {
+    "type": "INTEGER"
+   },
+   "ResSalePrice": {
+    "type": "INTEGER"
+   },
+   "ResSaleDate": {
+    "type": "BIGINT"
+   },
+   "VacBldgYear": {
+    "type": "INTEGER"
+   },
+   "GeoCityBlockPart": {
+    "type": "DOUBLE"
+   },
+   "WARD10": {
+    "type": "INTEGER"
+   },
+   "PRECINCT10": {
+    "type": "INTEGER"
+   },
+   "INSPAREA10": {
+    "type": "INTEGER"
+   },
+   "Ward00": {
+    "type": "INTEGER"
+   },
+   "PRECINCT02": {
+    "type": "INTEGER"
+   },
+   "PRECINCT04": {
+    "type": "INTEGER"
+   },
+   "NBRHD": {
+    "type": "INTEGER"
+   },
+   "CDADIST": {
+    "type": "INTEGER"
+   },
+   "CDASUBDIST": {
+    "type": "INTEGER"
+   },
+   "POLICEDIST": {
+    "type": "INTEGER"
+   },
+   "CensTract10": {
+    "type": "DOUBLE"
+   },
+   "CensBlock10": {
+    "type": "INTEGER"
+   },
+   "CensBlock00": {
+    "type": "DOUBLE"
+   },
+   "Ward90": {
+    "type": "INTEGER"
+   },
+   "Precinct90": {
+    "type": "INTEGER"
+   },
+   "CensBlock90": {
+    "type": "DOUBLE"
+   },
+   "HouseConsDist": {
+    "type": "INTEGER"
+   },
+   "ASRNBRHD": {
+    "type": "INTEGER"
+   },
+   "EntZone": {
+    "type": "INTEGER"
+   },
+   "IMPACTAREA": {
+    "type": "INTEGER"
+   },
+   "CTDArea": {
+    "type": "INTEGER"
+   },
+   "LEAFAREA": {
+    "type": "INTEGER"
+   },
+   "ZIP": {
+    "type": "INTEGER"
+   },
+   "OnFloodBlock": {
+    "type": "INTEGER"
+   },
+   "SpecParcelType": {
+    "type": "VARCHAR",
+    "distinct": 0,
+    "top": [
+     [
+      null,
+      1440
+     ]
+    ]
+   },
+   "SubParcelType": {
+    "type": "VARCHAR",
+    "distinct": 4,
+    "top": [
+     [
+      null,
+      1195
+     ],
+     [
+      "C",
+      231
+     ],
+     [
+      "K",
+      8
+     ],
+     [
+      "G",
+      4
+     ],
+     [
+      "Q",
+      2
+     ]
+    ]
+   },
+   "NbrOfSubAccts": {
+    "type": "INTEGER"
+   },
+   "NbrOfCondos": {
+    "type": "INTEGER"
+   },
+   "LRMSParcel": {
+    "type": "INTEGER"
+   },
+   "AcctPrimary": {
+    "type": "INTEGER"
+   },
+   "HANDLE": {
+    "type": "VARCHAR",
+    "distinct": 1215,
+    "top": [
+     [
+      "13884238301",
+      92
+     ],
+     [
+      "13915008102",
+      54
+     ],
+     [
+      "10192008026",
+      14
+     ],
+     [
+      "13910058021",
+      13
+     ],
+     [
+      "12167008281",
+      12
+     ],
+     [
+      "13912008595",
+      10
+     ],
+     [
+      "13910058106",
+      8
+     ],
+     [
+      "10805008115",
+      7
+     ],
+     [
+      "11383008431",
+      6
+     ],
+     [
+      "12115008300",
+      6
+     ],
+     [
+      "14076008371",
+      4
+     ],
+     [
+      "14927008500",
+      4
+     ]
+    ]
+   },
+   "OWNEROCC": {
+    "type": "VARCHAR",
+    "distinct": 6,
+    "top": [
+     [
+      null,
+      699
+     ],
+     [
+      "1",
+      524
+     ],
+     [
+      "C",
+      155
+     ],
+     [
+      "X",
+      38
+     ],
+     [
+      "5",
+      13
+     ],
+     [
+      "2",
+      8
+     ],
+     [
+      "4",
+      3
+     ]
+    ]
+   },
+   "FirstDate": {
+    "type": "BIGINT"
+   },
+   "LastDate": {
+    "type": "BIGINT"
+   },
+   "OwnerUpdate": {
+    "type": "BIGINT"
+   },
+   "OwnerCode": {
+    "type": "INTEGER"
+   },
+   "SITEADDR": {
+    "type": "VARCHAR",
+    "distinct": 1259,
+    "top": [
+     [
+      "4909   LACLEDE AV ",
+      92
+     ],
+     [
+      "4101   LACLEDE AV ",
+      54
+     ],
+     [
+      "800   OLIVE ST ",
+      14
+     ],
+     [
+      "2330  S 12TH ST ",
+      7
+     ],
+     [
+      "3616   FLAD AV ",
+      6
+     ],
+     [
+      "5662   OAKLAND AV ",
+      4
+     ],
+     [
+      "2265   INDIANA AV ",
+      3
+     ],
+     [
+      "2243   THURMAN AV ",
+      3
+     ],
+     [
+      "2263   INDIANA AV ",
+      3
+     ],
+     [
+      "2635   IOWA AV ",
+      2
+     ],
+     [
+      "3842   OLIVE ST ",
+      2
+     ],
+     [
+      "3745   FOREST PARK AV ",
+      2
+     ]
+    ]
+   },
+   "SQFT": {
+    "type": "INTEGER"
+   },
+   "ParcelId": {
+    "type": "VARCHAR",
+    "distinct": 1440,
+    "top": [
+     [
+      "39109010000",
+      1
+     ],
+     [
+      "38619150000",
+      1
+     ],
+     [
+      "38619280000",
+      1
+     ],
+     [
+      "05419200001",
+      1
+     ],
+     [
+      "40859011003",
+      1
+     ],
+     [
+      "40859011006",
+      1
+     ],
+     [
+      "28069040000",
+      1
+     ],
+     [
+      "38842303611",
+      1
+     ],
+     [
+      "38842303801",
+      1
+     ],
+     [
+      "38842303031",
+      1
+     ],
+     [
+      "49709205000",
+      1
+     ],
+     [
+      "49709191000",
+      1
+     ]
+    ]
+   },
+   "WARD": {
+    "type": "INTEGER"
+   },
+   "TaxBalance": {
+    "type": "DOUBLE"
+   },
+   "PropertyClassCode": {
+    "type": "INTEGER"
+   },
+   "IsAbatedProperty": {
+    "type": "INTEGER"
+   },
+   "AbatementStartYear": {
+    "type": "INTEGER"
+   },
+   "AbatementEndYear": {
+    "type": "INTEGER"
+   },
+   "SpecBusDist3": {
+    "type": "INTEGER"
+   },
+   "Ward20": {
+    "type": "INTEGER"
+   },
+   "Precinct20": {
+    "type": "INTEGER"
+   },
+   "InspArea20": {
+    "type": "INTEGER"
+   },
+   "CensTract20": {
+    "type": "INTEGER"
+   },
+   "CensBlock20": {
+    "type": "INTEGER"
+   },
+   "MaintZoneWC": {
+    "type": "INTEGER"
+   },
+   "TransDevDist": {
+    "type": "INTEGER"
+   },
+   "CityBlock": {
+    "type": "DOUBLE"
+   },
+   "Parcel": {
+    "type": "INTEGER"
+   }
+  }
+ },
+ "tif-districts": {
+  "rows": 191,
+  "columns": {
+   "OBJECTID": {
+    "type": "BIGINT"
+   },
+   "Assessor_TIF_ID": {
+    "type": "VARCHAR",
+    "distinct": 173,
+    "top": [
+     [
+      null,
+      17
+     ],
+     [
+      "162",
+      2
+     ],
+     [
+      "129",
+      1
+     ],
+     [
+      "175",
+      1
+     ],
+     [
+      "109",
+      1
+     ],
+     [
+      "39",
+      1
+     ],
+     [
+      "41",
+      1
+     ],
+     [
+      "34",
+      1
+     ],
+     [
+      "148",
+      1
+     ],
+     [
+      "146",
+      1
+     ],
+     [
+      "110",
+      1
+     ],
+     [
+      "6",
+      1
+     ]
+    ]
+   },
+   "TIF_ID": {
+    "type": "VARCHAR",
+    "distinct": 158,
+    "top": [
+     [
+      "352-137",
+      11
+     ],
+     [
+      "352-126",
+      4
+     ],
+     [
+      "352-080",
+      4
+     ],
+     [
+      "352-110",
+      4
+     ],
+     [
+      "352-036",
+      3
+     ],
+     [
+      "352-154",
+      3
+     ],
+     [
+      "352-109",
+      3
+     ],
+     [
+      "352-007",
+      3
+     ],
+     [
+      "352-159",
+      2
+     ],
+     [
+      "352-132",
+      2
+     ],
+     [
+      "352-052",
+      2
+     ],
+     [
+      "352-151",
+      2
+     ]
+    ]
+   },
+   "Project_Name": {
+    "type": "VARCHAR",
+    "distinct": 179,
+    "top": [
+     [
+      "Northside Regeneration",
+      4
+     ],
+     [
+      "The Laurel/555 Washington",
+      3
+     ],
+     [
+      "The Armory Dist.",
+      3
+     ],
+     [
+      "Iron Hill",
+      2
+     ],
+     [
+      "4100 Forest Park",
+      2
+     ],
+     [
+      "Grand and Shenandoah",
+      2
+     ],
+     [
+      "Automobile ROW",
+      2
+     ],
+     [
+      "1549-1601 S. Jefferson",
+      2
+     ],
+     [
+      "Walter Knoll/Florist Row",
+      1
+     ],
+     [
+      "110 N. Newstead Condos",
+      1
+     ],
+     [
+      "Cortex (RPA-7)",
+      1
+     ],
+     [
+      "Washington E. Condos",
+      1
+     ]
+    ]
+   },
+   "Subgrouping": {
+    "type": "VARCHAR",
+    "distinct": 1,
+    "top": [
+     [
+      null,
+      139
+     ],
+     [
+      "Yes",
+      52
+     ]
+    ]
+   },
+   "TIF_Location": {
+    "type": "VARCHAR",
+    "distinct": 162,
+    "top": [
+     [
+      "Forest Park to Market & Spring to Taylor",
+      11
+     ],
+     [
+      "North of I-64 and East of Grand Blvd",
+      4
+     ],
+     [
+      "8125 Michigan Ave",
+      4
+     ],
+     [
+      "500 Prospect Ave.",
+      3
+     ],
+     [
+      "601 Washington Ave.",
+      3
+     ],
+     [
+      "4100 Forest Park",
+      2
+     ],
+     [
+      "Grand & Chouteau",
+      2
+     ],
+     [
+      "21, 22-50 Maryland Plaza",
+      2
+     ],
+     [
+      "Forest Park Ave., Spring to Vandeventer",
+      2
+     ],
+     [
+      "1601 S. Jefferson",
+      2
+     ],
+     [
+      "Scattered sites 30XX & 31XX Locust & Olive",
+      2
+     ],
+     [
+      "2232-66 S. Grand Blvd.",
+      2
+     ]
+    ]
+   },
+   "Ordinance": {
+    "type": "INTEGER"
+   },
+   "Incentive_Status": {
+    "type": "VARCHAR",
+    "distinct": 6,
+    "top": [
+     [
+      "Active",
+      110
+     ],
+     [
+      "Terminated",
+      40
+     ],
+     [
+      "Retired",
+      22
+     ],
+     [
+      "Never Approved",
+      17
+     ],
+     [
+      "MODESA",
+      1
+     ],
+     [
+      "On Hold",
+      1
+     ]
+    ]
+   },
+   "GUID": {
+    "type": "VARCHAR",
+    "distinct": 162,
+    "top": [
+     [
+      "{E49F6E67-E954-49B8-973E-FDA4256E7268}",
+      11
+     ],
+     [
+      "{F846E159-F709-4A77-9248-985BD887145F}",
+      4
+     ],
+     [
+      "{64650C96-359C-4AE6-9C72-C9B1B5355D6F}",
+      4
+     ],
+     [
+      "{B44519D2-65C4-4DA3-87E6-E4DA13A3886D}",
+      3
+     ],
+     [
+      "{99282C9E-5AB1-431D-9EEB-80532AF07C96}",
+      3
+     ],
+     [
+      "{E939CA0B-CF3C-48E4-91B4-89CAE7ACADD0}",
+      3
+     ],
+     [
+      "{AA4F5142-71A8-4B1E-B534-AC569EDF9ED8}",
+      2
+     ],
+     [
+      "{6D92CC21-8A14-418F-9322-11459BCB3A7A}",
+      2
+     ],
+     [
+      "{C35A8A03-AB79-4187-B344-724CBF345B94}",
+      2
+     ],
+     [
+      "{D6716F5E-40B4-4875-86BC-F901DCC9B009}",
+      2
+     ],
+     [
+      "{FE23D29B-90AC-447E-8405-2DFF9A6AC5BB}",
+      2
+     ],
+     [
+      "{DC1098F5-4E3F-4C61-B9CE-699BB0C5CFE3}",
+      2
+     ]
+    ]
+   }
+  }
+ },
+ "wards": {
+  "rows": 10,
+  "columns": {
+   "fid": {
+    "type": "BIGINT"
+   },
+   "id": {
+    "type": "INTEGER"
+   },
+   "stlouis_gi": {
+    "type": "DOUBLE"
+   },
+   "district": {
+    "type": "VARCHAR",
+    "distinct": 10,
+    "top": [
+     [
+      "6",
+      1
+     ],
+     [
+      "8",
+      1
+     ],
+     [
+      "10",
+      1
+     ],
+     [
+      "2",
+      1
+     ],
+     [
+      "9",
+      1
+     ],
+     [
+      "5",
+      1
+     ],
+     [
+      "7",
+      1
+     ],
+     [
+      "1",
+      1
+     ],
+     [
+      "4",
+      1
+     ],
+     [
+      "3",
+      1
+     ]
+    ]
+   },
+   "members": {
+    "type": "DOUBLE"
+   },
+   "locked": {
+    "type": "VARCHAR",
+    "distinct": 1,
+    "top": [
+     [
+      " ",
+      10
+     ]
+    ]
+   },
+   "name": {
+    "type": "VARCHAR",
+    "distinct": 10,
+    "top": [
+     [
+      "WARD 8",
+      1
+     ],
+     [
+      "WARD 6",
+      1
+     ],
+     [
+      "WARD 10",
+      1
+     ],
+     [
+      "WARD 9",
+      1
+     ],
+     [
+      "WARD 1",
+      1
+     ],
+     [
+      "WARD 2",
+      1
+     ],
+     [
+      "WARD 3",
+      1
+     ],
+     [
+      "WARD 5",
+      1
+     ],
+     [
+      "WARD 4",
+      1
+     ],
+     [
+      "WARD 7",
+      1
+     ]
+    ]
+   },
+   "population": {
+    "type": "INTEGER"
+   },
+   "white": {
+    "type": "INTEGER"
+   },
+   "black": {
+    "type": "INTEGER"
+   },
+   "amindian": {
+    "type": "INTEGER"
+   },
+   "asian": {
+    "type": "INTEGER"
+   },
+   "hawaiian": {
+    "type": "INTEGER"
+   },
+   "hispanic_o": {
+    "type": "INTEGER"
+   },
+   "not_hispan": {
+    "type": "INTEGER"
+   },
+   "other": {
+    "type": "INTEGER"
+   },
+   "f18_pop": {
+    "type": "INTEGER"
+   },
+   "f18_wht": {
+    "type": "INTEGER"
+   },
+   "f18_blk": {
+    "type": "INTEGER"
+   },
+   "f18_ind": {
+    "type": "INTEGER"
+   },
+   "f18_asn": {
+    "type": "INTEGER"
+   },
+   "f18_hwn": {
+    "type": "INTEGER"
+   },
+   "f18_oth": {
+    "type": "INTEGER"
+   },
+   "nh18_pop": {
+    "type": "INTEGER"
+   },
+   "nh18_wht": {
+    "type": "INTEGER"
+   },
+   "nh18_blk": {
+    "type": "INTEGER"
+   },
+   "nh18_ind": {
+    "type": "INTEGER"
+   },
+   "nh18_asn": {
+    "type": "INTEGER"
+   },
+   "nh18_hwn": {
+    "type": "INTEGER"
+   },
+   "nh18_oth": {
+    "type": "INTEGER"
+   },
+   "whtblk": {
+    "type": "INTEGER"
+   },
+   "whtind": {
+    "type": "INTEGER"
+   },
+   "whtasn": {
+    "type": "INTEGER"
+   },
+   "whthwn": {
+    "type": "INTEGER"
+   },
+   "whtoth": {
+    "type": "INTEGER"
+   },
+   "blkind": {
+    "type": "INTEGER"
+   },
+   "blkasn": {
+    "type": "INTEGER"
+   },
+   "blkhwn": {
+    "type": "INTEGER"
+   },
+   "blkoth": {
+    "type": "INTEGER"
+   },
+   "indasn": {
+    "type": "INTEGER"
+   },
+   "indhwn": {
+    "type": "INTEGER"
+   },
+   "indoth": {
+    "type": "INTEGER"
+   },
+   "asnhwn": {
+    "type": "INTEGER"
+   },
+   "asnoth": {
+    "type": "INTEGER"
+   },
+   "hwnoth": {
+    "type": "INTEGER"
+   },
+   "whtblkind": {
+    "type": "INTEGER"
+   },
+   "whtblkasn": {
+    "type": "INTEGER"
+   },
+   "whtblkhwn": {
+    "type": "INTEGER"
+   },
+   "whtblkoth": {
+    "type": "INTEGER"
+   },
+   "whtindasn": {
+    "type": "INTEGER"
+   },
+   "whtindhwn": {
+    "type": "INTEGER"
+   },
+   "whtindoth": {
+    "type": "INTEGER"
+   },
+   "whtasnhwn": {
+    "type": "INTEGER"
+   },
+   "whtasnoth": {
+    "type": "INTEGER"
+   },
+   "whthwnoth": {
+    "type": "INTEGER"
+   },
+   "blkindasn": {
+    "type": "INTEGER"
+   },
+   "blkindhwn": {
+    "type": "INTEGER"
+   },
+   "blkindoth": {
+    "type": "INTEGER"
+   },
+   "blkasnhwn": {
+    "type": "INTEGER"
+   },
+   "blkasnoth": {
+    "type": "INTEGER"
+   },
+   "blkhwnoth": {
+    "type": "INTEGER"
+   },
+   "indasnhwn": {
+    "type": "INTEGER"
+   },
+   "indasnoth": {
+    "type": "INTEGER"
+   },
+   "indhwnoth": {
+    "type": "INTEGER"
+   },
+   "asnhwnoth": {
+    "type": "INTEGER"
+   },
+   "whtblkinda": {
+    "type": "INTEGER"
+   },
+   "whtblkindh": {
+    "type": "INTEGER"
+   },
+   "whtblkindo": {
+    "type": "INTEGER"
+   },
+   "whtblkasnh": {
+    "type": "INTEGER"
+   },
+   "whtblkasno": {
+    "type": "INTEGER"
+   },
+   "whtblkhwno": {
+    "type": "INTEGER"
+   },
+   "whtindasnh": {
+    "type": "INTEGER"
+   },
+   "whtindasno": {
+    "type": "INTEGER"
+   },
+   "whtindhwno": {
+    "type": "INTEGER"
+   },
+   "whtasnhwno": {
+    "type": "INTEGER"
+   },
+   "blkindasnh": {
+    "type": "INTEGER"
+   },
+   "blkindasno": {
+    "type": "INTEGER"
+   },
+   "blkindhwno": {
+    "type": "INTEGER"
+   },
+   "blkasnhwno": {
+    "type": "INTEGER"
+   },
+   "indasnhwno": {
+    "type": "INTEGER"
+   },
+   "whtblkind1": {
+    "type": "INTEGER"
+   },
+   "whtblkind2": {
+    "type": "INTEGER"
+   },
+   "whtblkind3": {
+    "type": "INTEGER"
+   },
+   "whtblkasn1": {
+    "type": "INTEGER"
+   },
+   "whtindasn1": {
+    "type": "INTEGER"
+   },
+   "blkindasn1": {
+    "type": "INTEGER"
+   },
+   "all_races": {
+    "type": "INTEGER"
+   },
+   "nh_asn": {
+    "type": "INTEGER"
+   },
+   "ap_wht": {
+    "type": "INTEGER"
+   },
+   "np_wht": {
+    "type": "INTEGER"
+   },
+   "ap_blk": {
+    "type": "INTEGER"
+   },
+   "np_blk": {
+    "type": "INTEGER"
+   },
+   "ap_ind": {
+    "type": "INTEGER"
+   },
+   "np_ind": {
+    "type": "INTEGER"
+   },
+   "ap_asn": {
+    "type": "INTEGER"
+   },
+   "np_asn": {
+    "type": "INTEGER"
+   },
+   "ap_hwn": {
+    "type": "INTEGER"
+   },
+   "np_hwn": {
+    "type": "INTEGER"
+   },
+   "ap_oth": {
+    "type": "INTEGER"
+   },
+   "np_oth": {
+    "type": "INTEGER"
+   },
+   "f1_race": {
+    "type": "INTEGER"
+   },
+   "f2_races": {
+    "type": "INTEGER"
+   },
+   "f2_races1": {
+    "type": "INTEGER"
+   },
+   "f3_races": {
+    "type": "INTEGER"
+   },
+   "f4_races": {
+    "type": "INTEGER"
+   },
+   "f5_races": {
+    "type": "INTEGER"
+   },
+   "omb_othmr": {
+    "type": "INTEGER"
+   },
+   "nh_wht": {
+    "type": "INTEGER"
+   },
+   "nh_blk": {
+    "type": "INTEGER"
+   },
+   "nh_ind": {
+    "type": "INTEGER"
+   },
+   "nh_hwn": {
+    "type": "INTEGER"
+   },
+   "nh_oth": {
+    "type": "INTEGER"
+   },
+   "nh_whtblk": {
+    "type": "INTEGER"
+   },
+   "nh_whtind": {
+    "type": "INTEGER"
+   },
+   "nh_whtasn": {
+    "type": "INTEGER"
+   },
+   "nh_whthwn": {
+    "type": "INTEGER"
+   },
+   "nh_whtoth": {
+    "type": "INTEGER"
+   },
+   "nh_blkind": {
+    "type": "INTEGER"
+   },
+   "nh_blkasn": {
+    "type": "INTEGER"
+   },
+   "nh_blkhwn": {
+    "type": "INTEGER"
+   },
+   "nh_blkoth": {
+    "type": "INTEGER"
+   },
+   "nh_indasn": {
+    "type": "INTEGER"
+   },
+   "nh_indhwn": {
+    "type": "INTEGER"
+   },
+   "nh_indoth": {
+    "type": "INTEGER"
+   },
+   "nh_asnhwn": {
+    "type": "INTEGER"
+   },
+   "nh_asnoth": {
+    "type": "INTEGER"
+   },
+   "nh_hwnoth": {
+    "type": "INTEGER"
+   },
+   "nh_whtblki": {
+    "type": "INTEGER"
+   },
+   "nh_whtblka": {
+    "type": "INTEGER"
+   },
+   "nh_whtblkh": {
+    "type": "INTEGER"
+   },
+   "nh_whtblko": {
+    "type": "INTEGER"
+   },
+   "nh_whtinda": {
+    "type": "INTEGER"
+   },
+   "nh_whtindh": {
+    "type": "INTEGER"
+   },
+   "nh_whtindo": {
+    "type": "INTEGER"
+   },
+   "nh_whtasnh": {
+    "type": "INTEGER"
+   },
+   "nh_whtasno": {
+    "type": "INTEGER"
+   },
+   "nh_whthwno": {
+    "type": "INTEGER"
+   },
+   "nh_blkinda": {
+    "type": "INTEGER"
+   },
+   "nh_blkindh": {
+    "type": "INTEGER"
+   },
+   "nh_blkindo": {
+    "type": "INTEGER"
+   },
+   "nh_blkasnh": {
+    "type": "INTEGER"
+   },
+   "nh_blkasno": {
+    "type": "INTEGER"
+   },
+   "nh_blkhwno": {
+    "type": "INTEGER"
+   },
+   "nh_indasnh": {
+    "type": "INTEGER"
+   },
+   "nh_indasno": {
+    "type": "INTEGER"
+   },
+   "nh_indhwno": {
+    "type": "INTEGER"
+   },
+   "nh_asnhwno": {
+    "type": "INTEGER"
+   },
+   "nh_whtblk1": {
+    "type": "INTEGER"
+   },
+   "nh_whtblk2": {
+    "type": "INTEGER"
+   },
+   "nh_whtblk3": {
+    "type": "INTEGER"
+   },
+   "nh_whtblk4": {
+    "type": "INTEGER"
+   },
+   "nh_whtblk5": {
+    "type": "INTEGER"
+   },
+   "nh_whtblk6": {
+    "type": "INTEGER"
+   },
+   "nh_whtind1": {
+    "type": "INTEGER"
+   },
+   "nh_whtind2": {
+    "type": "INTEGER"
+   },
+   "nh_whtind3": {
+    "type": "INTEGER"
+   },
+   "nh_whtasn1": {
+    "type": "INTEGER"
+   },
+   "nh_blkind1": {
+    "type": "INTEGER"
+   },
+   "nh_blkind2": {
+    "type": "INTEGER"
+   },
+   "nh_blkind3": {
+    "type": "INTEGER"
+   },
+   "nh_blkasn1": {
+    "type": "INTEGER"
+   },
+   "nh_indasn1": {
+    "type": "INTEGER"
+   },
+   "nh_whtblk7": {
+    "type": "INTEGER"
+   },
+   "nh_whtblk8": {
+    "type": "INTEGER"
+   },
+   "nh_whtblk9": {
+    "type": "INTEGER"
+   },
+   "nh_whtbl10": {
+    "type": "INTEGER"
+   },
+   "nh_whtind4": {
+    "type": "INTEGER"
+   },
+   "nh_blkind4": {
+    "type": "INTEGER"
+   },
+   "nh_all_rac": {
+    "type": "INTEGER"
+   },
+   "nh_ap_wht": {
+    "type": "INTEGER"
+   },
+   "nh_np_wht": {
+    "type": "INTEGER"
+   },
+   "nh_ap_blk": {
+    "type": "INTEGER"
+   },
+   "nh_np_blk": {
+    "type": "INTEGER"
+   },
+   "nh_ap_ind": {
+    "type": "INTEGER"
+   },
+   "nh_np_ind": {
+    "type": "INTEGER"
+   },
+   "nh_ap_asn": {
+    "type": "INTEGER"
+   },
+   "nh_np_asn": {
+    "type": "INTEGER"
+   },
+   "nh_ap_hwn": {
+    "type": "INTEGER"
+   },
+   "nh_np_hwn": {
+    "type": "INTEGER"
+   },
+   "nh_ap_oth": {
+    "type": "INTEGER"
+   },
+   "nh_np_oth": {
+    "type": "INTEGER"
+   },
+   "nh_1_race": {
+    "type": "INTEGER"
+   },
+   "nh_2_races": {
+    "type": "INTEGER"
+   },
+   "nh_2_race1": {
+    "type": "INTEGER"
+   },
+   "nh_3_races": {
+    "type": "INTEGER"
+   },
+   "nh_4_races": {
+    "type": "INTEGER"
+   },
+   "nh_5_races": {
+    "type": "INTEGER"
+   },
+   "nh_omb_oth": {
+    "type": "INTEGER"
+   },
+   "f18_whtblk": {
+    "type": "INTEGER"
+   },
+   "f18_whtind": {
+    "type": "INTEGER"
+   },
+   "f18_whtasn": {
+    "type": "INTEGER"
+   },
+   "f18_whthwn": {
+    "type": "INTEGER"
+   },
+   "f18_whtoth": {
+    "type": "INTEGER"
+   },
+   "f18_blkind": {
+    "type": "INTEGER"
+   },
+   "f18_blkasn": {
+    "type": "INTEGER"
+   },
+   "f18_blkhwn": {
+    "type": "INTEGER"
+   },
+   "f18_blkoth": {
+    "type": "INTEGER"
+   },
+   "f18_indasn": {
+    "type": "INTEGER"
+   },
+   "f18_indhwn": {
+    "type": "INTEGER"
+   },
+   "f18_indoth": {
+    "type": "INTEGER"
+   },
+   "f18_asnhwn": {
+    "type": "INTEGER"
+   },
+   "f18_asnoth": {
+    "type": "INTEGER"
+   },
+   "f18_hwnoth": {
+    "type": "INTEGER"
+   },
+   "f18_whtbl1": {
+    "type": "INTEGER"
+   },
+   "f18_whtbl2": {
+    "type": "INTEGER"
+   },
+   "f18_whtbl3": {
+    "type": "INTEGER"
+   },
+   "f18_whtbl4": {
+    "type": "INTEGER"
+   },
+   "f18_whtin1": {
+    "type": "INTEGER"
+   },
+   "f18_whtin2": {
+    "type": "INTEGER"
+   },
+   "f18_whtin3": {
+    "type": "INTEGER"
+   },
+   "f18_whtas1": {
+    "type": "INTEGER"
+   },
+   "f18_whtas2": {
+    "type": "INTEGER"
+   },
+   "f18_whthw1": {
+    "type": "INTEGER"
+   },
+   "f18_blkin1": {
+    "type": "INTEGER"
+   },
+   "f18_blkin2": {
+    "type": "INTEGER"
+   },
+   "f18_blkin3": {
+    "type": "INTEGER"
+   },
+   "f18_blkas1": {
+    "type": "INTEGER"
+   },
+   "f18_blkas2": {
+    "type": "INTEGER"
+   },
+   "f18_blkhw1": {
+    "type": "INTEGER"
+   },
+   "f18_indas1": {
+    "type": "INTEGER"
+   },
+   "f18_indas2": {
+    "type": "INTEGER"
+   },
+   "f18_indhw1": {
+    "type": "INTEGER"
+   },
+   "f18_asnhw1": {
+    "type": "INTEGER"
+   },
+   "f18_whtbl5": {
+    "type": "INTEGER"
+   },
+   "f18_whtbl6": {
+    "type": "INTEGER"
+   },
+   "f18_whtbl7": {
+    "type": "INTEGER"
+   },
+   "f18_whtbl8": {
+    "type": "INTEGER"
+   },
+   "f18_whtbl9": {
+    "type": "INTEGER"
+   },
+   "f18_whtb10": {
+    "type": "INTEGER"
+   },
+   "f18_whtin4": {
+    "type": "INTEGER"
+   },
+   "f18_whtin5": {
+    "type": "INTEGER"
+   },
+   "f18_whtin6": {
+    "type": "INTEGER"
+   },
+   "f18_whtas3": {
+    "type": "INTEGER"
+   },
+   "f18_blkin4": {
+    "type": "INTEGER"
+   },
+   "f18_blkin5": {
+    "type": "INTEGER"
+   },
+   "f18_blkin6": {
+    "type": "INTEGER"
+   },
+   "f18_blkas3": {
+    "type": "INTEGER"
+   },
+   "f18_indas3": {
+    "type": "INTEGER"
+   },
+   "f18_whtb11": {
+    "type": "INTEGER"
+   },
+   "f18_whtb12": {
+    "type": "INTEGER"
+   },
+   "f18_whtb13": {
+    "type": "INTEGER"
+   },
+   "f18_whtb14": {
+    "type": "INTEGER"
+   },
+   "f18_whtin7": {
+    "type": "INTEGER"
+   },
+   "f18_blkin7": {
+    "type": "INTEGER"
+   },
+   "f18_all_ra": {
+    "type": "INTEGER"
+   },
+   "f18_ap_wht": {
+    "type": "INTEGER"
+   },
+   "f18_np_wht": {
+    "type": "INTEGER"
+   },
+   "f18_np_asn": {
+    "type": "INTEGER"
+   },
+   "f18_np_blk": {
+    "type": "INTEGER"
+   },
+   "f18_np_ind": {
+    "type": "INTEGER"
+   },
+   "f18_ap_blk": {
+    "type": "INTEGER"
+   },
+   "f18_ap_ind": {
+    "type": "INTEGER"
+   },
+   "f18_ap_asn": {
+    "type": "INTEGER"
+   },
+   "f18_ap_hwn": {
+    "type": "INTEGER"
+   },
+   "f18_np_hwn": {
+    "type": "INTEGER"
+   },
+   "f18_ap_oth": {
+    "type": "INTEGER"
+   }
+  }
+ },
+ "zoning": {
+  "rows": 126945,
+  "columns": {
+   "OBJECTID": {
+    "type": "BIGINT"
+   },
+   "HANDLE": {
+    "type": "VARCHAR",
+    "distinct": 126945,
+    "top": [
+     [
+      "15923000250",
+      1
+     ],
+     [
+      "15923000180",
+      1
+     ],
+     [
+      "15919000290",
+      1
+     ],
+     [
+      "15924000050",
+      1
+     ],
+     [
+      "15922000110",
+      1
+     ],
+     [
+      "15917000210",
+      1
+     ],
+     [
+      "15870000010",
+      1
+     ],
+     [
+      "15870000040",
+      1
+     ],
+     [
+      "15919000380",
+      1
+     ],
+     [
+      "15919000370",
+      1
+     ],
+     [
+      "15924000320",
+      1
+     ],
+     [
+      "13270000340",
+      1
+     ]
+    ]
+   },
+   "LAYER": {
+    "type": "VARCHAR",
+    "distinct": 14,
+    "top": [
+     [
+      "A",
+      50384
+     ],
+     [
+      "B",
+      34124
+     ],
+     [
+      "C",
+      17412
+     ],
+     [
+      "F",
+      7542
+     ],
+     [
+      "D",
+      4294
+     ],
+     [
+      "J",
+      3344
+     ],
+     [
+      "G",
+      3068
+     ],
+     [
+      "K",
+      2440
+     ],
+     [
+      "H",
+      1345
+     ],
+     [
+      "I",
+      885
+     ],
+     [
+      "E",
+      766
+     ],
+     [
+      "X",
+      655
+     ]
+    ]
+   }
+  }
+ }
+}

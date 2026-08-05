@@ -1,0 +1,50 @@
+{
+ "collection": "zoning",
+ "title": "Zoning",
+ "portal_page": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=78",
+ "department": "Planning and Urban Design",
+ "source": "https://maps9.stlouis-mo.gov/arcgis/rest/services/PDA/Zoning/MapServer",
+ "source_type": "arcgis",
+ "synced": "2026-08-05T01:04:57+00:00",
+ "fetch": {
+  "status": "ok",
+  "parquets": [
+   "staging/extracts/zoning/zoning/zoning.parquet"
+  ],
+  "layer_url": "https://maps9.stlouis-mo.gov/arcgis/rest/services/PDA/Zoning/MapServer/3",
+  "layer_description": null,
+  "fields": [
+   {
+    "name": "OBJECTID",
+    "alias": "OBJECTID",
+    "type": "esriFieldTypeOID"
+   },
+   {
+    "name": "Shape",
+    "alias": "SHAPE",
+    "type": "esriFieldTypeGeometry"
+   },
+   {
+    "name": "HANDLE",
+    "alias": "HANDLE",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "LAYER",
+    "alias": "LAYER",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Shape.STArea()",
+    "alias": "Shape.STArea()",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Shape.STLength()",
+    "alias": "Shape.STLength()",
+    "type": "esriFieldTypeDouble"
+   }
+  ],
+  "city_style": "staging/extracts/zoning/styles/city-renderer.json"
+ }
+}

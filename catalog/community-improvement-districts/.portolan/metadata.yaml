@@ -1,0 +1,14 @@
+title: "Community Improvement Districts (CIDs)"
+description: "Community improvement districts (CIDs) within the City of Saint Louis. CIDs are established by the section of Missouri statute known as the \"Community Improvement District Act\". More info: http://revisor.mo.gov/main/OneSection.aspx?section=67.1401&bid=3019&hl="
+contact:
+  name: "Chris Holmes"
+  email: "cholmes@9eo.org"
+license: "other"
+license_url: "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=58"
+attribution: "City of St. Louis — St. Louis Development Corporation"
+source_url: "https://static.stlouis-mo.gov/open-data/SLDC/TAXING-DISTRICTS/CID/STLCIDs.geojson"
+keywords: [st-louis, missouri, open-data, community, improvement, districts]
+processing_notes: |
+  Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=58).
+  Source: https://static.stlouis-mo.gov/open-data/SLDC/TAXING-DISTRICTS/CID/STLCIDs.geojson (portal download),
+  converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.

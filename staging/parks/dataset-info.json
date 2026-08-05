@@ -1,0 +1,90 @@
+{
+ "collection": "parks",
+ "title": "City Parks",
+ "portal_page": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=46",
+ "department": "Parks",
+ "source": "https://maps9.stlouis-mo.gov/arcgis/rest/services/PARKS/Reservable_Park_Amenities/FeatureServer",
+ "source_type": "arcgis",
+ "synced": "2026-08-05T01:04:57+00:00",
+ "fetch": {
+  "status": "ok",
+  "parquets": [
+   "staging/extracts/parks/parks/parks.parquet"
+  ],
+  "layer_url": "https://maps9.stlouis-mo.gov/arcgis/rest/services/PARKS/Reservable_Park_Amenities/FeatureServer/1",
+  "layer_description": null,
+  "fields": [
+   {
+    "name": "OBJECTID",
+    "alias": "OBJECTID",
+    "type": "esriFieldTypeOID"
+   },
+   {
+    "name": "CLASS",
+    "alias": "CLASS",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "NEW_CLASS",
+    "alias": "NEW_CLASS",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "YR_ACQRD",
+    "alias": "YR_ACQRD",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "TEXT_",
+    "alias": "TEXT_",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "WARD10",
+    "alias": "WARD10",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "PARK_ID",
+    "alias": "PARK_ID",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "ACRES",
+    "alias": "ACRES",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "AREA_SQFT",
+    "alias": "AREA_SQFT",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "AREA_ACRES",
+    "alias": "AREA_ACRES",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "CENSUS_POP",
+    "alias": "CENSUS_POP",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "PARCEL_POP",
+    "alias": "PARCEL_POP",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Shape__Area",
+    "alias": "Shape.STArea()",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Shape__Length",
+    "alias": "Shape.STLength()",
+    "type": "esriFieldTypeDouble"
+   }
+  ],
+  "city_style": "staging/extracts/parks/styles/city-renderer.json"
+ }
+}

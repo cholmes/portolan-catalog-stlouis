@@ -1,0 +1,26 @@
+{
+  "version": 8,
+  "name": "District boundaries",
+  "metadata": {
+    "description": "Zoning outlines only, for overlaying on imagery or the parcel fabric."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../zoning.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "zoning",
+      "paint": {
+        "line-color": "#174054",
+        "line-width": 0.6,
+        "line-opacity": 1.0
+      }
+    }
+  ]
+}

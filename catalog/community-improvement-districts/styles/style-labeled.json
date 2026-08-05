@@ -1,0 +1,49 @@
+{
+  "version": 8,
+  "name": "Labeled CIDs",
+  "metadata": {
+    "description": "Districts with names."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../community-improvement-districts.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "community-improvement-districts",
+      "paint": {
+        "fill-color": "#538400",
+        "fill-opacity": 0.4,
+        "fill-outline-color": "#2d4a00"
+      }
+    },
+    {
+      "id": "labels",
+      "type": "symbol",
+      "source": "data",
+      "source-layer": "community-improvement-districts",
+      "minzoom": 11,
+      "layout": {
+        "text-field": [
+          "get",
+          "Name"
+        ],
+        "text-font": [
+          "Noto Sans Regular"
+        ],
+        "text-size": 10,
+        "text-max-width": 9
+      },
+      "paint": {
+        "text-color": "#1A1A1A",
+        "text-halo-color": "#FFFFFF",
+        "text-halo-width": 1.2
+      }
+    }
+  ]
+}

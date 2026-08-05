@@ -1,0 +1,96 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.3",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-05T01:18:33.933688Z",
+      "breaking": false,
+      "assets": {
+        "csb-311-requests.parquet": {
+          "sha256": "1247b35af2b0cf2377a64544eda844defbabd866e1254ebef0f3759455d411c1",
+          "size_bytes": 94403419,
+          "href": "csb-311-requests/csb-311-requests.parquet",
+          "mtime": 1785892526.716215
+        }
+      },
+      "changes": [
+        "csb-311-requests.parquet"
+      ]
+    },
+    {
+      "version": "1.0.1",
+      "created": "2026-08-05T01:25:38.787121Z",
+      "breaking": false,
+      "assets": {
+        "csb-311-requests.parquet": {
+          "sha256": "1247b35af2b0cf2377a64544eda844defbabd866e1254ebef0f3759455d411c1",
+          "size_bytes": 94403419,
+          "href": "csb-311-requests/csb-311-requests.parquet",
+          "mtime": 1785892526.716215
+        },
+        "csb-311-requests.pmtiles": {
+          "sha256": "964351affde09d95f54e2d1ad0703d54d808a330d17a0b7d837a2719b4a8729f",
+          "size_bytes": 181789095,
+          "href": "csb-311-requests/csb-311-requests.pmtiles",
+          "mtime": 1785893138.6395922
+        }
+      },
+      "changes": [
+        "csb-311-requests.pmtiles"
+      ],
+      "message": "Generated PMTiles: csb-311-requests.pmtiles"
+    },
+    {
+      "version": "1.0.2",
+      "created": "2026-08-05T01:30:15.765852Z",
+      "breaking": false,
+      "assets": {
+        "csb-311-requests.parquet": {
+          "sha256": "a6eaf6c724852da7e8d8bb936cc43d2511ac5d484acf8386ae4965fa0b2d18aa",
+          "size_bytes": 90554724,
+          "href": "csb-311-requests/csb-311-requests.parquet",
+          "source_mtime": 1785893405.5315363,
+          "mtime": 1785893405.5315363,
+          "feature_count": 1477057,
+          "schema_fingerprint": "fc1db8c00dd4a9a8"
+        },
+        "csb-311-requests.pmtiles": {
+          "sha256": "964351affde09d95f54e2d1ad0703d54d808a330d17a0b7d837a2719b4a8729f",
+          "size_bytes": 181789095,
+          "href": "csb-311-requests/csb-311-requests.pmtiles",
+          "mtime": 1785893138.6395922
+        }
+      },
+      "changes": [
+        "csb-311-requests.parquet"
+      ]
+    },
+    {
+      "version": "1.0.3",
+      "created": "2026-08-05T01:33:18.246653Z",
+      "breaking": false,
+      "assets": {
+        "csb-311-requests.parquet": {
+          "sha256": "a6eaf6c724852da7e8d8bb936cc43d2511ac5d484acf8386ae4965fa0b2d18aa",
+          "size_bytes": 90554724,
+          "href": "csb-311-requests/csb-311-requests.parquet",
+          "source_mtime": 1785893405.5315363,
+          "mtime": 1785893405.5315363,
+          "feature_count": 1477057,
+          "schema_fingerprint": "fc1db8c00dd4a9a8"
+        },
+        "csb-311-requests.pmtiles": {
+          "sha256": "31dde8149a2137bec32931fcb925bf2ee93c4d476ba0cb913f455ad4a60b1108",
+          "size_bytes": 187303366,
+          "href": "csb-311-requests/csb-311-requests.pmtiles",
+          "mtime": 1785893598.105136
+        }
+      },
+      "changes": [
+        "csb-311-requests.pmtiles"
+      ],
+      "message": "Generated PMTiles: csb-311-requests.pmtiles"
+    }
+  ]
+}

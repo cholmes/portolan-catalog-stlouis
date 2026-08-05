@@ -1,0 +1,37 @@
+{
+  "version": 8,
+  "name": "Filled",
+  "metadata": {
+    "description": "Boundary with a light tint."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../city-boundary.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "city-boundary",
+      "paint": {
+        "fill-color": "#a8d4e8",
+        "fill-opacity": 0.2,
+        "fill-outline-color": "#c03221"
+      }
+    },
+    {
+      "id": "line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "city-boundary",
+      "paint": {
+        "line-color": "#c03221",
+        "line-width": 2.0,
+        "line-opacity": 1.0
+      }
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "version": 8,
+  "name": "Categorical Style",
+  "sources": {
+    "data": {
+      "type": "vector"
+    }
+  },
+  "layers": [
+    {
+      "id": "categorical-fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "lra-property",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "Case_Status"
+          ],
+          "Available",
+          "#5fad51",
+          "CDA Option",
+          "#6bf26d",
+          "Development Hold",
+          "#60c3f7",
+          "Garden Lease",
+          "#0095a8",
+          "Greenspace Hold",
+          "#c500ff",
+          "Lease",
+          "#d69dbc",
+          "Legal Hold",
+          "#584c85",
+          "Offer",
+          "#ffaa00",
+          "Option",
+          "#f2735c",
+          "PROPNS",
+          "#a8a800",
+          "PROPNS Available",
+          "#ffff73",
+          "Pending Closed",
+          "#9d91f2",
+          "Unavailable",
+          "#a8733e",
+          "Unknown",
+          "#ff73df",
+          "SOLD",
+          "#944450",
+          "#cccccc"
+        ],
+        "fill-opacity": 1.0
+      }
+    }
+  ]
+}

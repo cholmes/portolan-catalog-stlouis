@@ -1,0 +1,49 @@
+{
+  "version": 8,
+  "name": "Labeled zones",
+  "metadata": {
+    "description": "Zones with their district names."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../opportunity-zones.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "opportunity-zones",
+      "paint": {
+        "fill-color": "#e89d07",
+        "fill-opacity": 0.4,
+        "fill-outline-color": "#b57506"
+      }
+    },
+    {
+      "id": "labels",
+      "type": "symbol",
+      "source": "data",
+      "source-layer": "opportunity-zones",
+      "minzoom": 10,
+      "layout": {
+        "text-field": [
+          "get",
+          "District_Name"
+        ],
+        "text-font": [
+          "Noto Sans Regular"
+        ],
+        "text-size": 10,
+        "text-max-width": 9
+      },
+      "paint": {
+        "text-color": "#1A1A1A",
+        "text-halo-color": "#FFFFFF",
+        "text-halo-width": 1.2
+      }
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "version": 8,
+  "name": "Subtle districts",
+  "metadata": {
+    "description": "Light tint for underlays."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../police-districts.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "police-districts",
+      "paint": {
+        "fill-color": "#a8d4e8",
+        "fill-opacity": 0.2,
+        "fill-outline-color": "#1e526b"
+      }
+    },
+    {
+      "id": "line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "police-districts",
+      "paint": {
+        "line-color": "#1e526b",
+        "line-width": 1.0,
+        "line-opacity": 1.0
+      }
+    }
+  ]
+}

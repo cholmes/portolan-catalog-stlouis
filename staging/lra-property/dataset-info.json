@@ -1,0 +1,340 @@
+{
+ "collection": "lra-property",
+ "title": "LRA Property",
+ "portal_page": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=30",
+ "department": "St. Louis Development Corporation",
+ "source": "https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/SLDC_Real_Estate/FeatureServer",
+ "source_type": "arcgis",
+ "synced": "2026-08-05T01:04:57+00:00",
+ "fetch": {
+  "status": "ok",
+  "parquets": [
+   "staging/extracts/lra-property/lra_inventory/lra_inventory.parquet"
+  ],
+  "layer_url": "https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/SLDC_Real_Estate/FeatureServer/0",
+  "layer_description": null,
+  "fields": [
+   {
+    "name": "PropNS_Status",
+    "alias": "PropNS_Status",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Case_Status",
+    "alias": "Case_Status",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Address",
+    "alias": "Address",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "AddrNum",
+    "alias": "AddrNum",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "LowAddrNum",
+    "alias": "LowAddrNum",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "LowAddrSuf",
+    "alias": "LowAddrSuf",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "HighAddrNum",
+    "alias": "HighAddrNum",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "HighAddrSuf",
+    "alias": "HighAddrSuf",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "StPreDir",
+    "alias": "StPreDir",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "StName",
+    "alias": "StName",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "StType",
+    "alias": "StType",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "StSufDir",
+    "alias": "StSufDir",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Handle",
+    "alias": "Handle",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "CityBlock",
+    "alias": "CityBlock",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Parcel",
+    "alias": "Parcel",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "ParcelId",
+    "alias": "ParcelId",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "GUID",
+    "alias": "GUID",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "LRA",
+    "alias": "LRA",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "WARD",
+    "alias": "WARD",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "NEIGHBORHOOD_NUM",
+    "alias": "NEIGHBORHOOD_NUM",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "ZipCode",
+    "alias": "ZipCode",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "SQFT",
+    "alias": "SQFT",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "Suit_Number",
+    "alias": "Suit_Number",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Cost",
+    "alias": "Cost",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Property_Source",
+    "alias": "Property_Source",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Irregular_Lot",
+    "alias": "Irregular_Lot",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Description",
+    "alias": "Description",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Acres",
+    "alias": "Acres",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Status",
+    "alias": "Status",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Usage",
+    "alias": "Usage",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Demolition",
+    "alias": "Demolition",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Environmental",
+    "alias": "Environmental",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Value",
+    "alias": "Value",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "Value_Estimated",
+    "alias": "Value_Estimated",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "Class",
+    "alias": "Class",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "AppraisedVal",
+    "alias": "AppraisedVal",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "LRA_PRICING",
+    "alias": "LRA_PRICING",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Featured",
+    "alias": "Featured",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "ACQUISITION_DATE",
+    "alias": "ACQUISITION_DATE",
+    "type": "esriFieldTypeDate"
+   },
+   {
+    "name": "AssessorsTotal",
+    "alias": "AssessorsTotal",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Frontage",
+    "alias": "Frontage",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "NbrOfUnits",
+    "alias": "NbrOfUnits",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "LegalDescription",
+    "alias": "LegalDescription",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "AssessorsNbrhdNum",
+    "alias": "AssessorsNbrhdNum",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "LOCATION",
+    "alias": "LOCATION",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Sequence",
+    "alias": "Sequence",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "Notes",
+    "alias": "Notes",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "PublicNotice",
+    "alias": "PublicNotice",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "BuildingCount",
+    "alias": "BuildingCount",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "GreenLienStatus",
+    "alias": "GreenLienStatus",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "BuriedMaterials",
+    "alias": "BuriedMaterials",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "PropertyType",
+    "alias": "PropertyType",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "SideLotEligible",
+    "alias": "SideLotEligible",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Stories",
+    "alias": "Stories",
+    "type": "esriFieldTypeSingle"
+   },
+   {
+    "name": "CDBG_Source",
+    "alias": "CDBG_Source",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "CDBG_Amount",
+    "alias": "CDBG_Amount",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "SALEPRICE",
+    "alias": "SALEPRICE",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "CLOSING_COMPLETED",
+    "alias": "CLOSING_COMPLETED",
+    "type": "esriFieldTypeDate"
+   },
+   {
+    "name": "CASE_NUMBER",
+    "alias": "CASE_NUMBER",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Maintenance",
+    "alias": "Maintenance",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "PCA_Date",
+    "alias": "PCA_Date",
+    "type": "esriFieldTypeDate"
+   },
+   {
+    "name": "OBJECTID",
+    "alias": "OBJECTID",
+    "type": "esriFieldTypeOID"
+   },
+   {
+    "name": "Shape__Area",
+    "alias": "Shape.STArea()",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Shape__Length",
+    "alias": "Shape.STLength()",
+    "type": "esriFieldTypeDouble"
+   }
+  ],
+  "city_style": "staging/extracts/lra-property/styles/city-renderer.json"
+ }
+}

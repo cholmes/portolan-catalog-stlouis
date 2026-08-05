@@ -1,0 +1,14 @@
+title: "Property Sales"
+description: "Dataset describes real estate sale prices for recent property sales in the city. A separate table describes codes for different type of sales."
+contact:
+  name: "Chris Holmes"
+  email: "cholmes@9eo.org"
+license: "other"
+license_url: "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=31"
+attribution: "City of St. Louis — Assessor's Office"
+source_url: "https://www.stlouis-mo.gov/data/upload/data-files/prclsale.zip"
+keywords: [st-louis, missouri, open-data, property, sales]
+processing_notes: |
+  Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=31).
+  Source: https://www.stlouis-mo.gov/data/upload/data-files/prclsale.zip (portal download),
+  converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.

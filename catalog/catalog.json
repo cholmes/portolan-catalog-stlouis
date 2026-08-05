@@ -1,0 +1,182 @@
+{
+  "type": "Catalog",
+  "id": "st-louis-open-data-mirror",
+  "stac_version": "1.1.0",
+  "description": "Cloud-native mirror of datasets from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/): GeoParquet, PMTiles, and STAC metadata for the city's most-used geospatial and parcel-joinable datasets. Not an official city service.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "./catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
+    },
+    {
+      "rel": "child",
+      "href": "./city-boundary/collection.json",
+      "type": "application/json",
+      "title": "City Boundary"
+    },
+    {
+      "rel": "child",
+      "href": "./community-improvement-districts/collection.json",
+      "type": "application/json",
+      "title": "Community Improvement Districts (CIDs)"
+    },
+    {
+      "rel": "child",
+      "href": "./election-precincts/collection.json",
+      "type": "application/json",
+      "title": "Election Wards & Precincts"
+    },
+    {
+      "rel": "child",
+      "href": "./historic-districts/collection.json",
+      "type": "application/json",
+      "title": "Historic Districts"
+    },
+    {
+      "rel": "child",
+      "href": "./city-blocks/collection.json",
+      "type": "application/json",
+      "title": "City Blocks"
+    },
+    {
+      "rel": "child",
+      "href": "./neighborhoods/collection.json",
+      "type": "application/json",
+      "title": "Neighborhood Boundaries"
+    },
+    {
+      "rel": "child",
+      "href": "./city-trees/collection.json",
+      "type": "application/json",
+      "title": "City Trees (Planting Sites)"
+    },
+    {
+      "rel": "child",
+      "href": "./lra-property/collection.json",
+      "type": "application/json",
+      "title": "LRA Property"
+    },
+    {
+      "rel": "child",
+      "href": "./opportunity-zones/collection.json",
+      "type": "application/json",
+      "title": "Qualified Opportunity Zones"
+    },
+    {
+      "rel": "child",
+      "href": "./parks/collection.json",
+      "type": "application/json",
+      "title": "City Parks"
+    },
+    {
+      "rel": "child",
+      "href": "./police-districts/collection.json",
+      "type": "application/json",
+      "title": "Police District Boundaries"
+    },
+    {
+      "rel": "child",
+      "href": "./special-business-districts/collection.json",
+      "type": "application/json",
+      "title": "Special Business Districts (SBDs)"
+    },
+    {
+      "rel": "child",
+      "href": "./tax-abated-parcels/collection.json",
+      "type": "application/json",
+      "title": "Tax-abated Parcels"
+    },
+    {
+      "rel": "child",
+      "href": "./streets/collection.json",
+      "type": "application/json",
+      "title": "City Streets"
+    },
+    {
+      "rel": "child",
+      "href": "./tif-districts/collection.json",
+      "type": "application/json",
+      "title": "Tax Increment Financing (TIF) Districts"
+    },
+    {
+      "rel": "child",
+      "href": "./wards/collection.json",
+      "type": "application/json",
+      "title": "Ward Boundaries (2020)"
+    },
+    {
+      "rel": "child",
+      "href": "./zoning/collection.json",
+      "type": "application/json",
+      "title": "Zoning"
+    },
+    {
+      "rel": "child",
+      "href": "./parcels/collection.json",
+      "type": "application/json",
+      "title": "Parcels"
+    },
+    {
+      "rel": "child",
+      "href": "./csb-311-requests/collection.json",
+      "type": "application/json",
+      "title": "CSB Service Requests (311)"
+    },
+    {
+      "rel": "license",
+      "href": "https://www.stlouis-mo.gov/data/",
+      "type": "text/html",
+      "title": "City of St. Louis open data portal"
+    },
+    {
+      "rel": "via",
+      "href": "https://www.stlouis-mo.gov/data/",
+      "type": "text/html",
+      "title": "City of St. Louis open data portal"
+    },
+    {
+      "rel": "child",
+      "href": "./property-sales/collection.json",
+      "type": "application/json",
+      "title": "Property Sales"
+    },
+    {
+      "rel": "describedby",
+      "href": "./README.md",
+      "type": "text/markdown"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown"
+    }
+  ],
+  "title": "City of St. Louis Open Data (Cloud-Native Mirror)",
+  "portolan:total_size_bytes": 91570373,
+  "portolan:asset_count": 14,
+  "portolan:collection_count": 20,
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json"
+  ],
+  "updated": "2026-08-05T01:13:22+00:00",
+  "providers": [
+    {
+      "name": "City of St. Louis",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://www.stlouis-mo.gov/data/"
+    },
+    {
+      "name": "TGE Labs",
+      "roles": [
+        "host"
+      ],
+      "url": "https://github.com/cholmes/portolan-catalog-stlouis"
+    }
+  ],
+  "license": "other"
+}

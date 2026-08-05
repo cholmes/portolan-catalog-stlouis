@@ -1,0 +1,85 @@
+{
+ "collection": "historic-districts",
+ "title": "Historic Districts",
+ "portal_page": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=73",
+ "department": "Planning and Urban Design",
+ "source": "https://maps8.stlouis-mo.gov/arcgis/rest/services/PDA/Historic_Districts/MapServer",
+ "source_type": "arcgis",
+ "synced": "2026-08-05T01:12:53+00:00",
+ "fetch": {
+  "status": "ok",
+  "parquets": [
+   "staging/extracts/historic-districts/historic_districts/historic_districts.parquet"
+  ],
+  "layer_url": "https://maps8.stlouis-mo.gov/arcgis/rest/services/PDA/Historic_Districts/MapServer/0",
+  "layer_description": null,
+  "fields": [
+   {
+    "name": "OBJECTID",
+    "alias": "OBJECTID",
+    "type": "esriFieldTypeOID"
+   },
+   {
+    "name": "COUNT_",
+    "alias": "COUNT_",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "LAYER",
+    "alias": "LAYER",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "DISNAME",
+    "alias": "DISNAME",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "COMMENT",
+    "alias": "COMMENT",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "DIS_TYPE",
+    "alias": "DIS_TYPE",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "DIS_NUM",
+    "alias": "DIS_NUM",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "DIS_DATE",
+    "alias": "DIS_DATE",
+    "type": "esriFieldTypeDate"
+   },
+   {
+    "name": "SHAPE",
+    "alias": "SHAPE",
+    "type": "esriFieldTypeGeometry"
+   },
+   {
+    "name": "DIS_SHRT_N",
+    "alias": "DIS_SHRT_N",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "GlobalID",
+    "alias": "GlobalID",
+    "type": "esriFieldTypeGlobalID"
+   },
+   {
+    "name": "SHAPE.STArea()",
+    "alias": "SHAPE.STArea()",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "SHAPE.STLength()",
+    "alias": "SHAPE.STLength()",
+    "type": "esriFieldTypeDouble"
+   }
+  ],
+  "city_style": "staging/extracts/historic-districts/styles/city-renderer.json"
+ }
+}

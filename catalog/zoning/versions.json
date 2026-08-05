@@ -1,0 +1,45 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.1",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-05T01:18:33.906361Z",
+      "breaking": false,
+      "assets": {
+        "zoning.parquet": {
+          "sha256": "9587daaab0c9207b5554862166a67b4aafa46980df893f500fcfa037f685cffb",
+          "size_bytes": 14168058,
+          "href": "zoning/zoning.parquet",
+          "mtime": 1785892492.458228
+        }
+      },
+      "changes": [
+        "zoning.parquet"
+      ]
+    },
+    {
+      "version": "1.0.1",
+      "created": "2026-08-05T01:26:11.533629Z",
+      "breaking": false,
+      "assets": {
+        "zoning.parquet": {
+          "sha256": "9587daaab0c9207b5554862166a67b4aafa46980df893f500fcfa037f685cffb",
+          "size_bytes": 14168058,
+          "href": "zoning/zoning.parquet",
+          "mtime": 1785892492.458228
+        },
+        "zoning.pmtiles": {
+          "sha256": "75deb81e099f1c815fee943b9a94bda7fb304f44827375bfcda911650643540b",
+          "size_bytes": 41640338,
+          "href": "zoning/zoning.pmtiles",
+          "mtime": 1785893171.4812334
+        }
+      },
+      "changes": [
+        "zoning.pmtiles"
+      ],
+      "message": "Generated PMTiles: zoning.pmtiles"
+    }
+  ]
+}

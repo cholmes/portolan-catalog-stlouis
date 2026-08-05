@@ -1,0 +1,36 @@
+{
+  "version": 8,
+  "name": "Categorical Style",
+  "sources": {
+    "data": {
+      "type": "vector"
+    }
+  },
+  "layers": [
+    {
+      "id": "categorical-fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "historic-districts",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "DIS_TYPE"
+          ],
+          "National",
+          "#ff0000",
+          "Landmark",
+          "#005ce6",
+          "Certified Local",
+          "#ffaa00",
+          "Local",
+          "#c6e2b2",
+          "#cccccc"
+        ],
+        "fill-opacity": 0.0
+      }
+    }
+  ]
+}

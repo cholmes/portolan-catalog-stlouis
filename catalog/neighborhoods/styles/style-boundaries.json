@@ -1,0 +1,26 @@
+{
+  "version": 8,
+  "name": "Boundaries only",
+  "metadata": {
+    "description": "Just the lines, for overlays."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../neighborhoods.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "neighborhoods",
+      "paint": {
+        "line-color": "#1e526b",
+        "line-width": 2.0,
+        "line-opacity": 1.0
+      }
+    }
+  ]
+}

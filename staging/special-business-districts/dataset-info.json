@@ -1,0 +1,25 @@
+{
+ "collection": "special-business-districts",
+ "title": "Special Business Districts (SBDs)",
+ "portal_page": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=62",
+ "department": "St. Louis Development Corporation",
+ "source": "https://static.stlouis-mo.gov/open-data/SLDC/TAXING-DISTRICTS/SBD/STLSBDs_Shapefile.zip",
+ "source_type": "static",
+ "synced": "2026-08-05T01:12:53+00:00",
+ "fetch": {
+  "status": "ok",
+  "file": "STLSBDs_Shapefile.zip",
+  "sha256": "436fc1683898a49a2da5298cb1c6e40b6fc958353d1868033276759bb247ec50",
+  "bytes": 26784,
+  "unpacked": [
+   "STLSBDs.cpg",
+   "STLSBDs.dbf",
+   "STLSBDs.prj",
+   "STLSBDs.sbn",
+   "STLSBDs.sbx",
+   "STLSBDs.shp",
+   "STLSBDs.shp.xml",
+   "STLSBDs.shx"
+  ]
+ }
+}

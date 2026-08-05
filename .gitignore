@@ -1,0 +1,14 @@
+# Generated data artifacts — regenerable from staging sources, never committed
+catalog/**/*.parquet
+catalog/**/*.pmtiles
+
+# Downloaded source data
+staging/*/data/
+
+# Secrets
+.env
+
+# OS / editor noise
+.DS_Store
+__pycache__/
+*.pyc

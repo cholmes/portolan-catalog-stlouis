@@ -1,0 +1,471 @@
+{
+  "type": "Collection",
+  "id": "streets",
+  "stac_version": "1.1.0",
+  "description": "City street GIS data",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "./streets.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "pmtiles:layers": [
+        "streets"
+      ]
+    },
+    {
+      "rel": "license",
+      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=68",
+      "type": "text/html",
+      "title": "Dataset page on the City of St. Louis open data portal"
+    },
+    {
+      "rel": "via",
+      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=68",
+      "type": "text/html",
+      "title": "Source dataset on stlouis-mo.gov"
+    },
+    {
+      "rel": "via",
+      "href": "https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/Streets/FeatureServer",
+      "type": "text/html",
+      "title": "Source ArcGIS service"
+    },
+    {
+      "rel": "describedby",
+      "href": "./README.md",
+      "type": "text/markdown"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown"
+    }
+  ],
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
+  ],
+  "geoparquet:geometry_type": "MultiLineString",
+  "geoparquet:feature_count": 19858,
+  "table:row_count": 19858,
+  "table:primary_geometry": "geometry",
+  "table:columns": [
+    {
+      "name": "OBJECTID",
+      "type": "int64"
+    },
+    {
+      "name": "FULLNAME",
+      "type": "string"
+    },
+    {
+      "name": "Road_Segment_ID",
+      "type": "string"
+    },
+    {
+      "name": "From_Stree",
+      "type": "string"
+    },
+    {
+      "name": "To_Street",
+      "type": "string"
+    },
+    {
+      "name": "Street",
+      "type": "string"
+    },
+    {
+      "name": "Street_Name_Pre_Directional",
+      "type": "string"
+    },
+    {
+      "name": "Street_Name_Post_Type",
+      "type": "string"
+    },
+    {
+      "name": "Street_Name_Post_Direction",
+      "type": "string"
+    },
+    {
+      "name": "FromLeft",
+      "type": "double"
+    },
+    {
+      "name": "ToLeft",
+      "type": "double"
+    },
+    {
+      "name": "FromRight",
+      "type": "double"
+    },
+    {
+      "name": "ToRight",
+      "type": "double"
+    },
+    {
+      "name": "Class",
+      "type": "string"
+    },
+    {
+      "name": "County",
+      "type": "string"
+    },
+    {
+      "name": "Notes",
+      "type": "string"
+    },
+    {
+      "name": "NHD_NUM",
+      "type": "string"
+    },
+    {
+      "name": "NHD_NAME",
+      "type": "string"
+    },
+    {
+      "name": "NHD_NUMTXT",
+      "type": "string"
+    },
+    {
+      "name": "ANGLE",
+      "type": "string"
+    },
+    {
+      "name": "PRECINCT",
+      "type": "string"
+    },
+    {
+      "name": "ZIP_CODE",
+      "type": "string"
+    },
+    {
+      "name": "ZCTA",
+      "type": "string"
+    },
+    {
+      "name": "WARD",
+      "type": "string"
+    },
+    {
+      "name": "Road_Type",
+      "type": "string"
+    },
+    {
+      "name": "Width_Min",
+      "type": "double"
+    },
+    {
+      "name": "Width_Max",
+      "type": "double"
+    },
+    {
+      "name": "Access_Typ",
+      "type": "string"
+    },
+    {
+      "name": "FUNC_CLASS",
+      "type": "string"
+    },
+    {
+      "name": "SPEED_LIMI",
+      "type": "int32"
+    },
+    {
+      "name": "LANE_COUNT",
+      "type": "int32"
+    },
+    {
+      "name": "BI_DIRECTI",
+      "type": "int32"
+    },
+    {
+      "name": "OVERPASS",
+      "type": "int32"
+    },
+    {
+      "name": "X",
+      "type": "int32"
+    },
+    {
+      "name": "Y",
+      "type": "int32"
+    },
+    {
+      "name": "Bus_Truck",
+      "type": "int32"
+    },
+    {
+      "name": "State_Stre",
+      "type": "int32"
+    },
+    {
+      "name": "P_Type",
+      "type": "string"
+    },
+    {
+      "name": "Date_Insta",
+      "type": "timestamp[ms]"
+    },
+    {
+      "name": "Date_Rated",
+      "type": "timestamp[ms]"
+    },
+    {
+      "name": "PCR",
+      "type": "int32"
+    },
+    {
+      "name": "MoDOT_MJR",
+      "type": "string"
+    },
+    {
+      "name": "Snow_Prior",
+      "type": "string"
+    },
+    {
+      "name": "Snow_Type",
+      "type": "string"
+    },
+    {
+      "name": "Volume",
+      "type": "string"
+    },
+    {
+      "name": "Honorary_N",
+      "type": "string"
+    },
+    {
+      "name": "Vacated",
+      "type": "int32"
+    },
+    {
+      "name": "Vac_Ordinance",
+      "type": "string"
+    },
+    {
+      "name": "Google_Ima",
+      "type": "timestamp[ms]"
+    },
+    {
+      "name": "Commercial",
+      "type": "int32"
+    },
+    {
+      "name": "Loc_rd_cls",
+      "type": "string"
+    },
+    {
+      "name": "HONORARY_1",
+      "type": "string"
+    },
+    {
+      "name": "HN_TYPE",
+      "type": "string"
+    },
+    {
+      "name": "Hon_Ord_Nu",
+      "type": "string"
+    },
+    {
+      "name": "HON_BOARD_",
+      "type": "string"
+    },
+    {
+      "name": "DIRECTION",
+      "type": "string"
+    },
+    {
+      "name": "LEVEL_",
+      "type": "int32"
+    },
+    {
+      "name": "RECLENGTH",
+      "type": "double"
+    },
+    {
+      "name": "Shape_Leng",
+      "type": "double"
+    },
+    {
+      "name": "created_user",
+      "type": "string"
+    },
+    {
+      "name": "created_date",
+      "type": "timestamp[ms]"
+    },
+    {
+      "name": "last_edited_user",
+      "type": "string"
+    },
+    {
+      "name": "last_edited_date",
+      "type": "timestamp[ms]"
+    },
+    {
+      "name": "OneWayCode",
+      "type": "string"
+    },
+    {
+      "name": "FromElevation",
+      "type": "int32"
+    },
+    {
+      "name": "ToElevation",
+      "type": "int32"
+    },
+    {
+      "name": "Time",
+      "type": "double"
+    },
+    {
+      "name": "Shape__Length",
+      "type": "double"
+    },
+    {
+      "name": "geometry",
+      "type": "binary"
+    },
+    {
+      "name": "geometry_bbox",
+      "type": "struct<xmin: float not null, ymin: float not null, xmax: float not null, ymax: float not null>"
+    }
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -90.31916903735433,
+          38.53323504055748,
+          -90.16789351152435,
+          38.774692111816165
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "license": "other",
+  "assets": {
+    "streets": {
+      "href": "./streets.parquet",
+      "type": "application/vnd.apache.parquet",
+      "roles": [
+        "data"
+      ],
+      "title": "City Streets (GeoParquet)",
+      "file:size": 2602008,
+      "file:checksum": "1220546c0af33aaf2bc7689cd5674d646cd59ecf44787b45c1f5c7ecfdab64b4852c"
+    },
+    "streets-tiles": {
+      "href": "./streets.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "streets (vector tiles)",
+      "roles": [
+        "visual"
+      ],
+      "file:size": 17115228,
+      "file:checksum": "1220c019bfd014e39964044df68b6d378dbc18d004c4aaf6ebf999ea2703e9c4c2c1"
+    },
+    "styles/city-renderer": {
+      "href": "./styles/city-renderer.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "City renderer",
+      "roles": [
+        "style"
+      ],
+      "file:size": 1068,
+      "file:checksum": "1220938df4be3e16611be2c0f41e0cee70e892f31035df4e7682880e3eab915f073d",
+      "description": "The city's own symbology, extracted from the source ArcGIS renderer."
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "City streets",
+      "roles": [
+        "default",
+        "style"
+      ],
+      "description": "The street centerline network, weighted by the source Class code (arterials heavier).",
+      "file:size": 821,
+      "file:checksum": "12209f5280d28d4481c59d829f8154a0a361ce49d5b34851e9bd84cd3763b20d4700"
+    },
+    "styles/style-class": {
+      "href": "./styles/style-class.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Street class",
+      "roles": [
+        "style"
+      ],
+      "description": "The source Class codes as-is (A31 red, A73 blue, A6x orange, A41 local gray). The city does not publish a decode; codes follow Census feature-class conventions.",
+      "file:size": 1768,
+      "file:checksum": "1220bed65a39db8447c0a3fb4d458dc0ef13c8b40671f106ece88c6b2b9112123997"
+    },
+    "styles/style-suffix": {
+      "href": "./styles/style-suffix.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Avenue, Street, or Boulevard?",
+      "roles": [
+        "style"
+      ],
+      "description": "Streets colored by their name suffix \u2014 St. Louis's east-west Avenues vs. north-south Streets grid pattern pops out.",
+      "file:size": 1622,
+      "file:checksum": "1220ce5fb43287b591c4a4fbf4c22a2837172ccfd4c89e1e8cc55ae8aa7ba2dc865e"
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ],
+      "title": "City Streets rendered with the default style",
+      "file:size": 320876,
+      "file:checksum": "12200be838b5da578c632f7418aa087e1090760a31e8df9f02f67e63e5183811d8b8"
+    }
+  },
+  "portolan:styles": [
+    "styles/default",
+    "styles/city-renderer",
+    "styles/style-class",
+    "styles/style-suffix"
+  ],
+  "title": "City Streets",
+  "updated": "2026-08-05T01:13:22+00:00",
+  "providers": [
+    {
+      "name": "City of St. Louis \u2014 Streets - Director's Office",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=68"
+    },
+    {
+      "name": "TGE Labs",
+      "roles": [
+        "host"
+      ],
+      "url": "https://github.com/cholmes/portolan-catalog-stlouis"
+    }
+  ]
+}

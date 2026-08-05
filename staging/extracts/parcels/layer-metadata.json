@@ -1,0 +1,1061 @@
+{
+ "currentVersion": 11.2,
+ "cimVersion": "3.2.0",
+ "id": 0,
+ "name": "PARCELS",
+ "type": "Feature Layer",
+ "description": "",
+ "geometryType": "esriGeometryPolygon",
+ "sourceSpatialReference": {
+  "wkid": 102696,
+  "latestWkid": 102696,
+  "xyTolerance": 0.003280833333333333,
+  "zTolerance": 0.001,
+  "mTolerance": 0.001,
+  "falseX": -17627100,
+  "falseY": -45827300,
+  "xyUnits": 3048.0060960121928,
+  "falseZ": 0,
+  "zUnits": 1,
+  "falseM": 0,
+  "mUnits": 1
+ },
+ "copyrightText": "",
+ "parentLayer": null,
+ "subLayers": [],
+ "minScale": 0,
+ "maxScale": 0,
+ "referenceScale": 0.0,
+ "drawingInfo": {
+  "renderer": {
+   "type": "simple",
+   "symbol": {
+    "type": "esriSFS",
+    "style": "esriSFSSolid",
+    "color": [
+     233,
+     255,
+     190,
+     255
+    ],
+    "outline": {
+     "type": "esriSLS",
+     "style": "esriSLSSolid",
+     "color": [
+      110,
+      110,
+      110,
+      255
+     ],
+     "width": 0.7
+    }
+   }
+  },
+  "scaleSymbols": true,
+  "transparency": 0,
+  "labelingInfo": null
+ },
+ "defaultVisibility": true,
+ "extent": {
+  "xmin": 871488.4637070782,
+  "ymin": 983027.2797487378,
+  "xmax": 912760.978274744,
+  "ymax": 1070963.4381936565,
+  "spatialReference": {
+   "wkid": 102696,
+   "latestWkid": 102696,
+   "xyTolerance": 0.003280833333333333,
+   "zTolerance": 0.001,
+   "mTolerance": 0.001,
+   "falseX": -17627100,
+   "falseY": -45827300,
+   "xyUnits": 3048.0060960121928,
+   "falseZ": -100000,
+   "zUnits": 10000,
+   "falseM": -100000,
+   "mUnits": 10000
+  }
+ },
+ "hasAttachments": false,
+ "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+ "displayField": "StName",
+ "typeIdField": null,
+ "subtypeFieldName": null,
+ "subtypeField": null,
+ "defaultSubtypeCode": null,
+ "fields": [
+  {
+   "name": "OBJECTID",
+   "type": "esriFieldTypeOID",
+   "alias": "OBJECTID",
+   "domain": null
+  },
+  {
+   "name": "LowerAsrParcelId",
+   "type": "esriFieldTypeString",
+   "alias": "LowerAsrParcelId",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "ColParcelId",
+   "type": "esriFieldTypeString",
+   "alias": "ColParcelId",
+   "length": 12,
+   "domain": null
+  },
+  {
+   "name": "ColCityBlock",
+   "type": "esriFieldTypeInteger",
+   "alias": "ColCityBlock",
+   "domain": null
+  },
+  {
+   "name": "ColParcel",
+   "type": "esriFieldTypeInteger",
+   "alias": "ColParcel",
+   "domain": null
+  },
+  {
+   "name": "PrimAddrRecNum",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "PrimAddrRecNum",
+   "domain": null
+  },
+  {
+   "name": "AddrType",
+   "type": "esriFieldTypeString",
+   "alias": "AddrType",
+   "length": 1,
+   "domain": null
+  },
+  {
+   "name": "LowAddrNum",
+   "type": "esriFieldTypeInteger",
+   "alias": "LowAddrNum",
+   "domain": null
+  },
+  {
+   "name": "LowAddrSuf",
+   "type": "esriFieldTypeString",
+   "alias": "LowAddrSuf",
+   "length": 3,
+   "domain": null
+  },
+  {
+   "name": "HighAddrNum",
+   "type": "esriFieldTypeInteger",
+   "alias": "HighAddrNum",
+   "domain": null
+  },
+  {
+   "name": "HighAddrSuf",
+   "type": "esriFieldTypeString",
+   "alias": "HighAddrSuf",
+   "length": 3,
+   "domain": null
+  },
+  {
+   "name": "NLC",
+   "type": "esriFieldTypeDouble",
+   "alias": "NLC",
+   "domain": null
+  },
+  {
+   "name": "PARITY",
+   "type": "esriFieldTypeString",
+   "alias": "PARITY",
+   "length": 1,
+   "domain": null
+  },
+  {
+   "name": "StPreDir",
+   "type": "esriFieldTypeString",
+   "alias": "StPreDir",
+   "length": 2,
+   "domain": null
+  },
+  {
+   "name": "StName",
+   "type": "esriFieldTypeString",
+   "alias": "StName",
+   "length": 40,
+   "domain": null
+  },
+  {
+   "name": "StType",
+   "type": "esriFieldTypeString",
+   "alias": "StType",
+   "length": 4,
+   "domain": null
+  },
+  {
+   "name": "StSufDir",
+   "type": "esriFieldTypeString",
+   "alias": "StSufDir",
+   "length": 2,
+   "domain": null
+  },
+  {
+   "name": "StdUnitNum",
+   "type": "esriFieldTypeString",
+   "alias": "StdUnitNum",
+   "length": 10,
+   "domain": null
+  },
+  {
+   "name": "OWNERNAME",
+   "type": "esriFieldTypeString",
+   "alias": "OWNERNAME",
+   "length": 40,
+   "domain": null
+  },
+  {
+   "name": "OWNERNAME2",
+   "type": "esriFieldTypeString",
+   "alias": "OWNERNAME2",
+   "length": 40,
+   "domain": null
+  },
+  {
+   "name": "OWNERADDR",
+   "type": "esriFieldTypeString",
+   "alias": "OWNERADDR",
+   "length": 40,
+   "domain": null
+  },
+  {
+   "name": "OWNERCITY",
+   "type": "esriFieldTypeString",
+   "alias": "OWNERCITY",
+   "length": 13,
+   "domain": null
+  },
+  {
+   "name": "OWNERSTATE",
+   "type": "esriFieldTypeString",
+   "alias": "OWNERSTATE",
+   "length": 2,
+   "domain": null
+  },
+  {
+   "name": "OwnerCountry",
+   "type": "esriFieldTypeString",
+   "alias": "OwnerCountry",
+   "length": 13,
+   "domain": null
+  },
+  {
+   "name": "OWNERZIP",
+   "type": "esriFieldTypeString",
+   "alias": "OWNERZIP",
+   "length": 9,
+   "domain": null
+  },
+  {
+   "name": "OwnerRank",
+   "type": "esriFieldTypeString",
+   "alias": "OwnerRank",
+   "length": 4,
+   "domain": null
+  },
+  {
+   "name": "LegalDesc1",
+   "type": "esriFieldTypeString",
+   "alias": "LegalDesc1",
+   "length": 40,
+   "domain": null
+  },
+  {
+   "name": "LegalDesc2",
+   "type": "esriFieldTypeString",
+   "alias": "LegalDesc2",
+   "length": 40,
+   "domain": null
+  },
+  {
+   "name": "LegalDesc3",
+   "type": "esriFieldTypeString",
+   "alias": "LegalDesc3",
+   "length": 40,
+   "domain": null
+  },
+  {
+   "name": "LegalDesc4",
+   "type": "esriFieldTypeString",
+   "alias": "LegalDesc4",
+   "length": 40,
+   "domain": null
+  },
+  {
+   "name": "LegalDesc5",
+   "type": "esriFieldTypeString",
+   "alias": "LegalDesc5",
+   "length": 40,
+   "domain": null
+  },
+  {
+   "name": "AsrClassCode",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "AsrClassCode",
+   "domain": null
+  },
+  {
+   "name": "AsrLandUse1",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "AsrLandUse1",
+   "domain": null
+  },
+  {
+   "name": "AsrLanduse2",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "AsrLanduse2",
+   "domain": null
+  },
+  {
+   "name": "RedevPhase",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "RedevPhase",
+   "domain": null
+  },
+  {
+   "name": "RedevYearEnd",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "RedevYearEnd",
+   "domain": null
+  },
+  {
+   "name": "RedevPhase2",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "RedevPhase2",
+   "domain": null
+  },
+  {
+   "name": "RedevYearEnd2",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "RedevYearEnd2",
+   "domain": null
+  },
+  {
+   "name": "VacantLot",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "VacantLot",
+   "domain": null
+  },
+  {
+   "name": "SpecBusDist",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "SpecBusDist",
+   "domain": null
+  },
+  {
+   "name": "SpecBusDist2",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "SpecBusDist2",
+   "domain": null
+  },
+  {
+   "name": "TIFDist",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "TIFDist",
+   "domain": null
+  },
+  {
+   "name": "LendingAgcy",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "LendingAgcy",
+   "domain": null
+  },
+  {
+   "name": "Condominium",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "Condominium",
+   "domain": null
+  },
+  {
+   "name": "NbrOfUnits",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "NbrOfUnits",
+   "domain": null
+  },
+  {
+   "name": "NbrOfApts",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "NbrOfApts",
+   "domain": null
+  },
+  {
+   "name": "FRONTAGE",
+   "type": "esriFieldTypeDouble",
+   "alias": "FRONTAGE",
+   "domain": null
+  },
+  {
+   "name": "LANDAREA",
+   "type": "esriFieldTypeInteger",
+   "alias": "LANDAREA",
+   "domain": null
+  },
+  {
+   "name": "RecDailyDate",
+   "type": "esriFieldTypeDate",
+   "alias": "RecDailyDate",
+   "length": 8,
+   "domain": null
+  },
+  {
+   "name": "RecDailyNum",
+   "type": "esriFieldTypeInteger",
+   "alias": "RecDailyNum",
+   "domain": null
+  },
+  {
+   "name": "RecBookNum",
+   "type": "esriFieldTypeString",
+   "alias": "RecBookNum",
+   "length": 4,
+   "domain": null
+  },
+  {
+   "name": "RecPageNum",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "RecPageNum",
+   "domain": null
+  },
+  {
+   "name": "AsdLand",
+   "type": "esriFieldTypeDouble",
+   "alias": "AsdLand",
+   "domain": null
+  },
+  {
+   "name": "AsdImprove",
+   "type": "esriFieldTypeDouble",
+   "alias": "AsdImprove",
+   "domain": null
+  },
+  {
+   "name": "AsdTotal",
+   "type": "esriFieldTypeDouble",
+   "alias": "AsdTotal",
+   "domain": null
+  },
+  {
+   "name": "BillLand",
+   "type": "esriFieldTypeDouble",
+   "alias": "BillLand",
+   "domain": null
+  },
+  {
+   "name": "BillImprove",
+   "type": "esriFieldTypeDouble",
+   "alias": "BillImprove",
+   "domain": null
+  },
+  {
+   "name": "BillTotal",
+   "type": "esriFieldTypeDouble",
+   "alias": "BillTotal",
+   "domain": null
+  },
+  {
+   "name": "AprLand",
+   "type": "esriFieldTypeDouble",
+   "alias": "AprLand",
+   "domain": null
+  },
+  {
+   "name": "CostAprImprove",
+   "type": "esriFieldTypeDouble",
+   "alias": "CostAprImprove",
+   "domain": null
+  },
+  {
+   "name": "AsmtAppealYear",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "AsmtAppealYear",
+   "domain": null
+  },
+  {
+   "name": "AsmtAppealNum",
+   "type": "esriFieldTypeInteger",
+   "alias": "AsmtAppealNum",
+   "domain": null
+  },
+  {
+   "name": "AsmtAppealType",
+   "type": "esriFieldTypeString",
+   "alias": "AsmtAppealType",
+   "length": 1,
+   "domain": null
+  },
+  {
+   "name": "PriorAsdDate",
+   "type": "esriFieldTypeDate",
+   "alias": "PriorAsdDate",
+   "length": 8,
+   "domain": null
+  },
+  {
+   "name": "PriorAsdLand",
+   "type": "esriFieldTypeDouble",
+   "alias": "PriorAsdLand",
+   "domain": null
+  },
+  {
+   "name": "PriorAsdImprove",
+   "type": "esriFieldTypeDouble",
+   "alias": "PriorAsdImprove",
+   "domain": null
+  },
+  {
+   "name": "PriorAsdTotal",
+   "type": "esriFieldTypeDouble",
+   "alias": "PriorAsdTotal",
+   "domain": null
+  },
+  {
+   "name": "PriorTaxAmt",
+   "type": "esriFieldTypeDouble",
+   "alias": "PriorTaxAmt",
+   "domain": null
+  },
+  {
+   "name": "CDALandUse1",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "CDALandUse1",
+   "domain": null
+  },
+  {
+   "name": "CDALandUse2",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "CDALandUse2",
+   "domain": null
+  },
+  {
+   "name": "LRMSUnitNum",
+   "type": "esriFieldTypeString",
+   "alias": "LRMSUnitNum",
+   "length": 4,
+   "domain": null
+  },
+  {
+   "name": "Zoning",
+   "type": "esriFieldTypeString",
+   "alias": "Zoning",
+   "length": 4,
+   "domain": null
+  },
+  {
+   "name": "NbrOfBldgsRes",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "NbrOfBldgsRes",
+   "domain": null
+  },
+  {
+   "name": "NbrOfBldgsCom",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "NbrOfBldgsCom",
+   "domain": null
+  },
+  {
+   "name": "FirstYearBuilt",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "FirstYearBuilt",
+   "domain": null
+  },
+  {
+   "name": "LastYearBuilt",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "LastYearBuilt",
+   "domain": null
+  },
+  {
+   "name": "ResSalePrice",
+   "type": "esriFieldTypeDouble",
+   "alias": "ResSalePrice",
+   "domain": null
+  },
+  {
+   "name": "ResSaleDate",
+   "type": "esriFieldTypeDate",
+   "alias": "ResSaleDate",
+   "length": 8,
+   "domain": null
+  },
+  {
+   "name": "VacBldgYear",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "VacBldgYear",
+   "domain": null
+  },
+  {
+   "name": "GeoCityBlockPart",
+   "type": "esriFieldTypeDouble",
+   "alias": "GeoCityBlockPart",
+   "domain": null
+  },
+  {
+   "name": "WARD10",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "WARD10",
+   "domain": null
+  },
+  {
+   "name": "PRECINCT10",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "PRECINCT10",
+   "domain": null
+  },
+  {
+   "name": "INSPAREA10",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "INSPAREA10",
+   "domain": null
+  },
+  {
+   "name": "Ward00",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "Ward00",
+   "domain": null
+  },
+  {
+   "name": "PRECINCT02",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "PRECINCT02",
+   "domain": null
+  },
+  {
+   "name": "PRECINCT04",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "PRECINCT04",
+   "domain": null
+  },
+  {
+   "name": "NBRHD",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "NBRHD",
+   "domain": null
+  },
+  {
+   "name": "CDADIST",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "CDADIST",
+   "domain": null
+  },
+  {
+   "name": "CDASUBDIST",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "CDASUBDIST",
+   "domain": null
+  },
+  {
+   "name": "POLICEDIST",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "POLICEDIST",
+   "domain": null
+  },
+  {
+   "name": "CensTract10",
+   "type": "esriFieldTypeDouble",
+   "alias": "CensTract10",
+   "domain": null
+  },
+  {
+   "name": "CensBlock10",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "CensBlock10",
+   "domain": null
+  },
+  {
+   "name": "CensBlock00",
+   "type": "esriFieldTypeDouble",
+   "alias": "CensBlock00",
+   "domain": null
+  },
+  {
+   "name": "Ward90",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "Ward90",
+   "domain": null
+  },
+  {
+   "name": "Precinct90",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "Precinct90",
+   "domain": null
+  },
+  {
+   "name": "CensBlock90",
+   "type": "esriFieldTypeDouble",
+   "alias": "CensBlock90",
+   "domain": null
+  },
+  {
+   "name": "HouseConsDist",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "HouseConsDist",
+   "domain": null
+  },
+  {
+   "name": "ASRNBRHD",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "ASRNBRHD",
+   "domain": null
+  },
+  {
+   "name": "EntZone",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "EntZone",
+   "domain": null
+  },
+  {
+   "name": "IMPACTAREA",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "IMPACTAREA",
+   "domain": null
+  },
+  {
+   "name": "CTDArea",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "CTDArea",
+   "domain": null
+  },
+  {
+   "name": "LEAFAREA",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "LEAFAREA",
+   "domain": null
+  },
+  {
+   "name": "ZIP",
+   "type": "esriFieldTypeInteger",
+   "alias": "ZIP",
+   "domain": null
+  },
+  {
+   "name": "OnFloodBlock",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "OnFloodBlock",
+   "domain": null
+  },
+  {
+   "name": "SpecParcelType",
+   "type": "esriFieldTypeString",
+   "alias": "SpecParcelType",
+   "length": 1,
+   "domain": null
+  },
+  {
+   "name": "SubParcelType",
+   "type": "esriFieldTypeString",
+   "alias": "SubParcelType",
+   "length": 1,
+   "domain": null
+  },
+  {
+   "name": "NbrOfSubAccts",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "NbrOfSubAccts",
+   "domain": null
+  },
+  {
+   "name": "NbrOfCondos",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "NbrOfCondos",
+   "domain": null
+  },
+  {
+   "name": "LRMSParcel",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "LRMSParcel",
+   "domain": null
+  },
+  {
+   "name": "AcctPrimary",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "AcctPrimary",
+   "domain": null
+  },
+  {
+   "name": "HANDLE",
+   "type": "esriFieldTypeString",
+   "alias": "HANDLE",
+   "length": 14,
+   "domain": null
+  },
+  {
+   "name": "OWNEROCC",
+   "type": "esriFieldTypeString",
+   "alias": "OWNEROCC",
+   "length": 1,
+   "domain": null
+  },
+  {
+   "name": "FirstDate",
+   "type": "esriFieldTypeDate",
+   "alias": "FirstDate",
+   "length": 8,
+   "domain": null
+  },
+  {
+   "name": "LastDate",
+   "type": "esriFieldTypeDate",
+   "alias": "LastDate",
+   "length": 8,
+   "domain": null
+  },
+  {
+   "name": "OwnerUpdate",
+   "type": "esriFieldTypeDate",
+   "alias": "OwnerUpdate",
+   "length": 8,
+   "domain": null
+  },
+  {
+   "name": "OwnerCode",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "OwnerCode",
+   "domain": null
+  },
+  {
+   "name": "SITEADDR",
+   "type": "esriFieldTypeString",
+   "alias": "SITEADDR",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "SQFT",
+   "type": "esriFieldTypeInteger",
+   "alias": "SQFT",
+   "domain": null
+  },
+  {
+   "name": "ParcelId",
+   "type": "esriFieldTypeString",
+   "alias": "ParcelId",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "WARD",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "WARD",
+   "domain": null
+  },
+  {
+   "name": "TaxBalance",
+   "type": "esriFieldTypeDouble",
+   "alias": "TaxBalance",
+   "domain": null
+  },
+  {
+   "name": "PropertyClassCode",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "PropertyClassCode",
+   "domain": null
+  },
+  {
+   "name": "IsAbatedProperty",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "IsAbatedProperty",
+   "domain": null
+  },
+  {
+   "name": "AbatementStartYear",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "AbatementStartYear",
+   "domain": null
+  },
+  {
+   "name": "AbatementEndYear",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "AbatementEndYear",
+   "domain": null
+  },
+  {
+   "name": "SpecBusDist3",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "SpecBusDist3",
+   "domain": null
+  },
+  {
+   "name": "Ward20",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "Ward20",
+   "domain": null
+  },
+  {
+   "name": "Precinct20",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "Precinct20",
+   "domain": null
+  },
+  {
+   "name": "InspArea20",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "InspArea20",
+   "domain": null
+  },
+  {
+   "name": "CensTract20",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "CensTract20",
+   "domain": null
+  },
+  {
+   "name": "CensBlock20",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "CensBlock20",
+   "domain": null
+  },
+  {
+   "name": "MaintZoneWC",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "MaintZoneWC",
+   "domain": null
+  },
+  {
+   "name": "TransDevDist",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "TransDevDist",
+   "domain": null
+  },
+  {
+   "name": "SHAPE",
+   "type": "esriFieldTypeGeometry",
+   "alias": "SHAPE",
+   "domain": null
+  },
+  {
+   "name": "CityBlock",
+   "type": "esriFieldTypeDouble",
+   "alias": "CityBlock",
+   "domain": null
+  },
+  {
+   "name": "Parcel",
+   "type": "esriFieldTypeDouble",
+   "alias": "Parcel",
+   "domain": null
+  },
+  {
+   "name": "SHAPE.STArea()",
+   "type": "esriFieldTypeDouble",
+   "alias": "SHAPE.STArea()",
+   "domain": null
+  },
+  {
+   "name": "SHAPE.STLength()",
+   "type": "esriFieldTypeDouble",
+   "alias": "SHAPE.STLength()",
+   "domain": null
+  }
+ ],
+ "geometryField": {
+  "name": "SHAPE",
+  "type": "esriFieldTypeGeometry",
+  "alias": "SHAPE"
+ },
+ "indexes": [
+  {
+   "name": "R483_pk",
+   "fields": "OBJECTID",
+   "isAscending": true,
+   "isUnique": true,
+   "description": ""
+  },
+  {
+   "name": "NonClusteredIndex-20260626-094835",
+   "fields": "ParcelId",
+   "isAscending": true,
+   "isUnique": false,
+   "description": ""
+  },
+  {
+   "name": "S456_idx",
+   "fields": "SHAPE",
+   "isAscending": true,
+   "isUnique": true,
+   "description": ""
+  }
+ ],
+ "subtypes": [],
+ "relationships": [],
+ "canModifyLayer": true,
+ "canScaleSymbols": false,
+ "hasLabels": false,
+ "capabilities": "Map,Query,Data",
+ "maxRecordCount": 2000,
+ "supportsStatistics": true,
+ "supportsExceedsLimitStatistics": true,
+ "supportsAdvancedQueries": true,
+ "supportedQueryFormats": "JSON, geoJSON, PBF",
+ "isDataVersioned": false,
+ "ownershipBasedAccessControlForFeatures": {
+  "allowOthersToQuery": true
+ },
+ "useStandardizedQueries": true,
+ "supportedSpatialRelationships": [
+  "esriSpatialRelIntersects",
+  "esriSpatialRelContains",
+  "esriSpatialRelCrosses",
+  "esriSpatialRelEnvelopeIntersects",
+  "esriSpatialRelIndexIntersects",
+  "esriSpatialRelOverlaps",
+  "esriSpatialRelTouches",
+  "esriSpatialRelWithin",
+  "esriSpatialRelRelation"
+ ],
+ "advancedQueryCapabilities": {
+  "useStandardizedQueries": true,
+  "supportsStatistics": true,
+  "supportsPercentileStatistics": true,
+  "supportsHavingClause": true,
+  "supportsOrderBy": true,
+  "supportsDistinct": true,
+  "supportsCountDistinct": true,
+  "supportsAdvancedQueryRelated": true,
+  "supportsQueryRelatedPagination": true,
+  "supportsPagination": true,
+  "supportsLod": false,
+  "supportsQueryWithLodSR": false,
+  "supportsTrueCurve": true,
+  "supportsQueryWithDatumTransformation": true,
+  "supportsReturningQueryExtent": true,
+  "supportsQueryWithDistance": true,
+  "supportsSqlExpression": true,
+  "supportsTimeRelation": true,
+  "supportsSqlFormat": false,
+  "supportsQueryAnalytic": true,
+  "supportsCurrentUserQueries": true
+ },
+ "supportsDatumTransformation": true,
+ "advancedQueryAnalyticCapabilities": {
+  "supportsLinearRegression": true,
+  "supportsAsync": false,
+  "supportsPercentileAnalytic": true
+ },
+ "dateFieldsTimeReference": null,
+ "preferredTimeReference": null,
+ "datesInUnknownTimezone": false,
+ "hasGeometryProperties": true,
+ "geometryProperties": {
+  "shapeAreaFieldName": "SHAPE.STArea()",
+  "shapeLengthFieldName": "SHAPE.STLength()",
+  "units": "esriFeet",
+  "mapUnits": {
+   "uwkid": 9003
+  }
+ },
+ "hasMetadata": true,
+ "isDataArchived": false,
+ "archivingInfo": {
+  "supportsQueryWithHistoricMoment": false,
+  "startArchivingMoment": -1
+ },
+ "supportsCoordinatesQuantization": true,
+ "supportsDynamicLegends": true,
+ "serviceItemId": "79fd6407cda04a728ba67b8f9df98da8"
+}

@@ -1,0 +1,45 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.1",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-05T01:18:33.883592Z",
+      "breaking": false,
+      "assets": {
+        "tif-districts.parquet": {
+          "sha256": "c3e4bab63a9a44bfadf63fe49db58b5047f52218c15e532a0c91cf047c0161dc",
+          "size_bytes": 79536,
+          "href": "tif-districts/tif-districts.parquet",
+          "mtime": 1785892494.0491185
+        }
+      },
+      "changes": [
+        "tif-districts.parquet"
+      ]
+    },
+    {
+      "version": "1.0.1",
+      "created": "2026-08-05T01:20:11.230376Z",
+      "breaking": false,
+      "assets": {
+        "tif-districts.parquet": {
+          "sha256": "c3e4bab63a9a44bfadf63fe49db58b5047f52218c15e532a0c91cf047c0161dc",
+          "size_bytes": 79536,
+          "href": "tif-districts/tif-districts.parquet",
+          "mtime": 1785892494.0491185
+        },
+        "tif-districts.pmtiles": {
+          "sha256": "ef89d3fbc09ac20141bce458ff81e975d6b5fcfd0324dc498c64d4be6fa09269",
+          "size_bytes": 197897,
+          "href": "tif-districts/tif-districts.pmtiles",
+          "mtime": 1785892811.2248645
+        }
+      },
+      "changes": [
+        "tif-districts.pmtiles"
+      ],
+      "message": "Generated PMTiles: tif-districts.pmtiles"
+    }
+  ]
+}

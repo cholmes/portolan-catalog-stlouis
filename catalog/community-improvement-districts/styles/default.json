@@ -1,0 +1,58 @@
+{
+  "version": 8,
+  "name": "CIDs by status",
+  "metadata": {
+    "description": "The 98 community improvement districts: 70 active (green), 21 inactive (gray), 7 unrecorded (light)."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../community-improvement-districts.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "community-improvement-districts-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "community-improvement-districts",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "Active"
+          ],
+          "Y",
+          "#538400",
+          "N",
+          "#9aa3a8",
+          "#dfe6ea"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "community-improvement-districts",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "Active"
+          ],
+          "Y",
+          "#538400",
+          "N",
+          "#9aa3a8",
+          "#dfe6ea"
+        ],
+        "fill-opacity": 0.6,
+        "fill-outline-color": "#FFFFFF"
+      }
+    }
+  ]
+}

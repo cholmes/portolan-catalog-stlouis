@@ -1,0 +1,78 @@
+{
+  "version": 8,
+  "name": "How the LRA got it",
+  "metadata": {
+    "description": "Acquisition path: tax foreclosure suits dominate (blue), plus donations (green), tax sales (orange), CDA transfers (purple)."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../lra-property.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "lra-property-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "lra-property",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "Property_Source"
+          ],
+          "Tax Suit",
+          "#1e526b",
+          "Donations",
+          "#538400",
+          "Donation",
+          "#538400",
+          "Tax Sale",
+          "#e89d07",
+          "TAX SALE",
+          "#e89d07",
+          "CDA",
+          "#7c5295",
+          "HUD Donations",
+          "#4a9d9c",
+          "#9aa3a8"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "lra-property",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "Property_Source"
+          ],
+          "Tax Suit",
+          "#1e526b",
+          "Donations",
+          "#538400",
+          "Donation",
+          "#538400",
+          "Tax Sale",
+          "#e89d07",
+          "TAX SALE",
+          "#e89d07",
+          "CDA",
+          "#7c5295",
+          "HUD Donations",
+          "#4a9d9c",
+          "#9aa3a8"
+        ],
+        "fill-opacity": 0.7,
+        "fill-outline-color": "#FFFFFF"
+      }
+    }
+  ]
+}

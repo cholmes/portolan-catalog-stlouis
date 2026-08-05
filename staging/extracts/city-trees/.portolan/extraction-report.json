@@ -1,0 +1,42 @@
+{
+  "extraction_date": "2026-08-05T01:08:57.244696+00:00",
+  "source_url": "https://maps9.stlouis-mo.gov/arcgis/rest/services/FORESTRY/FORESTRY_TREES/MapServer",
+  "portolan_version": "0.7.0",
+  "gpio_version": "1.3.0",
+  "metadata_extracted": {
+    "source_url": "https://maps9.stlouis-mo.gov/arcgis/rest/services/FORESTRY/FORESTRY_TREES/MapServer",
+    "description": "Forestry data including park and easement trees, forest park's trees, and assignment layers",
+    "attribution": "HAMILTON, W",
+    "keywords": [
+      "arborists",
+      "trees",
+      "forestry"
+    ],
+    "contact_name": null,
+    "processing_notes": "<div style='text-align:Left;font-size:12pt'><p><span>Forestry data including park and easement trees, forest park's trees, and assignment layers</span></p></div>",
+    "known_issues": null,
+    "license_info_raw": null
+  },
+  "layers": [
+    {
+      "id": 0,
+      "name": "CITY_TREES_ALL_SITES",
+      "status": "success",
+      "warnings": [],
+      "attempts": 1,
+      "features": 134588,
+      "size_bytes": 6467014,
+      "duration_seconds": 29.249515917152166,
+      "output_path": "city_trees_all_sites/city_trees_all_sites.parquet"
+    }
+  ],
+  "summary": {
+    "total_layers": 1,
+    "succeeded": 1,
+    "failed": 0,
+    "skipped": 0,
+    "total_features": 134588,
+    "total_size_bytes": 6467014,
+    "total_duration_seconds": 29.249515917152166
+  }
+}

@@ -1,0 +1,15 @@
+{
+ "collection": "tax-abated-parcels",
+ "title": "Tax-abated Parcels",
+ "portal_page": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=61",
+ "department": "St. Louis Development Corporation",
+ "source": "https://static.stlouis-mo.gov/open-data/SLDC/TAX-ABATEMENT/taxabatedparcels.geojson",
+ "source_type": "static",
+ "synced": "2026-08-05T01:04:57+00:00",
+ "fetch": {
+  "status": "ok",
+  "file": "taxabatedparcels.geojson",
+  "sha256": "c9e8b9595f259fb75f99e56c3631cbb96fb2ee0abaeeeb72d541710cfad2ac1d",
+  "bytes": 4354993
+ }
+}

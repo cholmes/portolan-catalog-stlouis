@@ -1,0 +1,60 @@
+{
+  "version": 8,
+  "name": "Election precincts",
+  "metadata": {
+    "description": "The 209 current voting precincts, labeled 'W <ward> P <precinct>'."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../election-precincts.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "election-precincts",
+      "paint": {
+        "fill-color": "#a8d4e8",
+        "fill-opacity": 0.3,
+        "fill-outline-color": "#1e526b"
+      }
+    },
+    {
+      "id": "line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "election-precincts",
+      "paint": {
+        "line-color": "#1e526b",
+        "line-width": 0.8,
+        "line-opacity": 1.0
+      }
+    },
+    {
+      "id": "labels",
+      "type": "symbol",
+      "source": "data",
+      "source-layer": "election-precincts",
+      "minzoom": 12,
+      "layout": {
+        "text-field": [
+          "get",
+          "name"
+        ],
+        "text-font": [
+          "Noto Sans Regular"
+        ],
+        "text-size": 10,
+        "text-max-width": 9
+      },
+      "paint": {
+        "text-color": "#1A1A1A",
+        "text-halo-color": "#FFFFFF",
+        "text-halo-width": 1.2
+      }
+    }
+  ]
+}

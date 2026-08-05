@@ -1,0 +1,45 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.1",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-05T01:18:33.863631Z",
+      "breaking": false,
+      "assets": {
+        "tax-abated-parcels.parquet": {
+          "sha256": "90eb23918dbf7a78ca5c6fb68a02818c53bb3c35c871f79865c70d6380b0f45a",
+          "size_bytes": 453147,
+          "href": "tax-abated-parcels/tax-abated-parcels.parquet",
+          "mtime": 1785892496.7397609
+        }
+      },
+      "changes": [
+        "tax-abated-parcels.parquet"
+      ]
+    },
+    {
+      "version": "1.0.1",
+      "created": "2026-08-05T01:22:30.376030Z",
+      "breaking": false,
+      "assets": {
+        "tax-abated-parcels.parquet": {
+          "sha256": "90eb23918dbf7a78ca5c6fb68a02818c53bb3c35c871f79865c70d6380b0f45a",
+          "size_bytes": 453147,
+          "href": "tax-abated-parcels/tax-abated-parcels.parquet",
+          "mtime": 1785892496.7397609
+        },
+        "tax-abated-parcels.pmtiles": {
+          "sha256": "4eb9529afac988c5eb13d1a911a2e6b07a8d32abd497e0d5b99bd38ee1bbb69e",
+          "size_bytes": 1636383,
+          "href": "tax-abated-parcels/tax-abated-parcels.pmtiles",
+          "mtime": 1785892950.366668
+        }
+      },
+      "changes": [
+        "tax-abated-parcels.pmtiles"
+      ],
+      "message": "Generated PMTiles: tax-abated-parcels.pmtiles"
+    }
+  ]
+}

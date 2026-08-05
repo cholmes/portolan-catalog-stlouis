@@ -1,0 +1,122 @@
+{
+ "parcels": {
+  "portal_id": "82",
+  "description": "Current and historic parcel data",
+  "about": "Information describing this dataset (metadata): Provided by: Assessor's Office Related topics: Planning Land Acquisition, Reutilization, and Development Tags: parcels Data last updated : See individual distributions above Data.json metadata: View metadata",
+  "updated_mentions": []
+ },
+ "neighborhoods": {
+  "portal_id": "85",
+  "description": "ESRI shapefiles for city neighborhoods",
+  "about": "Information describing this dataset (metadata): Provided by: Planning and Urban Design Spacial coverage: City of St. Louis Related topics: Wards and Neighborhoods Planning Tags: neighborhoods Data last updated : See individual distributions above Data.json metadata: View metadata",
+  "updated_mentions": []
+ },
+ "wards": {
+  "portal_id": "131",
+  "description": "Boundaries of City of St. Louis wards",
+  "about": "Information describing this dataset (metadata): Provided by: Planning and Urban Design Spacial coverage: City of St. Louis Related topics: Wards and Neighborhoods Planning Elections and Voting Data last updated : See individual distributions above Data.json metadata: View metadata",
+  "updated_mentions": []
+ },
+ "city-boundary": {
+  "portal_id": "67",
+  "description": "St. Louis City limits",
+  "about": "Information describing this dataset (metadata): Provided by: Planning and Urban Design Spacial coverage: City of St. Louis Related topics: Planning Tags: boundary limit Data last updated : See individual distributions above Data.json metadata: View metadata",
+  "updated_mentions": []
+ },
+ "city-blocks": {
+  "portal_id": "12",
+  "description": "Information about city blocks. A city block, residential block, urban block, or simply \"block\" is a central element of urban planning and urban design.",
+  "about": "Information describing this dataset (metadata): Provided by: Planning and Urban Design Related topics: Planning Tags: city blocks Data last updated : See individual distributions above Data.json metadata: View metadata",
+  "updated_mentions": []
+ },
+ "streets": {
+  "portal_id": "68",
+  "description": "City street GIS data",
+  "about": "Information describing this dataset (metadata): Provided by: Streets - Street Division Related topics: Streets, Sidewalks, and Streetlighting Planning Tags: streets Data last updated : See individual distributions above Data.json metadata: View metadata",
+  "updated_mentions": []
+ },
+ "parks": {
+  "portal_id": "46",
+  "description": "A database containing information on city parks, park amenities, and amenity attributes",
+  "about": "Information describing this dataset (metadata): Provided by: Parks Related topics: Parks and Gardens Tags: asset-prcl neighborhood park details parks property address Data last updated : See individual distributions above Data.json metadata: View metadata",
+  "updated_mentions": []
+ },
+ "police-districts": {
+  "portal_id": "83",
+  "description": "GIS data for police district boundaries",
+  "about": "Information describing this dataset (metadata): Provided by: Police Department Related topics: Police Data last updated : See individual distributions above Data.json metadata: View metadata",
+  "updated_mentions": []
+ },
+ "election-precincts": {
+  "portal_id": "124",
+  "description": "Wards & current election precincts for the City of St. Louis.",
+  "about": "Information describing this dataset (metadata): Provided by: Board of Election Commissioner Related topics: Elections and Voting Tags: board of elections precincts wards Data last updated : See individual distributions above Data.json metadata: View metadata",
+  "updated_mentions": []
+ },
+ "zoning": {
+  "portal_id": "78",
+  "description": "Strategic land use (SLUP),parcel, and zoning data",
+  "about": "Information describing this dataset (metadata): Provided by: Planning and Urban Design Related topics: Zoning Planning Data last updated : See individual distributions above Data.json metadata: View metadata",
+  "updated_mentions": []
+ },
+ "historic-districts": {
+  "portal_id": "73",
+  "description": "Data on St. Louis certified local historic districts",
+  "about": "Information describing this dataset (metadata): Provided by: Planning and Urban Design Related topics: History and Heritage Preservation Data last updated : See individual distributions above Data.json metadata: View metadata",
+  "updated_mentions": []
+ },
+ "city-trees": {
+  "portal_id": "121",
+  "description": "All mapped planting sites within the city for tree plantings managed by the Forestry Division. Street tree planting sites are re-used, while park tree sites tend not to be. This data contains vacant sites, as well.",
+  "about": "Information describing this dataset (metadata): Provided by: Forestry Related topics: Beautification and Nuisance Reduction Streets, Sidewalks, and Streetlighting Parks and Gardens Data last updated : See individual distributions above Data.json metadata: View metadata",
+  "updated_mentions": []
+ },
+ "tif-districts": {
+  "portal_id": "56",
+  "description": "Tax Increment Financing is a development tool designed to help finance certain eligible improvements to property in designated redevelopment areas (TIF Districts) by utilizing the new, or incremental, tax revenues generated by the project after completion. For more info, contact Andrew Knop: knopa@stlouis-mo.gov",
+  "about": "Information describing this dataset (metadata): Provided by: St. Louis Development Corporation Related topics: Business Taxation Planning Business Assistance, Incentives, and Promotion Tags: planning sldc st. louis development corporation tax increment financing tif Data last updated : See individual distributions above Data.json metadata: View metadata",
+  "updated_mentions": []
+ },
+ "community-improvement-districts": {
+  "portal_id": "58",
+  "description": "Community improvement districts (CIDs) within the City of Saint Louis. CIDs are established by the section of Missouri statute known as the \"Community Improvement District Act\". More info: http://revisor.mo.gov/main/OneSection.aspx?section=67.1401&bid=3019&hl=",
+  "about": "Information describing this dataset (metadata): Provided by: St. Louis Development Corporation Related topics: Land Acquisition, Reutilization, and Development Tags: cid taxing districts Data last updated : See individual distributions above Data.json metadata: View metadata",
+  "updated_mentions": []
+ },
+ "special-business-districts": {
+  "portal_id": "62",
+  "description": "Special business districts (SBDs) within the City of Saint Louis. SBDs are established by Missouri statute. More Info: http://revisor.mo.gov/main/OneChapter.aspx?chapter=67",
+  "about": "Information describing this dataset (metadata): Provided by: St. Louis Development Corporation Related topics: Business Assistance, Incentives, and Promotion Planning Tags: sbd taxing districts Data last updated : See individual distributions above Data.json metadata: View metadata",
+  "updated_mentions": []
+ },
+ "opportunity-zones": {
+  "portal_id": "59",
+  "description": "Qualified Opportunity Zones (QOZs) within the City of Saint Louis. Qualified Opportunity Zones are nominated for that designation by the state and that nomination has been certified by the Secretary of the U.S. Treasury via his delegation authority to the Internal Revenue Service. More Info: https://www.irs.gov/newsroom/opportunity-zones-frequently-asked-questions https://www.cdfifund.gov/Pages/Opportunity-Zones.aspx",
+  "about": "Information describing this dataset (metadata): Provided by: St. Louis Development Corporation Related topics: Business Taxation Business Assistance, Incentives, and Promotion Planning Tags: federal irs opportunity zones planning sldc st. louis development corporation treasury Data last updated : See individual distributions above Data.json metadata: View metadata",
+  "updated_mentions": []
+ },
+ "tax-abated-parcels": {
+  "portal_id": "61",
+  "description": "Parcels within the City of Saint Louis that have obtained and activated an abatement on real estate taxes.",
+  "about": "Information describing this dataset (metadata): Provided by: St. Louis Development Corporation Related topics: Business Taxation Planning Business Assistance, Incentives, and Promotion Data last updated : See individual distributions above Data.json metadata: View metadata",
+  "updated_mentions": []
+ },
+ "lra-property": {
+  "portal_id": "30",
+  "description": "Land Reutilization Authority data and search.",
+  "about": "Information describing this dataset (metadata): Provided by: St. Louis Development Corporation Related topics: Land Acquisition, Reutilization, and Development Permits, Inspections, and Certifications Home Ownership Tags: asset-parcel inspections property address property owner service provided details Data last updated : See individual distributions above Documentation: View documentation Data.json metadata: View metadata",
+  "updated_mentions": []
+ },
+ "csb-311-requests": {
+  "portal_id": "5",
+  "description": "The Citizens' Service Bureau (CSB) is the customer service department for the City of St. Louis. This dataset provides access to some of the data collected when services are requested. The X/Y coordinates are in WGS 84 Web Mercator (EPSG:3857). File new service request here: https://www.stlouis-mo.gov/government/departments/public-safety/neighborhood-stabilization-office/citizens-service-bureau/csb-request-submit.cfm",
+  "about": "Information describing this dataset (metadata): Provided by: Neighborhood Stabilization / CSB Related topics: Complaints and Service Requests Tags: asset-parcel asset-street maintenance department intersection neighborhood property address ward Data last updated : See individual distributions above Data.json metadata: View metadata",
+  "updated_mentions": []
+ },
+ "property-sales": {
+  "portal_id": "31",
+  "description": "Dataset describes real estate sale prices for recent property sales in the city. A separate table describes codes for different type of sales.",
+  "about": "Information describing this dataset (metadata): Provided by: Assessor's Office Related topics: Home Ownership Land Acquisition, Reutilization, and Development Tags: asset-parcel property address Data last updated : See individual distributions above Data.json metadata: View metadata",
+  "updated_mentions": []
+ }
+}

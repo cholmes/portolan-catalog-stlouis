@@ -1,0 +1,40 @@
+{
+  "version": 8,
+  "name": "311 service requests",
+  "metadata": {
+    "description": "1.48 million Citizens' Service Bureau requests since 2008, as a dense point field."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../csb-311-requests.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "circle",
+      "type": "circle",
+      "source": "data",
+      "source-layer": "csb-311-requests",
+      "paint": {
+        "circle-color": "#1e526b",
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          10,
+          0.6400000000000001,
+          13,
+          1.6,
+          16,
+          3.5200000000000005
+        ],
+        "circle-opacity": 0.5
+      }
+    }
+  ]
+}

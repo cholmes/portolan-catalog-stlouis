@@ -1,0 +1,710 @@
+{
+ "collection": "parcels",
+ "title": "Parcels",
+ "portal_page": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=82",
+ "department": "Assessor's Office",
+ "source": "https://maps8.stlouis-mo.gov/arcgis/rest/services/PDA/PARCELS_PUBLIC/MapServer",
+ "source_type": "arcgis",
+ "synced": "2026-08-05T01:04:57+00:00",
+ "fetch": {
+  "status": "ok",
+  "parquets": [
+   "staging/extracts/parcels/parcels/parcels.parquet"
+  ],
+  "layer_url": "https://maps8.stlouis-mo.gov/arcgis/rest/services/PDA/PARCELS_PUBLIC/MapServer/0",
+  "layer_description": null,
+  "fields": [
+   {
+    "name": "OBJECTID",
+    "alias": "OBJECTID",
+    "type": "esriFieldTypeOID"
+   },
+   {
+    "name": "LowerAsrParcelId",
+    "alias": "LowerAsrParcelId",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "ColParcelId",
+    "alias": "ColParcelId",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "ColCityBlock",
+    "alias": "ColCityBlock",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "ColParcel",
+    "alias": "ColParcel",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "PrimAddrRecNum",
+    "alias": "PrimAddrRecNum",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "AddrType",
+    "alias": "AddrType",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "LowAddrNum",
+    "alias": "LowAddrNum",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "LowAddrSuf",
+    "alias": "LowAddrSuf",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "HighAddrNum",
+    "alias": "HighAddrNum",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "HighAddrSuf",
+    "alias": "HighAddrSuf",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "NLC",
+    "alias": "NLC",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "PARITY",
+    "alias": "PARITY",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "StPreDir",
+    "alias": "StPreDir",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "StName",
+    "alias": "StName",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "StType",
+    "alias": "StType",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "StSufDir",
+    "alias": "StSufDir",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "StdUnitNum",
+    "alias": "StdUnitNum",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "OWNERNAME",
+    "alias": "OWNERNAME",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "OWNERNAME2",
+    "alias": "OWNERNAME2",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "OWNERADDR",
+    "alias": "OWNERADDR",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "OWNERCITY",
+    "alias": "OWNERCITY",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "OWNERSTATE",
+    "alias": "OWNERSTATE",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "OwnerCountry",
+    "alias": "OwnerCountry",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "OWNERZIP",
+    "alias": "OWNERZIP",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "OwnerRank",
+    "alias": "OwnerRank",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "LegalDesc1",
+    "alias": "LegalDesc1",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "LegalDesc2",
+    "alias": "LegalDesc2",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "LegalDesc3",
+    "alias": "LegalDesc3",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "LegalDesc4",
+    "alias": "LegalDesc4",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "LegalDesc5",
+    "alias": "LegalDesc5",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "AsrClassCode",
+    "alias": "AsrClassCode",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "AsrLandUse1",
+    "alias": "AsrLandUse1",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "AsrLanduse2",
+    "alias": "AsrLanduse2",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "RedevPhase",
+    "alias": "RedevPhase",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "RedevYearEnd",
+    "alias": "RedevYearEnd",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "RedevPhase2",
+    "alias": "RedevPhase2",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "RedevYearEnd2",
+    "alias": "RedevYearEnd2",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "VacantLot",
+    "alias": "VacantLot",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "SpecBusDist",
+    "alias": "SpecBusDist",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "SpecBusDist2",
+    "alias": "SpecBusDist2",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "TIFDist",
+    "alias": "TIFDist",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "LendingAgcy",
+    "alias": "LendingAgcy",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "Condominium",
+    "alias": "Condominium",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "NbrOfUnits",
+    "alias": "NbrOfUnits",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "NbrOfApts",
+    "alias": "NbrOfApts",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "FRONTAGE",
+    "alias": "FRONTAGE",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "LANDAREA",
+    "alias": "LANDAREA",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "RecDailyDate",
+    "alias": "RecDailyDate",
+    "type": "esriFieldTypeDate"
+   },
+   {
+    "name": "RecDailyNum",
+    "alias": "RecDailyNum",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "RecBookNum",
+    "alias": "RecBookNum",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "RecPageNum",
+    "alias": "RecPageNum",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "AsdLand",
+    "alias": "AsdLand",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "AsdImprove",
+    "alias": "AsdImprove",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "AsdTotal",
+    "alias": "AsdTotal",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "BillLand",
+    "alias": "BillLand",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "BillImprove",
+    "alias": "BillImprove",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "BillTotal",
+    "alias": "BillTotal",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "AprLand",
+    "alias": "AprLand",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "CostAprImprove",
+    "alias": "CostAprImprove",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "AsmtAppealYear",
+    "alias": "AsmtAppealYear",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "AsmtAppealNum",
+    "alias": "AsmtAppealNum",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "AsmtAppealType",
+    "alias": "AsmtAppealType",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "PriorAsdDate",
+    "alias": "PriorAsdDate",
+    "type": "esriFieldTypeDate"
+   },
+   {
+    "name": "PriorAsdLand",
+    "alias": "PriorAsdLand",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "PriorAsdImprove",
+    "alias": "PriorAsdImprove",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "PriorAsdTotal",
+    "alias": "PriorAsdTotal",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "PriorTaxAmt",
+    "alias": "PriorTaxAmt",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "CDALandUse1",
+    "alias": "CDALandUse1",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "CDALandUse2",
+    "alias": "CDALandUse2",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "LRMSUnitNum",
+    "alias": "LRMSUnitNum",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Zoning",
+    "alias": "Zoning",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "NbrOfBldgsRes",
+    "alias": "NbrOfBldgsRes",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "NbrOfBldgsCom",
+    "alias": "NbrOfBldgsCom",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "FirstYearBuilt",
+    "alias": "FirstYearBuilt",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "LastYearBuilt",
+    "alias": "LastYearBuilt",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "ResSalePrice",
+    "alias": "ResSalePrice",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "ResSaleDate",
+    "alias": "ResSaleDate",
+    "type": "esriFieldTypeDate"
+   },
+   {
+    "name": "VacBldgYear",
+    "alias": "VacBldgYear",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "GeoCityBlockPart",
+    "alias": "GeoCityBlockPart",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "WARD10",
+    "alias": "WARD10",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "PRECINCT10",
+    "alias": "PRECINCT10",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "INSPAREA10",
+    "alias": "INSPAREA10",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "Ward00",
+    "alias": "Ward00",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "PRECINCT02",
+    "alias": "PRECINCT02",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "PRECINCT04",
+    "alias": "PRECINCT04",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "NBRHD",
+    "alias": "NBRHD",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "CDADIST",
+    "alias": "CDADIST",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "CDASUBDIST",
+    "alias": "CDASUBDIST",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "POLICEDIST",
+    "alias": "POLICEDIST",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "CensTract10",
+    "alias": "CensTract10",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "CensBlock10",
+    "alias": "CensBlock10",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "CensBlock00",
+    "alias": "CensBlock00",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Ward90",
+    "alias": "Ward90",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "Precinct90",
+    "alias": "Precinct90",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "CensBlock90",
+    "alias": "CensBlock90",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "HouseConsDist",
+    "alias": "HouseConsDist",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "ASRNBRHD",
+    "alias": "ASRNBRHD",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "EntZone",
+    "alias": "EntZone",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "IMPACTAREA",
+    "alias": "IMPACTAREA",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "CTDArea",
+    "alias": "CTDArea",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "LEAFAREA",
+    "alias": "LEAFAREA",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "ZIP",
+    "alias": "ZIP",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "OnFloodBlock",
+    "alias": "OnFloodBlock",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "SpecParcelType",
+    "alias": "SpecParcelType",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "SubParcelType",
+    "alias": "SubParcelType",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "NbrOfSubAccts",
+    "alias": "NbrOfSubAccts",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "NbrOfCondos",
+    "alias": "NbrOfCondos",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "LRMSParcel",
+    "alias": "LRMSParcel",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "AcctPrimary",
+    "alias": "AcctPrimary",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "HANDLE",
+    "alias": "HANDLE",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "OWNEROCC",
+    "alias": "OWNEROCC",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "FirstDate",
+    "alias": "FirstDate",
+    "type": "esriFieldTypeDate"
+   },
+   {
+    "name": "LastDate",
+    "alias": "LastDate",
+    "type": "esriFieldTypeDate"
+   },
+   {
+    "name": "OwnerUpdate",
+    "alias": "OwnerUpdate",
+    "type": "esriFieldTypeDate"
+   },
+   {
+    "name": "OwnerCode",
+    "alias": "OwnerCode",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "SITEADDR",
+    "alias": "SITEADDR",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "SQFT",
+    "alias": "SQFT",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "ParcelId",
+    "alias": "ParcelId",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "WARD",
+    "alias": "WARD",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "TaxBalance",
+    "alias": "TaxBalance",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "PropertyClassCode",
+    "alias": "PropertyClassCode",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "IsAbatedProperty",
+    "alias": "IsAbatedProperty",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "AbatementStartYear",
+    "alias": "AbatementStartYear",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "AbatementEndYear",
+    "alias": "AbatementEndYear",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "SpecBusDist3",
+    "alias": "SpecBusDist3",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "Ward20",
+    "alias": "Ward20",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "Precinct20",
+    "alias": "Precinct20",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "InspArea20",
+    "alias": "InspArea20",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "CensTract20",
+    "alias": "CensTract20",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "CensBlock20",
+    "alias": "CensBlock20",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "MaintZoneWC",
+    "alias": "MaintZoneWC",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "TransDevDist",
+    "alias": "TransDevDist",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "SHAPE",
+    "alias": "SHAPE",
+    "type": "esriFieldTypeGeometry"
+   },
+   {
+    "name": "CityBlock",
+    "alias": "CityBlock",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Parcel",
+    "alias": "Parcel",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "SHAPE.STArea()",
+    "alias": "SHAPE.STArea()",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "SHAPE.STLength()",
+    "alias": "SHAPE.STLength()",
+    "type": "esriFieldTypeDouble"
+   }
+  ],
+  "city_style": "staging/extracts/parcels/styles/city-renderer.json"
+ }
+}

@@ -1,0 +1,98 @@
+{
+  "version": 8,
+  "name": "Residential / commercial / industrial",
+  "metadata": {
+    "description": "Districts grouped into broad uses: residential A-E green, commercial F-H orange, Central Business red, Industrial purple, Unrestricted brown, Jefferson Memorial light blue."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../zoning.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "zoning-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "zoning",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "LAYER"
+          ],
+          "A",
+          "#538400",
+          "B",
+          "#538400",
+          "C",
+          "#538400",
+          "D",
+          "#538400",
+          "E",
+          "#538400",
+          "F",
+          "#e89d07",
+          "G",
+          "#e89d07",
+          "H",
+          "#e89d07",
+          "I",
+          "#c03221",
+          "J",
+          "#7c5295",
+          "K",
+          "#8b6f5e",
+          "L",
+          "#a8d4e8",
+          "#9aa3a8"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "zoning",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "LAYER"
+          ],
+          "A",
+          "#538400",
+          "B",
+          "#538400",
+          "C",
+          "#538400",
+          "D",
+          "#538400",
+          "E",
+          "#538400",
+          "F",
+          "#e89d07",
+          "G",
+          "#e89d07",
+          "H",
+          "#e89d07",
+          "I",
+          "#c03221",
+          "J",
+          "#7c5295",
+          "K",
+          "#8b6f5e",
+          "L",
+          "#a8d4e8",
+          "#9aa3a8"
+        ],
+        "fill-opacity": 0.7,
+        "fill-outline-color": "#ffffff00"
+      }
+    }
+  ]
+}

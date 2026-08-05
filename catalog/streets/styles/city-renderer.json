@@ -1,0 +1,54 @@
+{
+  "version": 8,
+  "name": "City renderer",
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../streets.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "streets-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "streets",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "Street_Name_Pre_Directional"
+          ],
+          "Interstate",
+          "#ffd37f",
+          "#cccccc"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "categorical-line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "streets",
+      "paint": {
+        "line-color": [
+          "match",
+          [
+            "get",
+            "Street_Name_Pre_Directional"
+          ],
+          "Interstate",
+          "#ffd37f",
+          "#cccccc"
+        ],
+        "line-width": 1,
+        "line-opacity": 1.0
+      }
+    }
+  ],
+  "metadata": {
+    "description": "The city's own symbology, extracted from the source ArcGIS renderer."
+  }
+}

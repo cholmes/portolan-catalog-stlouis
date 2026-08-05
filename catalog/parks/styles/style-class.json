@@ -1,0 +1,86 @@
+{
+  "version": 8,
+  "name": "Park classification",
+  "metadata": {
+    "description": "The Parks Department's classification: neighborhood, community, regional, mini, special-use, cemeteries."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../parks.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "parks-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "parks",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "NEW_CLASS"
+          ],
+          "Neighborhood",
+          "#538400",
+          "Community",
+          "#2e8b2e",
+          "Regional",
+          "#0f5d0f",
+          "Mini",
+          "#a6c96a",
+          "Special Use",
+          "#e89d07",
+          "Cemetery",
+          "#8b6f5e",
+          "Independent",
+          "#4a9d9c",
+          "Commemorative",
+          "#c98bab",
+          "Not City",
+          "#9aa3a8",
+          "#9aa3a8"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "parks",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "NEW_CLASS"
+          ],
+          "Neighborhood",
+          "#538400",
+          "Community",
+          "#2e8b2e",
+          "Regional",
+          "#0f5d0f",
+          "Mini",
+          "#a6c96a",
+          "Special Use",
+          "#e89d07",
+          "Cemetery",
+          "#8b6f5e",
+          "Independent",
+          "#4a9d9c",
+          "Commemorative",
+          "#c98bab",
+          "Not City",
+          "#9aa3a8",
+          "#9aa3a8"
+        ],
+        "fill-opacity": 0.7,
+        "fill-outline-color": "#ffffff00"
+      }
+    }
+  ]
+}

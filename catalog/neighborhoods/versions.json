@@ -1,0 +1,45 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.1",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-05T01:18:33.808070Z",
+      "breaking": false,
+      "assets": {
+        "neighborhoods.parquet": {
+          "sha256": "80109e48f9188a93841c3ac761b6938a68f804cb590e7010f2f4ba4701368e75",
+          "size_bytes": 42287,
+          "href": "neighborhoods/neighborhoods.parquet",
+          "mtime": 1785892490.0581253
+        }
+      },
+      "changes": [
+        "neighborhoods.parquet"
+      ]
+    },
+    {
+      "version": "1.0.1",
+      "created": "2026-08-05T01:25:39.383523Z",
+      "breaking": false,
+      "assets": {
+        "neighborhoods.parquet": {
+          "sha256": "80109e48f9188a93841c3ac761b6938a68f804cb590e7010f2f4ba4701368e75",
+          "size_bytes": 42287,
+          "href": "neighborhoods/neighborhoods.parquet",
+          "mtime": 1785892490.0581253
+        },
+        "neighborhoods.pmtiles": {
+          "sha256": "89afd6de09acda6c4ffacb4668f98003d0c727647fc5e1f667e31e0ec66d6441",
+          "size_bytes": 112045,
+          "href": "neighborhoods/neighborhoods.pmtiles",
+          "mtime": 1785893139.3791194
+        }
+      },
+      "changes": [
+        "neighborhoods.pmtiles"
+      ],
+      "message": "Generated PMTiles: neighborhoods.pmtiles"
+    }
+  ]
+}

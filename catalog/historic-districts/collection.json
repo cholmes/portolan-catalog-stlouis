@@ -1,0 +1,249 @@
+{
+  "type": "Collection",
+  "id": "historic-districts",
+  "stac_version": "1.1.0",
+  "description": "Data on St. Louis certified local historic districts",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "./historic-districts.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "pmtiles:layers": [
+        "historic-districts"
+      ]
+    },
+    {
+      "rel": "license",
+      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=73",
+      "type": "text/html",
+      "title": "Dataset page on the City of St. Louis open data portal"
+    },
+    {
+      "rel": "via",
+      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=73",
+      "type": "text/html",
+      "title": "Source dataset on stlouis-mo.gov"
+    },
+    {
+      "rel": "via",
+      "href": "https://maps8.stlouis-mo.gov/arcgis/rest/services/PDA/Historic_Districts/MapServer",
+      "type": "text/html",
+      "title": "Source ArcGIS service"
+    },
+    {
+      "rel": "describedby",
+      "href": "./README.md",
+      "type": "text/markdown"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown"
+    }
+  ],
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
+  ],
+  "geoparquet:geometry_type": "MultiPolygon",
+  "geoparquet:feature_count": 109,
+  "table:row_count": 109,
+  "table:primary_geometry": "geometry",
+  "table:columns": [
+    {
+      "name": "OBJECTID",
+      "type": "int64"
+    },
+    {
+      "name": "COUNT_",
+      "type": "double"
+    },
+    {
+      "name": "LAYER",
+      "type": "string"
+    },
+    {
+      "name": "DISNAME",
+      "type": "string"
+    },
+    {
+      "name": "COMMENT",
+      "type": "string"
+    },
+    {
+      "name": "DIS_TYPE",
+      "type": "string"
+    },
+    {
+      "name": "DIS_NUM",
+      "type": "string"
+    },
+    {
+      "name": "DIS_DATE",
+      "type": "timestamp[ms]"
+    },
+    {
+      "name": "SHAPE",
+      "type": "binary"
+    },
+    {
+      "name": "DIS_SHRT_N",
+      "type": "string"
+    },
+    {
+      "name": "GlobalID",
+      "type": "string"
+    },
+    {
+      "name": "SHAPE.STArea()",
+      "type": "double"
+    },
+    {
+      "name": "SHAPE.STLength()",
+      "type": "double"
+    },
+    {
+      "name": "geometry",
+      "type": "binary"
+    },
+    {
+      "name": "geometry_bbox",
+      "type": "struct<xmin: float not null, ymin: float not null, xmax: float not null, ymax: float not null>"
+    }
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -90.31734723543825,
+          38.54425842478925,
+          -90.18059955959318,
+          38.711047666873064
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "license": "other",
+  "assets": {
+    "historic-districts": {
+      "href": "./historic-districts.parquet",
+      "type": "application/vnd.apache.parquet",
+      "roles": [
+        "data"
+      ],
+      "title": "Historic Districts (GeoParquet)",
+      "file:size": 58234,
+      "file:checksum": "1220577e2fdbc2670a90063ba76245b8360f4fb95dfda7b098b2dc3eeb8ea024730a"
+    },
+    "historic-districts-tiles": {
+      "href": "./historic-districts.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "historic-districts (vector tiles)",
+      "roles": [
+        "visual"
+      ],
+      "file:size": 123483,
+      "file:checksum": "12201518054a5a65d82d515ed8630199ef1c1f7fff04b335972df6f6f46f7229085a"
+    },
+    "styles/city-renderer": {
+      "href": "./styles/city-renderer.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "City renderer",
+      "roles": [
+        "style"
+      ],
+      "file:size": 799,
+      "file:checksum": "1220816daf12ab6993846e8909fc2a6c1c9d4394bbe42b046e65a1a70dbd2ece1b34",
+      "description": "The city's own symbology, extracted from the source ArcGIS renderer."
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Historic districts",
+      "roles": [
+        "default",
+        "style"
+      ],
+      "description": "All 109 districts by designation: National Register (85), Local, Certified Local, Landmark.",
+      "file:size": 1369,
+      "file:checksum": "1220dec4752e4e2d759403407a4311038135125f52956f747ece192893560884af7b"
+    },
+    "styles/style-boundaries": {
+      "href": "./styles/style-boundaries.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "style"
+      ],
+      "title": "District boundaries",
+      "description": "Outlines with labels.",
+      "file:size": 980,
+      "file:checksum": "1220cead87e2621ab31f2955a9cb785431d35b2877ba64fd74a16479f2aaaf185e48"
+    },
+    "styles/style-local-protection": {
+      "href": "./styles/style-local-protection.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "style"
+      ],
+      "title": "Local protection",
+      "description": "Districts with local regulatory teeth (local/certified/landmark) in red against advisory National Register listings (light).",
+      "file:size": 1399,
+      "file:checksum": "12206a0425ca7230bee5a8de18596bc19ca246a2bc18a4fdfe8f5aa61b9c30cbd88b"
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ],
+      "title": "Historic Districts rendered with the default style",
+      "file:size": 380335,
+      "file:checksum": "12207c5019b5917a0e02c26550d84e82d26e0b74fe5665e85a09e47b8d308b50b285"
+    }
+  },
+  "portolan:styles": [
+    "styles/default",
+    "styles/city-renderer"
+  ],
+  "title": "Historic Districts",
+  "updated": "2026-08-05T01:13:22+00:00",
+  "providers": [
+    {
+      "name": "City of St. Louis \u2014 Planning and Urban Design",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=73"
+    },
+    {
+      "name": "TGE Labs",
+      "roles": [
+        "host"
+      ],
+      "url": "https://github.com/cholmes/portolan-catalog-stlouis"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "version": 8,
+  "name": "Opportunity zones",
+  "metadata": {
+    "description": "The 16 federally designated Qualified Opportunity Zone tracts."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../opportunity-zones.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "opportunity-zones",
+      "paint": {
+        "fill-color": "#e89d07",
+        "fill-opacity": 0.5,
+        "fill-outline-color": "#b57506"
+      }
+    },
+    {
+      "id": "line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "opportunity-zones",
+      "paint": {
+        "line-color": "#b57506",
+        "line-width": 1.2,
+        "line-opacity": 1.0
+      }
+    }
+  ]
+}

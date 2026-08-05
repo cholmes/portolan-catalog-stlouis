@@ -1,0 +1,122 @@
+{
+  "schema_version": "1.0.0",
+  "catalog_id": "catalog",
+  "created": "2026-08-05T01:08:56.800815+00:00",
+  "collections": {
+    "city-boundary": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-05T01:18:33.791609+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 6920
+    },
+    "community-improvement-districts": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-05T01:18:33.794059+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 74033
+    },
+    "election-precincts": {
+      "current_version": "1.0.3",
+      "updated": "2026-08-05T01:39:48.681424+00:00",
+      "asset_count": 4,
+      "total_size_bytes": 937628
+    },
+    "historic-districts": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-05T01:18:33.800007+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 58234
+    },
+    "city-blocks": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-05T01:18:33.803882+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 7161540
+    },
+    "neighborhoods": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-05T01:18:33.808463+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 42287
+    },
+    "city-trees": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-05T01:18:33.813525+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 8935143
+    },
+    "lra-property": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-05T01:18:33.826479+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 1856752
+    },
+    "opportunity-zones": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-05T01:18:33.833443+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 60264
+    },
+    "parks": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-05T01:18:33.840249+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 53378
+    },
+    "police-districts": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-05T01:18:33.847397+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 16896
+    },
+    "special-business-districts": {
+      "current_version": "1.0.3",
+      "updated": "2026-08-05T01:39:48.665403+00:00",
+      "asset_count": 3,
+      "total_size_bytes": 73108
+    },
+    "tax-abated-parcels": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-05T01:18:33.863913+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 453147
+    },
+    "streets": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-05T01:18:33.873485+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 2602008
+    },
+    "tif-districts": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-05T01:18:33.883925+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 79536
+    },
+    "wards": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-05T01:18:33.894872+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 159820
+    },
+    "zoning": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-05T01:18:33.906644+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 14168058
+    },
+    "parcels": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-05T01:18:33.919222+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 28961506
+    },
+    "csb-311-requests": {
+      "current_version": "1.0.2",
+      "updated": "2026-08-05T01:30:15.766720+00:00",
+      "asset_count": 2,
+      "total_size_bytes": 272343819
+    }
+  },
+  "updated": "2026-08-05T01:39:48.681424+00:00"
+}

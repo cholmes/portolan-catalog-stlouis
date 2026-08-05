@@ -1,0 +1,60 @@
+{
+  "version": 8,
+  "name": "Neighborhoods",
+  "metadata": {
+    "description": "The 88 official neighborhoods: light fill, city-blue bounds, labels."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../neighborhoods.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "neighborhoods",
+      "paint": {
+        "fill-color": "#a8d4e8",
+        "fill-opacity": 0.25,
+        "fill-outline-color": "#1e526b"
+      }
+    },
+    {
+      "id": "line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "neighborhoods",
+      "paint": {
+        "line-color": "#1e526b",
+        "line-width": 1.5,
+        "line-opacity": 1.0
+      }
+    },
+    {
+      "id": "labels",
+      "type": "symbol",
+      "source": "data",
+      "source-layer": "neighborhoods",
+      "minzoom": 10,
+      "layout": {
+        "text-field": [
+          "get",
+          "NHD_NAME"
+        ],
+        "text-font": [
+          "Noto Sans Regular"
+        ],
+        "text-size": 11,
+        "text-max-width": 9
+      },
+      "paint": {
+        "text-color": "#1A1A1A",
+        "text-halo-color": "#FFFFFF",
+        "text-halo-width": 1.2
+      }
+    }
+  ]
+}

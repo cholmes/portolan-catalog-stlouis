@@ -1,0 +1,26 @@
+{
+  "version": 8,
+  "name": "All LRA parcels",
+  "metadata": {
+    "description": "One color for overlaying on other data."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../lra-property.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "lra-property",
+      "paint": {
+        "fill-color": "#c03221",
+        "fill-opacity": 0.55,
+        "fill-outline-color": "#FFFFFF"
+      }
+    }
+  ]
+}

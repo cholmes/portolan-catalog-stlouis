@@ -1,0 +1,122 @@
+{
+  "version": 8,
+  "name": "City renderer",
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../city-trees.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "city-trees-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "city-trees",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "CONDITION"
+          ],
+          "N/A,Yes",
+          "#267300",
+          "N/A,No",
+          "#267300",
+          "Excellent,Yes",
+          "#0070ff",
+          "Excellent,No",
+          "#0070ff",
+          "Very Good,Yes",
+          "#00c5ff",
+          "Very Good,No",
+          "#00c5ff",
+          "Good,Yes",
+          "#00ffc5",
+          "Good,No",
+          "#00ffc5",
+          "Fair,Yes",
+          "#55ff00",
+          "Fair,No",
+          "#55ff00",
+          "Poor,Yes",
+          "#aaff00",
+          "Poor,No",
+          "#aaff00",
+          "Critical,Yes",
+          "#ff8400",
+          "Critical,No",
+          "#ff8400",
+          "Dead,Yes",
+          "#ff0000",
+          "Dead,No",
+          "#ff0000",
+          "Stump,Yes",
+          "#ff00c5",
+          "Stump,No",
+          "#ff00c5",
+          "#cccccc"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "categorical-circle",
+      "type": "circle",
+      "source": "data",
+      "source-layer": "city-trees",
+      "paint": {
+        "circle-color": [
+          "match",
+          [
+            "get",
+            "CONDITION"
+          ],
+          "N/A,Yes",
+          "#267300",
+          "N/A,No",
+          "#267300",
+          "Excellent,Yes",
+          "#0070ff",
+          "Excellent,No",
+          "#0070ff",
+          "Very Good,Yes",
+          "#00c5ff",
+          "Very Good,No",
+          "#00c5ff",
+          "Good,Yes",
+          "#00ffc5",
+          "Good,No",
+          "#00ffc5",
+          "Fair,Yes",
+          "#55ff00",
+          "Fair,No",
+          "#55ff00",
+          "Poor,Yes",
+          "#aaff00",
+          "Poor,No",
+          "#aaff00",
+          "Critical,Yes",
+          "#ff8400",
+          "Critical,No",
+          "#ff8400",
+          "Dead,Yes",
+          "#ff0000",
+          "Dead,No",
+          "#ff0000",
+          "Stump,Yes",
+          "#ff00c5",
+          "Stump,No",
+          "#ff00c5",
+          "#cccccc"
+        ],
+        "circle-radius": 5,
+        "circle-opacity": 1.0
+      }
+    }
+  ],
+  "metadata": {
+    "description": "The city's own symbology, extracted from the source ArcGIS renderer."
+  }
+}

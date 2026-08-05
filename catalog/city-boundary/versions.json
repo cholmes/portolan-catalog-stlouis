@@ -1,0 +1,45 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.1",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-05T01:18:33.790894Z",
+      "breaking": false,
+      "assets": {
+        "city-boundary.parquet": {
+          "sha256": "31caef3b826d278fe3ff279642b86b156c2a75cdeb6574fb0a83f5f4c1afdb2b",
+          "size_bytes": 6920,
+          "href": "city-boundary/city-boundary.parquet",
+          "mtime": 1785892490.329654
+        }
+      },
+      "changes": [
+        "city-boundary.parquet"
+      ]
+    },
+    {
+      "version": "1.0.1",
+      "created": "2026-08-05T01:26:24.331411Z",
+      "breaking": false,
+      "assets": {
+        "city-boundary.parquet": {
+          "sha256": "31caef3b826d278fe3ff279642b86b156c2a75cdeb6574fb0a83f5f4c1afdb2b",
+          "size_bytes": 6920,
+          "href": "city-boundary/city-boundary.parquet",
+          "mtime": 1785892490.329654
+        },
+        "city-boundary.pmtiles": {
+          "sha256": "be1a40018f6ffcfa2c28b66f08a7f7250f26661db06189c11f02c4b730a4e6ca",
+          "size_bytes": 5492,
+          "href": "city-boundary/city-boundary.pmtiles",
+          "mtime": 1785893184.32846
+        }
+      },
+      "changes": [
+        "city-boundary.pmtiles"
+      ],
+      "message": "Generated PMTiles: city-boundary.pmtiles"
+    }
+  ]
+}

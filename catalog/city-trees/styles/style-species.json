@@ -1,0 +1,100 @@
+{
+  "version": 8,
+  "name": "Common species",
+  "metadata": {
+    "description": "The eight most common species; everything else gray. Callery pear and green ash tell maintenance stories (invasives, emerald ash borer)."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../city-trees.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "city-trees-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "city-trees",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "COMMON"
+          ],
+          "Maple, Red",
+          "#c03221",
+          "Pear, Callery",
+          "#e8c4d8",
+          "Oak, Pin",
+          "#7c5295",
+          "Maple, Sugar",
+          "#e89d07",
+          "Redbud",
+          "#c98bab",
+          "Linden, Littleleaf",
+          "#4a9d9c",
+          "Ash, Green",
+          "#538400",
+          "Ash, White",
+          "#a6c96a",
+          "Vacant",
+          "#dfe6ea",
+          "#9aa3a8"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "circle",
+      "type": "circle",
+      "source": "data",
+      "source-layer": "city-trees",
+      "paint": {
+        "circle-color": [
+          "match",
+          [
+            "get",
+            "COMMON"
+          ],
+          "Maple, Red",
+          "#c03221",
+          "Pear, Callery",
+          "#e8c4d8",
+          "Oak, Pin",
+          "#7c5295",
+          "Maple, Sugar",
+          "#e89d07",
+          "Redbud",
+          "#c98bab",
+          "Linden, Littleleaf",
+          "#4a9d9c",
+          "Ash, Green",
+          "#538400",
+          "Ash, White",
+          "#a6c96a",
+          "Vacant",
+          "#dfe6ea",
+          "#9aa3a8"
+        ],
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          10,
+          1.0,
+          13,
+          2.5,
+          16,
+          5.5
+        ],
+        "circle-opacity": 0.85
+      }
+    }
+  ]
+}

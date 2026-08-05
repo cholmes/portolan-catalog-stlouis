@@ -1,0 +1,221 @@
+{
+  "type": "Collection",
+  "id": "police-districts",
+  "stac_version": "1.1.0",
+  "description": "GIS data for police district boundaries",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "./police-districts.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "pmtiles:layers": [
+        "police-districts"
+      ]
+    },
+    {
+      "rel": "license",
+      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=83",
+      "type": "text/html",
+      "title": "Dataset page on the City of St. Louis open data portal"
+    },
+    {
+      "rel": "via",
+      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=83",
+      "type": "text/html",
+      "title": "Source dataset on stlouis-mo.gov"
+    },
+    {
+      "rel": "via",
+      "href": "https://maps8.stlouis-mo.gov/arcgis/rest/services/STLOUIS/POLICE_DISTRICT/FeatureServer",
+      "type": "text/html",
+      "title": "Source ArcGIS service"
+    },
+    {
+      "rel": "describedby",
+      "href": "./README.md",
+      "type": "text/markdown"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown"
+    }
+  ],
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
+  ],
+  "geoparquet:geometry_type": "Polygon",
+  "geoparquet:feature_count": 6,
+  "table:row_count": 6,
+  "table:primary_geometry": "geometry",
+  "table:columns": [
+    {
+      "name": "OBJECTID",
+      "type": "int64"
+    },
+    {
+      "name": "DISTNO",
+      "type": "string"
+    },
+    {
+      "name": "ID1",
+      "type": "int32"
+    },
+    {
+      "name": "DISTNUM",
+      "type": "string"
+    },
+    {
+      "name": "Shape__Area",
+      "type": "double"
+    },
+    {
+      "name": "Shape__Length",
+      "type": "double"
+    },
+    {
+      "name": "geometry",
+      "type": "binary"
+    },
+    {
+      "name": "geometry_bbox",
+      "type": "struct<xmin: float not null, ymin: float not null, xmax: float not null, ymax: float not null>"
+    }
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -90.3201970937837,
+          38.53255684122102,
+          -90.17627181427606,
+          38.7742449374275
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "license": "other",
+  "assets": {
+    "police-districts": {
+      "href": "./police-districts.parquet",
+      "type": "application/vnd.apache.parquet",
+      "roles": [
+        "data"
+      ],
+      "title": "Police District Boundaries (GeoParquet)",
+      "file:size": 16896,
+      "file:checksum": "1220c60e6203340887c0715fa6e81d6157a32d40be7417f7a0ce05ddf2579cb32030"
+    },
+    "police-districts-tiles": {
+      "href": "./police-districts.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "police-districts (vector tiles)",
+      "roles": [
+        "visual"
+      ],
+      "file:size": 14092,
+      "file:checksum": "1220ec123d6aaca8e0142f98121ba34e37d54d6cf9d0d28cdd4972fb57fa3934bb7a"
+    },
+    "styles/city-renderer": {
+      "href": "./styles/city-renderer.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "City renderer",
+      "roles": [
+        "style"
+      ],
+      "file:size": 543,
+      "file:checksum": "12209932dec2d8d6e804b18469df20d01611a423db369e971fb4c13f276ad78cabd0",
+      "description": "The city's own symbology, extracted from the source ArcGIS renderer."
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Police districts",
+      "roles": [
+        "default",
+        "style"
+      ],
+      "description": "The six SLMPD districts, one color each, labeled by number.",
+      "file:size": 2123,
+      "file:checksum": "1220c6914f04ab738863bf01ba1915d0744c95cdcb9cbe363bd613dbb3293293a8a6"
+    },
+    "styles/style-boundaries": {
+      "href": "./styles/style-boundaries.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "style"
+      ],
+      "title": "District boundaries",
+      "description": "Outlines only.",
+      "file:size": 478,
+      "file:checksum": "1220aacc4a9fab8c6889540258f747aae5a65f471d371913eed5b9de2485b358eb65"
+    },
+    "styles/style-subtle": {
+      "href": "./styles/style-subtle.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "style"
+      ],
+      "title": "Subtle districts",
+      "description": "Light tint for underlays.",
+      "file:size": 734,
+      "file:checksum": "122004969b9661c621a5555ca6dba18238a8ebd9ff5d38433663f54c4459bb642beb"
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ],
+      "title": "Police District Boundaries rendered with the default style",
+      "file:size": 297757,
+      "file:checksum": "1220646e8748aa03125ef89034c899936ae2cf9cbb206e5fae171573a53377315522"
+    }
+  },
+  "portolan:styles": [
+    "styles/default",
+    "styles/city-renderer"
+  ],
+  "title": "Police District Boundaries",
+  "updated": "2026-08-05T01:13:22+00:00",
+  "providers": [
+    {
+      "name": "City of St. Louis \u2014 Police Department",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=83"
+    },
+    {
+      "name": "TGE Labs",
+      "roles": [
+        "host"
+      ],
+      "url": "https://github.com/cholmes/portolan-catalog-stlouis"
+    }
+  ]
+}

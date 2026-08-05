@@ -1,0 +1,45 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.1",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-05T01:18:33.793751Z",
+      "breaking": false,
+      "assets": {
+        "community-improvement-districts.parquet": {
+          "sha256": "1fbbb54b3f972a0b21bcd63f0ed1bc4964fe82cf1864e613e6bd1e2269dadb5c",
+          "size_bytes": 74033,
+          "href": "community-improvement-districts/community-improvement-districts.parquet",
+          "mtime": 1785892496.1729624
+        }
+      },
+      "changes": [
+        "community-improvement-districts.parquet"
+      ]
+    },
+    {
+      "version": "1.0.1",
+      "created": "2026-08-05T01:20:10.241541Z",
+      "breaking": false,
+      "assets": {
+        "community-improvement-districts.parquet": {
+          "sha256": "1fbbb54b3f972a0b21bcd63f0ed1bc4964fe82cf1864e613e6bd1e2269dadb5c",
+          "size_bytes": 74033,
+          "href": "community-improvement-districts/community-improvement-districts.parquet",
+          "mtime": 1785892496.1729624
+        },
+        "community-improvement-districts.pmtiles": {
+          "sha256": "014c0000d4fe72d7b5d16649e50620394c075f0734a3e356f9ff97050e44f7e4",
+          "size_bytes": 122806,
+          "href": "community-improvement-districts/community-improvement-districts.pmtiles",
+          "mtime": 1785892810.2324371
+        }
+      },
+      "changes": [
+        "community-improvement-districts.pmtiles"
+      ],
+      "message": "Generated PMTiles: community-improvement-districts.pmtiles"
+    }
+  ]
+}

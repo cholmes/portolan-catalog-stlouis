@@ -1,0 +1,26 @@
+{
+  "version": 8,
+  "name": "City blocks",
+  "metadata": {
+    "description": "The city's 5,857 numbered blocks as a hairline mesh."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../city-blocks.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "city-blocks",
+      "paint": {
+        "line-color": "#7a8489",
+        "line-width": 0.5,
+        "line-opacity": 1.0
+      }
+    }
+  ]
+}

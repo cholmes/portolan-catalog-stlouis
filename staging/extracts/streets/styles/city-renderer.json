@@ -1,0 +1,31 @@
+{
+  "version": 8,
+  "name": "Categorical Style",
+  "sources": {
+    "data": {
+      "type": "vector"
+    }
+  },
+  "layers": [
+    {
+      "id": "categorical-line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "streets",
+      "paint": {
+        "line-color": [
+          "match",
+          [
+            "get",
+            "Street_Name_Pre_Directional"
+          ],
+          "Interstate",
+          "#ffd37f",
+          "#cccccc"
+        ],
+        "line-width": 1,
+        "line-opacity": 1.0
+      }
+    }
+  ]
+}

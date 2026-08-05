@@ -1,0 +1,45 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.1",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-05T01:18:33.918938Z",
+      "breaking": false,
+      "assets": {
+        "parcels.parquet": {
+          "sha256": "21a1a2e764e7d500ca0f13698a999958e81a515f559461f76f77292eb55041a6",
+          "size_bytes": 28961506,
+          "href": "parcels/parcels.parquet",
+          "mtime": 1785892489.8355918
+        }
+      },
+      "changes": [
+        "parcels.parquet"
+      ]
+    },
+    {
+      "version": "1.0.1",
+      "created": "2026-08-05T01:22:28.021742Z",
+      "breaking": false,
+      "assets": {
+        "parcels.parquet": {
+          "sha256": "21a1a2e764e7d500ca0f13698a999958e81a515f559461f76f77292eb55041a6",
+          "size_bytes": 28961506,
+          "href": "parcels/parcels.parquet",
+          "mtime": 1785892489.8355918
+        },
+        "parcels.pmtiles": {
+          "sha256": "896108ea3161b05b3c4320ad9c77f548d2d25ee7129483963d9837345c402001",
+          "size_bytes": 136626845,
+          "href": "parcels/parcels.pmtiles",
+          "mtime": 1785892947.8958054
+        }
+      },
+      "changes": [
+        "parcels.pmtiles"
+      ],
+      "message": "Generated PMTiles: parcels.pmtiles"
+    }
+  ]
+}

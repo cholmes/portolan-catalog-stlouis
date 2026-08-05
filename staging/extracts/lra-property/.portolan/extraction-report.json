@@ -1,0 +1,41 @@
+{
+  "extraction_date": "2026-08-05T01:11:03.835734+00:00",
+  "source_url": "https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/SLDC_Real_Estate/FeatureServer",
+  "portolan_version": "0.7.0",
+  "gpio_version": "1.3.0",
+  "metadata_extracted": {
+    "source_url": "https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/SLDC_Real_Estate/FeatureServer",
+    "description": null,
+    "attribution": null,
+    "keywords": [
+      "SLDC_Real_Estate",
+      "MapServer"
+    ],
+    "contact_name": null,
+    "processing_notes": null,
+    "known_issues": null,
+    "license_info_raw": null
+  },
+  "layers": [
+    {
+      "id": 0,
+      "name": "LRA Inventory",
+      "status": "success",
+      "warnings": [],
+      "attempts": 1,
+      "features": 134374,
+      "size_bytes": 19184537,
+      "duration_seconds": 107.59458954096772,
+      "output_path": "lra_inventory/lra_inventory.parquet"
+    }
+  ],
+  "summary": {
+    "total_layers": 1,
+    "succeeded": 1,
+    "failed": 0,
+    "skipped": 0,
+    "total_features": 134374,
+    "total_size_bytes": 19184537,
+    "total_duration_seconds": 107.59458954096772
+  }
+}

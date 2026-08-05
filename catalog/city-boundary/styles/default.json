@@ -1,0 +1,26 @@
+{
+  "version": 8,
+  "name": "City boundary",
+  "metadata": {
+    "description": "The city limits \u2014 St. Louis is an independent city, in no county since 1876."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../city-boundary.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "city-boundary",
+      "paint": {
+        "line-color": "#c03221",
+        "line-width": 2.5,
+        "line-opacity": 1.0
+      }
+    }
+  ]
+}

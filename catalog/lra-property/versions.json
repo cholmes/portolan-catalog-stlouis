@@ -1,0 +1,45 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.1",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-05T01:18:33.825835Z",
+      "breaking": false,
+      "assets": {
+        "lra-property.parquet": {
+          "sha256": "7922a0d1cd2eabceb439a79b5e365719b9c52ec23c11a69c090d98cb557648b7",
+          "size_bytes": 1856752,
+          "href": "lra-property/lra-property.parquet",
+          "mtime": 1785892636.049021
+        }
+      },
+      "changes": [
+        "lra-property.parquet"
+      ]
+    },
+    {
+      "version": "1.0.1",
+      "created": "2026-08-05T01:20:16.731717Z",
+      "breaking": false,
+      "assets": {
+        "lra-property.parquet": {
+          "sha256": "7922a0d1cd2eabceb439a79b5e365719b9c52ec23c11a69c090d98cb557648b7",
+          "size_bytes": 1856752,
+          "href": "lra-property/lra-property.parquet",
+          "mtime": 1785892636.049021
+        },
+        "lra-property.pmtiles": {
+          "sha256": "e01c9fd4d47d9fc156453cfb592ef50f41042e194b8c70ce9fb254def9fef1fa",
+          "size_bytes": 7168759,
+          "href": "lra-property/lra-property.pmtiles",
+          "mtime": 1785892816.6534564
+        }
+      },
+      "changes": [
+        "lra-property.pmtiles"
+      ],
+      "message": "Generated PMTiles: lra-property.pmtiles"
+    }
+  ]
+}

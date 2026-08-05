@@ -1,0 +1,83 @@
+{
+  "version": 8,
+  "name": "Neighborhood number",
+  "metadata": {
+    "description": "Official neighborhood numbers in steps of 20 \u2014 numbering runs roughly south to north, so the gradient traces the city's geography."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../neighborhoods.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "neighborhoods-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "neighborhoods",
+      "paint": {
+        "fill-color": [
+          "step",
+          [
+            "to-number",
+            [
+              "get",
+              "NHD_NUM"
+            ]
+          ],
+          "#dbe8f0",
+          20,
+          "#a8d4e8",
+          40,
+          "#6ba3c4",
+          60,
+          "#3d7a9e",
+          80,
+          "#174054"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "neighborhoods",
+      "paint": {
+        "fill-color": [
+          "step",
+          [
+            "to-number",
+            [
+              "get",
+              "NHD_NUM"
+            ]
+          ],
+          "#dbe8f0",
+          20,
+          "#a8d4e8",
+          40,
+          "#6ba3c4",
+          60,
+          "#3d7a9e",
+          80,
+          "#174054"
+        ],
+        "fill-opacity": 0.75,
+        "fill-outline-color": "#ffffff"
+      }
+    },
+    {
+      "id": "line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "neighborhoods",
+      "paint": {
+        "line-color": "#FFFFFF",
+        "line-width": 0.8,
+        "line-opacity": 1.0
+      }
+    }
+  ]
+}

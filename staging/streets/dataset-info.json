@@ -1,0 +1,360 @@
+{
+ "collection": "streets",
+ "title": "City Streets",
+ "portal_page": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=68",
+ "department": "Streets - Director's Office",
+ "source": "https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/Streets/FeatureServer",
+ "source_type": "arcgis",
+ "synced": "2026-08-05T01:04:57+00:00",
+ "fetch": {
+  "status": "ok",
+  "parquets": [
+   "staging/extracts/streets/streets/streets.parquet"
+  ],
+  "layer_url": "https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/Streets/FeatureServer/3",
+  "layer_description": null,
+  "fields": [
+   {
+    "name": "OBJECTID",
+    "alias": "OBJECTID",
+    "type": "esriFieldTypeOID"
+   },
+   {
+    "name": "FULLNAME",
+    "alias": "FULLNAME",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Road_Segment_ID",
+    "alias": "Road_Segment_ID",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "From_Stree",
+    "alias": "From_Stree",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "To_Street",
+    "alias": "To_Street",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Street",
+    "alias": "Street",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Street_Name_Pre_Directional",
+    "alias": "Street_Name_Pre_Directional",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Street_Name_Post_Type",
+    "alias": "Street_Name_Post_Type",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Street_Name_Post_Direction",
+    "alias": "Street_Name_Post_Direction",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "FromLeft",
+    "alias": "FromLeft",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "ToLeft",
+    "alias": "ToLeft",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "FromRight",
+    "alias": "FromRight",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "ToRight",
+    "alias": "ToRight",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Class",
+    "alias": "Class",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "County",
+    "alias": "County",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Notes",
+    "alias": "Notes",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "NHD_NUM",
+    "alias": "NHD_NUM",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "NHD_NAME",
+    "alias": "NHD_NAME",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "NHD_NUMTXT",
+    "alias": "NHD_NUMTXT",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "ANGLE",
+    "alias": "ANGLE",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "PRECINCT",
+    "alias": "PRECINCT",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "ZIP_CODE",
+    "alias": "ZIP_CODE",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "ZCTA",
+    "alias": "ZCTA",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "WARD",
+    "alias": "WARD",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Road_Type",
+    "alias": "Road_Type",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Width_Min",
+    "alias": "Width_Min",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Width_Max",
+    "alias": "Width_Max",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Access_Typ",
+    "alias": "Access_Typ",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "FUNC_CLASS",
+    "alias": "FUNC_CLASS",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "SPEED_LIMI",
+    "alias": "SPEED_LIMI",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "LANE_COUNT",
+    "alias": "LANE_COUNT",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "BI_DIRECTI",
+    "alias": "BI_DIRECTI",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "OVERPASS",
+    "alias": "OVERPASS",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "X",
+    "alias": "X",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "Y",
+    "alias": "Y",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "Bus_Truck",
+    "alias": "Bus_Truck",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "State_Stre",
+    "alias": "State_Stre",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "P_Type",
+    "alias": "P_Type",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Date_Insta",
+    "alias": "Date_Insta",
+    "type": "esriFieldTypeDate"
+   },
+   {
+    "name": "Date_Rated",
+    "alias": "Date_Rated",
+    "type": "esriFieldTypeDate"
+   },
+   {
+    "name": "PCR",
+    "alias": "PCR",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "MoDOT_MJR",
+    "alias": "MoDOT_MJR",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Snow_Prior",
+    "alias": "Snow_Prior",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Snow_Type",
+    "alias": "Snow_Type",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Volume",
+    "alias": "Volume",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Honorary_N",
+    "alias": "Honorary_N",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Vacated",
+    "alias": "Vacated",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "Vac_Ordinance",
+    "alias": "Vac_Ordina",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Google_Ima",
+    "alias": "Google_Ima",
+    "type": "esriFieldTypeDate"
+   },
+   {
+    "name": "Commercial",
+    "alias": "Commercial",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "Loc_rd_cls",
+    "alias": "Loc_rd_cls",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "HONORARY_1",
+    "alias": "HONORARY_1",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "HN_TYPE",
+    "alias": "HN_TYPE",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Hon_Ord_Nu",
+    "alias": "Hon_Ord_Nu",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "HON_BOARD_",
+    "alias": "HON_BOARD_",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "DIRECTION",
+    "alias": "DIRECTION",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "LEVEL_",
+    "alias": "LEVEL_",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "RECLENGTH",
+    "alias": "RECLENGTH",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Shape_Leng",
+    "alias": "Shape_Leng",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "created_user",
+    "alias": "created_user",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "created_date",
+    "alias": "created_date",
+    "type": "esriFieldTypeDate"
+   },
+   {
+    "name": "last_edited_user",
+    "alias": "last_edited_user",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "last_edited_date",
+    "alias": "last_edited_date",
+    "type": "esriFieldTypeDate"
+   },
+   {
+    "name": "OneWayCode",
+    "alias": "OneWayCode",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "FromElevation",
+    "alias": "FromElevation",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "ToElevation",
+    "alias": "ToElevation",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "Time",
+    "alias": "Time",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Shape__Length",
+    "alias": "Shape.STLength()",
+    "type": "esriFieldTypeDouble"
+   }
+  ],
+  "city_style": "staging/extracts/streets/styles/city-renderer.json"
+ }
+}

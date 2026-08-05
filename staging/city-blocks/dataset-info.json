@@ -1,0 +1,215 @@
+{
+ "collection": "city-blocks",
+ "title": "City Blocks",
+ "portal_page": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=12",
+ "department": "Assessor's Office",
+ "source": "https://maps8.stlouis-mo.gov/arcgis/rest/services/STLOUIS/BOUNDARIES/MapServer",
+ "source_type": "arcgis",
+ "synced": "2026-08-05T01:04:57+00:00",
+ "fetch": {
+  "status": "ok",
+  "parquets": [
+   "staging/extracts/city-blocks/city_blocks/city_blocks.parquet"
+  ],
+  "layer_url": "https://maps8.stlouis-mo.gov/arcgis/rest/services/STLOUIS/BOUNDARIES/MapServer/7",
+  "layer_description": null,
+  "fields": [
+   {
+    "name": "OBJECTID",
+    "alias": "OBJECTID",
+    "type": "esriFieldTypeOID"
+   },
+   {
+    "name": "Join_Count",
+    "alias": "Join_Count",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "TARGET_FID",
+    "alias": "TARGET_FID",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "Name",
+    "alias": "Name",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "BLOCK_HANDLE",
+    "alias": "BLOCK_HANDLE",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "GeoCityBlockPart",
+    "alias": "GeoCityBlockPart",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "WARD10",
+    "alias": "WARD10",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "PRECINCT10",
+    "alias": "PRECINCT10",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "INSPAREA10",
+    "alias": "INSPAREA10",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "Ward00",
+    "alias": "Ward00",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "PRECINCT02",
+    "alias": "PRECINCT02",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "PRECINCT04",
+    "alias": "PRECINCT04",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "NBRHD",
+    "alias": "NBRHD",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "CDADIST",
+    "alias": "CDADIST",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "CDASUBDIST",
+    "alias": "CDASUBDIST",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "POLICEDIST",
+    "alias": "POLICEDIST",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "CensTract10",
+    "alias": "CensTract10",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "CensBlock10",
+    "alias": "CensBlock10",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "CensBlock00",
+    "alias": "CensBlock00",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Ward90",
+    "alias": "Ward90",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "Precinct90",
+    "alias": "Precinct90",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "CensBlock90",
+    "alias": "CensBlock90",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "HouseConsDist",
+    "alias": "HouseConsDist",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "ASRNBRHD",
+    "alias": "ASRNBRHD",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "EntZone",
+    "alias": "EntZone",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "IMPACTAREA",
+    "alias": "IMPACTAREA",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "CTDArea",
+    "alias": "CTDArea",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "OnFloodBlock",
+    "alias": "OnFloodBlock",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "SpecBusDist3",
+    "alias": "SpecBusDist3",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "Ward20",
+    "alias": "Ward20",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "Precinct20",
+    "alias": "Precinct20",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "InspArea20",
+    "alias": "InspArea20",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "CensTract20",
+    "alias": "CensTract20",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "CensBlock20",
+    "alias": "CensBlock20",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "MaintZoneWC",
+    "alias": "MaintZoneWC",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "TransDevDist",
+    "alias": "TransDevDist",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "Shape",
+    "alias": "Shape",
+    "type": "esriFieldTypeGeometry"
+   },
+   {
+    "name": "Shape_Length",
+    "alias": "Shape_Length",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Shape_Area",
+    "alias": "Shape_Area",
+    "type": "esriFieldTypeDouble"
+   }
+  ],
+  "city_style": "staging/extracts/city-blocks/styles/city-renderer.json"
+ }
+}

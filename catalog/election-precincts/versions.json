@@ -1,0 +1,141 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.4",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-05T01:18:33.796577Z",
+      "breaking": false,
+      "assets": {
+        "election-precincts.parquet": {
+          "sha256": "46f4cede80c567be4916cb4909371fd60ca43ef1a0f23dcb7166dc8a43f53883",
+          "size_bytes": 284296,
+          "href": "election-precincts/election-precincts.parquet",
+          "mtime": 1785892491.3857942
+        }
+      },
+      "changes": [
+        "election-precincts.parquet"
+      ]
+    },
+    {
+      "version": "1.0.1",
+      "created": "2026-08-05T01:20:09.470021Z",
+      "breaking": false,
+      "assets": {
+        "election-precincts.parquet": {
+          "sha256": "eb483e9f543ae7f3dc75d38eb5cb7ac7426e64a1b7fb0d3369f3b52a524bb0e1",
+          "size_bytes": 283116,
+          "href": "election-precincts/election-precincts.parquet",
+          "source_mtime": 1785892788.7027383,
+          "mtime": 1785892788.7027383,
+          "feature_count": 209,
+          "schema_fingerprint": "4a54d1a043396f6a"
+        }
+      },
+      "changes": [
+        "election-precincts.parquet"
+      ]
+    },
+    {
+      "version": "1.0.2",
+      "created": "2026-08-05T01:22:28.814898Z",
+      "breaking": false,
+      "assets": {
+        "election-precincts.parquet": {
+          "sha256": "eb483e9f543ae7f3dc75d38eb5cb7ac7426e64a1b7fb0d3369f3b52a524bb0e1",
+          "size_bytes": 283116,
+          "href": "election-precincts/election-precincts.parquet",
+          "source_mtime": 1785892788.7027383,
+          "mtime": 1785892788.7027383,
+          "feature_count": 209,
+          "schema_fingerprint": "4a54d1a043396f6a"
+        },
+        "election-precincts.pmtiles": {
+          "sha256": "4325b96a44336adaadaf05e1cdb7ea0ae08f45d1660769af5d769045e4a7ac15",
+          "size_bytes": 292105,
+          "href": "election-precincts/election-precincts.pmtiles",
+          "mtime": 1785892948.8103147
+        }
+      },
+      "changes": [
+        "election-precincts.pmtiles"
+      ],
+      "message": "Generated PMTiles: election-precincts.pmtiles"
+    },
+    {
+      "version": "1.0.3",
+      "created": "2026-08-05T01:39:48.680638Z",
+      "breaking": false,
+      "assets": {
+        "election-precincts.parquet": {
+          "sha256": "eb483e9f543ae7f3dc75d38eb5cb7ac7426e64a1b7fb0d3369f3b52a524bb0e1",
+          "size_bytes": 283116,
+          "href": "election-precincts/election-precincts.parquet",
+          "source_mtime": 1785892788.7027383,
+          "mtime": 1785892788.7027383,
+          "feature_count": 209,
+          "schema_fingerprint": "4a54d1a043396f6a"
+        },
+        "election-precincts.pmtiles": {
+          "sha256": "4325b96a44336adaadaf05e1cdb7ea0ae08f45d1660769af5d769045e4a7ac15",
+          "size_bytes": 292105,
+          "href": "election-precincts/election-precincts.pmtiles",
+          "mtime": 1785892948.8103147
+        },
+        "README.md": {
+          "sha256": "84e7ee91a8172e9b546af925822c618157d7b23a6eb290f2ccfe64306e68fae2",
+          "size_bytes": 2177,
+          "href": "election-precincts/README.md",
+          "mtime": 1785893642.3292499
+        },
+        "thumbnail.png": {
+          "sha256": "6d689e28214ec953d64989c3318ff836453a4ab2bd9ce639e60627a20ac2c465",
+          "size_bytes": 360230,
+          "href": "election-precincts/thumbnail.png",
+          "mtime": 1785893810.5330908
+        }
+      },
+      "changes": [
+        "README.md",
+        "thumbnail.png"
+      ]
+    },
+    {
+      "version": "1.0.4",
+      "created": "2026-08-05T01:39:50.001063Z",
+      "breaking": false,
+      "assets": {
+        "election-precincts.parquet": {
+          "sha256": "eb483e9f543ae7f3dc75d38eb5cb7ac7426e64a1b7fb0d3369f3b52a524bb0e1",
+          "size_bytes": 283116,
+          "href": "election-precincts/election-precincts.parquet",
+          "source_mtime": 1785892788.7027383,
+          "mtime": 1785892788.7027383,
+          "feature_count": 209,
+          "schema_fingerprint": "4a54d1a043396f6a"
+        },
+        "election-precincts.pmtiles": {
+          "sha256": "4325b96a44336adaadaf05e1cdb7ea0ae08f45d1660769af5d769045e4a7ac15",
+          "size_bytes": 292105,
+          "href": "election-precincts/election-precincts.pmtiles",
+          "mtime": 1785893989.996344
+        },
+        "README.md": {
+          "sha256": "84e7ee91a8172e9b546af925822c618157d7b23a6eb290f2ccfe64306e68fae2",
+          "size_bytes": 2177,
+          "href": "election-precincts/README.md",
+          "mtime": 1785893642.3292499
+        },
+        "thumbnail.png": {
+          "sha256": "6d689e28214ec953d64989c3318ff836453a4ab2bd9ce639e60627a20ac2c465",
+          "size_bytes": 360230,
+          "href": "election-precincts/thumbnail.png",
+          "mtime": 1785893810.5330908
+        }
+      },
+      "changes": [],
+      "message": "Generated PMTiles: election-precincts.pmtiles"
+    }
+  ]
+}

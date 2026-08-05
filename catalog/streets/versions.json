@@ -1,0 +1,45 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.1",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-05T01:18:33.873133Z",
+      "breaking": false,
+      "assets": {
+        "streets.parquet": {
+          "sha256": "546c0af33aaf2bc7689cd5674d646cd59ecf44787b45c1f5c7ecfdab64b4852c",
+          "size_bytes": 2602008,
+          "href": "streets/streets.parquet",
+          "mtime": 1785892491.0023777
+        }
+      },
+      "changes": [
+        "streets.parquet"
+      ]
+    },
+    {
+      "version": "1.0.1",
+      "created": "2026-08-05T01:26:23.391850Z",
+      "breaking": false,
+      "assets": {
+        "streets.parquet": {
+          "sha256": "546c0af33aaf2bc7689cd5674d646cd59ecf44787b45c1f5c7ecfdab64b4852c",
+          "size_bytes": 2602008,
+          "href": "streets/streets.parquet",
+          "mtime": 1785892491.0023777
+        },
+        "streets.pmtiles": {
+          "sha256": "c019bfd014e39964044df68b6d378dbc18d004c4aaf6ebf999ea2703e9c4c2c1",
+          "size_bytes": 17115228,
+          "href": "streets/streets.pmtiles",
+          "mtime": 1785893183.3655708
+        }
+      },
+      "changes": [
+        "streets.pmtiles"
+      ],
+      "message": "Generated PMTiles: streets.pmtiles"
+    }
+  ]
+}

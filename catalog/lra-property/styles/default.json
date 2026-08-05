@@ -1,0 +1,82 @@
+{
+  "version": 8,
+  "name": "LRA inventory by status",
+  "metadata": {
+    "description": "The Land Reutilization Authority's 9,467 parcels \u2014 the nation's oldest land bank \u2014 mostly Available (green), with holds, options, and recent sales."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../lra-property.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "lra-property-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "lra-property",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "Status"
+          ],
+          "Available",
+          "#538400",
+          "Greenspace Hold",
+          "#4a9d9c",
+          "CDA Option",
+          "#e89d07",
+          "Development Hold",
+          "#e89d07",
+          "Legal Hold",
+          "#7c5295",
+          "SOLD",
+          "#a8d4e8",
+          "SOLD (RORE)",
+          "#a8d4e8",
+          "Unavailable",
+          "#9aa3a8",
+          "#9aa3a8"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "lra-property",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "Status"
+          ],
+          "Available",
+          "#538400",
+          "Greenspace Hold",
+          "#4a9d9c",
+          "CDA Option",
+          "#e89d07",
+          "Development Hold",
+          "#e89d07",
+          "Legal Hold",
+          "#7c5295",
+          "SOLD",
+          "#a8d4e8",
+          "SOLD (RORE)",
+          "#a8d4e8",
+          "Unavailable",
+          "#9aa3a8",
+          "#9aa3a8"
+        ],
+        "fill-opacity": 0.7,
+        "fill-outline-color": "#FFFFFF"
+      }
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "version": 8,
+  "name": "Abatements by start year",
+  "metadata": {
+    "description": "1,440 parcels with active real-estate tax abatements, stepped by when the abatement began (2001-2025)."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../tax-abated-parcels.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "tax-abated-parcels-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "tax-abated-parcels",
+      "paint": {
+        "fill-color": [
+          "step",
+          [
+            "get",
+            "AbatementStartYear"
+          ],
+          "#dfe6ea",
+          2001,
+          "#c6dbe8",
+          2011,
+          "#8fbdd6",
+          2016,
+          "#5591b5",
+          2021,
+          "#174054"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "tax-abated-parcels",
+      "paint": {
+        "fill-color": [
+          "step",
+          [
+            "get",
+            "AbatementStartYear"
+          ],
+          "#dfe6ea",
+          2001,
+          "#c6dbe8",
+          2011,
+          "#8fbdd6",
+          2016,
+          "#5591b5",
+          2021,
+          "#174054"
+        ],
+        "fill-opacity": 0.75,
+        "fill-outline-color": "#FFFFFF"
+      }
+    }
+  ]
+}

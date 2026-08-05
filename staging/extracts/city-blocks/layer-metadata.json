@@ -1,0 +1,468 @@
+{
+ "currentVersion": 11.2,
+ "cimVersion": "3.2.0",
+ "id": 7,
+ "name": "City Blocks",
+ "type": "Feature Layer",
+ "description": "",
+ "geometryType": "esriGeometryPolygon",
+ "sourceSpatialReference": {
+  "wkid": 102696,
+  "latestWkid": 102696,
+  "xyTolerance": 0.003280833333333333,
+  "zTolerance": 0.001,
+  "mTolerance": 0.001,
+  "falseX": -17627100,
+  "falseY": -45827300,
+  "xyUnits": 3048.0060960121928,
+  "falseZ": -100000,
+  "zUnits": 10000,
+  "falseM": 0,
+  "mUnits": 1
+ },
+ "copyrightText": "",
+ "parentLayer": null,
+ "subLayers": [],
+ "minScale": 0,
+ "maxScale": 0,
+ "referenceScale": 0.0,
+ "drawingInfo": {
+  "renderer": {
+   "type": "simple",
+   "symbol": {
+    "type": "esriSFS",
+    "style": "esriSFSSolid",
+    "color": [
+     225,
+     225,
+     225,
+     255
+    ],
+    "outline": {
+     "type": "esriSLS",
+     "style": "esriSLSSolid",
+     "color": [
+      110,
+      110,
+      110,
+      255
+     ],
+     "width": 1
+    }
+   }
+  },
+  "scaleSymbols": true,
+  "transparency": 0,
+  "labelingInfo": [
+   {
+    "labelExpressionInfo": {
+     "expression": "$feature.Name",
+     "title": "Custom"
+    },
+    "labelPlacement": "esriServerPolygonPlacementAlwaysHorizontal",
+    "multiPart": "labelLargest",
+    "allowOverrun": true,
+    "deconflictionStrategy": "dynamic",
+    "repeatLabel": false,
+    "useClippedGeometry": false,
+    "stackLabel": true,
+    "stackAlignment": "dynamic",
+    "removeDuplicates": "none",
+    "stackRowLength": 24,
+    "useCodedValues": true,
+    "maxScale": 0,
+    "minScale": 0,
+    "name": "Class 1",
+    "priority": -1,
+    "symbol": {
+     "type": "esriTS",
+     "color": [
+      0,
+      0,
+      0,
+      255
+     ],
+     "backgroundColor": null,
+     "borderLineColor": null,
+     "borderLineSize": null,
+     "verticalAlignment": "bottom",
+     "horizontalAlignment": "left",
+     "rightToLeft": false,
+     "angle": 0,
+     "xoffset": 0,
+     "yoffset": 0,
+     "kerning": true,
+     "haloColor": null,
+     "haloSize": null,
+     "font": {
+      "family": "Tahoma",
+      "size": 10,
+      "style": "normal",
+      "weight": "normal",
+      "decoration": "none"
+     }
+    }
+   }
+  ]
+ },
+ "defaultVisibility": false,
+ "extent": {
+  "xmin": -10054457.956576962,
+  "ymin": 4655051.06122954,
+  "xmax": -10038278.861261984,
+  "ymax": 4689443.500623431,
+  "spatialReference": {
+   "wkid": 102100,
+   "latestWkid": 3857,
+   "xyTolerance": 0.001,
+   "zTolerance": 0.001,
+   "mTolerance": 0.001,
+   "falseX": -20037700,
+   "falseY": -30241100,
+   "xyUnits": 10000,
+   "falseZ": 0,
+   "zUnits": 1,
+   "falseM": 0,
+   "mUnits": 1
+  }
+ },
+ "hasAttachments": false,
+ "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+ "displayField": "Name",
+ "typeIdField": null,
+ "subtypeFieldName": null,
+ "subtypeField": null,
+ "defaultSubtypeCode": null,
+ "fields": [
+  {
+   "name": "OBJECTID",
+   "type": "esriFieldTypeOID",
+   "alias": "OBJECTID",
+   "domain": null
+  },
+  {
+   "name": "Join_Count",
+   "type": "esriFieldTypeInteger",
+   "alias": "Join_Count",
+   "domain": null
+  },
+  {
+   "name": "TARGET_FID",
+   "type": "esriFieldTypeInteger",
+   "alias": "TARGET_FID",
+   "domain": null
+  },
+  {
+   "name": "Name",
+   "type": "esriFieldTypeString",
+   "alias": "Name",
+   "length": 50,
+   "domain": null
+  },
+  {
+   "name": "BLOCK_HANDLE",
+   "type": "esriFieldTypeString",
+   "alias": "BLOCK_HANDLE",
+   "length": 50,
+   "domain": null
+  },
+  {
+   "name": "GeoCityBlockPart",
+   "type": "esriFieldTypeDouble",
+   "alias": "GeoCityBlockPart",
+   "domain": null
+  },
+  {
+   "name": "WARD10",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "WARD10",
+   "domain": null
+  },
+  {
+   "name": "PRECINCT10",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "PRECINCT10",
+   "domain": null
+  },
+  {
+   "name": "INSPAREA10",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "INSPAREA10",
+   "domain": null
+  },
+  {
+   "name": "Ward00",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "Ward00",
+   "domain": null
+  },
+  {
+   "name": "PRECINCT02",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "PRECINCT02",
+   "domain": null
+  },
+  {
+   "name": "PRECINCT04",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "PRECINCT04",
+   "domain": null
+  },
+  {
+   "name": "NBRHD",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "NBRHD",
+   "domain": null
+  },
+  {
+   "name": "CDADIST",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "CDADIST",
+   "domain": null
+  },
+  {
+   "name": "CDASUBDIST",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "CDASUBDIST",
+   "domain": null
+  },
+  {
+   "name": "POLICEDIST",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "POLICEDIST",
+   "domain": null
+  },
+  {
+   "name": "CensTract10",
+   "type": "esriFieldTypeDouble",
+   "alias": "CensTract10",
+   "domain": null
+  },
+  {
+   "name": "CensBlock10",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "CensBlock10",
+   "domain": null
+  },
+  {
+   "name": "CensBlock00",
+   "type": "esriFieldTypeDouble",
+   "alias": "CensBlock00",
+   "domain": null
+  },
+  {
+   "name": "Ward90",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "Ward90",
+   "domain": null
+  },
+  {
+   "name": "Precinct90",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "Precinct90",
+   "domain": null
+  },
+  {
+   "name": "CensBlock90",
+   "type": "esriFieldTypeDouble",
+   "alias": "CensBlock90",
+   "domain": null
+  },
+  {
+   "name": "HouseConsDist",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "HouseConsDist",
+   "domain": null
+  },
+  {
+   "name": "ASRNBRHD",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "ASRNBRHD",
+   "domain": null
+  },
+  {
+   "name": "EntZone",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "EntZone",
+   "domain": null
+  },
+  {
+   "name": "IMPACTAREA",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "IMPACTAREA",
+   "domain": null
+  },
+  {
+   "name": "CTDArea",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "CTDArea",
+   "domain": null
+  },
+  {
+   "name": "OnFloodBlock",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "OnFloodBlock",
+   "domain": null
+  },
+  {
+   "name": "SpecBusDist3",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "SpecBusDist3",
+   "domain": null
+  },
+  {
+   "name": "Ward20",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "Ward20",
+   "domain": null
+  },
+  {
+   "name": "Precinct20",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "Precinct20",
+   "domain": null
+  },
+  {
+   "name": "InspArea20",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "InspArea20",
+   "domain": null
+  },
+  {
+   "name": "CensTract20",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "CensTract20",
+   "domain": null
+  },
+  {
+   "name": "CensBlock20",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "CensBlock20",
+   "domain": null
+  },
+  {
+   "name": "MaintZoneWC",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "MaintZoneWC",
+   "domain": null
+  },
+  {
+   "name": "TransDevDist",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "TransDevDist",
+   "domain": null
+  },
+  {
+   "name": "Shape",
+   "type": "esriFieldTypeGeometry",
+   "alias": "Shape",
+   "domain": null
+  },
+  {
+   "name": "Shape_Length",
+   "type": "esriFieldTypeDouble",
+   "alias": "Shape_Length",
+   "domain": null
+  },
+  {
+   "name": "Shape_Area",
+   "type": "esriFieldTypeDouble",
+   "alias": "Shape_Area",
+   "domain": null
+  }
+ ],
+ "geometryField": {
+  "name": "Shape",
+  "type": "esriFieldTypeGeometry",
+  "alias": "Shape"
+ },
+ "indexes": [
+  {
+   "name": "FDO_OBJECTID",
+   "fields": "OBJECTID",
+   "isAscending": true,
+   "isUnique": true,
+   "description": ""
+  },
+  {
+   "name": "FDO_Shape",
+   "fields": "Shape",
+   "isAscending": true,
+   "isUnique": false,
+   "description": ""
+  }
+ ],
+ "subtypes": [],
+ "relationships": [],
+ "canModifyLayer": true,
+ "canScaleSymbols": false,
+ "hasLabels": true,
+ "capabilities": "Query,Map,Data",
+ "maxRecordCount": 2000,
+ "supportsStatistics": true,
+ "supportsExceedsLimitStatistics": true,
+ "supportsAdvancedQueries": true,
+ "hasZ": true,
+ "supportedQueryFormats": "JSON, geoJSON, PBF",
+ "isDataVersioned": false,
+ "ownershipBasedAccessControlForFeatures": {
+  "allowOthersToQuery": true
+ },
+ "useStandardizedQueries": true,
+ "supportedSpatialRelationships": [
+  "esriSpatialRelIntersects",
+  "esriSpatialRelContains",
+  "esriSpatialRelCrosses",
+  "esriSpatialRelEnvelopeIntersects",
+  "esriSpatialRelIndexIntersects",
+  "esriSpatialRelOverlaps",
+  "esriSpatialRelTouches",
+  "esriSpatialRelWithin",
+  "esriSpatialRelRelation"
+ ],
+ "advancedQueryCapabilities": {
+  "useStandardizedQueries": true,
+  "supportsStatistics": true,
+  "supportsPercentileStatistics": true,
+  "supportsHavingClause": true,
+  "supportsOrderBy": true,
+  "supportsDistinct": true,
+  "supportsCountDistinct": true,
+  "supportsAdvancedQueryRelated": true,
+  "supportsQueryRelatedPagination": true,
+  "supportsPagination": true,
+  "supportsLod": false,
+  "supportsQueryWithLodSR": false,
+  "supportsTrueCurve": true,
+  "supportsQueryWithDatumTransformation": true,
+  "supportsReturningQueryExtent": true,
+  "supportsQueryWithDistance": true,
+  "supportsSqlExpression": true,
+  "supportsTimeRelation": true,
+  "supportsSqlFormat": false,
+  "supportsQueryAnalytic": false,
+  "supportsCurrentUserQueries": true
+ },
+ "supportsDatumTransformation": true,
+ "dateFieldsTimeReference": null,
+ "preferredTimeReference": null,
+ "datesInUnknownTimezone": false,
+ "hasGeometryProperties": true,
+ "geometryProperties": {
+  "shapeAreaFieldName": "Shape_Area",
+  "shapeLengthFieldName": "Shape_Length",
+  "units": "esriFeet",
+  "mapUnits": {
+   "uwkid": 9003
+  }
+ },
+ "hasMetadata": true,
+ "isDataArchived": false,
+ "archivingInfo": {
+  "supportsQueryWithHistoricMoment": false,
+  "startArchivingMoment": -1
+ },
+ "supportsCoordinatesQuantization": true,
+ "supportsDynamicLegends": true,
+ "serviceItemId": "265c560295ff41deb3cd3c6efd830dc9"
+}

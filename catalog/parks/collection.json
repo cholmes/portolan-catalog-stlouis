@@ -1,0 +1,253 @@
+{
+  "type": "Collection",
+  "id": "parks",
+  "stac_version": "1.1.0",
+  "description": "A database containing information on city parks, park amenities, and amenity attributes",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "./parks.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "pmtiles:layers": [
+        "parks"
+      ]
+    },
+    {
+      "rel": "license",
+      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=46",
+      "type": "text/html",
+      "title": "Dataset page on the City of St. Louis open data portal"
+    },
+    {
+      "rel": "via",
+      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=46",
+      "type": "text/html",
+      "title": "Source dataset on stlouis-mo.gov"
+    },
+    {
+      "rel": "via",
+      "href": "https://maps9.stlouis-mo.gov/arcgis/rest/services/PARKS/Reservable_Park_Amenities/FeatureServer",
+      "type": "text/html",
+      "title": "Source ArcGIS service"
+    },
+    {
+      "rel": "describedby",
+      "href": "./README.md",
+      "type": "text/markdown"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown"
+    }
+  ],
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
+  ],
+  "geoparquet:geometry_type": "MultiPolygon",
+  "geoparquet:feature_count": 117,
+  "table:row_count": 117,
+  "table:primary_geometry": "geometry",
+  "table:columns": [
+    {
+      "name": "OBJECTID",
+      "type": "int64"
+    },
+    {
+      "name": "CLASS",
+      "type": "string"
+    },
+    {
+      "name": "NEW_CLASS",
+      "type": "string"
+    },
+    {
+      "name": "YR_ACQRD",
+      "type": "int16"
+    },
+    {
+      "name": "TEXT_",
+      "type": "string"
+    },
+    {
+      "name": "WARD10",
+      "type": "int16"
+    },
+    {
+      "name": "PARK_ID",
+      "type": "string"
+    },
+    {
+      "name": "ACRES",
+      "type": "double"
+    },
+    {
+      "name": "AREA_SQFT",
+      "type": "double"
+    },
+    {
+      "name": "AREA_ACRES",
+      "type": "double"
+    },
+    {
+      "name": "CENSUS_POP",
+      "type": "double"
+    },
+    {
+      "name": "PARCEL_POP",
+      "type": "double"
+    },
+    {
+      "name": "Shape__Area",
+      "type": "double"
+    },
+    {
+      "name": "Shape__Length",
+      "type": "double"
+    },
+    {
+      "name": "geometry",
+      "type": "binary"
+    },
+    {
+      "name": "geometry_bbox",
+      "type": "struct<xmin: float not null, ymin: float not null, xmax: float not null, ymax: float not null>"
+    }
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -90.31685159358771,
+          38.544538428476805,
+          -90.18238985198289,
+          38.753368662590674
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "license": "other",
+  "assets": {
+    "parks": {
+      "href": "./parks.parquet",
+      "type": "application/vnd.apache.parquet",
+      "roles": [
+        "data"
+      ],
+      "title": "City Parks (GeoParquet)",
+      "file:size": 53378,
+      "file:checksum": "122039f5771fa587c6d44ff99ac55be6e971ac85afdc253a84b989e664d002c3835f"
+    },
+    "parks-tiles": {
+      "href": "./parks.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "parks (vector tiles)",
+      "roles": [
+        "visual"
+      ],
+      "file:size": 134760,
+      "file:checksum": "12200f890776d172d0c40fd2597a4f616f074c4c4762b52fd18e66625a60fad75433"
+    },
+    "styles/city-renderer": {
+      "href": "./styles/city-renderer.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "City renderer",
+      "roles": [
+        "style"
+      ],
+      "file:size": 480,
+      "file:checksum": "1220007769233c7b62b30c9080a401bc8d737a77bc07fffe44481ae64f4cf66cdd74",
+      "description": "The city's own symbology, extracted from the source ArcGIS renderer."
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "City parks",
+      "roles": [
+        "default",
+        "style"
+      ],
+      "description": "All 117 city parks in park green with labels.",
+      "file:size": 968,
+      "file:checksum": "12207f07858885ef228184ea9ab28705ed6e8ff4554444c97110c1d9133f935557d2"
+    },
+    "styles/style-class": {
+      "href": "./styles/style-class.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "style"
+      ],
+      "title": "Park classification",
+      "description": "The Parks Department's classification: neighborhood, community, regional, mini, special-use, cemeteries.",
+      "file:size": 1780,
+      "file:checksum": "1220fd983f64f8a8093c33f358d5dae57a991d00682a6439e515e205c1f589b3af0b"
+    },
+    "styles/style-size": {
+      "href": "./styles/style-size.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "style"
+      ],
+      "title": "Park size",
+      "description": "Acreage steps (4 / 14 / 100+): Forest Park's 1,293 acres anchors the dark end.",
+      "file:size": 1147,
+      "file:checksum": "12208f7e1a3052968ece68545438b37c8fabb1f7a2aacb0598e28d74a7e39da377e5"
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ],
+      "title": "City Parks rendered with the default style",
+      "file:size": 339312,
+      "file:checksum": "1220fe5e193e58d0897d8d5e5d3433736422364f2d4c512ee940938f324a428aa1f1"
+    }
+  },
+  "portolan:styles": [
+    "styles/default",
+    "styles/city-renderer"
+  ],
+  "title": "City Parks",
+  "updated": "2026-08-05T01:13:22+00:00",
+  "providers": [
+    {
+      "name": "City of St. Louis \u2014 Parks",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=46"
+    },
+    {
+      "name": "TGE Labs",
+      "roles": [
+        "host"
+      ],
+      "url": "https://github.com/cholmes/portolan-catalog-stlouis"
+    }
+  ]
+}

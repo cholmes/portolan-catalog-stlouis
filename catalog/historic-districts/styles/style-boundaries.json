@@ -1,0 +1,49 @@
+{
+  "version": 8,
+  "name": "District boundaries",
+  "metadata": {
+    "description": "Outlines with labels."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../historic-districts.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "historic-districts",
+      "paint": {
+        "line-color": "#7c5295",
+        "line-width": 1.5,
+        "line-opacity": 1.0
+      }
+    },
+    {
+      "id": "labels",
+      "type": "symbol",
+      "source": "data",
+      "source-layer": "historic-districts",
+      "minzoom": 12,
+      "layout": {
+        "text-field": [
+          "get",
+          "DISNAME"
+        ],
+        "text-font": [
+          "Noto Sans Regular"
+        ],
+        "text-size": 10,
+        "text-max-width": 9
+      },
+      "paint": {
+        "text-color": "#1A1A1A",
+        "text-halo-color": "#FFFFFF",
+        "text-halo-width": 1.2
+      }
+    }
+  ]
+}

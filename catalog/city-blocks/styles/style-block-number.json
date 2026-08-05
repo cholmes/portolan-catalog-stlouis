@@ -1,0 +1,72 @@
+{
+  "version": 8,
+  "name": "Block numbering",
+  "metadata": {
+    "description": "Block numbers in steps \u2014 numbering began downtown by the river and grew outward, so the gradient replays the city's expansion."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../city-blocks.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "city-blocks-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "city-blocks",
+      "paint": {
+        "fill-color": [
+          "step",
+          [
+            "to-number",
+            [
+              "get",
+              "Name"
+            ]
+          ],
+          "#e3ecf1",
+          1000,
+          "#b9d3e2",
+          2500,
+          "#88b3cd",
+          4000,
+          "#5591b5",
+          5500,
+          "#174054"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "city-blocks",
+      "paint": {
+        "fill-color": [
+          "step",
+          [
+            "to-number",
+            [
+              "get",
+              "Name"
+            ]
+          ],
+          "#e3ecf1",
+          1000,
+          "#b9d3e2",
+          2500,
+          "#88b3cd",
+          4000,
+          "#5591b5",
+          5500,
+          "#174054"
+        ],
+        "fill-opacity": 0.8,
+        "fill-outline-color": "#FFFFFF"
+      }
+    }
+  ]
+}

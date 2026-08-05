@@ -1,0 +1,49 @@
+{
+  "version": 8,
+  "name": "Labeled SBDs",
+  "metadata": {
+    "description": "Districts with names."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../special-business-districts.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "special-business-districts",
+      "paint": {
+        "fill-color": "#1e526b",
+        "fill-opacity": 0.4,
+        "fill-outline-color": "#174054"
+      }
+    },
+    {
+      "id": "labels",
+      "type": "symbol",
+      "source": "data",
+      "source-layer": "special-business-districts",
+      "minzoom": 11,
+      "layout": {
+        "text-field": [
+          "get",
+          "Name"
+        ],
+        "text-font": [
+          "Noto Sans Regular"
+        ],
+        "text-size": 10,
+        "text-max-width": 9
+      },
+      "paint": {
+        "text-color": "#1A1A1A",
+        "text-halo-color": "#FFFFFF",
+        "text-halo-width": 1.2
+      }
+    }
+  ]
+}

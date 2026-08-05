@@ -1,0 +1,58 @@
+{
+  "version": 8,
+  "name": "SBDs by status",
+  "metadata": {
+    "description": "The 22 special business districts by active status."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../special-business-districts.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "special-business-districts-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "special-business-districts",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "Active"
+          ],
+          "Y",
+          "#1e526b",
+          "N",
+          "#9aa3a8",
+          "#dfe6ea"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "special-business-districts",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "Active"
+          ],
+          "Y",
+          "#1e526b",
+          "N",
+          "#9aa3a8",
+          "#dfe6ea"
+        ],
+        "fill-opacity": 0.6,
+        "fill-outline-color": "#FFFFFF"
+      }
+    }
+  ]
+}

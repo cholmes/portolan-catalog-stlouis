@@ -1,0 +1,1389 @@
+{
+ "currentVersion": 11.2,
+ "cimVersion": "3.2.0",
+ "id": 3,
+ "name": "STREETS",
+ "type": "Feature Layer",
+ "parentLayer": null,
+ "defaultVisibility": true,
+ "minScale": 0,
+ "maxScale": 0,
+ "canScaleSymbols": false,
+ "geometryType": "esriGeometryPolyline",
+ "description": "",
+ "copyrightText": "",
+ "editFieldsInfo": {
+  "creationDateField": "created_date",
+  "creatorField": "created_user",
+  "editDateField": "last_edited_date",
+  "editorField": "last_edited_user"
+ },
+ "ownershipBasedAccessControlForFeatures": null,
+ "syncCanReturnChanges": false,
+ "relationships": [],
+ "isDataVersioned": false,
+ "isDataArchived": false,
+ "infoInEstimates": [
+  "extent",
+  "count"
+ ],
+ "isDataBranchVersioned": false,
+ "isDataReplicaTracked": false,
+ "isCoGoEnabled": false,
+ "supportsRollbackOnFailureParameter": true,
+ "archivingInfo": {
+  "supportsQueryWithHistoricMoment": false,
+  "startArchivingMoment": -1
+ },
+ "supportsStatistics": true,
+ "supportsExceedsLimitStatistics": true,
+ "supportsAdvancedQueries": true,
+ "supportsValidateSQL": true,
+ "supportsCoordinatesQuantization": true,
+ "supportsQuantizationEditMode": true,
+ "supportsCalculate": true,
+ "supportsASyncCalculate": true,
+ "supportsDatumTransformation": true,
+ "advancedQueryCapabilities": {
+  "supportsPagination": true,
+  "supportsTrueCurve": true,
+  "supportsQueryWithDistance": true,
+  "supportsReturningQueryExtent": true,
+  "supportsStatistics": true,
+  "supportsPercentileStatistics": true,
+  "supportsHavingClause": true,
+  "supportsOrderBy": true,
+  "supportsDistinct": true,
+  "supportsCountDistinct": true,
+  "supportsAdvancedQueryRelated": true,
+  "supportsQueryRelatedPagination": true,
+  "supportsCurrentUserQueries": true,
+  "supportsQueryWithResultType": true,
+  "supportsReturningGeometryCentroid": false,
+  "supportsSqlExpression": true,
+  "supportsQueryWithDatumTransformation": true,
+  "supportsLod": false,
+  "supportsQueryWithLodSR": false,
+  "supportsQueryAnalytic": true
+ },
+ "advancedQueryAnalyticCapabilities": {
+  "supportsLinearRegression": true,
+  "supportsAsync": false,
+  "supportsPercentileAnalytic": true
+ },
+ "advancedEditingCapabilities": {
+  "supportedSqlFormatsInCalculate": [
+   "standard"
+  ],
+  "supportsAsyncApplyEdits": true,
+  "supportsApplyEditsbyUploadID": true,
+  "supportedApplyEditsUploadIDFormats": "JSON"
+ },
+ "hasGeometryProperties": true,
+ "geometryProperties": {
+  "shapeLengthFieldName": "Shape__Length",
+  "units": "esriFeet"
+ },
+ "hasMetadata": true,
+ "extent": {
+  "xmin": 871893.7506261617,
+  "ymin": 983082.0371851549,
+  "xmax": 914904.6098142453,
+  "ymax": 1071085.3756138235,
+  "spatialReference": {
+   "wkid": 102696,
+   "latestWkid": 102696,
+   "xyTolerance": 0.003280833333333333,
+   "zTolerance": 0.001,
+   "mTolerance": 0.001,
+   "falseX": -17627100,
+   "falseY": -45827300,
+   "xyUnits": 3048.0060960121928,
+   "falseZ": -100000,
+   "zUnits": 10000,
+   "falseM": -100000,
+   "mUnits": 10000
+  }
+ },
+ "sourceSpatialReference": {
+  "wkid": 102696,
+  "latestWkid": 102696,
+  "xyTolerance": 0.003280833333333333,
+  "zTolerance": 0.001,
+  "mTolerance": 0.001,
+  "falseX": -17627100,
+  "falseY": -45827300,
+  "xyUnits": 3048.0060960121928,
+  "falseZ": -100000,
+  "zUnits": 10000,
+  "falseM": -100000,
+  "mUnits": 10000
+ },
+ "drawingInfo": {
+  "renderer": {
+   "type": "uniqueValue",
+   "field1": "Street_Name_Pre_Directional",
+   "defaultSymbol": {
+    "type": "esriSLS",
+    "style": "esriSLSSolid",
+    "color": [
+     78,
+     78,
+     78,
+     255
+    ],
+    "width": 1
+   },
+   "defaultLabel": "Streets",
+   "uniqueValueGroups": [
+    {
+     "heading": "Type",
+     "classes": [
+      {
+       "label": "Interstate",
+       "description": "Interstate",
+       "symbol": {
+        "type": "esriSLS",
+        "style": "esriSLSSolid",
+        "color": [
+         255,
+         211,
+         127,
+         255
+        ],
+        "width": 2
+       },
+       "values": [
+        [
+         "Interstate"
+        ]
+       ]
+      }
+     ]
+    }
+   ],
+   "uniqueValueInfos": [
+    {
+     "symbol": {
+      "type": "esriSLS",
+      "style": "esriSLSSolid",
+      "color": [
+       255,
+       211,
+       127,
+       255
+      ],
+      "width": 2
+     },
+     "value": "Interstate",
+     "label": "Interstate"
+    }
+   ],
+   "fieldDelimiter": ",",
+   "authoringInfo": {
+    "colorRamp": {
+     "type": "multipart",
+     "colorRamps": [
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        205,
+        252,
+        179,
+        255
+       ],
+       "toColor": [
+        205,
+        252,
+        179,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        245,
+        179,
+        252,
+        255
+       ],
+       "toColor": [
+        245,
+        179,
+        252,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        187,
+        237,
+        252,
+        255
+       ],
+       "toColor": [
+        187,
+        237,
+        252,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        252,
+        200,
+        189,
+        255
+       ],
+       "toColor": [
+        252,
+        200,
+        189,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        187,
+        192,
+        252,
+        255
+       ],
+       "toColor": [
+        187,
+        192,
+        252,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        252,
+        243,
+        194,
+        255
+       ],
+       "toColor": [
+        252,
+        243,
+        194,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        194,
+        252,
+        224,
+        255
+       ],
+       "toColor": [
+        194,
+        252,
+        224,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        252,
+        215,
+        242,
+        255
+       ],
+       "toColor": [
+        252,
+        215,
+        242,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        252,
+        184,
+        202,
+        255
+       ],
+       "toColor": [
+        252,
+        184,
+        202,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        229,
+        199,
+        252,
+        255
+       ],
+       "toColor": [
+        229,
+        199,
+        252,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        244,
+        252,
+        179,
+        255
+       ],
+       "toColor": [
+        244,
+        252,
+        179,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        215,
+        218,
+        252,
+        255
+       ],
+       "toColor": [
+        215,
+        218,
+        252,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        252,
+        226,
+        204,
+        255
+       ],
+       "toColor": [
+        252,
+        226,
+        204,
+        255
+       ]
+      }
+     ]
+    }
+   }
+  },
+  "scaleSymbols": true,
+  "transparency": 0,
+  "labelingInfo": [
+   {
+    "labelExpressionInfo": {
+     "expression": "$feature.Street + \" \" + $feature.Street_Name_Post_Type",
+     "title": "Custom"
+    },
+    "labelPlacement": "esriServerLinePlacementCenterAlong",
+    "textLayout": "followFeature",
+    "deconflictionStrategy": "dynamic",
+    "allowOverrun": true,
+    "repeatLabel": true,
+    "repeatLabelDistance": 215.99999999999997,
+    "lineConnection": "minimizeLabels",
+    "useClippedGeometry": true,
+    "stackLabel": false,
+    "removeDuplicates": "all",
+    "removeDuplicatesDistance": 360,
+    "where": "FUNC_CLASS NOT IN ('INTERSTATE', 'ALLEY')",
+    "useCodedValues": true,
+    "maxScale": 0,
+    "minScale": 0,
+    "name": "Streets",
+    "priority": -1,
+    "symbol": {
+     "type": "esriTS",
+     "color": [
+      78,
+      78,
+      78,
+      255
+     ],
+     "backgroundColor": null,
+     "borderLineColor": null,
+     "borderLineSize": null,
+     "verticalAlignment": "bottom",
+     "horizontalAlignment": "left",
+     "rightToLeft": false,
+     "angle": 0,
+     "xoffset": 0,
+     "yoffset": 0,
+     "kerning": true,
+     "haloColor": [
+      255,
+      255,
+      255,
+      255
+     ],
+     "haloSize": 1,
+     "font": {
+      "family": "AvenirNext LT Pro Medium",
+      "size": 9,
+      "style": "italic",
+      "weight": "bold",
+      "decoration": "none"
+     }
+    }
+   },
+   {
+    "labelExpressionInfo": {
+     "expression": "$feature.Street",
+     "title": "Custom"
+    },
+    "labelPlacement": "esriServerLinePlacementCenterAlong",
+    "textLayout": "horizontal",
+    "deconflictionStrategy": "dynamic",
+    "allowOverrun": true,
+    "repeatLabel": false,
+    "lineConnection": "minimizeLabels",
+    "useClippedGeometry": true,
+    "stackLabel": true,
+    "stackAlignment": "dynamic",
+    "removeDuplicates": "all",
+    "removeDuplicatesDistance": 504,
+    "stackRowLength": 24,
+    "where": "Street_Name_Pre_Directional = 'Interstate'",
+    "useCodedValues": true,
+    "maxScale": 0,
+    "minScale": 0,
+    "name": "Interstates",
+    "priority": -1,
+    "symbol": {
+     "type": "esriTS",
+     "color": [
+      255,
+      255,
+      255,
+      255
+     ],
+     "backgroundColor": null,
+     "borderLineColor": null,
+     "borderLineSize": null,
+     "verticalAlignment": "baseline",
+     "horizontalAlignment": "center",
+     "rightToLeft": false,
+     "angle": 0,
+     "xoffset": 0,
+     "yoffset": -2,
+     "kerning": true,
+     "haloColor": null,
+     "haloSize": null,
+     "font": {
+      "family": "AvenirNext LT Pro Medium",
+      "size": 9,
+      "style": "normal",
+      "weight": "normal",
+      "decoration": "none"
+     }
+    }
+   }
+  ]
+ },
+ "hasM": true,
+ "hasZ": true,
+ "enableZDefaults": false,
+ "supportsVCSProjection": true,
+ "allowUpdateWithoutMValues": false,
+ "allowGeometryUpdates": true,
+ "allowTrueCurvesUpdates": true,
+ "onlyAllowTrueCurveUpdatesByTrueCurveClients": true,
+ "hasAttachments": false,
+ "supportsApplyEditsWithGlobalIds": false,
+ "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+ "objectIdField": "OBJECTID",
+ "globalIdField": "",
+ "displayField": "FULLNAME",
+ "typeIdField": "Street_Name_Pre_Directional",
+ "subtypeField": "",
+ "fields": [
+  {
+   "name": "OBJECTID",
+   "type": "esriFieldTypeOID",
+   "alias": "OBJECTID",
+   "domain": null,
+   "editable": false,
+   "nullable": false,
+   "defaultValue": null,
+   "modelName": "OBJECTID"
+  },
+  {
+   "name": "FULLNAME",
+   "type": "esriFieldTypeString",
+   "alias": "FULLNAME",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 254,
+   "defaultValue": null,
+   "modelName": "FULLNAME"
+  },
+  {
+   "name": "Road_Segment_ID",
+   "type": "esriFieldTypeString",
+   "alias": "Road_Segment_ID",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 255,
+   "defaultValue": null,
+   "modelName": "Road_Segment_ID"
+  },
+  {
+   "name": "From_Stree",
+   "type": "esriFieldTypeString",
+   "alias": "From_Stree",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 254,
+   "defaultValue": null,
+   "modelName": "From_Stree"
+  },
+  {
+   "name": "To_Street",
+   "type": "esriFieldTypeString",
+   "alias": "To_Street",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 254,
+   "defaultValue": null,
+   "modelName": "To_Street"
+  },
+  {
+   "name": "Street",
+   "type": "esriFieldTypeString",
+   "alias": "Street",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 50,
+   "defaultValue": null,
+   "modelName": "Street"
+  },
+  {
+   "name": "Street_Name_Pre_Directional",
+   "type": "esriFieldTypeString",
+   "alias": "Street_Name_Pre_Directional",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 255,
+   "defaultValue": null,
+   "modelName": "Street_Name_Pre_Directional"
+  },
+  {
+   "name": "Street_Name_Post_Type",
+   "type": "esriFieldTypeString",
+   "alias": "Street_Name_Post_Type",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 255,
+   "defaultValue": null,
+   "modelName": "Street_Name_Post_Type"
+  },
+  {
+   "name": "Street_Name_Post_Direction",
+   "type": "esriFieldTypeString",
+   "alias": "Street_Name_Post_Direction",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 255,
+   "defaultValue": null,
+   "modelName": "Street_Name_Post_Direction"
+  },
+  {
+   "name": "FromLeft",
+   "type": "esriFieldTypeDouble",
+   "alias": "FromLeft",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "FromLeft"
+  },
+  {
+   "name": "ToLeft",
+   "type": "esriFieldTypeDouble",
+   "alias": "ToLeft",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "ToLeft"
+  },
+  {
+   "name": "FromRight",
+   "type": "esriFieldTypeDouble",
+   "alias": "FromRight",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "FromRight"
+  },
+  {
+   "name": "ToRight",
+   "type": "esriFieldTypeDouble",
+   "alias": "ToRight",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "ToRight"
+  },
+  {
+   "name": "Class",
+   "type": "esriFieldTypeString",
+   "alias": "Class",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 50,
+   "defaultValue": null,
+   "modelName": "Class"
+  },
+  {
+   "name": "County",
+   "type": "esriFieldTypeString",
+   "alias": "County",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 50,
+   "defaultValue": null,
+   "modelName": "County"
+  },
+  {
+   "name": "Notes",
+   "type": "esriFieldTypeString",
+   "alias": "Notes",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 50,
+   "defaultValue": null,
+   "modelName": "Notes"
+  },
+  {
+   "name": "NHD_NUM",
+   "type": "esriFieldTypeString",
+   "alias": "NHD_NUM",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 50,
+   "defaultValue": null,
+   "modelName": "NHD_NUM"
+  },
+  {
+   "name": "NHD_NAME",
+   "type": "esriFieldTypeString",
+   "alias": "NHD_NAME",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 50,
+   "defaultValue": null,
+   "modelName": "NHD_NAME"
+  },
+  {
+   "name": "NHD_NUMTXT",
+   "type": "esriFieldTypeString",
+   "alias": "NHD_NUMTXT",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 50,
+   "defaultValue": null,
+   "modelName": "NHD_NUMTXT"
+  },
+  {
+   "name": "ANGLE",
+   "type": "esriFieldTypeString",
+   "alias": "ANGLE",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 50,
+   "defaultValue": null,
+   "modelName": "ANGLE"
+  },
+  {
+   "name": "PRECINCT",
+   "type": "esriFieldTypeString",
+   "alias": "PRECINCT",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 50,
+   "defaultValue": null,
+   "modelName": "PRECINCT"
+  },
+  {
+   "name": "ZIP_CODE",
+   "type": "esriFieldTypeString",
+   "alias": "ZIP_CODE",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 50,
+   "defaultValue": null,
+   "modelName": "ZIP_CODE"
+  },
+  {
+   "name": "ZCTA",
+   "type": "esriFieldTypeString",
+   "alias": "ZCTA",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 50,
+   "defaultValue": null,
+   "modelName": "ZCTA"
+  },
+  {
+   "name": "WARD",
+   "type": "esriFieldTypeString",
+   "alias": "WARD",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 50,
+   "defaultValue": null,
+   "modelName": "WARD"
+  },
+  {
+   "name": "Road_Type",
+   "type": "esriFieldTypeString",
+   "alias": "Road_Type",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 50,
+   "defaultValue": null,
+   "modelName": "Road_Type"
+  },
+  {
+   "name": "Width_Min",
+   "type": "esriFieldTypeDouble",
+   "alias": "Width_Min",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "Width_Min"
+  },
+  {
+   "name": "Width_Max",
+   "type": "esriFieldTypeDouble",
+   "alias": "Width_Max",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "Width_Max"
+  },
+  {
+   "name": "Access_Typ",
+   "type": "esriFieldTypeString",
+   "alias": "Access_Typ",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 50,
+   "defaultValue": null,
+   "modelName": "Access_Typ"
+  },
+  {
+   "name": "FUNC_CLASS",
+   "type": "esriFieldTypeString",
+   "alias": "FUNC_CLASS",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 254,
+   "defaultValue": null,
+   "modelName": "FUNC_CLASS"
+  },
+  {
+   "name": "SPEED_LIMI",
+   "type": "esriFieldTypeInteger",
+   "alias": "SPEED_LIMI",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "SPEED_LIMI"
+  },
+  {
+   "name": "LANE_COUNT",
+   "type": "esriFieldTypeInteger",
+   "alias": "LANE_COUNT",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "LANE_COUNT"
+  },
+  {
+   "name": "BI_DIRECTI",
+   "type": "esriFieldTypeInteger",
+   "alias": "BI_DIRECTI",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "BI_DIRECTI"
+  },
+  {
+   "name": "OVERPASS",
+   "type": "esriFieldTypeInteger",
+   "alias": "OVERPASS",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "OVERPASS"
+  },
+  {
+   "name": "X",
+   "type": "esriFieldTypeInteger",
+   "alias": "X",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "X"
+  },
+  {
+   "name": "Y",
+   "type": "esriFieldTypeInteger",
+   "alias": "Y",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "Y"
+  },
+  {
+   "name": "Bus_Truck",
+   "type": "esriFieldTypeInteger",
+   "alias": "Bus_Truck",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "Bus_Truck"
+  },
+  {
+   "name": "State_Stre",
+   "type": "esriFieldTypeInteger",
+   "alias": "State_Stre",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "State_Stre"
+  },
+  {
+   "name": "P_Type",
+   "type": "esriFieldTypeString",
+   "alias": "P_Type",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 254,
+   "defaultValue": null,
+   "modelName": "P_Type"
+  },
+  {
+   "name": "Date_Insta",
+   "type": "esriFieldTypeDate",
+   "alias": "Date_Insta",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 8,
+   "defaultValue": null,
+   "modelName": "Date_Insta"
+  },
+  {
+   "name": "Date_Rated",
+   "type": "esriFieldTypeDate",
+   "alias": "Date_Rated",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 8,
+   "defaultValue": null,
+   "modelName": "Date_Rated"
+  },
+  {
+   "name": "PCR",
+   "type": "esriFieldTypeInteger",
+   "alias": "PCR",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "PCR"
+  },
+  {
+   "name": "MoDOT_MJR",
+   "type": "esriFieldTypeString",
+   "alias": "MoDOT_MJR",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 254,
+   "defaultValue": null,
+   "modelName": "MoDOT_MJR"
+  },
+  {
+   "name": "Snow_Prior",
+   "type": "esriFieldTypeString",
+   "alias": "Snow_Prior",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 254,
+   "defaultValue": null,
+   "modelName": "Snow_Prior"
+  },
+  {
+   "name": "Snow_Type",
+   "type": "esriFieldTypeString",
+   "alias": "Snow_Type",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 254,
+   "defaultValue": null,
+   "modelName": "Snow_Type"
+  },
+  {
+   "name": "Volume",
+   "type": "esriFieldTypeString",
+   "alias": "Volume",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 254,
+   "defaultValue": null,
+   "modelName": "Volume"
+  },
+  {
+   "name": "Honorary_N",
+   "type": "esriFieldTypeString",
+   "alias": "Honorary_N",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 254,
+   "defaultValue": null,
+   "modelName": "Honorary_N"
+  },
+  {
+   "name": "Vacated",
+   "type": "esriFieldTypeInteger",
+   "alias": "Vacated",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "Vacated"
+  },
+  {
+   "name": "Vac_Ordinance",
+   "type": "esriFieldTypeString",
+   "alias": "Vac_Ordina",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 254,
+   "defaultValue": null,
+   "modelName": "Vac_Ordinance"
+  },
+  {
+   "name": "Google_Ima",
+   "type": "esriFieldTypeDate",
+   "alias": "Google_Ima",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 8,
+   "defaultValue": null,
+   "modelName": "Google_Ima"
+  },
+  {
+   "name": "Commercial",
+   "type": "esriFieldTypeInteger",
+   "alias": "Commercial",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "Commercial"
+  },
+  {
+   "name": "Loc_rd_cls",
+   "type": "esriFieldTypeString",
+   "alias": "Loc_rd_cls",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 5,
+   "defaultValue": null,
+   "modelName": "Loc_rd_cls"
+  },
+  {
+   "name": "HONORARY_1",
+   "type": "esriFieldTypeString",
+   "alias": "HONORARY_1",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 254,
+   "defaultValue": null,
+   "modelName": "HONORARY_1"
+  },
+  {
+   "name": "HN_TYPE",
+   "type": "esriFieldTypeString",
+   "alias": "HN_TYPE",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 254,
+   "defaultValue": null,
+   "modelName": "HN_TYPE"
+  },
+  {
+   "name": "Hon_Ord_Nu",
+   "type": "esriFieldTypeString",
+   "alias": "Hon_Ord_Nu",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 254,
+   "defaultValue": null,
+   "modelName": "Hon_Ord_Nu"
+  },
+  {
+   "name": "HON_BOARD_",
+   "type": "esriFieldTypeString",
+   "alias": "HON_BOARD_",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 254,
+   "defaultValue": null,
+   "modelName": "HON_BOARD_"
+  },
+  {
+   "name": "DIRECTION",
+   "type": "esriFieldTypeString",
+   "alias": "DIRECTION",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 254,
+   "defaultValue": null,
+   "modelName": "DIRECTION"
+  },
+  {
+   "name": "LEVEL_",
+   "type": "esriFieldTypeInteger",
+   "alias": "LEVEL_",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "LEVEL_"
+  },
+  {
+   "name": "RECLENGTH",
+   "type": "esriFieldTypeDouble",
+   "alias": "RECLENGTH",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "RECLENGTH"
+  },
+  {
+   "name": "Shape_Leng",
+   "type": "esriFieldTypeDouble",
+   "alias": "Shape_Leng",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "Shape_Leng"
+  },
+  {
+   "name": "created_user",
+   "type": "esriFieldTypeString",
+   "alias": "created_user",
+   "domain": null,
+   "editable": false,
+   "nullable": true,
+   "length": 255,
+   "defaultValue": null,
+   "modelName": "created_user"
+  },
+  {
+   "name": "created_date",
+   "type": "esriFieldTypeDate",
+   "alias": "created_date",
+   "domain": null,
+   "editable": false,
+   "nullable": true,
+   "length": 8,
+   "defaultValue": null,
+   "modelName": "created_date"
+  },
+  {
+   "name": "last_edited_user",
+   "type": "esriFieldTypeString",
+   "alias": "last_edited_user",
+   "domain": null,
+   "editable": false,
+   "nullable": true,
+   "length": 255,
+   "defaultValue": null,
+   "modelName": "last_edited_user"
+  },
+  {
+   "name": "last_edited_date",
+   "type": "esriFieldTypeDate",
+   "alias": "last_edited_date",
+   "domain": null,
+   "editable": false,
+   "nullable": true,
+   "length": 8,
+   "defaultValue": null,
+   "modelName": "last_edited_date"
+  },
+  {
+   "name": "OneWayCode",
+   "type": "esriFieldTypeString",
+   "alias": "OneWayCode",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 255,
+   "defaultValue": null,
+   "modelName": "OneWayCode"
+  },
+  {
+   "name": "FromElevation",
+   "type": "esriFieldTypeInteger",
+   "alias": "FromElevation",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "FromElevation"
+  },
+  {
+   "name": "ToElevation",
+   "type": "esriFieldTypeInteger",
+   "alias": "ToElevation",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "ToElevation"
+  },
+  {
+   "name": "Time",
+   "type": "esriFieldTypeDouble",
+   "alias": "Time",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "Time"
+  },
+  {
+   "name": "Shape__Length",
+   "type": "esriFieldTypeDouble",
+   "alias": "Shape.STLength()",
+   "domain": null,
+   "editable": false,
+   "required": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "Shape.STLength()"
+  }
+ ],
+ "geometryField": {
+  "name": "Shape",
+  "type": "esriFieldTypeGeometry",
+  "alias": "SHAPE",
+  "domain": null,
+  "editable": true,
+  "nullable": true,
+  "defaultValue": null,
+  "modelName": "Shape"
+ },
+ "indexes": [
+  {
+   "name": "R179_pk",
+   "fields": "OBJECTID",
+   "isAscending": true,
+   "isUnique": true,
+   "description": ""
+  },
+  {
+   "name": "S148_idx",
+   "fields": "Shape",
+   "isAscending": true,
+   "isUnique": true,
+   "description": ""
+  }
+ ],
+ "datesInUnknownTimezone": false,
+ "dateFieldsTimeReference": {
+  "timeZone": "UTC",
+  "respectsDaylightSaving": false
+ },
+ "preferredTimeReference": null,
+ "types": [
+  {
+   "id": "Interstate",
+   "name": "Interstate",
+   "domains": {},
+   "templates": [
+    {
+     "name": "Interstate",
+     "description": "",
+     "prototype": {
+      "attributes": {
+       "Street": null,
+       "Time": null,
+       "FULLNAME": null,
+       "Road_Segment_ID": null,
+       "From_Stree": null,
+       "To_Street": null,
+       "Street_Name_Pre_Directional": "Interstate",
+       "Street_Name_Post_Type": null,
+       "Street_Name_Post_Direction": null,
+       "FromLeft": null,
+       "ToLeft": null,
+       "FromRight": null,
+       "ToRight": null,
+       "Class": null,
+       "County": null,
+       "Notes": null,
+       "NHD_NUM": null,
+       "NHD_NAME": null,
+       "NHD_NUMTXT": null,
+       "ANGLE": null,
+       "PRECINCT": null,
+       "ZIP_CODE": null,
+       "ZCTA": null,
+       "WARD": null,
+       "Road_Type": null,
+       "Width_Min": null,
+       "Width_Max": null,
+       "Access_Typ": null,
+       "FUNC_CLASS": null,
+       "SPEED_LIMI": null,
+       "LANE_COUNT": null,
+       "BI_DIRECTI": null,
+       "OVERPASS": null,
+       "X": null,
+       "Y": null,
+       "Bus_Truck": null,
+       "State_Stre": null,
+       "P_Type": null,
+       "Date_Insta": null,
+       "Date_Rated": null,
+       "PCR": null,
+       "MoDOT_MJR": null,
+       "Snow_Prior": null,
+       "Snow_Type": null,
+       "Volume": null,
+       "Honorary_N": null,
+       "Vacated": null,
+       "Vac_Ordinance": null,
+       "Google_Ima": null,
+       "Commercial": null,
+       "Loc_rd_cls": null,
+       "HONORARY_1": null,
+       "HN_TYPE": null,
+       "Hon_Ord_Nu": null,
+       "HON_BOARD_": null,
+       "DIRECTION": null,
+       "LEVEL_": null,
+       "RECLENGTH": null,
+       "Shape_Leng": null,
+       "ToElevation": null,
+       "FromElevation": null,
+       "OneWayCode": null
+      }
+     },
+     "drawingTool": "esriFeatureEditToolLine"
+    }
+   ]
+  }
+ ],
+ "templates": [],
+ "maxRecordCount": 2000,
+ "supportedQueryFormats": "JSON, geoJSON, PBF",
+ "supportedExportFormats": "sqlite,filegdb,shapefile,csv,geojson",
+ "capabilities": "Query,Create,Update,Delete,Uploads,Editing",
+ "useStandardizedQueries": true,
+ "bigIntegerRestrictedTo53Bits": true,
+ "supportedSpatialRelationships": [
+  "esriSpatialRelIntersects",
+  "esriSpatialRelContains",
+  "esriSpatialRelCrosses",
+  "esriSpatialRelEnvelopeIntersects",
+  "esriSpatialRelIndexIntersects",
+  "esriSpatialRelOverlaps",
+  "esriSpatialRelTouches",
+  "esriSpatialRelWithin",
+  "esriSpatialRelRelation"
+ ],
+ "standardMaxRecordCount": 8000,
+ "tileMaxRecordCount": 4000,
+ "standardMaxRecordCountNoGeometry": 32000,
+ "maxRecordCountFactor": 1,
+ "serviceItemId": "0d9bf365df194800afb949cffc3a8a9c"
+}

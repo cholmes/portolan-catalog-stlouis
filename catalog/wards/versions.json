@@ -1,0 +1,45 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.1",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-05T01:18:33.894591Z",
+      "breaking": false,
+      "assets": {
+        "wards.parquet": {
+          "sha256": "62c3514efbc8ff4c31a720d9231dc0de1e9eb1d9e9ec82202c1f422710a8ef54",
+          "size_bytes": 159820,
+          "href": "wards/wards.parquet",
+          "mtime": 1785892490.19949
+        }
+      },
+      "changes": [
+        "wards.parquet"
+      ]
+    },
+    {
+      "version": "1.0.1",
+      "created": "2026-08-05T01:20:23.849688Z",
+      "breaking": false,
+      "assets": {
+        "wards.parquet": {
+          "sha256": "62c3514efbc8ff4c31a720d9231dc0de1e9eb1d9e9ec82202c1f422710a8ef54",
+          "size_bytes": 159820,
+          "href": "wards/wards.parquet",
+          "mtime": 1785892490.19949
+        },
+        "wards.pmtiles": {
+          "sha256": "ebad3365a1b66573f239e11d143c62b79c669b5b5e5db582349f94363fc3962c",
+          "size_bytes": 135034,
+          "href": "wards/wards.pmtiles",
+          "mtime": 1785892823.8393924
+        }
+      },
+      "changes": [
+        "wards.pmtiles"
+      ],
+      "message": "Generated PMTiles: wards.pmtiles"
+    }
+  ]
+}

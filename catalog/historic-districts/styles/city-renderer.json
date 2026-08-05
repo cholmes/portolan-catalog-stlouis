@@ -1,0 +1,40 @@
+{
+  "version": 8,
+  "name": "City renderer",
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../historic-districts.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "categorical-fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "historic-districts",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "DIS_TYPE"
+          ],
+          "National",
+          "#ff0000",
+          "Landmark",
+          "#005ce6",
+          "Certified Local",
+          "#ffaa00",
+          "Local",
+          "#c6e2b2",
+          "#cccccc"
+        ],
+        "fill-opacity": 0.0
+      }
+    }
+  ],
+  "metadata": {
+    "description": "The city's own symbology, extracted from the source ArcGIS renderer."
+  }
+}

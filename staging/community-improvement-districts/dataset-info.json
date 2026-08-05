@@ -1,0 +1,15 @@
+{
+ "collection": "community-improvement-districts",
+ "title": "Community Improvement Districts (CIDs)",
+ "portal_page": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=58",
+ "department": "St. Louis Development Corporation",
+ "source": "https://static.stlouis-mo.gov/open-data/SLDC/TAXING-DISTRICTS/CID/STLCIDs.geojson",
+ "source_type": "static",
+ "synced": "2026-08-05T01:04:57+00:00",
+ "fetch": {
+  "status": "ok",
+  "file": "STLCIDs.geojson",
+  "sha256": "f9836fabaee1ca8c31a1e3bf914fc8e1d6980a86717b3343dbd904c68ac430a7",
+  "bytes": 223953
+ }
+}

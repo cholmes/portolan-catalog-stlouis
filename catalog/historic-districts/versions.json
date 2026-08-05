@@ -1,0 +1,45 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.1",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-05T01:18:33.799728Z",
+      "breaking": false,
+      "assets": {
+        "historic-districts.parquet": {
+          "sha256": "577e2fdbc2670a90063ba76245b8360f4fb95dfda7b098b2dc3eeb8ea024730a",
+          "size_bytes": 58234,
+          "href": "historic-districts/historic-districts.parquet",
+          "mtime": 1785892492.6030736
+        }
+      },
+      "changes": [
+        "historic-districts.parquet"
+      ]
+    },
+    {
+      "version": "1.0.1",
+      "created": "2026-08-05T01:22:31.299851Z",
+      "breaking": false,
+      "assets": {
+        "historic-districts.parquet": {
+          "sha256": "577e2fdbc2670a90063ba76245b8360f4fb95dfda7b098b2dc3eeb8ea024730a",
+          "size_bytes": 58234,
+          "href": "historic-districts/historic-districts.parquet",
+          "mtime": 1785892492.6030736
+        },
+        "historic-districts.pmtiles": {
+          "sha256": "1518054a5a65d82d515ed8630199ef1c1f7fff04b335972df6f6f46f7229085a",
+          "size_bytes": 123483,
+          "href": "historic-districts/historic-districts.pmtiles",
+          "mtime": 1785892951.2941744
+        }
+      },
+      "changes": [
+        "historic-districts.pmtiles"
+      ],
+      "message": "Generated PMTiles: historic-districts.pmtiles"
+    }
+  ]
+}

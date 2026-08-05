@@ -1,0 +1,26 @@
+{
+  "version": 8,
+  "name": "Tinted precincts",
+  "metadata": {
+    "description": "Solid light fill for reference."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../election-precincts.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "election-precincts",
+      "paint": {
+        "fill-color": "#e8e0f0",
+        "fill-opacity": 0.6,
+        "fill-outline-color": "#7c5295"
+      }
+    }
+  ]
+}

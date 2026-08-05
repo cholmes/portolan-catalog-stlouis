@@ -1,0 +1,45 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.1",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-05T01:18:33.833139Z",
+      "breaking": false,
+      "assets": {
+        "opportunity-zones.parquet": {
+          "sha256": "f6f54c864590bcf422b5dcb6d9a7d9182378395b874084708afa33e81311d0db",
+          "size_bytes": 60264,
+          "href": "opportunity-zones/opportunity-zones.parquet",
+          "mtime": 1785892494.1740682
+        }
+      },
+      "changes": [
+        "opportunity-zones.parquet"
+      ]
+    },
+    {
+      "version": "1.0.1",
+      "created": "2026-08-05T01:26:23.920251Z",
+      "breaking": false,
+      "assets": {
+        "opportunity-zones.parquet": {
+          "sha256": "f6f54c864590bcf422b5dcb6d9a7d9182378395b874084708afa33e81311d0db",
+          "size_bytes": 60264,
+          "href": "opportunity-zones/opportunity-zones.parquet",
+          "mtime": 1785892494.1740682
+        },
+        "opportunity-zones.pmtiles": {
+          "sha256": "71c8c655094f763ffd40732fd0d18d1457294ffc7bac38ee7b2fe7bf67878d01",
+          "size_bytes": 35295,
+          "href": "opportunity-zones/opportunity-zones.pmtiles",
+          "mtime": 1785893183.9167275
+        }
+      },
+      "changes": [
+        "opportunity-zones.pmtiles"
+      ],
+      "message": "Generated PMTiles: opportunity-zones.pmtiles"
+    }
+  ]
+}

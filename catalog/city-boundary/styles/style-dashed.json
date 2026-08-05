@@ -1,0 +1,30 @@
+{
+  "version": 8,
+  "name": "Dashed context line",
+  "metadata": {
+    "description": "Dashed outline for basemap-heavy contexts."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../city-boundary.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "city-boundary",
+      "paint": {
+        "line-color": "#174054",
+        "line-width": 2.0,
+        "line-opacity": 1.0,
+        "line-dasharray": [
+          3,
+          2
+        ]
+      }
+    }
+  ]
+}

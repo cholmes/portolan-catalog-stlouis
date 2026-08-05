@@ -1,0 +1,45 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.1",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-05T01:18:33.813221Z",
+      "breaking": false,
+      "assets": {
+        "city-trees.parquet": {
+          "sha256": "317ab81053cbc981df2e5e3b078c1e72e8150c4c2373cddf2a2da1e8be1fc2a9",
+          "size_bytes": 8935143,
+          "href": "city-trees/city-trees.parquet",
+          "mtime": 1785892493.9165943
+        }
+      },
+      "changes": [
+        "city-trees.parquet"
+      ]
+    },
+    {
+      "version": "1.0.1",
+      "created": "2026-08-05T01:20:39.787529Z",
+      "breaking": false,
+      "assets": {
+        "city-trees.parquet": {
+          "sha256": "317ab81053cbc981df2e5e3b078c1e72e8150c4c2373cddf2a2da1e8be1fc2a9",
+          "size_bytes": 8935143,
+          "href": "city-trees/city-trees.parquet",
+          "mtime": 1785892493.9165943
+        },
+        "city-trees.pmtiles": {
+          "sha256": "dda9bfd579db559f29fead42eeb20f3c6f11981507ae036eac57744fd5b9fbfe",
+          "size_bytes": 17381308,
+          "href": "city-trees/city-trees.pmtiles",
+          "mtime": 1785892839.755557
+        }
+      },
+      "changes": [
+        "city-trees.pmtiles"
+      ],
+      "message": "Generated PMTiles: city-trees.pmtiles"
+    }
+  ]
+}

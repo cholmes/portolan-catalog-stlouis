@@ -1,0 +1,49 @@
+{
+  "version": 8,
+  "name": "City parks",
+  "metadata": {
+    "description": "All 117 city parks in park green with labels."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../parks.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "parks",
+      "paint": {
+        "fill-color": "#538400",
+        "fill-opacity": 0.6,
+        "fill-outline-color": "#2d4a00"
+      }
+    },
+    {
+      "id": "labels",
+      "type": "symbol",
+      "source": "data",
+      "source-layer": "parks",
+      "minzoom": 11,
+      "layout": {
+        "text-field": [
+          "get",
+          "TEXT_"
+        ],
+        "text-font": [
+          "Noto Sans Regular"
+        ],
+        "text-size": 11,
+        "text-max-width": 9
+      },
+      "paint": {
+        "text-color": "#1A1A1A",
+        "text-halo-color": "#FFFFFF",
+        "text-halo-width": 1.2
+      }
+    }
+  ]
+}

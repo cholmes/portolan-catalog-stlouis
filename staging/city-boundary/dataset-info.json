@@ -1,0 +1,50 @@
+{
+ "collection": "city-boundary",
+ "title": "City Boundary",
+ "portal_page": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=67",
+ "department": "Information Technology Services Agency",
+ "source": "https://maps8.stlouis-mo.gov/arcgis/rest/services/STLOUIS/BOUNDARIES/MapServer",
+ "source_type": "arcgis",
+ "synced": "2026-08-05T01:04:57+00:00",
+ "fetch": {
+  "status": "ok",
+  "parquets": [
+   "staging/extracts/city-boundary/city_limits/city_limits.parquet"
+  ],
+  "layer_url": "https://maps8.stlouis-mo.gov/arcgis/rest/services/STLOUIS/BOUNDARIES/MapServer/8",
+  "layer_description": null,
+  "fields": [
+   {
+    "name": "OBJECTID",
+    "alias": "OBJECTID",
+    "type": "esriFieldTypeOID"
+   },
+   {
+    "name": "LAYER",
+    "alias": "LAYER",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "AREA_SQMI",
+    "alias": "AREA_SQMI",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Shape",
+    "alias": "Shape",
+    "type": "esriFieldTypeGeometry"
+   },
+   {
+    "name": "Shape_Length",
+    "alias": "Shape_Length",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Shape_Area",
+    "alias": "Shape_Area",
+    "type": "esriFieldTypeDouble"
+   }
+  ],
+  "city_style": "staging/extracts/city-boundary/styles/city-renderer.json"
+ }
+}

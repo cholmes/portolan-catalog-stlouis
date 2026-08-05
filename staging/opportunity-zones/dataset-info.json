@@ -1,0 +1,55 @@
+{
+ "collection": "opportunity-zones",
+ "title": "Qualified Opportunity Zones",
+ "portal_page": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=59",
+ "department": "St. Louis Development Corporation",
+ "source": "https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/Opportunity_Zones/FeatureServer",
+ "source_type": "arcgis",
+ "synced": "2026-08-05T01:04:57+00:00",
+ "fetch": {
+  "status": "ok",
+  "parquets": [
+   "staging/extracts/opportunity-zones/opportunity_zones/opportunity_zones.parquet"
+  ],
+  "layer_url": "https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/Opportunity_Zones/FeatureServer/4",
+  "layer_description": "Field definitionsCASE_NUMBER Project code to relate information; Created in Cityworks onlyDISTRICT_NAME District name notated as applicable; No. = North, Dt. = Downtown, R. = River, Corr. = CorridorDISTRICT_LOCATION Cross-streets, neighborhood, etc. as appropriateDISTRICT_TYPE Integer Domain definitions:1 Commercial District Corridor 2 Public Engagement (Project Connect for example)3 Study Area (Parking Study for example)4 Funding Programs (Choice Neighborhoods, Promise Zone..)5 NRSA Neighborhood Revitalization Strategic Areas6 Opportunity Zones7 Neighborhood Plans (Check PDA Website for list https://www.stlouis-mo.gov/government/departments/planning/planning/index.cfm)8 Topical Plans (Check PDA Website for list https://www.stlouis-mo.gov/government/departments/planning/planning/index.cfm)9 OZ Cluster ",
+  "fields": [
+   {
+    "name": "OBJECTID",
+    "alias": "OBJECTID",
+    "type": "esriFieldTypeOID"
+   },
+   {
+    "name": "Case_Number",
+    "alias": "Case_Number",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "District_Name",
+    "alias": "District Name",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "District_Location",
+    "alias": "District_Location",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "District_Type",
+    "alias": "District_Type",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Shape__Area",
+    "alias": "Shape.STArea()",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Shape__Length",
+    "alias": "Shape.STLength()",
+    "type": "esriFieldTypeDouble"
+   }
+  ],
+  "city_style": "staging/extracts/opportunity-zones/styles/city-renderer.json"
+ }
+}

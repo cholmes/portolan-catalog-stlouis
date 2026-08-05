@@ -1,0 +1,56 @@
+{
+  "version": 8,
+  "name": "City renderer",
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../zoning.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "categorical-fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "zoning",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "LAYER"
+          ],
+          "A",
+          "#ffffbe",
+          "B",
+          "#ffff00",
+          "C",
+          "#e5d79e",
+          "D",
+          "#bda34d",
+          "E",
+          "#a87000",
+          "F",
+          "#ffbebe",
+          "G",
+          "#ffaa00",
+          "H",
+          "#ff5500",
+          "I",
+          "#a80000",
+          "J",
+          "#cccccc",
+          "K",
+          "#686868",
+          "L",
+          "#005ce6",
+          "#cccccc"
+        ],
+        "fill-opacity": 1.0
+      }
+    }
+  ],
+  "metadata": {
+    "description": "The city's own symbology, extracted from the source ArcGIS renderer."
+  }
+}

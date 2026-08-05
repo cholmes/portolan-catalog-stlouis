@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  gates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Lint tools
+        run: |
+          pip install pyflakes
+          pyflakes tools/*.py tests/*.py
+      - name: Catalog gates (light — data artifacts are not in git)
+        env:
+          CI_LIGHT: "1"
+        run: python3 tests/run_all.py
+      - name: metadata.yaml + README freshness
+        run: |
+          pip install uv
+          uv tool install portolan-cli
+          cd catalog
+          portolan metadata validate

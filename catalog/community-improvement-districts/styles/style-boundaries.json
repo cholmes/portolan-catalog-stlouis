@@ -1,0 +1,26 @@
+{
+  "version": 8,
+  "name": "District boundaries",
+  "metadata": {
+    "description": "Outlines only."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../community-improvement-districts.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "community-improvement-districts",
+      "paint": {
+        "line-color": "#538400",
+        "line-width": 1.5,
+        "line-opacity": 1.0
+      }
+    }
+  ]
+}

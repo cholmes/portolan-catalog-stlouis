@@ -1,0 +1,93 @@
+{
+  "version": 8,
+  "name": "Street class",
+  "metadata": {
+    "description": "The source Class codes as-is (A31 red, A73 blue, A6x orange, A41 local gray). The city does not publish a decode; codes follow Census feature-class conventions."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../streets.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "streets-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "streets",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "Class"
+          ],
+          "A31",
+          "#c03221",
+          "A41",
+          "#9aa3a8",
+          "A61",
+          "#e89d07",
+          "A62",
+          "#e89d07",
+          "A63",
+          "#e89d07",
+          "A73",
+          "#1e526b",
+          "#9aa3a8"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "streets",
+      "paint": {
+        "line-color": [
+          "match",
+          [
+            "get",
+            "Class"
+          ],
+          "A31",
+          "#c03221",
+          "A41",
+          "#9aa3a8",
+          "A61",
+          "#e89d07",
+          "A62",
+          "#e89d07",
+          "A63",
+          "#e89d07",
+          "A73",
+          "#1e526b",
+          "#9aa3a8"
+        ],
+        "line-width": [
+          "match",
+          [
+            "get",
+            "Class"
+          ],
+          "A31",
+          3.0,
+          "A41",
+          1.2,
+          "A61",
+          2.0,
+          "A62",
+          2.0,
+          "A63",
+          2.0,
+          "A73",
+          2.4,
+          1.0
+        ],
+        "line-opacity": 1.0
+      }
+    }
+  ]
+}

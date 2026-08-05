@@ -1,0 +1,128 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.4",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-05T01:18:33.855200Z",
+      "breaking": false,
+      "assets": {
+        "special-business-districts.parquet": {
+          "sha256": "34f00362db602010988028408b0fdb838a4047b3ca1ff31ac5696915fabd2381",
+          "size_bytes": 36850,
+          "href": "special-business-districts/special-business-districts.parquet",
+          "mtime": 1785892496.3111572
+        }
+      },
+      "changes": [
+        "special-business-districts.parquet"
+      ]
+    },
+    {
+      "version": "1.0.1",
+      "created": "2026-08-05T01:20:09.458297Z",
+      "breaking": false,
+      "assets": {
+        "special-business-districts.parquet": {
+          "sha256": "a3f7d4c86185afc770a1e2c12ce5a1df4bcc820b26871e604eb70aad1dd67509",
+          "size_bytes": 31128,
+          "href": "special-business-districts/special-business-districts.parquet",
+          "source_mtime": 1785892789.0441725,
+          "mtime": 1785892789.0441725,
+          "feature_count": 22,
+          "schema_fingerprint": "13e9ac12c96449a9"
+        }
+      },
+      "changes": [
+        "special-business-districts.parquet"
+      ]
+    },
+    {
+      "version": "1.0.2",
+      "created": "2026-08-05T01:20:11.712540Z",
+      "breaking": false,
+      "assets": {
+        "special-business-districts.parquet": {
+          "sha256": "a3f7d4c86185afc770a1e2c12ce5a1df4bcc820b26871e604eb70aad1dd67509",
+          "size_bytes": 31128,
+          "href": "special-business-districts/special-business-districts.parquet",
+          "source_mtime": 1785892789.0441725,
+          "mtime": 1785892789.0441725,
+          "feature_count": 22,
+          "schema_fingerprint": "13e9ac12c96449a9"
+        },
+        "special-business-districts.pmtiles": {
+          "sha256": "81b1464aad8e2507b5808d4211473ad17640b12b9716f8a51164d40c38e1e610",
+          "size_bytes": 38985,
+          "href": "special-business-districts/special-business-districts.pmtiles",
+          "mtime": 1785892811.7085114
+        }
+      },
+      "changes": [
+        "special-business-districts.pmtiles"
+      ],
+      "message": "Generated PMTiles: special-business-districts.pmtiles"
+    },
+    {
+      "version": "1.0.3",
+      "created": "2026-08-05T01:39:48.664227Z",
+      "breaking": false,
+      "assets": {
+        "special-business-districts.parquet": {
+          "sha256": "a3f7d4c86185afc770a1e2c12ce5a1df4bcc820b26871e604eb70aad1dd67509",
+          "size_bytes": 31128,
+          "href": "special-business-districts/special-business-districts.parquet",
+          "source_mtime": 1785892789.0441725,
+          "mtime": 1785892789.0441725,
+          "feature_count": 22,
+          "schema_fingerprint": "13e9ac12c96449a9"
+        },
+        "special-business-districts.pmtiles": {
+          "sha256": "81b1464aad8e2507b5808d4211473ad17640b12b9716f8a51164d40c38e1e610",
+          "size_bytes": 38985,
+          "href": "special-business-districts/special-business-districts.pmtiles",
+          "mtime": 1785892811.7085114
+        },
+        "README.md": {
+          "sha256": "18b3416645571059381981461cfd4f16a8ee6f24e29e7020fa8f92ac36dd805f",
+          "size_bytes": 2995,
+          "href": "special-business-districts/README.md",
+          "mtime": 1785893642.3441553
+        }
+      },
+      "changes": [
+        "README.md"
+      ]
+    },
+    {
+      "version": "1.0.4",
+      "created": "2026-08-05T01:39:49.261310Z",
+      "breaking": false,
+      "assets": {
+        "special-business-districts.parquet": {
+          "sha256": "a3f7d4c86185afc770a1e2c12ce5a1df4bcc820b26871e604eb70aad1dd67509",
+          "size_bytes": 31128,
+          "href": "special-business-districts/special-business-districts.parquet",
+          "source_mtime": 1785892789.0441725,
+          "mtime": 1785892789.0441725,
+          "feature_count": 22,
+          "schema_fingerprint": "13e9ac12c96449a9"
+        },
+        "special-business-districts.pmtiles": {
+          "sha256": "81b1464aad8e2507b5808d4211473ad17640b12b9716f8a51164d40c38e1e610",
+          "size_bytes": 38985,
+          "href": "special-business-districts/special-business-districts.pmtiles",
+          "mtime": 1785893989.2543216
+        },
+        "README.md": {
+          "sha256": "18b3416645571059381981461cfd4f16a8ee6f24e29e7020fa8f92ac36dd805f",
+          "size_bytes": 2995,
+          "href": "special-business-districts/README.md",
+          "mtime": 1785893642.3441553
+        }
+      },
+      "changes": [],
+      "message": "Generated PMTiles: special-business-districts.pmtiles"
+    }
+  ]
+}

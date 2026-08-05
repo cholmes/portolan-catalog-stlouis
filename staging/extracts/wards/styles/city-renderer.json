@@ -1,0 +1,22 @@
+{
+  "version": 8,
+  "name": "Simple Style",
+  "sources": {
+    "data": {
+      "type": "vector"
+    }
+  },
+  "layers": [
+    {
+      "id": "layer-0",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "wards",
+      "paint": {
+        "fill-color": "#c4c7fc",
+        "fill-opacity": 0.0,
+        "fill-outline-color": "#000000"
+      }
+    }
+  ]
+}

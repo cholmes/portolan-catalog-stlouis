@@ -1,0 +1,37 @@
+{
+ "collection": "csb-311-requests",
+ "title": "CSB Service Requests (311)",
+ "portal_page": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5",
+ "department": "Neighborhood Stabilization / CSB",
+ "source": "https://www.stlouis-mo.gov/data/upload/data-files/csb.zip",
+ "source_type": "static",
+ "synced": "2026-08-05T01:04:57+00:00",
+ "fetch": {
+  "status": "ok",
+  "file": "csb.zip",
+  "sha256": "668c671d2bf6390061d7ff775cf14953b56f92fa94bb73f6d97aac1f17f88757",
+  "bytes": 125893311,
+  "unpacked": [
+   "2008.csv",
+   "2009.csv",
+   "2010.csv",
+   "2011.csv",
+   "2012.csv",
+   "2013.csv",
+   "2014.csv",
+   "2015.csv",
+   "2016.csv",
+   "2017.csv",
+   "2018.csv",
+   "2019.csv",
+   "2020.csv",
+   "2021.csv",
+   "2022.csv",
+   "2023.csv",
+   "2024.csv",
+   "2025.csv",
+   "2026.csv",
+   "README.txt"
+  ]
+ }
+}
