@@ -1,0 +1,90 @@
+{
+ "collection": "street-sweeping",
+ "title": "Street Sweeping Schedule",
+ "portal_page": "https://maps8.stlouis-mo.gov/arcgis/rest/services/STREETS/Street_Sweeping/MapServer",
+ "department": "Streets - Street Division",
+ "source": "https://maps8.stlouis-mo.gov/arcgis/rest/services/STREETS/Street_Sweeping/MapServer",
+ "source_type": "arcgis",
+ "synced": "2026-08-05T19:58:51+00:00",
+ "fetch": {
+  "status": "ok",
+  "parquets": [
+   "staging/extracts/street-sweeping/street_sweeping_area_schedule/street_sweeping_area_schedule.parquet"
+  ],
+  "layer_url": "https://maps8.stlouis-mo.gov/arcgis/rest/services/STREETS/Street_Sweeping/MapServer/0",
+  "layer_description": null,
+  "fields": [
+   {
+    "name": "OBJECTID_1",
+    "alias": "OBJECTID_1",
+    "type": "esriFieldTypeOID"
+   },
+   {
+    "name": "OBJECTID",
+    "alias": "OBJECTID",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "SHAPE_Leng",
+    "alias": "SHAPE_Leng",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Route",
+    "alias": "Route",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Day_Wk",
+    "alias": "Day_Wk",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Time_of_Da",
+    "alias": "Time_of_Da",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Start_Time",
+    "alias": "Start_Time",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "End_Time",
+    "alias": "End_Time",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Day_Abbr",
+    "alias": "Day_Abbr",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Addl_Notes",
+    "alias": "Addl_Notes",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Chars",
+    "alias": "Chars",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Shape",
+    "alias": "Shape",
+    "type": "esriFieldTypeGeometry"
+   },
+   {
+    "name": "Shape.STArea()",
+    "alias": "Shape.STArea()",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Shape.STLength()",
+    "alias": "Shape.STLength()",
+    "type": "esriFieldTypeDouble"
+   }
+  ],
+  "city_style": "staging/extracts/street-sweeping/styles/city-renderer.json"
+ }
+}

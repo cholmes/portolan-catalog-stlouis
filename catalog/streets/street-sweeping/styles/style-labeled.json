@@ -1,0 +1,49 @@
+{
+  "version": 8,
+  "name": "Routes labeled",
+  "metadata": {
+    "description": "Areas with route labels."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../street-sweeping.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "street-sweeping",
+      "paint": {
+        "fill-color": "#dfe6ea",
+        "fill-opacity": 0.4,
+        "fill-outline-color": "#9aa3a8"
+      }
+    },
+    {
+      "id": "labels",
+      "type": "symbol",
+      "source": "data",
+      "source-layer": "street-sweeping",
+      "minzoom": 12,
+      "layout": {
+        "text-field": [
+          "get",
+          "Route"
+        ],
+        "text-font": [
+          "Noto Sans Regular"
+        ],
+        "text-size": 10,
+        "text-max-width": 9
+      },
+      "paint": {
+        "text-color": "#1A1A1A",
+        "text-halo-color": "#FFFFFF",
+        "text-halo-width": 1.2
+      }
+    }
+  ]
+}

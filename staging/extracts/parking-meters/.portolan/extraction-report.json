@@ -1,0 +1,42 @@
+{
+  "extraction_date": "2026-08-05T19:59:40.816432+00:00",
+  "source_url": "https://maps8.stlouis-mo.gov/arcgis/rest/services/STREETS/ParkingServices/MapServer",
+  "portolan_version": "1.0.0a0",
+  "gpio_version": "1.3.0",
+  "metadata_extracted": {
+    "source_url": "https://maps8.stlouis-mo.gov/arcgis/rest/services/STREETS/ParkingServices/MapServer",
+    "description": null,
+    "attribution": null,
+    "keywords": [
+      "parking meters",
+      "parking services"
+    ],
+    "contact_name": null,
+    "processing_notes": null,
+    "known_issues": null,
+    "license_info_raw": null
+  },
+  "layers": [
+    {
+      "id": 1,
+      "name": "PARKING_METERS",
+      "status": "success",
+      "warnings": [],
+      "attempts": 1,
+      "features": 981,
+      "size_bytes": 59616,
+      "duration_seconds": 6.4672659591306,
+      "output_path": "parking_meters/parking_meters.parquet"
+    }
+  ],
+  "summary": {
+    "total_layers": 1,
+    "succeeded": 1,
+    "failed": 0,
+    "skipped": 0,
+    "empty": 0,
+    "total_features": 981,
+    "total_size_bytes": 59616,
+    "total_duration_seconds": 6.4672659591306
+  }
+}

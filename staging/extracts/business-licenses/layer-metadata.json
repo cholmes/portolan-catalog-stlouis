@@ -1,0 +1,617 @@
+{
+ "currentVersion": 11.2,
+ "cimVersion": "3.2.0",
+ "id": 0,
+ "name": "Business Licenses as of October 2025",
+ "type": "Feature Layer",
+ "parentLayer": null,
+ "defaultVisibility": true,
+ "minScale": 0,
+ "maxScale": 0,
+ "canScaleSymbols": false,
+ "geometryType": "esriGeometryPoint",
+ "description": "",
+ "copyrightText": "",
+ "editFieldsInfo": null,
+ "ownershipBasedAccessControlForFeatures": null,
+ "syncCanReturnChanges": false,
+ "relationships": [],
+ "isDataVersioned": false,
+ "isDataArchived": false,
+ "infoInEstimates": [
+  "extent",
+  "count"
+ ],
+ "isDataBranchVersioned": false,
+ "isDataReplicaTracked": false,
+ "isCoGoEnabled": false,
+ "supportsRollbackOnFailureParameter": true,
+ "archivingInfo": {
+  "supportsQueryWithHistoricMoment": false,
+  "startArchivingMoment": -1
+ },
+ "supportsStatistics": true,
+ "supportsExceedsLimitStatistics": true,
+ "supportsAdvancedQueries": true,
+ "supportsValidateSQL": true,
+ "supportsCoordinatesQuantization": true,
+ "supportsQuantizationEditMode": true,
+ "supportsCalculate": true,
+ "supportsASyncCalculate": true,
+ "supportsDatumTransformation": true,
+ "advancedQueryCapabilities": {
+  "supportsPagination": true,
+  "supportsTrueCurve": true,
+  "supportsQueryWithDistance": true,
+  "supportsReturningQueryExtent": true,
+  "supportsStatistics": true,
+  "supportsPercentileStatistics": true,
+  "supportsHavingClause": true,
+  "supportsOrderBy": true,
+  "supportsDistinct": true,
+  "supportsCountDistinct": true,
+  "supportsAdvancedQueryRelated": true,
+  "supportsQueryRelatedPagination": true,
+  "supportsCurrentUserQueries": true,
+  "supportsQueryWithResultType": true,
+  "supportsReturningGeometryCentroid": false,
+  "supportsSqlExpression": true,
+  "supportsQueryWithDatumTransformation": true,
+  "supportsLod": false,
+  "supportsQueryWithLodSR": false,
+  "supportsQueryAnalytic": true
+ },
+ "advancedQueryAnalyticCapabilities": {
+  "supportsLinearRegression": true,
+  "supportsAsync": false,
+  "supportsPercentileAnalytic": true
+ },
+ "advancedEditingCapabilities": {
+  "supportedSqlFormatsInCalculate": [
+   "standard"
+  ],
+  "supportsAsyncApplyEdits": true,
+  "supportsApplyEditsbyUploadID": true,
+  "supportedApplyEditsUploadIDFormats": "JSON"
+ },
+ "hasMetadata": true,
+ "extent": {
+  "xmin": 872215.3598910794,
+  "ymin": 984709.8902286589,
+  "xmax": 911324.0782614127,
+  "ymax": 1068899.781559825,
+  "spatialReference": {
+   "wkid": 102696,
+   "latestWkid": 102696,
+   "xyTolerance": 0.003280833333333333,
+   "zTolerance": 0.001,
+   "mTolerance": 0.001,
+   "falseX": -17627100,
+   "falseY": -45827300,
+   "xyUnits": 3048.0060960121928,
+   "falseZ": -100000,
+   "zUnits": 10000,
+   "falseM": -100000,
+   "mUnits": 10000
+  }
+ },
+ "sourceSpatialReference": {
+  "wkid": 102696,
+  "latestWkid": 102696,
+  "xyTolerance": 0.003280833333333333,
+  "zTolerance": 2,
+  "mTolerance": 0.001,
+  "falseX": -17627100,
+  "falseY": -45827300,
+  "xyUnits": 3048.0060960121928,
+  "falseZ": 0,
+  "zUnits": 1,
+  "falseM": 0,
+  "mUnits": 1
+ },
+ "drawingInfo": {
+  "renderer": {
+   "type": "simple",
+   "symbol": {
+    "type": "esriSMS",
+    "style": "esriSMSCircle",
+    "color": [
+     170,
+     37,
+     153,
+     255
+    ],
+    "size": 4,
+    "angle": 0,
+    "xoffset": 0,
+    "yoffset": 0,
+    "outline": {
+     "color": [
+      0,
+      0,
+      0,
+      255
+     ],
+     "width": 0.7
+    }
+   }
+  },
+  "scaleSymbols": true,
+  "transparency": 0,
+  "labelingInfo": null
+ },
+ "hasM": false,
+ "hasZ": false,
+ "allowGeometryUpdates": true,
+ "allowTrueCurvesUpdates": true,
+ "onlyAllowTrueCurveUpdatesByTrueCurveClients": true,
+ "hasAttachments": false,
+ "supportsApplyEditsWithGlobalIds": false,
+ "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+ "objectIdField": "OBJECTID",
+ "globalIdField": "",
+ "displayField": "USER_Trade_Name",
+ "typeIdField": "",
+ "subtypeField": "",
+ "fields": [
+  {
+   "name": "OBJECTID",
+   "type": "esriFieldTypeOID",
+   "alias": "ObjectID",
+   "domain": null,
+   "editable": false,
+   "nullable": false,
+   "defaultValue": null,
+   "modelName": "OBJECTID"
+  },
+  {
+   "name": "Score",
+   "type": "esriFieldTypeDouble",
+   "alias": "Score",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "Score"
+  },
+  {
+   "name": "Match_type",
+   "type": "esriFieldTypeString",
+   "alias": "Match_type",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 2,
+   "defaultValue": null,
+   "modelName": "Match_type"
+  },
+  {
+   "name": "Match_addr",
+   "type": "esriFieldTypeString",
+   "alias": "Match_addr",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 500,
+   "defaultValue": null,
+   "modelName": "Match_addr"
+  },
+  {
+   "name": "IN_SingleLine",
+   "type": "esriFieldTypeString",
+   "alias": "Single Line Input",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 200,
+   "defaultValue": "",
+   "modelName": "IN_SingleLine"
+  },
+  {
+   "name": "USER_Doc_Nbr_",
+   "type": "esriFieldTypeInteger",
+   "alias": "Doc Nbr.",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": 0,
+   "modelName": "USER_Doc_Nbr_"
+  },
+  {
+   "name": "USER_Tax_Year",
+   "type": "esriFieldTypeInteger",
+   "alias": "Tax Year",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": 0,
+   "modelName": "USER_Tax_Year"
+  },
+  {
+   "name": "USER_Status_Cd_",
+   "type": "esriFieldTypeInteger",
+   "alias": "Status Cd.",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": 0,
+   "modelName": "USER_Status_Cd_"
+  },
+  {
+   "name": "USER_Trade_Name",
+   "type": "esriFieldTypeString",
+   "alias": "Trade Name",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 1073741822,
+   "defaultValue": "",
+   "modelName": "USER_Trade_Name"
+  },
+  {
+   "name": "USER_DocType",
+   "type": "esriFieldTypeString",
+   "alias": "DocType",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 1073741822,
+   "defaultValue": "",
+   "modelName": "USER_DocType"
+  },
+  {
+   "name": "USER_Tax_Period",
+   "type": "esriFieldTypeInteger",
+   "alias": "Tax Period",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": 0,
+   "modelName": "USER_Tax_Period"
+  },
+  {
+   "name": "USER_Date_Business_Started",
+   "type": "esriFieldTypeString",
+   "alias": "Date Business Started",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 1073741822,
+   "defaultValue": "",
+   "modelName": "USER_Date_Business_Started"
+  },
+  {
+   "name": "USER_House_Nbr_",
+   "type": "esriFieldTypeInteger",
+   "alias": "House Nbr.",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": 0,
+   "modelName": "USER_House_Nbr_"
+  },
+  {
+   "name": "USER_House_Sfx_",
+   "type": "esriFieldTypeString",
+   "alias": "House Sfx.",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 1073741822,
+   "defaultValue": "",
+   "modelName": "USER_House_Sfx_"
+  },
+  {
+   "name": "USER_House_Unit",
+   "type": "esriFieldTypeString",
+   "alias": "House Unit",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 1073741822,
+   "defaultValue": "",
+   "modelName": "USER_House_Unit"
+  },
+  {
+   "name": "USER_St__Dir_",
+   "type": "esriFieldTypeString",
+   "alias": "St. Dir.",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 1073741822,
+   "defaultValue": "",
+   "modelName": "USER_St__Dir_"
+  },
+  {
+   "name": "USER_Property_St__Name",
+   "type": "esriFieldTypeString",
+   "alias": "Property St. Name",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 1073741822,
+   "defaultValue": "",
+   "modelName": "USER_Property_St__Name"
+  },
+  {
+   "name": "USER_St__Type",
+   "type": "esriFieldTypeString",
+   "alias": "St. Type",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 1073741822,
+   "defaultValue": "",
+   "modelName": "USER_St__Type"
+  },
+  {
+   "name": "USER_Zip_Cd_",
+   "type": "esriFieldTypeInteger",
+   "alias": "Zip Cd.",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": 0,
+   "modelName": "USER_Zip_Cd_"
+  },
+  {
+   "name": "USER_Street_Address",
+   "type": "esriFieldTypeString",
+   "alias": "Street Address",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 1073741822,
+   "defaultValue": "",
+   "modelName": "USER_Street_Address"
+  },
+  {
+   "name": "USER_HQ_Owner_Cd_",
+   "type": "esriFieldTypeString",
+   "alias": "HQ Owner Cd.",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 1073741822,
+   "defaultValue": "",
+   "modelName": "USER_HQ_Owner_Cd_"
+  },
+  {
+   "name": "USER_Owner_Business_HQ_Name",
+   "type": "esriFieldTypeString",
+   "alias": "Owner/Business HQ Name",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 1073741822,
+   "defaultValue": "",
+   "modelName": "USER_Owner_Business_HQ_Name"
+  },
+  {
+   "name": "USER_Mailing_Address_Line_1",
+   "type": "esriFieldTypeString",
+   "alias": "Mailing Address Line 1",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 1073741822,
+   "defaultValue": "",
+   "modelName": "USER_Mailing_Address_Line_1"
+  },
+  {
+   "name": "USER_Mailing_Address_Line_2",
+   "type": "esriFieldTypeString",
+   "alias": "Mailing Address Line 2",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 1073741822,
+   "defaultValue": "",
+   "modelName": "USER_Mailing_Address_Line_2"
+  },
+  {
+   "name": "USER_Mailing_Address_Line_3",
+   "type": "esriFieldTypeString",
+   "alias": "Mailing Address Line 3",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 1073741822,
+   "defaultValue": "",
+   "modelName": "USER_Mailing_Address_Line_3"
+  },
+  {
+   "name": "USER_Ward_Nbr_",
+   "type": "esriFieldTypeInteger",
+   "alias": "Ward Nbr.",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": 0,
+   "modelName": "USER_Ward_Nbr_"
+  },
+  {
+   "name": "USER_City_Block",
+   "type": "esriFieldTypeInteger",
+   "alias": "City Block",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": 0,
+   "modelName": "USER_City_Block"
+  },
+  {
+   "name": "USER_CDA_Neighborhood",
+   "type": "esriFieldTypeInteger",
+   "alias": "CDA Neighborhood",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": 0,
+   "modelName": "USER_CDA_Neighborhood"
+  },
+  {
+   "name": "USER_CDA_Subdistrict",
+   "type": "esriFieldTypeInteger",
+   "alias": "CDA Subdistrict",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": 0,
+   "modelName": "USER_CDA_Subdistrict"
+  },
+  {
+   "name": "USER_Nbr__Of_Employees",
+   "type": "esriFieldTypeInteger",
+   "alias": "Nbr. Of Employees",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": 0,
+   "modelName": "USER_Nbr__Of_Employees"
+  },
+  {
+   "name": "USER_Space_Use_Cd_",
+   "type": "esriFieldTypeInteger",
+   "alias": "Space Use Cd.",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": 0,
+   "modelName": "USER_Space_Use_Cd_"
+  },
+  {
+   "name": "USER_Business_Phone",
+   "type": "esriFieldTypeString",
+   "alias": "Business Phone",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 1073741822,
+   "defaultValue": "",
+   "modelName": "USER_Business_Phone"
+  },
+  {
+   "name": "USER_Contact_Name",
+   "type": "esriFieldTypeString",
+   "alias": "Contact Name",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 1073741822,
+   "defaultValue": "",
+   "modelName": "USER_Contact_Name"
+  },
+  {
+   "name": "USER_Business_E_Mail",
+   "type": "esriFieldTypeString",
+   "alias": "Business E-Mail",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 1073741822,
+   "defaultValue": "",
+   "modelName": "USER_Business_E_Mail"
+  }
+ ],
+ "geometryField": {
+  "name": "Shape",
+  "type": "esriFieldTypeGeometry",
+  "alias": "Shape",
+  "domain": null,
+  "editable": true,
+  "nullable": true,
+  "defaultValue": null,
+  "modelName": "Shape"
+ },
+ "indexes": [
+  {
+   "name": "R485_pk",
+   "fields": "OBJECTID",
+   "isAscending": true,
+   "isUnique": true,
+   "description": ""
+  },
+  {
+   "name": "S462_idx",
+   "fields": "Shape",
+   "isAscending": true,
+   "isUnique": true,
+   "description": ""
+  }
+ ],
+ "datesInUnknownTimezone": false,
+ "dateFieldsTimeReference": {
+  "timeZone": "UTC",
+  "respectsDaylightSaving": false
+ },
+ "preferredTimeReference": null,
+ "types": [],
+ "templates": [
+  {
+   "name": "Business Licenses as of October 2025",
+   "description": "",
+   "prototype": {
+    "attributes": {
+     "USER_Contact_Name": "",
+     "Score": null,
+     "Match_type": null,
+     "Match_addr": null,
+     "IN_SingleLine": "",
+     "USER_Doc_Nbr_": 0,
+     "USER_Tax_Year": 0,
+     "USER_Status_Cd_": 0,
+     "USER_Trade_Name": "",
+     "USER_DocType": "",
+     "USER_Tax_Period": 0,
+     "USER_Date_Business_Started": "",
+     "USER_House_Nbr_": 0,
+     "USER_House_Sfx_": "",
+     "USER_House_Unit": "",
+     "USER_St__Dir_": "",
+     "USER_Property_St__Name": "",
+     "USER_St__Type": "",
+     "USER_Zip_Cd_": 0,
+     "USER_Street_Address": "",
+     "USER_HQ_Owner_Cd_": "",
+     "USER_Owner_Business_HQ_Name": "",
+     "USER_Mailing_Address_Line_1": "",
+     "USER_Mailing_Address_Line_2": "",
+     "USER_Mailing_Address_Line_3": "",
+     "USER_Ward_Nbr_": 0,
+     "USER_City_Block": 0,
+     "USER_CDA_Neighborhood": 0,
+     "USER_CDA_Subdistrict": 0,
+     "USER_Nbr__Of_Employees": 0,
+     "USER_Space_Use_Cd_": 0,
+     "USER_Business_Phone": "",
+     "USER_Business_E_Mail": ""
+    }
+   },
+   "drawingTool": "esriFeatureEditToolPoint"
+  }
+ ],
+ "maxRecordCount": 2000,
+ "supportedQueryFormats": "JSON, geoJSON, PBF",
+ "supportedExportFormats": "sqlite,filegdb,shapefile,csv,geojson",
+ "capabilities": "Query,Create,Update,Delete,Uploads,Editing",
+ "useStandardizedQueries": true,
+ "bigIntegerRestrictedTo53Bits": true,
+ "supportedSpatialRelationships": [
+  "esriSpatialRelIntersects",
+  "esriSpatialRelContains",
+  "esriSpatialRelCrosses",
+  "esriSpatialRelEnvelopeIntersects",
+  "esriSpatialRelIndexIntersects",
+  "esriSpatialRelOverlaps",
+  "esriSpatialRelTouches",
+  "esriSpatialRelWithin",
+  "esriSpatialRelRelation"
+ ],
+ "standardMaxRecordCount": 32000,
+ "tileMaxRecordCount": 8000,
+ "standardMaxRecordCountNoGeometry": 32000,
+ "maxRecordCountFactor": 1,
+ "serviceItemId": "3af5976770a34d599a221f9ff71f9ff6"
+}

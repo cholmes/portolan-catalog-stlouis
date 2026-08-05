@@ -1,0 +1,26 @@
+{
+  "version": 8,
+  "name": "Parcel outlines",
+  "metadata": {
+    "description": "Outlines only."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../tax-sales.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "tax-sales",
+      "paint": {
+        "line-color": "#c03221",
+        "line-width": 1.0,
+        "line-opacity": 1.0
+      }
+    }
+  ]
+}

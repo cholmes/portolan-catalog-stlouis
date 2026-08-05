@@ -20,7 +20,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from sources import SOURCES
+from sources import SOURCES, coll_rel
 
 ROOT = Path(__file__).resolve().parent.parent
 CATALOG = ROOT / "catalog"
@@ -62,6 +62,14 @@ TILING = {
                     "custstatus", "utilsource", "custsource"]},
     "vacancy-composite": {"maxzoom": 15, "cap": 800_000, "columns": None},
     "land-use": {"maxzoom": 15, "cap": 800_000, "columns": None},
+    # Full parquet holds all 24 yearly snapshots (3.1M rows); tiles carry
+    # 5-year snapshots only, or 24 overlapping fabrics turn to soup.
+    "parcels-history": {"maxzoom": 15, "cap": 800_000, "columns": ["era"],
+                        "where": "era IN ('1997','2000','2005','2010','2015','2020')"},
+    "crime": {
+        "maxzoom": 15, "cap": 800_000,
+        "columns": ["IncidentDate", "Offense", "NIBRSCategory", "CrimeAgainst",
+                    "District", "Neighborhood", "FirearmUsed"]},
     "tax-abated-parcels": {
         "maxzoom": 15, "cap": 800_000,
         "columns": ["HANDLE", "SITEADDR", "AbatementStartYear",
@@ -71,11 +79,11 @@ TILING = {
 
 def make(coll_id: str) -> None:
     cfg = {**DEFAULTS, **TILING.get(coll_id, {})}
-    pq = CATALOG / coll_id / f"{coll_id}.parquet"
-    out = CATALOG / coll_id / f"{coll_id}.pmtiles"
+    pq = CATALOG / coll_rel(coll_id) / f"{coll_id}.parquet"
+    out = CATALOG / coll_rel(coll_id) / f"{coll_id}.pmtiles"
     # tippecanoe picks its output format from the extension, so the temp
     # file must still end in .pmtiles (a .tmp suffix silently yields MBTiles)
-    tmp = CATALOG / coll_id / f".{coll_id}.tmp.pmtiles"
+    tmp = CATALOG / coll_rel(coll_id) / f".{coll_id}.tmp.pmtiles"
     tc_cmd = ["tippecanoe", "-P", "-q", "-o", str(tmp), "--force",
               "-l", coll_id,
               "-Z", "0", "-z", str(cfg["maxzoom"]),
@@ -85,8 +93,20 @@ def make(coll_id: str) -> None:
               "--attribution=City of St. Louis"]
     for col in cfg["columns"] or []:
         tc_cmd += ["-y", col]
+    src_pq = pq
+    if cfg.get("where"):
+        filtered = CATALOG / coll_rel(coll_id) / f".{coll_id}.filtered.parquet"
+        f = subprocess.run(
+            ["duckdb", "-c",
+             "INSTALL spatial; LOAD spatial; "
+             f"COPY (SELECT * FROM '{pq}' WHERE {cfg['where']}) TO "
+             f"'{filtered}' (FORMAT PARQUET, COMPRESSION ZSTD)"],
+            capture_output=True, text=True)
+        if f.returncode != 0:
+            raise RuntimeError(f"{coll_id} prefilter: {f.stderr[-300:]}")
+        src_pq = filtered
     gpio = subprocess.Popen(
-        ["gpio", "convert", "geojson", str(pq)], stdout=subprocess.PIPE)
+        ["gpio", "convert", "geojson", str(src_pq)], stdout=subprocess.PIPE)
     tc = subprocess.run(tc_cmd, stdin=gpio.stdout, capture_output=True, text=True)
     gpio.stdout.close()
     gpio.wait()
@@ -94,6 +114,8 @@ def make(coll_id: str) -> None:
         tmp.unlink(missing_ok=True)
         raise RuntimeError(f"{coll_id}: {tc.stderr[-400:]}")
     tmp.replace(out)
+    if cfg.get("where"):
+        (CATALOG / coll_rel(coll_id) / f".{coll_id}.filtered.parquet").unlink(missing_ok=True)
     mb = out.stat().st_size / 1e6
     print(f"✓ {coll_id}: {mb:.1f} MB (z{cfg['maxzoom']})")
 

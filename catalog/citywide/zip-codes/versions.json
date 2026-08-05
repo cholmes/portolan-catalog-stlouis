@@ -1,0 +1,25 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-05T20:04:58.027024Z",
+      "breaking": false,
+      "assets": {
+        "zip-codes.parquet": {
+          "sha256": "939b241d81e54894134c9482307f6036b2ab6a97101e3bea3a81cf948d2a3454",
+          "size_bytes": 29096,
+          "href": "zip-codes/zip-codes.parquet",
+          "source_mtime": 1785960037.3460827,
+          "mtime": 1785960037.3460827,
+          "feature_count": 30,
+          "schema_fingerprint": "3d27fcced4d5facb"
+        }
+      },
+      "changes": [
+        "zip-codes.parquet"
+      ]
+    }
+  ]
+}

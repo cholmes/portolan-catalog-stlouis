@@ -341,6 +341,74 @@ SOURCES = {
         "portal_page": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=130",
         "department": 'Environmental Health Services',
     },
+    "parcels-history": {
+        "title": "Parcels (Historical, 1997-2020)",
+        "type": "static",
+        "urls": ["https://www.stlouis-mo.gov/data/upload/data-files/stl_parcels_1997-2000.zip",
+                 "https://www.stlouis-mo.gov/data/upload/data-files/stl_parcels_2001-2005.zip",
+                 "https://www.stlouis-mo.gov/data/upload/data-files/stl_parcels_2006-2010.zip",
+                 "https://www.stlouis-mo.gov/data/upload/data-files/stl_parcels_2011-2015.zip",
+                 "https://www.stlouis-mo.gov/data/upload/data-files/stl_parcels_2016-2020.zip"],
+        "url": "https://www.stlouis-mo.gov/data/upload/data-files/stl_parcels_1997-2000.zip",
+        "portal_page": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=82",
+        "department": "Assessor's Office",
+    },
+    "crime": {
+        "title": "Crime (NIBRS)",
+        "type": "static",
+        "url": "https://www.slmpd.org/crime_stats.shtml",
+        "crime_scrape": True,
+        "portal_page": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=69",
+        "department": "Metropolitan Police Department",
+    },
+    "historic-landmarks": {
+        "title": "Historic Landmarks",
+        "type": "arcgis",
+        "service": "https://maps8.stlouis-mo.gov/arcgis/rest/services/PDA/Historic_Landmarks/FeatureServer",
+        "layers": "Historic Sites",
+        "portal_page": "https://maps8.stlouis-mo.gov/arcgis/rest/services/PDA/Historic_Landmarks/FeatureServer",
+        "department": "Planning and Urban Design",
+    },
+    "zip-codes": {
+        "title": "ZIP Codes",
+        "type": "arcgis",
+        "service": "https://maps8.stlouis-mo.gov/arcgis/rest/services/STLOUIS/BOUNDARIES/MapServer",
+        "layers": "Zip Codes",
+        "portal_page": "https://maps8.stlouis-mo.gov/arcgis/rest/services/STLOUIS/BOUNDARIES/MapServer",
+        "department": "Information Technology Services Agency",
+    },
+    "parking-meters": {
+        "title": "Parking Meters",
+        "type": "arcgis",
+        "service": "https://maps8.stlouis-mo.gov/arcgis/rest/services/STREETS/ParkingServices/MapServer",
+        "layers": "PARKING_METERS",
+        "portal_page": "https://maps8.stlouis-mo.gov/arcgis/rest/services/STREETS/ParkingServices/MapServer",
+        "department": "Streets - Director's Office",
+    },
+    "street-sweeping": {
+        "title": "Street Sweeping Schedule",
+        "type": "arcgis",
+        "service": "https://maps8.stlouis-mo.gov/arcgis/rest/services/STREETS/Street_Sweeping/MapServer",
+        "layers": "Street Sweeping Area Schedule",
+        "portal_page": "https://maps8.stlouis-mo.gov/arcgis/rest/services/STREETS/Street_Sweeping/MapServer",
+        "department": "Streets - Street Division",
+    },
+    "business-licenses": {
+        "title": "Business Licenses",
+        "type": "arcgis",
+        "service": "https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/Business_Licenses_as_of_October_2025/FeatureServer",
+        "layers": None,
+        "portal_page": "https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/Business_Licenses_as_of_October_2025/FeatureServer",
+        "department": "St. Louis Development Corporation",
+    },
+    "tax-sales": {
+        "title": "Tax Sales",
+        "type": "arcgis",
+        "service": "https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/Tax_Sales/FeatureServer",
+        "layers": "Tax Sales",
+        "portal_page": "https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/Tax_Sales/FeatureServer",
+        "department": "St. Louis Development Corporation",
+    },
     "property-sales": {
         "title": "Property Sales",
         "type": "static",
@@ -349,3 +417,59 @@ SOURCES = {
         "department": "Assessor's Office",
     },
 }
+
+
+# ---------------------------------------------------------------------------
+# Department sub-catalogs (wave 4). Collection ids become POSIX paths
+# ("assessor/parcels") per the Portolan nested-catalogs-flat-collections rule.
+# ---------------------------------------------------------------------------
+
+GROUPS = {
+    "assessor": ["parcels", "parcels-history", "city-blocks",
+                 "property-sales", "property-taxes"],
+    "planning": ["neighborhoods", "wards", "wards-2010", "zoning", "land-use",
+                 "historic-districts", "historic-landmarks", "schools",
+                 "bike-infrastructure"],
+    "development": ["tif-districts", "opportunity-zones", "lra-property",
+                    "community-improvement-districts",
+                    "special-business-districts", "tax-abated-parcels",
+                    "port-authority-district", "vacancy-composite",
+                    "business-licenses", "tax-sales", "market-value-analysis"],
+    "forestry": ["city-trees", "forest-park-trees"],
+    "streets": ["streets", "street-permits", "parking-meters",
+                "street-sweeping"],
+    "parks": ["parks"],
+    "public-safety": ["police-districts", "siren-locations",
+                      "tornado-damage-2025", "flood-controls", "crime"],
+    "elections": ["election-precincts", "polling-places",
+                  "election-results-nov-2024"],
+    "building": ["electrical-permits", "mechanical-permits",
+                 "plumbing-permits", "occupancy-permits"],
+    "health": ["animal-bites"],
+    "water": ["lead-service-lines"],
+    "community": ["csb-311-requests", "neighborhood-organizations"],
+    "citywide": ["city-boundary", "floodplain", "zip-codes"],
+}
+
+GROUP_TITLES = {
+    "assessor": "Assessor's Office",
+    "planning": "Planning and Urban Design",
+    "development": "Development (SLDC & CDA)",
+    "forestry": "Forestry",
+    "streets": "Streets",
+    "parks": "Parks",
+    "public-safety": "Public Safety",
+    "elections": "Elections",
+    "building": "Building Division",
+    "health": "Health",
+    "water": "Water Division",
+    "community": "Community & Service Requests",
+    "citywide": "Citywide Reference",
+}
+
+GROUP_OF = {cid: g for g, cids in GROUPS.items() for cid in cids}
+
+
+def coll_rel(cid: str) -> str:
+    """Collection directory path relative to the catalog root."""
+    return f"{GROUP_OF[cid]}/{cid}"

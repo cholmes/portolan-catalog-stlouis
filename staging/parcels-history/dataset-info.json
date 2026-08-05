@@ -1,0 +1,19 @@
+{
+ "collection": "parcels-history",
+ "title": "Parcels (Historical, 1997-2020)",
+ "portal_page": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=82",
+ "department": "Assessor's Office",
+ "source": "https://www.stlouis-mo.gov/data/upload/data-files/stl_parcels_1997-2000.zip",
+ "source_type": "static",
+ "synced": "2026-08-05T19:52:16+00:00",
+ "fetch": {
+  "status": "ok",
+  "files": [
+   "stl_parcels_1997-2000.zip",
+   "stl_parcels_2001-2005.zip",
+   "stl_parcels_2006-2010.zip",
+   "stl_parcels_2011-2015.zip",
+   "stl_parcels_2016-2020.zip"
+  ]
+ }
+}

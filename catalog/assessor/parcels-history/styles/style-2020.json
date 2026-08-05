@@ -1,0 +1,54 @@
+{
+  "version": 8,
+  "name": "2020 fabric",
+  "metadata": {
+    "description": "The newest snapshot in the archive."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../parcels-history.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "parcels-history-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "parcels-history",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "era"
+          ],
+          "2020",
+          "#174054",
+          "#00000000"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "parcels-history",
+      "paint": {
+        "line-color": [
+          "match",
+          [
+            "get",
+            "era"
+          ],
+          "2020",
+          "#174054",
+          "#00000000"
+        ],
+        "line-width": 0.7,
+        "line-opacity": 1.0
+      }
+    }
+  ]
+}

@@ -11,120 +11,6 @@
       "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
     },
     {
-      "rel": "child",
-      "href": "./city-boundary/collection.json",
-      "type": "application/json",
-      "title": "City Boundary"
-    },
-    {
-      "rel": "child",
-      "href": "./community-improvement-districts/collection.json",
-      "type": "application/json",
-      "title": "Community Improvement Districts (CIDs)"
-    },
-    {
-      "rel": "child",
-      "href": "./election-precincts/collection.json",
-      "type": "application/json",
-      "title": "Election Wards & Precincts"
-    },
-    {
-      "rel": "child",
-      "href": "./historic-districts/collection.json",
-      "type": "application/json",
-      "title": "Historic Districts"
-    },
-    {
-      "rel": "child",
-      "href": "./city-blocks/collection.json",
-      "type": "application/json",
-      "title": "City Blocks"
-    },
-    {
-      "rel": "child",
-      "href": "./neighborhoods/collection.json",
-      "type": "application/json",
-      "title": "Neighborhood Boundaries"
-    },
-    {
-      "rel": "child",
-      "href": "./city-trees/collection.json",
-      "type": "application/json",
-      "title": "City Trees (Planting Sites)"
-    },
-    {
-      "rel": "child",
-      "href": "./lra-property/collection.json",
-      "type": "application/json",
-      "title": "LRA Property"
-    },
-    {
-      "rel": "child",
-      "href": "./opportunity-zones/collection.json",
-      "type": "application/json",
-      "title": "Qualified Opportunity Zones"
-    },
-    {
-      "rel": "child",
-      "href": "./parks/collection.json",
-      "type": "application/json",
-      "title": "City Parks"
-    },
-    {
-      "rel": "child",
-      "href": "./police-districts/collection.json",
-      "type": "application/json",
-      "title": "Police District Boundaries"
-    },
-    {
-      "rel": "child",
-      "href": "./special-business-districts/collection.json",
-      "type": "application/json",
-      "title": "Special Business Districts (SBDs)"
-    },
-    {
-      "rel": "child",
-      "href": "./tax-abated-parcels/collection.json",
-      "type": "application/json",
-      "title": "Tax-abated Parcels"
-    },
-    {
-      "rel": "child",
-      "href": "./streets/collection.json",
-      "type": "application/json",
-      "title": "City Streets"
-    },
-    {
-      "rel": "child",
-      "href": "./tif-districts/collection.json",
-      "type": "application/json",
-      "title": "Tax Increment Financing (TIF) Districts"
-    },
-    {
-      "rel": "child",
-      "href": "./wards/collection.json",
-      "type": "application/json",
-      "title": "Ward Boundaries (2020)"
-    },
-    {
-      "rel": "child",
-      "href": "./zoning/collection.json",
-      "type": "application/json",
-      "title": "Zoning"
-    },
-    {
-      "rel": "child",
-      "href": "./parcels/collection.json",
-      "type": "application/json",
-      "title": "Parcels"
-    },
-    {
-      "rel": "child",
-      "href": "./csb-311-requests/collection.json",
-      "type": "application/json",
-      "title": "CSB Service Requests (311)"
-    },
-    {
       "rel": "license",
       "href": "https://www.stlouis-mo.gov/data/",
       "type": "text/html",
@@ -135,12 +21,6 @@
       "href": "https://www.stlouis-mo.gov/data/",
       "type": "text/html",
       "title": "City of St. Louis open data portal"
-    },
-    {
-      "rel": "child",
-      "href": "./property-sales/collection.json",
-      "type": "application/json",
-      "title": "Property Sales"
     },
     {
       "rel": "describedby",
@@ -154,150 +34,90 @@
     },
     {
       "rel": "child",
-      "href": "./bike-infrastructure/collection.json",
+      "href": "./assessor/catalog.json",
       "type": "application/json",
-      "title": "Bike Infrastructure"
+      "title": "Assessor's Office"
     },
     {
       "rel": "child",
-      "href": "./siren-locations/collection.json",
+      "href": "./planning/catalog.json",
       "type": "application/json",
-      "title": "Siren Locations"
+      "title": "Planning and Urban Design"
     },
     {
       "rel": "child",
-      "href": "./schools/collection.json",
+      "href": "./development/catalog.json",
       "type": "application/json",
-      "title": "City Public Schools"
+      "title": "Development (SLDC & CDA)"
     },
     {
       "rel": "child",
-      "href": "./forest-park-trees/collection.json",
+      "href": "./forestry/catalog.json",
       "type": "application/json",
-      "title": "Forest Park Trees"
+      "title": "Forestry"
     },
     {
       "rel": "child",
-      "href": "./port-authority-district/collection.json",
+      "href": "./streets/catalog.json",
       "type": "application/json",
-      "title": "Port Authority District"
+      "title": "Streets"
     },
     {
       "rel": "child",
-      "href": "./wards-2010/collection.json",
+      "href": "./parks/catalog.json",
       "type": "application/json",
-      "title": "Ward Boundaries (2010)"
+      "title": "Parks"
     },
     {
       "rel": "child",
-      "href": "./floodplain/collection.json",
+      "href": "./public-safety/catalog.json",
       "type": "application/json",
-      "title": "Floodplain"
+      "title": "Public Safety"
     },
     {
       "rel": "child",
-      "href": "./market-value-analysis/collection.json",
+      "href": "./elections/catalog.json",
       "type": "application/json",
-      "title": "2024 Market Value Analysis"
+      "title": "Elections"
     },
     {
       "rel": "child",
-      "href": "./polling-places/collection.json",
+      "href": "./building/catalog.json",
       "type": "application/json",
-      "title": "Polling Centers"
+      "title": "Building Division"
     },
     {
       "rel": "child",
-      "href": "./election-results-nov-2024/collection.json",
+      "href": "./health/catalog.json",
       "type": "application/json",
-      "title": "November 2024 Election Results by Precinct"
+      "title": "Health"
     },
     {
       "rel": "child",
-      "href": "./tornado-damage-2025/collection.json",
+      "href": "./water/catalog.json",
       "type": "application/json",
-      "title": "May 2025 Tornado Damage"
+      "title": "Water Division"
     },
     {
       "rel": "child",
-      "href": "./land-use/collection.json",
+      "href": "./community/catalog.json",
       "type": "application/json",
-      "title": "Strategic Land Use Plan"
+      "title": "Community & Service Requests"
     },
     {
       "rel": "child",
-      "href": "./flood-controls/collection.json",
+      "href": "./citywide/catalog.json",
       "type": "application/json",
-      "title": "Flood Controls"
-    },
-    {
-      "rel": "child",
-      "href": "./neighborhood-organizations/collection.json",
-      "type": "application/json",
-      "title": "Neighborhood Organizations"
-    },
-    {
-      "rel": "child",
-      "href": "./vacancy-composite/collection.json",
-      "type": "application/json",
-      "title": "Parcel Vacancy Composite"
-    },
-    {
-      "rel": "child",
-      "href": "./lead-service-lines/collection.json",
-      "type": "application/json",
-      "title": "Lead Service Line Inventory"
-    },
-    {
-      "rel": "child",
-      "href": "./animal-bites/collection.json",
-      "type": "application/json",
-      "title": "Animal Bites"
-    },
-    {
-      "rel": "child",
-      "href": "./property-taxes/collection.json",
-      "type": "application/json",
-      "title": "Property Taxes"
-    },
-    {
-      "rel": "child",
-      "href": "./electrical-permits/collection.json",
-      "type": "application/json",
-      "title": "Electrical Permits"
-    },
-    {
-      "rel": "child",
-      "href": "./mechanical-permits/collection.json",
-      "type": "application/json",
-      "title": "Mechanical Permits"
-    },
-    {
-      "rel": "child",
-      "href": "./plumbing-permits/collection.json",
-      "type": "application/json",
-      "title": "Plumbing Permits"
-    },
-    {
-      "rel": "child",
-      "href": "./street-permits/collection.json",
-      "type": "application/json",
-      "title": "Street Permits"
-    },
-    {
-      "rel": "child",
-      "href": "./occupancy-permits/collection.json",
-      "type": "application/json",
-      "title": "Occupancy Permits"
+      "title": "Citywide Reference"
     }
   ],
   "stac_extensions": [
     "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json"
   ],
-  "portolan:total_size_bytes": 297272185,
-  "portolan:asset_count": 37,
-  "portolan:collection_count": 37,
-  "updated": "2026-08-05T17:48:01+00:00",
+  "portolan:total_size_bytes": 458046890,
+  "portolan:asset_count": 45,
+  "portolan:collection_count": 51,
+  "updated": "2026-08-05T19:58:51+00:00",
   "providers": [
     {
       "name": "City of St. Louis",

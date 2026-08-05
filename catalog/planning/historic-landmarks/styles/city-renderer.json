@@ -1,0 +1,62 @@
+{
+  "version": 8,
+  "name": "City renderer",
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../historic-landmarks.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "historic-landmarks-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "historic-landmarks",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "SITE_TYPE_"
+          ],
+          "City Landmark",
+          "#00c5ff",
+          "National Historic Landmark",
+          "#0070ff",
+          "National Register Historic Site",
+          "#ff0000",
+          "#cccccc"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "categorical-circle",
+      "type": "circle",
+      "source": "data",
+      "source-layer": "historic-landmarks",
+      "paint": {
+        "circle-color": [
+          "match",
+          [
+            "get",
+            "SITE_TYPE_"
+          ],
+          "City Landmark",
+          "#00c5ff",
+          "National Historic Landmark",
+          "#0070ff",
+          "National Register Historic Site",
+          "#ff0000",
+          "#cccccc"
+        ],
+        "circle-radius": 5,
+        "circle-opacity": 1.0
+      }
+    }
+  ],
+  "metadata": {
+    "description": "The city's own symbology, extracted from the source ArcGIS renderer."
+  }
+}

@@ -1,25 +1,17 @@
-# AGENTS.md — City Streets
+# AGENTS.md — Streets
 
-City street GIS data
-
-19,858 rows; geometry: MultiLineString (WGS84 lon/lat unless noted).
-
-## Access
+Department sub-catalog with 4 collections. Access pattern for each:
 
 ```sql
 INSTALL httpfs; LOAD httpfs;  -- DuckDB
-SELECT * FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/streets/streets.parquet' LIMIT 5;
+-- City Streets
+SELECT * FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/streets/streets/streets.parquet' LIMIT 5;
+-- Street Permits
+SELECT * FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/streets/street-permits/street-permits.parquet' LIMIT 5;
+-- Parking Meters
+SELECT * FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/streets/parking-meters/parking-meters.parquet' LIMIT 5;
+-- Street Sweeping Schedule
+SELECT * FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/streets/street-sweeping/street-sweeping.parquet' LIMIT 5;
 ```
 
-PMTiles for maps: `https://data.source.coop/tge-labs/st-louis-open-data-mirror/streets/streets.pmtiles` (layer `streets`), styled by `styles/*.json` — `styles/default.json` is the default.
-
-## Key fields
-
-- `Street_Name_Full` — full name
-- `Class` — source class code (A31/A41/A6x/A73, no published decode)
-
-Full schema: `table:columns` in collection.json.
-
-## Provenance
-
-Mirror of [City Streets](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=68) from the City of St. Louis open data portal; source: https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/Streets/FeatureServer. No explicit license is published — see the portal page. Synced 2026-08-05T17:48:01+00:00.
+Each collection has its own AGENTS.md with fields, quirks, and joins. Root catalog: `https://data.source.coop/tge-labs/st-louis-open-data-mirror/catalog.json`.

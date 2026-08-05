@@ -1,0 +1,330 @@
+{
+  "type": "Collection",
+  "id": "community/csb-311-requests",
+  "stac_version": "1.1.0",
+  "description": "The Citizens' Service Bureau (CSB) is the customer service department for the City of St. Louis. This dataset provides access to some of the data collected when services are requested. The X/Y coordinates are in WGS 84 Web Mercator (EPSG:3857). File new service request here: https://www.stlouis-mo.gov/government/departments/public-safety/neighborhood-stabilization-office/citizens-service-bureau/csb-request-submit.cfm",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "./csb-311-requests.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "pmtiles:layers": [
+        "csb-311-requests"
+      ]
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown",
+      "title": "Agent/LLM usage guide"
+    },
+    {
+      "rel": "license",
+      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5",
+      "type": "text/html",
+      "title": "Dataset page on the City of St. Louis open data portal"
+    },
+    {
+      "rel": "via",
+      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5",
+      "type": "text/html",
+      "title": "Source dataset on stlouis-mo.gov"
+    },
+    {
+      "rel": "describedby",
+      "href": "./README.md",
+      "type": "text/markdown"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Community & Service Requests"
+    }
+  ],
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
+  ],
+  "geoparquet:geometry_type": "Point",
+  "geoparquet:feature_count": 1477057,
+  "table:row_count": 1477057,
+  "table:primary_geometry": "geometry",
+  "table:columns": [
+    {
+      "name": "CALLERTYPE",
+      "type": "string"
+    },
+    {
+      "name": "CITY",
+      "type": "string"
+    },
+    {
+      "name": "DATECANCELLED",
+      "type": "timestamp[ms]"
+    },
+    {
+      "name": "DATEINVTDONE",
+      "type": "timestamp[ms]"
+    },
+    {
+      "name": "DATETIMECLOSED",
+      "type": "timestamp[ms]"
+    },
+    {
+      "name": "DATETIMEINIT",
+      "type": "timestamp[ms]"
+    },
+    {
+      "name": "DESCRIPTION",
+      "type": "string"
+    },
+    {
+      "name": "EXPLANATION",
+      "type": "string"
+    },
+    {
+      "name": "GRANDPARENT_ID",
+      "type": "int32"
+    },
+    {
+      "name": "GRANDPARENT_NODE",
+      "type": "string"
+    },
+    {
+      "name": "GROUP",
+      "type": "string"
+    },
+    {
+      "name": "NEIGHBORHOOD",
+      "type": "string"
+    },
+    {
+      "name": "PARENT_ID",
+      "type": "int32"
+    },
+    {
+      "name": "PARENT_NODE",
+      "type": "string"
+    },
+    {
+      "name": "PLAIN_ENGLISH_NAME_FOR_PROBLEMCODE",
+      "type": "string"
+    },
+    {
+      "name": "PRJCOMPLETEDATE",
+      "type": "timestamp[ms]"
+    },
+    {
+      "name": "PROBADDRESS",
+      "type": "string"
+    },
+    {
+      "name": "PROBADDTYPE",
+      "type": "string"
+    },
+    {
+      "name": "PROBLEMCODE",
+      "type": "string"
+    },
+    {
+      "name": "PROBLEMSID",
+      "type": "int32"
+    },
+    {
+      "name": "PROBZIP",
+      "type": "string"
+    },
+    {
+      "name": "PUBLICRESOLUTION",
+      "type": "string"
+    },
+    {
+      "name": "REQUESTID",
+      "type": "int32"
+    },
+    {
+      "name": "STATUS",
+      "type": "string"
+    },
+    {
+      "name": "SUBMITTO",
+      "type": "string"
+    },
+    {
+      "name": "WARD",
+      "type": "string"
+    },
+    {
+      "name": "geometry",
+      "type": "binary"
+    },
+    {
+      "name": "geometry_bbox",
+      "type": "struct<xmin: float not null, ymin: float not null, xmax: float not null, ymax: float not null>"
+    }
+  ],
+  "portolan:styles": [
+    "styles/default",
+    "styles/style-category",
+    "styles/style-channel",
+    "styles/style-open"
+  ],
+  "portolan:total_size_bytes": 268904224,
+  "portolan:asset_count": 8,
+  "updated": "2026-08-05T19:58:51+00:00",
+  "themes": [
+    {
+      "scheme": "https://www.stlouis-mo.gov/data/topics/",
+      "concepts": [
+        {
+          "id": "government",
+          "title": "Government"
+        }
+      ]
+    }
+  ],
+  "title": "CSB Service Requests (311)",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -90.3196727,
+          38.5338176,
+          -90.1808012,
+          38.7741115
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "license": "other",
+  "keywords": [
+    "asset-parcel",
+    "asset-street maintenance",
+    "department",
+    "intersection",
+    "neighborhood",
+    "property address",
+    "ward"
+  ],
+  "providers": [
+    {
+      "name": "City of St. Louis \u2014 Neighborhood Stabilization / CSB",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5"
+    },
+    {
+      "name": "TGE Labs",
+      "roles": [
+        "host"
+      ],
+      "url": "https://github.com/cholmes/portolan-catalog-stlouis"
+    }
+  ],
+  "assets": {
+    "csb-311-requests": {
+      "href": "./csb-311-requests.parquet",
+      "type": "application/vnd.apache.parquet",
+      "title": "CSB Service Requests (311) (GeoParquet)",
+      "file:size": 81370983,
+      "file:checksum": "122050da5a4fe0b535a5918214ce1365da2e5911f05a3937d973d718f1bb584fef33",
+      "roles": [
+        "data"
+      ]
+    },
+    "csb-311-requests-tiles": {
+      "href": "./csb-311-requests.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "csb-311-requests (vector tiles)",
+      "file:size": 54986053,
+      "file:checksum": "122089ff9f7b02c36eeb89d6fd248ab9bb6b3a43eb16aa8f14a7e3cfd12d3403db38",
+      "roles": [
+        "visual"
+      ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "311 service requests",
+      "description": "1.48 million Citizens' Service Bureau requests since 2008, as a dense point field.",
+      "file:size": 845,
+      "file:checksum": "1220cbed61a992dee8263e693163c6d1cc19509e0cb7feb88d6fdca919ac91885b82",
+      "roles": [
+        "default",
+        "style"
+      ]
+    },
+    "styles/style-category": {
+      "href": "./styles/style-category.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Request category",
+      "description": "The eight biggest request groups \u2014 trash/debris leads with 400k, then right-of-way, trees, vehicles, street lights.",
+      "file:size": 2039,
+      "file:checksum": "122020fe23e11ead2ce9bbe7bf4c4d4e787be28441ebddce5e8b59133ee7f9ebf44b",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/style-channel": {
+      "href": "./styles/style-channel.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Reporting channel",
+      "description": "How requests arrive: web vs. phone vs. NSO staff vs. the Twitter era.",
+      "file:size": 1718,
+      "file:checksum": "12201e1515b0dd42b90713a81eb9c4468c59e5599840980756bc187020cf531691fa",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/style-open": {
+      "href": "./styles/style-open.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Open vs. resolved",
+      "description": "Requests not yet closed or cancelled in red \u2014 the live backlog against 1.4M resolved (light).",
+      "file:size": 1575,
+      "file:checksum": "1220181d4924107e356b7fd55d2ddc5ca31563f0361f6e8cf10501b314be54e904aa",
+      "roles": [
+        "style"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "title": "CSB Service Requests (311) rendered with the default style",
+      "file:size": 378191,
+      "file:checksum": "1220dca6c18573ad0e30d26f1e826f6cd0f16c47c3c8ec22ae9c574e4b4e11220db6",
+      "roles": [
+        "thumbnail"
+      ]
+    },
+    "documentation": {
+      "href": "./README.md",
+      "type": "text/markdown",
+      "file:size": 3378,
+      "file:checksum": "12200279524778f00528bb831cc14b8cc740c007b3d41002002ade012e2ae3e6d269",
+      "roles": [
+        "documentation"
+      ]
+    }
+  }
+}

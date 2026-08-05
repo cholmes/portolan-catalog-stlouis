@@ -18,7 +18,11 @@ class codes are left as codes (the source does not decode them).
 """
 
 import json
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent))
+from sources import coll_rel
 
 ROOT = Path(__file__).resolve().parent.parent
 CATALOG = ROOT / "catalog"
@@ -697,7 +701,7 @@ def normalize_city_renderers() -> None:
     knows nothing about the browser's legend mechanism. Inject the pmtiles
     source and, for data-driven renderers, the inert legend fill layer.
     """
-    for f in sorted(CATALOG.glob("*/styles/city-renderer.json")):
+    for f in sorted(CATALOG.glob("*/*/styles/city-renderer.json")):
         coll_id = f.parent.parent.name
         s = json.loads(f.read_text())
         s.setdefault("sources", {}).setdefault("data", {})
@@ -737,8 +741,8 @@ def normalize_city_renderers() -> None:
 def main() -> None:
     total = 0
     for coll_id, styles in STYLES.items():
-        d = CATALOG / coll_id / "styles"
-        if not (CATALOG / coll_id).exists():
+        d = CATALOG / coll_rel(coll_id) / "styles"
+        if not (CATALOG / coll_rel(coll_id)).exists():
             print(f"✗ no collection dir: {coll_id}")
             continue
         d.mkdir(exist_ok=True)
@@ -1239,6 +1243,161 @@ emit("animal-bites", "style-plain", style(
     "animal-bites", "Locations only",
     "Neutral points for overlays.",
     [circle("animal-bites", DARK, zoom_radius(2.2))]))
+
+# --------------------------------------------------------------------------
+# Final wave (2026-08): parcels history, crime, sweep picks
+# --------------------------------------------------------------------------
+
+ERA = match("era", {"1997": "#4a2d78", "2000": "#7c5295", "2005": "#b085c9",
+                    "2010": "#5591b5", "2015": "#2d6a8e", "2020": DARK}, LIGHT)
+emit("parcels-history", "default", style(
+    "parcels-history", "Parcel fabric by era",
+    "Five-year snapshots of the parcel fabric (tiles carry 1997-2020 "
+    "snapshots; the full Parquet holds every yearly snapshot 1997-2020, "
+    "3.1M rows).",
+    [line("parcels-history", ERA, 0.5)], legend=ERA), default=True)
+emit("parcels-history", "style-1997", style(
+    "parcels-history", "1997 fabric",
+    "The oldest snapshot alone — compare against the current parcels "
+    "collection to see consolidation and demolition.",
+    [line("parcels-history",
+          ["match", ["get", "era"], "1997", "#4a2d78", "#00000000"], 0.7)],
+    legend=["match", ["get", "era"], "1997", "#4a2d78", "#00000000"]))
+emit("parcels-history", "style-2020", style(
+    "parcels-history", "2020 fabric",
+    "The newest snapshot in the archive.",
+    [line("parcels-history",
+          ["match", ["get", "era"], "2020", DARK, "#00000000"], 0.7)],
+    legend=["match", ["get", "era"], "2020", DARK, "#00000000"]))
+
+CRIME_AGAINST = match("CrimeAgainst", {
+    "Person": RED, "Property": ORANGE, "Society": "#7c5295",
+    "Unspecified": GRAY, "NULL": LIGHT}, LIGHT)
+CRIME_CAT = match("NIBRSCategory", {
+    "Destruction/Damage/Vandalism of Property": ORANGE,
+    "Weapons Law Violations": "#7c5295",
+    "Motor Vehicle Theft": "#b5651d",
+    "Aggravated Assault": RED,
+    "Theft From Motor Vehicle": "#e2a76f",
+    "Simple Assault": "#d98d8d",
+    "All Other Larceny": "#c9b970",
+    "All Other Offenses": GRAY}, LIGHT)
+CRIME_GUN = match("FirearmUsed", {"Yes": RED, "No": LIGHT}, GRAY)
+emit("crime", "default", style(
+    "crime", "Crime against person / property / society",
+    "367k NIBRS incidents since 2021, colored by the crime-against "
+    "classification: person red, property orange, society purple.",
+    [circle("crime", CRIME_AGAINST,
+            ["interpolate", ["linear"], ["zoom"], 9, 1.4, 12, 2.2, 16, 4.5],
+            opacity=0.65, stroke="#FFFFFF")], legend=CRIME_AGAINST),
+    default=True)
+emit("crime", "style-category", style(
+    "crime", "Offense category",
+    "The eight largest NIBRS categories; everything else light gray.",
+    [circle("crime", CRIME_CAT,
+            ["interpolate", ["linear"], ["zoom"], 9, 1.4, 12, 2.2, 16, 4.5],
+            opacity=0.65)], legend=CRIME_CAT))
+emit("crime", "style-firearm", style(
+    "crime", "Firearm involved",
+    "Incidents where a firearm was used, in red.",
+    [circle("crime", CRIME_GUN,
+            ["interpolate", ["linear"], ["zoom"], 9, 1.4, 12, 2.2, 16, 4.5],
+            opacity=0.6)], legend=CRIME_GUN))
+
+LANDMARK = match("SITE_TYPE", {
+    "NR_SITE": BLUE, "CLM_SITE": RED, "NLM_SITE": "#7c5295"}, GRAY)
+emit("historic-landmarks", "default", style(
+    "historic-landmarks", "Historic sites",
+    "512 historic sites: National Register (blue), City Landmarks (red), "
+    "National Landmarks (purple) — codes from the source layer.",
+    [circle("historic-landmarks", LANDMARK, zoom_radius(4),
+            stroke="#FFFFFF")], legend=LANDMARK), default=True)
+emit("historic-landmarks", "style-plain", style(
+    "historic-landmarks", "Locations only",
+    "Neutral points for overlays.",
+    [circle("historic-landmarks", "#7c5295", zoom_radius(3.5))]))
+emit("historic-landmarks", "style-national-register", style(
+    "historic-landmarks", "National Register sites",
+    "Just the NR-listed sites.",
+    [circle("historic-landmarks",
+            ["match", ["get", "SITE_TYPE"], "NR_SITE", BLUE, "#00000000"],
+            zoom_radius(4))],
+    legend=["match", ["get", "SITE_TYPE"], "NR_SITE", BLUE, "#00000000"]))
+
+emit("zip-codes", "default", style(
+    "zip-codes", "ZIP codes",
+    "The 30 ZIP code areas touching the city, repeating colors, labeled.",
+    [fill("zip-codes", repeat_fill(["to-number", ["get", "ZIP"]], 10), 0.55,
+          "#FFFFFF"),
+     line("zip-codes", "#FFFFFF", 1.0),
+     label("zip-codes", "ZIP", 11, 10)], no_legend=True), default=True)
+emit("zip-codes", "style-boundaries", style(
+    "zip-codes", "ZIP boundaries",
+    "Outlines only.", [line("zip-codes", DARK, 1.5)]))
+emit("zip-codes", "style-subtle", style(
+    "zip-codes", "Subtle tint",
+    "Light fill for underlays.",
+    [fill("zip-codes", LIGHT, 0.3, GRAY)]))
+
+emit("parking-meters", "default", style(
+    "parking-meters", "Parking meters",
+    "981 parking meters.",
+    [circle("parking-meters", BLUE, zoom_radius(2.8), stroke="#FFFFFF")]),
+    default=True)
+emit("parking-meters", "style-plain", style(
+    "parking-meters", "Locations only",
+    "Neutral points.", [circle("parking-meters", DARK, zoom_radius(2.4))]))
+emit("parking-meters", "style-bold", style(
+    "parking-meters", "High-visibility",
+    "Larger orange markers.",
+    [circle("parking-meters", ORANGE, zoom_radius(4), stroke="#FFFFFF")]))
+
+SWEEP_DAY = match("Day_Wk", {
+    "Monday": BLUE, "Tuesday": GREEN, "Wednesday": ORANGE,
+    "Thursday": "#7c5295", "Friday": RED}, GRAY)
+emit("street-sweeping", "default", style(
+    "street-sweeping", "Sweeping day",
+    "Street sweeping areas colored by their scheduled weekday.",
+    [fill("street-sweeping", SWEEP_DAY, 0.55, "#FFFFFF"),
+     line("street-sweeping", "#FFFFFF", 0.8)], legend=SWEEP_DAY),
+    default=True)
+emit("street-sweeping", "style-boundaries", style(
+    "street-sweeping", "Area boundaries",
+    "Outlines only.", [line("street-sweeping", GREEN, 1.2)]))
+emit("street-sweeping", "style-labeled", style(
+    "street-sweeping", "Routes labeled",
+    "Areas with route labels.",
+    [fill("street-sweeping", LIGHT, 0.4, GRAY),
+     label("street-sweeping", "Route", 10, 12)]))
+
+emit("business-licenses", "default", style(
+    "business-licenses", "Business licenses",
+    "6,239 licensed businesses as of October 2025.",
+    [circle("business-licenses", GREEN, zoom_radius(2.6), stroke="#FFFFFF")]),
+    default=True)
+emit("business-licenses", "style-plain", style(
+    "business-licenses", "Locations only",
+    "Neutral points.", [circle("business-licenses", DARK, zoom_radius(2.2))]))
+emit("business-licenses", "style-bold", style(
+    "business-licenses", "High-visibility",
+    "Larger blue markers.",
+    [circle("business-licenses", BLUE, zoom_radius(3.6), stroke="#FFFFFF")]))
+
+TAXSALE_BID = step("Opening_Bid", "#eef3f6",
+                   [1000, "#c6dbe8", 3000, "#8fbdd6", 7500, "#5591b5",
+                    15000, DARK], to_number=True)
+emit("tax-sales", "default", style(
+    "tax-sales", "Tax sale parcels by opening bid",
+    "2,200 parcels in tax sale proceedings, stepped by opening bid.",
+    [fill("tax-sales", TAXSALE_BID, 0.75, "#FFFFFF")], legend=TAXSALE_BID),
+    default=True)
+emit("tax-sales", "style-solid", style(
+    "tax-sales", "All tax-sale parcels",
+    "One color for overlays.",
+    [fill("tax-sales", RED, 0.6, "#FFFFFF")]))
+emit("tax-sales", "style-boundaries", style(
+    "tax-sales", "Parcel outlines",
+    "Outlines only.", [line("tax-sales", RED, 1.0)]))
 
 if __name__ == "__main__":
     main()

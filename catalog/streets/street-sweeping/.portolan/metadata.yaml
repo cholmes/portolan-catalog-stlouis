@@ -1,0 +1,14 @@
+title: "Street Sweeping Schedule"
+description: "Street sweeping area schedules from the Streets Division."
+contact:
+  name: "Chris Holmes"
+  email: "cholmes@9eo.org"
+license: "other"
+license_url: "https://maps8.stlouis-mo.gov/arcgis/rest/services/STREETS/Street_Sweeping/MapServer"
+attribution: "City of St. Louis — Streets - Street Division"
+source_url: "https://maps8.stlouis-mo.gov/arcgis/rest/services/STREETS/Street_Sweeping/MapServer"
+keywords: [st-louis, missouri, open-data, street, sweeping]
+processing_notes: |
+  Mirrored from the City of St. Louis open data portal (https://maps8.stlouis-mo.gov/arcgis/rest/services/STREETS/Street_Sweeping/MapServer).
+  Source: https://maps8.stlouis-mo.gov/arcgis/rest/services/STREETS/Street_Sweeping/MapServer (ArcGIS REST service),
+  converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.

@@ -1,26 +1,11 @@
-# AGENTS.md — City Parks
+# AGENTS.md — Parks
 
-A database containing information on city parks, park amenities, and amenity attributes
-
-117 rows; geometry: MultiPolygon (WGS84 lon/lat unless noted).
-
-## Access
+Department sub-catalog with 1 collections. Access pattern for each:
 
 ```sql
 INSTALL httpfs; LOAD httpfs;  -- DuckDB
-SELECT * FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/parks/parks.parquet' LIMIT 5;
+-- City Parks
+SELECT * FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/parks/parks/parks.parquet' LIMIT 5;
 ```
 
-PMTiles for maps: `https://data.source.coop/tge-labs/st-louis-open-data-mirror/parks/parks.pmtiles` (layer `parks`), styled by `styles/*.json` — `styles/default.json` is the default.
-
-## Key fields
-
-- `TEXT_` — park name
-- `ACRES` — official acreage
-- `NEW_CLASS` — park classification
-
-Full schema: `table:columns` in collection.json.
-
-## Provenance
-
-Mirror of [City Parks](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=46) from the City of St. Louis open data portal; source: https://maps9.stlouis-mo.gov/arcgis/rest/services/PARKS/Reservable_Park_Amenities/FeatureServer. No explicit license is published — see the portal page. Synced 2026-08-05T17:48:01+00:00.
+Each collection has its own AGENTS.md with fields, quirks, and joins. Root catalog: `https://data.source.coop/tge-labs/st-louis-open-data-mirror/catalog.json`.

@@ -1,0 +1,95 @@
+{
+ "collection": "tax-sales",
+ "title": "Tax Sales",
+ "portal_page": "https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/Tax_Sales/FeatureServer",
+ "department": "St. Louis Development Corporation",
+ "source": "https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/Tax_Sales/FeatureServer",
+ "source_type": "arcgis",
+ "synced": "2026-08-05T19:58:51+00:00",
+ "fetch": {
+  "status": "ok",
+  "parquets": [
+   "staging/extracts/tax-sales/tax_sales/tax_sales.parquet"
+  ],
+  "layer_url": "https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/Tax_Sales/FeatureServer/0",
+  "layer_description": null,
+  "fields": [
+   {
+    "name": "OBJECTID",
+    "alias": "OBJECTID",
+    "type": "esriFieldTypeOID"
+   },
+   {
+    "name": "ColParcelId",
+    "alias": "Parcel ID",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "SubmittedParcel",
+    "alias": "Submitted Parcel",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Suit",
+    "alias": "Suit",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Sequence",
+    "alias": "Sequence",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Owners",
+    "alias": "Owner(s)",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Demensions",
+    "alias": "Demensions",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Property_Address",
+    "alias": "Property Address",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Opening_Bid",
+    "alias": "Opening Bid",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "Ward",
+    "alias": "Ward",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "Sales_Date",
+    "alias": "Sales Date",
+    "type": "esriFieldTypeDate"
+   },
+   {
+    "name": "Current_Sales",
+    "alias": "Current Sales",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Tax_Sale",
+    "alias": "Tax Sale",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Shape__Area",
+    "alias": "Shape.STArea()",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Shape__Length",
+    "alias": "Shape.STLength()",
+    "type": "esriFieldTypeDouble"
+   }
+  ],
+  "city_style": "staging/extracts/tax-sales/styles/city-renderer.json"
+ }
+}

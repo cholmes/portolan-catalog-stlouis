@@ -1,0 +1,22 @@
+{
+  "version": 8,
+  "name": "Simple Style",
+  "sources": {
+    "data": {
+      "type": "vector"
+    }
+  },
+  "layers": [
+    {
+      "id": "layer-0",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "tax-sales",
+      "paint": {
+        "fill-color": "#ffd159",
+        "fill-opacity": 1.0,
+        "fill-outline-color": "#faa83f"
+      }
+    }
+  ]
+}

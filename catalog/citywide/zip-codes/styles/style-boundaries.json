@@ -1,0 +1,26 @@
+{
+  "version": 8,
+  "name": "ZIP boundaries",
+  "metadata": {
+    "description": "Outlines only."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../zip-codes.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "zip-codes",
+      "paint": {
+        "line-color": "#174054",
+        "line-width": 1.5,
+        "line-opacity": 1.0
+      }
+    }
+  ]
+}

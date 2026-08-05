@@ -218,7 +218,55 @@
       "updated": "2026-08-05T17:58:24.774989+00:00",
       "asset_count": 1,
       "total_size_bytes": 260192
+    },
+    "zip-codes": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-05T20:04:58.027486+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 29096
+    },
+    "historic-landmarks": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-05T20:04:58.066318+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 75930
+    },
+    "street-sweeping": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-05T20:04:58.106900+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 54921
+    },
+    "parking-meters": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-05T20:04:58.147275+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 95325
+    },
+    "business-licenses": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-05T20:04:58.188635+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 806176
+    },
+    "tax-sales": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-05T20:04:58.230934+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 406414
+    },
+    "crime": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-05T20:04:58.276871+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 10866606
+    },
+    "parcels-history": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-05T20:04:58.359918+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 148440237
     }
   },
-  "updated": "2026-08-05T17:58:24.774989+00:00"
+  "updated": "2026-08-05T20:04:58.359918+00:00"
 }

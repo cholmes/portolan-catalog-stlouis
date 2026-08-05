@@ -1,0 +1,786 @@
+{
+  "type": "Collection",
+  "id": "assessor/parcels",
+  "stac_version": "1.1.0",
+  "description": "Current and historic parcel data",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "./parcels.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "pmtiles:layers": [
+        "parcels"
+      ]
+    },
+    {
+      "rel": "license",
+      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=82",
+      "type": "text/html",
+      "title": "Dataset page on the City of St. Louis open data portal"
+    },
+    {
+      "rel": "via",
+      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=82",
+      "type": "text/html",
+      "title": "Source dataset on stlouis-mo.gov"
+    },
+    {
+      "rel": "via",
+      "href": "https://maps8.stlouis-mo.gov/arcgis/rest/services/PDA/PARCELS_PUBLIC/MapServer",
+      "type": "text/html",
+      "title": "Source ArcGIS service"
+    },
+    {
+      "rel": "describedby",
+      "href": "./README.md",
+      "type": "text/markdown"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Assessor's Office"
+    }
+  ],
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
+  ],
+  "geoparquet:geometry_type": "MultiPolygon",
+  "geoparquet:feature_count": 134362,
+  "table:row_count": 134362,
+  "table:primary_geometry": "geometry",
+  "table:columns": [
+    {
+      "name": "OBJECTID",
+      "type": "int64"
+    },
+    {
+      "name": "LowerAsrParcelId",
+      "type": "string"
+    },
+    {
+      "name": "ColParcelId",
+      "type": "string"
+    },
+    {
+      "name": "ColCityBlock",
+      "type": "int32"
+    },
+    {
+      "name": "ColParcel",
+      "type": "int32"
+    },
+    {
+      "name": "PrimAddrRecNum",
+      "type": "int16"
+    },
+    {
+      "name": "AddrType",
+      "type": "string"
+    },
+    {
+      "name": "LowAddrNum",
+      "type": "int32"
+    },
+    {
+      "name": "LowAddrSuf",
+      "type": "string"
+    },
+    {
+      "name": "HighAddrNum",
+      "type": "int32"
+    },
+    {
+      "name": "HighAddrSuf",
+      "type": "string"
+    },
+    {
+      "name": "NLC",
+      "type": "double"
+    },
+    {
+      "name": "PARITY",
+      "type": "string"
+    },
+    {
+      "name": "StPreDir",
+      "type": "string"
+    },
+    {
+      "name": "StName",
+      "type": "string"
+    },
+    {
+      "name": "StType",
+      "type": "string"
+    },
+    {
+      "name": "StSufDir",
+      "type": "string"
+    },
+    {
+      "name": "StdUnitNum",
+      "type": "string"
+    },
+    {
+      "name": "OWNERNAME",
+      "type": "string"
+    },
+    {
+      "name": "OWNERNAME2",
+      "type": "string"
+    },
+    {
+      "name": "OWNERADDR",
+      "type": "string"
+    },
+    {
+      "name": "OWNERCITY",
+      "type": "string"
+    },
+    {
+      "name": "OWNERSTATE",
+      "type": "string"
+    },
+    {
+      "name": "OwnerCountry",
+      "type": "string"
+    },
+    {
+      "name": "OWNERZIP",
+      "type": "string"
+    },
+    {
+      "name": "OwnerRank",
+      "type": "string"
+    },
+    {
+      "name": "LegalDesc1",
+      "type": "string"
+    },
+    {
+      "name": "LegalDesc2",
+      "type": "string"
+    },
+    {
+      "name": "LegalDesc3",
+      "type": "string"
+    },
+    {
+      "name": "LegalDesc4",
+      "type": "string"
+    },
+    {
+      "name": "LegalDesc5",
+      "type": "string"
+    },
+    {
+      "name": "AsrClassCode",
+      "type": "int16"
+    },
+    {
+      "name": "AsrLandUse1",
+      "type": "int16"
+    },
+    {
+      "name": "AsrLanduse2",
+      "type": "int16"
+    },
+    {
+      "name": "RedevPhase",
+      "type": "int16"
+    },
+    {
+      "name": "RedevYearEnd",
+      "type": "int16"
+    },
+    {
+      "name": "RedevPhase2",
+      "type": "int16"
+    },
+    {
+      "name": "RedevYearEnd2",
+      "type": "int16"
+    },
+    {
+      "name": "VacantLot",
+      "type": "int16"
+    },
+    {
+      "name": "SpecBusDist",
+      "type": "int16"
+    },
+    {
+      "name": "SpecBusDist2",
+      "type": "int16"
+    },
+    {
+      "name": "TIFDist",
+      "type": "int16"
+    },
+    {
+      "name": "LendingAgcy",
+      "type": "int16"
+    },
+    {
+      "name": "Condominium",
+      "type": "int16"
+    },
+    {
+      "name": "NbrOfUnits",
+      "type": "int16"
+    },
+    {
+      "name": "NbrOfApts",
+      "type": "int16"
+    },
+    {
+      "name": "FRONTAGE",
+      "type": "double"
+    },
+    {
+      "name": "LANDAREA",
+      "type": "int32"
+    },
+    {
+      "name": "RecDailyDate",
+      "type": "timestamp[ms]"
+    },
+    {
+      "name": "RecDailyNum",
+      "type": "int32"
+    },
+    {
+      "name": "RecBookNum",
+      "type": "string"
+    },
+    {
+      "name": "RecPageNum",
+      "type": "int16"
+    },
+    {
+      "name": "AsdLand",
+      "type": "double"
+    },
+    {
+      "name": "AsdImprove",
+      "type": "double"
+    },
+    {
+      "name": "AsdTotal",
+      "type": "double"
+    },
+    {
+      "name": "BillLand",
+      "type": "double"
+    },
+    {
+      "name": "BillImprove",
+      "type": "double"
+    },
+    {
+      "name": "BillTotal",
+      "type": "double"
+    },
+    {
+      "name": "AprLand",
+      "type": "double"
+    },
+    {
+      "name": "CostAprImprove",
+      "type": "double"
+    },
+    {
+      "name": "AsmtAppealYear",
+      "type": "int16"
+    },
+    {
+      "name": "AsmtAppealNum",
+      "type": "int32"
+    },
+    {
+      "name": "AsmtAppealType",
+      "type": "string"
+    },
+    {
+      "name": "PriorAsdDate",
+      "type": "timestamp[ms]"
+    },
+    {
+      "name": "PriorAsdLand",
+      "type": "double"
+    },
+    {
+      "name": "PriorAsdImprove",
+      "type": "double"
+    },
+    {
+      "name": "PriorAsdTotal",
+      "type": "double"
+    },
+    {
+      "name": "PriorTaxAmt",
+      "type": "double"
+    },
+    {
+      "name": "CDALandUse1",
+      "type": "int16"
+    },
+    {
+      "name": "CDALandUse2",
+      "type": "int16"
+    },
+    {
+      "name": "LRMSUnitNum",
+      "type": "string"
+    },
+    {
+      "name": "Zoning",
+      "type": "string"
+    },
+    {
+      "name": "NbrOfBldgsRes",
+      "type": "int16"
+    },
+    {
+      "name": "NbrOfBldgsCom",
+      "type": "int16"
+    },
+    {
+      "name": "FirstYearBuilt",
+      "type": "int16"
+    },
+    {
+      "name": "LastYearBuilt",
+      "type": "int16"
+    },
+    {
+      "name": "ResSalePrice",
+      "type": "double"
+    },
+    {
+      "name": "ResSaleDate",
+      "type": "timestamp[ms]"
+    },
+    {
+      "name": "VacBldgYear",
+      "type": "int16"
+    },
+    {
+      "name": "GeoCityBlockPart",
+      "type": "double"
+    },
+    {
+      "name": "WARD10",
+      "type": "int16"
+    },
+    {
+      "name": "PRECINCT10",
+      "type": "int16"
+    },
+    {
+      "name": "INSPAREA10",
+      "type": "int16"
+    },
+    {
+      "name": "Ward00",
+      "type": "int16"
+    },
+    {
+      "name": "PRECINCT02",
+      "type": "int16"
+    },
+    {
+      "name": "PRECINCT04",
+      "type": "int16"
+    },
+    {
+      "name": "NBRHD",
+      "type": "int16"
+    },
+    {
+      "name": "CDADIST",
+      "type": "int16"
+    },
+    {
+      "name": "CDASUBDIST",
+      "type": "int16"
+    },
+    {
+      "name": "POLICEDIST",
+      "type": "int16"
+    },
+    {
+      "name": "CensTract10",
+      "type": "double"
+    },
+    {
+      "name": "CensBlock10",
+      "type": "int16"
+    },
+    {
+      "name": "CensBlock00",
+      "type": "double"
+    },
+    {
+      "name": "Ward90",
+      "type": "int16"
+    },
+    {
+      "name": "Precinct90",
+      "type": "int16"
+    },
+    {
+      "name": "CensBlock90",
+      "type": "double"
+    },
+    {
+      "name": "HouseConsDist",
+      "type": "int16"
+    },
+    {
+      "name": "ASRNBRHD",
+      "type": "int16"
+    },
+    {
+      "name": "EntZone",
+      "type": "int16"
+    },
+    {
+      "name": "IMPACTAREA",
+      "type": "int16"
+    },
+    {
+      "name": "CTDArea",
+      "type": "int16"
+    },
+    {
+      "name": "LEAFAREA",
+      "type": "int16"
+    },
+    {
+      "name": "ZIP",
+      "type": "int32"
+    },
+    {
+      "name": "OnFloodBlock",
+      "type": "int16"
+    },
+    {
+      "name": "SpecParcelType",
+      "type": "string"
+    },
+    {
+      "name": "SubParcelType",
+      "type": "string"
+    },
+    {
+      "name": "NbrOfSubAccts",
+      "type": "int16"
+    },
+    {
+      "name": "NbrOfCondos",
+      "type": "int16"
+    },
+    {
+      "name": "LRMSParcel",
+      "type": "int16"
+    },
+    {
+      "name": "AcctPrimary",
+      "type": "int16"
+    },
+    {
+      "name": "HANDLE",
+      "type": "string"
+    },
+    {
+      "name": "OWNEROCC",
+      "type": "string"
+    },
+    {
+      "name": "FirstDate",
+      "type": "timestamp[ms]"
+    },
+    {
+      "name": "LastDate",
+      "type": "timestamp[ms]"
+    },
+    {
+      "name": "OwnerUpdate",
+      "type": "timestamp[ms]"
+    },
+    {
+      "name": "OwnerCode",
+      "type": "int16"
+    },
+    {
+      "name": "SITEADDR",
+      "type": "string"
+    },
+    {
+      "name": "SQFT",
+      "type": "int32"
+    },
+    {
+      "name": "ParcelId",
+      "type": "string"
+    },
+    {
+      "name": "WARD",
+      "type": "int16"
+    },
+    {
+      "name": "TaxBalance",
+      "type": "double"
+    },
+    {
+      "name": "PropertyClassCode",
+      "type": "int16"
+    },
+    {
+      "name": "IsAbatedProperty",
+      "type": "int16"
+    },
+    {
+      "name": "AbatementStartYear",
+      "type": "int16"
+    },
+    {
+      "name": "AbatementEndYear",
+      "type": "int16"
+    },
+    {
+      "name": "SpecBusDist3",
+      "type": "int16"
+    },
+    {
+      "name": "Ward20",
+      "type": "int16"
+    },
+    {
+      "name": "Precinct20",
+      "type": "int16"
+    },
+    {
+      "name": "InspArea20",
+      "type": "int16"
+    },
+    {
+      "name": "CensTract20",
+      "type": "int16"
+    },
+    {
+      "name": "CensBlock20",
+      "type": "int16"
+    },
+    {
+      "name": "MaintZoneWC",
+      "type": "int16"
+    },
+    {
+      "name": "TransDevDist",
+      "type": "int16"
+    },
+    {
+      "name": "SHAPE",
+      "type": "binary"
+    },
+    {
+      "name": "CityBlock",
+      "type": "double"
+    },
+    {
+      "name": "Parcel",
+      "type": "double"
+    },
+    {
+      "name": "SHAPE.STArea()",
+      "type": "double"
+    },
+    {
+      "name": "SHAPE.STLength()",
+      "type": "double"
+    },
+    {
+      "name": "geometry",
+      "type": "binary"
+    },
+    {
+      "name": "geometry_bbox",
+      "type": "struct<xmin: float not null, ymin: float not null, xmax: float not null, ymax: float not null>"
+    }
+  ],
+  "portolan:styles": [
+    "styles/default",
+    "styles/city-renderer"
+  ],
+  "updated": "2026-08-05T19:58:51+00:00",
+  "themes": [
+    {
+      "scheme": "https://www.stlouis-mo.gov/data/topics/",
+      "concepts": [
+        {
+          "id": "urban-development-and-planning",
+          "title": "Urban Development and Planning"
+        }
+      ]
+    }
+  ],
+  "title": "Parcels",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -90.32058220569718,
+          38.53308187377711,
+          -90.17536578502329,
+          38.774362902635474
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "license": "other",
+  "keywords": [
+    "parcels"
+  ],
+  "providers": [
+    {
+      "name": "City of St. Louis \u2014 Assessor's Office",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=82"
+    },
+    {
+      "name": "TGE Labs",
+      "roles": [
+        "host"
+      ],
+      "url": "https://github.com/cholmes/portolan-catalog-stlouis"
+    }
+  ],
+  "assets": {
+    "parcels": {
+      "href": "./parcels.parquet",
+      "type": "application/vnd.apache.parquet",
+      "title": "Parcels (GeoParquet)",
+      "file:size": 31354481,
+      "file:checksum": "122004b0a978ef0fe2adaaf2a3adf278e28e5002016450194994c9e3c2da437d8eb3",
+      "roles": [
+        "data"
+      ]
+    },
+    "parcels-tiles": {
+      "href": "./parcels.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "parcels (vector tiles)",
+      "file:size": 36066850,
+      "file:checksum": "1220e8854ee225f82a7964c7e2a778ab4a6827f78dbc40c1ec9fbc5b741cb2c50dd4",
+      "roles": [
+        "visual"
+      ]
+    },
+    "styles/city-renderer": {
+      "href": "./styles/city-renderer.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "City renderer",
+      "description": "The city's own symbology, extracted from the source ArcGIS renderer.",
+      "file:size": 525,
+      "file:checksum": "1220d4ff49095f9c28ff76966ae8d69fabf0b6ff5ec9f3111023ada289c9a5fa9dcf",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Parcel fabric",
+      "description": "Every parcel in the city: quiet fill with hairline lot lines, the base reference view of the assessor's parcel layer.",
+      "file:size": 797,
+      "file:checksum": "12205582023a37d212a068f0e5886b4ce973873c2c4164345923c452daa88964a0df",
+      "roles": [
+        "default",
+        "style"
+      ]
+    },
+    "styles/style-assessed-value": {
+      "href": "./styles/style-assessed-value.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Assessed value",
+      "description": "Total assessed value (AsdTotal) in quintile steps \u2014 the city's wealth geography, from north-side disinvestment to the Central West End.",
+      "file:size": 1393,
+      "file:checksum": "1220fd5b0b126d29e2fdfc67f0c841420000a89580b6c82fd1132b34da77965f9abd",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/style-city-assessor": {
+      "href": "./styles/style-city-assessor.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "City assessor map",
+      "description": "The city's own parcel symbology, extracted from the PDA/PARCELS_PUBLIC ArcGIS renderer.",
+      "file:size": 545,
+      "file:checksum": "12200930a39609ccad26d13cbc874a5c9f068614b9b4ad0be39b7f31e1cb394a5667",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/style-vacant-lots": {
+      "href": "./styles/style-vacant-lots.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Vacant lots",
+      "description": "The assessor's VacantLot flag (23,238 parcels): the vacancy crescent in red against occupied parcels.",
+      "file:size": 1116,
+      "file:checksum": "122092b73432d7879de5f02b8578473e6bf669c52e2da7c82a5d44838772200a53b0",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/style-year-built": {
+      "href": "./styles/style-year-built.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Year built",
+      "description": "FirstYearBuilt in era steps (unknown, pre-1900, 1900-45, 1946-75, 1976-2000, 2001+): the city's growth rings.",
+      "file:size": 1362,
+      "file:checksum": "122071ceff97247a7704231a27e93ce3dbb4a5ebf0aafa9397481e37ab0c85e31d18",
+      "roles": [
+        "style"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "title": "Parcels rendered with the default style",
+      "file:size": 387596,
+      "file:checksum": "1220875a6b28e4974788f6d15a88fc251ce9770e21ce645801bcfc38ef65ae9c004a",
+      "roles": [
+        "thumbnail"
+      ]
+    }
+  }
+}

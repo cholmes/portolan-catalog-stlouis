@@ -1,0 +1,25 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-05T20:04:58.359395Z",
+      "breaking": false,
+      "assets": {
+        "parcels-history.parquet": {
+          "sha256": "48fde09de4f63c573642d3dab75f9715ed77e0997d610129d059c8ff67108ce5",
+          "size_bytes": 148440237,
+          "href": "parcels-history/parcels-history.parquet",
+          "source_mtime": 1785960152.3724132,
+          "mtime": 1785960152.3724132,
+          "feature_count": 3106506,
+          "schema_fingerprint": "dfaf7a3b308d729c"
+        }
+      },
+      "changes": [
+        "parcels-history.parquet"
+      ]
+    }
+  ]
+}

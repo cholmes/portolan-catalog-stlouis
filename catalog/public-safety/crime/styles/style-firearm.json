@@ -1,0 +1,72 @@
+{
+  "version": 8,
+  "name": "Firearm involved",
+  "metadata": {
+    "description": "Incidents where a firearm was used, in red."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../crime.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "crime-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "crime",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "FirearmUsed"
+          ],
+          "Yes",
+          "#c03221",
+          "No",
+          "#dfe6ea",
+          "#9aa3a8"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "circle",
+      "type": "circle",
+      "source": "data",
+      "source-layer": "crime",
+      "paint": {
+        "circle-color": [
+          "match",
+          [
+            "get",
+            "FirearmUsed"
+          ],
+          "Yes",
+          "#c03221",
+          "No",
+          "#dfe6ea",
+          "#9aa3a8"
+        ],
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          9,
+          1.4,
+          12,
+          2.2,
+          16,
+          4.5
+        ],
+        "circle-opacity": 0.6
+      }
+    }
+  ]
+}

@@ -26,9 +26,12 @@ def err(msg):
 
 
 def check_collection(coll_dir: Path):
-    cid = coll_dir.name
+    cid = coll_dir.name  # leaf id: tile layers and style refs use this
+    path_id = f"{coll_dir.parent.name}/{cid}"
     coll = json.loads((coll_dir / "collection.json").read_text())
 
+    if coll.get("id") != path_id:
+        err(f"{cid}: id is {coll.get('id')!r}, expected {path_id!r}")
     if any(l["rel"] == "self" for l in coll["links"]):
         err(f"{cid}: has self link")
     if PORTOLAN_SCHEMA not in coll.get("stac_extensions", []):
@@ -129,12 +132,23 @@ def main() -> int:
             err(f"catalog: child {l['href']} missing title")
         if not (CATALOG / l["href"]).resolve().exists():
             err(f"catalog: child {l['href']} does not resolve")
-    if len(children) != 43:
-        err(f"catalog: expected 43 children, got {len(children)}")
+    if len(children) != 13:
+        err(f"catalog: expected 13 department children, got {len(children)}")
 
-    for coll_dir in sorted(CATALOG.iterdir()):
-        if (coll_dir / "collection.json").exists():
-            check_collection(coll_dir)
+    n_colls = 0
+    for group_dir in sorted(CATALOG.iterdir()):
+        if not group_dir.is_dir() or not (group_dir / "catalog.json").exists():
+            continue
+        gcat = json.loads((group_dir / "catalog.json").read_text())
+        for l in gcat["links"]:
+            if l["rel"] == "child" and not (group_dir / l["href"]).resolve().exists():
+                err(f"{group_dir.name}: child {l['href']} does not resolve")
+        for coll_dir in sorted(group_dir.iterdir()):
+            if coll_dir.is_dir() and (coll_dir / "collection.json").exists():
+                n_colls += 1
+                check_collection(coll_dir)
+    if n_colls != 51:
+        err(f"expected 51 collections across groups, got {n_colls}")
 
     if errors:
         print(f"FAIL ({len(errors)}):")

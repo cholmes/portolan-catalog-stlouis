@@ -86,15 +86,15 @@ FILL = {"historic-districts", "opportunity-zones",
         "siren-locations", "property-taxes", "property-sales",
         "electrical-permits", "mechanical-permits", "plumbing-permits",
         "occupancy-permits", "street-permits", "election-results-nov-2024",
-        "animal-bites"}
+        "animal-bites", "parcels-history", "crime", "historic-landmarks",
+        "zip-codes", "parking-meters", "street-sweeping",
+        "business-licenses", "tax-sales"}
 
 cat = pathlib.Path(os.environ["CATALOG_DIR"])
-for coll in sorted(cat.iterdir()):
-    cj = coll / "collection.json"
-    if not cj.exists():
-        continue
+for cj in sorted(cat.glob("*/*/collection.json")):
+    coll = cj.parent
     c = json.loads(cj.read_text())
-    cid = c["id"]
+    cid = c["id"].split("/")[-1]
     try:
         w, s, e, n = c["extent"]["spatial"]["bbox"][0]
     except Exception:
@@ -117,7 +117,7 @@ while IFS='|' read -r CID BBOX; do
         for w in "${WANTED[@]}"; do [ "$w" = "$CID" ] && found=1 || true; done
         [ $found -eq 1 ] || continue
     fi
-    DIR="$CATALOG_DIR/$CID"
+    DIR="$(find "$CATALOG_DIR" -maxdepth 2 -type d -name "$CID" | head -1)"
     PM="$DIR/$CID.pmtiles"
     STYLE="$DIR/styles/default.json"
     [ -f "$PM" ] && [ -f "$STYLE" ] || { echo "skip $CID (missing pmtiles or style)"; continue; }

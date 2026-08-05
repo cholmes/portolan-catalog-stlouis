@@ -1,0 +1,25 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-05T20:04:58.188329Z",
+      "breaking": false,
+      "assets": {
+        "business-licenses.parquet": {
+          "sha256": "ecb0208eb17e6686b2fae266b5a8b659344a83b3097818123bb1e506670ee52b",
+          "size_bytes": 806176,
+          "href": "business-licenses/business-licenses.parquet",
+          "source_mtime": 1785960038.7509422,
+          "mtime": 1785960038.7509422,
+          "feature_count": 6239,
+          "schema_fingerprint": "d6fc74d0e5d7f9cf"
+        }
+      },
+      "changes": [
+        "business-licenses.parquet"
+      ]
+    }
+  ]
+}

@@ -19,7 +19,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from sources import SOURCES
+from sources import SOURCES, coll_rel
 
 ROOT = Path(__file__).resolve().parent.parent
 STAGING = ROOT / "staging"
@@ -116,7 +116,7 @@ def prepare_csb(dest: Path) -> None:
     tools/fetch.py.
     """
     merged = dest.parent / "csb-merged.csv"
-    boundary = CATALOG / "city-boundary" / "city-boundary.parquet"
+    boundary = CATALOG / coll_rel("city-boundary") / "city-boundary.parquet"
     if not boundary.exists():
         raise RuntimeError("assemble city-boundary before csb-311-requests")
     run(["duckdb", "-c", f"""
@@ -171,7 +171,7 @@ def static_source_file(coll_id: str) -> Path:
 
 def assemble(coll_id: str) -> dict:
     src_def = SOURCES[coll_id]
-    out_dir = CATALOG / coll_id
+    out_dir = CATALOG / coll_rel(coll_id)
     out_dir.mkdir(parents=True, exist_ok=True)
     out = out_dir / f"{coll_id}.parquet"
 
@@ -205,7 +205,7 @@ def assemble(coll_id: str) -> dict:
     # points, nulling coordinates outside the buffered city boundary.
     if coll_id == "animal-bites":
         data = STAGING / coll_id / "data"
-        boundary = CATALOG / "city-boundary" / "city-boundary.parquet"
+        boundary = CATALOG / coll_rel("city-boundary") / "city-boundary.parquet"
         prepped = data / "animal-bites-4326.csv"
         run(["duckdb", "-c", f"""
             INSTALL spatial; LOAD spatial;
@@ -240,6 +240,85 @@ def assemble(coll_id: str) -> dict:
             capture_output=True, text=True).stdout.strip()
         return {"rows": int(n), "tabular": False,
                 "source_file": "data/ANIMAL_BITES.csv"}
+
+    # Parcels history: five era shapefiles merged with an `era` column.
+    if coll_id == "parcels-history":
+        data = STAGING / coll_id / "data"
+        parts = []
+        for shp in sorted(data.rglob("*.shp")):
+            if "__MACOSX" in str(shp):
+                continue
+            m = None
+            for seg in str(shp).split("/"):
+                if "parcels_" in seg:
+                    m = seg.split("parcels_")[-1].replace(".zip", "")
+            era = m or shp.stem
+            era_pq = data / f"era_{era}.parquet"
+            run(["ogr2ogr", "-f", "Parquet", era_pq, shp, "-nln", "p",
+                 "-t_srs", "EPSG:4326", "-lco", "COMPRESSION=ZSTD"])
+            parts.append((era, era_pq))
+        selects = " UNION ALL BY NAME ".join(
+            f"SELECT *, '{era}' AS era FROM '{p}'" for era, p in parts)
+        merged = data / "history_merged.parquet"
+        run(["duckdb", "-c",
+             f"INSTALL spatial; LOAD spatial; COPY ({selects}) TO '{merged}' "
+             "(FORMAT PARQUET, COMPRESSION ZSTD)"])
+        run(["gpio", "convert", "geoparquet", merged, out])
+        tmp_sorted = out.parent / f".{out.stem}.sorted.parquet"
+        run(["gpio", "sort", "hilbert", out, tmp_sorted])
+        tmp_sorted.replace(out)
+        rename_geom(out)
+        restore_stats(out)
+        n = subprocess.run(
+            ["duckdb", "-noheader", "-list", "-c", f"SELECT count(*) FROM '{out}'"],
+            capture_output=True, text=True).stdout.strip()
+        return {"rows": int(n), "tabular": False,
+                "source_file": f"{len(parts)} era shapefiles merged"}
+
+    # Crime: SLMPD NIBRS CSVs merged; Latitude/Longitude are WGS84 already.
+    if coll_id == "crime":
+        data = STAGING / coll_id / "data"
+        norm = data / "utf8"
+        norm.mkdir(exist_ok=True)
+        for fcsv in sorted((data / "csv").glob("*.csv")):
+            raw = fcsv.read_bytes()
+            try:
+                txt = raw.decode("utf-8")
+            except UnicodeDecodeError:
+                txt = raw.decode("cp1252", errors="replace")
+            (norm / fcsv.name).write_text(txt, encoding="utf-8")
+        boundary = CATALOG / coll_rel("city-boundary") / "city-boundary.parquet"
+        prepped = data / "crime-4326.csv"
+        run(["duckdb", "-c", f"""
+            INSTALL spatial; LOAD spatial;
+            CREATE TEMP TABLE city AS
+              SELECT ST_Buffer(geometry, 0.005) g FROM '{boundary}';
+            COPY (
+              SELECT * EXCLUDE (Latitude, Longitude, lon, lat),
+                CASE WHEN keep THEN round(lon, 7) END AS lon,
+                CASE WHEN keep THEN round(lat, 7) END AS lat
+              FROM (
+                SELECT *, lon IS NOT NULL AND lat IS NOT NULL
+                       AND ST_Contains((SELECT g FROM city), ST_Point(lon, lat)) AS keep
+                FROM (
+                  SELECT *, TRY_CAST(Longitude AS DOUBLE) AS lon,
+                            TRY_CAST(Latitude AS DOUBLE) AS lat
+                  FROM read_csv('{norm}/*.csv', union_by_name=true, all_varchar=true)
+                )
+              )
+            ) TO '{prepped}' (HEADER);
+        """])
+        run(["ogr2ogr", "-f", "Parquet", out, prepped, "-nln", coll_id,
+             "-oo", "X_POSSIBLE_NAMES=lon", "-oo", "Y_POSSIBLE_NAMES=lat",
+             "-oo", "KEEP_GEOM_COLUMNS=NO",
+             "-oo", "AUTODETECT_TYPE=YES", "-oo", "EMPTY_STRING_AS_NULL=YES",
+             "-a_srs", "EPSG:4326"] + GEO_LCO)
+        restore_stats(out)
+        n = subprocess.run(
+            ["duckdb", "-noheader", "-list", "-c", f"SELECT count(*) FROM '{out}'"],
+            capture_output=True, text=True).stdout.strip()
+        return {"rows": int(n), "tabular": False,
+                "source_file": "slmpd NIBRS CSVs merged"}
 
     # Street permits: single CSV with cp1252 bytes — normalize then tabular.
     if coll_id == "street-permits":

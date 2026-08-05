@@ -1,0 +1,74 @@
+{
+  "version": 8,
+  "name": "Parcel fabric by era",
+  "metadata": {
+    "description": "Five-year snapshots of the parcel fabric (tiles carry 1997-2020 snapshots; the full Parquet holds every yearly snapshot 1997-2020, 3.1M rows)."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../parcels-history.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "parcels-history-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "parcels-history",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "era"
+          ],
+          "1997",
+          "#4a2d78",
+          "2000",
+          "#7c5295",
+          "2005",
+          "#b085c9",
+          "2010",
+          "#5591b5",
+          "2015",
+          "#2d6a8e",
+          "2020",
+          "#174054",
+          "#dfe6ea"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "parcels-history",
+      "paint": {
+        "line-color": [
+          "match",
+          [
+            "get",
+            "era"
+          ],
+          "1997",
+          "#4a2d78",
+          "2000",
+          "#7c5295",
+          "2005",
+          "#b085c9",
+          "2010",
+          "#5591b5",
+          "2015",
+          "#2d6a8e",
+          "2020",
+          "#174054",
+          "#dfe6ea"
+        ],
+        "line-width": 0.5,
+        "line-opacity": 1.0
+      }
+    }
+  ]
+}

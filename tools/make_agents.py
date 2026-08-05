@@ -13,7 +13,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from sources import SOURCES
+from sources import SOURCES, coll_rel
 
 ROOT = Path(__file__).resolve().parent.parent
 CATALOG = ROOT / "catalog"
@@ -230,8 +230,8 @@ def join_section(coll_id: str) -> list:
         return []
     spec = JOINS[coll_id]
     right = spec["right"]
-    right_url = f"{BASE}/{right}/{right}.parquet"
-    left_url = f"{BASE}/{coll_id}/{coll_id}.parquet"
+    right_url = f"{BASE}/{coll_rel(right)}/{right}.parquet"
+    left_url = f"{BASE}/{coll_rel(coll_id)}/{coll_id}.parquet"
     sql = (
         f"INSTALL spatial; LOAD spatial; INSTALL httpfs; LOAD httpfs;\n"
         f"COPY (\n"
@@ -266,12 +266,12 @@ def join_section(coll_id: str) -> list:
 
 def collection_agents(coll_id: str) -> str:
     src = SOURCES[coll_id]
-    coll = json.loads((CATALOG / coll_id / "collection.json").read_text())
+    coll = json.loads((CATALOG / coll_rel(coll_id) / "collection.json").read_text())
     notes = NOTES.get(coll_id, {})
     desc = DESCRIPTIONS.get(coll_id, {}).get("description", "")
     n = coll.get("table:row_count", "?")
     geom = coll.get("geoparquet:geometry_type")
-    url = f"{BASE}/{coll_id}/{coll_id}.parquet"
+    url = f"{BASE}/{coll_rel(coll_id)}/{coll_id}.parquet"
 
     out = [f"# AGENTS.md — {src['title']}", ""]
     out += [f"{desc}" if desc else src["title"], ""]
@@ -282,7 +282,7 @@ def collection_agents(coll_id: str) -> str:
             "INSTALL httpfs; LOAD httpfs;  -- DuckDB",
             f"SELECT * FROM '{url}' LIMIT 5;", "```", ""]
     if geom:
-        out += [f"PMTiles for maps: `{BASE}/{coll_id}/{coll_id}.pmtiles` "
+        out += [f"PMTiles for maps: `{BASE}/{coll_rel(coll_id)}/{coll_id}.pmtiles` "
                 f"(layer `{coll_id}`), styled by `styles/*.json` — "
                 "`styles/default.json` is the default.", ""]
     fields = notes.get("fields")
@@ -343,11 +343,32 @@ AGENTS.md with fields, quirks, and joins.
 """
 
 
+def group_agents(group: str) -> str:
+    from sources import GROUPS, GROUP_TITLES
+    lines = [f"# AGENTS.md — {GROUP_TITLES[group]}", "",
+             f"Department sub-catalog with {len(GROUPS[group])} collections. "
+             "Access pattern for each:", "", "```sql",
+             "INSTALL httpfs; LOAD httpfs;  -- DuckDB"]
+    for cid in GROUPS[group]:
+        lines.append(f"-- {SOURCES[cid]['title']}")
+        lines.append(f"SELECT * FROM '{BASE}/{group}/{cid}/{cid}.parquet' LIMIT 5;")
+    lines += ["```", "",
+              "Each collection has its own AGENTS.md with fields, quirks, "
+              "and joins. Root catalog: "
+              f"`{BASE}/catalog.json`.", ""]
+    return "\n".join(lines)
+
+
 def main() -> None:
+    from sources import GROUPS
     (CATALOG / "AGENTS.md").write_text(ROOT_AGENTS)
     print("✓ catalog AGENTS.md")
+    for group in GROUPS:
+        if (CATALOG / group / "catalog.json").exists():
+            (CATALOG / group / "AGENTS.md").write_text(group_agents(group))
+    print("✓ group AGENTS.md x13")
     for coll_id in SOURCES:
-        d = CATALOG / coll_id
+        d = CATALOG / coll_rel(coll_id)
         if not (d / "collection.json").exists():
             continue
         (d / "AGENTS.md").write_text(collection_agents(coll_id))

@@ -210,5 +210,37 @@
  "animal-bites": {
   "portal_id": "130",
   "description": "Animal bite reports made to the City of Saint Louis Department of Health and its Animal Care and Control section."
+ },
+ "parcels-history": {
+  "portal_id": "82",
+  "description": "Current and historic parcel data"
+ },
+ "crime": {
+  "portal_id": "69",
+  "description": "Downloadable NIBRS crime data published by the St. Louis Metropolitan Police Department."
+ },
+ "historic-landmarks": {
+  "portal_id": null,
+  "description": "Historic sites and landmarks from the city's Historic Landmarks map service."
+ },
+ "zip-codes": {
+  "portal_id": null,
+  "description": "ZIP code areas from the city's boundaries map service."
+ },
+ "parking-meters": {
+  "portal_id": null,
+  "description": "Parking meters from the Streets Division parking services map."
+ },
+ "street-sweeping": {
+  "portal_id": null,
+  "description": "Street sweeping area schedules from the Streets Division."
+ },
+ "business-licenses": {
+  "portal_id": null,
+  "description": "Business licenses as of October 2025, from SLDC."
+ },
+ "tax-sales": {
+  "portal_id": null,
+  "description": "Tax sale parcels from SLDC."
  }
 }

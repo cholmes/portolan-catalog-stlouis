@@ -1,0 +1,68 @@
+{
+  "version": 8,
+  "name": "Categorical Style",
+  "sources": {
+    "data": {
+      "type": "vector"
+    }
+  },
+  "layers": [
+    {
+      "id": "categorical-fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "street_sweeping_area_schedule",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "Day_Wk"
+          ],
+          "First Friday/Second Monday",
+          "#a14753",
+          "First Monday/First Tuesday",
+          "#8cf56c",
+          "First Monday/Last Friday",
+          "#674fe0",
+          "First Thursday/First Friday",
+          "#7de3fa",
+          "First Tuesday/First Wednesday",
+          "#debb6f",
+          "First Wednesday/First Thursday",
+          "#f261ce",
+          "Last Monday/Last Tuesday",
+          "#546594",
+          "Last Thursday/Last Friday",
+          "#4c915b",
+          "Last Tuesday/Last Wednesday",
+          "#bf95f5",
+          "Last Wednesday/Last Thursday",
+          "#723480",
+          "Second Friday/Third Monday",
+          "#eb96bf",
+          "Second Monday/Second Tuesday",
+          "#ed7155",
+          "Second Thursday/Second Friday",
+          "#8c663b",
+          "Second Tuesday/Second Wednesday",
+          "#318385",
+          "Second Wednesday/Second Thursday",
+          "#8a9e41",
+          "Third Friday/Last Monday",
+          "#5afac2",
+          "Third Monday/Third Tuesday",
+          "#def069",
+          "Third Thursday/Third Friday",
+          "#f2a891",
+          "Third Tuesday/Third Wednesday",
+          "#91b9fa",
+          "Third Wednesday/Third Thursday",
+          "#99e08b",
+          "#cccccc"
+        ],
+        "fill-opacity": 1.0
+      }
+    }
+  ]
+}

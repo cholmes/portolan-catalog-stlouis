@@ -124,7 +124,50 @@ def fetch_arcgis(coll_id: str, src: dict) -> dict:
     return info
 
 
+def fetch_crime(coll_id: str, src: dict) -> dict:
+    """Scrape slmpd.org for the NIBRS CSV links and download them all."""
+    data_dir = STAGING / coll_id / "data" / "csv"
+    data_dir.mkdir(parents=True, exist_ok=True)
+    import re
+    # slmpd.org 403s the default urllib user-agent
+    ua = {"User-Agent": "Mozilla/5.0 (Macintosh) AppleWebKit/537.36"}
+
+    def get(url):
+        return urllib.request.urlopen(
+            urllib.request.Request(url, headers=ua), timeout=120).read()
+
+    page = get(src["url"]).decode("utf8", "ignore")
+    urls = sorted(set(re.findall(r'href="(https?://[^"]+\.csv[^"]*)"', page)))
+    got = 0
+    for u in urls:
+        name = u.rsplit("/", 1)[-1]
+        try:
+            (data_dir / name).write_bytes(get(u))
+            got += 1
+        except Exception as e:  # noqa: BLE001
+            print(f"    ⚠ {name}: {e}")
+    return {"status": "ok" if got else "failed", "files": got, "urls": len(urls)}
+
+
 def fetch_static(coll_id: str, src: dict) -> dict:
+    if src.get("crime_scrape"):
+        return fetch_crime(coll_id, src)
+    if src.get("urls"):
+        data_dir = STAGING / coll_id / "data"
+        data_dir.mkdir(parents=True, exist_ok=True)
+        infos = []
+        for u in src["urls"]:
+            fname = u.rsplit("/", 1)[-1]
+            dest = data_dir / fname
+            print(f"→ {coll_id}: downloading {u}")
+            try:
+                urllib.request.urlretrieve(u, dest)
+            except Exception as e:  # noqa: BLE001
+                return {"status": "failed", "error": f"{fname}: {e}"}
+            if fname.endswith(".zip"):
+                shutil.unpack_archive(dest, data_dir / fname[:-4])
+            infos.append(fname)
+        return {"status": "ok", "files": infos}
     data_dir = STAGING / coll_id / "data"
     data_dir.mkdir(parents=True, exist_ok=True)
     fname = src["url"].rsplit("/", 1)[-1]
@@ -148,7 +191,10 @@ def main() -> int:
     for coll_id, src in SOURCES.items():
         if only and coll_id not in only:
             continue
-        result = fetch_arcgis(coll_id, src) if src["type"] == "arcgis" else fetch_static(coll_id, src)
+        try:
+            result = fetch_arcgis(coll_id, src) if src["type"] == "arcgis" else fetch_static(coll_id, src)
+        except Exception as e:  # noqa: BLE001
+            result = {"status": "failed", "error": str(e)[:300]}
         d = STAGING / coll_id
         d.mkdir(parents=True, exist_ok=True)
         (d / "dataset-info.json").write_text(json.dumps({

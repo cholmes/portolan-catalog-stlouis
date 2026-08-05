@@ -1,0 +1,28 @@
+{
+  "version": 8,
+  "name": "City renderer",
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../business-licenses.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "layer-0",
+      "type": "circle",
+      "source": "data",
+      "source-layer": "business-licenses",
+      "paint": {
+        "circle-color": "#aa2599",
+        "circle-radius": 2.0,
+        "circle-opacity": 1.0,
+        "circle-stroke-color": "#000000",
+        "circle-stroke-width": 0.7
+      }
+    }
+  ],
+  "metadata": {
+    "description": "The city's own symbology, extracted from the source ArcGIS renderer."
+  }
+}

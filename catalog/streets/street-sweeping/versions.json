@@ -1,0 +1,25 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-05T20:04:58.106589Z",
+      "breaking": false,
+      "assets": {
+        "street-sweeping.parquet": {
+          "sha256": "12134753887a1a7fa881d796a4ad284191d30777d2530e5a3ea3c18c2654df72",
+          "size_bytes": 54921,
+          "href": "street-sweeping/street-sweeping.parquet",
+          "source_mtime": 1785960038.25099,
+          "mtime": 1785960038.25099,
+          "feature_count": 84,
+          "schema_fingerprint": "2b5d46b050082691"
+        }
+      },
+      "changes": [
+        "street-sweeping.parquet"
+      ]
+    }
+  ]
+}

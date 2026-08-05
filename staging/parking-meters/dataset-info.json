@@ -1,0 +1,100 @@
+{
+ "collection": "parking-meters",
+ "title": "Parking Meters",
+ "portal_page": "https://maps8.stlouis-mo.gov/arcgis/rest/services/STREETS/ParkingServices/MapServer",
+ "department": "Streets - Director's Office",
+ "source": "https://maps8.stlouis-mo.gov/arcgis/rest/services/STREETS/ParkingServices/MapServer",
+ "source_type": "arcgis",
+ "synced": "2026-08-05T19:58:51+00:00",
+ "fetch": {
+  "status": "ok",
+  "parquets": [
+   "staging/extracts/parking-meters/parking_meters/parking_meters.parquet"
+  ],
+  "layer_url": "https://maps8.stlouis-mo.gov/arcgis/rest/services/STREETS/ParkingServices/MapServer/1",
+  "layer_description": null,
+  "fields": [
+   {
+    "name": "OBJECTID",
+    "alias": "OBJECTID",
+    "type": "esriFieldTypeOID"
+   },
+   {
+    "name": "Shape",
+    "alias": "Shape",
+    "type": "esriFieldTypeGeometry"
+   },
+   {
+    "name": "Zone",
+    "alias": "Zone",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "SpaceNumbers",
+    "alias": "SpaceNumbers",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "SpaceCount",
+    "alias": "SpaceCount",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "Street",
+    "alias": "Street",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "FromStreet",
+    "alias": "From",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "ToStreet",
+    "alias": "To",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Side",
+    "alias": "Side",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "STL_Zone",
+    "alias": "STL Zone",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "NumberOfMachines",
+    "alias": "NumberOfMachines",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "NumberOfMultispace",
+    "alias": "NumberOfMultispace",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "CollectionMethod",
+    "alias": "CollectionMethod",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Latitude",
+    "alias": "Latitude",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Longitude",
+    "alias": "Longitude",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "GUID",
+    "alias": "GUID",
+    "type": "esriFieldTypeString"
+   }
+  ],
+  "city_style": "staging/extracts/parking-meters/styles/city-renderer.json"
+ }
+}

@@ -1,0 +1,14 @@
+title: "ZIP Codes"
+description: "ZIP code areas from the city's boundaries map service."
+contact:
+  name: "Chris Holmes"
+  email: "cholmes@9eo.org"
+license: "other"
+license_url: "https://maps8.stlouis-mo.gov/arcgis/rest/services/STLOUIS/BOUNDARIES/MapServer"
+attribution: "City of St. Louis — Information Technology Services Agency"
+source_url: "https://maps8.stlouis-mo.gov/arcgis/rest/services/STLOUIS/BOUNDARIES/MapServer"
+keywords: [st-louis, missouri, open-data, zip, codes]
+processing_notes: |
+  Mirrored from the City of St. Louis open data portal (https://maps8.stlouis-mo.gov/arcgis/rest/services/STLOUIS/BOUNDARIES/MapServer).
+  Source: https://maps8.stlouis-mo.gov/arcgis/rest/services/STLOUIS/BOUNDARIES/MapServer (ArcGIS REST service),
+  converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.

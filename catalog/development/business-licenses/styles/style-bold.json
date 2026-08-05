@@ -1,0 +1,42 @@
+{
+  "version": 8,
+  "name": "High-visibility",
+  "metadata": {
+    "description": "Larger blue markers."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../business-licenses.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "circle",
+      "type": "circle",
+      "source": "data",
+      "source-layer": "business-licenses",
+      "paint": {
+        "circle-color": "#1e526b",
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          10,
+          1.4400000000000002,
+          13,
+          3.6,
+          16,
+          7.920000000000001
+        ],
+        "circle-opacity": 0.85,
+        "circle-stroke-color": "#FFFFFF",
+        "circle-stroke-width": 0.5
+      }
+    }
+  ]
+}

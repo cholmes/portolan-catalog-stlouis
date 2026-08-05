@@ -1,0 +1,78 @@
+{
+  "version": 8,
+  "name": "Historic sites",
+  "metadata": {
+    "description": "512 historic sites: National Register (blue), City Landmarks (red), National Landmarks (purple) \u2014 codes from the source layer."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../historic-landmarks.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "historic-landmarks-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "historic-landmarks",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "SITE_TYPE"
+          ],
+          "NR_SITE",
+          "#1e526b",
+          "CLM_SITE",
+          "#c03221",
+          "NLM_SITE",
+          "#7c5295",
+          "#9aa3a8"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "circle",
+      "type": "circle",
+      "source": "data",
+      "source-layer": "historic-landmarks",
+      "paint": {
+        "circle-color": [
+          "match",
+          [
+            "get",
+            "SITE_TYPE"
+          ],
+          "NR_SITE",
+          "#1e526b",
+          "CLM_SITE",
+          "#c03221",
+          "NLM_SITE",
+          "#7c5295",
+          "#9aa3a8"
+        ],
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          10,
+          1.6,
+          13,
+          4,
+          16,
+          8.8
+        ],
+        "circle-opacity": 0.85,
+        "circle-stroke-color": "#FFFFFF",
+        "circle-stroke-width": 0.5
+      }
+    }
+  ]
+}

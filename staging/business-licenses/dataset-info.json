@@ -1,0 +1,190 @@
+{
+ "collection": "business-licenses",
+ "title": "Business Licenses",
+ "portal_page": "https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/Business_Licenses_as_of_October_2025/FeatureServer",
+ "department": "St. Louis Development Corporation",
+ "source": "https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/Business_Licenses_as_of_October_2025/FeatureServer",
+ "source_type": "arcgis",
+ "synced": "2026-08-05T19:58:51+00:00",
+ "fetch": {
+  "status": "ok",
+  "parquets": [
+   "staging/extracts/business-licenses/business_licenses_as_of_october_2025/business_licenses_as_of_october_2025.parquet"
+  ],
+  "layer_url": "https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/Business_Licenses_as_of_October_2025/FeatureServer/0",
+  "layer_description": null,
+  "fields": [
+   {
+    "name": "OBJECTID",
+    "alias": "ObjectID",
+    "type": "esriFieldTypeOID"
+   },
+   {
+    "name": "Score",
+    "alias": "Score",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Match_type",
+    "alias": "Match_type",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Match_addr",
+    "alias": "Match_addr",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "IN_SingleLine",
+    "alias": "Single Line Input",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "USER_Doc_Nbr_",
+    "alias": "Doc Nbr.",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "USER_Tax_Year",
+    "alias": "Tax Year",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "USER_Status_Cd_",
+    "alias": "Status Cd.",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "USER_Trade_Name",
+    "alias": "Trade Name",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "USER_DocType",
+    "alias": "DocType",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "USER_Tax_Period",
+    "alias": "Tax Period",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "USER_Date_Business_Started",
+    "alias": "Date Business Started",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "USER_House_Nbr_",
+    "alias": "House Nbr.",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "USER_House_Sfx_",
+    "alias": "House Sfx.",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "USER_House_Unit",
+    "alias": "House Unit",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "USER_St__Dir_",
+    "alias": "St. Dir.",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "USER_Property_St__Name",
+    "alias": "Property St. Name",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "USER_St__Type",
+    "alias": "St. Type",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "USER_Zip_Cd_",
+    "alias": "Zip Cd.",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "USER_Street_Address",
+    "alias": "Street Address",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "USER_HQ_Owner_Cd_",
+    "alias": "HQ Owner Cd.",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "USER_Owner_Business_HQ_Name",
+    "alias": "Owner/Business HQ Name",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "USER_Mailing_Address_Line_1",
+    "alias": "Mailing Address Line 1",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "USER_Mailing_Address_Line_2",
+    "alias": "Mailing Address Line 2",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "USER_Mailing_Address_Line_3",
+    "alias": "Mailing Address Line 3",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "USER_Ward_Nbr_",
+    "alias": "Ward Nbr.",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "USER_City_Block",
+    "alias": "City Block",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "USER_CDA_Neighborhood",
+    "alias": "CDA Neighborhood",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "USER_CDA_Subdistrict",
+    "alias": "CDA Subdistrict",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "USER_Nbr__Of_Employees",
+    "alias": "Nbr. Of Employees",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "USER_Space_Use_Cd_",
+    "alias": "Space Use Cd.",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "USER_Business_Phone",
+    "alias": "Business Phone",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "USER_Contact_Name",
+    "alias": "Contact Name",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "USER_Business_E_Mail",
+    "alias": "Business E-Mail",
+    "type": "esriFieldTypeString"
+   }
+  ],
+  "city_style": "staging/extracts/business-licenses/styles/city-renderer.json"
+ }
+}

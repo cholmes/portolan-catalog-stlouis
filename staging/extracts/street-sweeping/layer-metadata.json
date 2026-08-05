@@ -1,0 +1,1745 @@
+{
+ "currentVersion": 11.2,
+ "cimVersion": "3.2.0",
+ "id": 0,
+ "name": "Street Sweeping Area Schedule",
+ "type": "Feature Layer",
+ "description": "",
+ "geometryType": "esriGeometryPolygon",
+ "sourceSpatialReference": {
+  "wkid": 102696,
+  "latestWkid": 102696,
+  "xyTolerance": 0.003280833333333333,
+  "zTolerance": 0.001,
+  "mTolerance": 0.001,
+  "falseX": -17627100,
+  "falseY": -45827300,
+  "xyUnits": 3048.006096012192,
+  "falseZ": 0,
+  "zUnits": 1,
+  "falseM": 0,
+  "mUnits": 1
+ },
+ "copyrightText": "",
+ "parentLayer": null,
+ "subLayers": [],
+ "minScale": 0,
+ "maxScale": 0,
+ "referenceScale": 0.0,
+ "drawingInfo": {
+  "renderer": {
+   "type": "uniqueValue",
+   "field1": "Day_Wk",
+   "uniqueValueGroups": [
+    {
+     "heading": "Day_Wk",
+     "classes": [
+      {
+       "label": "First Friday/Second Monday",
+       "description": "First Friday/Second Monday",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         161,
+         71,
+         83,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          110,
+          110,
+          110,
+          255
+         ],
+         "width": 0.7
+        }
+       },
+       "values": [
+        [
+         "First Friday/Second Monday"
+        ]
+       ]
+      },
+      {
+       "label": "First Monday/First Tuesday",
+       "description": "First Monday/First Tuesday",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         140,
+         245,
+         108,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          110,
+          110,
+          110,
+          255
+         ],
+         "width": 0.7
+        }
+       },
+       "values": [
+        [
+         "First Monday/First Tuesday"
+        ]
+       ]
+      },
+      {
+       "label": "First Monday/Last Friday",
+       "description": "First Monday/Last Friday",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         103,
+         79,
+         224,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          110,
+          110,
+          110,
+          255
+         ],
+         "width": 0.7
+        }
+       },
+       "values": [
+        [
+         "First Monday/Last Friday"
+        ]
+       ]
+      },
+      {
+       "label": "First Thursday/First Friday",
+       "description": "First Thursday/First Friday",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         125,
+         227,
+         250,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          110,
+          110,
+          110,
+          255
+         ],
+         "width": 0.7
+        }
+       },
+       "values": [
+        [
+         "First Thursday/First Friday"
+        ]
+       ]
+      },
+      {
+       "label": "First Tuesday/First Wednesday",
+       "description": "First Tuesday/First Wednesday",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         222,
+         187,
+         111,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          110,
+          110,
+          110,
+          255
+         ],
+         "width": 0.7
+        }
+       },
+       "values": [
+        [
+         "First Tuesday/First Wednesday"
+        ]
+       ]
+      },
+      {
+       "label": "First Wednesday/First Thursday",
+       "description": "First Wednesday/First Thursday",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         242,
+         97,
+         206,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          110,
+          110,
+          110,
+          255
+         ],
+         "width": 0.7
+        }
+       },
+       "values": [
+        [
+         "First Wednesday/First Thursday"
+        ]
+       ]
+      },
+      {
+       "label": "Last Monday/Last Tuesday",
+       "description": "Last Monday/Last Tuesday",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         84,
+         101,
+         148,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          110,
+          110,
+          110,
+          255
+         ],
+         "width": 0.7
+        }
+       },
+       "values": [
+        [
+         "Last Monday/Last Tuesday"
+        ]
+       ]
+      },
+      {
+       "label": "Last Thursday/Last Friday",
+       "description": "Last Thursday/Last Friday",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         76,
+         145,
+         91,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          110,
+          110,
+          110,
+          255
+         ],
+         "width": 0.7
+        }
+       },
+       "values": [
+        [
+         "Last Thursday/Last Friday"
+        ]
+       ]
+      },
+      {
+       "label": "Last Tuesday/Last Wednesday",
+       "description": "Last Tuesday/Last Wednesday",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         191,
+         149,
+         245,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          110,
+          110,
+          110,
+          255
+         ],
+         "width": 0.7
+        }
+       },
+       "values": [
+        [
+         "Last Tuesday/Last Wednesday"
+        ]
+       ]
+      },
+      {
+       "label": "Last Wednesday/Last Thursday",
+       "description": "Last Wednesday/Last Thursday",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         114,
+         52,
+         128,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          110,
+          110,
+          110,
+          255
+         ],
+         "width": 0.7
+        }
+       },
+       "values": [
+        [
+         "Last Wednesday/Last Thursday"
+        ]
+       ]
+      },
+      {
+       "label": "Second Friday/Third Monday",
+       "description": "Second Friday/Third Monday",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         235,
+         150,
+         191,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          110,
+          110,
+          110,
+          255
+         ],
+         "width": 0.7
+        }
+       },
+       "values": [
+        [
+         "Second Friday/Third Monday"
+        ]
+       ]
+      },
+      {
+       "label": "Second Monday/Second Tuesday",
+       "description": "Second Monday/Second Tuesday",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         237,
+         113,
+         85,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          110,
+          110,
+          110,
+          255
+         ],
+         "width": 0.7
+        }
+       },
+       "values": [
+        [
+         "Second Monday/Second Tuesday"
+        ]
+       ]
+      },
+      {
+       "label": "Second Thursday/Second Friday",
+       "description": "Second Thursday/Second Friday",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         140,
+         102,
+         59,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          110,
+          110,
+          110,
+          255
+         ],
+         "width": 0.7
+        }
+       },
+       "values": [
+        [
+         "Second Thursday/Second Friday"
+        ]
+       ]
+      },
+      {
+       "label": "Second Tuesday/Second Wednesday",
+       "description": "Second Tuesday/Second Wednesday",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         49,
+         131,
+         133,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          110,
+          110,
+          110,
+          255
+         ],
+         "width": 0.7
+        }
+       },
+       "values": [
+        [
+         "Second Tuesday/Second Wednesday"
+        ]
+       ]
+      },
+      {
+       "label": "Second Wednesday/Second Thursday",
+       "description": "Second Wednesday/Second Thursday",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         138,
+         158,
+         65,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          110,
+          110,
+          110,
+          255
+         ],
+         "width": 0.7
+        }
+       },
+       "values": [
+        [
+         "Second Wednesday/Second Thursday"
+        ]
+       ]
+      },
+      {
+       "label": "Third Friday/Last Monday",
+       "description": "Third Friday/Last Monday",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         90,
+         250,
+         194,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          110,
+          110,
+          110,
+          255
+         ],
+         "width": 0.7
+        }
+       },
+       "values": [
+        [
+         "Third Friday/Last Monday"
+        ]
+       ]
+      },
+      {
+       "label": "Third Monday/Third Tuesday",
+       "description": "Third Monday/Third Tuesday",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         222,
+         240,
+         105,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          110,
+          110,
+          110,
+          255
+         ],
+         "width": 0.7
+        }
+       },
+       "values": [
+        [
+         "Third Monday/Third Tuesday"
+        ]
+       ]
+      },
+      {
+       "label": "Third Thursday/Third Friday",
+       "description": "Third Thursday/Third Friday",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         242,
+         168,
+         145,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          110,
+          110,
+          110,
+          255
+         ],
+         "width": 0.7
+        }
+       },
+       "values": [
+        [
+         "Third Thursday/Third Friday"
+        ]
+       ]
+      },
+      {
+       "label": "Third Tuesday/Third Wednesday",
+       "description": "Third Tuesday/Third Wednesday",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         145,
+         185,
+         250,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          110,
+          110,
+          110,
+          255
+         ],
+         "width": 0.7
+        }
+       },
+       "values": [
+        [
+         "Third Tuesday/Third Wednesday"
+        ]
+       ]
+      },
+      {
+       "label": "Third Wednesday/Third Thursday",
+       "description": "Third Wednesday/Third Thursday",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         153,
+         224,
+         139,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          110,
+          110,
+          110,
+          255
+         ],
+         "width": 0.7
+        }
+       },
+       "values": [
+        [
+         "Third Wednesday/Third Thursday"
+        ]
+       ]
+      }
+     ]
+    }
+   ],
+   "uniqueValueInfos": [
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       161,
+       71,
+       83,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        110,
+        110,
+        110,
+        255
+       ],
+       "width": 0.7
+      }
+     },
+     "value": "First Friday/Second Monday",
+     "label": "First Friday/Second Monday"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       140,
+       245,
+       108,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        110,
+        110,
+        110,
+        255
+       ],
+       "width": 0.7
+      }
+     },
+     "value": "First Monday/First Tuesday",
+     "label": "First Monday/First Tuesday"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       103,
+       79,
+       224,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        110,
+        110,
+        110,
+        255
+       ],
+       "width": 0.7
+      }
+     },
+     "value": "First Monday/Last Friday",
+     "label": "First Monday/Last Friday"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       125,
+       227,
+       250,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        110,
+        110,
+        110,
+        255
+       ],
+       "width": 0.7
+      }
+     },
+     "value": "First Thursday/First Friday",
+     "label": "First Thursday/First Friday"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       222,
+       187,
+       111,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        110,
+        110,
+        110,
+        255
+       ],
+       "width": 0.7
+      }
+     },
+     "value": "First Tuesday/First Wednesday",
+     "label": "First Tuesday/First Wednesday"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       242,
+       97,
+       206,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        110,
+        110,
+        110,
+        255
+       ],
+       "width": 0.7
+      }
+     },
+     "value": "First Wednesday/First Thursday",
+     "label": "First Wednesday/First Thursday"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       84,
+       101,
+       148,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        110,
+        110,
+        110,
+        255
+       ],
+       "width": 0.7
+      }
+     },
+     "value": "Last Monday/Last Tuesday",
+     "label": "Last Monday/Last Tuesday"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       76,
+       145,
+       91,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        110,
+        110,
+        110,
+        255
+       ],
+       "width": 0.7
+      }
+     },
+     "value": "Last Thursday/Last Friday",
+     "label": "Last Thursday/Last Friday"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       191,
+       149,
+       245,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        110,
+        110,
+        110,
+        255
+       ],
+       "width": 0.7
+      }
+     },
+     "value": "Last Tuesday/Last Wednesday",
+     "label": "Last Tuesday/Last Wednesday"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       114,
+       52,
+       128,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        110,
+        110,
+        110,
+        255
+       ],
+       "width": 0.7
+      }
+     },
+     "value": "Last Wednesday/Last Thursday",
+     "label": "Last Wednesday/Last Thursday"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       235,
+       150,
+       191,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        110,
+        110,
+        110,
+        255
+       ],
+       "width": 0.7
+      }
+     },
+     "value": "Second Friday/Third Monday",
+     "label": "Second Friday/Third Monday"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       237,
+       113,
+       85,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        110,
+        110,
+        110,
+        255
+       ],
+       "width": 0.7
+      }
+     },
+     "value": "Second Monday/Second Tuesday",
+     "label": "Second Monday/Second Tuesday"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       140,
+       102,
+       59,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        110,
+        110,
+        110,
+        255
+       ],
+       "width": 0.7
+      }
+     },
+     "value": "Second Thursday/Second Friday",
+     "label": "Second Thursday/Second Friday"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       49,
+       131,
+       133,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        110,
+        110,
+        110,
+        255
+       ],
+       "width": 0.7
+      }
+     },
+     "value": "Second Tuesday/Second Wednesday",
+     "label": "Second Tuesday/Second Wednesday"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       138,
+       158,
+       65,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        110,
+        110,
+        110,
+        255
+       ],
+       "width": 0.7
+      }
+     },
+     "value": "Second Wednesday/Second Thursday",
+     "label": "Second Wednesday/Second Thursday"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       90,
+       250,
+       194,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        110,
+        110,
+        110,
+        255
+       ],
+       "width": 0.7
+      }
+     },
+     "value": "Third Friday/Last Monday",
+     "label": "Third Friday/Last Monday"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       222,
+       240,
+       105,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        110,
+        110,
+        110,
+        255
+       ],
+       "width": 0.7
+      }
+     },
+     "value": "Third Monday/Third Tuesday",
+     "label": "Third Monday/Third Tuesday"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       242,
+       168,
+       145,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        110,
+        110,
+        110,
+        255
+       ],
+       "width": 0.7
+      }
+     },
+     "value": "Third Thursday/Third Friday",
+     "label": "Third Thursday/Third Friday"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       145,
+       185,
+       250,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        110,
+        110,
+        110,
+        255
+       ],
+       "width": 0.7
+      }
+     },
+     "value": "Third Tuesday/Third Wednesday",
+     "label": "Third Tuesday/Third Wednesday"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       153,
+       224,
+       139,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        110,
+        110,
+        110,
+        255
+       ],
+       "width": 0.7
+      }
+     },
+     "value": "Third Wednesday/Third Thursday",
+     "label": "Third Wednesday/Third Thursday"
+    }
+   ],
+   "fieldDelimiter": ",",
+   "authoringInfo": {
+    "colorRamp": {
+     "type": "multipart",
+     "colorRamps": [
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        110,
+        204,
+        170,
+        255
+       ],
+       "toColor": [
+        110,
+        204,
+        170,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        149,
+        87,
+        230,
+        255
+       ],
+       "toColor": [
+        149,
+        87,
+        230,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        232,
+        95,
+        93,
+        255
+       ],
+       "toColor": [
+        232,
+        95,
+        93,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        232,
+        250,
+        92,
+        255
+       ],
+       "toColor": [
+        232,
+        250,
+        92,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        98,
+        160,
+        227,
+        255
+       ],
+       "toColor": [
+        98,
+        160,
+        227,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        135,
+        115,
+        54,
+        255
+       ],
+       "toColor": [
+        135,
+        115,
+        54,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        135,
+        82,
+        116,
+        255
+       ],
+       "toColor": [
+        135,
+        82,
+        116,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        94,
+        209,
+        82,
+        255
+       ],
+       "toColor": [
+        94,
+        209,
+        82,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        247,
+        226,
+        166,
+        255
+       ],
+       "toColor": [
+        247,
+        226,
+        166,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        250,
+        125,
+        196,
+        255
+       ],
+       "toColor": [
+        250,
+        125,
+        196,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        54,
+        56,
+        128,
+        255
+       ],
+       "toColor": [
+        54,
+        56,
+        128,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        61,
+        128,
+        61,
+        255
+       ],
+       "toColor": [
+        61,
+        128,
+        61,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        69,
+        133,
+        143,
+        255
+       ],
+       "toColor": [
+        69,
+        133,
+        143,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        227,
+        153,
+        148,
+        255
+       ],
+       "toColor": [
+        227,
+        153,
+        148,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        151,
+        120,
+        204,
+        255
+       ],
+       "toColor": [
+        151,
+        120,
+        204,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        168,
+        232,
+        149,
+        255
+       ],
+       "toColor": [
+        168,
+        232,
+        149,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        128,
+        57,
+        45,
+        255
+       ],
+       "toColor": [
+        128,
+        57,
+        45,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        153,
+        230,
+        247,
+        255
+       ],
+       "toColor": [
+        153,
+        230,
+        247,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        125,
+        50,
+        128,
+        255
+       ],
+       "toColor": [
+        125,
+        50,
+        128,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        240,
+        171,
+        93,
+        255
+       ],
+       "toColor": [
+        240,
+        171,
+        93,
+        255
+       ]
+      }
+     ]
+    }
+   }
+  },
+  "scaleSymbols": true,
+  "transparency": 0,
+  "labelingInfo": [
+   {
+    "labelExpressionInfo": {
+     "expression": "$feature.Day_Wk",
+     "title": "Custom"
+    },
+    "labelPlacement": "esriServerPolygonPlacementAlwaysHorizontal",
+    "multiPart": "labelLargest",
+    "allowOverrun": true,
+    "deconflictionStrategy": "dynamic",
+    "repeatLabel": false,
+    "useClippedGeometry": false,
+    "stackLabel": true,
+    "stackAlignment": "dynamic",
+    "removeDuplicates": "none",
+    "stackRowLength": 24,
+    "useCodedValues": true,
+    "maxScale": 0,
+    "minScale": 50000,
+    "name": "Class 1",
+    "priority": -1,
+    "symbol": {
+     "type": "esriTS",
+     "color": [
+      0,
+      0,
+      0,
+      255
+     ],
+     "backgroundColor": null,
+     "borderLineColor": null,
+     "borderLineSize": null,
+     "verticalAlignment": "bottom",
+     "horizontalAlignment": "left",
+     "rightToLeft": false,
+     "angle": 0,
+     "xoffset": 0,
+     "yoffset": 0,
+     "kerning": true,
+     "haloColor": null,
+     "haloSize": null,
+     "font": {
+      "family": "Tahoma",
+      "size": 10,
+      "style": "normal",
+      "weight": "normal",
+      "decoration": "none"
+     }
+    }
+   }
+  ]
+ },
+ "defaultVisibility": true,
+ "extent": {
+  "xmin": 871492.4449983351,
+  "ymin": 982901.2947645038,
+  "xmax": 912829.0785322525,
+  "ymax": 1070957.532037504,
+  "spatialReference": {
+   "wkid": 102696,
+   "latestWkid": 102696,
+   "xyTolerance": 0.003280833333333333,
+   "zTolerance": 0.001,
+   "mTolerance": 0.001,
+   "falseX": -17627100,
+   "falseY": -45827300,
+   "xyUnits": 3048.006096012192,
+   "falseZ": -100000,
+   "zUnits": 10000,
+   "falseM": -100000,
+   "mUnits": 10000
+  }
+ },
+ "hasAttachments": false,
+ "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+ "displayField": "Route",
+ "typeIdField": null,
+ "subtypeFieldName": null,
+ "subtypeField": null,
+ "defaultSubtypeCode": null,
+ "fields": [
+  {
+   "name": "OBJECTID_1",
+   "type": "esriFieldTypeOID",
+   "alias": "OBJECTID_1",
+   "domain": null
+  },
+  {
+   "name": "OBJECTID",
+   "type": "esriFieldTypeInteger",
+   "alias": "OBJECTID",
+   "domain": null
+  },
+  {
+   "name": "SHAPE_Leng",
+   "type": "esriFieldTypeDouble",
+   "alias": "SHAPE_Leng",
+   "domain": null
+  },
+  {
+   "name": "Route",
+   "type": "esriFieldTypeString",
+   "alias": "Route",
+   "length": 50,
+   "domain": null
+  },
+  {
+   "name": "Day_Wk",
+   "type": "esriFieldTypeString",
+   "alias": "Day_Wk",
+   "length": 50,
+   "domain": null
+  },
+  {
+   "name": "Time_of_Da",
+   "type": "esriFieldTypeString",
+   "alias": "Time_of_Da",
+   "length": 50,
+   "domain": null
+  },
+  {
+   "name": "Start_Time",
+   "type": "esriFieldTypeString",
+   "alias": "Start_Time",
+   "length": 50,
+   "domain": null
+  },
+  {
+   "name": "End_Time",
+   "type": "esriFieldTypeString",
+   "alias": "End_Time",
+   "length": 50,
+   "domain": null
+  },
+  {
+   "name": "Day_Abbr",
+   "type": "esriFieldTypeString",
+   "alias": "Day_Abbr",
+   "length": 50,
+   "domain": null
+  },
+  {
+   "name": "Addl_Notes",
+   "type": "esriFieldTypeString",
+   "alias": "Addl_Notes",
+   "length": 100,
+   "domain": null
+  },
+  {
+   "name": "Chars",
+   "type": "esriFieldTypeString",
+   "alias": "Chars",
+   "length": 50,
+   "domain": null
+  },
+  {
+   "name": "Shape",
+   "type": "esriFieldTypeGeometry",
+   "alias": "Shape",
+   "domain": null
+  },
+  {
+   "name": "Shape.STArea()",
+   "type": "esriFieldTypeDouble",
+   "alias": "Shape.STArea()",
+   "domain": null
+  },
+  {
+   "name": "Shape.STLength()",
+   "type": "esriFieldTypeDouble",
+   "alias": "Shape.STLength()",
+   "domain": null
+  }
+ ],
+ "geometryField": {
+  "name": "Shape",
+  "type": "esriFieldTypeGeometry",
+  "alias": "Shape"
+ },
+ "indexes": [
+  {
+   "name": "R83_pk",
+   "fields": "OBJECTID_1",
+   "isAscending": true,
+   "isUnique": true,
+   "description": ""
+  },
+  {
+   "name": "S68_idx",
+   "fields": "Shape",
+   "isAscending": true,
+   "isUnique": true,
+   "description": ""
+  }
+ ],
+ "subtypes": [],
+ "relationships": [],
+ "canModifyLayer": true,
+ "canScaleSymbols": false,
+ "hasLabels": true,
+ "capabilities": "Map,Query,Data",
+ "maxRecordCount": 2000,
+ "supportsStatistics": true,
+ "supportsExceedsLimitStatistics": true,
+ "supportsAdvancedQueries": true,
+ "supportedQueryFormats": "JSON, geoJSON, PBF",
+ "isDataVersioned": false,
+ "ownershipBasedAccessControlForFeatures": {
+  "allowOthersToQuery": true
+ },
+ "useStandardizedQueries": true,
+ "supportedSpatialRelationships": [
+  "esriSpatialRelIntersects",
+  "esriSpatialRelContains",
+  "esriSpatialRelCrosses",
+  "esriSpatialRelEnvelopeIntersects",
+  "esriSpatialRelIndexIntersects",
+  "esriSpatialRelOverlaps",
+  "esriSpatialRelTouches",
+  "esriSpatialRelWithin",
+  "esriSpatialRelRelation"
+ ],
+ "advancedQueryCapabilities": {
+  "useStandardizedQueries": true,
+  "supportsStatistics": true,
+  "supportsPercentileStatistics": true,
+  "supportsHavingClause": true,
+  "supportsOrderBy": true,
+  "supportsDistinct": true,
+  "supportsCountDistinct": true,
+  "supportsAdvancedQueryRelated": true,
+  "supportsQueryRelatedPagination": true,
+  "supportsPagination": true,
+  "supportsLod": false,
+  "supportsQueryWithLodSR": false,
+  "supportsTrueCurve": true,
+  "supportsQueryWithDatumTransformation": true,
+  "supportsReturningQueryExtent": true,
+  "supportsQueryWithDistance": true,
+  "supportsSqlExpression": true,
+  "supportsTimeRelation": true,
+  "supportsSqlFormat": false,
+  "supportsQueryAnalytic": true,
+  "supportsCurrentUserQueries": true
+ },
+ "supportsDatumTransformation": true,
+ "advancedQueryAnalyticCapabilities": {
+  "supportsLinearRegression": true,
+  "supportsAsync": false,
+  "supportsPercentileAnalytic": true
+ },
+ "dateFieldsTimeReference": null,
+ "preferredTimeReference": null,
+ "datesInUnknownTimezone": false,
+ "hasGeometryProperties": true,
+ "geometryProperties": {
+  "shapeAreaFieldName": "Shape.STArea()",
+  "shapeLengthFieldName": "Shape.STLength()",
+  "units": "esriFeet",
+  "mapUnits": {
+   "uwkid": 9003
+  }
+ },
+ "hasMetadata": true,
+ "isDataArchived": false,
+ "archivingInfo": {
+  "supportsQueryWithHistoricMoment": false,
+  "startArchivingMoment": -1
+ },
+ "supportsCoordinatesQuantization": true,
+ "supportsDynamicLegends": true,
+ "serviceItemId": "acd45b40ff3a4e86af24de63e8e0c707"
+}

@@ -1,0 +1,14 @@
+{
+ "collection": "crime",
+ "title": "Crime (NIBRS)",
+ "portal_page": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=69",
+ "department": "Metropolitan Police Department",
+ "source": "https://www.slmpd.org/crime_stats.shtml",
+ "source_type": "static",
+ "synced": "2026-08-05T19:58:51+00:00",
+ "fetch": {
+  "status": "ok",
+  "files": 32,
+  "urls": 32
+ }
+}

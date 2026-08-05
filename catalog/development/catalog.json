@@ -1,0 +1,101 @@
+{
+  "type": "Catalog",
+  "id": "development",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json"
+  ],
+  "title": "Development (SLDC & CDA)",
+  "description": "Development incentives, districts, land bank inventory, and market analyses from SLDC and CDA.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
+    },
+    {
+      "rel": "describedby",
+      "href": "./README.md",
+      "type": "text/markdown"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown"
+    },
+    {
+      "rel": "child",
+      "href": "./tif-districts/collection.json",
+      "type": "application/json",
+      "title": "Tax Increment Financing (TIF) Districts"
+    },
+    {
+      "rel": "child",
+      "href": "./opportunity-zones/collection.json",
+      "type": "application/json",
+      "title": "Qualified Opportunity Zones"
+    },
+    {
+      "rel": "child",
+      "href": "./lra-property/collection.json",
+      "type": "application/json",
+      "title": "LRA Property"
+    },
+    {
+      "rel": "child",
+      "href": "./community-improvement-districts/collection.json",
+      "type": "application/json",
+      "title": "Community Improvement Districts (CIDs)"
+    },
+    {
+      "rel": "child",
+      "href": "./special-business-districts/collection.json",
+      "type": "application/json",
+      "title": "Special Business Districts (SBDs)"
+    },
+    {
+      "rel": "child",
+      "href": "./tax-abated-parcels/collection.json",
+      "type": "application/json",
+      "title": "Tax-abated Parcels"
+    },
+    {
+      "rel": "child",
+      "href": "./port-authority-district/collection.json",
+      "type": "application/json",
+      "title": "Port Authority District"
+    },
+    {
+      "rel": "child",
+      "href": "./vacancy-composite/collection.json",
+      "type": "application/json",
+      "title": "Parcel Vacancy Composite"
+    },
+    {
+      "rel": "child",
+      "href": "./business-licenses/collection.json",
+      "type": "application/json",
+      "title": "Business Licenses"
+    },
+    {
+      "rel": "child",
+      "href": "./tax-sales/collection.json",
+      "type": "application/json",
+      "title": "Tax Sales"
+    },
+    {
+      "rel": "child",
+      "href": "./market-value-analysis/collection.json",
+      "type": "application/json",
+      "title": "2024 Market Value Analysis"
+    }
+  ],
+  "updated": "2026-08-05T19:58:51+00:00"
+}

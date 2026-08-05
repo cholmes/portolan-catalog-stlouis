@@ -1,0 +1,26 @@
+{
+  "version": 8,
+  "name": "City renderer",
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../zip-codes.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "layer-0",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "zip-codes",
+      "paint": {
+        "fill-color": "#ff00c5",
+        "fill-opacity": 0.0,
+        "fill-outline-color": "#ff00c5"
+      }
+    }
+  ],
+  "metadata": {
+    "description": "The city's own symbology, extracted from the source ArcGIS renderer."
+  }
+}

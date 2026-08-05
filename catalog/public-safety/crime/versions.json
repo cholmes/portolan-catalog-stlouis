@@ -1,0 +1,25 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-05T20:04:58.276538Z",
+      "breaking": false,
+      "assets": {
+        "crime.parquet": {
+          "sha256": "30b8ecad7d300f0c016c2cf8dcbacc62fda0560299d0aa5455df4dc17dca6086",
+          "size_bytes": 10866606,
+          "href": "crime/crime.parquet",
+          "source_mtime": 1785960035.9986775,
+          "mtime": 1785960035.9986775,
+          "feature_count": 367449,
+          "schema_fingerprint": "0d9da7f727e5e47a"
+        }
+      },
+      "changes": [
+        "crime.parquet"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "type": "Catalog",
+  "id": "elections",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json"
+  ],
+  "title": "Elections",
+  "description": "Precincts, polling centers, and election results from the Board of Election Commissioners.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
+    },
+    {
+      "rel": "describedby",
+      "href": "./README.md",
+      "type": "text/markdown"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown"
+    },
+    {
+      "rel": "child",
+      "href": "./election-precincts/collection.json",
+      "type": "application/json",
+      "title": "Election Wards & Precincts"
+    },
+    {
+      "rel": "child",
+      "href": "./polling-places/collection.json",
+      "type": "application/json",
+      "title": "Polling Centers"
+    },
+    {
+      "rel": "child",
+      "href": "./election-results-nov-2024/collection.json",
+      "type": "application/json",
+      "title": "November 2024 Election Results by Precinct"
+    }
+  ],
+  "updated": "2026-08-05T19:58:51+00:00"
+}

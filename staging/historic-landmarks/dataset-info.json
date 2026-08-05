@@ -1,0 +1,125 @@
+{
+ "collection": "historic-landmarks",
+ "title": "Historic Landmarks",
+ "portal_page": "https://maps8.stlouis-mo.gov/arcgis/rest/services/PDA/Historic_Landmarks/FeatureServer",
+ "department": "Planning and Urban Design",
+ "source": "https://maps8.stlouis-mo.gov/arcgis/rest/services/PDA/Historic_Landmarks/FeatureServer",
+ "source_type": "arcgis",
+ "synced": "2026-08-05T19:58:51+00:00",
+ "fetch": {
+  "status": "ok",
+  "parquets": [
+   "staging/extracts/historic-landmarks/historic_sites/historic_sites.parquet"
+  ],
+  "layer_url": "https://maps8.stlouis-mo.gov/arcgis/rest/services/PDA/Historic_Landmarks/FeatureServer/3",
+  "layer_description": null,
+  "fields": [
+   {
+    "name": "OBJECTID",
+    "alias": "OBJECTID",
+    "type": "esriFieldTypeOID"
+   },
+   {
+    "name": "SITE_ID",
+    "alias": "SITE_ID",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "SITE_TYPE",
+    "alias": "SITE_TYPE",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "SITE_TYPE_",
+    "alias": "SITE_TYPE_",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "SITE_NAME",
+    "alias": "SITE_NAME",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "SITE_ADDR",
+    "alias": "SITE_ADDR",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "SHORT_NAME",
+    "alias": "SHORT_NAME",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "SITE_DATE",
+    "alias": "SITE_DATE",
+    "type": "esriFieldTypeDate"
+   },
+   {
+    "name": "SITE_NOTE",
+    "alias": "SITE_NOTE",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "UPDATED",
+    "alias": "UPDATED",
+    "type": "esriFieldTypeDate"
+   },
+   {
+    "name": "EDITOR",
+    "alias": "EDITOR",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "SOURCE",
+    "alias": "SOURCE",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "OWNERNAME",
+    "alias": "OWNERNAME",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "ParcelId",
+    "alias": "ParcelId",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "HANDLE",
+    "alias": "HANDLE",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "NBRHD",
+    "alias": "NBRHD",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "ZIP",
+    "alias": "ZIP",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "Ward20",
+    "alias": "Ward20",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "CensBlock2",
+    "alias": "CensBlock2",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "X_CENTROID",
+    "alias": "X_CENTROID",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Y_CENTROID",
+    "alias": "Y_CENTROID",
+    "type": "esriFieldTypeDouble"
+   }
+  ],
+  "city_style": "staging/extracts/historic-landmarks/styles/city-renderer.json"
+ }
+}

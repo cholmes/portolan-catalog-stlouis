@@ -1,0 +1,96 @@
+{
+  "version": 8,
+  "name": "Offense category",
+  "metadata": {
+    "description": "The eight largest NIBRS categories; everything else light gray."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../crime.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "crime-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "crime",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "NIBRSCategory"
+          ],
+          "Destruction/Damage/Vandalism of Property",
+          "#e89d07",
+          "Weapons Law Violations",
+          "#7c5295",
+          "Motor Vehicle Theft",
+          "#b5651d",
+          "Aggravated Assault",
+          "#c03221",
+          "Theft From Motor Vehicle",
+          "#e2a76f",
+          "Simple Assault",
+          "#d98d8d",
+          "All Other Larceny",
+          "#c9b970",
+          "All Other Offenses",
+          "#9aa3a8",
+          "#dfe6ea"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "circle",
+      "type": "circle",
+      "source": "data",
+      "source-layer": "crime",
+      "paint": {
+        "circle-color": [
+          "match",
+          [
+            "get",
+            "NIBRSCategory"
+          ],
+          "Destruction/Damage/Vandalism of Property",
+          "#e89d07",
+          "Weapons Law Violations",
+          "#7c5295",
+          "Motor Vehicle Theft",
+          "#b5651d",
+          "Aggravated Assault",
+          "#c03221",
+          "Theft From Motor Vehicle",
+          "#e2a76f",
+          "Simple Assault",
+          "#d98d8d",
+          "All Other Larceny",
+          "#c9b970",
+          "All Other Offenses",
+          "#9aa3a8",
+          "#dfe6ea"
+        ],
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          9,
+          1.4,
+          12,
+          2.2,
+          16,
+          4.5
+        ],
+        "circle-opacity": 0.65
+      }
+    }
+  ]
+}

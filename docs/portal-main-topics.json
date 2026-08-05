@@ -149,5 +149,31 @@
  "animal-bites": [
   "Health",
   "Leisure and Culture"
+ ],
+ "parcels-history": [
+  "Urban Development and Planning"
+ ],
+ "crime": [
+  "Law, Safety, and Justice"
+ ],
+ "historic-landmarks": [
+  "Leisure and Culture",
+  "Community"
+ ],
+ "zip-codes": [
+  "Government"
+ ],
+ "parking-meters": [
+  "Transportation, Infrastructure, and Utilities"
+ ],
+ "street-sweeping": [
+  "Transportation, Infrastructure, and Utilities"
+ ],
+ "business-licenses": [
+  "Business and Industry"
+ ],
+ "tax-sales": [
+  "Business and Industry",
+  "Housing"
  ]
 }

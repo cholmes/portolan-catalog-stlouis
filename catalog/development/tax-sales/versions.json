@@ -1,0 +1,25 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-05T20:04:58.230645Z",
+      "breaking": false,
+      "assets": {
+        "tax-sales.parquet": {
+          "sha256": "e7b9cb0580dfa8bbbf0b0158d4ea9db0e78abd789a649b021dd70344a446dba6",
+          "size_bytes": 406414,
+          "href": "tax-sales/tax-sales.parquet",
+          "source_mtime": 1785960039.2156527,
+          "mtime": 1785960039.2156527,
+          "feature_count": 2200,
+          "schema_fingerprint": "a06f506ffc5851e3"
+        }
+      },
+      "changes": [
+        "tax-sales.parquet"
+      ]
+    }
+  ]
+}

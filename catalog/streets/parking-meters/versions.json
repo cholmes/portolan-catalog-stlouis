@@ -1,0 +1,25 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-05T20:04:58.146992Z",
+      "breaking": false,
+      "assets": {
+        "parking-meters.parquet": {
+          "sha256": "749b719a06b1e9cd055c6b36a5baa3112cff1f2109d8571ef0340b6fe3ffef5a",
+          "size_bytes": 95325,
+          "href": "parking-meters/parking-meters.parquet",
+          "source_mtime": 1785960037.8029287,
+          "mtime": 1785960037.8029287,
+          "feature_count": 981,
+          "schema_fingerprint": "e7e4de4baddd5387"
+        }
+      },
+      "changes": [
+        "parking-meters.parquet"
+      ]
+    }
+  ]
+}

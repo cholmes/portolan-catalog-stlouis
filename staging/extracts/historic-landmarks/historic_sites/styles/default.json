@@ -1,0 +1,35 @@
+{
+  "version": 8,
+  "name": "Categorical Style",
+  "sources": {
+    "data": {
+      "type": "vector"
+    }
+  },
+  "layers": [
+    {
+      "id": "categorical-circle",
+      "type": "circle",
+      "source": "data",
+      "source-layer": "historic_sites",
+      "paint": {
+        "circle-color": [
+          "match",
+          [
+            "get",
+            "SITE_TYPE_"
+          ],
+          "City Landmark",
+          "#00c5ff",
+          "National Historic Landmark",
+          "#0070ff",
+          "National Register Historic Site",
+          "#ff0000",
+          "#cccccc"
+        ],
+        "circle-radius": 5,
+        "circle-opacity": 1.0
+      }
+    }
+  ]
+}

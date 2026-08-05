@@ -12,7 +12,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from sources import SOURCES
+from sources import SOURCES, coll_rel
 
 ROOT = Path(__file__).resolve().parent.parent
 CATALOG = ROOT / "catalog"
@@ -77,8 +77,8 @@ def main() -> None:
     (d / "metadata.yaml").write_text(ROOT_YAML)
     print("✓ catalog root metadata.yaml")
     for coll_id in SOURCES:
-        cd = CATALOG / coll_id / ".portolan"
-        if not (CATALOG / coll_id).exists():
+        cd = CATALOG / coll_rel(coll_id) / ".portolan"
+        if not (CATALOG / coll_rel(coll_id)).exists():
             print(f"✗ missing collection dir: {coll_id}")
             continue
         cd.mkdir(exist_ok=True)

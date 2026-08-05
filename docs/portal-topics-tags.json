@@ -413,5 +413,71 @@
   "portal_id": "130",
   "topics": [],
   "tags": []
+ },
+ "parcels-history": {
+  "portal_id": "82",
+  "topics": [],
+  "tags": [
+   "parcels",
+   "asset-parcel"
+  ]
+ },
+ "crime": {
+  "portal_id": "69",
+  "topics": [],
+  "tags": [
+   "crime",
+   "police",
+   "nibrs"
+  ]
+ },
+ "historic-landmarks": {
+  "portal_id": null,
+  "topics": [],
+  "tags": [
+   "landmarks",
+   "history"
+  ]
+ },
+ "zip-codes": {
+  "portal_id": null,
+  "topics": [],
+  "tags": [
+   "boundaries",
+   "zip codes"
+  ]
+ },
+ "parking-meters": {
+  "portal_id": null,
+  "topics": [],
+  "tags": [
+   "parking",
+   "streets"
+  ]
+ },
+ "street-sweeping": {
+  "portal_id": null,
+  "topics": [],
+  "tags": [
+   "streets",
+   "sweeping"
+  ]
+ },
+ "business-licenses": {
+  "portal_id": null,
+  "topics": [],
+  "tags": [
+   "business",
+   "licenses",
+   "sldc"
+  ]
+ },
+ "tax-sales": {
+  "portal_id": null,
+  "topics": [],
+  "tags": [
+   "tax sale",
+   "sldc"
+  ]
  }
 }

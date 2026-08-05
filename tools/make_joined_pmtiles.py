@@ -21,6 +21,9 @@ import subprocess
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).parent))
+from sources import coll_rel  # noqa: E402
+
 ROOT = Path(__file__).resolve().parent.parent
 CATALOG = ROOT / "catalog"
 SCRATCH = ROOT / "staging" / "joined"
@@ -67,8 +70,8 @@ JOINS = {
 
 def make(coll_id: str) -> None:
     spec = JOINS[coll_id]
-    left = CATALOG / coll_id / f"{coll_id}.parquet"
-    right = CATALOG / spec["right"] / f"{spec['right']}.parquet"
+    left = CATALOG / coll_rel(coll_id) / f"{coll_id}.parquet"
+    right = CATALOG / coll_rel(spec["right"]) / f"{spec['right']}.parquet"
     SCRATCH.mkdir(parents=True, exist_ok=True)
     joined = SCRATCH / f"{coll_id}-joined.parquet"
 
@@ -105,8 +108,8 @@ def make(coll_id: str) -> None:
          f"SELECT count(*) FROM '{left}'"],
         capture_output=True, text=True).stdout.strip())
 
-    out = CATALOG / coll_id / f"{coll_id}.pmtiles"
-    tmp = CATALOG / coll_id / f".{coll_id}.tmp.pmtiles"
+    out = CATALOG / coll_rel(coll_id) / f"{coll_id}.pmtiles"
+    tmp = CATALOG / coll_rel(coll_id) / f".{coll_id}.tmp.pmtiles"
     gpio = subprocess.Popen(["gpio", "convert", "geojson", str(joined)],
                             stdout=subprocess.PIPE)
     tc = subprocess.run(

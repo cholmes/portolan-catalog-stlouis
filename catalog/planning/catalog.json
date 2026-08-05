@@ -1,0 +1,89 @@
+{
+  "type": "Catalog",
+  "id": "planning",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json"
+  ],
+  "title": "Planning and Urban Design",
+  "description": "Boundaries, zoning, land use, historic designations, schools, and bike infrastructure from Planning and Urban Design.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
+    },
+    {
+      "rel": "describedby",
+      "href": "./README.md",
+      "type": "text/markdown"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown"
+    },
+    {
+      "rel": "child",
+      "href": "./neighborhoods/collection.json",
+      "type": "application/json",
+      "title": "Neighborhood Boundaries"
+    },
+    {
+      "rel": "child",
+      "href": "./wards/collection.json",
+      "type": "application/json",
+      "title": "Ward Boundaries (2020)"
+    },
+    {
+      "rel": "child",
+      "href": "./wards-2010/collection.json",
+      "type": "application/json",
+      "title": "Ward Boundaries (2010)"
+    },
+    {
+      "rel": "child",
+      "href": "./zoning/collection.json",
+      "type": "application/json",
+      "title": "Zoning"
+    },
+    {
+      "rel": "child",
+      "href": "./land-use/collection.json",
+      "type": "application/json",
+      "title": "Strategic Land Use Plan"
+    },
+    {
+      "rel": "child",
+      "href": "./historic-districts/collection.json",
+      "type": "application/json",
+      "title": "Historic Districts"
+    },
+    {
+      "rel": "child",
+      "href": "./historic-landmarks/collection.json",
+      "type": "application/json",
+      "title": "Historic Landmarks"
+    },
+    {
+      "rel": "child",
+      "href": "./schools/collection.json",
+      "type": "application/json",
+      "title": "City Public Schools"
+    },
+    {
+      "rel": "child",
+      "href": "./bike-infrastructure/collection.json",
+      "type": "application/json",
+      "title": "Bike Infrastructure"
+    }
+  ],
+  "updated": "2026-08-05T19:58:51+00:00"
+}

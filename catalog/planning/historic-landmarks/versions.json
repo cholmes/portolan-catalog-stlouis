@@ -1,0 +1,25 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-05T20:04:58.066035Z",
+      "breaking": false,
+      "assets": {
+        "historic-landmarks.parquet": {
+          "sha256": "f2978cf89dbeacee0cd0436dd927c622af49e7dd0b4f8ef001add0df07acd8b9",
+          "size_bytes": 75930,
+          "href": "historic-landmarks/historic-landmarks.parquet",
+          "source_mtime": 1785960036.8879054,
+          "mtime": 1785960036.8879054,
+          "feature_count": 512,
+          "schema_fingerprint": "69f38a62ff6c6ea5"
+        }
+      },
+      "changes": [
+        "historic-landmarks.parquet"
+      ]
+    }
+  ]
+}

@@ -23,7 +23,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from sources import SOURCES
+from sources import SOURCES, GROUPS, GROUP_TITLES, GROUP_OF, coll_rel
 
 ROOT = Path(__file__).resolve().parent.parent
 CATALOG = ROOT / "catalog"
@@ -97,7 +97,7 @@ def ensure_link(links: list, rel: str, href: str, type_: str, title: str | None 
 
 
 def _is_tabular(cid: str) -> bool:
-    pq = CATALOG / cid / f"{cid}.parquet"
+    pq = CATALOG / coll_rel(cid) / f"{cid}.parquet"
     if not pq.exists():
         return False
     import pyarrow.parquet as _pq
@@ -109,7 +109,7 @@ TABULAR = [c for c in SOURCES if _is_tabular(c)]
 
 
 def build_tabular(cid: str) -> None:
-    coll_dir = CATALOG / cid
+    coll_dir = CATALOG / coll_rel(cid)
     pq = coll_dir / f"{cid}.parquet"
     cols = duck(f"SELECT column_name n, column_type t FROM (DESCRIBE SELECT * FROM '{pq}')")
     dates = None
@@ -123,7 +123,7 @@ def build_tabular(cid: str) -> None:
     city_bbox = [-90.320522, 38.531907, -90.166409, 38.774362]
     coll = {
         "type": "Collection",
-        "id": cid,
+        "id": coll_rel(cid),
         "stac_version": "1.1.0",
         "stac_extensions": [TABLE_EXT],
         "description": "placeholder",  # filled by common pass below
@@ -138,7 +138,7 @@ def build_tabular(cid: str) -> None:
             for c in cols
         ],
         "links": [
-            {"rel": "root", "href": "../catalog.json", "type": "application/json"},
+            {"rel": "root", "href": "../../catalog.json", "type": "application/json"},
             {"rel": "parent", "href": "../catalog.json", "type": "application/json"},
             {"rel": "describedby", "href": "./README.md", "type": "text/markdown"},
             {"rel": "agents", "href": "./AGENTS.md", "type": "text/markdown"},
@@ -162,12 +162,13 @@ def build_tabular(cid: str) -> None:
 
 
 def finalize_collection(coll_id: str) -> None:
-    coll_dir = CATALOG / coll_id
+    coll_dir = CATALOG / coll_rel(coll_id)
     f = coll_dir / "collection.json"
     coll = json.loads(f.read_text())
     src = SOURCES[coll_id]
     meta_desc = DESCRIPTIONS.get(coll_id, {}).get("description") or ""
 
+    coll["id"] = coll_rel(coll_id)
     coll["title"] = src["title"]
     if meta_desc:
         coll["description"] = meta_desc
@@ -236,9 +237,14 @@ def finalize_collection(coll_id: str) -> None:
         if l["rel"] == "pmtiles":
             l["pmtiles:layers"] = [coll_id]
             l.setdefault("type", "application/vnd.pmtiles")
-        if l["rel"] in ("root", "parent"):
+        if l["rel"] == "root":
+            l["href"] = "../../catalog.json"
             l.setdefault("type", "application/json")
             l["title"] = "City of St. Louis Open Data (Cloud-Native Mirror)"
+        if l["rel"] == "parent":
+            l["href"] = "../catalog.json"
+            l.setdefault("type", "application/json")
+            l["title"] = GROUP_TITLES[GROUP_OF[coll_id]]
     coll["links"] = links
 
     # Assets: media types, titles, default style role, size+checksum
@@ -310,19 +316,12 @@ def finalize_root() -> None:
                 "City of St. Louis open data portal")
     ensure_link(links, "via", "https://www.stlouis-mo.gov/data/", "text/html",
                 "City of St. Louis open data portal")
-    # child links for every collection, titled
-    have = {l["href"] for l in links if l["rel"] == "child"}
-    for coll_id, src in SOURCES.items():
-        href = f"./{coll_id}/collection.json"
-        if (CATALOG / coll_id / "collection.json").exists():
-            if href not in have:
-                links.append({"rel": "child", "href": href,
-                              "type": "application/json", "title": src["title"]})
-            else:
-                for l in links:
-                    if l["rel"] == "child" and l["href"] == href:
-                        l["title"] = src["title"]
-                        l.setdefault("type", "application/json")
+    # children are the department catalogs
+    links = [l for l in links if l["rel"] != "child"]
+    for g in GROUPS:
+        if (CATALOG / g / "catalog.json").exists():
+            links.append({"rel": "child", "href": f"./{g}/catalog.json",
+                          "type": "application/json", "title": GROUP_TITLES[g]})
     for l in links:
         if l["rel"] == "root":
             l.setdefault("type", "application/json")
@@ -331,14 +330,32 @@ def finalize_root() -> None:
     print("✓ catalog.json finalized")
 
 
+def finalize_group(group: str) -> None:
+    f = CATALOG / group / "catalog.json"
+    if not f.exists():
+        return
+    cat = json.loads(f.read_text())
+    cat["stac_extensions"] = sorted(set(cat.get("stac_extensions", [])) | {PORTOLAN_SCHEMA})
+    cat["updated"] = SYNC
+    links = [l for l in cat["links"] if l["rel"] not in ("child", "self")]
+    for cid in GROUPS[group]:
+        if (CATALOG / group / cid / "collection.json").exists():
+            links.append({"rel": "child", "href": f"./{cid}/collection.json",
+                          "type": "application/json", "title": SOURCES[cid]["title"]})
+    cat["links"] = links
+    f.write_text(json.dumps(cat, indent=2) + "\n")
+
+
 def main() -> None:
     for cid in TABULAR:
         build_tabular(cid)
     for coll_id in SOURCES:
-        if (CATALOG / coll_id / "collection.json").exists():
+        if (CATALOG / coll_rel(coll_id) / "collection.json").exists():
             finalize_collection(coll_id)
         else:
             print(f"✗ missing: {coll_id}")
+    for group in GROUPS:
+        finalize_group(group)
     finalize_root()
 
 

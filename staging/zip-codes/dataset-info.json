@@ -1,0 +1,90 @@
+{
+ "collection": "zip-codes",
+ "title": "ZIP Codes",
+ "portal_page": "https://maps8.stlouis-mo.gov/arcgis/rest/services/STLOUIS/BOUNDARIES/MapServer",
+ "department": "Information Technology Services Agency",
+ "source": "https://maps8.stlouis-mo.gov/arcgis/rest/services/STLOUIS/BOUNDARIES/MapServer",
+ "source_type": "arcgis",
+ "synced": "2026-08-05T19:58:51+00:00",
+ "fetch": {
+  "status": "ok",
+  "parquets": [
+   "staging/extracts/zip-codes/zip_codes/zip_codes.parquet"
+  ],
+  "layer_url": "https://maps8.stlouis-mo.gov/arcgis/rest/services/STLOUIS/BOUNDARIES/MapServer/5",
+  "layer_description": "U.S. ZIP Code Areas (Five-Digit) represents five-digit ZIP Code areas used by the U.S. Postal Service to deliver mail more effectively. The first digit of a five-digit ZIP Code divides the United States into 10 large groups of states numbered from 0 in the Northeast to 9 in the far West. Within these areas, each state is divided into an average of 10 smaller geographical areas, identified by the second and third digits. These digits, in conjunction with the first digit, represent a sectional center facility or a mail processing facility area. The fourth and fifth digits identify a post office, station, branch or local delivery area.",
+  "fields": [
+   {
+    "name": "OBJECTID_1",
+    "alias": "OBJECTID_1",
+    "type": "esriFieldTypeOID"
+   },
+   {
+    "name": "OBJECTID",
+    "alias": "OBJECTID",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "AREA_",
+    "alias": "AREA_",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "PERIMETER",
+    "alias": "PERIMETER",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "ZT17_D00_",
+    "alias": "ZT17_D00_",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "ZT17_D00_I",
+    "alias": "ZT17_D00_I",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "ZCTA",
+    "alias": "ZCTA",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "NAME",
+    "alias": "NAME",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "LSAD",
+    "alias": "LSAD",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "LSAD_TRANS",
+    "alias": "LSAD_TRANS",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "SHAPE_LENG",
+    "alias": "SHAPE_LENG",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Shape",
+    "alias": "Shape",
+    "type": "esriFieldTypeGeometry"
+   },
+   {
+    "name": "Shape_Length",
+    "alias": "Shape_Length",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Shape_Area",
+    "alias": "Shape_Area",
+    "type": "esriFieldTypeDouble"
+   }
+  ],
+  "city_style": "staging/extracts/zip-codes/styles/city-renderer.json"
+ }
+}

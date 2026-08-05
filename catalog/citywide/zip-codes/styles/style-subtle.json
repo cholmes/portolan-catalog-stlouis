@@ -1,0 +1,26 @@
+{
+  "version": 8,
+  "name": "Subtle tint",
+  "metadata": {
+    "description": "Light fill for underlays."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../zip-codes.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "zip-codes",
+      "paint": {
+        "fill-color": "#dfe6ea",
+        "fill-opacity": 0.3,
+        "fill-outline-color": "#9aa3a8"
+      }
+    }
+  ]
+}

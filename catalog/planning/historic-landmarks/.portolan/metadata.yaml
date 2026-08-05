@@ -1,0 +1,14 @@
+title: "Historic Landmarks"
+description: "Historic sites and landmarks from the city's Historic Landmarks map service."
+contact:
+  name: "Chris Holmes"
+  email: "cholmes@9eo.org"
+license: "other"
+license_url: "https://maps8.stlouis-mo.gov/arcgis/rest/services/PDA/Historic_Landmarks/FeatureServer"
+attribution: "City of St. Louis — Planning and Urban Design"
+source_url: "https://maps8.stlouis-mo.gov/arcgis/rest/services/PDA/Historic_Landmarks/FeatureServer"
+keywords: [st-louis, missouri, open-data, historic, landmarks]
+processing_notes: |
+  Mirrored from the City of St. Louis open data portal (https://maps8.stlouis-mo.gov/arcgis/rest/services/PDA/Historic_Landmarks/FeatureServer).
+  Source: https://maps8.stlouis-mo.gov/arcgis/rest/services/PDA/Historic_Landmarks/FeatureServer (ArcGIS REST service),
+  converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.
