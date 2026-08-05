@@ -11,7 +11,6 @@ into catalog/<id>/styles/city-renderer.json for make_styles.py to finish
 Usage: python3 tools/assemble.py [collection-id ...]   (default: all)
 """
 
-import json
 import shutil
 import subprocess
 import sys
@@ -37,6 +36,56 @@ def run(cmd: list) -> None:
     proc = subprocess.run([str(c) for c in cmd], capture_output=True, text=True)
     if proc.returncode != 0:
         raise RuntimeError(f"{' '.join(str(c) for c in cmd)}\n{proc.stderr[-800:]}")
+
+
+def restore_stats(path) -> None:
+    """Rewrite with pyarrow to guarantee row-group min/max statistics.
+
+    GDAL's Parquet writer drops stats on the bbox covering column when any
+    rows have null geometry (spec/rashid PTL-DAT-007 requires them). pyarrow
+    preserves the `geo` schema metadata and row order.
+    """
+    import pyarrow.parquet as pq
+    t = pq.read_table(path)
+    pq.write_table(t, path, compression="zstd", row_group_size=20000,
+                   write_statistics=True)
+
+
+def prepare_csb(dest: Path) -> None:
+    """Merge the per-year 311 CSVs into one WGS84 CSV.
+
+    Web-Mercator SRX/SRY become lon/lat; points outside the buffered city
+    boundary (requires catalog/city-boundary to be assembled first) are
+    nulled but their rows kept. Assumes staging/csb-311-requests/data/csb/
+    holds encoding-normalized per-year CSVs merged to csb-merged.csv by
+    tools/fetch.py.
+    """
+    merged = dest.parent / "csb-merged.csv"
+    boundary = CATALOG / "city-boundary" / "city-boundary.parquet"
+    if not boundary.exists():
+        raise RuntimeError("assemble city-boundary before csb-311-requests")
+    run(["duckdb", "-c", f"""
+        INSTALL spatial; LOAD spatial;
+        CREATE TEMP TABLE city AS
+          SELECT ST_Buffer(geometry, 0.005) g FROM '{boundary}';
+        COPY (
+          SELECT * EXCLUDE (SRX, SRY, lon, lat),
+            CASE WHEN keep THEN round(lon, 7) END AS lon,
+            CASE WHEN keep THEN round(lat, 7) END AS lat
+          FROM (
+            SELECT *, lon IS NOT NULL AND lat IS NOT NULL
+                   AND ST_Contains((SELECT g FROM city), ST_Point(lon, lat)) AS keep
+            FROM (
+              SELECT *,
+                CASE WHEN TRY_CAST(SRX AS DOUBLE) IS NOT NULL AND TRY_CAST(SRY AS DOUBLE) IS NOT NULL AND TRY_CAST(SRX AS DOUBLE) <> 0
+                     THEN ST_X(ST_Transform(ST_Point(TRY_CAST(SRX AS DOUBLE), TRY_CAST(SRY AS DOUBLE)), 'EPSG:3857', 'EPSG:4326', always_xy := true)) END AS lon,
+                CASE WHEN TRY_CAST(SRX AS DOUBLE) IS NOT NULL AND TRY_CAST(SRY AS DOUBLE) IS NOT NULL AND TRY_CAST(SRX AS DOUBLE) <> 0
+                     THEN ST_Y(ST_Transform(ST_Point(TRY_CAST(SRX AS DOUBLE), TRY_CAST(SRY AS DOUBLE)), 'EPSG:3857', 'EPSG:4326', always_xy := true)) END AS lat
+              FROM read_csv('{merged}', header=true, all_varchar=true)
+            )
+          )
+        ) TO '{dest}' (HEADER);
+    """])
 
 
 def find_extract_parquet(coll_id: str) -> Path:
@@ -97,13 +146,21 @@ def assemble(coll_id: str) -> dict:
     else:
         src = static_source_file(coll_id)
 
-    # 311 requests carry Web-Mercator SRX/SRY columns — promote to points
+    # 311 requests carry Web-Mercator SRX/SRY columns — promote to points.
+    # The fetch step writes csb-4326.csv: encodings normalized, years merged,
+    # coords reprojected to WGS84, and points outside the buffered city
+    # boundary nulled (rows kept). lon/lat feed the geometry and are dropped.
     if coll_id == "csb-311-requests":
+        src = STAGING / coll_id / "data" / "csb-4326.csv"
+        if not src.exists():
+            prepare_csb(src)
         cmd = ["ogr2ogr", "-f", "Parquet", out, src, "-nln", coll_id,
-               "-oo", "X_POSSIBLE_NAMES=SRX", "-oo", "Y_POSSIBLE_NAMES=SRY",
+               "-oo", "X_POSSIBLE_NAMES=lon", "-oo", "Y_POSSIBLE_NAMES=lat",
+               "-oo", "KEEP_GEOM_COLUMNS=NO",
                "-oo", "AUTODETECT_TYPE=YES", "-oo", "EMPTY_STRING_AS_NULL=YES",
-               "-a_srs", "EPSG:3857"] + GEO_LCO
+               "-a_srs", "EPSG:4326"] + GEO_LCO
         run(cmd)
+        restore_stats(out)
         n_check = subprocess.run(
             ["duckdb", "-noheader", "-list", "-c", f"SELECT count(*) FROM '{out}'"],
             capture_output=True, text=True).stdout.strip()
@@ -119,6 +176,8 @@ def assemble(coll_id: str) -> dict:
     if src.suffix == ".csv":
         cmd += ["-oo", "AUTODETECT_TYPE=YES", "-oo", "EMPTY_STRING_AS_NULL=YES"]
     run(cmd)
+    if not is_tabular:
+        restore_stats(out)
 
     # Carry the extracted city renderer style along, if there is one
     city_style = STAGING / "extracts" / coll_id / "styles" / "city-renderer.json"

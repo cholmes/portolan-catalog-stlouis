@@ -164,14 +164,6 @@
       "type": "string"
     },
     {
-      "name": "lon",
-      "type": "double"
-    },
-    {
-      "name": "lat",
-      "type": "double"
-    },
-    {
       "name": "geometry",
       "type": "binary"
     },
@@ -186,16 +178,17 @@
     "styles/style-channel",
     "styles/style-open"
   ],
-  "portolan:total_size_bytes": 90554724,
-  "portolan:asset_count": 1,
+  "portolan:total_size_bytes": 268904224,
+  "portolan:asset_count": 8,
+  "updated": "2026-08-05T01:13:22+00:00",
   "title": "CSB Service Requests (311)",
   "extent": {
     "spatial": {
       "bbox": [
         [
           -90.3196727,
-          38.2311622,
-          -89.7321802,
+          38.5338176,
+          -90.1808012,
           38.7741115
         ]
       ]
@@ -210,26 +203,43 @@
     }
   },
   "license": "other",
+  "providers": [
+    {
+      "name": "City of St. Louis \u2014 Neighborhood Stabilization / CSB",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5"
+    },
+    {
+      "name": "TGE Labs",
+      "roles": [
+        "host"
+      ],
+      "url": "https://github.com/cholmes/portolan-catalog-stlouis"
+    }
+  ],
   "assets": {
     "csb-311-requests": {
       "href": "./csb-311-requests.parquet",
       "type": "application/vnd.apache.parquet",
-      "file:size": 90420111,
-      "file:checksum": "12203d9a2f076db81d9f703403f133b70e7121f68977d51a407cb15e6499ac625900",
+      "title": "CSB Service Requests (311) (GeoParquet)",
+      "file:size": 81360844,
+      "file:checksum": "1220acf96c9f880ff26277b4a57cb6c31ad583a81124a94dd36e3da20016760147e6",
       "roles": [
         "data"
-      ],
-      "title": "CSB Service Requests (311) (GeoParquet)"
+      ]
     },
     "csb-311-requests-tiles": {
       "href": "./csb-311-requests.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "csb-311-requests (vector tiles)",
+      "file:size": 166880376,
+      "file:checksum": "1220df856bd4ad14e960bb0e8330cd9e4a7eba81394d46112d392517cfce99bc1c21",
       "roles": [
         "visual"
-      ],
-      "file:size": 187303366,
-      "file:checksum": "122031dde8149a2137bec32931fcb925bf2ee93c4d476ba0cb913f455ad4a60b1108"
+      ]
     },
     "styles/default": {
       "href": "./styles/default.json",
@@ -279,30 +289,21 @@
     "thumbnail": {
       "href": "./thumbnail.png",
       "type": "image/png",
-      "roles": [
-        "thumbnail"
-      ],
       "title": "CSB Service Requests (311) rendered with the default style",
       "file:size": 230512,
-      "file:checksum": "12205bc66bec61aeee22d94332bb0e4e15f03d51e236487ae90d2deea811ba110f77"
-    }
-  },
-  "updated": "2026-08-05T01:13:22+00:00",
-  "providers": [
-    {
-      "name": "City of St. Louis \u2014 Neighborhood Stabilization / CSB",
+      "file:checksum": "12205bc66bec61aeee22d94332bb0e4e15f03d51e236487ae90d2deea811ba110f77",
       "roles": [
-        "producer",
-        "licensor"
-      ],
-      "url": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5"
+        "thumbnail"
+      ]
     },
-    {
-      "name": "TGE Labs",
+    "documentation": {
+      "href": "./README.md",
+      "type": "text/markdown",
+      "file:size": 3376,
+      "file:checksum": "1220180c013518bd77fbc9532bbacada0dc2adea404f4759f3cafade2460c655990a",
       "roles": [
-        "host"
-      ],
-      "url": "https://github.com/cholmes/portolan-catalog-stlouis"
+        "documentation"
+      ]
     }
-  ]
+  }
 }

@@ -27,7 +27,7 @@ Full schema: `table:columns` in collection.json.
 
 ## Quirks
 
-1,477,057 rows; 18,132 have no usable coordinates (geometry IS NULL) — they remain in the table, so tabular counts and map counts differ. Coordinates were Web-Mercator SRX/SRY in the source, reprojected to WGS84; ~450 out-of-city points were nulled. Status casing varies (CLOSED vs Closed).
+1,477,057 rows; 18,177 have no usable coordinates (geometry IS NULL) — they remain in the table, so tabular counts and map counts differ. Coordinates were Web-Mercator SRX/SRY in the source, reprojected to WGS84; ~500 points falling outside the (buffered) city boundary were nulled. Status casing varies (CLOSED vs Closed).
 
 ## Joins
 

@@ -2,10 +2,10 @@
 
 ![st-louis](https://img.shields.io/badge/st--louis-blue) ![missouri](https://img.shields.io/badge/missouri-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![city-government](https://img.shields.io/badge/city--government-blue) ![parcels](https://img.shields.io/badge/parcels-blue) ![boundaries](https://img.shields.io/badge/boundaries-blue) ![cloud-native](https://img.shields.io/badge/cloud--native-blue) ![geoparquet](https://img.shields.io/badge/geoparquet-blue) ![stac](https://img.shields.io/badge/stac-blue) ![pmtiles](https://img.shields.io/badge/pmtiles-blue)
 
-Cloud-native mirror of datasets from the City of St. Louis open data portal
-(https://www.stlouis-mo.gov/data/): GeoParquet, PMTiles, and STAC metadata
-for the city's most-used geospatial and parcel-joinable datasets.
-Not an official city service.
+Cloud-native mirror of datasets from the
+[City of St. Louis open data portal](https://www.stlouis-mo.gov/data/):
+GeoParquet, PMTiles, and STAC metadata for the city's most-used geospatial
+and parcel-joinable datasets. Not an official city service.
 
 ## Collections
 
@@ -98,7 +98,7 @@ Strategic land use (SLUP),parcel, and zoning data
 
 **Spatial Extent**
 
-- West: -90.3206, South: 38.2312, East: -89.7322, North: 38.7747
+- West: -90.3206, South: 38.5319, East: -90.1663, North: 38.7747
 
 **Temporal Extent**
 

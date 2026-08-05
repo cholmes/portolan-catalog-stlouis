@@ -1,6 +1,6 @@
 {
   "spec_version": "1.0.0",
-  "current_version": "1.0.3",
+  "current_version": "1.0.5",
   "versions": [
     {
       "version": "1.0.0",
@@ -85,6 +85,83 @@
           "size_bytes": 187303366,
           "href": "csb-311-requests/csb-311-requests.pmtiles",
           "mtime": 1785893598.105136
+        }
+      },
+      "changes": [
+        "csb-311-requests.pmtiles"
+      ],
+      "message": "Generated PMTiles: csb-311-requests.pmtiles"
+    },
+    {
+      "version": "1.0.4",
+      "created": "2026-08-05T04:27:52.516543Z",
+      "breaking": false,
+      "assets": {
+        "csb-311-requests.parquet": {
+          "sha256": "acf96c9f880ff26277b4a57cb6c31ad583a81124a94dd36e3da20016760147e6",
+          "size_bytes": 81360844,
+          "href": "csb-311-requests/csb-311-requests.parquet",
+          "source_mtime": 1785904047.520092,
+          "mtime": 1785904047.520092,
+          "feature_count": 1477057,
+          "schema_fingerprint": "35d0f358b6d1dd55"
+        },
+        "csb-311-requests.pmtiles": {
+          "sha256": "31dde8149a2137bec32931fcb925bf2ee93c4d476ba0cb913f455ad4a60b1108",
+          "size_bytes": 187303366,
+          "href": "csb-311-requests/csb-311-requests.pmtiles",
+          "mtime": 1785893598.105136
+        },
+        "README.md": {
+          "sha256": "1d7f160c2aeede1403feaa8a9adfb0c407cd87c4f040d04185741dc19d84a4cc",
+          "size_bytes": 3373,
+          "href": "csb-311-requests/README.md",
+          "mtime": 1785894206.594349
+        },
+        "thumbnail.png": {
+          "sha256": "5bc66bec61aeee22d94332bb0e4e15f03d51e236487ae90d2deea811ba110f77",
+          "size_bytes": 230512,
+          "href": "csb-311-requests/thumbnail.png",
+          "mtime": 1785894022.1117723
+        }
+      },
+      "changes": [
+        "README.md",
+        "csb-311-requests.parquet",
+        "thumbnail.png"
+      ]
+    },
+    {
+      "version": "1.0.5",
+      "created": "2026-08-05T04:30:53.072891Z",
+      "breaking": false,
+      "assets": {
+        "csb-311-requests.parquet": {
+          "sha256": "acf96c9f880ff26277b4a57cb6c31ad583a81124a94dd36e3da20016760147e6",
+          "size_bytes": 81360844,
+          "href": "csb-311-requests/csb-311-requests.parquet",
+          "source_mtime": 1785904047.520092,
+          "mtime": 1785904047.520092,
+          "feature_count": 1477057,
+          "schema_fingerprint": "35d0f358b6d1dd55"
+        },
+        "csb-311-requests.pmtiles": {
+          "sha256": "df856bd4ad14e960bb0e8330cd9e4a7eba81394d46112d392517cfce99bc1c21",
+          "size_bytes": 166880376,
+          "href": "csb-311-requests/csb-311-requests.pmtiles",
+          "mtime": 1785904252.8655422
+        },
+        "README.md": {
+          "sha256": "1d7f160c2aeede1403feaa8a9adfb0c407cd87c4f040d04185741dc19d84a4cc",
+          "size_bytes": 3373,
+          "href": "csb-311-requests/README.md",
+          "mtime": 1785894206.594349
+        },
+        "thumbnail.png": {
+          "sha256": "5bc66bec61aeee22d94332bb0e4e15f03d51e236487ae90d2deea811ba110f77",
+          "size_bytes": 230512,
+          "href": "csb-311-requests/thumbnail.png",
+          "mtime": 1785894022.1117723
         }
       },
       "changes": [

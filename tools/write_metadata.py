@@ -23,10 +23,10 @@ CONTACT = 'contact:\n  name: "Chris Holmes"\n  email: "cholmes@9eo.org"\n'
 ROOT_YAML = f"""\
 title: "City of St. Louis Open Data (Cloud-Native Mirror)"
 description: |
-  Cloud-native mirror of datasets from the City of St. Louis open data portal
-  (https://www.stlouis-mo.gov/data/): GeoParquet, PMTiles, and STAC metadata
-  for the city's most-used geospatial and parcel-joinable datasets.
-  Not an official city service.
+  Cloud-native mirror of datasets from the
+  [City of St. Louis open data portal](https://www.stlouis-mo.gov/data/):
+  GeoParquet, PMTiles, and STAC metadata for the city's most-used geospatial
+  and parcel-joinable datasets. Not an official city service.
 {CONTACT}license: "other"
 license_url: "https://www.stlouis-mo.gov/data/"
 attribution: "City of St. Louis"

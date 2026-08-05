@@ -32,7 +32,7 @@ GIS data for police district boundaries
 |------|------|----------|
 | ./police-districts.parquet | 16.5 KB | 1220c60e6203... |
 | ./police-districts.pmtiles | 13.8 KB | 1220ec123d6a... |
-| ./styles/city-renderer.json | 376 B | 1220f43f32b1... |
+| ./styles/city-renderer.json | 543 B | 12209932dec2... |
 | ./styles/default.json | 2.1 KB | 1220c6914f04... |
 | ./styles/style-boundaries.json | 478 B | 1220aacc4a9f... |
 | ./styles/style-subtle.json | 734 B | 122004969b96... |

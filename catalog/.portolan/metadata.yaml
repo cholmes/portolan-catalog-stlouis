@@ -1,9 +1,9 @@
 title: "City of St. Louis Open Data (Cloud-Native Mirror)"
 description: |
-  Cloud-native mirror of datasets from the City of St. Louis open data portal
-  (https://www.stlouis-mo.gov/data/): GeoParquet, PMTiles, and STAC metadata
-  for the city's most-used geospatial and parcel-joinable datasets.
-  Not an official city service.
+  Cloud-native mirror of datasets from the
+  [City of St. Louis open data portal](https://www.stlouis-mo.gov/data/):
+  GeoParquet, PMTiles, and STAC metadata for the city's most-used geospatial
+  and parcel-joinable datasets. Not an official city service.
 contact:
   name: "Chris Holmes"
   email: "cholmes@9eo.org"

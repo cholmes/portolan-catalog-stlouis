@@ -94,7 +94,7 @@ City street GIS data
 |------|------|----------|
 | ./streets.parquet | 2.5 MB | 1220546c0af3... |
 | ./streets.pmtiles | 16.3 MB | 1220c019bfd0... |
-| ./styles/city-renderer.json | 537 B | 1220a57107e6... |
+| ./styles/city-renderer.json | 1.0 KB | 1220938df4be... |
 | ./styles/default.json | 821 B | 12209f5280d2... |
 | ./styles/style-class.json | 1.7 KB | 1220bed65a39... |
 | ./styles/style-suffix.json | 1.6 KB | 1220ce5fb432... |

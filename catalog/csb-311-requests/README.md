@@ -6,7 +6,7 @@ The Citizens' Service Bureau (CSB) is the customer service department for the Ci
 
 ## Spatial Coverage
 
-- **Bounding Box**: [-90.3196727, 38.2311622, -89.7321802, 38.7741115]
+- **Bounding Box**: [-90.3196727, 38.5338176, -90.1808012, 38.7741115]
 
 ## Temporal Coverage
 
@@ -43,8 +43,6 @@ The Citizens' Service Bureau (CSB) is the customer service department for the Ci
 | STATUS | string |  |
 | SUBMITTO | string |  |
 | WARD | string |  |
-| lon | double |  |
-| lat | double |  |
 | geometry | binary |  |
 | geometry_bbox | struct<xmin: float not null, ymin: float not null, xmax: float not null, ymax: float not null> |  |
 
@@ -52,13 +50,14 @@ The Citizens' Service Bureau (CSB) is the customer service department for the Ci
 
 | File | Size | Checksum |
 |------|------|----------|
-| ./csb-311-requests.parquet | 86.4 MB | 1220a6eaf6c7... |
-| ./csb-311-requests.pmtiles | 178.6 MB | 122031dde814... |
+| ./csb-311-requests.parquet | 77.6 MB | 1220acf96c9f... |
+| ./csb-311-requests.pmtiles | 159.1 MB | 1220df856bd4... |
 | ./styles/default.json | 797 B | 1220c553e379... |
 | ./styles/style-category.json | 2.0 KB | 122020fe23e1... |
 | ./styles/style-channel.json | 1.7 KB | 12201e1515b0... |
 | ./styles/style-open.json | 1.5 KB | 1220181d4924... |
 | ./thumbnail.png | 225.1 KB | 12205bc66bec... |
+| ./README.md | 3.3 KB | 12201d7f160c... |
 
 ## Quick Start
 

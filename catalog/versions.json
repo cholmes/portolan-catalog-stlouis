@@ -112,11 +112,11 @@
       "total_size_bytes": 28961506
     },
     "csb-311-requests": {
-      "current_version": "1.0.2",
-      "updated": "2026-08-05T01:30:15.766720+00:00",
-      "asset_count": 2,
-      "total_size_bytes": 272343819
+      "current_version": "1.0.4",
+      "updated": "2026-08-05T04:27:52.518421+00:00",
+      "asset_count": 4,
+      "total_size_bytes": 268898095
     }
   },
-  "updated": "2026-08-05T01:39:48.681424+00:00"
+  "updated": "2026-08-05T04:27:52.518421+00:00"
 }

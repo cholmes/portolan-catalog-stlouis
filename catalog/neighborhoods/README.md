@@ -32,7 +32,7 @@ ESRI shapefiles for city neighborhoods
 |------|------|----------|
 | ./neighborhoods.parquet | 41.3 KB | 122080109e48... |
 | ./neighborhoods.pmtiles | 109.4 KB | 122089afd6de... |
-| ./styles/city-renderer.json | 373 B | 1220679ebf88... |
+| ./styles/city-renderer.json | 537 B | 12205758c219... |
 | ./styles/default.json | 1.2 KB | 12207d089f9c... |
 | ./styles/style-boundaries.json | 483 B | 1220e4a863d6... |
 | ./styles/style-number.json | 1.6 KB | 1220c069b5cd... |

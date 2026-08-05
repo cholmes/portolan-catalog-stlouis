@@ -164,7 +164,7 @@ Current and historic parcel data
 |------|------|----------|
 | ./parcels.parquet | 27.6 MB | 122021a1a2e7... |
 | ./parcels.pmtiles | 130.3 MB | 1220896108ea... |
-| ./styles/city-renderer.json | 367 B | 12208758707a... |
+| ./styles/city-renderer.json | 525 B | 1220d4ff4909... |
 | ./styles/default.json | 797 B | 12205582023a... |
 | ./styles/style-assessed-value.json | 1.4 KB | 1220fd5b0b12... |
 | ./styles/style-city-assessor.json | 545 B | 12200930a396... |

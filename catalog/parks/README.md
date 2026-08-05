@@ -40,7 +40,7 @@ A database containing information on city parks, park amenities, and amenity att
 |------|------|----------|
 | ./parks.parquet | 52.1 KB | 122039f5771f... |
 | ./parks.pmtiles | 131.6 KB | 12200f890776... |
-| ./styles/city-renderer.json | 324 B | 1220ed51669c... |
+| ./styles/city-renderer.json | 480 B | 122000776923... |
 | ./styles/default.json | 968 B | 12207f078588... |
 | ./styles/style-class.json | 1.7 KB | 1220fd983f64... |
 | ./styles/style-size.json | 1.1 KB | 12208f7e1a30... |

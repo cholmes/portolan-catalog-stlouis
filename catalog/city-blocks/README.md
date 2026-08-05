@@ -65,7 +65,7 @@ Information about city blocks. A city block, residential block, urban block, or 
 |------|------|----------|
 | ./city-blocks.parquet | 6.8 MB | 1220c1b9077f... |
 | ./city-blocks.pmtiles | 5.7 MB | 12201b504cbe... |
-| ./styles/city-renderer.json | 371 B | 1220cf8a99ea... |
+| ./styles/city-renderer.json | 533 B | 1220d9fd7162... |
 | ./styles/default.json | 498 B | 12200af8636b... |
 | ./styles/style-block-number.json | 1.4 KB | 12205bcd2c5f... |
 | ./styles/style-tint.json | 511 B | 1220bb0e5e3f... |

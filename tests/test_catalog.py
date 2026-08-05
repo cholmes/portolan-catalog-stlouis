@@ -10,7 +10,6 @@ collection-level table:columns, checksummed assets, pmtiles link fields.
 import hashlib
 import json
 import os
-import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent

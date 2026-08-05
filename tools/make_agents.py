@@ -75,11 +75,12 @@ NOTES = {
             "NEIGHBORHOOD": "neighborhood number (joins neighborhoods.NHD_NUM)",
             "WARD": "ward at time of request",
         },
-        "quirks": "1,477,057 rows; 18,132 have no usable coordinates (geometry "
+        "quirks": "1,477,057 rows; 18,177 have no usable coordinates (geometry "
                   "IS NULL) — they remain in the table, so tabular counts and "
                   "map counts differ. Coordinates were Web-Mercator SRX/SRY in "
-                  "the source, reprojected to WGS84; ~450 out-of-city points "
-                  "were nulled. Status casing varies (CLOSED vs Closed).",
+                  "the source, reprojected to WGS84; ~500 points falling "
+                  "outside the (buffered) city boundary were nulled. Status "
+                  "casing varies (CLOSED vs Closed).",
         "joins": "PROBADDRESS matches parcel situs addresses (fuzzy); "
                  "NEIGHBORHOOD = neighborhoods.NHD_NUM; WARD = wards.district.",
     },
