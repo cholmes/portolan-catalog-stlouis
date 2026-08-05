@@ -53,7 +53,11 @@ def restore_stats(path) -> None:
 
 
 def rename_geom(path) -> None:
-    """Rename gpio's shapefile geometry column "geom" to "geometry"."""
+    """Rename gpio's shapefile geometry column "geom" to "geometry".
+
+    Note: `gpio convert reproject` output can arrive without `geo` schema
+    metadata; downstream (make_pmtiles, gpio geojson) requires it. If it is
+    missing after the rename, rebuild a minimal GeoParquet 1.1 block."""
     import json as _json
     import pyarrow.parquet as pq
     t = pq.read_table(path)
@@ -68,8 +72,28 @@ def rename_geom(path) -> None:
             geo["columns"]["geometry"] = geo["columns"].pop("geom")
         if geo.get("primary_column") == "geom":
             geo["primary_column"] = "geometry"
-        meta[b"geo"] = _json.dumps(geo).encode()
-        t = t.replace_schema_metadata(meta)
+    else:
+        stats = subprocess.run(
+            ["duckdb", "-json", "-c",
+             "INSTALL spatial; LOAD spatial; "
+             "SELECT min(ST_XMin(g)) a, min(ST_YMin(g)) b, "
+             "max(ST_XMax(g)) c, max(ST_YMax(g)) d, "
+             "list(DISTINCT ST_GeometryType(g))::VARCHAR gt "
+             f"FROM (SELECT ST_GeomFromWKB(geometry) g FROM read_parquet('{path}'))"],
+            capture_output=True, text=True)
+        s = _json.loads(stats.stdout)[0]
+        gtypes = sorted({("Multi" + x.strip().upper().replace("MULTI", "").title()
+                          if "MULTI" in x.upper() else x.strip().title())
+                         for x in s["gt"].strip("[]").split(",")})
+        geo = {"version": "1.1.0", "primary_column": "geometry",
+               "columns": {"geometry": {
+                   "encoding": "WKB", "geometry_types": gtypes, "crs": None,
+                   "bbox": [s["a"], s["b"], s["c"], s["d"]],
+                   "covering": {"bbox": {
+                       "xmin": ["bbox", "xmin"], "ymin": ["bbox", "ymin"],
+                       "xmax": ["bbox", "xmax"], "ymax": ["bbox", "ymax"]}}}}}
+    meta[b"geo"] = _json.dumps(geo).encode()
+    t = t.replace_schema_metadata(meta)
     pq.write_table(t, path, compression="zstd", row_group_size=20000,
                    write_statistics=True)
 

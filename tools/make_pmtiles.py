@@ -25,7 +25,9 @@ CATALOG = ROOT / "catalog"
 def make(coll_id: str) -> None:
     pq = CATALOG / coll_id / f"{coll_id}.parquet"
     out = CATALOG / coll_id / f"{coll_id}.pmtiles"
-    tmp = out.with_suffix(".pmtiles.tmp")
+    # tippecanoe picks its output format from the extension, so the temp
+    # file must still end in .pmtiles (a .tmp suffix silently yields MBTiles)
+    tmp = CATALOG / coll_id / f".{coll_id}.tmp.pmtiles"
     gpio = subprocess.Popen(
         ["gpio", "convert", "geojson", str(pq)], stdout=subprocess.PIPE)
     tc = subprocess.run(
