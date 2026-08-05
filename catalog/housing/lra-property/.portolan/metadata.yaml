@@ -1,0 +1,22 @@
+title: "LRA Property"
+description: "Land Reutilization Authority data and search. Mirrored from [the city's open data portal](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=30); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/housing/lra-property/collection.json)."
+contact:
+  name: "Chris Holmes"
+  email: "cholmes@9eo.org"
+license: "other"
+license_url: "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=30"
+attribution: "City of St. Louis — St. Louis Development Corporation"
+source_url: "https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/SLDC_Real_Estate/FeatureServer"
+keywords: [st-louis, missouri, open-data, lra, property]
+processing_notes: |
+  Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=30).
+  Source: https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/SLDC_Real_Estate/FeatureServer (ArcGIS REST service),
+  converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.
+examples:
+  - engine: duckdb
+    description: "Count rows by Status, straight off the published file"
+    code: |
+      INSTALL httpfs; LOAD httpfs;
+      SELECT Status, count(*) AS n
+      FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/housing/lra-property/lra-property.parquet'
+      GROUP BY 1 ORDER BY 2 DESC LIMIT 10;

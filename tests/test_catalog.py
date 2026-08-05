@@ -132,8 +132,8 @@ def main() -> int:
             err(f"catalog: child {l['href']} missing title")
         if not (CATALOG / l["href"]).resolve().exists():
             err(f"catalog: child {l['href']} does not resolve")
-    if len(children) != 13:
-        err(f"catalog: expected 13 department children, got {len(children)}")
+    if len(children) != 11:
+        err(f"catalog: expected 11 topic children, got {len(children)}")
 
     n_colls = 0
     for group_dir in sorted(CATALOG.iterdir()):

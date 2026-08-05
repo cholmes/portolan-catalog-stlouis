@@ -1,0 +1,22 @@
+title: "City Streets"
+description: "City street GIS data Mirrored from [the city's open data portal](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=68); explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/transportation-infrastructure-and-utilities/streets/collection.json)."
+contact:
+  name: "Chris Holmes"
+  email: "cholmes@9eo.org"
+license: "other"
+license_url: "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=68"
+attribution: "City of St. Louis — Streets - Director's Office"
+source_url: "https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/Streets/FeatureServer"
+keywords: [st-louis, missouri, open-data, streets]
+processing_notes: |
+  Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=68).
+  Source: https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/Streets/FeatureServer (ArcGIS REST service),
+  converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.
+examples:
+  - engine: duckdb
+    description: "Count rows by Class, straight off the published file"
+    code: |
+      INSTALL httpfs; LOAD httpfs;
+      SELECT Class, count(*) AS n
+      FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/transportation-infrastructure-and-utilities/streets/streets.parquet'
+      GROUP BY 1 ORDER BY 2 DESC LIMIT 10;

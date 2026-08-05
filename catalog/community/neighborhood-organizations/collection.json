@@ -51,7 +51,7 @@
       "rel": "parent",
       "href": "../catalog.json",
       "type": "application/json",
-      "title": "Community & Service Requests"
+      "title": "Community"
     }
   ],
   "stac_extensions": [
@@ -203,6 +203,15 @@
           "title": "Community"
         }
       ]
+    },
+    {
+      "scheme": "https://www.stlouis-mo.gov/government/departments/",
+      "concepts": [
+        {
+          "id": "neighborhood-stabilization--csb",
+          "title": "Neighborhood Stabilization / CSB"
+        }
+      ]
     }
   ],
   "title": "Neighborhood Organizations",
@@ -228,7 +237,8 @@
   },
   "license": "other",
   "keywords": [
-    "neighborhoods"
+    "neighborhoods",
+    "Neighborhood Stabilization / CSB"
   ],
   "providers": [
     {

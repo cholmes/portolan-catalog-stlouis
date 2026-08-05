@@ -181,8 +181,7 @@ def finalize_collection(coll_id: str) -> None:
 
     ext = set(coll.get("stac_extensions", []))
     ext.update({PORTOLAN_SCHEMA, FILE_EXT, TABLE_EXT})
-    if MAIN_TOPICS.get(coll_id):
-        ext.add(THEMES_EXT)
+    ext.add(THEMES_EXT)
     has_pmtiles = (coll_dir / f"{coll_id}.pmtiles").exists()
     if has_pmtiles:
         ext.add(WML_EXT)
@@ -194,16 +193,25 @@ def finalize_collection(coll_id: str) -> None:
     # Portal main topics as STAC themes; portal tags as keywords (verbatim —
     # the browser's topic browse and tag cloud read these).
     topics = MAIN_TOPICS.get(coll_id, [])
+    themes = []
     if topics:
-        coll["themes"] = [{
+        themes.append({
             "scheme": TOPIC_SCHEME,
             "concepts": [{"id": slugify(t), "title": t} for t in sorted(topics)],
-        }]
-    tags = PORTAL_TAGS.get(coll_id, {}).get("tags", [])
-    if tags:
-        coll["keywords"] = tags
-    else:
-        coll.pop("keywords", None)
+        })
+    # Department preserved as a second scheme now that the hierarchy is
+    # topic-based — plus a keyword, so the tag filter answers
+    # "everything from the Assessor's Office".
+    dept = src["department"]
+    themes.append({
+        "scheme": "https://www.stlouis-mo.gov/government/departments/",
+        "concepts": [{"id": slugify(dept), "title": dept}],
+    })
+    coll["themes"] = themes
+    tags = list(PORTAL_TAGS.get(coll_id, {}).get("tags", []))
+    if dept not in tags:
+        tags.append(dept)
+    coll["keywords"] = tags
 
     # Researched column meanings (docs/column-notes.json) → table:columns
     notes = COLUMN_NOTES.get(coll_id, {})

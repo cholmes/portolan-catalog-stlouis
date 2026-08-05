@@ -1,16 +1,18 @@
 # Health
 
-Health department datasets.
+Immunizations, Nutrition, Animal Control, Preventative Care
 
 ## Collections
 
 ### [health/animal-bites](health/health/animal-bites/)
 
+### [health/lead-service-lines](health/health/lead-service-lines/)
+
 ## Coverage
 
 **Spatial Extent**
 
-- West: -90.3127, South: 38.5470, East: -90.1819, North: 38.7264
+- West: -90.3197, South: 38.5340, East: -90.1810, North: 38.7645
 
 ---
 

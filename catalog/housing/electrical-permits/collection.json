@@ -1,0 +1,396 @@
+{
+  "type": "Collection",
+  "id": "housing/electrical-permits",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
+  ],
+  "description": "Data on commercial, industrial, and residential electrical permits in the City of St. Louis",
+  "license": "other",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -90.320522,
+          38.531907,
+          -90.166409,
+          38.774362
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "table:row_count": 296930,
+  "table:columns": [
+    {
+      "name": "ADDRADJUSTED",
+      "type": "string"
+    },
+    {
+      "name": "ADDRNUM",
+      "type": "string"
+    },
+    {
+      "name": "ADDRSUF",
+      "type": "string"
+    },
+    {
+      "name": "APPDATE",
+      "type": "string"
+    },
+    {
+      "name": "APPDESCRIPTION",
+      "type": "string"
+    },
+    {
+      "name": "APPNUM",
+      "type": "string"
+    },
+    {
+      "name": "APPTYPE",
+      "type": "string"
+    },
+    {
+      "name": "ASRNBRHD",
+      "type": "string"
+    },
+    {
+      "name": "CANCELDATE",
+      "type": "string"
+    },
+    {
+      "name": "CANCELTYPE",
+      "type": "string"
+    },
+    {
+      "name": "CDADIST",
+      "type": "string"
+    },
+    {
+      "name": "CDASUBDIST",
+      "type": "string"
+    },
+    {
+      "name": "CENSBLOCK00",
+      "type": "string"
+    },
+    {
+      "name": "CITYBLOCK",
+      "type": "string"
+    },
+    {
+      "name": "COMPLETEDATE",
+      "type": "string"
+    },
+    {
+      "name": "ESTPROJECTCOST",
+      "type": "string"
+    },
+    {
+      "name": "FIRSTDATE",
+      "type": "string"
+    },
+    {
+      "name": "GEOCITYBLOCKPART",
+      "type": "string"
+    },
+    {
+      "name": "HANDLE",
+      "type": "string"
+    },
+    {
+      "name": "ISSUEDATE",
+      "type": "string"
+    },
+    {
+      "name": "LASTDATE",
+      "type": "string"
+    },
+    {
+      "name": "MAINSTRUCTYPE",
+      "type": "string"
+    },
+    {
+      "name": "NBRHD",
+      "type": "string"
+    },
+    {
+      "name": "NBROFUNITS",
+      "type": "string"
+    },
+    {
+      "name": "NLC",
+      "type": "string"
+    },
+    {
+      "name": "OWNERADDR",
+      "type": "string"
+    },
+    {
+      "name": "OWNERCITY",
+      "type": "string"
+    },
+    {
+      "name": "OWNERCODE",
+      "type": "string"
+    },
+    {
+      "name": "OWNERNAME",
+      "type": "string"
+    },
+    {
+      "name": "OWNERSTATE",
+      "type": "string"
+    },
+    {
+      "name": "OWNERZIP",
+      "type": "string"
+    },
+    {
+      "name": "PARCEL",
+      "type": "string"
+    },
+    {
+      "name": "PARCEL9",
+      "type": "string"
+    },
+    {
+      "name": "PARITY",
+      "type": "string"
+    },
+    {
+      "name": "POLICEDIST",
+      "type": "string"
+    },
+    {
+      "name": "PRCLERR",
+      "type": "string"
+    },
+    {
+      "name": "PRECINCT02",
+      "type": "string"
+    },
+    {
+      "name": "PROJECTTYPE",
+      "type": "string"
+    },
+    {
+      "name": "STDIR",
+      "type": "string"
+    },
+    {
+      "name": "STNAME",
+      "type": "string"
+    },
+    {
+      "name": "STRUCTYPE1",
+      "type": "string"
+    },
+    {
+      "name": "STRUCTYPE2",
+      "type": "string"
+    },
+    {
+      "name": "STRUCTYPE3",
+      "type": "string"
+    },
+    {
+      "name": "STTYPE",
+      "type": "string"
+    },
+    {
+      "name": "TMPCITYBLOCK",
+      "type": "string"
+    },
+    {
+      "name": "TMPPARCEL",
+      "type": "string"
+    },
+    {
+      "name": "UNITNUM",
+      "type": "string"
+    },
+    {
+      "name": "UPDATEGEO",
+      "type": "string"
+    },
+    {
+      "name": "WARD00",
+      "type": "string"
+    }
+  ],
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Housing"
+    },
+    {
+      "rel": "describedby",
+      "href": "./README.md",
+      "type": "text/markdown"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown"
+    },
+    {
+      "rel": "license",
+      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=51",
+      "type": "text/html",
+      "title": "Dataset page on the City of St. Louis open data portal"
+    },
+    {
+      "rel": "via",
+      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=51",
+      "type": "text/html",
+      "title": "Source dataset on stlouis-mo.gov"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "./electrical-permits.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "pmtiles:layers": [
+        "electrical-permits"
+      ]
+    }
+  ],
+  "assets": {
+    "electrical-permits": {
+      "href": "./electrical-permits.parquet",
+      "type": "application/vnd.apache.parquet",
+      "roles": [
+        "data"
+      ],
+      "title": "Electrical Permits (Parquet)",
+      "file:size": 14232718,
+      "file:checksum": "122027f011744f407d58cab545681b7bb2b8405c4b295c59fe89e6caab69e3a626fe"
+    },
+    "electrical-permits-tiles": {
+      "href": "./electrical-permits.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "roles": [
+        "visual"
+      ],
+      "title": "Electrical Permits (PMTiles)",
+      "file:size": 21976186,
+      "file:checksum": "12206760edd28d82d39752cb498d3119267c55c541071bca5d981002b6d5de804c9c"
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ],
+      "title": "Electrical Permits rendered with the default style",
+      "file:size": 402574,
+      "file:checksum": "122007b790b22782c2536bdbf8088747504ca91fd6151b1f82ac01a9982430151dd6"
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "default",
+        "style"
+      ],
+      "title": "Electrical permits by year",
+      "description": "Parcels with electrical permits, stepped by permit year (joined to the parcels layer on HANDLE; a parcel appears once per permit).",
+      "file:size": 1439,
+      "file:checksum": "122065ccc8c85ebc4ca375e2e7625a06a4ecaf46445110033c4d2558e577b02356fd"
+    },
+    "styles/style-recent": {
+      "href": "./styles/style-recent.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "style"
+      ],
+      "title": "Permits since 2020",
+      "description": "Parcels with activity since 2020 in red against the older record.",
+      "file:size": 1070,
+      "file:checksum": "1220646585249ba98595d35b9ed67a1ec97520fbe58112b8c26b7ea9d51ccab88d65"
+    },
+    "styles/style-solid": {
+      "href": "./styles/style-solid.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "style"
+      ],
+      "title": "All permitted parcels",
+      "description": "Every joined parcel in one color, for overlays.",
+      "file:size": 534,
+      "file:checksum": "12204cb9eef2a2e5bff748557e438fcb8715808860473cb4637bc4af609b9be33dd4"
+    }
+  },
+  "title": "Electrical Permits",
+  "updated": "2026-08-05T19:58:51+00:00",
+  "themes": [
+    {
+      "scheme": "https://www.stlouis-mo.gov/data/topics/",
+      "concepts": [
+        {
+          "id": "government",
+          "title": "Government"
+        },
+        {
+          "id": "transportation-infrastructure-and-utilities",
+          "title": "Transportation, Infrastructure, and Utilities"
+        }
+      ]
+    },
+    {
+      "scheme": "https://www.stlouis-mo.gov/government/departments/",
+      "concepts": [
+        {
+          "id": "building-commissioner",
+          "title": "Building Commissioner"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "asset-building",
+    "asset-parcel",
+    "contractor",
+    "inspections",
+    "permits",
+    "property address",
+    "property owner",
+    "Building Commissioner"
+  ],
+  "providers": [
+    {
+      "name": "City of St. Louis \u2014 Building Commissioner",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=51"
+    },
+    {
+      "name": "TGE Labs",
+      "roles": [
+        "host"
+      ],
+      "url": "https://github.com/cholmes/portolan-catalog-stlouis"
+    }
+  ]
+}

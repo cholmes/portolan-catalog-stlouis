@@ -1,0 +1,290 @@
+{
+  "type": "Collection",
+  "id": "law-safety-and-justice/crime",
+  "stac_version": "1.1.0",
+  "description": "Downloadable NIBRS crime data published by the St. Louis Metropolitan Police Department.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown",
+      "title": "Agent/LLM usage guide"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Law, Safety, and Justice"
+    },
+    {
+      "rel": "describedby",
+      "href": "./README.md",
+      "type": "text/markdown"
+    },
+    {
+      "rel": "license",
+      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=69",
+      "type": "text/html",
+      "title": "Dataset page on the City of St. Louis open data portal"
+    },
+    {
+      "rel": "via",
+      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=69",
+      "type": "text/html",
+      "title": "Source dataset on stlouis-mo.gov"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "./crime.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "pmtiles:layers": [
+        "crime"
+      ]
+    }
+  ],
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
+  ],
+  "geoparquet:geometry_type": "Point",
+  "geoparquet:feature_count": 367449,
+  "table:row_count": 367449,
+  "table:primary_geometry": "geometry",
+  "table:columns": [
+    {
+      "name": "IncidentDate",
+      "type": "date32[day]"
+    },
+    {
+      "name": "OccurredFromTime",
+      "type": "string"
+    },
+    {
+      "name": "IncidentNum",
+      "type": "string"
+    },
+    {
+      "name": "Offense",
+      "type": "string"
+    },
+    {
+      "name": "NIBRS",
+      "type": "string"
+    },
+    {
+      "name": "NIBRSCategory",
+      "type": "string"
+    },
+    {
+      "name": "SRS_UCR",
+      "type": "string"
+    },
+    {
+      "name": "CrimeAgainst",
+      "type": "string"
+    },
+    {
+      "name": "FelMisdCit",
+      "type": "string"
+    },
+    {
+      "name": "IncidentTopSRS_UCR",
+      "type": "string"
+    },
+    {
+      "name": "IncidentLocation",
+      "type": "string"
+    },
+    {
+      "name": "IntersectionOtherLoc",
+      "type": "string"
+    },
+    {
+      "name": "District",
+      "type": "string"
+    },
+    {
+      "name": "Neighborhood",
+      "type": "string"
+    },
+    {
+      "name": "NbhdNum",
+      "type": "string"
+    },
+    {
+      "name": "IncidentSupplemented",
+      "type": "string"
+    },
+    {
+      "name": "LastSuppDate",
+      "type": "string"
+    },
+    {
+      "name": "VictimNum",
+      "type": "string"
+    },
+    {
+      "name": "FirearmUsed",
+      "type": "string"
+    },
+    {
+      "name": "IncidentNature",
+      "type": "string"
+    },
+    {
+      "name": "keep",
+      "type": "bool"
+    },
+    {
+      "name": "geometry",
+      "type": "binary"
+    },
+    {
+      "name": "geometry_bbox",
+      "type": "struct<xmin: float not null, ymin: float not null, xmax: float not null, ymax: float not null>"
+    }
+  ],
+  "portolan:total_size_bytes": 10866606,
+  "portolan:asset_count": 1,
+  "title": "Crime (NIBRS)",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -90.325252,
+          38.530218,
+          -90.17843,
+          38.777615
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "license": "other",
+  "assets": {
+    "crime": {
+      "href": "./crime.parquet",
+      "type": "application/vnd.apache.parquet",
+      "file:size": 10866606,
+      "file:checksum": "122030b8ecad7d300f0c016c2cf8dcbacc62fda0560299d0aa5455df4dc17dca6086",
+      "roles": [
+        "data"
+      ],
+      "title": "Crime (NIBRS) (GeoParquet)"
+    },
+    "crime-tiles": {
+      "href": "./crime.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "roles": [
+        "visual"
+      ],
+      "title": "Crime (NIBRS) (PMTiles)",
+      "file:size": 5552980,
+      "file:checksum": "122085d2f7232105baed01b9a81ab5cd1e449505652bcf7e5d3f06d7089d5fe97684"
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "default",
+        "style"
+      ],
+      "title": "Crime against person / property / society",
+      "description": "367k NIBRS incidents since 2021, colored by the crime-against classification: person red, property orange, society purple.",
+      "file:size": 1732,
+      "file:checksum": "122064c26483100c0f613d223fc7e209913d5c5472361f0f673652034f8b7cf52e7a"
+    },
+    "styles/style-category": {
+      "href": "./styles/style-category.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "style"
+      ],
+      "title": "Offense category",
+      "description": "The eight largest NIBRS categories; everything else light gray.",
+      "file:size": 2054,
+      "file:checksum": "122069865461f7ea3b22e495ed5df9d22fa5f064c704cbcaea2e8dbbb9494006d16c"
+    },
+    "styles/style-firearm": {
+      "href": "./styles/style-firearm.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "style"
+      ],
+      "title": "Firearm involved",
+      "description": "Incidents where a firearm was used, in red.",
+      "file:size": 1275,
+      "file:checksum": "12203d45cd2a16d1b03f60564f16d04c90343d993d2a59cc597c62d0ffea241e85d4"
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ],
+      "title": "Crime (NIBRS) rendered with the default style",
+      "file:size": 440749,
+      "file:checksum": "122073d5e0b2247dc5912431ba13173642674bb3afddc77753b26f54170fdf5a550e"
+    }
+  },
+  "updated": "2026-08-05T19:58:51+00:00",
+  "themes": [
+    {
+      "scheme": "https://www.stlouis-mo.gov/data/topics/",
+      "concepts": [
+        {
+          "id": "law-safety-and-justice",
+          "title": "Law, Safety, and Justice"
+        }
+      ]
+    },
+    {
+      "scheme": "https://www.stlouis-mo.gov/government/departments/",
+      "concepts": [
+        {
+          "id": "metropolitan-police-department",
+          "title": "Metropolitan Police Department"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "crime",
+    "police",
+    "nibrs",
+    "Metropolitan Police Department"
+  ],
+  "providers": [
+    {
+      "name": "City of St. Louis \u2014 Metropolitan Police Department",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=69"
+    },
+    {
+      "name": "TGE Labs",
+      "roles": [
+        "host"
+      ],
+      "url": "https://github.com/cholmes/portolan-catalog-stlouis"
+    }
+  ]
+}

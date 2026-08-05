@@ -1,0 +1,556 @@
+{
+  "type": "Collection",
+  "id": "urban-development-and-planning/parcels-history",
+  "stac_version": "1.1.0",
+  "description": "Current and historic parcel data",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Urban Development and Planning"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown",
+      "title": "Agent/LLM usage guide"
+    },
+    {
+      "rel": "describedby",
+      "href": "./README.md",
+      "type": "text/markdown"
+    },
+    {
+      "rel": "license",
+      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=82",
+      "type": "text/html",
+      "title": "Dataset page on the City of St. Louis open data portal"
+    },
+    {
+      "rel": "via",
+      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=82",
+      "type": "text/html",
+      "title": "Source dataset on stlouis-mo.gov"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "./parcels-history.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "pmtiles:layers": [
+        "parcels-history"
+      ]
+    }
+  ],
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
+  ],
+  "geoparquet:geometry_type": "Polygon",
+  "geoparquet:feature_count": 3106506,
+  "table:row_count": 3106506,
+  "table:primary_geometry": "geometry",
+  "table:columns": [
+    {
+      "name": "OBJECTID",
+      "type": "int64"
+    },
+    {
+      "name": "HANDLE",
+      "type": "string"
+    },
+    {
+      "name": "COUNT_",
+      "type": "decimal128(18, 11)"
+    },
+    {
+      "name": "SHAPE_Leng",
+      "type": "decimal128(18, 11)"
+    },
+    {
+      "name": "SHAPE_Area",
+      "type": "decimal128(18, 11)"
+    },
+    {
+      "name": "HANDLE_1",
+      "type": "string"
+    },
+    {
+      "name": "UPDATED",
+      "type": "date32[day]"
+    },
+    {
+      "name": "SITEADDR",
+      "type": "string"
+    },
+    {
+      "name": "OWNERNAME",
+      "type": "string"
+    },
+    {
+      "name": "OWNERNAME2",
+      "type": "string"
+    },
+    {
+      "name": "OWNERADDR",
+      "type": "string"
+    },
+    {
+      "name": "OWNERCITY",
+      "type": "string"
+    },
+    {
+      "name": "OWNERSTATE",
+      "type": "string"
+    },
+    {
+      "name": "OWNERCNTRY",
+      "type": "string"
+    },
+    {
+      "name": "OWNERZIP",
+      "type": "string"
+    },
+    {
+      "name": "OWNERGROUP",
+      "type": "string"
+    },
+    {
+      "name": "NUMUNITS",
+      "type": "int64"
+    },
+    {
+      "name": "ZONING1",
+      "type": "string"
+    },
+    {
+      "name": "ZONING2",
+      "type": "string"
+    },
+    {
+      "name": "ZONING3",
+      "type": "string"
+    },
+    {
+      "name": "VACANTLAND",
+      "type": "string"
+    },
+    {
+      "name": "ASMTLAND",
+      "type": "decimal128(18, 11)"
+    },
+    {
+      "name": "ASMTIMPROV",
+      "type": "decimal128(18, 11)"
+    },
+    {
+      "name": "ASMTTOTAL",
+      "type": "decimal128(18, 11)"
+    },
+    {
+      "name": "LANDUSE1",
+      "type": "int32"
+    },
+    {
+      "name": "LANDUSE2",
+      "type": "int32"
+    },
+    {
+      "name": "LANDUSE3",
+      "type": "int32"
+    },
+    {
+      "name": "LANDUSE4",
+      "type": "int32"
+    },
+    {
+      "name": "ASRUSE1",
+      "type": "int32"
+    },
+    {
+      "name": "ASRUSE2",
+      "type": "int32"
+    },
+    {
+      "name": "ASRUSE3",
+      "type": "int32"
+    },
+    {
+      "name": "ASRUSE4",
+      "type": "int32"
+    },
+    {
+      "name": "ASRCLASS1",
+      "type": "int32"
+    },
+    {
+      "name": "ASRCLASS2",
+      "type": "int32"
+    },
+    {
+      "name": "ASRCLASS3",
+      "type": "int32"
+    },
+    {
+      "name": "ASRCLASS4",
+      "type": "int32"
+    },
+    {
+      "name": "LEGAL1",
+      "type": "string"
+    },
+    {
+      "name": "LEGAL2",
+      "type": "string"
+    },
+    {
+      "name": "LEGAL3",
+      "type": "string"
+    },
+    {
+      "name": "LEGAL4",
+      "type": "string"
+    },
+    {
+      "name": "LEGAL5",
+      "type": "string"
+    },
+    {
+      "name": "NUMBLDGS",
+      "type": "int32"
+    },
+    {
+      "name": "LANDAREA",
+      "type": "decimal128(30, 11)"
+    },
+    {
+      "name": "FRONTAGE",
+      "type": "decimal128(18, 11)"
+    },
+    {
+      "name": "DAILYDATE",
+      "type": "date32[day]"
+    },
+    {
+      "name": "DAILYNUM",
+      "type": "string"
+    },
+    {
+      "name": "BOOKNUM",
+      "type": "string"
+    },
+    {
+      "name": "BOOKPAGE",
+      "type": "string"
+    },
+    {
+      "name": "BDG1YEAR",
+      "type": "int32"
+    },
+    {
+      "name": "BDG1AREA",
+      "type": "decimal128(30, 11)"
+    },
+    {
+      "name": "BDG1EXWALL",
+      "type": "int32"
+    },
+    {
+      "name": "BDG1STRYCD",
+      "type": "int32"
+    },
+    {
+      "name": "BDG1OCCCD",
+      "type": "int32"
+    },
+    {
+      "name": "CITYBLOCK",
+      "type": "decimal128(18, 11)"
+    },
+    {
+      "name": "PARCEL",
+      "type": "int32"
+    },
+    {
+      "name": "PARITY",
+      "type": "string"
+    },
+    {
+      "name": "ADDRNUM",
+      "type": "decimal128(30, 11)"
+    },
+    {
+      "name": "ADDRSUF",
+      "type": "string"
+    },
+    {
+      "name": "STREETPRE",
+      "type": "string"
+    },
+    {
+      "name": "STREETNAME",
+      "type": "string"
+    },
+    {
+      "name": "STREETSUF",
+      "type": "string"
+    },
+    {
+      "name": "STRSUFDIR",
+      "type": "string"
+    },
+    {
+      "name": "UNITNUM",
+      "type": "string"
+    },
+    {
+      "name": "CDADIST",
+      "type": "int32"
+    },
+    {
+      "name": "CDASUBDIST",
+      "type": "int32"
+    },
+    {
+      "name": "WARD",
+      "type": "int32"
+    },
+    {
+      "name": "PRECINCT",
+      "type": "int32"
+    },
+    {
+      "name": "NBRHD",
+      "type": "int32"
+    },
+    {
+      "name": "CENSBLOCK",
+      "type": "string"
+    },
+    {
+      "name": "POLICEDIST",
+      "type": "int32"
+    },
+    {
+      "name": "ZIP",
+      "type": "decimal128(30, 11)"
+    },
+    {
+      "name": "IMPACTAREA",
+      "type": "int32"
+    },
+    {
+      "name": "HSCONSERV",
+      "type": "int32"
+    },
+    {
+      "name": "PARCEL10",
+      "type": "string"
+    },
+    {
+      "name": "geometry",
+      "type": "binary"
+    },
+    {
+      "name": "geometry_bbox",
+      "type": "struct<xmin: float, ymin: float, xmax: float, ymax: float>"
+    },
+    {
+      "name": "era",
+      "type": "string"
+    },
+    {
+      "name": "OWNEROCC",
+      "type": "string"
+    },
+    {
+      "name": "VACBLDGYR",
+      "type": "int32"
+    },
+    {
+      "name": "ASRNBRHD",
+      "type": "int32"
+    },
+    {
+      "name": "PRECINCT02",
+      "type": "int32"
+    },
+    {
+      "name": "PRECINCT04",
+      "type": "int32"
+    },
+    {
+      "name": "UPDATED_1",
+      "type": "date32[day]"
+    },
+    {
+      "name": "PARCEL9",
+      "type": "int64"
+    },
+    {
+      "name": "PRECINCT10",
+      "type": "int32"
+    },
+    {
+      "name": "INSPAREA10",
+      "type": "int32"
+    },
+    {
+      "name": "Shape_len",
+      "type": "decimal128(18, 11)"
+    }
+  ],
+  "portolan:total_size_bytes": 148440237,
+  "portolan:asset_count": 1,
+  "title": "Parcels (Historical, 1997-2020)",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -90.32057687721576,
+          38.532670087845,
+          -90.17512199644693,
+          38.77435160356174
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "license": "other",
+  "assets": {
+    "parcels-history": {
+      "href": "./parcels-history.parquet",
+      "type": "application/vnd.apache.parquet",
+      "file:size": 148864025,
+      "file:checksum": "12200fff4bfbbab9d7065c9f3cfc36e257db194b7a06bbaf147737effc8d02ff1a62",
+      "roles": [
+        "data"
+      ],
+      "title": "Parcels (Historical, 1997-2020) (GeoParquet)"
+    },
+    "parcels-history-tiles": {
+      "href": "./parcels-history.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "roles": [
+        "visual"
+      ],
+      "title": "Parcels (Historical, 1997-2020) (PMTiles)",
+      "file:size": 34762579,
+      "file:checksum": "1220f9b01b0c250c7d19dfc74045b5fcd83a412353fffc0ed2a89f5ce47eb2c50784"
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "default",
+        "style"
+      ],
+      "title": "Parcels by era",
+      "description": "Five-year snapshots of the city's parcel boundaries (the map shows 1997, 2000, 2005, 2010, 2015, and 2016-2020; the full Parquet holds every yearly snapshot, 3.1M rows).",
+      "file:size": 1532,
+      "file:checksum": "1220689b28baa67dd5cb79fa3d47d2a66ec248ab7cbb4a8d6187b08a14215a0e574d"
+    },
+    "styles/style-1997": {
+      "href": "./styles/style-1997.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "style"
+      ],
+      "title": "Parcels in 1997",
+      "description": "The oldest snapshot alone \u2014 compare against the current parcels collection to see consolidation and demolition.",
+      "file:size": 1084,
+      "file:checksum": "122005ebd500476c0a8bd2eaf77a71157588c145c623892f9d8fcc51798893a88694"
+    },
+    "styles/style-2020": {
+      "href": "./styles/style-2020.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "style"
+      ],
+      "title": "Parcels in 2016-2020",
+      "description": "The newest snapshot in the archive (published as a single 2016-2020 era file).",
+      "file:size": 1061,
+      "file:checksum": "1220cdd8fb560d6db971ea5370df053dab1141c3f69cf0f4c9108a85f29b6abe8ffa"
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ],
+      "title": "Parcels (Historical, 1997-2020) rendered with the default style",
+      "file:size": 613201,
+      "file:checksum": "12205e8080d7277c6c39f49d2bb06d9689c623c542e85251d9067aa3c7d40c6383bd"
+    },
+    "styles/style-zoning-1997": {
+      "href": "./styles/style-zoning-1997.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "style"
+      ],
+      "title": "Zoning in 1997",
+      "description": "Each 1997 parcel filled by its zoning letter \u2014 compare with the current parcels collection's zoning view to see three decades of rezoning.",
+      "file:size": 2174,
+      "file:checksum": "122034b4142c75246d0e6a06ef066f51f1a8b67dd36b40dbb55cb16443bc11ef1da9"
+    }
+  },
+  "updated": "2026-08-05T19:58:51+00:00",
+  "themes": [
+    {
+      "scheme": "https://www.stlouis-mo.gov/data/topics/",
+      "concepts": [
+        {
+          "id": "urban-development-and-planning",
+          "title": "Urban Development and Planning"
+        }
+      ]
+    },
+    {
+      "scheme": "https://www.stlouis-mo.gov/government/departments/",
+      "concepts": [
+        {
+          "id": "assessor-s-office",
+          "title": "Assessor's Office"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "parcels",
+    "asset-parcel",
+    "Assessor's Office"
+  ],
+  "providers": [
+    {
+      "name": "City of St. Louis \u2014 Assessor's Office",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=82"
+    },
+    {
+      "name": "TGE Labs",
+      "roles": [
+        "host"
+      ],
+      "url": "https://github.com/cholmes/portolan-catalog-stlouis"
+    }
+  ]
+}

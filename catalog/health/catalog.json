@@ -6,7 +6,7 @@
     "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json"
   ],
   "title": "Health",
-  "description": "Health department datasets.",
+  "description": "Immunizations, Nutrition, Animal Control, Preventative Care",
   "links": [
     {
       "rel": "root",
@@ -35,6 +35,12 @@
       "href": "./animal-bites/collection.json",
       "type": "application/json",
       "title": "Animal Bites"
+    },
+    {
+      "rel": "child",
+      "href": "./lead-service-lines/collection.json",
+      "type": "application/json",
+      "title": "Lead Service Line Inventory"
     }
   ],
   "updated": "2026-08-05T19:58:51+00:00"

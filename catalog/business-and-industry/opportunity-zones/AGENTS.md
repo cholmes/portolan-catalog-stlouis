@@ -1,0 +1,30 @@
+# AGENTS.md — Qualified Opportunity Zones
+
+Qualified Opportunity Zones (QOZs) within the City of Saint Louis. Qualified Opportunity Zones are nominated for that designation by the state and that nomination has been certified by the Secretary of the U.S. Treasury via his delegation authority to the Internal Revenue Service. More Info: https://www.irs.gov/newsroom/opportunity-zones-frequently-asked-questions https://www.cdfifund.gov/Pages/Opportunity-Zones.aspx
+
+16 rows; geometry: Polygon (WGS84 lon/lat unless noted).
+
+## Access
+
+```sql
+INSTALL httpfs; LOAD httpfs;  -- DuckDB
+SELECT * FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/business-and-industry/opportunity-zones/opportunity-zones.parquet' LIMIT 5;
+```
+
+PMTiles for maps: `https://data.source.coop/tge-labs/st-louis-open-data-mirror/business-and-industry/opportunity-zones/opportunity-zones.pmtiles` (layer `opportunity-zones`), styled by `styles/*.json` — `styles/default.json` is the default.
+
+## Key fields
+
+- `District_Name` — zone name
+
+Full schema: `table:columns` in collection.json.
+
+## Links
+
+- [View on the data browser](https://cholmes.github.io/stlouis-data-browser/#/business-and-industry/opportunity-zones/collection.json) — map, styles, legends, downloads
+- [Browse on Source Cooperative](https://source.coop/tge-labs/st-louis-open-data-mirror/business-and-industry/opportunity-zones/) — rendered README and file listing
+- [Source dataset](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=59) on the City of St. Louis open data portal
+
+## Provenance
+
+Mirror of [Qualified Opportunity Zones](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=59) from the City of St. Louis; source: https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/Opportunity_Zones/FeatureServer. No explicit license is published — see the source page. Synced 2026-08-05T19:58:51+00:00.

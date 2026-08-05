@@ -5,8 +5,8 @@
   "stac_extensions": [
     "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json"
   ],
-  "title": "Community & Service Requests",
-  "description": "311 service requests and neighborhood organizations.",
+  "title": "Community",
+  "description": "Neighborhoods, Marriage, Birth, Immigration, Support",
   "links": [
     {
       "rel": "root",
@@ -29,12 +29,6 @@
       "rel": "agents",
       "href": "./AGENTS.md",
       "type": "text/markdown"
-    },
-    {
-      "rel": "child",
-      "href": "./csb-311-requests/collection.json",
-      "type": "application/json",
-      "title": "CSB Service Requests (311)"
     },
     {
       "rel": "child",

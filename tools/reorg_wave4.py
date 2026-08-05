@@ -20,34 +20,29 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from sources import SOURCES, GROUPS, GROUP_TITLES, GROUP_OF  # noqa: E402
+from sources import SOURCES, GROUPS, GROUP_TITLES, GROUP_OF, GROUP_CAPTIONS  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 CATALOG = ROOT / "catalog"
 PORTOLAN_SCHEMA = "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json"
 
-GROUP_DESCRIPTIONS = {
-    "assessor": "Parcel fabric, historic parcels, sales, and the tax roll from the Assessor's Office.",
-    "planning": "Boundaries, zoning, land use, historic designations, schools, and bike infrastructure from Planning and Urban Design.",
-    "development": "Development incentives, districts, land bank inventory, and market analyses from SLDC and CDA.",
-    "forestry": "Street and park tree inventories from the Forestry Division.",
-    "streets": "Street network, permits, parking, and sweeping schedules from the Streets Department.",
-    "parks": "City parks from the Parks Department.",
-    "public-safety": "Police districts, sirens, crime, tornado damage, and flood controls.",
-    "elections": "Precincts, polling centers, and election results from the Board of Election Commissioners.",
-    "building": "Building-trade permit records from the Building Division.",
-    "health": "Health department datasets.",
-    "water": "Water Division service line inventory.",
-    "community": "311 service requests and neighborhood organizations.",
-    "citywide": "Citywide reference layers: the city boundary, floodplain, and ZIP codes.",
-}
+GROUP_DESCRIPTIONS = {g: GROUP_CAPTIONS[g] for g in GROUPS}
+
+
+def find_current(cid: str):
+    """Locate the collection dir wherever it currently lives."""
+    flat = CATALOG / cid
+    if (flat / "collection.json").exists() or (flat / f"{cid}.parquet").exists():
+        return flat
+    hits = [p.parent for p in CATALOG.glob(f"*/{cid}/collection.json")]
+    return hits[0] if hits else None
 
 
 def move_collections() -> None:
     for cid in SOURCES:
-        src = CATALOG / cid
+        src = find_current(cid)
         dst = CATALOG / GROUP_OF[cid] / cid
-        if not src.exists() or dst.exists():
+        if src is None or src == dst or dst.exists():
             continue
         # a group can share its name with a member collection (streets/streets)
         if GROUP_OF[cid] == cid:
@@ -118,8 +113,21 @@ def rewrite_root() -> None:
     print("root catalog rewritten: 13 department children")
 
 
+def remove_empty_old_groups() -> None:
+    keep = set(GROUPS)
+    for d in CATALOG.iterdir():
+        if not d.is_dir() or d.name in keep or d.name.startswith((".", "_")):
+            continue
+        # old group dir: remove its catalog/readme/agents scaffolding if no
+        # collections remain, then the dir itself
+        if not any((c / "collection.json").exists() for c in d.iterdir() if c.is_dir()):
+            shutil.rmtree(d)
+            print(f"removed old group {d.name}")
+
+
 def main() -> None:
     move_collections()
+    remove_empty_old_groups()
     for cid in SOURCES:
         rewrite_collection(cid)
     for group in GROUPS:

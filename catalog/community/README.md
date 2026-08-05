@@ -1,10 +1,8 @@
-# Community & Service Requests
+# Community
 
-311 service requests and neighborhood organizations.
+Neighborhoods, Marriage, Birth, Immigration, Support
 
 ## Collections
-
-### [community/csb-311-requests](community/community/csb-311-requests/)
 
 ### [community/neighborhood-organizations](community/community/neighborhood-organizations/)
 

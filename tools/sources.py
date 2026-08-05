@@ -425,46 +425,65 @@ SOURCES = {
 # ---------------------------------------------------------------------------
 
 GROUPS = {
-    "assessor": ["parcels", "parcels-history", "city-blocks",
-                 "property-sales", "property-taxes"],
-    "planning": ["neighborhoods", "wards", "wards-2010", "zoning", "land-use",
-                 "historic-districts", "historic-landmarks", "schools",
-                 "bike-infrastructure"],
-    "development": ["tif-districts", "opportunity-zones", "lra-property",
-                    "community-improvement-districts",
-                    "special-business-districts", "tax-abated-parcels",
-                    "port-authority-district", "vacancy-composite",
-                    "business-licenses", "tax-sales", "market-value-analysis"],
-    "forestry": ["city-trees", "forest-park-trees"],
-    "streets": ["streets", "street-permits", "parking-meters",
-                "street-sweeping"],
-    "parks": ["parks"],
-    "public-safety": ["police-districts", "siren-locations",
-                      "tornado-damage-2025", "flood-controls", "crime"],
-    "elections": ["election-precincts", "polling-places",
-                  "election-results-nov-2024"],
-    "building": ["electrical-permits", "mechanical-permits",
-                 "plumbing-permits", "occupancy-permits"],
-    "health": ["animal-bites"],
-    "water": ["lead-service-lines"],
-    "community": ["csb-311-requests", "neighborhood-organizations"],
-    "citywide": ["city-boundary", "floodplain", "zip-codes"],
+    "urban-development-and-planning": [
+        "parcels", "parcels-history", "city-blocks", "zoning", "land-use",
+        "neighborhoods", "historic-districts", "historic-landmarks",
+        "port-authority-district", "vacancy-composite", "city-boundary"],
+    "government": [
+        "wards", "wards-2010", "election-precincts", "polling-places",
+        "election-results-nov-2024", "csb-311-requests", "zip-codes",
+        "property-taxes"],
+    "housing": [
+        "lra-property", "property-sales", "market-value-analysis",
+        "electrical-permits", "mechanical-permits", "plumbing-permits",
+        "occupancy-permits"],
+    "business-and-industry": [
+        "tif-districts", "opportunity-zones", "special-business-districts",
+        "tax-abated-parcels", "business-licenses", "tax-sales",
+        "community-improvement-districts"],
+    "transportation-infrastructure-and-utilities": [
+        "streets", "street-permits", "parking-meters", "street-sweeping",
+        "bike-infrastructure"],
+    "law-safety-and-justice": [
+        "police-districts", "crime", "siren-locations",
+        "tornado-damage-2025"],
+    "environment": [
+        "floodplain", "flood-controls", "city-trees", "forest-park-trees"],
+    "leisure-and-culture": ["parks"],
+    "health": ["animal-bites", "lead-service-lines"],
+    "community": ["neighborhood-organizations"],
+    "education-and-training": ["schools"],
 }
 
+# The portal's own topic names and captions (from stlouis-mo.gov/data)
 GROUP_TITLES = {
-    "assessor": "Assessor's Office",
-    "planning": "Planning and Urban Design",
-    "development": "Development (SLDC & CDA)",
-    "forestry": "Forestry",
-    "streets": "Streets",
-    "parks": "Parks",
-    "public-safety": "Public Safety",
-    "elections": "Elections",
-    "building": "Building Division",
+    "urban-development-and-planning": "Urban Development and Planning",
+    "government": "Government",
+    "housing": "Housing",
+    "business-and-industry": "Business and Industry",
+    "transportation-infrastructure-and-utilities":
+        "Transportation, Infrastructure, and Utilities",
+    "law-safety-and-justice": "Law, Safety, and Justice",
+    "environment": "Environment",
+    "leisure-and-culture": "Leisure and Culture",
     "health": "Health",
-    "water": "Water Division",
-    "community": "Community & Service Requests",
-    "citywide": "Citywide Reference",
+    "community": "Community",
+    "education-and-training": "Education and Training",
+}
+
+GROUP_CAPTIONS = {
+    "urban-development-and-planning": "Land Acquisition, Planning, Preservation, Zoning",
+    "government": "Departments, Elected Officials, Voting, Services, Records",
+    "housing": "Owning, Renting, Homelessness, Repairs, Financing Programs",
+    "business-and-industry": "Assistance, Incentives, Licenses, Regulations, Bids",
+    "transportation-infrastructure-and-utilities":
+        "Airports, Rail, Public Transit, Vehicles, Utilities, Streets",
+    "law-safety-and-justice": "Courts, Emergency Services, Police, Fire, Legal Assistance",
+    "environment": "Waste, Recycling, Sustainability, Hazardous Materials",
+    "leisure-and-culture": "Arts, Entertainment, Tourism, Cultural Venues, Sports",
+    "health": "Immunizations, Nutrition, Animal Control, Preventative Care",
+    "community": "Neighborhoods, Marriage, Birth, Immigration, Support",
+    "education-and-training": "Adult, Schools, Special and Higher Education, Homeschooling",
 }
 
 GROUP_OF = {cid: g for g, cids in GROUPS.items() for cid in cids}

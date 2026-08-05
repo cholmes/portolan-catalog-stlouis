@@ -145,6 +145,15 @@
           "title": "Leisure and Culture"
         }
       ]
+    },
+    {
+      "scheme": "https://www.stlouis-mo.gov/government/departments/",
+      "concepts": [
+        {
+          "id": "environmental-health-services",
+          "title": "Environmental Health Services"
+        }
+      ]
     }
   ],
   "title": "Animal Bites",
@@ -251,5 +260,8 @@
         "thumbnail"
       ]
     }
-  }
+  },
+  "keywords": [
+    "Environmental Health Services"
+  ]
 }

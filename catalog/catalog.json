@@ -34,57 +34,51 @@
     },
     {
       "rel": "child",
-      "href": "./assessor/catalog.json",
+      "href": "./urban-development-and-planning/catalog.json",
       "type": "application/json",
-      "title": "Assessor's Office"
+      "title": "Urban Development and Planning"
     },
     {
       "rel": "child",
-      "href": "./planning/catalog.json",
+      "href": "./government/catalog.json",
       "type": "application/json",
-      "title": "Planning and Urban Design"
+      "title": "Government"
     },
     {
       "rel": "child",
-      "href": "./development/catalog.json",
+      "href": "./housing/catalog.json",
       "type": "application/json",
-      "title": "Development (SLDC & CDA)"
+      "title": "Housing"
     },
     {
       "rel": "child",
-      "href": "./forestry/catalog.json",
+      "href": "./business-and-industry/catalog.json",
       "type": "application/json",
-      "title": "Forestry"
+      "title": "Business and Industry"
     },
     {
       "rel": "child",
-      "href": "./streets/catalog.json",
+      "href": "./transportation-infrastructure-and-utilities/catalog.json",
       "type": "application/json",
-      "title": "Streets"
+      "title": "Transportation, Infrastructure, and Utilities"
     },
     {
       "rel": "child",
-      "href": "./parks/catalog.json",
+      "href": "./law-safety-and-justice/catalog.json",
       "type": "application/json",
-      "title": "Parks"
+      "title": "Law, Safety, and Justice"
     },
     {
       "rel": "child",
-      "href": "./public-safety/catalog.json",
+      "href": "./environment/catalog.json",
       "type": "application/json",
-      "title": "Public Safety"
+      "title": "Environment"
     },
     {
       "rel": "child",
-      "href": "./elections/catalog.json",
+      "href": "./leisure-and-culture/catalog.json",
       "type": "application/json",
-      "title": "Elections"
-    },
-    {
-      "rel": "child",
-      "href": "./building/catalog.json",
-      "type": "application/json",
-      "title": "Building Division"
+      "title": "Leisure and Culture"
     },
     {
       "rel": "child",
@@ -94,21 +88,15 @@
     },
     {
       "rel": "child",
-      "href": "./water/catalog.json",
-      "type": "application/json",
-      "title": "Water Division"
-    },
-    {
-      "rel": "child",
       "href": "./community/catalog.json",
       "type": "application/json",
-      "title": "Community & Service Requests"
+      "title": "Community"
     },
     {
       "rel": "child",
-      "href": "./citywide/catalog.json",
+      "href": "./education-and-training/catalog.json",
       "type": "application/json",
-      "title": "Citywide Reference"
+      "title": "Education and Training"
     }
   ],
   "stac_extensions": [
