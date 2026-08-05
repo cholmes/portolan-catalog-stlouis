@@ -54,20 +54,29 @@ fi
 
 FRAME_LIST="$(mktemp)"
 CATALOG_DIR="$CATALOG_DIR" python3 - > "$FRAME_LIST" <<'PYLIST'
-import json, os, pathlib
+import json, math, os, pathlib
 
 # Thumbnail framing per collection so the cards do not all show the same
-# tall skinny city sliver. Modes: full data extent for boundaries and
-# city-wide layers; a square window over the central bulk for subset
-# layers; explicit detail windows for layers that read best zoomed in.
-# NB: keep apostrophes and unbalanced parens out of these comments — this
-# heredoc lives inside a bash process substitution.
+# tall skinny city sliver. Boundary and city-wide layers keep the full data
+# extent. Subset layers get a card-shaped landscape window over the bulk of
+# the data. Detail layers get a fixed close-up window. All non-extent
+# windows use ASPECT so the image matches the browser card shape.
+# NB: keep apostrophes and unbalanced parens out of this heredoc.
+ASPECT = 1.7          # rendered width / height
+COS = math.cos(math.radians(38.63))
+
+def landscape(cx, cy, half_lat):
+    half_lon = ASPECT * half_lat / COS
+    return cx - half_lon, cy - half_lat, cx + half_lon, cy + half_lat
+
+# collection -> (center_lon, center_lat, half_lat_degrees)
 DETAIL = {
-    "city-blocks": (-90.215, 38.615, -90.175, 38.645),   # downtown blocks
-    "parcels": (-90.27, 38.60, -90.23, 38.63),           # Shaw/Tower Grove
-    "streets": (-90.26, 38.62, -90.20, 38.66),           # midtown grid
+    "city-blocks": (-90.195, 38.630, 0.011),
+    "parcels": (-90.2525, 38.6115, 0.0055),
+    "streets": (-90.230, 38.640, 0.016),
+    "tif-districts": (-90.220, 38.655, 0.035),
 }
-FILL = {"historic-districts", "tif-districts", "opportunity-zones",
+FILL = {"historic-districts", "opportunity-zones",
         "lra-property", "tax-abated-parcels", "community-improvement-districts",
         "special-business-districts", "bike-infrastructure", "parks",
         "city-trees"}
@@ -84,12 +93,11 @@ for coll in sorted(cat.iterdir()):
     except Exception:
         continue
     if cid in DETAIL:
-        w, s, e, n = DETAIL[cid]
+        w, s, e, n = landscape(*DETAIL[cid])
     elif cid in FILL:
         cx, cy = (w + e) / 2, (s + n) / 2
-        half = max(e - w, n - s) * 0.30
-        w, e, s, n = cx - half, cx + half, cy - half, cy + half
-    pad = max(e - w, n - s) * 0.04
+        w, s, e, n = landscape(cx, cy, (n - s) * 0.30)
+    pad = max(e - w, n - s) * 0.02
     print(f'{cid}|{w-pad:.6f},{s-pad:.6f},{e+pad:.6f},{n+pad:.6f}')
 PYLIST
 

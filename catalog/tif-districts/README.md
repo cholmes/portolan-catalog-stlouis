@@ -41,7 +41,7 @@ Tax Increment Financing is a development tool designed to help finance certain e
 | ./styles/default.json | 1.5 KB | 12209e7d982d... |
 | ./styles/style-active.json | 1.1 KB | 12206c460731... |
 | ./styles/style-boundaries.json | 472 B | 1220c38c1d0d... |
-| ./thumbnail.png | 398.3 KB | 12207a0f56ec... |
+| ./thumbnail.png | 346.4 KB | 12208cee2962... |
 
 ## Quick Start
 

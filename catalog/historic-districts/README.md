@@ -43,7 +43,7 @@ Data on St. Louis certified local historic districts
 | ./styles/default.json | 1.3 KB | 1220dec4752e... |
 | ./styles/style-boundaries.json | 980 B | 1220cead87e2... |
 | ./styles/style-local-protection.json | 1.4 KB | 12206a0425ca... |
-| ./thumbnail.png | 440.0 KB | 1220aad4d517... |
+| ./thumbnail.png | 395.6 KB | 1220acb45bff... |
 
 ## Quick Start
 

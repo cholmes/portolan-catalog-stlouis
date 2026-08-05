@@ -356,8 +356,8 @@
         "thumbnail"
       ],
       "title": "Bike Infrastructure rendered with the default style",
-      "file:size": 501116,
-      "file:checksum": "122057de2c4f8ea0ff56d65731253638c7907738510fb104305ecbef5776e49570f3"
+      "file:size": 413862,
+      "file:checksum": "1220a200124e2292b59a316f264b13fef1e1ad88cda4d3c81b5645335b1ebc9962e2"
     },
     "styles/style-network": {
       "href": "./styles/style-network.json",

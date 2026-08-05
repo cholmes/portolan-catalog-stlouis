@@ -685,8 +685,8 @@
       "href": "./parcels.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "parcels (vector tiles)",
-      "file:size": 22004965,
-      "file:checksum": "12202e7a732847bf53aa9957aa35b82b559505dd00f89312b40c2850d3b7d7ea1ea3",
+      "file:size": 36066850,
+      "file:checksum": "1220e8854ee225f82a7964c7e2a778ab4a6827f78dbc40c1ec9fbc5b741cb2c50dd4",
       "roles": [
         "visual"
       ]
@@ -762,8 +762,8 @@
       "href": "./thumbnail.png",
       "type": "image/png",
       "title": "Parcels rendered with the default style",
-      "file:size": 668947,
-      "file:checksum": "12207f2bc12b19368e8e4d5c2a01951a6e901b8defc19d2e35add8b240c0ebc59941",
+      "file:size": 387596,
+      "file:checksum": "1220875a6b28e4974788f6d15a88fc251ce9770e21ce645801bcfc38ef65ae9c004a",
       "roles": [
         "thumbnail"
       ]

@@ -159,8 +159,8 @@
       "href": "./zoning.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "zoning (vector tiles)",
-      "file:size": 14210124,
-      "file:checksum": "12208163ff6308adcb9a8b802a69b2b596477746437e7439246c190bcd93ceb24551",
+      "file:size": 9670713,
+      "file:checksum": "12207500861df5ac8b49857a2c7873feefba11b47a89f753e0f210cbc4ab023e4adb",
       "roles": [
         "visual"
       ]
@@ -214,8 +214,8 @@
       "href": "./thumbnail.png",
       "type": "image/png",
       "title": "Zoning rendered with the default style",
-      "file:size": 316365,
-      "file:checksum": "1220b82c0e1bf372ee97bd49c937bb1c6b2012f76ba3447b1cb86a932100a3726387",
+      "file:size": 314314,
+      "file:checksum": "1220cae9c9d6513e1466932de1386932693e0b0259cbf4b801a9476460799571be65",
       "roles": [
         "thumbnail"
       ]

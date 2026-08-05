@@ -289,8 +289,8 @@
       "href": "./city-blocks.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "city-blocks (vector tiles)",
-      "file:size": 4967908,
-      "file:checksum": "1220ede2fd4d59fc03e93737fdd266727915bdf4135aa11aa4f728ab2c67ecadc286",
+      "file:size": 2376494,
+      "file:checksum": "122036a2ad24993db07dd6b3d64c3f58e5092e5e71f9fd68be66a0a179370a1d6613",
       "roles": [
         "visual"
       ]
@@ -344,8 +344,8 @@
       "href": "./thumbnail.png",
       "type": "image/png",
       "title": "City Blocks rendered with the default style",
-      "file:size": 670788,
-      "file:checksum": "12200d5bfb3fed955ddf9d44144b697c2816cf8d054058a9dca9c5b902a8e9c797bd",
+      "file:size": 410927,
+      "file:checksum": "12202499d034dca64175c0558bfddb1b77bc4cad9303bbd4159e511b352abd5d971a",
       "roles": [
         "thumbnail"
       ]

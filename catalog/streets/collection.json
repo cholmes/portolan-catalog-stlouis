@@ -407,8 +407,8 @@
       "href": "./streets.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "streets (vector tiles)",
-      "file:size": 11051987,
-      "file:checksum": "12206a3f29e3c610c724793a09da1baa1b49891f393673a5ba96c67abc5d3911750c",
+      "file:size": 1830273,
+      "file:checksum": "122031261e801eae23c8ae73ea875bc0c4bbc8699e9ca1726df2700406ad79757b31",
       "roles": [
         "visual"
       ]
@@ -462,8 +462,8 @@
       "href": "./thumbnail.png",
       "type": "image/png",
       "title": "City Streets rendered with the default style",
-      "file:size": 737576,
-      "file:checksum": "12207f1196c42a1e246732af1132ec37372e3f6e6f40e5512dbf72b8cf7869e71f7d",
+      "file:size": 525361,
+      "file:checksum": "122006eefa0486ce98f3018e70de8e5df084b60e8d65b4ad2d11c4c63a6fa86c6ca2",
       "roles": [
         "thumbnail"
       ]

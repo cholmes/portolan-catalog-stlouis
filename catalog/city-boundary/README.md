@@ -36,7 +36,7 @@ St. Louis City limits
 | ./styles/default.json | 533 B | 122008134b13... |
 | ./styles/style-dashed.json | 564 B | 1220a66ee00c... |
 | ./styles/style-filled.json | 717 B | 12201fcce7bb... |
-| ./thumbnail.png | 319.0 KB | 1220892a6593... |
+| ./thumbnail.png | 314.0 KB | 122075c63958... |
 
 ## Quick Start
 

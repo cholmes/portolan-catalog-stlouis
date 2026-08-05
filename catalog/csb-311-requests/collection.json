@@ -236,8 +236,8 @@
       "href": "./csb-311-requests.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "csb-311-requests (vector tiles)",
-      "file:size": 20907329,
-      "file:checksum": "122062fc6df560274893458fa8d1e05331b6d35813baee731aebb18a894aa553ae19",
+      "file:size": 54986053,
+      "file:checksum": "122089ff9f7b02c36eeb89d6fd248ab9bb6b3a43eb16aa8f14a7e3cfd12d3403db38",
       "roles": [
         "visual"
       ]
@@ -291,8 +291,8 @@
       "href": "./thumbnail.png",
       "type": "image/png",
       "title": "CSB Service Requests (311) rendered with the default style",
-      "file:size": 358488,
-      "file:checksum": "12209fa2182aa87bfdd3c64335ff8e88dfd450feb0b8198d3f0aebbfdd338cb72b85",
+      "file:size": 378191,
+      "file:checksum": "1220dca6c18573ad0e30d26f1e826f6cd0f16c47c3c8ec22ae9c574e4b4e11220db6",
       "roles": [
         "thumbnail"
       ]
@@ -301,7 +301,7 @@
       "href": "./README.md",
       "type": "text/markdown",
       "file:size": 3375,
-      "file:checksum": "1220b55186d865a7f3a454272ef3f5872eff8edadaec9451e9cb57c114adc0873fb5",
+      "file:checksum": "12209fbed1311513d5b2a69071c5588bbb6767e3fcccce7dfeaefc894ef9f5aec05f",
       "roles": [
         "documentation"
       ]

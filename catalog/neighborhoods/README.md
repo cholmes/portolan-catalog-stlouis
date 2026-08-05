@@ -36,7 +36,7 @@ ESRI shapefiles for city neighborhoods
 | ./styles/default.json | 1.8 KB | 122014282c3d... |
 | ./styles/style-boundaries.json | 483 B | 1220e4a863d6... |
 | ./styles/style-number.json | 1.6 KB | 1220c069b5cd... |
-| ./thumbnail.png | 312.6 KB | 122019b1d5d0... |
+| ./thumbnail.png | 306.1 KB | 12204bb29296... |
 
 ## Quick Start
 

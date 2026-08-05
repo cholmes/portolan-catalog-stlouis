@@ -51,13 +51,13 @@ The Citizens' Service Bureau (CSB) is the customer service department for the Ci
 | File | Size | Checksum |
 |------|------|----------|
 | ./csb-311-requests.parquet | 77.6 MB | 122050da5a4f... |
-| ./csb-311-requests.pmtiles | 19.9 MB | 122062fc6df5... |
+| ./csb-311-requests.pmtiles | 52.4 MB | 122089ff9f7b... |
 | ./styles/default.json | 845 B | 1220cbed61a9... |
 | ./styles/style-category.json | 2.0 KB | 122020fe23e1... |
 | ./styles/style-channel.json | 1.7 KB | 12201e1515b0... |
 | ./styles/style-open.json | 1.5 KB | 1220181d4924... |
-| ./thumbnail.png | 350.1 KB | 12209fa2182a... |
-| ./README.md | 3.3 KB | 1220763decf7... |
+| ./thumbnail.png | 369.3 KB | 1220dca6c185... |
+| ./README.md | 3.3 KB | 1220b55186d8... |
 
 ## Quick Start
 

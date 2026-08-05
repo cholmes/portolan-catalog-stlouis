@@ -54,7 +54,7 @@ Community improvement districts (CIDs) within the City of Saint Louis. CIDs are 
 | ./styles/default.json | 1.2 KB | 122019568a2c... |
 | ./styles/style-boundaries.json | 508 B | 1220aa9e6b0f... |
 | ./styles/style-labeled.json | 1023 B | 12201f3a2c2d... |
-| ./thumbnail.png | 449.0 KB | 1220af63d5f3... |
+| ./thumbnail.png | 377.3 KB | 1220f739eab1... |
 
 ## Quick Start
 
