@@ -151,16 +151,21 @@
       "rel": "agents",
       "href": "./AGENTS.md",
       "type": "text/markdown"
+    },
+    {
+      "rel": "child",
+      "href": "./bike-infrastructure/collection.json",
+      "type": "application/json",
+      "title": "Bike Infrastructure"
     }
   ],
-  "title": "City of St. Louis Open Data (Cloud-Native Mirror)",
-  "portolan:total_size_bytes": 269919873,
-  "portolan:asset_count": 21,
-  "portolan:collection_count": 20,
   "stac_extensions": [
     "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json"
   ],
-  "updated": "2026-08-05T01:13:22+00:00",
+  "portolan:total_size_bytes": 270356637,
+  "portolan:asset_count": 22,
+  "portolan:collection_count": 21,
+  "updated": "2026-08-05T04:46:13+00:00",
   "providers": [
     {
       "name": "City of St. Louis",
@@ -178,5 +183,6 @@
       "url": "https://github.com/cholmes/portolan-catalog-stlouis"
     }
   ],
-  "license": "other"
+  "license": "other",
+  "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
 }

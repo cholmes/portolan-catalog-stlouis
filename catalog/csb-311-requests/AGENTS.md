@@ -31,8 +31,8 @@ Full schema: `table:columns` in collection.json.
 
 ## Joins
 
-PROBADDRESS matches parcel situs addresses (fuzzy); NEIGHBORHOOD = neighborhoods.NHD_NUM; WARD = wards.district.
+PROBADDRESS matches parcel situs addresses (fuzzy); NEIGHBORHOOD = neighborhoods.NHD_NUM; WARD = wards.DISTRICT.
 
 ## Provenance
 
-Mirror of [CSB Service Requests (311)](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5) from the City of St. Louis open data portal; source: https://www.stlouis-mo.gov/data/upload/data-files/csb.zip. No explicit license is published — see the portal page. Synced 2026-08-05T01:13:22+00:00.
+Mirror of [CSB Service Requests (311)](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5) from the City of St. Louis open data portal; source: https://www.stlouis-mo.gov/data/upload/data-files/csb.zip. No explicit license is published — see the portal page. Synced 2026-08-05T04:46:13+00:00.

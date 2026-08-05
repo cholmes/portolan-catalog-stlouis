@@ -30,7 +30,7 @@ St. Louis City limits
 
 | File | Size | Checksum |
 |------|------|----------|
-| ./city-boundary.parquet | 6.8 KB | 122031caef3b... |
+| ./city-boundary.parquet | 16.3 KB | 1220da821494... |
 | ./city-boundary.pmtiles | 5.4 KB | 1220be1a4001... |
 | ./styles/city-renderer.json | 537 B | 12206727402e... |
 | ./styles/default.json | 533 B | 122008134b13... |

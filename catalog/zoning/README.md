@@ -30,7 +30,7 @@ Strategic land use (SLUP),parcel, and zoning data
 
 | File | Size | Checksum |
 |------|------|----------|
-| ./zoning.parquet | 13.5 MB | 12209587daaa... |
+| ./zoning.parquet | 16.2 MB | 1220c46633ca... |
 | ./zoning.pmtiles | 39.7 MB | 122075deb81e... |
 | ./styles/city-renderer.json | 1.0 KB | 12203fa66b38... |
 | ./styles/default.json | 1.8 KB | 122072ea8e07... |

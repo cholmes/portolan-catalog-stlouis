@@ -37,7 +37,7 @@ Data on St. Louis certified local historic districts
 
 | File | Size | Checksum |
 |------|------|----------|
-| ./historic-districts.parquet | 56.9 KB | 1220577e2fdb... |
+| ./historic-districts.parquet | 61.0 KB | 1220b7d15b2f... |
 | ./historic-districts.pmtiles | 120.6 KB | 12201518054a... |
 | ./styles/city-renderer.json | 799 B | 1220816daf12... |
 | ./styles/default.json | 1.3 KB | 1220dec4752e... |

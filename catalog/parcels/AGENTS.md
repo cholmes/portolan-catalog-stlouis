@@ -37,4 +37,4 @@ property-sales.AsrParcelId = parcels.ParcelId; tax-abated-parcels and lra-proper
 
 ## Provenance
 
-Mirror of [Parcels](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=82) from the City of St. Louis open data portal; source: https://maps8.stlouis-mo.gov/arcgis/rest/services/PDA/PARCELS_PUBLIC/MapServer. No explicit license is published — see the portal page. Synced 2026-08-05T01:13:22+00:00.
+Mirror of [Parcels](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=82) from the City of St. Louis open data portal; source: https://maps8.stlouis-mo.gov/arcgis/rest/services/PDA/PARCELS_PUBLIC/MapServer. No explicit license is published — see the portal page. Synced 2026-08-05T04:46:13+00:00.

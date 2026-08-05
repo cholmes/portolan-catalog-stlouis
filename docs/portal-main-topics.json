@@ -1,0 +1,78 @@
+{
+ "parcels": [
+  "Urban Development and Planning"
+ ],
+ "neighborhoods": [
+  "Government",
+  "Urban Development and Planning"
+ ],
+ "wards": [
+  "Government",
+  "Urban Development and Planning"
+ ],
+ "city-boundary": [
+  "Urban Development and Planning"
+ ],
+ "city-blocks": [
+  "Urban Development and Planning"
+ ],
+ "streets": [
+  "Transportation, Infrastructure, and Utilities",
+  "Urban Development and Planning"
+ ],
+ "parks": [
+  "Leisure and Culture"
+ ],
+ "police-districts": [
+  "Law, Safety, and Justice"
+ ],
+ "election-precincts": [
+  "Government"
+ ],
+ "zoning": [
+  "Urban Development and Planning"
+ ],
+ "historic-districts": [
+  "Community",
+  "Urban Development and Planning"
+ ],
+ "city-trees": [
+  "Community",
+  "Leisure and Culture",
+  "Transportation, Infrastructure, and Utilities"
+ ],
+ "tif-districts": [
+  "Business and Industry",
+  "Urban Development and Planning"
+ ],
+ "community-improvement-districts": [
+  "Urban Development and Planning"
+ ],
+ "special-business-districts": [
+  "Business and Industry",
+  "Urban Development and Planning"
+ ],
+ "opportunity-zones": [
+  "Business and Industry",
+  "Urban Development and Planning"
+ ],
+ "tax-abated-parcels": [
+  "Business and Industry",
+  "Urban Development and Planning"
+ ],
+ "lra-property": [
+  "Government",
+  "Housing",
+  "Urban Development and Planning"
+ ],
+ "csb-311-requests": [
+  "Government"
+ ],
+ "property-sales": [
+  "Housing",
+  "Urban Development and Planning"
+ ],
+ "bike-infrastructure": [
+  "Transportation, Infrastructure, and Utilities"
+ ]
+}

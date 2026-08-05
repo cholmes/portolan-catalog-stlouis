@@ -11,12 +11,6 @@
       "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
     },
     {
-      "rel": "parent",
-      "href": "../catalog.json",
-      "type": "application/json",
-      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
-    },
-    {
       "rel": "pmtiles",
       "href": "./csb-311-requests.pmtiles",
       "type": "application/vnd.pmtiles",
@@ -46,12 +40,19 @@
       "rel": "describedby",
       "href": "./README.md",
       "type": "text/markdown"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
     }
   ],
   "stac_extensions": [
     "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
   ],
   "geoparquet:geometry_type": "Point",
@@ -180,7 +181,7 @@
   ],
   "portolan:total_size_bytes": 268904224,
   "portolan:asset_count": 8,
-  "updated": "2026-08-05T01:13:22+00:00",
+  "updated": "2026-08-05T04:46:13+00:00",
   "title": "CSB Service Requests (311)",
   "extent": {
     "spatial": {
@@ -225,8 +226,8 @@
       "href": "./csb-311-requests.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "CSB Service Requests (311) (GeoParquet)",
-      "file:size": 81360844,
-      "file:checksum": "1220acf96c9f880ff26277b4a57cb6c31ad583a81124a94dd36e3da20016760147e6",
+      "file:size": 81370983,
+      "file:checksum": "122050da5a4fe0b535a5918214ce1365da2e5911f05a3937d973d718f1bb584fef33",
       "roles": [
         "data"
       ]
@@ -245,46 +246,46 @@
       "href": "./styles/default.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "311 service requests",
+      "description": "1.48 million Citizens' Service Bureau requests since 2008, as a dense point field.",
+      "file:size": 797,
+      "file:checksum": "1220c553e3798984f805b3c8834b69add2b3f5a8b8610c7fefc203c17255ad75b699",
       "roles": [
         "default",
         "style"
-      ],
-      "description": "1.48 million Citizens' Service Bureau requests since 2008, as a dense point field.",
-      "file:size": 797,
-      "file:checksum": "1220c553e3798984f805b3c8834b69add2b3f5a8b8610c7fefc203c17255ad75b699"
+      ]
     },
     "styles/style-category": {
       "href": "./styles/style-category.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "Request category",
-      "roles": [
-        "style"
-      ],
       "description": "The eight biggest request groups \u2014 trash/debris leads with 400k, then right-of-way, trees, vehicles, street lights.",
       "file:size": 2039,
-      "file:checksum": "122020fe23e11ead2ce9bbe7bf4c4d4e787be28441ebddce5e8b59133ee7f9ebf44b"
+      "file:checksum": "122020fe23e11ead2ce9bbe7bf4c4d4e787be28441ebddce5e8b59133ee7f9ebf44b",
+      "roles": [
+        "style"
+      ]
     },
     "styles/style-channel": {
       "href": "./styles/style-channel.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "Reporting channel",
-      "roles": [
-        "style"
-      ],
       "description": "How requests arrive: web vs. phone vs. NSO staff vs. the Twitter era.",
       "file:size": 1718,
-      "file:checksum": "12201e1515b0dd42b90713a81eb9c4468c59e5599840980756bc187020cf531691fa"
+      "file:checksum": "12201e1515b0dd42b90713a81eb9c4468c59e5599840980756bc187020cf531691fa",
+      "roles": [
+        "style"
+      ]
     },
     "styles/style-open": {
       "href": "./styles/style-open.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "Open vs. resolved",
-      "roles": [
-        "style"
-      ],
       "description": "Requests not yet closed or cancelled in red \u2014 the live backlog against 1.4M resolved (light).",
       "file:size": 1575,
-      "file:checksum": "1220181d4924107e356b7fd55d2ddc5ca31563f0361f6e8cf10501b314be54e904aa"
+      "file:checksum": "1220181d4924107e356b7fd55d2ddc5ca31563f0361f6e8cf10501b314be54e904aa",
+      "roles": [
+        "style"
+      ]
     },
     "thumbnail": {
       "href": "./thumbnail.png",
@@ -300,10 +301,30 @@
       "href": "./README.md",
       "type": "text/markdown",
       "file:size": 3376,
-      "file:checksum": "1220180c013518bd77fbc9532bbacada0dc2adea404f4759f3cafade2460c655990a",
+      "file:checksum": "1220763decf7ccca2124ba5b5ed291f33f5dc1a6afbb73d59eea616936898a2891f1",
       "roles": [
         "documentation"
       ]
     }
-  }
+  },
+  "themes": [
+    {
+      "scheme": "https://www.stlouis-mo.gov/data/topics/",
+      "concepts": [
+        {
+          "id": "government",
+          "title": "Government"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "asset-parcel",
+    "asset-street maintenance",
+    "department",
+    "intersection",
+    "neighborhood",
+    "property address",
+    "ward"
+  ]
 }

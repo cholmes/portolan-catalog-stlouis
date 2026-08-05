@@ -92,7 +92,7 @@ City street GIS data
 
 | File | Size | Checksum |
 |------|------|----------|
-| ./streets.parquet | 2.5 MB | 1220546c0af3... |
+| ./streets.parquet | 2.7 MB | 122095f87ccb... |
 | ./streets.pmtiles | 16.3 MB | 1220c019bfd0... |
 | ./styles/city-renderer.json | 1.0 KB | 1220938df4be... |
 | ./styles/default.json | 821 B | 12209f5280d2... |

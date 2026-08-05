@@ -63,7 +63,7 @@ Information about city blocks. A city block, residential block, urban block, or 
 
 | File | Size | Checksum |
 |------|------|----------|
-| ./city-blocks.parquet | 6.8 MB | 1220c1b9077f... |
+| ./city-blocks.parquet | 6.9 MB | 122047a49613... |
 | ./city-blocks.pmtiles | 5.7 MB | 12201b504cbe... |
 | ./styles/city-renderer.json | 533 B | 1220d9fd7162... |
 | ./styles/default.json | 498 B | 12200af8636b... |

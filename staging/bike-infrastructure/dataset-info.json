@@ -1,0 +1,69 @@
+{
+ "collection": "bike-infrastructure",
+ "title": "Bike Infrastructure",
+ "portal_page": "https://maps8.stlouis-mo.gov/arcgis/rest/services/PDA/Biking_Infrastructure_Map/MapServer",
+ "department": "Planning and Urban Design",
+ "source": "https://maps8.stlouis-mo.gov/arcgis/rest/services/PDA/Biking_Infrastructure_Map/MapServer",
+ "source_type": "arcgis",
+ "synced": "2026-08-05T04:46:13+00:00",
+ "fetch": {
+  "status": "ok",
+  "parquets": [
+   "staging/extracts/bike-infrastructure/bike_facilities/bike_facilities.parquet",
+   "staging/extracts/bike-infrastructure/brickline_greenway_and_hodiamont_trail/brickline_greenway_and_hodiamont_trail.parquet",
+   "staging/extracts/bike-infrastructure/multi_use_path/multi_use_path.parquet",
+   "staging/extracts/bike-infrastructure/park_paths/park_paths.parquet",
+   "staging/extracts/bike-infrastructure/planned_and_funded_major_bike_facility_projects/planned_and_funded_major_bike_facility_projects.parquet"
+  ],
+  "layer_url": "https://maps8.stlouis-mo.gov/arcgis/rest/services/PDA/Biking_Infrastructure_Map/MapServer/0",
+  "layer_description": null,
+  "fields": [
+   {
+    "name": "OBJECTID",
+    "alias": "OBJECTID",
+    "type": "esriFieldTypeOID"
+   },
+   {
+    "name": "Name",
+    "alias": "Name",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "FAC_TYPE",
+    "alias": "FAC_TYPE",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "F_STATUS",
+    "alias": "_STATUS",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "ON_OFF_ST",
+    "alias": "ON_OFF_ST",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Initial_Year",
+    "alias": "Initial_Year",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Shape_Leng",
+    "alias": "Shape_Leng",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "Shape",
+    "alias": "Shape",
+    "type": "esriFieldTypeGeometry"
+   },
+   {
+    "name": "Shape.STLength()",
+    "alias": "Shape.STLength()",
+    "type": "esriFieldTypeDouble"
+   }
+  ],
+  "city_style": "staging/extracts/bike-infrastructure/styles/city-renderer.json"
+ }
+}

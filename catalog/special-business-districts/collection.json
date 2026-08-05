@@ -11,12 +11,6 @@
       "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
     },
     {
-      "rel": "parent",
-      "href": "../catalog.json",
-      "type": "application/json",
-      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
-    },
-    {
       "rel": "agents",
       "href": "./AGENTS.md",
       "type": "text/markdown",
@@ -46,12 +40,19 @@
       "rel": "describedby",
       "href": "./README.md",
       "type": "text/markdown"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
     }
   ],
   "stac_extensions": [
     "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
   ],
   "geoparquet:geometry_type": "Polygon Z",
@@ -171,7 +172,7 @@
     "styles/style-boundaries",
     "styles/style-labeled"
   ],
-  "updated": "2026-08-05T01:13:22+00:00",
+  "updated": "2026-08-05T04:46:13+00:00",
   "title": "Special Business Districts (SBDs)",
   "extent": {
     "spatial": {
@@ -216,8 +217,8 @@
       "href": "./special-business-districts.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Special Business Districts (SBDs) (GeoParquet)",
-      "file:size": 31128,
-      "file:checksum": "1220a3f7d4c86185afc770a1e2c12ce5a1df4bcc820b26871e604eb70aad1dd67509",
+      "file:size": 27928,
+      "file:checksum": "1220a8f2d5a929a6f5070d65c37c4876216302d794b1ee54471d0df9459d30c3db00",
       "roles": [
         "data"
       ]
@@ -236,41 +237,41 @@
       "href": "./styles/default.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "SBDs by status",
+      "description": "The 22 special business districts by active status.",
+      "file:size": 1144,
+      "file:checksum": "1220a8916942c62050a14d1f8744a15320e55b461993a61efd9dd960c4c6babce3c5",
       "roles": [
         "default",
         "style"
-      ],
-      "description": "The 22 special business districts by active status.",
-      "file:size": 1144,
-      "file:checksum": "1220a8916942c62050a14d1f8744a15320e55b461993a61efd9dd960c4c6babce3c5"
+      ]
     },
     "styles/style-boundaries": {
       "href": "./styles/style-boundaries.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "District boundaries",
-      "roles": [
-        "style"
-      ],
       "description": "Outlines only.",
       "file:size": 498,
-      "file:checksum": "12203828e01c6cf2584c6eae2819d31d6c511b28ee2bed7b3676efa8c69a0af8cc8b"
+      "file:checksum": "12203828e01c6cf2584c6eae2819d31d6c511b28ee2bed7b3676efa8c69a0af8cc8b",
+      "roles": [
+        "style"
+      ]
     },
     "styles/style-labeled": {
       "href": "./styles/style-labeled.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "Labeled SBDs",
-      "roles": [
-        "style"
-      ],
       "description": "Districts with names.",
       "file:size": 1008,
-      "file:checksum": "1220cd21824e66e2b105c14bb5a36a5a596ddf989b21f9efe1c943820e4422b502f8"
+      "file:checksum": "1220cd21824e66e2b105c14bb5a36a5a596ddf989b21f9efe1c943820e4422b502f8",
+      "roles": [
+        "style"
+      ]
     },
     "documentation": {
       "href": "./README.md",
       "type": "text/markdown",
       "file:size": 3102,
-      "file:checksum": "122080cc8c52b27ef1a65cecdf74c0135e0b4151aa9d0e0296b78d0ba7b5c6fa0520",
+      "file:checksum": "12202ffb64fc57dbdf05692dc81fe51d76e6a117ae3292b94995771929b0c1dd4e1c",
       "roles": [
         "documentation"
       ]
@@ -278,12 +279,31 @@
     "thumbnail": {
       "href": "./thumbnail.png",
       "type": "image/png",
-      "roles": [
-        "thumbnail"
-      ],
       "title": "Special Business Districts (SBDs) rendered with the default style",
       "file:size": 408779,
-      "file:checksum": "1220c30bbfc7e33c7f812d184d937231d17a8bb2cc1aee562013d5cfb5d538038678"
+      "file:checksum": "1220c30bbfc7e33c7f812d184d937231d17a8bb2cc1aee562013d5cfb5d538038678",
+      "roles": [
+        "thumbnail"
+      ]
     }
-  }
+  },
+  "themes": [
+    {
+      "scheme": "https://www.stlouis-mo.gov/data/topics/",
+      "concepts": [
+        {
+          "id": "business-and-industry",
+          "title": "Business and Industry"
+        },
+        {
+          "id": "urban-development-and-planning",
+          "title": "Urban Development and Planning"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "sbd",
+    "taxing districts"
+  ]
 }

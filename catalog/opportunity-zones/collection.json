@@ -11,12 +11,6 @@
       "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
     },
     {
-      "rel": "parent",
-      "href": "../catalog.json",
-      "type": "application/json",
-      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
-    },
-    {
       "rel": "pmtiles",
       "href": "./opportunity-zones.pmtiles",
       "type": "application/vnd.pmtiles",
@@ -51,12 +45,19 @@
       "rel": "agents",
       "href": "./AGENTS.md",
       "type": "text/markdown"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
     }
   ],
   "stac_extensions": [
     "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
   ],
   "geoparquet:geometry_type": "Polygon",
@@ -101,6 +102,14 @@
       "type": "struct<xmin: float not null, ymin: float not null, xmax: float not null, ymax: float not null>"
     }
   ],
+  "portolan:styles": [
+    "styles/default",
+    "styles/city-renderer",
+    "styles/style-boundaries",
+    "styles/style-labeled"
+  ],
+  "updated": "2026-08-05T04:46:13+00:00",
+  "title": "Qualified Opportunity Zones",
   "extent": {
     "spatial": {
       "bbox": [
@@ -122,91 +131,6 @@
     }
   },
   "license": "other",
-  "assets": {
-    "opportunity-zones": {
-      "href": "./opportunity-zones.parquet",
-      "type": "application/vnd.apache.parquet",
-      "roles": [
-        "data"
-      ],
-      "title": "Qualified Opportunity Zones (GeoParquet)",
-      "file:size": 60264,
-      "file:checksum": "1220f6f54c864590bcf422b5dcb6d9a7d9182378395b874084708afa33e81311d0db"
-    },
-    "opportunity-zones-tiles": {
-      "href": "./opportunity-zones.pmtiles",
-      "type": "application/vnd.pmtiles",
-      "title": "opportunity-zones (vector tiles)",
-      "roles": [
-        "visual"
-      ],
-      "file:size": 35295,
-      "file:checksum": "122071c8c655094f763ffd40732fd0d18d1457294ffc7bac38ee7b2fe7bf67878d01"
-    },
-    "styles/city-renderer": {
-      "href": "./styles/city-renderer.json",
-      "type": "application/vnd.mapbox.style+json",
-      "title": "City renderer",
-      "roles": [
-        "style"
-      ],
-      "file:size": 545,
-      "file:checksum": "12200176b48e60a65b12e26edbf8673fe599b3aec1037cb7278dad047d24bdff44ac",
-      "description": "The city's own symbology, extracted from the source ArcGIS renderer."
-    },
-    "styles/default": {
-      "href": "./styles/default.json",
-      "type": "application/vnd.mapbox.style+json",
-      "title": "Opportunity zones",
-      "roles": [
-        "default",
-        "style"
-      ],
-      "description": "The 16 federally designated Qualified Opportunity Zone tracts.",
-      "file:size": 775,
-      "file:checksum": "12208ac754b0cc0f1bbf58aaf0a87dc34caaa950f4927725bd12684020ec1bf8ec07"
-    },
-    "styles/style-boundaries": {
-      "href": "./styles/style-boundaries.json",
-      "type": "application/vnd.mapbox.style+json",
-      "title": "Zone boundaries",
-      "roles": [
-        "style"
-      ],
-      "description": "Outlines only.",
-      "file:size": 476,
-      "file:checksum": "122031c4a4d90dad7c94868f8922c6d2a5e75b0dd4125fc6b8a98778c132b8a99628"
-    },
-    "styles/style-labeled": {
-      "href": "./styles/style-labeled.json",
-      "type": "application/vnd.mapbox.style+json",
-      "title": "Labeled zones",
-      "roles": [
-        "style"
-      ],
-      "description": "Zones with their district names.",
-      "file:size": 1002,
-      "file:checksum": "1220d4cd0cc3e665ff9bb6eed227ff7d19d833b28cbf5ccf551000c38bbafdaeb408"
-    },
-    "thumbnail": {
-      "href": "./thumbnail.png",
-      "type": "image/png",
-      "roles": [
-        "thumbnail"
-      ],
-      "title": "Qualified Opportunity Zones rendered with the default style",
-      "file:size": 275036,
-      "file:checksum": "12205244a6756711bb2ca6c8cfdb32a86327426becf67daf2842cc5753f0b1f0a490"
-    }
-  },
-  "portolan:styles": [
-    "styles/default",
-    "styles/city-renderer",
-    "styles/style-boundaries",
-    "styles/style-labeled"
-  ],
-  "title": "Qualified Opportunity Zones",
-  "updated": "2026-08-05T01:13:22+00:00",
   "providers": [
     {
       "name": "City of St. Louis \u2014 St. Louis Development Corporation",
@@ -223,5 +147,106 @@
       ],
       "url": "https://github.com/cholmes/portolan-catalog-stlouis"
     }
+  ],
+  "assets": {
+    "opportunity-zones": {
+      "href": "./opportunity-zones.parquet",
+      "type": "application/vnd.apache.parquet",
+      "title": "Qualified Opportunity Zones (GeoParquet)",
+      "file:size": 68209,
+      "file:checksum": "1220bb7771dad69473eaa65b5de0d6847584dbe122a83ce8aad60ef495471d3aa71c",
+      "roles": [
+        "data"
+      ]
+    },
+    "opportunity-zones-tiles": {
+      "href": "./opportunity-zones.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "opportunity-zones (vector tiles)",
+      "file:size": 35295,
+      "file:checksum": "122071c8c655094f763ffd40732fd0d18d1457294ffc7bac38ee7b2fe7bf67878d01",
+      "roles": [
+        "visual"
+      ]
+    },
+    "styles/city-renderer": {
+      "href": "./styles/city-renderer.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "City renderer",
+      "description": "The city's own symbology, extracted from the source ArcGIS renderer.",
+      "file:size": 545,
+      "file:checksum": "12200176b48e60a65b12e26edbf8673fe599b3aec1037cb7278dad047d24bdff44ac",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Opportunity zones",
+      "description": "The 16 federally designated Qualified Opportunity Zone tracts.",
+      "file:size": 775,
+      "file:checksum": "12208ac754b0cc0f1bbf58aaf0a87dc34caaa950f4927725bd12684020ec1bf8ec07",
+      "roles": [
+        "default",
+        "style"
+      ]
+    },
+    "styles/style-boundaries": {
+      "href": "./styles/style-boundaries.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Zone boundaries",
+      "description": "Outlines only.",
+      "file:size": 476,
+      "file:checksum": "122031c4a4d90dad7c94868f8922c6d2a5e75b0dd4125fc6b8a98778c132b8a99628",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/style-labeled": {
+      "href": "./styles/style-labeled.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Labeled zones",
+      "description": "Zones with their district names.",
+      "file:size": 1002,
+      "file:checksum": "1220d4cd0cc3e665ff9bb6eed227ff7d19d833b28cbf5ccf551000c38bbafdaeb408",
+      "roles": [
+        "style"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "title": "Qualified Opportunity Zones rendered with the default style",
+      "file:size": 275036,
+      "file:checksum": "12205244a6756711bb2ca6c8cfdb32a86327426becf67daf2842cc5753f0b1f0a490",
+      "roles": [
+        "thumbnail"
+      ]
+    }
+  },
+  "themes": [
+    {
+      "scheme": "https://www.stlouis-mo.gov/data/topics/",
+      "concepts": [
+        {
+          "id": "business-and-industry",
+          "title": "Business and Industry"
+        },
+        {
+          "id": "urban-development-and-planning",
+          "title": "Urban Development and Planning"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "federal",
+    "irs",
+    "opportunity zones",
+    "planning",
+    "sldc",
+    "st. louis development corporation",
+    "treasury"
   ]
 }

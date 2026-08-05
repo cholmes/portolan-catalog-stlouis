@@ -21,7 +21,7 @@ AGENTS.md with fields, quirks, and joins.
 - `property-sales.AsrParcelId` = `parcels.ParcelId`
 - `lra-property.Handle` / `tax-abated-parcels.HANDLE` = `parcels.HANDLE`
 - `parcels.NBRHD` = `neighborhoods.NHD_NUM` = `csb-311-requests.NEIGHBORHOOD`
-- `parcels.WARD` = `wards.district`; spatial joins work for everything else
+- `parcels.WARD` = `wards.DISTRICT`; spatial joins work for everything else
 
 ## Read this first
 

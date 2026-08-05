@@ -1,0 +1,22 @@
+{
+  "version": 8,
+  "name": "Simple Style",
+  "sources": {
+    "data": {
+      "type": "vector"
+    }
+  },
+  "layers": [
+    {
+      "id": "layer-0",
+      "type": "line",
+      "source": "data",
+      "source-layer": "park_paths",
+      "paint": {
+        "line-color": "#00a9e6",
+        "line-width": 2,
+        "line-opacity": 1.0
+      }
+    }
+  ]
+}

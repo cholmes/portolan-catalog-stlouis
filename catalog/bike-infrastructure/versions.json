@@ -1,0 +1,51 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.1",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-05T04:49:33.786284Z",
+      "breaking": false,
+      "assets": {
+        "bike-infrastructure.parquet": {
+          "sha256": "1e093aea3c1a1fdbf97f9991dcc890b33e7fcaf2b0c23d73c32cb6da871a25f2",
+          "size_bytes": 436764,
+          "href": "bike-infrastructure/bike-infrastructure.parquet",
+          "source_mtime": 1785905347.1425493,
+          "mtime": 1785905347.1425493,
+          "feature_count": 2387,
+          "schema_fingerprint": "5c5900539f6250b9"
+        }
+      },
+      "changes": [
+        "bike-infrastructure.parquet"
+      ]
+    },
+    {
+      "version": "1.0.1",
+      "created": "2026-08-05T04:49:34.935832Z",
+      "breaking": false,
+      "assets": {
+        "bike-infrastructure.parquet": {
+          "sha256": "1e093aea3c1a1fdbf97f9991dcc890b33e7fcaf2b0c23d73c32cb6da871a25f2",
+          "size_bytes": 436764,
+          "href": "bike-infrastructure/bike-infrastructure.parquet",
+          "source_mtime": 1785905347.1425493,
+          "mtime": 1785905347.1425493,
+          "feature_count": 2387,
+          "schema_fingerprint": "5c5900539f6250b9"
+        },
+        "bike-infrastructure.pmtiles": {
+          "sha256": "929591753089b21e60bab2d7493e8342faf7c6568bc8d188c7ecaf371027b9f2",
+          "size_bytes": 953463,
+          "href": "bike-infrastructure/bike-infrastructure.pmtiles",
+          "mtime": 1785905374.9256647
+        }
+      },
+      "changes": [
+        "bike-infrastructure.pmtiles"
+      ],
+      "message": "Generated PMTiles: bike-infrastructure.pmtiles"
+    }
+  ]
+}

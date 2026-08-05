@@ -1,0 +1,70 @@
+{
+  "version": 8,
+  "name": "Network layers",
+  "metadata": {
+    "description": "The five source layers: street bike facilities, the Brickline Greenway and Hodiamont Trail, park paths, multi-use paths, and planned/funded major projects."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../bike-infrastructure.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "bike-infrastructure-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "bike-infrastructure",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "source_layer"
+          ],
+          "Bike Facilities",
+          "#1e526b",
+          "Brickline Greenway And Hodiamont Trail",
+          "#c03221",
+          "Park Paths",
+          "#538400",
+          "Multi Use Path",
+          "#7c5295",
+          "Planned And Funded Major Bike Facility Projects",
+          "#e89d07",
+          "#9aa3a8"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "bike-infrastructure",
+      "paint": {
+        "line-color": [
+          "match",
+          [
+            "get",
+            "source_layer"
+          ],
+          "Bike Facilities",
+          "#1e526b",
+          "Brickline Greenway And Hodiamont Trail",
+          "#c03221",
+          "Park Paths",
+          "#538400",
+          "Multi Use Path",
+          "#7c5295",
+          "Planned And Funded Major Bike Facility Projects",
+          "#e89d07",
+          "#9aa3a8"
+        ],
+        "line-width": 2.2,
+        "line-opacity": 1.0
+      }
+    }
+  ]
+}

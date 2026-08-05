@@ -45,7 +45,7 @@ All mapped planting sites within the city for tree plantings managed by the Fore
 
 | File | Size | Checksum |
 |------|------|----------|
-| ./city-trees.parquet | 8.5 MB | 1220ab31ec9d... |
+| ./city-trees.parquet | 11.4 MB | 12205adb4ef4... |
 | ./city-trees.pmtiles | 16.6 MB | 1220dda9bfd5... |
 | ./styles/city-renderer.json | 2.5 KB | 122078e05835... |
 | ./styles/default.json | 815 B | 1220efab6528... |

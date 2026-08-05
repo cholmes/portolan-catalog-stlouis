@@ -36,7 +36,7 @@ Dataset describes real estate sale prices for recent property sales in the city.
 
 | File | Size | Checksum |
 |------|------|----------|
-| ./property-sales.parquet | 2.3 MB | 122075bf909a... |
+| ./property-sales.parquet | 2.3 MB | 122088e0e4fe... |
 
 ## Quick Start
 

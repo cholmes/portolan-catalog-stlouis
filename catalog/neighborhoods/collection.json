@@ -11,12 +11,6 @@
       "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
     },
     {
-      "rel": "parent",
-      "href": "../catalog.json",
-      "type": "application/json",
-      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
-    },
-    {
       "rel": "pmtiles",
       "href": "./neighborhoods.pmtiles",
       "type": "application/vnd.pmtiles",
@@ -51,12 +45,19 @@
       "rel": "agents",
       "href": "./AGENTS.md",
       "type": "text/markdown"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
     }
   ],
   "stac_extensions": [
     "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
   ],
   "geoparquet:geometry_type": "MultiPolygon",
@@ -97,6 +98,12 @@
       "type": "struct<xmin: float not null, ymin: float not null, xmax: float not null, ymax: float not null>"
     }
   ],
+  "portolan:styles": [
+    "styles/default",
+    "styles/city-renderer"
+  ],
+  "updated": "2026-08-05T04:46:13+00:00",
+  "title": "Neighborhood Boundaries",
   "extent": {
     "spatial": {
       "bbox": [
@@ -118,89 +125,6 @@
     }
   },
   "license": "other",
-  "assets": {
-    "neighborhoods": {
-      "href": "./neighborhoods.parquet",
-      "type": "application/vnd.apache.parquet",
-      "roles": [
-        "data"
-      ],
-      "title": "Neighborhood Boundaries (GeoParquet)",
-      "file:size": 42287,
-      "file:checksum": "122080109e48f9188a93841c3ac761b6938a68f804cb590e7010f2f4ba4701368e75"
-    },
-    "neighborhoods-tiles": {
-      "href": "./neighborhoods.pmtiles",
-      "type": "application/vnd.pmtiles",
-      "title": "neighborhoods (vector tiles)",
-      "roles": [
-        "visual"
-      ],
-      "file:size": 112045,
-      "file:checksum": "122089afd6de09acda6c4ffacb4668f98003d0c727647fc5e1f667e31e0ec66d6441"
-    },
-    "styles/city-renderer": {
-      "href": "./styles/city-renderer.json",
-      "type": "application/vnd.mapbox.style+json",
-      "title": "City renderer",
-      "roles": [
-        "style"
-      ],
-      "file:size": 537,
-      "file:checksum": "12205758c2190fb549a388c3073a47b117495b3d5da35d4744a0aa1ea4871600a0d0",
-      "description": "The city's own symbology, extracted from the source ArcGIS renderer."
-    },
-    "styles/default": {
-      "href": "./styles/default.json",
-      "type": "application/vnd.mapbox.style+json",
-      "title": "Neighborhoods",
-      "roles": [
-        "default",
-        "style"
-      ],
-      "description": "The 88 official neighborhoods: light fill, city-blue bounds, labels.",
-      "file:size": 1253,
-      "file:checksum": "12207d089f9cdf13e8920461135a4f18d9552e32306cc2e97b3bd3ca0d369b9ef5a2"
-    },
-    "styles/style-boundaries": {
-      "href": "./styles/style-boundaries.json",
-      "type": "application/vnd.mapbox.style+json",
-      "roles": [
-        "style"
-      ],
-      "title": "Boundaries only",
-      "description": "Just the lines, for overlays.",
-      "file:size": 483,
-      "file:checksum": "1220e4a863d631d25bafd7b2812c2604d9c9211d06ffb00cec8c787b803f3450d815"
-    },
-    "styles/style-number": {
-      "href": "./styles/style-number.json",
-      "type": "application/vnd.mapbox.style+json",
-      "roles": [
-        "style"
-      ],
-      "title": "Neighborhood number",
-      "description": "Official neighborhood numbers in steps of 20 \u2014 numbering runs roughly south to north, so the gradient traces the city's geography.",
-      "file:size": 1663,
-      "file:checksum": "1220c069b5cd37dbbe2664c5027262fef4668947af98d98c0ba232d76b34c690ba40"
-    },
-    "thumbnail": {
-      "href": "./thumbnail.png",
-      "type": "image/png",
-      "roles": [
-        "thumbnail"
-      ],
-      "title": "Neighborhood Boundaries rendered with the default style",
-      "file:size": 334326,
-      "file:checksum": "12208721baa50e005c8532252ab147bcf99571122e64decd95f822ae5d87379af9cd"
-    }
-  },
-  "portolan:styles": [
-    "styles/default",
-    "styles/city-renderer"
-  ],
-  "title": "Neighborhood Boundaries",
-  "updated": "2026-08-05T01:13:22+00:00",
   "providers": [
     {
       "name": "City of St. Louis \u2014 Planning and Urban Design",
@@ -217,5 +141,100 @@
       ],
       "url": "https://github.com/cholmes/portolan-catalog-stlouis"
     }
+  ],
+  "assets": {
+    "neighborhoods": {
+      "href": "./neighborhoods.parquet",
+      "type": "application/vnd.apache.parquet",
+      "title": "Neighborhood Boundaries (GeoParquet)",
+      "file:size": 47314,
+      "file:checksum": "122025f29ee792ec9070dcf80d4eb5cea58cadd69ccc21cd2c0ba70467ab6c97a9f4",
+      "roles": [
+        "data"
+      ]
+    },
+    "neighborhoods-tiles": {
+      "href": "./neighborhoods.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "neighborhoods (vector tiles)",
+      "file:size": 112045,
+      "file:checksum": "122089afd6de09acda6c4ffacb4668f98003d0c727647fc5e1f667e31e0ec66d6441",
+      "roles": [
+        "visual"
+      ]
+    },
+    "styles/city-renderer": {
+      "href": "./styles/city-renderer.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "City renderer",
+      "description": "The city's own symbology, extracted from the source ArcGIS renderer.",
+      "file:size": 537,
+      "file:checksum": "12205758c2190fb549a388c3073a47b117495b3d5da35d4744a0aa1ea4871600a0d0",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Neighborhoods",
+      "description": "The 88 official neighborhoods, each tinted from a repeating ten-color set so adjacent neighborhoods read apart, with name labels. Colors carry no meaning.",
+      "file:size": 1873,
+      "file:checksum": "122014282c3d3d461a016ee78cec9ec5e057a16f3854d7785c07607792a61a467a9c",
+      "roles": [
+        "default",
+        "style"
+      ]
+    },
+    "styles/style-boundaries": {
+      "href": "./styles/style-boundaries.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Boundaries only",
+      "description": "Just the lines, for overlays.",
+      "file:size": 483,
+      "file:checksum": "1220e4a863d631d25bafd7b2812c2604d9c9211d06ffb00cec8c787b803f3450d815",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/style-number": {
+      "href": "./styles/style-number.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Neighborhood number",
+      "description": "Official neighborhood numbers in steps of 20 \u2014 numbering runs roughly south to north, so the gradient traces the city's geography.",
+      "file:size": 1663,
+      "file:checksum": "1220c069b5cd37dbbe2664c5027262fef4668947af98d98c0ba232d76b34c690ba40",
+      "roles": [
+        "style"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "title": "Neighborhood Boundaries rendered with the default style",
+      "file:size": 319769,
+      "file:checksum": "12205d58546b940cd992959978858542c2da9b47fd8227f690059f8af33a4097b9a5",
+      "roles": [
+        "thumbnail"
+      ]
+    }
+  },
+  "themes": [
+    {
+      "scheme": "https://www.stlouis-mo.gov/data/topics/",
+      "concepts": [
+        {
+          "id": "government",
+          "title": "Government"
+        },
+        {
+          "id": "urban-development-and-planning",
+          "title": "Urban Development and Planning"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "neighborhoods"
   ]
 }

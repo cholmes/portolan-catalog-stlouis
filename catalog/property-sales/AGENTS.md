@@ -42,4 +42,4 @@ GROUP BY 1 ORDER BY 2 DESC LIMIT 15;
 
 ## Provenance
 
-Mirror of [Property Sales](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=31) from the City of St. Louis open data portal; source: https://www.stlouis-mo.gov/data/upload/data-files/prclsale.zip. No explicit license is published — see the portal page. Synced 2026-08-05T01:13:22+00:00.
+Mirror of [Property Sales](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=31) from the City of St. Louis open data portal; source: https://www.stlouis-mo.gov/data/upload/data-files/prclsale.zip. No explicit license is published — see the portal page. Synced 2026-08-05T04:46:13+00:00.

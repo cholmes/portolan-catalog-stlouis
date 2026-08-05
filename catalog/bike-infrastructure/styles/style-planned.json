@@ -1,0 +1,54 @@
+{
+  "version": 8,
+  "name": "Planned projects",
+  "metadata": {
+    "description": "The nine planned and funded major bike facility projects in red over the existing network (light)."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../bike-infrastructure.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "bike-infrastructure-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "bike-infrastructure",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "source_layer"
+          ],
+          "Planned And Funded Major Bike Facility Projects",
+          "#c03221",
+          "#dfe6ea"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "bike-infrastructure",
+      "paint": {
+        "line-color": [
+          "match",
+          [
+            "get",
+            "source_layer"
+          ],
+          "Planned And Funded Major Bike Facility Projects",
+          "#c03221",
+          "#dfe6ea"
+        ],
+        "line-width": 2.4,
+        "line-opacity": 1.0
+      }
+    }
+  ]
+}

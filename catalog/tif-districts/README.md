@@ -35,7 +35,7 @@ Tax Increment Financing is a development tool designed to help finance certain e
 
 | File | Size | Checksum |
 |------|------|----------|
-| ./tif-districts.parquet | 77.7 KB | 1220c3e4bab6... |
+| ./tif-districts.parquet | 80.7 KB | 12206e8d434a... |
 | ./tif-districts.pmtiles | 193.3 KB | 1220ef89d3fb... |
 | ./styles/city-renderer.json | 896 B | 122058c2a0ba... |
 | ./styles/default.json | 1.5 KB | 12209e7d982d... |

@@ -29,9 +29,10 @@ SOURCES = {
     },
     "wards": {
         "title": "Ward Boundaries (2020)",
-        "type": "arcgis",
-        "service": "https://maps8.stlouis-mo.gov/arcgis/rest/services/Hosted/City_of_St__Louis_Ward_Boundaries/FeatureServer",
-        "layers": None,
+        # The Hosted ward FeatureServer is incomplete (10 of 14 wards);
+        # the portal's shapefile download has all 14.
+        "type": "static",
+        "url": "https://static.stlouis-mo.gov/open-data/planning/wards/wards_2020.zip",
         "portal_page": PORTAL + "131",
         "department": "Planning and Urban Design",
     },
@@ -157,6 +158,14 @@ SOURCES = {
         "url": "https://www.stlouis-mo.gov/data/upload/data-files/csb.zip",
         "portal_page": PORTAL + "5",
         "department": "Neighborhood Stabilization / CSB",
+    },
+    "bike-infrastructure": {
+        "title": "Bike Infrastructure",
+        "type": "arcgis",
+        "service": "https://maps8.stlouis-mo.gov/arcgis/rest/services/PDA/Biking_Infrastructure_Map/MapServer",
+        "layers": None,  # all five layers, merged with a source_layer column
+        "portal_page": "https://maps8.stlouis-mo.gov/arcgis/rest/services/PDA/Biking_Infrastructure_Map/MapServer",
+        "department": "Planning and Urban Design",
     },
     "property-sales": {
         "title": "Property Sales",

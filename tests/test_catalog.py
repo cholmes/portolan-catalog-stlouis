@@ -129,8 +129,8 @@ def main() -> int:
             err(f"catalog: child {l['href']} missing title")
         if not (CATALOG / l["href"]).resolve().exists():
             err(f"catalog: child {l['href']} does not resolve")
-    if len(children) != 20:
-        err(f"catalog: expected 20 children, got {len(children)}")
+    if len(children) != 21:
+        err(f"catalog: expected 21 children, got {len(children)}")
 
     for coll_dir in sorted(CATALOG.iterdir()):
         if (coll_dir / "collection.json").exists():

@@ -2,7 +2,7 @@
   "version": 8,
   "name": "Wards (2020)",
   "metadata": {
-    "description": "The ten wards from 2020 redistricting, one color each, labeled."
+    "description": "The fourteen wards from 2020 redistricting, one color each, labeled."
   },
   "sources": {
     "data": {
@@ -21,28 +21,36 @@
           "match",
           [
             "get",
-            "district"
+            "DISTRICT"
           ],
           "1",
-          "#1e526b",
+          "#7fb3d0",
           "2",
-          "#c03221",
+          "#e2a76f",
           "3",
-          "#538400",
+          "#95c68f",
           "4",
-          "#e89d07",
+          "#d98d8d",
           "5",
-          "#7c5295",
+          "#a99bd0",
           "6",
-          "#4a9d9c",
+          "#c9b970",
           "7",
-          "#b5651d",
+          "#8fc6c0",
           "8",
-          "#8b3a62",
+          "#d093b5",
           "9",
-          "#a8d4e8",
+          "#b0a377",
           "10",
-          "#6b7f2a",
+          "#9cb0e0",
+          "11",
+          "#e0b394",
+          "12",
+          "#88b8a3",
+          "13",
+          "#c99ac0",
+          "14",
+          "#adc487",
           "#9aa3a8"
         ],
         "fill-opacity": 0
@@ -58,31 +66,39 @@
           "match",
           [
             "get",
-            "district"
+            "DISTRICT"
           ],
           "1",
-          "#1e526b",
+          "#7fb3d0",
           "2",
-          "#c03221",
+          "#e2a76f",
           "3",
-          "#538400",
+          "#95c68f",
           "4",
-          "#e89d07",
+          "#d98d8d",
           "5",
-          "#7c5295",
+          "#a99bd0",
           "6",
-          "#4a9d9c",
+          "#c9b970",
           "7",
-          "#b5651d",
+          "#8fc6c0",
           "8",
-          "#8b3a62",
+          "#d093b5",
           "9",
-          "#a8d4e8",
+          "#b0a377",
           "10",
-          "#6b7f2a",
+          "#9cb0e0",
+          "11",
+          "#e0b394",
+          "12",
+          "#88b8a3",
+          "13",
+          "#c99ac0",
+          "14",
+          "#adc487",
           "#9aa3a8"
         ],
-        "fill-opacity": 0.55,
+        "fill-opacity": 0.6,
         "fill-outline-color": "#FFFFFF"
       }
     },
@@ -106,7 +122,7 @@
       "layout": {
         "text-field": [
           "get",
-          "name"
+          "NAME"
         ],
         "text-font": [
           "Noto Sans Regular"

@@ -11,12 +11,6 @@
       "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
     },
     {
-      "rel": "parent",
-      "href": "../catalog.json",
-      "type": "application/json",
-      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
-    },
-    {
       "rel": "pmtiles",
       "href": "./zoning.pmtiles",
       "type": "application/vnd.pmtiles",
@@ -51,12 +45,19 @@
       "rel": "agents",
       "href": "./AGENTS.md",
       "type": "text/markdown"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
     }
   ],
   "stac_extensions": [
     "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
   ],
   "geoparquet:geometry_type": "MultiPolygon",
@@ -97,6 +98,14 @@
       "type": "struct<xmin: float not null, ymin: float not null, xmax: float not null, ymax: float not null>"
     }
   ],
+  "portolan:styles": [
+    "styles/default",
+    "styles/city-renderer",
+    "styles/style-boundaries",
+    "styles/style-broad-use"
+  ],
+  "updated": "2026-08-05T04:46:13+00:00",
+  "title": "Zoning",
   "extent": {
     "spatial": {
       "bbox": [
@@ -118,91 +127,6 @@
     }
   },
   "license": "other",
-  "assets": {
-    "zoning": {
-      "href": "./zoning.parquet",
-      "type": "application/vnd.apache.parquet",
-      "roles": [
-        "data"
-      ],
-      "title": "Zoning (GeoParquet)",
-      "file:size": 14168058,
-      "file:checksum": "12209587daaab0c9207b5554862166a67b4aafa46980df893f500fcfa037f685cffb"
-    },
-    "zoning-tiles": {
-      "href": "./zoning.pmtiles",
-      "type": "application/vnd.pmtiles",
-      "title": "zoning (vector tiles)",
-      "roles": [
-        "visual"
-      ],
-      "file:size": 41640338,
-      "file:checksum": "122075deb81e099f1c815fee943b9a94bda7fb304f44827375bfcda911650643540b"
-    },
-    "styles/city-renderer": {
-      "href": "./styles/city-renderer.json",
-      "type": "application/vnd.mapbox.style+json",
-      "title": "City renderer",
-      "roles": [
-        "style"
-      ],
-      "file:size": 1028,
-      "file:checksum": "12203fa66b388c70c51e77c03d3684a3c89a4ef211db374b367a597f13048d003b1b",
-      "description": "The city's own symbology, extracted from the source ArcGIS renderer."
-    },
-    "styles/default": {
-      "href": "./styles/default.json",
-      "type": "application/vnd.mapbox.style+json",
-      "title": "Zoning districts",
-      "roles": [
-        "default",
-        "style"
-      ],
-      "description": "Parcel-level zoning colored by the twelve district letters, with the city's official district names (from the city's own map renderer) in the legend.",
-      "file:size": 1885,
-      "file:checksum": "122072ea8e07f18f7ce7beab527a8b2ac0ee05c3c68bbc4b091ed94ce586c81d62b5"
-    },
-    "styles/style-boundaries": {
-      "href": "./styles/style-boundaries.json",
-      "type": "application/vnd.mapbox.style+json",
-      "title": "District boundaries",
-      "roles": [
-        "style"
-      ],
-      "description": "Zoning outlines only, for overlaying on imagery or the parcel fabric.",
-      "file:size": 513,
-      "file:checksum": "1220aa7e721c23c1af23b08fa893411c55e0def7b04ee479af0bcc74f9755bb29705"
-    },
-    "styles/style-broad-use": {
-      "href": "./styles/style-broad-use.json",
-      "type": "application/vnd.mapbox.style+json",
-      "title": "Residential / commercial / industrial",
-      "roles": [
-        "style"
-      ],
-      "description": "Districts grouped into broad uses: residential A-E green, commercial F-H orange, Central Business red, Industrial purple, Unrestricted brown, Jefferson Memorial light blue.",
-      "file:size": 1928,
-      "file:checksum": "1220abe912179f6cef6fa84fcf3647b7b7a27b1ece6b09d7626973ee761ff2b46fee"
-    },
-    "thumbnail": {
-      "href": "./thumbnail.png",
-      "type": "image/png",
-      "roles": [
-        "thumbnail"
-      ],
-      "title": "Zoning rendered with the default style",
-      "file:size": 317021,
-      "file:checksum": "122049cf2c597761f9103bf7b78006d25420240297fb849e5b62403a0f802808cbf9"
-    }
-  },
-  "portolan:styles": [
-    "styles/default",
-    "styles/city-renderer",
-    "styles/style-boundaries",
-    "styles/style-broad-use"
-  ],
-  "title": "Zoning",
-  "updated": "2026-08-05T01:13:22+00:00",
   "providers": [
     {
       "name": "City of St. Louis \u2014 Planning and Urban Design",
@@ -218,6 +142,94 @@
         "host"
       ],
       "url": "https://github.com/cholmes/portolan-catalog-stlouis"
+    }
+  ],
+  "assets": {
+    "zoning": {
+      "href": "./zoning.parquet",
+      "type": "application/vnd.apache.parquet",
+      "title": "Zoning (GeoParquet)",
+      "file:size": 16981825,
+      "file:checksum": "1220c46633ca06ffe944bf978bf25721a1fe37595b49dc6b5b4c8742e4bb7cfb2bd3",
+      "roles": [
+        "data"
+      ]
+    },
+    "zoning-tiles": {
+      "href": "./zoning.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "zoning (vector tiles)",
+      "file:size": 41640338,
+      "file:checksum": "122075deb81e099f1c815fee943b9a94bda7fb304f44827375bfcda911650643540b",
+      "roles": [
+        "visual"
+      ]
+    },
+    "styles/city-renderer": {
+      "href": "./styles/city-renderer.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "City renderer",
+      "description": "The city's own symbology, extracted from the source ArcGIS renderer.",
+      "file:size": 1028,
+      "file:checksum": "12203fa66b388c70c51e77c03d3684a3c89a4ef211db374b367a597f13048d003b1b",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Zoning districts",
+      "description": "Parcel-level zoning colored by the twelve district letters, with the city's official district names (from the city's own map renderer) in the legend.",
+      "file:size": 1885,
+      "file:checksum": "122072ea8e07f18f7ce7beab527a8b2ac0ee05c3c68bbc4b091ed94ce586c81d62b5",
+      "roles": [
+        "default",
+        "style"
+      ]
+    },
+    "styles/style-boundaries": {
+      "href": "./styles/style-boundaries.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "District boundaries",
+      "description": "Zoning outlines only, for overlaying on imagery or the parcel fabric.",
+      "file:size": 513,
+      "file:checksum": "1220aa7e721c23c1af23b08fa893411c55e0def7b04ee479af0bcc74f9755bb29705",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/style-broad-use": {
+      "href": "./styles/style-broad-use.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Residential / commercial / industrial",
+      "description": "Districts grouped into broad uses: residential A-E green, commercial F-H orange, Central Business red, Industrial purple, Unrestricted brown, Jefferson Memorial light blue.",
+      "file:size": 1928,
+      "file:checksum": "1220abe912179f6cef6fa84fcf3647b7b7a27b1ece6b09d7626973ee761ff2b46fee",
+      "roles": [
+        "style"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "title": "Zoning rendered with the default style",
+      "file:size": 317021,
+      "file:checksum": "122049cf2c597761f9103bf7b78006d25420240297fb849e5b62403a0f802808cbf9",
+      "roles": [
+        "thumbnail"
+      ]
+    }
+  },
+  "themes": [
+    {
+      "scheme": "https://www.stlouis-mo.gov/data/topics/",
+      "concepts": [
+        {
+          "id": "urban-development-and-planning",
+          "title": "Urban Development and Planning"
+        }
+      ]
     }
   ]
 }

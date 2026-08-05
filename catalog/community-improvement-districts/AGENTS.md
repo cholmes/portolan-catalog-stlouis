@@ -22,4 +22,4 @@ Full schema: `table:columns` in collection.json.
 
 ## Provenance
 
-Mirror of [Community Improvement Districts (CIDs)](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=58) from the City of St. Louis open data portal; source: https://static.stlouis-mo.gov/open-data/SLDC/TAXING-DISTRICTS/CID/STLCIDs.geojson. No explicit license is published — see the portal page. Synced 2026-08-05T01:13:22+00:00.
+Mirror of [Community Improvement Districts (CIDs)](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=58) from the City of St. Louis open data portal; source: https://static.stlouis-mo.gov/open-data/SLDC/TAXING-DISTRICTS/CID/STLCIDs.geojson. No explicit license is published — see the portal page. Synced 2026-08-05T04:46:13+00:00.

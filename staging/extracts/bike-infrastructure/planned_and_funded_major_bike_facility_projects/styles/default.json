@@ -1,0 +1,22 @@
+{
+  "version": 8,
+  "name": "Simple Style",
+  "sources": {
+    "data": {
+      "type": "vector"
+    }
+  },
+  "layers": [
+    {
+      "id": "layer-0",
+      "type": "line",
+      "source": "data",
+      "source-layer": "planned_and_funded_major_bike_facility_projects",
+      "paint": {
+        "line-color": "#0084a8",
+        "line-width": 2,
+        "line-opacity": 1.0
+      }
+    }
+  ]
+}

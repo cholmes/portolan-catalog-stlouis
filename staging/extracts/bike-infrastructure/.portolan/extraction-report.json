@@ -1,0 +1,83 @@
+{
+  "extraction_date": "2026-08-05T04:46:22.724493+00:00",
+  "source_url": "https://maps8.stlouis-mo.gov/arcgis/rest/services/PDA/Biking_Infrastructure_Map/MapServer",
+  "portolan_version": "1.0.0a0",
+  "gpio_version": "1.3.0",
+  "metadata_extracted": {
+    "source_url": "https://maps8.stlouis-mo.gov/arcgis/rest/services/PDA/Biking_Infrastructure_Map/MapServer",
+    "description": null,
+    "attribution": null,
+    "keywords": null,
+    "contact_name": null,
+    "processing_notes": null,
+    "known_issues": null,
+    "license_info_raw": null
+  },
+  "layers": [
+    {
+      "id": 0,
+      "name": "Park Paths",
+      "status": "success",
+      "warnings": [],
+      "attempts": 1,
+      "features": 24,
+      "size_bytes": 37051,
+      "duration_seconds": 1.9949702909216285,
+      "output_path": "park_paths/park_paths.parquet"
+    },
+    {
+      "id": 1,
+      "name": "Brickline Greenway and Hodiamont Trail",
+      "status": "success",
+      "warnings": [],
+      "attempts": 1,
+      "features": 18,
+      "size_bytes": 7828,
+      "duration_seconds": 0.6562427498865873,
+      "output_path": "brickline_greenway_and_hodiamont_trail/brickline_greenway_and_hodiamont_trail.parquet"
+    },
+    {
+      "id": 2,
+      "name": "Bike Facilities",
+      "status": "success",
+      "warnings": [],
+      "attempts": 1,
+      "features": 2282,
+      "size_bytes": 165175,
+      "duration_seconds": 1.2983416670467705,
+      "output_path": "bike_facilities/bike_facilities.parquet"
+    },
+    {
+      "id": 3,
+      "name": "Planned and Funded Major Bike Facility Projects",
+      "status": "success",
+      "warnings": [],
+      "attempts": 1,
+      "features": 9,
+      "size_bytes": 6652,
+      "duration_seconds": 0.5984250418841839,
+      "output_path": "planned_and_funded_major_bike_facility_projects/planned_and_funded_major_bike_facility_projects.parquet"
+    },
+    {
+      "id": 4,
+      "name": "Multi-use Path",
+      "status": "success",
+      "warnings": [],
+      "attempts": 1,
+      "features": 55,
+      "size_bytes": 122826,
+      "duration_seconds": 0.9547138749621809,
+      "output_path": "multi_use_path/multi_use_path.parquet"
+    }
+  ],
+  "summary": {
+    "total_layers": 5,
+    "succeeded": 5,
+    "failed": 0,
+    "skipped": 0,
+    "empty": 0,
+    "total_features": 2388,
+    "total_size_bytes": 339532,
+    "total_duration_seconds": 5.502693624701351
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "version": 8,
+  "name": "Categorical Style",
+  "sources": {
+    "data": {
+      "type": "vector"
+    }
+  },
+  "layers": [
+    {
+      "id": "categorical-line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "bike_facilities",
+      "paint": {
+        "line-color": [
+          "match",
+          [
+            "get",
+            "BikeFacilityType"
+          ],
+          "Bike Blvd",
+          "#00e6a9",
+          "Bike Lane",
+          "#38a800",
+          "Buffered Bike Lane",
+          "#38a800",
+          "Climbing Lane",
+          "#38a800",
+          "Separated Bike Lane",
+          "#38a800",
+          "Share the Road Sign",
+          "#ffaa00",
+          "Shared Lane",
+          "#ffaa00",
+          "Shared Lane Markings",
+          "#ffaa00",
+          "#cccccc"
+        ],
+        "line-width": 1,
+        "line-opacity": 1.0
+      }
+    }
+  ]
+}

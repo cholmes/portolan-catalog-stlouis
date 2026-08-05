@@ -41,6 +41,17 @@ HOST = {
     "url": "https://github.com/cholmes/portolan-catalog-stlouis",
 }
 
+THEMES_EXT = "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+TOPIC_SCHEME = "https://www.stlouis-mo.gov/data/topics/"
+# The portal's own main-topic assignments (scraped from the 12 topic pages)
+MAIN_TOPICS = json.loads((Path(__file__).parent.parent / "docs" / "portal-main-topics.json").read_text())
+# The portal's own per-dataset tags
+PORTAL_TAGS = json.loads((Path(__file__).parent.parent / "docs" / "portal-topics-tags.json").read_text())
+
+
+def slugify(s: str) -> str:
+    return "".join(c if c.isalnum() else "-" for c in s.lower()).strip("-").replace("--", "-")
+
 DESCRIPTIONS = json.loads((ROOT / "docs" / "portal-descriptions.json").read_text())
 
 # Arrow → table-extension-ish type names already handled by CLI; for the
@@ -150,6 +161,8 @@ def finalize_collection(coll_id: str) -> None:
 
     ext = set(coll.get("stac_extensions", []))
     ext.update({PORTOLAN_SCHEMA, FILE_EXT, TABLE_EXT})
+    if MAIN_TOPICS.get(coll_id):
+        ext.add(THEMES_EXT)
     has_pmtiles = (coll_dir / f"{coll_id}.pmtiles").exists()
     if has_pmtiles:
         ext.add(WML_EXT)
@@ -157,6 +170,20 @@ def finalize_collection(coll_id: str) -> None:
 
     coll["license"] = "other"
     coll["updated"] = SYNC
+
+    # Portal main topics as STAC themes; portal tags as keywords (verbatim —
+    # the browser's topic browse and tag cloud read these).
+    topics = MAIN_TOPICS.get(coll_id, [])
+    if topics:
+        coll["themes"] = [{
+            "scheme": TOPIC_SCHEME,
+            "concepts": [{"id": slugify(t), "title": t} for t in sorted(topics)],
+        }]
+    tags = PORTAL_TAGS.get(coll_id, {}).get("tags", [])
+    if tags:
+        coll["keywords"] = tags
+    else:
+        coll.pop("keywords", None)
 
     # Recompute the spatial extent from the parquet itself — the CLI's
     # tracked extent can go stale when files are rewritten out from under it.
@@ -178,6 +205,8 @@ def finalize_collection(coll_id: str) -> None:
     ]
 
     links = [l for l in coll.get("links", []) if l["rel"] != "self"]
+    ensure_link(links, "describedby", "./README.md", "text/markdown")
+    ensure_link(links, "agents", "./AGENTS.md", "text/markdown")
     ensure_link(links, "license", src["portal_page"], "text/html",
                 "Dataset page on the City of St. Louis open data portal")
     ensure_link(links, "via", src["portal_page"], "text/html",

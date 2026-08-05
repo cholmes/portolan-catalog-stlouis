@@ -1,0 +1,86 @@
+{
+  "version": 8,
+  "name": "Bike facilities by type",
+  "metadata": {
+    "description": "Every bike facility colored by the city's own facility types \u2014 from separated and buffered lanes (greens) through paint-only shared-lane markings (orange). Protection level reads as green-to-orange."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../bike-infrastructure.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "bike-infrastructure-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "bike-infrastructure",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "BikeFacilityType"
+          ],
+          "Separated Bike Lane",
+          "#0f5d0f",
+          "Buffered Bike Lane",
+          "#538400",
+          "Bike Lane",
+          "#7fb356",
+          "Bike Blvd",
+          "#4a9d9c",
+          "Multi-Use Path",
+          "#7c5295",
+          "Shared Lane Markings",
+          "#e89d07",
+          "Shared Lane",
+          "#e2a76f",
+          "Climbing Lane",
+          "#a8d4e8",
+          "Share the Road Sign",
+          "#9aa3a8",
+          "#b0a377"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "bike-infrastructure",
+      "paint": {
+        "line-color": [
+          "match",
+          [
+            "get",
+            "BikeFacilityType"
+          ],
+          "Separated Bike Lane",
+          "#0f5d0f",
+          "Buffered Bike Lane",
+          "#538400",
+          "Bike Lane",
+          "#7fb356",
+          "Bike Blvd",
+          "#4a9d9c",
+          "Multi-Use Path",
+          "#7c5295",
+          "Shared Lane Markings",
+          "#e89d07",
+          "Shared Lane",
+          "#e2a76f",
+          "Climbing Lane",
+          "#a8d4e8",
+          "Share the Road Sign",
+          "#9aa3a8",
+          "#b0a377"
+        ],
+        "line-width": 2.2,
+        "line-opacity": 1.0
+      }
+    }
+  ]
+}

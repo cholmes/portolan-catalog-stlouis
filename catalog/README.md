@@ -10,7 +10,14 @@ and parcel-joinable datasets. Not an official city service.
 ## Collections
 
 <details>
-<summary>📁 20 collections (click to expand)</summary>
+<summary>📁 21 collections (click to expand)</summary>
+
+### [City of St. Louis Open Data (Cloud-Native Mirror)](catalog/bike-infrastructure/)
+
+Cloud-native mirror of datasets from the
+[City of St. Louis open data portal](https://www.stlouis-mo.gov/data/):
+GeoParquet, PMTiles, and STAC metadata for the city's most-used geospatial
+and parce...
 
 ### [City Blocks](catalog/city-blocks/)
 
@@ -98,7 +105,7 @@ Strategic land use (SLUP),parcel, and zoning data
 
 **Spatial Extent**
 
-- West: -90.3206, South: 38.5319, East: -90.1663, North: 38.7747
+- West: -90.3257, South: 38.5319, East: -90.1355, North: 38.7747
 
 **Temporal Extent**
 

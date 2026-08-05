@@ -118,5 +118,9 @@
   "description": "Dataset describes real estate sale prices for recent property sales in the city. A separate table describes codes for different type of sales.",
   "about": "Information describing this dataset (metadata): Provided by: Assessor's Office Related topics: Home Ownership Land Acquisition, Reutilization, and Development Tags: asset-parcel property address Data last updated : See individual distributions above Data.json metadata: View metadata",
   "updated_mentions": []
+ },
+ "bike-infrastructure": {
+  "portal_id": null,
+  "description": "Bicycle infrastructure from the city's Biking Infrastructure Map service: existing bike facilities by type, the Brickline Greenway and Hodiamont Trail, park paths, multi-use paths, and planned and funded major bike facility projects."
  }
 }

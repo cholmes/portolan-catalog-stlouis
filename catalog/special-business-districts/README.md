@@ -48,12 +48,12 @@ Special business districts (SBDs) within the City of Saint Louis. SBDs are estab
 
 | File | Size | Checksum |
 |------|------|----------|
-| ./special-business-districts.parquet | 30.4 KB | 1220a3f7d4c8... |
+| ./special-business-districts.parquet | 27.3 KB | 1220a8f2d5a9... |
 | ./special-business-districts.pmtiles | 38.1 KB | 122081b1464a... |
 | ./styles/default.json | 1.1 KB | 1220a8916942... |
 | ./styles/style-boundaries.json | 498 B | 12203828e01c... |
 | ./styles/style-labeled.json | 1008 B | 1220cd21824e... |
-| ./README.md | 3.0 KB | 122064091d95... |
+| ./README.md | 3.0 KB | 122080cc8c52... |
 | ./thumbnail.png | 399.2 KB | 1220c30bbfc7... |
 
 ## Quick Start

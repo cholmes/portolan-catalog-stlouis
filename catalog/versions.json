@@ -116,7 +116,13 @@
       "updated": "2026-08-05T04:27:52.518421+00:00",
       "asset_count": 4,
       "total_size_bytes": 268898095
+    },
+    "bike-infrastructure": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-05T04:49:33.787255+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 436764
     }
   },
-  "updated": "2026-08-05T04:27:52.518421+00:00"
+  "updated": "2026-08-05T04:49:33.787255+00:00"
 }

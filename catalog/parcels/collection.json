@@ -11,12 +11,6 @@
       "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
     },
     {
-      "rel": "parent",
-      "href": "../catalog.json",
-      "type": "application/json",
-      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
-    },
-    {
       "rel": "pmtiles",
       "href": "./parcels.pmtiles",
       "type": "application/vnd.pmtiles",
@@ -51,12 +45,19 @@
       "rel": "agents",
       "href": "./AGENTS.md",
       "type": "text/markdown"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
     }
   ],
   "stac_extensions": [
     "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
   ],
   "geoparquet:geometry_type": "MultiPolygon",
@@ -625,6 +626,12 @@
       "type": "struct<xmin: float not null, ymin: float not null, xmax: float not null, ymax: float not null>"
     }
   ],
+  "portolan:styles": [
+    "styles/default",
+    "styles/city-renderer"
+  ],
+  "updated": "2026-08-05T04:46:13+00:00",
+  "title": "Parcels",
   "extent": {
     "spatial": {
       "bbox": [
@@ -646,111 +653,6 @@
     }
   },
   "license": "other",
-  "assets": {
-    "parcels": {
-      "href": "./parcels.parquet",
-      "type": "application/vnd.apache.parquet",
-      "roles": [
-        "data"
-      ],
-      "title": "Parcels (GeoParquet)",
-      "file:size": 28961506,
-      "file:checksum": "122021a1a2e764e7d500ca0f13698a999958e81a515f559461f76f77292eb55041a6"
-    },
-    "parcels-tiles": {
-      "href": "./parcels.pmtiles",
-      "type": "application/vnd.pmtiles",
-      "title": "parcels (vector tiles)",
-      "roles": [
-        "visual"
-      ],
-      "file:size": 136626845,
-      "file:checksum": "1220896108ea3161b05b3c4320ad9c77f548d2d25ee7129483963d9837345c402001"
-    },
-    "styles/city-renderer": {
-      "href": "./styles/city-renderer.json",
-      "type": "application/vnd.mapbox.style+json",
-      "title": "City renderer",
-      "roles": [
-        "style"
-      ],
-      "file:size": 525,
-      "file:checksum": "1220d4ff49095f9c28ff76966ae8d69fabf0b6ff5ec9f3111023ada289c9a5fa9dcf",
-      "description": "The city's own symbology, extracted from the source ArcGIS renderer."
-    },
-    "styles/default": {
-      "href": "./styles/default.json",
-      "type": "application/vnd.mapbox.style+json",
-      "title": "Parcel fabric",
-      "roles": [
-        "default",
-        "style"
-      ],
-      "description": "Every parcel in the city: quiet fill with hairline lot lines, the base reference view of the assessor's parcel layer.",
-      "file:size": 797,
-      "file:checksum": "12205582023a37d212a068f0e5886b4ce973873c2c4164345923c452daa88964a0df"
-    },
-    "styles/style-assessed-value": {
-      "href": "./styles/style-assessed-value.json",
-      "type": "application/vnd.mapbox.style+json",
-      "roles": [
-        "style"
-      ],
-      "title": "Assessed value",
-      "description": "Total assessed value (AsdTotal) in quintile steps \u2014 the city's wealth geography, from north-side disinvestment to the Central West End.",
-      "file:size": 1393,
-      "file:checksum": "1220fd5b0b126d29e2fdfc67f0c841420000a89580b6c82fd1132b34da77965f9abd"
-    },
-    "styles/style-city-assessor": {
-      "href": "./styles/style-city-assessor.json",
-      "type": "application/vnd.mapbox.style+json",
-      "roles": [
-        "style"
-      ],
-      "title": "City assessor map",
-      "description": "The city's own parcel symbology, extracted from the PDA/PARCELS_PUBLIC ArcGIS renderer.",
-      "file:size": 545,
-      "file:checksum": "12200930a39609ccad26d13cbc874a5c9f068614b9b4ad0be39b7f31e1cb394a5667"
-    },
-    "styles/style-vacant-lots": {
-      "href": "./styles/style-vacant-lots.json",
-      "type": "application/vnd.mapbox.style+json",
-      "roles": [
-        "style"
-      ],
-      "title": "Vacant lots",
-      "description": "The assessor's VacantLot flag (23,238 parcels): the vacancy crescent in red against occupied parcels.",
-      "file:size": 1116,
-      "file:checksum": "122092b73432d7879de5f02b8578473e6bf669c52e2da7c82a5d44838772200a53b0"
-    },
-    "styles/style-year-built": {
-      "href": "./styles/style-year-built.json",
-      "type": "application/vnd.mapbox.style+json",
-      "roles": [
-        "style"
-      ],
-      "title": "Year built",
-      "description": "FirstYearBuilt in era steps (unknown, pre-1900, 1900-45, 1946-75, 1976-2000, 2001+): the city's growth rings.",
-      "file:size": 1362,
-      "file:checksum": "122071ceff97247a7704231a27e93ce3dbb4a5ebf0aafa9397481e37ab0c85e31d18"
-    },
-    "thumbnail": {
-      "href": "./thumbnail.png",
-      "type": "image/png",
-      "roles": [
-        "thumbnail"
-      ],
-      "title": "Parcels rendered with the default style",
-      "file:size": 342694,
-      "file:checksum": "12206185d2d2406b65d62d434e9cd7c19510df9309ee2b55f45e84d8be4ef497d39c"
-    }
-  },
-  "portolan:styles": [
-    "styles/default",
-    "styles/city-renderer"
-  ],
-  "title": "Parcels",
-  "updated": "2026-08-05T01:13:22+00:00",
   "providers": [
     {
       "name": "City of St. Louis \u2014 Assessor's Office",
@@ -767,5 +669,118 @@
       ],
       "url": "https://github.com/cholmes/portolan-catalog-stlouis"
     }
+  ],
+  "assets": {
+    "parcels": {
+      "href": "./parcels.parquet",
+      "type": "application/vnd.apache.parquet",
+      "title": "Parcels (GeoParquet)",
+      "file:size": 31354481,
+      "file:checksum": "122004b0a978ef0fe2adaaf2a3adf278e28e5002016450194994c9e3c2da437d8eb3",
+      "roles": [
+        "data"
+      ]
+    },
+    "parcels-tiles": {
+      "href": "./parcels.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "parcels (vector tiles)",
+      "file:size": 136626845,
+      "file:checksum": "1220896108ea3161b05b3c4320ad9c77f548d2d25ee7129483963d9837345c402001",
+      "roles": [
+        "visual"
+      ]
+    },
+    "styles/city-renderer": {
+      "href": "./styles/city-renderer.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "City renderer",
+      "description": "The city's own symbology, extracted from the source ArcGIS renderer.",
+      "file:size": 525,
+      "file:checksum": "1220d4ff49095f9c28ff76966ae8d69fabf0b6ff5ec9f3111023ada289c9a5fa9dcf",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Parcel fabric",
+      "description": "Every parcel in the city: quiet fill with hairline lot lines, the base reference view of the assessor's parcel layer.",
+      "file:size": 797,
+      "file:checksum": "12205582023a37d212a068f0e5886b4ce973873c2c4164345923c452daa88964a0df",
+      "roles": [
+        "default",
+        "style"
+      ]
+    },
+    "styles/style-assessed-value": {
+      "href": "./styles/style-assessed-value.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Assessed value",
+      "description": "Total assessed value (AsdTotal) in quintile steps \u2014 the city's wealth geography, from north-side disinvestment to the Central West End.",
+      "file:size": 1393,
+      "file:checksum": "1220fd5b0b126d29e2fdfc67f0c841420000a89580b6c82fd1132b34da77965f9abd",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/style-city-assessor": {
+      "href": "./styles/style-city-assessor.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "City assessor map",
+      "description": "The city's own parcel symbology, extracted from the PDA/PARCELS_PUBLIC ArcGIS renderer.",
+      "file:size": 545,
+      "file:checksum": "12200930a39609ccad26d13cbc874a5c9f068614b9b4ad0be39b7f31e1cb394a5667",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/style-vacant-lots": {
+      "href": "./styles/style-vacant-lots.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Vacant lots",
+      "description": "The assessor's VacantLot flag (23,238 parcels): the vacancy crescent in red against occupied parcels.",
+      "file:size": 1116,
+      "file:checksum": "122092b73432d7879de5f02b8578473e6bf669c52e2da7c82a5d44838772200a53b0",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/style-year-built": {
+      "href": "./styles/style-year-built.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Year built",
+      "description": "FirstYearBuilt in era steps (unknown, pre-1900, 1900-45, 1946-75, 1976-2000, 2001+): the city's growth rings.",
+      "file:size": 1362,
+      "file:checksum": "122071ceff97247a7704231a27e93ce3dbb4a5ebf0aafa9397481e37ab0c85e31d18",
+      "roles": [
+        "style"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "title": "Parcels rendered with the default style",
+      "file:size": 342694,
+      "file:checksum": "12206185d2d2406b65d62d434e9cd7c19510df9309ee2b55f45e84d8be4ef497d39c",
+      "roles": [
+        "thumbnail"
+      ]
+    }
+  },
+  "themes": [
+    {
+      "scheme": "https://www.stlouis-mo.gov/data/topics/",
+      "concepts": [
+        {
+          "id": "urban-development-and-planning",
+          "title": "Urban Development and Planning"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "parcels"
   ]
 }

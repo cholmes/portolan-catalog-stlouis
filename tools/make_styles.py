@@ -38,6 +38,21 @@ LIGHT = "#dfe6ea"
 CAT = [BLUE, RED, GREEN, ORANGE, "#7c5295", "#4a9d9c", "#b5651d", "#8b3a62",
        LIGHTBLUE, "#6b7f2a", "#c98bab", "#585f63"]
 
+# Distinct-fill palette for adjacent polygons (repeating sets): mid-saturation
+# so white boundaries and labels stay readable.
+POLY = ["#7fb3d0", "#e2a76f", "#95c68f", "#d98d8d", "#a99bd0",
+        "#c9b970", "#8fc6c0", "#d093b5", "#b0a377", "#9cb0e0",
+        "#e0b394", "#88b8a3", "#c99ac0", "#adc487"]
+
+
+def repeat_fill(prop_num_expr, n=10):
+    """Repeating color sets keyed on a numeric expression modulo n."""
+    expr = ["match", ["%", prop_num_expr, n]]
+    for i in range(n):
+        expr += [i, POLY[i % len(POLY)]]
+    expr.append(GRAY)
+    return expr
+
 
 def match(prop, mapping, fallback=GRAY):
     expr = ["match", ["get", prop]]
@@ -56,7 +71,9 @@ def step(prop, base, stops, to_number=False):
     return expr
 
 
-def style(coll_id, name, description, layers, legend=None):
+def style(coll_id, name, description, layers, legend=None, no_legend=False):
+    """no_legend marks styles whose colors are deliberately arbitrary
+    (repeating sets to tell neighbors apart) — nothing to put in a legend."""
     if legend is not None:
         layers = [{
             "id": f"{coll_id}-legend",
@@ -65,10 +82,13 @@ def style(coll_id, name, description, layers, legend=None):
             "source-layer": coll_id,
             "paint": {"fill-color": legend, "fill-opacity": 0},
         }] + layers
+    meta = {"description": description}
+    if no_legend:
+        meta["legend"] = "none"
     return {
         "version": 8,
         "name": name,
-        "metadata": {"description": description},
+        "metadata": meta,
         "sources": {"data": {"type": "vector",
                              "url": f"pmtiles://../{coll_id}.pmtiles"}},
         "layers": layers,
@@ -348,12 +368,16 @@ emit("parks", "style-size", style(
 NBR_NUM = ["step", ["to-number", ["get", "NHD_NUM"]], "#dbe8f0",
            20, "#a8d4e8", 40, "#6ba3c4", 60, "#3d7a9e", 80, DARK]
 
+NBR_FILL = repeat_fill(["get", "NHD_NUM"], 10)
 emit("neighborhoods", "default", style(
     "neighborhoods", "Neighborhoods",
-    "The 88 official neighborhoods: light fill, city-blue bounds, labels.",
-    [fill("neighborhoods", LIGHTBLUE, 0.25, BLUE),
-     line("neighborhoods", BLUE, 1.5),
-     label("neighborhoods", "NHD_NAME", 11, 10)]), default=True)
+    "The 88 official neighborhoods, each tinted from a repeating ten-color "
+    "set so adjacent neighborhoods read apart, with name labels. Colors "
+    "carry no meaning.",
+    [fill("neighborhoods", NBR_FILL, 0.65, "#FFFFFF"),
+     line("neighborhoods", "#FFFFFF", 1.2),
+     label("neighborhoods", "NHD_NAME", 11, 10)], no_legend=True),
+    default=True)
 emit("neighborhoods", "style-number", style(
     "neighborhoods", "Neighborhood number",
     "Official neighborhood numbers in steps of 20 — numbering runs roughly "
@@ -366,17 +390,22 @@ emit("neighborhoods", "style-boundaries", style(
     [line("neighborhoods", BLUE, 2.0)]))
 
 # --------------------------------------------------------------------------
-# wards — 10 polygons (2020 redistricting)
+# wards — 14 polygons (2020 redistricting, effective 2023)
 # --------------------------------------------------------------------------
-WARD = ["match", ["get", "district"],
-        "1", CAT[0], "2", CAT[1], "3", CAT[2], "4", CAT[3], "5", CAT[4],
-        "6", CAT[5], "7", CAT[6], "8", CAT[7], "9", CAT[8], "10", CAT[9],
-        GRAY]
+def ward_match(get_expr):
+    expr = ["match", get_expr]
+    for i in range(14):
+        expr += [str(i + 1), POLY[i]]
+    expr.append(GRAY)
+    return expr
+
+
+WARD = ward_match(["get", "DISTRICT"])
 emit("wards", "default", style(
     "wards", "Wards (2020)",
-    "The ten wards from 2020 redistricting, one color each, labeled.",
-    [fill("wards", WARD, 0.55, "#FFFFFF"), line("wards", "#FFFFFF", 1.2),
-     label("wards", "name", 12, 9)], legend=WARD), default=True)
+    "The fourteen wards from 2020 redistricting, one color each, labeled.",
+    [fill("wards", WARD, 0.6, "#FFFFFF"), line("wards", "#FFFFFF", 1.2),
+     label("wards", "NAME", 12, 9)], legend=WARD), default=True)
 emit("wards", "style-boundaries", style(
     "wards", "Ward boundaries",
     "Outlines only.", [line("wards", RED, 2.0)]))
@@ -443,12 +472,19 @@ emit("police-districts", "style-subtle", style(
 # --------------------------------------------------------------------------
 # election-precincts — 209 polygons; names like "W 8 P 5"
 # --------------------------------------------------------------------------
+# Precinct names encode the ward: "W 8 P 5" → ward "8". slice/index-of are
+# valid style-spec v8 string expressions (MapLibre GL JS and Native).
+PRECINCT_WARD = ward_match(
+    ["slice", ["get", "name"], 2, ["index-of", " P", ["get", "name"]]])
 emit("election-precincts", "default", style(
-    "election-precincts", "Election precincts",
-    "The 209 current voting precincts, labeled 'W <ward> P <precinct>'.",
-    [fill("election-precincts", LIGHTBLUE, 0.3, BLUE),
-     line("election-precincts", BLUE, 0.8),
-     label("election-precincts", "name", 10, 12)]), default=True)
+    "election-precincts", "Precincts by ward",
+    "The 209 current voting precincts colored by their ward (from the "
+    "precinct name, 'W <ward> P <precinct>'), labeled. Same ward colors as "
+    "the wards collection.",
+    [fill("election-precincts", PRECINCT_WARD, 0.6, "#FFFFFF"),
+     line("election-precincts", "#FFFFFF", 0.8),
+     label("election-precincts", "name", 10, 12)], legend=PRECINCT_WARD),
+    default=True)
 emit("election-precincts", "style-boundaries", style(
     "election-precincts", "Precinct boundaries",
     "Outlines only.", [line("election-precincts", "#7c5295", 1.2)]))
@@ -679,6 +715,41 @@ def main() -> None:
     print(f"{total} styles written")
     normalize_city_renderers()
 
+
+# --------------------------------------------------------------------------
+# bike-infrastructure — 2,387 lines across five source layers
+# --------------------------------------------------------------------------
+BIKE_TYPE = match("BikeFacilityType", {
+    "Separated Bike Lane": "#0f5d0f", "Buffered Bike Lane": GREEN,
+    "Bike Lane": "#7fb356", "Bike Blvd": "#4a9d9c",
+    "Multi-Use Path": "#7c5295", "Shared Lane Markings": ORANGE,
+    "Shared Lane": "#e2a76f", "Climbing Lane": LIGHTBLUE,
+    "Share the Road Sign": GRAY}, "#b0a377")
+BIKE_NET = match("source_layer", {
+    "Bike Facilities": BLUE, "Brickline Greenway And Hodiamont Trail": RED,
+    "Park Paths": GREEN, "Multi Use Path": "#7c5295",
+    "Planned And Funded Major Bike Facility Projects": ORANGE})
+BIKE_PLANNED = match("source_layer", {
+    "Planned And Funded Major Bike Facility Projects": RED}, LIGHT)
+
+emit("bike-infrastructure", "default", style(
+    "bike-infrastructure", "Bike facilities by type",
+    "Every bike facility colored by the city's own facility types — from "
+    "separated and buffered lanes (greens) through paint-only shared-lane "
+    "markings (orange). Protection level reads as green-to-orange.",
+    [line("bike-infrastructure", BIKE_TYPE, 2.2)], legend=BIKE_TYPE),
+    default=True)
+emit("bike-infrastructure", "style-network", style(
+    "bike-infrastructure", "Network layers",
+    "The five source layers: street bike facilities, the Brickline Greenway "
+    "and Hodiamont Trail, park paths, multi-use paths, and planned/funded "
+    "major projects.",
+    [line("bike-infrastructure", BIKE_NET, 2.2)], legend=BIKE_NET))
+emit("bike-infrastructure", "style-planned", style(
+    "bike-infrastructure", "Planned projects",
+    "The nine planned and funded major bike facility projects in red over "
+    "the existing network (light).",
+    [line("bike-infrastructure", BIKE_PLANNED, 2.4)], legend=BIKE_PLANNED))
 
 if __name__ == "__main__":
     main()

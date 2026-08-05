@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 """Assemble catalog/<id>/<id>.parquet from staged sources.
 
-Every output is rewritten with ogr2ogr to spec-conformant GeoParquet:
-zstd compression, covering bbox column with stats, Hilbert row order,
-row groups well under the 150k limit. Tabular sources (no geometry) get
-plain zstd Parquet. City renderer styles extracted from ArcGIS are copied
+Every output is converted with gpio (geoparquet.io) to spec-conformant
+GeoParquet: zstd, covering bbox with stats, Hilbert row order. Tabular
+sources get plain Parquet via gpio --allow-no-geometry. Exception: the
+311 CSV still goes through ogr2ogr because gpio's CSV reader drops rows
+with empty lat/lon and we deliberately keep the ~18k coordinate-less
+requests as null-geometry rows. City renderer styles extracted from ArcGIS are copied
 into catalog/<id>/styles/city-renderer.json for make_styles.py to finish
 (it injects the pmtiles source URL and legend layers).
 
@@ -29,7 +31,6 @@ GEO_LCO = [
     "-lco", "SORT_BY_BBOX=YES",
     "-lco", "ROW_GROUP_SIZE=20000",
 ]
-TAB_LCO = ["-lco", "COMPRESSION=ZSTD", "-lco", "ROW_GROUP_SIZE=20000"]
 
 
 def run(cmd: list) -> None:
@@ -47,6 +48,28 @@ def restore_stats(path) -> None:
     """
     import pyarrow.parquet as pq
     t = pq.read_table(path)
+    pq.write_table(t, path, compression="zstd", row_group_size=20000,
+                   write_statistics=True)
+
+
+def rename_geom(path) -> None:
+    """Rename gpio's shapefile geometry column "geom" to "geometry"."""
+    import json as _json
+    import pyarrow.parquet as pq
+    t = pq.read_table(path)
+    if "geom" not in t.schema.names:
+        return
+    t = t.rename_columns(["geometry" if n == "geom" else n
+                          for n in t.schema.names])
+    meta = dict(t.schema.metadata or {})
+    if b"geo" in meta:
+        geo = _json.loads(meta[b"geo"])
+        if "geom" in geo.get("columns", {}):
+            geo["columns"]["geometry"] = geo["columns"].pop("geom")
+        if geo.get("primary_column") == "geom":
+            geo["primary_column"] = "geometry"
+        meta[b"geo"] = _json.dumps(geo).encode()
+        t = t.replace_schema_metadata(meta)
     pq.write_table(t, path, compression="zstd", row_group_size=20000,
                    write_statistics=True)
 
@@ -89,7 +112,8 @@ def prepare_csb(dest: Path) -> None:
 
 
 def find_extract_parquet(coll_id: str) -> Path:
-    hits = sorted((STAGING / "extracts" / coll_id).rglob("*.parquet"))
+    hits = sorted(p for p in (STAGING / "extracts" / coll_id).rglob("*.parquet")
+                  if not p.name.endswith("_filtered.parquet"))
     if not hits:
         raise FileNotFoundError(f"no extracted parquet for {coll_id}")
     if len(hits) > 1:
@@ -141,6 +165,31 @@ def assemble(coll_id: str) -> dict:
             capture_output=True, text=True).stdout.strip()
         return {"rows": int(n), "tabular": True, "source_file": str(mdb.relative_to(ROOT))}
 
+    # Bike infrastructure is one dataset served as five layers — merge them
+    # with a source_layer column carrying each layer's title.
+    if coll_id == "bike-infrastructure":
+        parts = sorted(p for p in (STAGING / "extracts" / coll_id).rglob("*.parquet")
+                       if not p.name.endswith(("_filtered.parquet", "_merged.parquet")))
+        selects = " UNION ALL BY NAME ".join(
+            f"SELECT *, '{p.parent.name.replace('_', ' ').title()}' AS source_layer "
+            f"FROM '{p}' WHERE geometry IS NOT NULL AND NOT ST_IsEmpty(geometry)"
+            for p in parts)
+        merged = STAGING / "extracts" / coll_id / "bike_merged.parquet"
+        run(["duckdb", "-c",
+             f"INSTALL spatial; LOAD spatial; COPY ({selects}) TO '{merged}' "
+             "(FORMAT PARQUET, COMPRESSION ZSTD)"])
+        run(["gpio", "convert", "geoparquet", merged, out])
+        restore_stats(out)
+        city_style = STAGING / "extracts" / coll_id / "styles" / "city-renderer.json"
+        if city_style.exists():
+            (out_dir / "styles").mkdir(exist_ok=True)
+            shutil.copy(city_style, out_dir / "styles" / "city-renderer.json")
+        n = subprocess.run(
+            ["duckdb", "-noheader", "-list", "-c", f"SELECT count(*) FROM '{out}'"],
+            capture_output=True, text=True).stdout.strip()
+        return {"rows": int(n), "tabular": False,
+                "source_file": f"{len(parts)} layers merged"}
+
     if src_def["type"] == "arcgis":
         src = find_extract_parquet(coll_id)
     else:
@@ -167,16 +216,36 @@ def assemble(coll_id: str) -> dict:
         return {"rows": int(n_check), "tabular": False, "source_file": str(src.relative_to(ROOT))}
 
     is_tabular = src.suffix in (".dbf", ".csv")
-    lco = TAB_LCO if is_tabular else GEO_LCO
-    cmd = ["ogr2ogr", "-f", "Parquet", out, src, "-nln", coll_id] + lco
-    # The SLDC "LRA Inventory" service layer carries every city parcel with an
-    # LRA yes/no flag; the LRA inventory is the flagged subset.
+
+    # The SLDC "LRA Inventory" service layer carries every city parcel with
+    # an LRA yes/no flag; the LRA inventory is the flagged subset — filter
+    # the extract before conversion (plain column filter keeps WKB + geo
+    # metadata intact for gpio).
     if coll_id == "lra-property":
-        cmd += ["-where", "LRA = 'YES'"]
-    if src.suffix == ".csv":
-        cmd += ["-oo", "AUTODETECT_TYPE=YES", "-oo", "EMPTY_STRING_AS_NULL=YES"]
-    run(cmd)
-    if not is_tabular:
+        filtered = src.parent / "lra_filtered.parquet"
+        # Rehydrate WKB to a GEOMETRY column so duckdb writes proper
+        # GeoParquet metadata that gpio can read.
+        # LOAD spatial so duckdb reads/writes the geometry column as GEOMETRY
+        # with GeoParquet metadata (without it, geometry degrades to BLOB).
+        run(["duckdb", "-c",
+             "INSTALL spatial; LOAD spatial; "
+             f"COPY (SELECT * FROM '{src}' WHERE LRA = 'YES') TO '{filtered}' "
+             "(FORMAT PARQUET, COMPRESSION ZSTD)"])
+        src = filtered
+
+    if is_tabular:
+        run(["gpio", "convert", "geoparquet", src, out,
+             "--allow-no-geometry", "--skip-hilbert"])
+    else:
+        run(["gpio", "convert", "geoparquet", src, out])
+        # City shapefiles ship in MO State Plane East; normalize to WGS84
+        # like the service extracts. gpio names shapefile geometry "geom" —
+        # rename to "geometry" for cross-catalog consistency.
+        if src.suffix == ".shp":
+            tmp = out.with_suffix(".4326.parquet")
+            run(["gpio", "convert", "reproject", out, tmp, "-d", "EPSG:4326"])
+            tmp.replace(out)
+            rename_geom(out)
         restore_stats(out)
 
     # Carry the extracted city renderer style along, if there is one

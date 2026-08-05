@@ -5,7 +5,8 @@
   "stac_extensions": [
     "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json",
-    "https://stac-extensions.github.io/table/v1.2.0/schema.json"
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
   ],
   "description": "Dataset describes real estate sale prices for recent property sales in the city. A separate table describes codes for different type of sales.",
   "license": "other",
@@ -133,11 +134,30 @@
       ],
       "title": "Property sales (Parquet)",
       "file:size": 2462849,
-      "file:checksum": "122075bf909a9474e0f8d730a68cf37afd23b12f23ad60aa2bac77f799757497a327"
+      "file:checksum": "122088e0e4fe6a9ec288e2fe1fff7fb627f1905d09ee1b1672b8977d6d260a8c5f7d"
     }
   },
   "title": "Property Sales",
-  "updated": "2026-08-05T01:13:22+00:00",
+  "updated": "2026-08-05T04:46:13+00:00",
+  "themes": [
+    {
+      "scheme": "https://www.stlouis-mo.gov/data/topics/",
+      "concepts": [
+        {
+          "id": "housing",
+          "title": "Housing"
+        },
+        {
+          "id": "urban-development-and-planning",
+          "title": "Urban Development and Planning"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "asset-parcel",
+    "property address"
+  ],
   "providers": [
     {
       "name": "City of St. Louis \u2014 Assessor's Office",

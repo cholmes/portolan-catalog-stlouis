@@ -1,0 +1,228 @@
+{
+ "parcels": {
+  "portal_id": "82",
+  "topics": [
+   "Land Acquisition, Reutilization, and Development",
+   "Planning"
+  ],
+  "tags": [
+   "parcels"
+  ]
+ },
+ "neighborhoods": {
+  "portal_id": "85",
+  "topics": [
+   "Planning",
+   "Wards and Neighborhoods"
+  ],
+  "tags": [
+   "neighborhoods"
+  ]
+ },
+ "wards": {
+  "portal_id": "131",
+  "topics": [
+   "Elections and Voting",
+   "Planning",
+   "Wards and Neighborhoods"
+  ],
+  "tags": []
+ },
+ "city-boundary": {
+  "portal_id": "67",
+  "topics": [
+   "Planning"
+  ],
+  "tags": [
+   "boundary",
+   "limit"
+  ]
+ },
+ "city-blocks": {
+  "portal_id": "12",
+  "topics": [
+   "Planning"
+  ],
+  "tags": [
+   "city blocks"
+  ]
+ },
+ "streets": {
+  "portal_id": "68",
+  "topics": [
+   "Planning",
+   "Streets, Sidewalks, and Streetlighting"
+  ],
+  "tags": [
+   "streets"
+  ]
+ },
+ "parks": {
+  "portal_id": "46",
+  "topics": [
+   "Parks and Gardens"
+  ],
+  "tags": [
+   "asset-prcl",
+   "neighborhood",
+   "park details",
+   "parks",
+   "property address"
+  ]
+ },
+ "police-districts": {
+  "portal_id": "83",
+  "topics": [
+   "Police"
+  ],
+  "tags": []
+ },
+ "election-precincts": {
+  "portal_id": "124",
+  "topics": [
+   "Elections and Voting"
+  ],
+  "tags": [
+   "board of elections",
+   "precincts",
+   "wards"
+  ]
+ },
+ "zoning": {
+  "portal_id": "78",
+  "topics": [
+   "Planning",
+   "Zoning"
+  ],
+  "tags": []
+ },
+ "historic-districts": {
+  "portal_id": "73",
+  "topics": [
+   "History and Heritage",
+   "Preservation"
+  ],
+  "tags": []
+ },
+ "city-trees": {
+  "portal_id": "121",
+  "topics": [
+   "Beautification and Nuisance Reduction",
+   "Parks and Gardens",
+   "Streets, Sidewalks, and Streetlighting"
+  ],
+  "tags": []
+ },
+ "tif-districts": {
+  "portal_id": "56",
+  "topics": [
+   "Business Assistance, Incentives, and Promotion",
+   "Business Taxation",
+   "Planning"
+  ],
+  "tags": [
+   "planning",
+   "sldc",
+   "st. louis development corporation",
+   "tax increment financing",
+   "tif"
+  ]
+ },
+ "community-improvement-districts": {
+  "portal_id": "58",
+  "topics": [
+   "Land Acquisition, Reutilization, and Development"
+  ],
+  "tags": [
+   "cid",
+   "taxing districts"
+  ]
+ },
+ "special-business-districts": {
+  "portal_id": "62",
+  "topics": [
+   "Business Assistance, Incentives, and Promotion",
+   "Planning"
+  ],
+  "tags": [
+   "sbd",
+   "taxing districts"
+  ]
+ },
+ "opportunity-zones": {
+  "portal_id": "59",
+  "topics": [
+   "Business Assistance, Incentives, and Promotion",
+   "Business Taxation",
+   "Planning"
+  ],
+  "tags": [
+   "federal",
+   "irs",
+   "opportunity zones",
+   "planning",
+   "sldc",
+   "st. louis development corporation",
+   "treasury"
+  ]
+ },
+ "tax-abated-parcels": {
+  "portal_id": "61",
+  "topics": [
+   "Business Assistance, Incentives, and Promotion",
+   "Business Taxation",
+   "Planning"
+  ],
+  "tags": []
+ },
+ "lra-property": {
+  "portal_id": "30",
+  "topics": [
+   "Home Ownership",
+   "Land Acquisition, Reutilization, and Development",
+   "Permits, Inspections, and Certifications"
+  ],
+  "tags": [
+   "asset-parcel",
+   "inspections",
+   "property address",
+   "property owner",
+   "service provided details"
+  ]
+ },
+ "csb-311-requests": {
+  "portal_id": "5",
+  "topics": [
+   "Complaints and Service Requests"
+  ],
+  "tags": [
+   "asset-parcel",
+   "asset-street maintenance",
+   "department",
+   "intersection",
+   "neighborhood",
+   "property address",
+   "ward"
+  ]
+ },
+ "property-sales": {
+  "portal_id": "31",
+  "topics": [
+   "Home Ownership",
+   "Land Acquisition, Reutilization, and Development"
+  ],
+  "tags": [
+   "asset-parcel",
+   "property address"
+  ]
+ },
+ "bike-infrastructure": {
+  "portal_id": null,
+  "topics": [],
+  "tags": [
+   "bike",
+   "gis",
+   "streets"
+  ]
+ }
+}

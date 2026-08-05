@@ -82,7 +82,7 @@ NOTES = {
                   "outside the (buffered) city boundary were nulled. Status "
                   "casing varies (CLOSED vs Closed).",
         "joins": "PROBADDRESS matches parcel situs addresses (fuzzy); "
-                 "NEIGHBORHOOD = neighborhoods.NHD_NUM; WARD = wards.district.",
+                 "NEIGHBORHOOD = neighborhoods.NHD_NUM; WARD = wards.DISTRICT.",
     },
     "property-sales": {
         "fields": {
@@ -122,9 +122,9 @@ NOTES = {
                  "city-blocks.NBRHD all carry NHD_NUM.",
     },
     "wards": {
-        "fields": {"district": "ward number as string", "name": "ward name",
-                   "population": "2020 census population, with race columns"},
-        "quirks": "The 10 wards from 2020 redistricting (effective 2023); "
+        "fields": {"DISTRICT": "ward number as string", "NAME": "ward name",
+                   "POPULATION": "2020 census population, with race columns"},
+        "quirks": "The 14 wards from 2020 redistricting (effective 2023); "
                   "older datasets reference the previous 28 wards (WARD10 "
                   "columns elsewhere).",
     },
@@ -233,7 +233,7 @@ AGENTS.md with fields, quirks, and joins.
 - `property-sales.AsrParcelId` = `parcels.ParcelId`
 - `lra-property.Handle` / `tax-abated-parcels.HANDLE` = `parcels.HANDLE`
 - `parcels.NBRHD` = `neighborhoods.NHD_NUM` = `csb-311-requests.NEIGHBORHOOD`
-- `parcels.WARD` = `wards.district`; spatial joins work for everything else
+- `parcels.WARD` = `wards.DISTRICT`; spatial joins work for everything else
 
 ## Read this first
 

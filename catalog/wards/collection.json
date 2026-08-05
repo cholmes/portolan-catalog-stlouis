@@ -11,12 +11,6 @@
       "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
     },
     {
-      "rel": "parent",
-      "href": "../catalog.json",
-      "type": "application/json",
-      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
-    },
-    {
       "rel": "pmtiles",
       "href": "./wards.pmtiles",
       "type": "application/vnd.pmtiles",
@@ -51,12 +45,19 @@
       "rel": "agents",
       "href": "./AGENTS.md",
       "type": "text/markdown"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
     }
   ],
   "stac_extensions": [
     "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
   ],
   "geoparquet:geometry_type": "Polygon",
@@ -1105,6 +1106,12 @@
       "type": "struct<xmin: float not null, ymin: float not null, xmax: float not null, ymax: float not null>"
     }
   ],
+  "portolan:styles": [
+    "styles/default",
+    "styles/city-renderer"
+  ],
+  "updated": "2026-08-05T04:46:13+00:00",
+  "title": "Ward Boundaries (2020)",
   "extent": {
     "spatial": {
       "bbox": [
@@ -1126,89 +1133,6 @@
     }
   },
   "license": "other",
-  "assets": {
-    "wards": {
-      "href": "./wards.parquet",
-      "type": "application/vnd.apache.parquet",
-      "roles": [
-        "data"
-      ],
-      "title": "Ward Boundaries (2020) (GeoParquet)",
-      "file:size": 159820,
-      "file:checksum": "122062c3514efbc8ff4c31a720d9231dc0de1e9eb1d9e9ec82202c1f422710a8ef54"
-    },
-    "wards-tiles": {
-      "href": "./wards.pmtiles",
-      "type": "application/vnd.pmtiles",
-      "title": "wards (vector tiles)",
-      "roles": [
-        "visual"
-      ],
-      "file:size": 135034,
-      "file:checksum": "1220ebad3365a1b66573f239e11d143c62b79c669b5b5e5db582349f94363fc3962c"
-    },
-    "styles/city-renderer": {
-      "href": "./styles/city-renderer.json",
-      "type": "application/vnd.mapbox.style+json",
-      "title": "City renderer",
-      "roles": [
-        "style"
-      ],
-      "file:size": 521,
-      "file:checksum": "122020f016a4494d1753eed97ab007ce301c87d595044e7ac64d975d2e8890758063",
-      "description": "The city's own symbology, extracted from the source ArcGIS renderer."
-    },
-    "styles/default": {
-      "href": "./styles/default.json",
-      "type": "application/vnd.mapbox.style+json",
-      "title": "Wards (2020)",
-      "roles": [
-        "default",
-        "style"
-      ],
-      "description": "The ten wards from 2020 redistricting, one color each, labeled.",
-      "file:size": 2350,
-      "file:checksum": "1220a8396ab14e94109e40944064c1db3e770c8e15120c4051169c11a6a6e6ee5498"
-    },
-    "styles/style-boundaries": {
-      "href": "./styles/style-boundaries.json",
-      "type": "application/vnd.mapbox.style+json",
-      "roles": [
-        "style"
-      ],
-      "title": "Ward boundaries",
-      "description": "Outlines only.",
-      "file:size": 452,
-      "file:checksum": "12207f5d8a7a1cd5034874840d4db88d960b0477f8e6830a2555d4b14fd5809a923d"
-    },
-    "styles/style-subtle": {
-      "href": "./styles/style-subtle.json",
-      "type": "application/vnd.mapbox.style+json",
-      "roles": [
-        "style"
-      ],
-      "title": "Subtle wards",
-      "description": "Light tint for use under other data.",
-      "file:size": 709,
-      "file:checksum": "122039df8a1c4dadd197c7f1b65cfb93ea814f06cb1402cb43f90d95b4c933511189"
-    },
-    "thumbnail": {
-      "href": "./thumbnail.png",
-      "type": "image/png",
-      "roles": [
-        "thumbnail"
-      ],
-      "title": "Ward Boundaries (2020) rendered with the default style",
-      "file:size": 435633,
-      "file:checksum": "1220c92c43ed181077f2248af51508deb9f93a78b96ccb151ab669c6f5efbfa6bf64"
-    }
-  },
-  "portolan:styles": [
-    "styles/default",
-    "styles/city-renderer"
-  ],
-  "title": "Ward Boundaries (2020)",
-  "updated": "2026-08-05T01:13:22+00:00",
   "providers": [
     {
       "name": "City of St. Louis \u2014 Planning and Urban Design",
@@ -1224,6 +1148,98 @@
         "host"
       ],
       "url": "https://github.com/cholmes/portolan-catalog-stlouis"
+    }
+  ],
+  "assets": {
+    "wards": {
+      "href": "./wards.parquet",
+      "type": "application/vnd.apache.parquet",
+      "title": "Ward Boundaries (2020) (GeoParquet)",
+      "file:size": 164924,
+      "file:checksum": "12200b54ae77ebb1ac9a81f1c6892a83c1f76155e4ce7a543ba3b11044dc7e7f4bfa",
+      "roles": [
+        "data"
+      ]
+    },
+    "wards-tiles": {
+      "href": "./wards.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "wards (vector tiles)",
+      "file:size": 135034,
+      "file:checksum": "1220ebad3365a1b66573f239e11d143c62b79c669b5b5e5db582349f94363fc3962c",
+      "roles": [
+        "visual"
+      ]
+    },
+    "styles/city-renderer": {
+      "href": "./styles/city-renderer.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "City renderer",
+      "description": "The city's own symbology, extracted from the source ArcGIS renderer.",
+      "file:size": 521,
+      "file:checksum": "122020f016a4494d1753eed97ab007ce301c87d595044e7ac64d975d2e8890758063",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Wards (2020)",
+      "description": "The fourteen wards from 2020 redistricting, one color each, labeled.",
+      "file:size": 2650,
+      "file:checksum": "1220d772f51228f4b18ed220f29c2e9158d91b025cb3eda07acebac3e1c1fd6545a1",
+      "roles": [
+        "default",
+        "style"
+      ]
+    },
+    "styles/style-boundaries": {
+      "href": "./styles/style-boundaries.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Ward boundaries",
+      "description": "Outlines only.",
+      "file:size": 452,
+      "file:checksum": "12207f5d8a7a1cd5034874840d4db88d960b0477f8e6830a2555d4b14fd5809a923d",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/style-subtle": {
+      "href": "./styles/style-subtle.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Subtle wards",
+      "description": "Light tint for use under other data.",
+      "file:size": 709,
+      "file:checksum": "122039df8a1c4dadd197c7f1b65cfb93ea814f06cb1402cb43f90d95b4c933511189",
+      "roles": [
+        "style"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "title": "Ward Boundaries (2020) rendered with the default style",
+      "file:size": 409140,
+      "file:checksum": "122084f6fd04e075998f12d769d711acbf2f784a6beed97b748006204a9ed096cf44",
+      "roles": [
+        "thumbnail"
+      ]
+    }
+  },
+  "themes": [
+    {
+      "scheme": "https://www.stlouis-mo.gov/data/topics/",
+      "concepts": [
+        {
+          "id": "government",
+          "title": "Government"
+        },
+        {
+          "id": "urban-development-and-planning",
+          "title": "Urban Development and Planning"
+        }
+      ]
     }
   ]
 }
