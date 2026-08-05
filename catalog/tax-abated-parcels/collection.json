@@ -674,8 +674,8 @@
       "href": "./tax-abated-parcels.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "tax-abated-parcels (vector tiles)",
-      "file:size": 1636383,
-      "file:checksum": "12204eb9529afac988c5eb13d1a911a2e6b07a8d32abd497e0d5b99bd38ee1bbb69e",
+      "file:size": 2399868,
+      "file:checksum": "122086e2fcaec8bef991ed4122839fb21286d8d817492b8775318d1b8b63415ff9b8",
       "roles": [
         "visual"
       ]
@@ -718,8 +718,8 @@
       "href": "./thumbnail.png",
       "type": "image/png",
       "title": "Tax-abated Parcels rendered with the default style",
-      "file:size": 308368,
-      "file:checksum": "122002ecaa02269da8c611972e38e68ebfc8a75d94f5e4a140b631fadeb771a9d30c",
+      "file:size": 438106,
+      "file:checksum": "1220b4f848fafb9890db421c6ddfce5109cf71734f8fbb3a16971df0cee7ad9c1908",
       "roles": [
         "thumbnail"
       ]

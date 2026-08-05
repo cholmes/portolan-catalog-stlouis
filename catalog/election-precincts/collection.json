@@ -129,8 +129,8 @@
       "href": "./election-precincts.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Election Wards & Precincts (GeoParquet)",
-      "file:size": 274976,
-      "file:checksum": "1220b9b9af26719324895fded0cc5addb84af18312503cfd5bd49ee373fe33340727",
+      "file:size": 275923,
+      "file:checksum": "1220998feacc412ffaded313d56cd453a95c3ee850d0209810ddf0aab0ebfd9d2e78",
       "roles": [
         "data"
       ]
@@ -139,8 +139,8 @@
       "href": "./election-precincts.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "election-precincts (vector tiles)",
-      "file:size": 292105,
-      "file:checksum": "12204325b96a44336adaadaf05e1cdb7ea0ae08f45d1660769af5d769045e4a7ac15",
+      "file:size": 379181,
+      "file:checksum": "1220d635020f4e71bb6ed43e7bd1aafa9437e3870fe17ba4c66b60004fd414e91b54",
       "roles": [
         "visual"
       ]
@@ -183,7 +183,7 @@
       "href": "./README.md",
       "type": "text/markdown",
       "file:size": 2269,
-      "file:checksum": "1220d5f5ba97739dbd74109cf4e145e42298e47f80e96325970f4e5f9c0f0f49d3df",
+      "file:checksum": "12205151c496d6e97415364509d0a99e2288ae3b0d4308ceddafec95ab7a7fd76ef0",
       "roles": [
         "documentation"
       ]
@@ -191,8 +191,8 @@
     "thumbnail": {
       "href": "./thumbnail.png",
       "type": "image/png",
-      "file:size": 341575,
-      "file:checksum": "122089b8bc9e2f7c7691734e26874648518b1e39a668c374f3897f562c6e827ea1ad",
+      "file:size": 341476,
+      "file:checksum": "1220fdebb2c5d3f36e82e4f74905c695ea71a7ee5159ea4443fd4aa5f8d569a03187",
       "roles": [
         "thumbnail"
       ]

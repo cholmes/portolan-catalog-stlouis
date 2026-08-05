@@ -157,8 +157,8 @@
       "href": "./neighborhoods.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "neighborhoods (vector tiles)",
-      "file:size": 112045,
-      "file:checksum": "122089afd6de09acda6c4ffacb4668f98003d0c727647fc5e1f667e31e0ec66d6441",
+      "file:size": 176878,
+      "file:checksum": "12202d8674718d8fe9d32aa603e9df3f52d27301c1e48ef00c8e1246086c8aa43f35",
       "roles": [
         "visual"
       ]
@@ -212,8 +212,8 @@
       "href": "./thumbnail.png",
       "type": "image/png",
       "title": "Neighborhood Boundaries rendered with the default style",
-      "file:size": 319769,
-      "file:checksum": "12205d58546b940cd992959978858542c2da9b47fd8227f690059f8af33a4097b9a5",
+      "file:size": 320094,
+      "file:checksum": "122019b1d5d08fc143d6a776b7fc7eb5e586250e9cfa412234896e654d9f13b71343",
       "roles": [
         "thumbnail"
       ]

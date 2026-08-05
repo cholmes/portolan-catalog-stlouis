@@ -64,12 +64,15 @@ Information about city blocks. A city block, residential block, urban block, or 
 | File | Size | Checksum |
 |------|------|----------|
 | ./city-blocks.parquet | 6.9 MB | 122047a49613... |
-| ./city-blocks.pmtiles | 5.7 MB | 12201b504cbe... |
+| ./city-blocks.pmtiles | 4.7 MB | 1220ede2fd4d... |
 | ./styles/city-renderer.json | 533 B | 1220d9fd7162... |
-| ./styles/default.json | 498 B | 12200af8636b... |
+| ./styles/default.json | 1.3 KB | 1220c54ea2ec... |
 | ./styles/style-block-number.json | 1.4 KB | 12205bcd2c5f... |
 | ./styles/style-tint.json | 511 B | 1220bb0e5e3f... |
-| ./thumbnail.png | 383.4 KB | 12206d6bf9f3... |
+| ./thumbnail.png | 655.1 KB | 12200d5bfb3f... |
+| ./styles/style-by-census-tract.json | 2.0 KB | 12202fb3f078... |
+| ./styles/style-by-precinct.json | 1.8 KB | 1220332fb290... |
+| ./styles/style-by-ward.json | 1.8 KB | 1220125e2c13... |
 
 ## Quick Start
 

@@ -81,10 +81,10 @@ and parcel-joinable datasets. Not an official city service.
 | File | Size | Checksum |
 |------|------|----------|
 | ./bike-infrastructure.parquet | 426.5 KB | 12201e093aea... |
-| ./bike-infrastructure.pmtiles | 931.1 KB | 122092959175... |
+| ./bike-infrastructure.pmtiles | 1.2 MB | 12208472f2d6... |
 | ./styles/city-renderer.json | 533 B | 12209ef360eb... |
 | ./styles/default.json | 2.0 KB | 1220ed376cca... |
-| ./thumbnail.png | 413.0 KB | 12207176e906... |
+| ./thumbnail.png | 489.4 KB | 122057de2c4f... |
 | ./styles/style-network.json | 1.6 KB | 12209a4c0034... |
 | ./styles/style-planned.json | 1.2 KB | 12200f1f97e5... |
 

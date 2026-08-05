@@ -38,12 +38,12 @@ Data on St. Louis certified local historic districts
 | File | Size | Checksum |
 |------|------|----------|
 | ./historic-districts.parquet | 61.0 KB | 1220b7d15b2f... |
-| ./historic-districts.pmtiles | 120.6 KB | 12201518054a... |
+| ./historic-districts.pmtiles | 197.3 KB | 1220e13d15f5... |
 | ./styles/city-renderer.json | 799 B | 1220816daf12... |
 | ./styles/default.json | 1.3 KB | 1220dec4752e... |
 | ./styles/style-boundaries.json | 980 B | 1220cead87e2... |
 | ./styles/style-local-protection.json | 1.4 KB | 12206a0425ca... |
-| ./thumbnail.png | 371.4 KB | 12207c5019b5... |
+| ./thumbnail.png | 440.0 KB | 1220aad4d517... |
 
 ## Quick Start
 

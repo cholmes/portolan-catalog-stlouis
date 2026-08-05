@@ -163,14 +163,14 @@ Current and historic parcel data
 | File | Size | Checksum |
 |------|------|----------|
 | ./parcels.parquet | 29.9 MB | 122004b0a978... |
-| ./parcels.pmtiles | 130.3 MB | 1220896108ea... |
+| ./parcels.pmtiles | 21.0 MB | 12202e7a7328... |
 | ./styles/city-renderer.json | 525 B | 1220d4ff4909... |
 | ./styles/default.json | 797 B | 12205582023a... |
 | ./styles/style-assessed-value.json | 1.4 KB | 1220fd5b0b12... |
 | ./styles/style-city-assessor.json | 545 B | 12200930a396... |
 | ./styles/style-vacant-lots.json | 1.1 KB | 122092b73432... |
 | ./styles/style-year-built.json | 1.3 KB | 122071ceff97... |
-| ./thumbnail.png | 334.7 KB | 12206185d2d2... |
+| ./thumbnail.png | 653.3 KB | 12207f2bc12b... |
 
 ## Quick Start
 

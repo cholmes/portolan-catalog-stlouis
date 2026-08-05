@@ -189,8 +189,8 @@
       "href": "./parks.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "parks (vector tiles)",
-      "file:size": 134760,
-      "file:checksum": "12200f890776d172d0c40fd2597a4f616f074c4c4762b52fd18e66625a60fad75433",
+      "file:size": 149323,
+      "file:checksum": "1220acaf63e0402e74fbe341b64c15517f35bd27313f6b6cd717f31c7595634ca428",
       "roles": [
         "visual"
       ]
@@ -244,8 +244,8 @@
       "href": "./thumbnail.png",
       "type": "image/png",
       "title": "City Parks rendered with the default style",
-      "file:size": 339312,
-      "file:checksum": "1220fe5e193e58d0897d8d5e5d3433736422364f2d4c512ee940938f324a428aa1f1",
+      "file:size": 450344,
+      "file:checksum": "12201188d6fc79ca4fd16ae678a949d35efa0ec1995a6eae41ed4cd4ad0df004ec0f",
       "roles": [
         "thumbnail"
       ]

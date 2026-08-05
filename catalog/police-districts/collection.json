@@ -157,8 +157,8 @@
       "href": "./police-districts.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "police-districts (vector tiles)",
-      "file:size": 14092,
-      "file:checksum": "1220ec123d6aaca8e0142f98121ba34e37d54d6cf9d0d28cdd4972fb57fa3934bb7a",
+      "file:size": 44660,
+      "file:checksum": "1220031cf64fecebcfa08c5462d87499b51770398ce73e66e1efdee612fa8001c9b8",
       "roles": [
         "visual"
       ]
@@ -212,8 +212,8 @@
       "href": "./thumbnail.png",
       "type": "image/png",
       "title": "Police District Boundaries rendered with the default style",
-      "file:size": 297757,
-      "file:checksum": "1220646e8748aa03125ef89034c899936ae2cf9cbb206e5fae171573a53377315522",
+      "file:size": 302585,
+      "file:checksum": "1220e72b7da5e268a0959bc9168f3f1a403fd28ddb066aec8ec9c5a9fe6d3d005f37",
       "roles": [
         "thumbnail"
       ]

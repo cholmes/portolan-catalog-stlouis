@@ -177,8 +177,8 @@
       "href": "./tif-districts.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "tif-districts (vector tiles)",
-      "file:size": 197897,
-      "file:checksum": "1220ef89d3fbc09ac20141bce458ff81e975d6b5fcfd0324dc498c64d4be6fa09269",
+      "file:size": 235047,
+      "file:checksum": "1220f74bd4741b4ad8e9fa089d07fcdb16672e5b2050af973383b102c205028ac19f",
       "roles": [
         "visual"
       ]
@@ -232,8 +232,8 @@
       "href": "./thumbnail.png",
       "type": "image/png",
       "title": "Tax Increment Financing (TIF) Districts rendered with the default style",
-      "file:size": 377919,
-      "file:checksum": "1220f706f4193ee137b2b231270454e60833caa9f387a84d9effbeec8c0409f9064b",
+      "file:size": 407848,
+      "file:checksum": "12207a0f56eceaad19bf198218ffdaee9595593dd3e514781f4be4c069e0df73eff4",
       "roles": [
         "thumbnail"
       ]

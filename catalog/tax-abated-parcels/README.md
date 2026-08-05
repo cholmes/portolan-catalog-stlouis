@@ -162,11 +162,11 @@ Parcels within the City of Saint Louis that have obtained and activated an abate
 | File | Size | Checksum |
 |------|------|----------|
 | ./tax-abated-parcels.parquet | 457.2 KB | 1220d389acc8... |
-| ./tax-abated-parcels.pmtiles | 1.6 MB | 12204eb9529a... |
+| ./tax-abated-parcels.pmtiles | 2.3 MB | 122086e2fcae... |
 | ./styles/default.json | 1.3 KB | 1220ded37ced... |
 | ./styles/style-expiring.json | 1.1 KB | 1220b7b8a843... |
 | ./styles/style-solid.json | 548 B | 12204ac43989... |
-| ./thumbnail.png | 301.1 KB | 122002ecaa02... |
+| ./thumbnail.png | 427.8 KB | 1220b4f848fa... |
 
 ## Quick Start
 

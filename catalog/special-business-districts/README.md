@@ -6,7 +6,7 @@ Special business districts (SBDs) within the City of Saint Louis. SBDs are estab
 
 ## Spatial Coverage
 
-- **Bounding Box**: [-90.31400927333445, 38.562374214383, -90.18091174100911, 38.71616957108721]
+- **Bounding Box**: [-90.31400838630158, 38.562378757005, -90.18091048460606, 38.716173826575705]
 
 ## Temporal Coverage
 
@@ -48,13 +48,13 @@ Special business districts (SBDs) within the City of Saint Louis. SBDs are estab
 
 | File | Size | Checksum |
 |------|------|----------|
-| ./special-business-districts.parquet | 27.3 KB | 1220a8f2d5a9... |
-| ./special-business-districts.pmtiles | 38.1 KB | 122081b1464a... |
+| ./special-business-districts.parquet | 28.1 KB | 12207dd8f70e... |
+| ./special-business-districts.pmtiles | 65.2 KB | 1220783186ae... |
 | ./styles/default.json | 1.1 KB | 1220a8916942... |
 | ./styles/style-boundaries.json | 498 B | 12203828e01c... |
 | ./styles/style-labeled.json | 1008 B | 1220cd21824e... |
-| ./README.md | 3.0 KB | 122080cc8c52... |
-| ./thumbnail.png | 399.2 KB | 1220c30bbfc7... |
+| ./README.md | 3.0 KB | 12202ffb64fc... |
+| ./thumbnail.png | 428.9 KB | 12208525c233... |
 
 ## Quick Start
 

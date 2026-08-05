@@ -389,8 +389,8 @@
       "href": "./lra-property.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "lra-property (vector tiles)",
-      "file:size": 7168759,
-      "file:checksum": "1220e01c9fd4d47d9fc156453cfb592ef50f41042e194b8c70ce9fb254def9fef1fa",
+      "file:size": 5352331,
+      "file:checksum": "12200fb5f95375fcfaca99e69ac0cf52e871bff685c02cbdf889c4dcf89e257f07a8",
       "roles": [
         "visual"
       ]
@@ -455,8 +455,8 @@
       "href": "./thumbnail.png",
       "type": "image/png",
       "title": "LRA Property rendered with the default style",
-      "file:size": 296348,
-      "file:checksum": "12201a66c84a16c4c204d4d1699ec92f818bb0614c1641c07743b7f3e05a9cb0ad84",
+      "file:size": 438347,
+      "file:checksum": "1220af45b4e15cc5a8b51ebd0678e710a6006ac98ec198337d435692dbad9417d8b2",
       "roles": [
         "thumbnail"
       ]

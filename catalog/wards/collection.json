@@ -1116,10 +1116,10 @@
     "spatial": {
       "bbox": [
         [
-          -90.3205185600311,
-          38.53202237978702,
-          -90.17777770213434,
-          38.670576078511985
+          -90.32051499970312,
+          38.53201199995981,
+          -90.16627099969693,
+          38.774368000291375
         ]
       ]
     },
@@ -1155,8 +1155,8 @@
       "href": "./wards.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Ward Boundaries (2020) (GeoParquet)",
-      "file:size": 164924,
-      "file:checksum": "12200b54ae77ebb1ac9a81f1c6892a83c1f76155e4ce7a543ba3b11044dc7e7f4bfa",
+      "file:size": 165834,
+      "file:checksum": "1220489c01b0c08e7e43a7e9d2009145dc058cfbac78c644ccf8690d9f05ce5fa066",
       "roles": [
         "data"
       ]
@@ -1165,8 +1165,8 @@
       "href": "./wards.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "wards (vector tiles)",
-      "file:size": 135034,
-      "file:checksum": "1220ebad3365a1b66573f239e11d143c62b79c669b5b5e5db582349f94363fc3962c",
+      "file:size": 494548,
+      "file:checksum": "1220c1ec8fb0b009876b160916f41eba0eeb187ea6e0c5437e07e7a50e6e3e27f05f",
       "roles": [
         "visual"
       ]
@@ -1186,9 +1186,9 @@
       "href": "./styles/default.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "Wards (2020)",
-      "description": "The fourteen wards from 2020 redistricting, one color each, labeled.",
-      "file:size": 2650,
-      "file:checksum": "1220d772f51228f4b18ed220f29c2e9158d91b025cb3eda07acebac3e1c1fd6545a1",
+      "description": "The fourteen wards from 2020 redistricting in bold saturated colors with heavy dark borders, labeled \u2014 deliberately weightier than the pastel precinct map.",
+      "file:size": 2743,
+      "file:checksum": "122072c5f341d3054fcc2dbccd1cda76fcf91e60d26df79a02d0f8ace43f0609d011",
       "roles": [
         "default",
         "style"
@@ -1220,8 +1220,8 @@
       "href": "./thumbnail.png",
       "type": "image/png",
       "title": "Ward Boundaries (2020) rendered with the default style",
-      "file:size": 409140,
-      "file:checksum": "122084f6fd04e075998f12d769d711acbf2f784a6beed97b748006204a9ed096cf44",
+      "file:size": 407928,
+      "file:checksum": "1220ffca009a12eac9cb3354908a237c6a66599c9a9cc6fd31a88ad16dc51d428021",
       "roles": [
         "thumbnail"
       ]

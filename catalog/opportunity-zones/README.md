@@ -32,12 +32,12 @@ Qualified Opportunity Zones (QOZs) within the City of Saint Louis. Qualified Opp
 | File | Size | Checksum |
 |------|------|----------|
 | ./opportunity-zones.parquet | 66.6 KB | 1220bb7771da... |
-| ./opportunity-zones.pmtiles | 34.5 KB | 122071c8c655... |
+| ./opportunity-zones.pmtiles | 56.3 KB | 1220a8f07589... |
 | ./styles/city-renderer.json | 545 B | 12200176b48e... |
 | ./styles/default.json | 775 B | 12208ac754b0... |
 | ./styles/style-boundaries.json | 476 B | 122031c4a4d9... |
 | ./styles/style-labeled.json | 1002 B | 1220d4cd0cc3... |
-| ./thumbnail.png | 268.6 KB | 12205244a675... |
+| ./thumbnail.png | 457.3 KB | 12204cccd2ae... |
 
 ## Quick Start
 

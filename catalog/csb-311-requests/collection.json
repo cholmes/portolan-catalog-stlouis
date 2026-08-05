@@ -236,8 +236,8 @@
       "href": "./csb-311-requests.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "csb-311-requests (vector tiles)",
-      "file:size": 166880376,
-      "file:checksum": "1220df856bd4ad14e960bb0e8330cd9e4a7eba81394d46112d392517cfce99bc1c21",
+      "file:size": 20907329,
+      "file:checksum": "122062fc6df560274893458fa8d1e05331b6d35813baee731aebb18a894aa553ae19",
       "roles": [
         "visual"
       ]
@@ -247,8 +247,8 @@
       "type": "application/vnd.mapbox.style+json",
       "title": "311 service requests",
       "description": "1.48 million Citizens' Service Bureau requests since 2008, as a dense point field.",
-      "file:size": 797,
-      "file:checksum": "1220c553e3798984f805b3c8834b69add2b3f5a8b8610c7fefc203c17255ad75b699",
+      "file:size": 845,
+      "file:checksum": "1220cbed61a992dee8263e693163c6d1cc19509e0cb7feb88d6fdca919ac91885b82",
       "roles": [
         "default",
         "style"
@@ -291,8 +291,8 @@
       "href": "./thumbnail.png",
       "type": "image/png",
       "title": "CSB Service Requests (311) rendered with the default style",
-      "file:size": 230512,
-      "file:checksum": "12205bc66bec61aeee22d94332bb0e4e15f03d51e236487ae90d2deea811ba110f77",
+      "file:size": 358488,
+      "file:checksum": "12209fa2182aa87bfdd3c64335ff8e88dfd450feb0b8198d3f0aebbfdd338cb72b85",
       "roles": [
         "thumbnail"
       ]
@@ -300,8 +300,8 @@
     "documentation": {
       "href": "./README.md",
       "type": "text/markdown",
-      "file:size": 3376,
-      "file:checksum": "1220763decf7ccca2124ba5b5ed291f33f5dc1a6afbb73d59eea616936898a2891f1",
+      "file:size": 3375,
+      "file:checksum": "1220b55186d865a7f3a454272ef3f5872eff8edadaec9451e9cb57c114adc0873fb5",
       "roles": [
         "documentation"
       ]

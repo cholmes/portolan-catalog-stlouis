@@ -159,8 +159,8 @@
       "href": "./city-boundary.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "city-boundary (vector tiles)",
-      "file:size": 5492,
-      "file:checksum": "1220be1a40018f6ffcfa2c28b66f08a7f7250f26661db06189c11f02c4b730a4e6ca",
+      "file:size": 21543,
+      "file:checksum": "12204ef4831f83c54f77634227258fb9a9d1b02eec95235842b584589b4680c16916",
       "roles": [
         "visual"
       ]
@@ -214,8 +214,8 @@
       "href": "./thumbnail.png",
       "type": "image/png",
       "title": "City Boundary rendered with the default style",
-      "file:size": 313331,
-      "file:checksum": "1220f2fabe2e3ffe07eefa71bd5d5b74f9724c09c30ccd15230e6a7e4e45682736be",
+      "file:size": 326675,
+      "file:checksum": "1220892a65939af99e49ceb2d6d85776febbfe64b1f71480264ad35f38de183112b2",
       "roles": [
         "thumbnail"
       ]

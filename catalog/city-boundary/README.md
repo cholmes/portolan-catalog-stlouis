@@ -31,12 +31,12 @@ St. Louis City limits
 | File | Size | Checksum |
 |------|------|----------|
 | ./city-boundary.parquet | 16.3 KB | 1220da821494... |
-| ./city-boundary.pmtiles | 5.4 KB | 1220be1a4001... |
+| ./city-boundary.pmtiles | 21.0 KB | 12204ef4831f... |
 | ./styles/city-renderer.json | 537 B | 12206727402e... |
 | ./styles/default.json | 533 B | 122008134b13... |
 | ./styles/style-dashed.json | 564 B | 1220a66ee00c... |
 | ./styles/style-filled.json | 717 B | 12201fcce7bb... |
-| ./thumbnail.png | 306.0 KB | 1220f2fabe2e... |
+| ./thumbnail.png | 319.0 KB | 1220892a6593... |
 
 ## Quick Start
 

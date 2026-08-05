@@ -31,12 +31,12 @@ ESRI shapefiles for city neighborhoods
 | File | Size | Checksum |
 |------|------|----------|
 | ./neighborhoods.parquet | 46.2 KB | 122025f29ee7... |
-| ./neighborhoods.pmtiles | 109.4 KB | 122089afd6de... |
+| ./neighborhoods.pmtiles | 172.7 KB | 12202d867471... |
 | ./styles/city-renderer.json | 537 B | 12205758c219... |
 | ./styles/default.json | 1.8 KB | 122014282c3d... |
 | ./styles/style-boundaries.json | 483 B | 1220e4a863d6... |
 | ./styles/style-number.json | 1.6 KB | 1220c069b5cd... |
-| ./thumbnail.png | 312.3 KB | 12205d58546b... |
+| ./thumbnail.png | 312.6 KB | 122019b1d5d0... |
 
 ## Quick Start
 

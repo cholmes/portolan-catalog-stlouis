@@ -163,8 +163,8 @@
       "href": "./opportunity-zones.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "opportunity-zones (vector tiles)",
-      "file:size": 35295,
-      "file:checksum": "122071c8c655094f763ffd40732fd0d18d1457294ffc7bac38ee7b2fe7bf67878d01",
+      "file:size": 57642,
+      "file:checksum": "1220a8f0758991f5aeb6c33207baf63a92b1571ecf8ebe90d660d1dfb83834577ec6",
       "roles": [
         "visual"
       ]
@@ -218,8 +218,8 @@
       "href": "./thumbnail.png",
       "type": "image/png",
       "title": "Qualified Opportunity Zones rendered with the default style",
-      "file:size": 275036,
-      "file:checksum": "12205244a6756711bb2ca6c8cfdb32a86327426becf67daf2842cc5753f0b1f0a490",
+      "file:size": 468300,
+      "file:checksum": "12204cccd2ae8bbe3685cb2a1f54a8fa919ea3cc58e05bcd6da70e9cf5ca4e772f11",
       "roles": [
         "thumbnail"
       ]

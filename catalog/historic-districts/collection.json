@@ -185,8 +185,8 @@
       "href": "./historic-districts.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "historic-districts (vector tiles)",
-      "file:size": 123483,
-      "file:checksum": "12201518054a5a65d82d515ed8630199ef1c1f7fff04b335972df6f6f46f7229085a",
+      "file:size": 202080,
+      "file:checksum": "1220e13d15f50e039ba05e202d59c44cb93acbb45dd82f96524270d12d3513633193",
       "roles": [
         "visual"
       ]
@@ -240,8 +240,8 @@
       "href": "./thumbnail.png",
       "type": "image/png",
       "title": "Historic Districts rendered with the default style",
-      "file:size": 380335,
-      "file:checksum": "12207c5019b5917a0e02c26550d84e82d26e0b74fe5665e85a09e47b8d308b50b285",
+      "file:size": 450562,
+      "file:checksum": "1220aad4d517313dc93d68379a44953c961d71a1247ce0f7d108e368e94bd9dab1f8",
       "roles": [
         "thumbnail"
       ]

@@ -89,13 +89,13 @@ Land Reutilization Authority data and search.
 | File | Size | Checksum |
 |------|------|----------|
 | ./lra-property.parquet | 1.9 MB | 1220ca4cfc3e... |
-| ./lra-property.pmtiles | 6.8 MB | 1220e01c9fd4... |
+| ./lra-property.pmtiles | 5.1 MB | 12200fb5f953... |
 | ./styles/city-renderer.json | 1.3 KB | 12209a91d028... |
 | ./styles/default.json | 1.7 KB | 12207f98eac2... |
 | ./styles/style-solid.json | 506 B | 122033c6a1f3... |
 | ./styles/style-source.json | 1.6 KB | 12201a65e0c5... |
 | ./styles/style-usage.json | 1.6 KB | 1220b6d23480... |
-| ./thumbnail.png | 289.4 KB | 12201a66c84a... |
+| ./thumbnail.png | 428.1 KB | 1220af45b4e1... |
 
 ## Quick Start
 

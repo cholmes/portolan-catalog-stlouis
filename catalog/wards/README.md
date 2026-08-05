@@ -6,7 +6,7 @@ Boundaries of City of St. Louis wards
 
 ## Spatial Coverage
 
-- **Bounding Box**: [-90.3205185600311, 38.53202237978702, -90.17777770213434, 38.670576078511985]
+- **Bounding Box**: [-90.32051499970312, 38.53201199995981, -90.16627099969693, 38.774368000291375]
 
 ## Temporal Coverage
 
@@ -282,13 +282,13 @@ Boundaries of City of St. Louis wards
 
 | File | Size | Checksum |
 |------|------|----------|
-| ./wards.parquet | 161.1 KB | 12200b54ae77... |
-| ./wards.pmtiles | 131.9 KB | 1220ebad3365... |
+| ./wards.parquet | 161.9 KB | 1220489c01b0... |
+| ./wards.pmtiles | 483.0 KB | 1220c1ec8fb0... |
 | ./styles/city-renderer.json | 521 B | 122020f016a4... |
-| ./styles/default.json | 2.6 KB | 1220d772f512... |
+| ./styles/default.json | 2.7 KB | 122072c5f341... |
 | ./styles/style-boundaries.json | 452 B | 12207f5d8a7a... |
 | ./styles/style-subtle.json | 709 B | 122039df8a1c... |
-| ./thumbnail.png | 399.6 KB | 122084f6fd04... |
+| ./thumbnail.png | 398.4 KB | 1220ffca009a... |
 
 ## Quick Start
 

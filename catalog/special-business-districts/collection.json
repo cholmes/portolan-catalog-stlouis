@@ -178,10 +178,10 @@
     "spatial": {
       "bbox": [
         [
-          -90.31400927333445,
-          38.562374214383,
-          -90.18091174100911,
-          38.71616957108721
+          -90.31400838630158,
+          38.562378757005,
+          -90.18091048460606,
+          38.716173826575705
         ]
       ]
     },
@@ -217,8 +217,8 @@
       "href": "./special-business-districts.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Special Business Districts (SBDs) (GeoParquet)",
-      "file:size": 27928,
-      "file:checksum": "1220a8f2d5a929a6f5070d65c37c4876216302d794b1ee54471d0df9459d30c3db00",
+      "file:size": 28824,
+      "file:checksum": "12207dd8f70e914722d6bb06439daffd311956be54deecf1673c244c43e7ea950f47",
       "roles": [
         "data"
       ]
@@ -227,8 +227,8 @@
       "href": "./special-business-districts.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "special-business-districts (vector tiles)",
-      "file:size": 38985,
-      "file:checksum": "122081b1464aad8e2507b5808d4211473ad17640b12b9716f8a51164d40c38e1e610",
+      "file:size": 66737,
+      "file:checksum": "1220783186ae6749340a6e33032c3f4f8d61edbbee6d8b267ae27b696d24c02fde7c",
       "roles": [
         "data"
       ]
@@ -270,8 +270,8 @@
     "documentation": {
       "href": "./README.md",
       "type": "text/markdown",
-      "file:size": 3102,
-      "file:checksum": "12202ffb64fc57dbdf05692dc81fe51d76e6a117ae3292b94995771929b0c1dd4e1c",
+      "file:size": 3103,
+      "file:checksum": "12207b86f98e7e382aa9a4c151339e6e13ff0d709212e72e64e116379f3cddcf9317",
       "roles": [
         "documentation"
       ]
@@ -280,8 +280,8 @@
       "href": "./thumbnail.png",
       "type": "image/png",
       "title": "Special Business Districts (SBDs) rendered with the default style",
-      "file:size": 408779,
-      "file:checksum": "1220c30bbfc7e33c7f812d184d937231d17a8bb2cc1aee562013d5cfb5d538038678",
+      "file:size": 439190,
+      "file:checksum": "12208525c233f4ba9d2e5caaf8497c52c7cb7f45312cf368569de99a3ceda637a2db",
       "roles": [
         "thumbnail"
       ]

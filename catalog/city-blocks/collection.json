@@ -289,8 +289,8 @@
       "href": "./city-blocks.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "city-blocks (vector tiles)",
-      "file:size": 5949650,
-      "file:checksum": "12201b504cbe9ea5fb1e7114f0d317dca6081261c1eb9aee73fd31079b59ef85034e",
+      "file:size": 4967908,
+      "file:checksum": "1220ede2fd4d59fc03e93737fdd266727915bdf4135aa11aa4f728ab2c67ecadc286",
       "roles": [
         "visual"
       ]
@@ -310,9 +310,9 @@
       "href": "./styles/default.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "City blocks",
-      "description": "The city's 5,857 numbered blocks as a hairline mesh.",
-      "file:size": 498,
-      "file:checksum": "12200af8636b14c3e77a6dc4cd10ba5474aedafd6fd0177ea41bea5a5c3f4b4064f2",
+      "description": "Every numbered block as a readable unit: semi-transparent city-blue fill, white borders, and the block number labeled at high zoom.",
+      "file:size": 1302,
+      "file:checksum": "1220c54ea2ecacd7d24d6b0560587528d6042ef0afe6a6e1c6191305b33681859a16",
       "roles": [
         "default",
         "style"
@@ -344,11 +344,44 @@
       "href": "./thumbnail.png",
       "type": "image/png",
       "title": "City Blocks rendered with the default style",
-      "file:size": 392631,
-      "file:checksum": "12206d6bf9f3135d595fd02315ed92c15455f50df753795a67a815aaff0d859209cd",
+      "file:size": 670788,
+      "file:checksum": "12200d5bfb3fed955ddf9d44144b697c2816cf8d054058a9dca9c5b902a8e9c797bd",
       "roles": [
         "thumbnail"
       ]
+    },
+    "styles/style-by-census-tract": {
+      "href": "./styles/style-by-census-tract.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "style"
+      ],
+      "title": "Blocks by census tract (2010)",
+      "description": "Blocks tinted by 2010 census tract (CensTract10, repeating colors), labeled with the block number.",
+      "file:size": 2028,
+      "file:checksum": "12202fb3f078ebff75355d86a7e2ec76457725ef97b2ef6903772055c7553e64f982"
+    },
+    "styles/style-by-precinct": {
+      "href": "./styles/style-by-precinct.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "style"
+      ],
+      "title": "Blocks by precinct (2010)",
+      "description": "Blocks tinted by 2010 precinct (PRECINCT10, repeating colors), labeled with the block number.",
+      "file:size": 1885,
+      "file:checksum": "1220332fb2902b4fd55d04dec690736d49056a49bba531f9c5781bfb275cb163c879"
+    },
+    "styles/style-by-ward": {
+      "href": "./styles/style-by-ward.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "style"
+      ],
+      "title": "Blocks by ward (2010)",
+      "description": "Blocks tinted by their 2010 ward (WARD10, repeating colors) with block-number labels \u2014 see which ward each block sat in.",
+      "file:size": 1839,
+      "file:checksum": "1220125e2c13e2d51e1f39ba23d4b8ce430a6690dc0c38dca319c059c3289912988e"
     }
   },
   "themes": [

@@ -217,8 +217,8 @@
       "href": "./city-trees.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "city-trees (vector tiles)",
-      "file:size": 17381308,
-      "file:checksum": "1220dda9bfd579db559f29fead42eeb20f3c6f11981507ae036eac57744fd5b9fbfe",
+      "file:size": 12428020,
+      "file:checksum": "1220437d3a6081c70809cf21a69eb1254e4012affb3092ec5295d4ece8eec1588f75",
       "roles": [
         "visual"
       ]
@@ -294,8 +294,8 @@
       "href": "./thumbnail.png",
       "type": "image/png",
       "title": "City Trees (Planting Sites) rendered with the default style",
-      "file:size": 377373,
-      "file:checksum": "12200fe2c3af69303fa4b54d82a7e24d1074ade2609bb4d9d43fbcc5114ff3dd91a5",
+      "file:size": 546297,
+      "file:checksum": "1220291e06592c5dc83520e5063de609c61a4f4af6dcc935546338a9307ab5328f5a",
       "roles": [
         "thumbnail"
       ]
