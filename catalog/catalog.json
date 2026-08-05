@@ -161,101 +161,143 @@
     {
       "rel": "child",
       "href": "./siren-locations/collection.json",
-      "title": "Siren Locations",
-      "type": "application/json"
+      "type": "application/json",
+      "title": "Siren Locations"
     },
     {
       "rel": "child",
       "href": "./schools/collection.json",
-      "title": "City Public Schools",
-      "type": "application/json"
+      "type": "application/json",
+      "title": "City Public Schools"
     },
     {
       "rel": "child",
       "href": "./forest-park-trees/collection.json",
-      "title": "Forest Park Trees",
-      "type": "application/json"
+      "type": "application/json",
+      "title": "Forest Park Trees"
     },
     {
       "rel": "child",
       "href": "./port-authority-district/collection.json",
-      "title": "Port Authority District",
-      "type": "application/json"
+      "type": "application/json",
+      "title": "Port Authority District"
     },
     {
       "rel": "child",
       "href": "./wards-2010/collection.json",
-      "title": "Ward Boundaries (2010)",
-      "type": "application/json"
+      "type": "application/json",
+      "title": "Ward Boundaries (2010)"
     },
     {
       "rel": "child",
       "href": "./floodplain/collection.json",
-      "title": "Floodplain",
-      "type": "application/json"
+      "type": "application/json",
+      "title": "Floodplain"
     },
     {
       "rel": "child",
       "href": "./market-value-analysis/collection.json",
-      "title": "2024 Market Value Analysis",
-      "type": "application/json"
+      "type": "application/json",
+      "title": "2024 Market Value Analysis"
     },
     {
       "rel": "child",
       "href": "./polling-places/collection.json",
-      "title": "Polling Centers",
-      "type": "application/json"
+      "type": "application/json",
+      "title": "Polling Centers"
     },
     {
       "rel": "child",
       "href": "./election-results-nov-2024/collection.json",
-      "title": "November 2024 Election Results by Precinct",
-      "type": "application/json"
+      "type": "application/json",
+      "title": "November 2024 Election Results by Precinct"
     },
     {
       "rel": "child",
       "href": "./tornado-damage-2025/collection.json",
-      "title": "May 2025 Tornado Damage",
-      "type": "application/json"
+      "type": "application/json",
+      "title": "May 2025 Tornado Damage"
     },
     {
       "rel": "child",
       "href": "./land-use/collection.json",
-      "title": "Strategic Land Use Plan",
-      "type": "application/json"
+      "type": "application/json",
+      "title": "Strategic Land Use Plan"
     },
     {
       "rel": "child",
       "href": "./flood-controls/collection.json",
-      "title": "Flood Controls",
-      "type": "application/json"
+      "type": "application/json",
+      "title": "Flood Controls"
     },
     {
       "rel": "child",
       "href": "./neighborhood-organizations/collection.json",
-      "title": "Neighborhood Organizations",
-      "type": "application/json"
+      "type": "application/json",
+      "title": "Neighborhood Organizations"
     },
     {
       "rel": "child",
       "href": "./vacancy-composite/collection.json",
-      "title": "Parcel Vacancy Composite",
-      "type": "application/json"
+      "type": "application/json",
+      "title": "Parcel Vacancy Composite"
     },
     {
       "rel": "child",
       "href": "./lead-service-lines/collection.json",
       "type": "application/json",
       "title": "Lead Service Line Inventory"
+    },
+    {
+      "rel": "child",
+      "href": "./animal-bites/collection.json",
+      "type": "application/json",
+      "title": "Animal Bites"
+    },
+    {
+      "rel": "child",
+      "href": "./property-taxes/collection.json",
+      "type": "application/json",
+      "title": "Property Taxes"
+    },
+    {
+      "rel": "child",
+      "href": "./electrical-permits/collection.json",
+      "type": "application/json",
+      "title": "Electrical Permits"
+    },
+    {
+      "rel": "child",
+      "href": "./mechanical-permits/collection.json",
+      "type": "application/json",
+      "title": "Mechanical Permits"
+    },
+    {
+      "rel": "child",
+      "href": "./plumbing-permits/collection.json",
+      "type": "application/json",
+      "title": "Plumbing Permits"
+    },
+    {
+      "rel": "child",
+      "href": "./street-permits/collection.json",
+      "type": "application/json",
+      "title": "Street Permits"
+    },
+    {
+      "rel": "child",
+      "href": "./occupancy-permits/collection.json",
+      "type": "application/json",
+      "title": "Occupancy Permits"
     }
   ],
   "stac_extensions": [
     "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json"
   ],
-  "portolan:total_size_bytes": 297298119,
+  "portolan:total_size_bytes": 297272185,
   "portolan:asset_count": 37,
-  "portolan:collection_count": 36,
-  "updated": "2026-08-05T17:00:27+00:00",
+  "portolan:collection_count": 37,
+  "updated": "2026-08-05T17:48:01+00:00",
   "providers": [
     {
       "name": "City of St. Louis",

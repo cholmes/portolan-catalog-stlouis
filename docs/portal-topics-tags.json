@@ -348,5 +348,70 @@
   "tags": [
    "neighborhoods"
   ]
+ },
+ "property-taxes": {
+  "portal_id": "3",
+  "topics": [],
+  "tags": [
+   "asset-parcel",
+   "property address",
+   "taxes"
+  ]
+ },
+ "electrical-permits": {
+  "portal_id": "51",
+  "topics": [],
+  "tags": [
+   "asset-building",
+   "asset-parcel",
+   "contractor",
+   "inspections",
+   "permits",
+   "property address",
+   "property owner"
+  ]
+ },
+ "mechanical-permits": {
+  "portal_id": "52",
+  "topics": [],
+  "tags": [
+   "hvac",
+   "mechanical",
+   "sprinklers"
+  ]
+ },
+ "plumbing-permits": {
+  "portal_id": "53",
+  "topics": [],
+  "tags": [
+   "asset-prcl",
+   "permits",
+   "property address",
+   "property owner"
+  ]
+ },
+ "street-permits": {
+  "portal_id": "17",
+  "topics": [],
+  "tags": [
+   "permits",
+   "streets"
+  ]
+ },
+ "occupancy-permits": {
+  "portal_id": "6",
+  "topics": [],
+  "tags": [
+   "asset-parcel",
+   "contractor",
+   "permits",
+   "property address",
+   "property owner"
+  ]
+ },
+ "animal-bites": {
+  "portal_id": "130",
+  "topics": [],
+  "tags": []
  }
 }

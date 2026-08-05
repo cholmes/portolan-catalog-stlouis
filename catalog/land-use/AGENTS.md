@@ -17,4 +17,4 @@ Full schema: `table:columns` in collection.json.
 
 ## Provenance
 
-Mirror of [Strategic Land Use Plan](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=78) from the City of St. Louis open data portal; source: https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/Strategic_Land_Use_Plan/FeatureServer. No explicit license is published — see the portal page. Synced 2026-08-05T17:00:27+00:00.
+Mirror of [Strategic Land Use Plan](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=78) from the City of St. Louis open data portal; source: https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/Strategic_Land_Use_Plan/FeatureServer. No explicit license is published — see the portal page. Synced 2026-08-05T17:48:01+00:00.

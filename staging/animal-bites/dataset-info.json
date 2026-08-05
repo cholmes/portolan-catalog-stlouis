@@ -1,0 +1,15 @@
+{
+ "collection": "animal-bites",
+ "title": "Animal Bites",
+ "portal_page": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=130",
+ "department": "Environmental Health Services",
+ "source": "https://static.stlouis-mo.gov/open-data/HEALTH/ANIMAL-CONTROL/ANIMAL_BITES.csv",
+ "source_type": "static",
+ "synced": "2026-08-05T17:48:01+00:00",
+ "fetch": {
+  "status": "ok",
+  "file": "ANIMAL_BITES.csv",
+  "sha256": "abac05e0150be962b04342f5615c0a0e13c44295624773ec5e9141a946fca678",
+  "bytes": 1206410
+ }
+}

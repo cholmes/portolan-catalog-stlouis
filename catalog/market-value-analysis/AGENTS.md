@@ -26,4 +26,4 @@ Reinvestment Fund 2024 MVA at block-group level; ~30 market indicator columns.
 
 ## Provenance
 
-Mirror of [2024 Market Value Analysis](https://stlcity.maps.arcgis.com/home/item.html?id=e71e3ebca1f345a4b7db134d30c5d9ff) from the City of St. Louis open data portal; source: https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/2024_Market_Value_Analysis/FeatureServer. No explicit license is published — see the portal page. Synced 2026-08-05T17:00:27+00:00.
+Mirror of [2024 Market Value Analysis](https://stlcity.maps.arcgis.com/home/item.html?id=e71e3ebca1f345a4b7db134d30c5d9ff) from the City of St. Louis open data portal; source: https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/2024_Market_Value_Analysis/FeatureServer. No explicit license is published — see the portal page. Synced 2026-08-05T17:48:01+00:00.

@@ -72,6 +72,7 @@ NWS/NOAA damage assessment data for the May 2025 St. Louis tornado, with Prop NS
 | ./styles/default.json | 2.2 KB | 12205d7013aa... |
 | ./styles/style-layers.json | 1.5 KB | 1220b5a362a2... |
 | ./styles/style-path.json | 738 B | 12206e3b52b4... |
+| ./thumbnail.png | 287.4 KB | 1220a44d84a2... |
 
 ## Quick Start
 

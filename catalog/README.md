@@ -10,7 +10,11 @@ and parcel-joinable datasets. Not an official city service.
 ## Collections
 
 <details>
-<summary>📁 36 collections (click to expand)</summary>
+<summary>📁 43 collections (click to expand)</summary>
+
+### [Animal Bites](catalog/animal-bites/)
+
+Animal bite reports made to the City of Saint Louis Department of Health and its Animal Care and Control section.
 
 ### [Bike Infrastructure](catalog/bike-infrastructure/)
 
@@ -44,6 +48,10 @@ Wards & current election precincts for the City of St. Louis.
 
 This is the detailed vote extract (dve) from the November 5, 2024, General Municipal Election for the City of St. Louis.
 
+### [Electrical Permits](catalog/electrical-permits/)
+
+Data on commercial, industrial, and residential electrical permits in the City of St. Louis
+
 ### [Flood Controls](catalog/flood-controls/)
 
 Floods Controls
@@ -76,6 +84,10 @@ Land Reutilization Authority data and search.
 
 The Market Value Analysis (MVA) is an in-depth study and mapping of a community's housing market. It reveals the mosaic of market conditions in St. Louis.
 
+### [Mechanical Permits](catalog/mechanical-permits/)
+
+Mechanical permit information by property type, year, neighborhood, ward, and project type.
+
 ### [Neighborhood Organizations](catalog/neighborhood-organizations/)
 
 Neighborhood Organizations as exported 6-20-20
@@ -83,6 +95,10 @@ Neighborhood Organizations as exported 6-20-20
 ### [Neighborhood Boundaries](catalog/neighborhoods/)
 
 ESRI shapefiles for city neighborhoods
+
+### [Occupancy Permits](catalog/occupancy-permits/)
+
+Commercial, industrial, and occupancy building permits in the City of St. Louis
 
 ### [Qualified Opportunity Zones](catalog/opportunity-zones/)
 
@@ -95,6 +111,10 @@ Current and historic parcel data
 ### [City Parks](catalog/parks/)
 
 A database containing information on city parks, park amenities, and amenity attributes
+
+### [Plumbing Permits](catalog/plumbing-permits/)
+
+Plumbing permit information by property type, year, neighborhood, ward, and project type.
 
 ### [Police District Boundaries](catalog/police-districts/)
 
@@ -112,6 +132,10 @@ This feature represents the District boundary for the St. Louis Port Authority. 
 
 Dataset describes real estate sale prices for recent property sales in the city. A separate table describes codes for different type of sales.
 
+### [Property Taxes](catalog/property-taxes/)
+
+Property tax records by parcel
+
 ### [City Public Schools](catalog/schools/)
 
 City of St. Louis public school information including school name, school address, grades, and ages.
@@ -123,6 +147,10 @@ Public emergency siren locations. While these sirens are generally thought of as
 ### [Special Business Districts (SBDs)](catalog/special-business-districts/)
 
 Special business districts (SBDs) within the City of Saint Louis. SBDs are established by Missouri statute. More Info: http://revisor.mo.gov/main/OneChapter.aspx?chapter=67
+
+### [Street Permits](catalog/street-permits/)
+
+Permits issued by the Street Department to allow for blocking of the right of way, excavation in the right of way, overdimensional vehicles, and food trucks
 
 ### [City Streets](catalog/streets/)
 

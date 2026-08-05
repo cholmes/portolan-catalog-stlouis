@@ -17,12 +17,6 @@
       "title": "Agent/LLM usage guide"
     },
     {
-      "rel": "parent",
-      "href": "../catalog.json",
-      "type": "application/json",
-      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
-    },
-    {
       "rel": "describedby",
       "href": "./README.md",
       "type": "text/markdown"
@@ -46,6 +40,12 @@
       "pmtiles:layers": [
         "floodplain"
       ]
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
     }
   ],
   "stac_extensions": [
@@ -147,6 +147,18 @@
   ],
   "portolan:total_size_bytes": 3832336,
   "portolan:asset_count": 1,
+  "updated": "2026-08-05T17:48:01+00:00",
+  "themes": [
+    {
+      "scheme": "https://www.stlouis-mo.gov/data/topics/",
+      "concepts": [
+        {
+          "id": "environment",
+          "title": "Environment"
+        }
+      ]
+    }
+  ],
   "title": "Floodplain",
   "extent": {
     "spatial": {
@@ -169,95 +181,6 @@
     }
   },
   "license": "other",
-  "assets": {
-    "floodplain": {
-      "href": "./floodplain.parquet",
-      "type": "application/vnd.apache.parquet",
-      "file:size": 3832336,
-      "file:checksum": "12207447760874a87254c913b9004383433c9ccca8be98731bad37f014bef1344c49",
-      "roles": [
-        "data"
-      ],
-      "title": "Floodplain (GeoParquet)"
-    },
-    "floodplain-tiles": {
-      "href": "./floodplain.pmtiles",
-      "type": "application/vnd.pmtiles",
-      "roles": [
-        "visual"
-      ],
-      "title": "Floodplain (PMTiles)",
-      "file:size": 705708,
-      "file:checksum": "1220907922fd2aa141927e8d2d3582da24a0d6eac38027156cd0403862b410a8b8b2"
-    },
-    "styles/city-renderer": {
-      "href": "./styles/city-renderer.json",
-      "type": "application/vnd.mapbox.style+json",
-      "roles": [
-        "style"
-      ],
-      "title": "City renderer",
-      "description": "The city's own symbology, extracted from the source ArcGIS renderer.",
-      "file:size": 531,
-      "file:checksum": "12201b542461e241e2aca6abbfc672a3c656a65b956b610584820900db0fe1380493"
-    },
-    "styles/default": {
-      "href": "./styles/default.json",
-      "type": "application/vnd.mapbox.style+json",
-      "roles": [
-        "default",
-        "style"
-      ],
-      "title": "Flood zones",
-      "description": "FEMA flood zones: AE 1-percent-annual-chance in blue, 0.2-percent in light blue, levee-protected X zones teal.",
-      "file:size": 1319,
-      "file:checksum": "1220b07ba1aa98418e20ed257d6ef28b1c58a68173dfd33904748d386e9534370400"
-    },
-    "styles/style-boundaries": {
-      "href": "./styles/style-boundaries.json",
-      "type": "application/vnd.mapbox.style+json",
-      "roles": [
-        "style"
-      ],
-      "title": "Zone boundaries",
-      "description": "Outlines only.",
-      "file:size": 462,
-      "file:checksum": "122031b21afedf316e15e146b6b9f00afed2ccf451d5da97de92ecdf63fa2b4e4ecc"
-    },
-    "styles/style-sfha": {
-      "href": "./styles/style-sfha.json",
-      "type": "application/vnd.mapbox.style+json",
-      "roles": [
-        "style"
-      ],
-      "title": "Special flood hazard area",
-      "description": "Just the regulatory SFHA (SFHA_TF = T) in blue against the rest.",
-      "file:size": 1034,
-      "file:checksum": "1220d0c79c3ccc61709ad964fab05938dac8e8f26fb7da0a0327ccbcdfe704abc904"
-    },
-    "thumbnail": {
-      "href": "./thumbnail.png",
-      "type": "image/png",
-      "roles": [
-        "thumbnail"
-      ],
-      "title": "Floodplain rendered with the default style",
-      "file:size": 393007,
-      "file:checksum": "1220977d67cba96e2ed041e9cdf598e6ce1335811b0642f6b0c21daab79922818fdd"
-    }
-  },
-  "updated": "2026-08-05T17:00:27+00:00",
-  "themes": [
-    {
-      "scheme": "https://www.stlouis-mo.gov/data/topics/",
-      "concepts": [
-        {
-          "id": "environment",
-          "title": "Environment"
-        }
-      ]
-    }
-  ],
   "keywords": [
     "floodplain",
     "fema"
@@ -278,5 +201,82 @@
       ],
       "url": "https://github.com/cholmes/portolan-catalog-stlouis"
     }
-  ]
+  ],
+  "assets": {
+    "floodplain": {
+      "href": "./floodplain.parquet",
+      "type": "application/vnd.apache.parquet",
+      "title": "Floodplain (GeoParquet)",
+      "file:size": 3832336,
+      "file:checksum": "12207447760874a87254c913b9004383433c9ccca8be98731bad37f014bef1344c49",
+      "roles": [
+        "data"
+      ]
+    },
+    "floodplain-tiles": {
+      "href": "./floodplain.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "Floodplain (PMTiles)",
+      "file:size": 705708,
+      "file:checksum": "1220907922fd2aa141927e8d2d3582da24a0d6eac38027156cd0403862b410a8b8b2",
+      "roles": [
+        "visual"
+      ]
+    },
+    "styles/city-renderer": {
+      "href": "./styles/city-renderer.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "City renderer",
+      "description": "The city's own symbology, extracted from the source ArcGIS renderer.",
+      "file:size": 531,
+      "file:checksum": "12201b542461e241e2aca6abbfc672a3c656a65b956b610584820900db0fe1380493",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Flood zones",
+      "description": "FEMA flood zones: AE 1-percent-annual-chance in blue, 0.2-percent in light blue, levee-protected X zones teal.",
+      "file:size": 1319,
+      "file:checksum": "1220b07ba1aa98418e20ed257d6ef28b1c58a68173dfd33904748d386e9534370400",
+      "roles": [
+        "default",
+        "style"
+      ]
+    },
+    "styles/style-boundaries": {
+      "href": "./styles/style-boundaries.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Zone boundaries",
+      "description": "Outlines only.",
+      "file:size": 462,
+      "file:checksum": "122031b21afedf316e15e146b6b9f00afed2ccf451d5da97de92ecdf63fa2b4e4ecc",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/style-sfha": {
+      "href": "./styles/style-sfha.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Special flood hazard area",
+      "description": "Just the regulatory SFHA (SFHA_TF = T) in blue against the rest.",
+      "file:size": 1034,
+      "file:checksum": "1220d0c79c3ccc61709ad964fab05938dac8e8f26fb7da0a0327ccbcdfe704abc904",
+      "roles": [
+        "style"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "title": "Floodplain rendered with the default style",
+      "file:size": 393007,
+      "file:checksum": "1220977d67cba96e2ed041e9cdf598e6ce1335811b0642f6b0c21daab79922818fdd",
+      "roles": [
+        "thumbnail"
+      ]
+    }
+  }
 }

@@ -1,0 +1,26 @@
+{
+  "version": 8,
+  "name": "All permitted parcels",
+  "metadata": {
+    "description": "Every joined parcel in one color, for overlays."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../plumbing-permits.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "plumbing-permits",
+      "paint": {
+        "fill-color": "#1e526b",
+        "fill-opacity": 0.55,
+        "fill-outline-color": "#ffffff00"
+      }
+    }
+  ]
+}

@@ -71,6 +71,7 @@ City of St. Louis public school information including school name, school addres
 | ./styles/default.json | 1.2 KB | 1220326a19e6... |
 | ./styles/style-plain.json | 799 B | 1220662e5b84... |
 | ./styles/style-system.json | 1.4 KB | 122070582846... |
+| ./thumbnail.png | 360.1 KB | 1220de84dee0... |
 
 ## Quick Start
 

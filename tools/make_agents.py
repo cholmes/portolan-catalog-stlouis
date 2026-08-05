@@ -220,6 +220,50 @@ NOTES = {
 }
 
 
+# Documented joins for the tabular collections whose PMTiles are
+# join-materialized (kept in sync with tools/make_joined_pmtiles.py JOINS).
+from make_joined_pmtiles import JOINS  # noqa: E402
+
+
+def join_section(coll_id: str) -> list:
+    if coll_id not in JOINS:
+        return []
+    spec = JOINS[coll_id]
+    right = spec["right"]
+    right_url = f"{BASE}/{right}/{right}.parquet"
+    left_url = f"{BASE}/{coll_id}/{coll_id}.parquet"
+    sql = (
+        f"INSTALL spatial; LOAD spatial; INSTALL httpfs; LOAD httpfs;\n"
+        f"COPY (\n"
+        f"  SELECT {spec['select']}, p.geometry\n"
+        f"  FROM '{left_url}' t\n"
+        f"  JOIN '{right_url}' p\n"
+        f"    ON {spec['on']}\n")
+    if spec["mode"] == "aggregate":
+        sql += "  GROUP BY p.NHD_NAME, p.geometry\n"
+    elif spec["mode"] == "summary":
+        sql += f"  GROUP BY {spec['group']}\n"
+    sql += f") TO '{coll_id}-geo.parquet' (FORMAT PARQUET, COMPRESSION ZSTD);"
+    return [
+        "## Reproduce the geometry join",
+        "",
+        "This collection is published as plain (non-geo) Parquet, exactly as "
+        f"the city publishes it; its map layer (`{coll_id}.pmtiles`) is "
+        f"materialized by joining to `{right}`. To build your own GeoParquet:",
+        "",
+        "```sql", sql, "```",
+        "",
+        "Then convert as needed:",
+        "",
+        "```bash",
+        f"gpio convert geoparquet {coll_id}-geo.parquet {coll_id}-geo-optimized.parquet",
+        f"gpio convert geopackage {coll_id}-geo.parquet {coll_id}.gpkg",
+        f"gpio convert shapefile {coll_id}-geo.parquet {coll_id}.shp",
+        "```",
+        "",
+    ]
+
+
 def collection_agents(coll_id: str) -> str:
     src = SOURCES[coll_id]
     coll = json.loads((CATALOG / coll_id / "collection.json").read_text())
@@ -251,6 +295,7 @@ def collection_agents(coll_id: str) -> str:
         out += ["## Quirks", "", notes["quirks"], ""]
     if notes.get("joins"):
         out += ["## Joins", "", notes["joins"], ""]
+    out += join_section(coll_id)
     if notes.get("example"):
         out += ["## Example", "", "```sql", notes["example"], "```", ""]
     out += ["## Provenance", "",

@@ -32,4 +32,4 @@ address matches parcel situs addresses (fuzzy).
 
 ## Provenance
 
-Mirror of [Lead Service Line Inventory](https://stlcity.maps.arcgis.com/home/item.html?id=80c69343cc2d418fb1796a342a863aac) from the City of St. Louis open data portal; source: https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/STLWD_LSLI__Read_Only_View/FeatureServer. No explicit license is published — see the portal page. Synced 2026-08-05T17:00:27+00:00.
+Mirror of [Lead Service Line Inventory](https://stlcity.maps.arcgis.com/home/item.html?id=80c69343cc2d418fb1796a342a863aac) from the City of St. Louis open data portal; source: https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/STLWD_LSLI__Read_Only_View/FeatureServer. No explicit license is published — see the portal page. Synced 2026-08-05T17:48:01+00:00.

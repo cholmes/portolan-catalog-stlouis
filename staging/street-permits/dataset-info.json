@@ -1,0 +1,15 @@
+{
+ "collection": "street-permits",
+ "title": "Street Permits",
+ "portal_page": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=17",
+ "department": "Streets - Street Division",
+ "source": "https://www.stlouis-mo.gov/data/upload/data-files/streets/street-permits.csv",
+ "source_type": "static",
+ "synced": "2026-08-05T17:48:01+00:00",
+ "fetch": {
+  "status": "ok",
+  "file": "street-permits.csv",
+  "sha256": "86a38b60145fe44c71cd02cfdf743f29e21149809710863f2b14810bdae12810",
+  "bytes": 12985446
+ }
+}

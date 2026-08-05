@@ -60,6 +60,10 @@ This is the detailed vote extract (dve) from the November 5, 2024, General Munic
 | File | Size | Checksum |
 |------|------|----------|
 | ./election-results-nov-2024.parquet | 318.9 KB | 1220e10febd3... |
+| ./election-results-nov-2024.pmtiles | 404.9 KB | 1220ff54aa64... |
+| ./styles/default.json | 1.6 KB | 1220e244bdbb... |
+| ./styles/style-ballots.json | 1.2 KB | 1220a466882d... |
+| ./styles/style-registered.json | 1.3 KB | 12203cc4b6de... |
 
 ## Quick Start
 

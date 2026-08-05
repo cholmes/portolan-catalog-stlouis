@@ -96,7 +96,16 @@ def ensure_link(links: list, rel: str, href: str, type_: str, title: str | None 
     links.append(l)
 
 
-TABULAR = ["property-sales", "election-results-nov-2024"]
+def _is_tabular(cid: str) -> bool:
+    pq = CATALOG / cid / f"{cid}.parquet"
+    if not pq.exists():
+        return False
+    import pyarrow.parquet as _pq
+    names = _pq.read_schema(pq).names
+    return "geometry" not in names and "geom" not in names
+
+
+TABULAR = [c for c in SOURCES if _is_tabular(c)]
 
 
 def build_tabular(cid: str) -> None:

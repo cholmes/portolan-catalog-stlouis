@@ -69,6 +69,7 @@ Public emergency siren locations. While these sirens are generally thought of as
 | ./styles/default.json | 807 B | 1220ee88923e... |
 | ./styles/style-ownership.json | 1.4 KB | 122005c68a9e... |
 | ./styles/style-plain.json | 782 B | 1220b3ef72cc... |
+| ./thumbnail.png | 364.0 KB | 1220a8cf2547... |
 
 ## Quick Start
 

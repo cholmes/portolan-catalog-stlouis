@@ -6,7 +6,8 @@
     "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
-    "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
   ],
   "description": "This is the detailed vote extract (dve) from the November 5, 2024, General Municipal Election for the City of St. Louis.",
   "license": "other",
@@ -221,6 +222,14 @@
       "href": "https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/Nov24_Detailed_Vote_Totals_Test/FeatureServer",
       "type": "text/html",
       "title": "Source ArcGIS service"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "./election-results-nov-2024.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "pmtiles:layers": [
+        "election-results-nov-2024"
+      ]
     }
   ],
   "assets": {
@@ -233,10 +242,64 @@
       "title": "November 2024 Election Results by Precinct (Parquet)",
       "file:size": 326504,
       "file:checksum": "1220e10febd3491a6fe2df2862b7cb3eb4d001c6e65db81162e064226b3fffb05a11"
+    },
+    "election-results-nov-2024-tiles": {
+      "href": "./election-results-nov-2024.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "roles": [
+        "visual"
+      ],
+      "title": "November 2024 Election Results by Precinct (PMTiles)",
+      "file:size": 414658,
+      "file:checksum": "1220ff54aa64fdd00a0b1c1567dbc7c35faea603198cac5f161f8045e92c3e7e0192"
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ],
+      "title": "November 2024 Election Results by Precinct rendered with the default style",
+      "file:size": 386790,
+      "file:checksum": "12209d524265cd41ba3778ccdbc6eb66e1e5d457191ce925f9c5b1ec93c191e26175"
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "default",
+        "style"
+      ],
+      "title": "Turnout by precinct",
+      "description": "November 2024 general election turnout percentage by precinct (precinct-level summary of the vote-totals table, joined to precinct geometry).",
+      "file:size": 1637,
+      "file:checksum": "1220e244bdbb344bc84e7f36f9e9d510ff0066743bffb29a4145050bb8743f79edbb"
+    },
+    "styles/style-ballots": {
+      "href": "./styles/style-ballots.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "style"
+      ],
+      "title": "Ballots cast",
+      "description": "Ballots cast per precinct.",
+      "file:size": 1270,
+      "file:checksum": "1220a466882d5e1c9cf7aab9b2427c7909c4465843c684d8d6777b075769124f9b3f"
+    },
+    "styles/style-registered": {
+      "href": "./styles/style-registered.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "style"
+      ],
+      "title": "Registered voters",
+      "description": "Registered voters per precinct in steps.",
+      "file:size": 1303,
+      "file:checksum": "12203cc4b6de28296b76933b927d21f05c887f549d6c73160081860a7f27bf756c0f"
     }
   },
   "title": "November 2024 Election Results by Precinct",
-  "updated": "2026-08-05T17:00:27+00:00",
+  "updated": "2026-08-05T17:48:01+00:00",
   "themes": [
     {
       "scheme": "https://www.stlouis-mo.gov/data/topics/",

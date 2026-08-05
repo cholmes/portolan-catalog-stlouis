@@ -17,12 +17,6 @@
       "title": "Agent/LLM usage guide"
     },
     {
-      "rel": "parent",
-      "href": "../catalog.json",
-      "type": "application/json",
-      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
-    },
-    {
       "rel": "describedby",
       "href": "./README.md",
       "type": "text/markdown"
@@ -52,6 +46,12 @@
       "pmtiles:layers": [
         "tornado-damage-2025"
       ]
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
     }
   ],
   "stac_extensions": [
@@ -245,6 +245,18 @@
   ],
   "portolan:total_size_bytes": 39735,
   "portolan:asset_count": 1,
+  "updated": "2026-08-05T17:48:01+00:00",
+  "themes": [
+    {
+      "scheme": "https://www.stlouis-mo.gov/data/topics/",
+      "concepts": [
+        {
+          "id": "law-safety-and-justice",
+          "title": "Law, Safety, and Justice"
+        }
+      ]
+    }
+  ],
   "title": "May 2025 Tornado Damage",
   "extent": {
     "spatial": {
@@ -267,95 +279,6 @@
     }
   },
   "license": "other",
-  "assets": {
-    "tornado-damage-2025": {
-      "href": "./tornado-damage-2025.parquet",
-      "type": "application/vnd.apache.parquet",
-      "file:size": 39735,
-      "file:checksum": "1220071dd3877f4173cdb59f4dd5c33a8db5a5b5bec6525fb40a1b8edb348d33d638",
-      "roles": [
-        "data"
-      ],
-      "title": "May 2025 Tornado Damage (GeoParquet)"
-    },
-    "tornado-damage-2025-tiles": {
-      "href": "./tornado-damage-2025.pmtiles",
-      "type": "application/vnd.pmtiles",
-      "roles": [
-        "visual"
-      ],
-      "title": "May 2025 Tornado Damage (PMTiles)",
-      "file:size": 104769,
-      "file:checksum": "12204e19ae59ed0d0f688592f80b375b032c50659c5726ec0d88a753412880e2910c"
-    },
-    "styles/city-renderer": {
-      "href": "./styles/city-renderer.json",
-      "type": "application/vnd.mapbox.style+json",
-      "roles": [
-        "style"
-      ],
-      "title": "City renderer",
-      "description": "The city's own symbology, extracted from the source ArcGIS renderer.",
-      "file:size": 552,
-      "file:checksum": "122088a60d8d5929674c84634c9e986285e010e0fd527b844667baea8a6ca4a44b97"
-    },
-    "styles/default": {
-      "href": "./styles/default.json",
-      "type": "application/vnd.mapbox.style+json",
-      "roles": [
-        "default",
-        "style"
-      ],
-      "title": "Damage survey",
-      "description": "The NWS damage-assessment record of the May 16, 2025 tornado: the damage path with 286 surveyed damage points colored by EF-scale rating.",
-      "file:size": 2242,
-      "file:checksum": "12205d7013aa9069833de649d5f67d3cf8ec90f5e02fa4130715b348aef82cadd024"
-    },
-    "styles/style-layers": {
-      "href": "./styles/style-layers.json",
-      "type": "application/vnd.mapbox.style+json",
-      "roles": [
-        "style"
-      ],
-      "title": "Path vs points",
-      "description": "The damage path polygon (orange) and the individual survey points (red).",
-      "file:size": 1488,
-      "file:checksum": "1220b5a362a26c3b73814143e70889adfcf2e597ace91cc28637152f772b098dfbb5"
-    },
-    "styles/style-path": {
-      "href": "./styles/style-path.json",
-      "type": "application/vnd.mapbox.style+json",
-      "roles": [
-        "style"
-      ],
-      "title": "Damage path",
-      "description": "The tornado track alone.",
-      "file:size": 738,
-      "file:checksum": "12206e3b52b41b2142e6749fb18f86da0fdae7f6bc53bad446500f4fe84d3c61d037"
-    },
-    "thumbnail": {
-      "href": "./thumbnail.png",
-      "type": "image/png",
-      "roles": [
-        "thumbnail"
-      ],
-      "title": "May 2025 Tornado Damage rendered with the default style",
-      "file:size": 294261,
-      "file:checksum": "1220a44d84a24b58047a1fc705e2e1edc2455f486969d7e0d9844889406e35920ea3"
-    }
-  },
-  "updated": "2026-08-05T17:00:27+00:00",
-  "themes": [
-    {
-      "scheme": "https://www.stlouis-mo.gov/data/topics/",
-      "concepts": [
-        {
-          "id": "law-safety-and-justice",
-          "title": "Law, Safety, and Justice"
-        }
-      ]
-    }
-  ],
   "keywords": [
     "tornado",
     "nws",
@@ -377,5 +300,82 @@
       ],
       "url": "https://github.com/cholmes/portolan-catalog-stlouis"
     }
-  ]
+  ],
+  "assets": {
+    "tornado-damage-2025": {
+      "href": "./tornado-damage-2025.parquet",
+      "type": "application/vnd.apache.parquet",
+      "title": "May 2025 Tornado Damage (GeoParquet)",
+      "file:size": 39735,
+      "file:checksum": "1220071dd3877f4173cdb59f4dd5c33a8db5a5b5bec6525fb40a1b8edb348d33d638",
+      "roles": [
+        "data"
+      ]
+    },
+    "tornado-damage-2025-tiles": {
+      "href": "./tornado-damage-2025.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "May 2025 Tornado Damage (PMTiles)",
+      "file:size": 104769,
+      "file:checksum": "12204e19ae59ed0d0f688592f80b375b032c50659c5726ec0d88a753412880e2910c",
+      "roles": [
+        "visual"
+      ]
+    },
+    "styles/city-renderer": {
+      "href": "./styles/city-renderer.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "City renderer",
+      "description": "The city's own symbology, extracted from the source ArcGIS renderer.",
+      "file:size": 552,
+      "file:checksum": "122088a60d8d5929674c84634c9e986285e010e0fd527b844667baea8a6ca4a44b97",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Damage survey",
+      "description": "The NWS damage-assessment record of the May 16, 2025 tornado: the damage path with 286 surveyed damage points colored by EF-scale rating.",
+      "file:size": 2242,
+      "file:checksum": "12205d7013aa9069833de649d5f67d3cf8ec90f5e02fa4130715b348aef82cadd024",
+      "roles": [
+        "default",
+        "style"
+      ]
+    },
+    "styles/style-layers": {
+      "href": "./styles/style-layers.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Path vs points",
+      "description": "The damage path polygon (orange) and the individual survey points (red).",
+      "file:size": 1488,
+      "file:checksum": "1220b5a362a26c3b73814143e70889adfcf2e597ace91cc28637152f772b098dfbb5",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/style-path": {
+      "href": "./styles/style-path.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Damage path",
+      "description": "The tornado track alone.",
+      "file:size": 738,
+      "file:checksum": "12206e3b52b41b2142e6749fb18f86da0fdae7f6bc53bad446500f4fe84d3c61d037",
+      "roles": [
+        "style"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "title": "May 2025 Tornado Damage rendered with the default style",
+      "file:size": 294261,
+      "file:checksum": "1220a44d84a24b58047a1fc705e2e1edc2455f486969d7e0d9844889406e35920ea3",
+      "roles": [
+        "thumbnail"
+      ]
+    }
+  }
 }

@@ -182,5 +182,33 @@
  "neighborhood-organizations": {
   "portal_id": null,
   "description": "Neighborhood Organizations as exported 6-20-20"
+ },
+ "property-taxes": {
+  "portal_id": "3",
+  "description": "Property tax records by parcel"
+ },
+ "electrical-permits": {
+  "portal_id": "51",
+  "description": "Data on commercial, industrial, and residential electrical permits in the City of St. Louis"
+ },
+ "mechanical-permits": {
+  "portal_id": "52",
+  "description": "Mechanical permit information by property type, year, neighborhood, ward, and project type."
+ },
+ "plumbing-permits": {
+  "portal_id": "53",
+  "description": "Plumbing permit information by property type, year, neighborhood, ward, and project type."
+ },
+ "street-permits": {
+  "portal_id": "17",
+  "description": "Permits issued by the Street Department to allow for blocking of the right of way, excavation in the right of way, overdimensional vehicles, and food trucks"
+ },
+ "occupancy-permits": {
+  "portal_id": "6",
+  "description": "Commercial, industrial, and occupancy building permits in the City of St. Louis"
+ },
+ "animal-bites": {
+  "portal_id": "130",
+  "description": "Animal bite reports made to the City of Saint Louis Department of Health and its Animal Care and Control section."
  }
 }

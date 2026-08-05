@@ -1,0 +1,26 @@
+{
+  "version": 8,
+  "name": "Neighborhood outlines",
+  "metadata": {
+    "description": "Outlines only."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../street-permits.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "street-permits",
+      "paint": {
+        "line-color": "#1e526b",
+        "line-width": 1.2,
+        "line-opacity": 1.0
+      }
+    }
+  ]
+}

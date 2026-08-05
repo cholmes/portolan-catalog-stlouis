@@ -1,0 +1,66 @@
+{
+  "version": 8,
+  "name": "Ballots cast",
+  "metadata": {
+    "description": "Ballots cast per precinct."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../election-results-nov-2024.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "election-results-nov-2024-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "election-results-nov-2024",
+      "paint": {
+        "fill-color": [
+          "step",
+          [
+            "get",
+            "Ballots_Cast"
+          ],
+          "#eef3f6",
+          300,
+          "#c6dbe8",
+          600,
+          "#8fbdd6",
+          900,
+          "#5591b5",
+          1200,
+          "#174054"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "election-results-nov-2024",
+      "paint": {
+        "fill-color": [
+          "step",
+          [
+            "get",
+            "Ballots_Cast"
+          ],
+          "#eef3f6",
+          300,
+          "#c6dbe8",
+          600,
+          "#8fbdd6",
+          900,
+          "#5591b5",
+          1200,
+          "#174054"
+        ],
+        "fill-opacity": 0.78,
+        "fill-outline-color": "#FFFFFF"
+      }
+    }
+  ]
+}

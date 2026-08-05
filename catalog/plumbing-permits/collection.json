@@ -1,0 +1,383 @@
+{
+  "type": "Collection",
+  "id": "plumbing-permits",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
+  ],
+  "description": "Plumbing permit information by property type, year, neighborhood, ward, and project type.",
+  "license": "other",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -90.320522,
+          38.531907,
+          -90.166409,
+          38.774362
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "table:row_count": 209983,
+  "table:columns": [
+    {
+      "name": "ADDRADJUSTED",
+      "type": "string"
+    },
+    {
+      "name": "ADDRNUM",
+      "type": "string"
+    },
+    {
+      "name": "ADDRSUF",
+      "type": "string"
+    },
+    {
+      "name": "APPDATE",
+      "type": "string"
+    },
+    {
+      "name": "APPDESCRIPTION",
+      "type": "string"
+    },
+    {
+      "name": "APPNUM",
+      "type": "string"
+    },
+    {
+      "name": "APPTYPE",
+      "type": "string"
+    },
+    {
+      "name": "ASRNBRHD",
+      "type": "string"
+    },
+    {
+      "name": "CANCELDATE",
+      "type": "string"
+    },
+    {
+      "name": "CANCELTYPE",
+      "type": "string"
+    },
+    {
+      "name": "CDADIST",
+      "type": "string"
+    },
+    {
+      "name": "CDASUBDIST",
+      "type": "string"
+    },
+    {
+      "name": "CENSBLOCK00",
+      "type": "string"
+    },
+    {
+      "name": "CITYBLOCK",
+      "type": "string"
+    },
+    {
+      "name": "COMPLETEDATE",
+      "type": "string"
+    },
+    {
+      "name": "ESTPROJECTCOST",
+      "type": "string"
+    },
+    {
+      "name": "FIRSTDATE",
+      "type": "string"
+    },
+    {
+      "name": "GEOCITYBLOCKPART",
+      "type": "string"
+    },
+    {
+      "name": "HANDLE",
+      "type": "string"
+    },
+    {
+      "name": "ISSUEDATE",
+      "type": "string"
+    },
+    {
+      "name": "LASTDATE",
+      "type": "string"
+    },
+    {
+      "name": "MAINSTRUCTYPE",
+      "type": "string"
+    },
+    {
+      "name": "NBRHD",
+      "type": "string"
+    },
+    {
+      "name": "NBROFUNITS",
+      "type": "string"
+    },
+    {
+      "name": "NLC",
+      "type": "string"
+    },
+    {
+      "name": "OWNERADDR",
+      "type": "string"
+    },
+    {
+      "name": "OWNERCITY",
+      "type": "string"
+    },
+    {
+      "name": "OWNERCODE",
+      "type": "string"
+    },
+    {
+      "name": "OWNERNAME",
+      "type": "string"
+    },
+    {
+      "name": "OWNERSTATE",
+      "type": "string"
+    },
+    {
+      "name": "OWNERZIP",
+      "type": "string"
+    },
+    {
+      "name": "PARCEL",
+      "type": "string"
+    },
+    {
+      "name": "PARCEL9",
+      "type": "string"
+    },
+    {
+      "name": "PARITY",
+      "type": "string"
+    },
+    {
+      "name": "POLICEDIST",
+      "type": "string"
+    },
+    {
+      "name": "PRCLERR",
+      "type": "string"
+    },
+    {
+      "name": "PRECINCT02",
+      "type": "string"
+    },
+    {
+      "name": "PROJECTTYPE",
+      "type": "string"
+    },
+    {
+      "name": "STDIR",
+      "type": "string"
+    },
+    {
+      "name": "STNAME",
+      "type": "string"
+    },
+    {
+      "name": "STRUCTYPE1",
+      "type": "string"
+    },
+    {
+      "name": "STRUCTYPE2",
+      "type": "string"
+    },
+    {
+      "name": "STRUCTYPE3",
+      "type": "string"
+    },
+    {
+      "name": "STTYPE",
+      "type": "string"
+    },
+    {
+      "name": "TMPCITYBLOCK",
+      "type": "string"
+    },
+    {
+      "name": "TMPPARCEL",
+      "type": "string"
+    },
+    {
+      "name": "UNITNUM",
+      "type": "string"
+    },
+    {
+      "name": "UPDATEGEO",
+      "type": "string"
+    },
+    {
+      "name": "WARD00",
+      "type": "string"
+    }
+  ],
+  "links": [
+    {
+      "rel": "root",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
+    },
+    {
+      "rel": "describedby",
+      "href": "./README.md",
+      "type": "text/markdown"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown"
+    },
+    {
+      "rel": "license",
+      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=53",
+      "type": "text/html",
+      "title": "Dataset page on the City of St. Louis open data portal"
+    },
+    {
+      "rel": "via",
+      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=53",
+      "type": "text/html",
+      "title": "Source dataset on stlouis-mo.gov"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "./plumbing-permits.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "pmtiles:layers": [
+        "plumbing-permits"
+      ]
+    }
+  ],
+  "assets": {
+    "plumbing-permits": {
+      "href": "./plumbing-permits.parquet",
+      "type": "application/vnd.apache.parquet",
+      "roles": [
+        "data"
+      ],
+      "title": "Plumbing Permits (Parquet)",
+      "file:size": 10279416,
+      "file:checksum": "1220555dccef70557b1364a073ac29ae592c01d55299ee52670856d398101655dc13"
+    },
+    "plumbing-permits-tiles": {
+      "href": "./plumbing-permits.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "roles": [
+        "visual"
+      ],
+      "title": "Plumbing Permits (PMTiles)",
+      "file:size": 19263212,
+      "file:checksum": "1220ad8c5250c9360372ed60ec13034929277e63655eb747fff3dc6ea49b1747edee"
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ],
+      "title": "Plumbing Permits rendered with the default style",
+      "file:size": 404205,
+      "file:checksum": "122056be581128e46ef955dc47c34f1d5c5c1a2c9aa5f713a1d468076866d8db9188"
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "default",
+        "style"
+      ],
+      "title": "Plumbing permits by year",
+      "description": "Parcels with plumbing permits, stepped by permit year (joined to the parcels layer on HANDLE; a parcel appears once per permit).",
+      "file:size": 1427,
+      "file:checksum": "1220adef5ed4cf1619ce77e6cd4ac6fa8f1efdae36f9c569feb6c641346f447c0d76"
+    },
+    "styles/style-recent": {
+      "href": "./styles/style-recent.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "style"
+      ],
+      "title": "Permits since 2020",
+      "description": "Parcels with activity since 2020 in red against the older record.",
+      "file:size": 1062,
+      "file:checksum": "12209c52c3acbaa2d41b3b1497c867c7e80622fd6a1c98abce58daac46b5acca7a27"
+    },
+    "styles/style-solid": {
+      "href": "./styles/style-solid.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "style"
+      ],
+      "title": "All permitted parcels",
+      "description": "Every joined parcel in one color, for overlays.",
+      "file:size": 530,
+      "file:checksum": "12201fc335712f3b9e79cdc1d64d78f57b03ab52c8330e53524af1b0961f17e98d64"
+    }
+  },
+  "title": "Plumbing Permits",
+  "updated": "2026-08-05T17:48:01+00:00",
+  "themes": [
+    {
+      "scheme": "https://www.stlouis-mo.gov/data/topics/",
+      "concepts": [
+        {
+          "id": "government",
+          "title": "Government"
+        },
+        {
+          "id": "transportation-infrastructure-and-utilities",
+          "title": "Transportation, Infrastructure, and Utilities"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "asset-prcl",
+    "permits",
+    "property address",
+    "property owner"
+  ],
+  "providers": [
+    {
+      "name": "City of St. Louis \u2014 Building Commissioner",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=53"
+    },
+    {
+      "name": "TGE Labs",
+      "roles": [
+        "host"
+      ],
+      "url": "https://github.com/cholmes/portolan-catalog-stlouis"
+    }
+  ]
+}

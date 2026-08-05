@@ -1,0 +1,26 @@
+{
+  "version": 8,
+  "name": "Covered neighborhoods",
+  "metadata": {
+    "description": "Neighborhoods with any street permit."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../street-permits.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "street-permits",
+      "paint": {
+        "fill-color": "#a8d4e8",
+        "fill-opacity": 0.4,
+        "fill-outline-color": "#1e526b"
+      }
+    }
+  ]
+}

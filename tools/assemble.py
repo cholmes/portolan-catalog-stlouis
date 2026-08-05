@@ -175,6 +175,105 @@ def assemble(coll_id: str) -> dict:
     out_dir.mkdir(parents=True, exist_ok=True)
     out = out_dir / f"{coll_id}.parquet"
 
+    # Permit families ship as per-year CSVs with mixed encodings — normalize
+    # and merge, then plain tabular parquet.
+    MULTI_CSV = {"electrical-permits", "mechanical-permits",
+                 "plumbing-permits", "occupancy-permits"}
+    if coll_id in MULTI_CSV:
+        data = STAGING / coll_id / "data"
+        src_dir = next(d for d in data.iterdir() if d.is_dir())
+        norm = data / "utf8"
+        norm.mkdir(exist_ok=True)
+        for fcsv in sorted(src_dir.glob("*.csv")):
+            raw = fcsv.read_bytes()
+            try:
+                txt = raw.decode("utf-8")
+            except UnicodeDecodeError:
+                txt = raw.decode("cp1252", errors="replace")
+            (norm / fcsv.name).write_text(txt, encoding="utf-8")
+        run(["duckdb", "-c",
+             f"COPY (SELECT * FROM read_csv('{norm}/*.csv', union_by_name=true, "
+             f"all_varchar=true)) TO '{out}' "
+             "(FORMAT PARQUET, COMPRESSION ZSTD, ROW_GROUP_SIZE 20000)"])
+        n = subprocess.run(
+            ["duckdb", "-noheader", "-list", "-c", f"SELECT count(*) FROM '{out}'"],
+            capture_output=True, text=True).stdout.strip()
+        return {"rows": int(n), "tabular": True,
+                "source_file": f"{len(list(norm.glob('*.csv')))} yearly CSVs merged"}
+
+    # Animal bites carry Web-Mercator SRX/SRY like the 311 data — promote to
+    # points, nulling coordinates outside the buffered city boundary.
+    if coll_id == "animal-bites":
+        data = STAGING / coll_id / "data"
+        boundary = CATALOG / "city-boundary" / "city-boundary.parquet"
+        prepped = data / "animal-bites-4326.csv"
+        run(["duckdb", "-c", f"""
+            INSTALL spatial; LOAD spatial;
+            CREATE TEMP TABLE city AS
+              SELECT ST_Buffer(geometry, 0.005) g FROM '{boundary}';
+            COPY (
+              SELECT * EXCLUDE (SRX, SRY, lon, lat),
+                CASE WHEN keep THEN round(lon, 7) END AS lon,
+                CASE WHEN keep THEN round(lat, 7) END AS lat
+              FROM (
+                SELECT *, lon IS NOT NULL AND lat IS NOT NULL
+                       AND ST_Contains((SELECT g FROM city), ST_Point(lon, lat)) AS keep
+                FROM (
+                  SELECT *,
+                    CASE WHEN TRY_CAST(SRX AS DOUBLE) IS NOT NULL AND TRY_CAST(SRY AS DOUBLE) IS NOT NULL AND TRY_CAST(SRX AS DOUBLE) <> 0
+                         THEN ST_X(ST_Transform(ST_Point(TRY_CAST(SRX AS DOUBLE), TRY_CAST(SRY AS DOUBLE)), 'EPSG:3857', 'EPSG:4326', always_xy := true)) END AS lon,
+                    CASE WHEN TRY_CAST(SRX AS DOUBLE) IS NOT NULL AND TRY_CAST(SRY AS DOUBLE) IS NOT NULL AND TRY_CAST(SRX AS DOUBLE) <> 0
+                         THEN ST_Y(ST_Transform(ST_Point(TRY_CAST(SRX AS DOUBLE), TRY_CAST(SRY AS DOUBLE)), 'EPSG:3857', 'EPSG:4326', always_xy := true)) END AS lat
+                  FROM read_csv('{data}/ANIMAL_BITES.csv', header=true, all_varchar=true)
+                )
+              )
+            ) TO '{prepped}' (HEADER);
+        """])
+        run(["ogr2ogr", "-f", "Parquet", out, prepped, "-nln", coll_id,
+             "-oo", "X_POSSIBLE_NAMES=lon", "-oo", "Y_POSSIBLE_NAMES=lat",
+             "-oo", "KEEP_GEOM_COLUMNS=NO",
+             "-oo", "AUTODETECT_TYPE=YES", "-oo", "EMPTY_STRING_AS_NULL=YES",
+             "-a_srs", "EPSG:4326"] + GEO_LCO)
+        restore_stats(out)
+        n = subprocess.run(
+            ["duckdb", "-noheader", "-list", "-c", f"SELECT count(*) FROM '{out}'"],
+            capture_output=True, text=True).stdout.strip()
+        return {"rows": int(n), "tabular": False,
+                "source_file": "data/ANIMAL_BITES.csv"}
+
+    # Street permits: single CSV with cp1252 bytes — normalize then tabular.
+    if coll_id == "street-permits":
+        data = STAGING / coll_id / "data"
+        raw = (data / "street-permits.csv").read_bytes()
+        try:
+            txt = raw.decode("utf-8")
+        except UnicodeDecodeError:
+            txt = raw.decode("cp1252", errors="replace")
+        norm = data / "street-permits-utf8.csv"
+        norm.write_text(txt, encoding="utf-8")
+        run(["duckdb", "-c",
+             f"COPY (SELECT * FROM read_csv('{norm}', header=true, all_varchar=true)) "
+             f"TO '{out}' (FORMAT PARQUET, COMPRESSION ZSTD, ROW_GROUP_SIZE 20000)"])
+        n = subprocess.run(
+            ["duckdb", "-noheader", "-list", "-c", f"SELECT count(*) FROM '{out}'"],
+            capture_output=True, text=True).stdout.strip()
+        return {"rows": int(n), "tabular": True, "source_file": "data/street-permits.csv"}
+
+    # Property taxes: the assessor's Access DB — export the primary Prcl table.
+    if coll_id == "property-taxes":
+        data = STAGING / coll_id / "data"
+        mdb = next(data.rglob("prcl.mdb"))
+        with open(data / "Prcl.csv", "w") as f:
+            subprocess.run(["mdb-export", str(mdb), "Prcl"], stdout=f, check=True)
+        run(["duckdb", "-c",
+             f"COPY (SELECT * FROM read_csv('{data}/Prcl.csv', header=true)) "
+             f"TO '{out}' (FORMAT PARQUET, COMPRESSION ZSTD, ROW_GROUP_SIZE 20000)"])
+        n = subprocess.run(
+            ["duckdb", "-noheader", "-list", "-c", f"SELECT count(*) FROM '{out}'"],
+            capture_output=True, text=True).stdout.strip()
+        return {"rows": int(n), "tabular": True,
+                "source_file": str(mdb.relative_to(ROOT))}
+
     # Property sales ship as an Access MDB: export the PrclSale table with
     # the MDB's own CdSaleType lookup joined in (source-faithful decode).
     if coll_id == "property-sales":

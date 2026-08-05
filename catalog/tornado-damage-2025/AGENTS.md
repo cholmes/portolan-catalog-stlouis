@@ -21,4 +21,4 @@ NWS Damage Assessment Toolkit record of the May 16, 2025 EF-3 tornado: one damag
 
 ## Provenance
 
-Mirror of [May 2025 Tornado Damage](https://stlcity.maps.arcgis.com/home/item.html?id=d2f73ad3cd2b434b91c6eacaef94df32) from the City of St. Louis open data portal; source: https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/NS_Tornado_Map_WFL1/FeatureServer. No explicit license is published — see the portal page. Synced 2026-08-05T17:00:27+00:00.
+Mirror of [May 2025 Tornado Damage](https://stlcity.maps.arcgis.com/home/item.html?id=d2f73ad3cd2b434b91c6eacaef94df32) from the City of St. Louis open data portal; source: https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/NS_Tornado_Map_WFL1/FeatureServer. No explicit license is published — see the portal page. Synced 2026-08-05T17:48:01+00:00.

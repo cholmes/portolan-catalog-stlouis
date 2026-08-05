@@ -1,0 +1,14 @@
+title: "Street Permits"
+description: "Permits issued by the Street Department to allow for blocking of the right of way, excavation in the right of way, overdimensional vehicles, and food trucks"
+contact:
+  name: "Chris Holmes"
+  email: "cholmes@9eo.org"
+license: "other"
+license_url: "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=17"
+attribution: "City of St. Louis — Streets - Street Division"
+source_url: "https://www.stlouis-mo.gov/data/upload/data-files/streets/street-permits.csv"
+keywords: [st-louis, missouri, open-data, street, permits]
+processing_notes: |
+  Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=17).
+  Source: https://www.stlouis-mo.gov/data/upload/data-files/streets/street-permits.csv (portal download),
+  converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.

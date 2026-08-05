@@ -17,4 +17,4 @@ Full schema: `table:columns` in collection.json.
 
 ## Provenance
 
-Mirror of [Siren Locations](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=132) from the City of St. Louis open data portal; source: https://maps8.stlouis-mo.gov/arcgis/rest/services/BPS/City_of_St__Louis_Firehouses_and_Outdoor_Warning_Sirens1/MapServer. No explicit license is published — see the portal page. Synced 2026-08-05T17:00:27+00:00.
+Mirror of [Siren Locations](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=132) from the City of St. Louis open data portal; source: https://maps8.stlouis-mo.gov/arcgis/rest/services/BPS/City_of_St__Louis_Firehouses_and_Outdoor_Warning_Sirens1/MapServer. No explicit license is published — see the portal page. Synced 2026-08-05T17:48:01+00:00.

@@ -71,12 +71,13 @@ Parcel-level vacancy indicators for St. Louis: vacant buildings, condemnations, 
 
 | File | Size | Checksum |
 |------|------|----------|
-| ./vacancy-composite.parquet | 6.1 MB | 12205a59c6a4... |
+| ./vacancy-composite.parquet | 6.1 MB | 1220dd137697... |
 | ./vacancy-composite.pmtiles | 19.3 MB | 1220b92eac1d... |
 | ./styles/city-renderer.json | 545 B | 12202c85b3ae... |
 | ./styles/default.json | 1.2 KB | 122007e90173... |
 | ./styles/style-source.json | 1.8 KB | 1220926cbf53... |
 | ./styles/style-year-built.json | 1.4 KB | 122017a8967b... |
+| ./thumbnail.png | 376.3 KB | 1220c8252c3a... |
 
 ## Quick Start
 

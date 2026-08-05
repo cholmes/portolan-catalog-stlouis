@@ -74,6 +74,7 @@ Forest Park Trees data
 | ./styles/default.json | 851 B | 1220755bb30c... |
 | ./styles/style-condition.json | 1.9 KB | 12204e292f1e... |
 | ./styles/style-size.json | 1.5 KB | 122056623603... |
+| ./thumbnail.png | 513.0 KB | 12205671d3b9... |
 
 ## Quick Start
 

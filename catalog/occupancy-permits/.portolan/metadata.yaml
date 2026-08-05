@@ -1,0 +1,14 @@
+title: "Occupancy Permits"
+description: "Commercial, industrial, and occupancy building permits in the City of St. Louis"
+contact:
+  name: "Chris Holmes"
+  email: "cholmes@9eo.org"
+license: "other"
+license_url: "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=6"
+attribution: "City of St. Louis — Building Commissioner"
+source_url: "https://www.stlouis-mo.gov/data/upload/data-files/occupancy-permits.zip"
+keywords: [st-louis, missouri, open-data, occupancy, permits]
+processing_notes: |
+  Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=6).
+  Source: https://www.stlouis-mo.gov/data/upload/data-files/occupancy-permits.zip (portal download),
+  converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.

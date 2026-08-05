@@ -1,0 +1,66 @@
+{
+  "version": 8,
+  "name": "Sale year",
+  "metadata": {
+    "description": "Sales stepped by decade, 2020s in red."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../property-sales.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "property-sales-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "property-sales",
+      "paint": {
+        "fill-color": [
+          "step",
+          [
+            "get",
+            "SALE_YEAR"
+          ],
+          "#dfe6ea",
+          1990,
+          "#c6dbe8",
+          2000,
+          "#8fbdd6",
+          2010,
+          "#5591b5",
+          2020,
+          "#c03221"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "property-sales",
+      "paint": {
+        "fill-color": [
+          "step",
+          [
+            "get",
+            "SALE_YEAR"
+          ],
+          "#dfe6ea",
+          1990,
+          "#c6dbe8",
+          2000,
+          "#8fbdd6",
+          2010,
+          "#5591b5",
+          2020,
+          "#c03221"
+        ],
+        "fill-opacity": 0.75,
+        "fill-outline-color": "#ffffff00"
+      }
+    }
+  ]
+}

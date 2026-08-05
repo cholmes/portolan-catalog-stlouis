@@ -1,0 +1,14 @@
+title: "Plumbing Permits"
+description: "Plumbing permit information by property type, year, neighborhood, ward, and project type."
+contact:
+  name: "Chris Holmes"
+  email: "cholmes@9eo.org"
+license: "other"
+license_url: "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=53"
+attribution: "City of St. Louis — Building Commissioner"
+source_url: "https://www.stlouis-mo.gov/data/upload/data-files/plumbing-permits.zip"
+keywords: [st-louis, missouri, open-data, plumbing, permits]
+processing_notes: |
+  Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=53).
+  Source: https://www.stlouis-mo.gov/data/upload/data-files/plumbing-permits.zip (portal download),
+  converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.

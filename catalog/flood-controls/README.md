@@ -42,6 +42,7 @@ Floods Controls
 | ./styles/default.json | 1.5 KB | 12209e5f5530... |
 | ./styles/style-closing-stage.json | 1.9 KB | 12203011e5c9... |
 | ./styles/style-plain.json | 969 B | 122011731c92... |
+| ./thumbnail.png | 340.2 KB | 1220659763cb... |
 
 ## Quick Start
 

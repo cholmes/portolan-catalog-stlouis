@@ -59,6 +59,7 @@ Neighborhood Organizations as exported 6-20-20
 | ./styles/default.json | 1.8 KB | 12200bac4c01... |
 | ./styles/style-501c3.json | 1.1 KB | 1220abdfafe4... |
 | ./styles/style-boundaries.json | 498 B | 12208659ddec... |
+| ./thumbnail.png | 387.8 KB | 12205fee4d44... |
 
 ## Quick Start
 

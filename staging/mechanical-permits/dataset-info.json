@@ -1,0 +1,37 @@
+{
+ "collection": "mechanical-permits",
+ "title": "Mechanical Permits",
+ "portal_page": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=52",
+ "department": "Building Commissioner",
+ "source": "https://www.stlouis-mo.gov/data/upload/data-files/mechanical-permits.zip",
+ "source_type": "static",
+ "synced": "2026-08-05T17:48:01+00:00",
+ "fetch": {
+  "status": "ok",
+  "file": "mechanical-permits.zip",
+  "sha256": "953fd7d3c77a8196995f0eace6e88d3aeccad36f33f5237e6a73a8d2a756b474",
+  "bytes": 6601816,
+  "unpacked": [
+   "1992.csv",
+   "1993.csv",
+   "1994.csv",
+   "1995.csv",
+   "1996.csv",
+   "1997.csv",
+   "1998.csv",
+   "1999.csv",
+   "2000.csv",
+   "2001.csv",
+   "2002.csv",
+   "2003.csv",
+   "2004.csv",
+   "2005.csv",
+   "2006.csv",
+   "2007.csv",
+   "2008.csv",
+   "2009.csv",
+   "2010.csv",
+   "2011.csv"
+  ]
+ }
+}

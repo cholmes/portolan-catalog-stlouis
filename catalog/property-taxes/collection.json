@@ -1,0 +1,930 @@
+{
+  "type": "Collection",
+  "id": "property-taxes",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
+  ],
+  "description": "Property tax records by parcel",
+  "license": "other",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -90.320522,
+          38.531907,
+          -90.166409,
+          38.774362
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "table:row_count": 135969,
+  "table:columns": [
+    {
+      "name": "CityBlock",
+      "type": "double"
+    },
+    {
+      "name": "Parcel",
+      "type": "int64"
+    },
+    {
+      "name": "OwnerCode",
+      "type": "int64"
+    },
+    {
+      "name": "AsrParcelId",
+      "type": "string"
+    },
+    {
+      "name": "ColParcelId",
+      "type": "string"
+    },
+    {
+      "name": "ColCityBlock",
+      "type": "int64"
+    },
+    {
+      "name": "ColParcel",
+      "type": "int64"
+    },
+    {
+      "name": "ParcelId",
+      "type": "string"
+    },
+    {
+      "name": "PrimAddrRecNum",
+      "type": "int64"
+    },
+    {
+      "name": "AddrType",
+      "type": "string"
+    },
+    {
+      "name": "LowAddrNum",
+      "type": "int64"
+    },
+    {
+      "name": "LowAddrSuf",
+      "type": "string"
+    },
+    {
+      "name": "HighAddrNum",
+      "type": "int64"
+    },
+    {
+      "name": "HighAddrSuf",
+      "type": "string"
+    },
+    {
+      "name": "NLC",
+      "type": "int64"
+    },
+    {
+      "name": "Parity",
+      "type": "string"
+    },
+    {
+      "name": "StPreDir",
+      "type": "string"
+    },
+    {
+      "name": "StName",
+      "type": "string"
+    },
+    {
+      "name": "StType",
+      "type": "string"
+    },
+    {
+      "name": "StSufDir",
+      "type": "string"
+    },
+    {
+      "name": "StdUnitNum",
+      "type": "string"
+    },
+    {
+      "name": "OwnerName",
+      "type": "string"
+    },
+    {
+      "name": "OwnerName2",
+      "type": "string"
+    },
+    {
+      "name": "OwnerAddr",
+      "type": "string"
+    },
+    {
+      "name": "OwnerCity",
+      "type": "string"
+    },
+    {
+      "name": "OwnerState",
+      "type": "string"
+    },
+    {
+      "name": "OwnerCountry",
+      "type": "string"
+    },
+    {
+      "name": "OwnerZIP",
+      "type": "string"
+    },
+    {
+      "name": "OwnerRank",
+      "type": "int64"
+    },
+    {
+      "name": "LegalDesc1",
+      "type": "string"
+    },
+    {
+      "name": "LegalDesc2",
+      "type": "string"
+    },
+    {
+      "name": "LegalDesc3",
+      "type": "string"
+    },
+    {
+      "name": "LegalDesc4",
+      "type": "string"
+    },
+    {
+      "name": "LegalDesc5",
+      "type": "string"
+    },
+    {
+      "name": "AsrClassCode",
+      "type": "int64"
+    },
+    {
+      "name": "PropertyClassCode",
+      "type": "int64"
+    },
+    {
+      "name": "AsrLandUse1",
+      "type": "int64"
+    },
+    {
+      "name": "AsrLanduse2",
+      "type": "int64"
+    },
+    {
+      "name": "IsAbatedProperty",
+      "type": "int64"
+    },
+    {
+      "name": "AbatementType",
+      "type": "string"
+    },
+    {
+      "name": "AbatementStartYear",
+      "type": "int64"
+    },
+    {
+      "name": "AbatementEndYear",
+      "type": "int64"
+    },
+    {
+      "name": "RedevPhase",
+      "type": "int64"
+    },
+    {
+      "name": "RedevYearEnd",
+      "type": "int64"
+    },
+    {
+      "name": "RedevPhase2",
+      "type": "int64"
+    },
+    {
+      "name": "RedevYearEnd2",
+      "type": "int64"
+    },
+    {
+      "name": "VacantLot",
+      "type": "int64"
+    },
+    {
+      "name": "SpecBusDist",
+      "type": "int64"
+    },
+    {
+      "name": "SpecBusDist2",
+      "type": "int64"
+    },
+    {
+      "name": "SpecBusDist3",
+      "type": "int64"
+    },
+    {
+      "name": "TIFDist",
+      "type": "int64"
+    },
+    {
+      "name": "LendingAgcy",
+      "type": "int64"
+    },
+    {
+      "name": "Condominium",
+      "type": "int64"
+    },
+    {
+      "name": "NbrOfUnitsSource",
+      "type": "int64"
+    },
+    {
+      "name": "NbrOfUnits",
+      "type": "int64"
+    },
+    {
+      "name": "NbrOfApts",
+      "type": "int64"
+    },
+    {
+      "name": "Frontage",
+      "type": "double"
+    },
+    {
+      "name": "LandArea",
+      "type": "int64"
+    },
+    {
+      "name": "RecDailyDate",
+      "type": "string"
+    },
+    {
+      "name": "RecDailyNum",
+      "type": "int64"
+    },
+    {
+      "name": "RecBookNum",
+      "type": "string"
+    },
+    {
+      "name": "RecPageNum",
+      "type": "int64"
+    },
+    {
+      "name": "AsdLand",
+      "type": "double"
+    },
+    {
+      "name": "AsdImprove",
+      "type": "double"
+    },
+    {
+      "name": "AsdTotal",
+      "type": "double"
+    },
+    {
+      "name": "AsdResLand",
+      "type": "double"
+    },
+    {
+      "name": "AsdResImprove",
+      "type": "double"
+    },
+    {
+      "name": "AsdComLand",
+      "type": "double"
+    },
+    {
+      "name": "AsdComImprove",
+      "type": "double"
+    },
+    {
+      "name": "AsdAgrLand",
+      "type": "double"
+    },
+    {
+      "name": "AsdAgrImprove",
+      "type": "double"
+    },
+    {
+      "name": "BillYear",
+      "type": "int64"
+    },
+    {
+      "name": "BillSuffix",
+      "type": "int64"
+    },
+    {
+      "name": "BillLand",
+      "type": "double"
+    },
+    {
+      "name": "BillImprove",
+      "type": "double"
+    },
+    {
+      "name": "BillTotal",
+      "type": "double"
+    },
+    {
+      "name": "BillResLand",
+      "type": "double"
+    },
+    {
+      "name": "BillResImprove",
+      "type": "double"
+    },
+    {
+      "name": "BillComLand",
+      "type": "double"
+    },
+    {
+      "name": "BillComImprove",
+      "type": "double"
+    },
+    {
+      "name": "BillAgrLand",
+      "type": "double"
+    },
+    {
+      "name": "BillAgrImprove",
+      "type": "double"
+    },
+    {
+      "name": "BillTaxAmt",
+      "type": "double"
+    },
+    {
+      "name": "TaxBalDue",
+      "type": "double"
+    },
+    {
+      "name": "AprLand",
+      "type": "double"
+    },
+    {
+      "name": "AprResLand",
+      "type": "double"
+    },
+    {
+      "name": "AprResImprove",
+      "type": "double"
+    },
+    {
+      "name": "AprComLand",
+      "type": "double"
+    },
+    {
+      "name": "AprComImprove",
+      "type": "double"
+    },
+    {
+      "name": "AprAgrLand",
+      "type": "double"
+    },
+    {
+      "name": "AprAgrImprove",
+      "type": "double"
+    },
+    {
+      "name": "AprExemptLand",
+      "type": "double"
+    },
+    {
+      "name": "AprExemptImprove",
+      "type": "double"
+    },
+    {
+      "name": "CostAprImprove",
+      "type": "double"
+    },
+    {
+      "name": "AsmtAppealYear",
+      "type": "int64"
+    },
+    {
+      "name": "AsmtAppealNum",
+      "type": "int64"
+    },
+    {
+      "name": "AsmtAppealType",
+      "type": "string"
+    },
+    {
+      "name": "PriorAsdDate",
+      "type": "timestamp"
+    },
+    {
+      "name": "PriorAsdLand",
+      "type": "double"
+    },
+    {
+      "name": "PriorAsdImprove",
+      "type": "double"
+    },
+    {
+      "name": "PriorAsdTotal",
+      "type": "double"
+    },
+    {
+      "name": "PriorTaxAmt",
+      "type": "double"
+    },
+    {
+      "name": "CDALandUse1",
+      "type": "int64"
+    },
+    {
+      "name": "CDALandUse2",
+      "type": "int64"
+    },
+    {
+      "name": "LRMSUnitNum",
+      "type": "string"
+    },
+    {
+      "name": "Zoning",
+      "type": "string"
+    },
+    {
+      "name": "FormBasedDist1",
+      "type": "int64"
+    },
+    {
+      "name": "FormBasedType1",
+      "type": "string"
+    },
+    {
+      "name": "FormBasedDist2",
+      "type": "int64"
+    },
+    {
+      "name": "FormBasedType2",
+      "type": "string"
+    },
+    {
+      "name": "CUPArea",
+      "type": "int64"
+    },
+    {
+      "name": "PUDArea",
+      "type": "int64"
+    },
+    {
+      "name": "SPDArea",
+      "type": "int64"
+    },
+    {
+      "name": "SUDArea",
+      "type": "int64"
+    },
+    {
+      "name": "TODArea",
+      "type": "int64"
+    },
+    {
+      "name": "NbrOfBldgsRes",
+      "type": "int64"
+    },
+    {
+      "name": "NbrOfBldgsCom",
+      "type": "int64"
+    },
+    {
+      "name": "FirstYearBuilt",
+      "type": "int64"
+    },
+    {
+      "name": "LastYearBuilt",
+      "type": "int64"
+    },
+    {
+      "name": "ResSalePrice",
+      "type": "double"
+    },
+    {
+      "name": "ResSaleDate",
+      "type": "string"
+    },
+    {
+      "name": "VacBldgYear",
+      "type": "int64"
+    },
+    {
+      "name": "GeoCityBlockPart",
+      "type": "double"
+    },
+    {
+      "name": "Ward20",
+      "type": "int64"
+    },
+    {
+      "name": "Precinct20",
+      "type": "int64"
+    },
+    {
+      "name": "InspArea20",
+      "type": "int64"
+    },
+    {
+      "name": "Ward10",
+      "type": "int64"
+    },
+    {
+      "name": "Precinct10",
+      "type": "int64"
+    },
+    {
+      "name": "InspArea10",
+      "type": "int64"
+    },
+    {
+      "name": "Ward00",
+      "type": "int64"
+    },
+    {
+      "name": "Precinct02",
+      "type": "int64"
+    },
+    {
+      "name": "Precinct04",
+      "type": "int64"
+    },
+    {
+      "name": "Nbrhd",
+      "type": "int64"
+    },
+    {
+      "name": "CDADist",
+      "type": "int64"
+    },
+    {
+      "name": "CDASubDist",
+      "type": "int64"
+    },
+    {
+      "name": "PoliceDist",
+      "type": "int64"
+    },
+    {
+      "name": "IsHUDQualifiedTract",
+      "type": "int64"
+    },
+    {
+      "name": "ComNeedGrantCode",
+      "type": "int64"
+    },
+    {
+      "name": "CensTract20",
+      "type": "double"
+    },
+    {
+      "name": "CensBlock20",
+      "type": "int64"
+    },
+    {
+      "name": "CensTract10",
+      "type": "double"
+    },
+    {
+      "name": "CensBlock10",
+      "type": "int64"
+    },
+    {
+      "name": "CensBlock00",
+      "type": "double"
+    },
+    {
+      "name": "Ward90",
+      "type": "int64"
+    },
+    {
+      "name": "Precinct90",
+      "type": "int64"
+    },
+    {
+      "name": "CensBlock90",
+      "type": "double"
+    },
+    {
+      "name": "HouseConsDist",
+      "type": "int64"
+    },
+    {
+      "name": "AsrNbrhd",
+      "type": "int64"
+    },
+    {
+      "name": "EntZone",
+      "type": "int64"
+    },
+    {
+      "name": "ImpactArea",
+      "type": "int64"
+    },
+    {
+      "name": "CTDArea",
+      "type": "int64"
+    },
+    {
+      "name": "LeafArea",
+      "type": "int64"
+    },
+    {
+      "name": "MaintZoneWC",
+      "type": "int64"
+    },
+    {
+      "name": "TransDevDist",
+      "type": "int64"
+    },
+    {
+      "name": "BedBreakfastDist",
+      "type": "int64"
+    },
+    {
+      "name": "CORTEXArea",
+      "type": "int64"
+    },
+    {
+      "name": "Ch99Area",
+      "type": "double"
+    },
+    {
+      "name": "Ch100Area",
+      "type": "int64"
+    },
+    {
+      "name": "Ch353Area",
+      "type": "int64"
+    },
+    {
+      "name": "ParkNum",
+      "type": "int64"
+    },
+    {
+      "name": "CityLandmark",
+      "type": "int64"
+    },
+    {
+      "name": "CityLandmarkDist",
+      "type": "int64"
+    },
+    {
+      "name": "CertLocalHistDist",
+      "type": "int64"
+    },
+    {
+      "name": "LocalHistDist",
+      "type": "int64"
+    },
+    {
+      "name": "NatHistDist",
+      "type": "int64"
+    },
+    {
+      "name": "NatHistLandmark",
+      "type": "int64"
+    },
+    {
+      "name": "NatRegSite",
+      "type": "int64"
+    },
+    {
+      "name": "PresRevDist",
+      "type": "int64"
+    },
+    {
+      "name": "ZIP",
+      "type": "int64"
+    },
+    {
+      "name": "FloodPlain",
+      "type": "int64"
+    },
+    {
+      "name": "OnFloodBlock",
+      "type": "int64"
+    },
+    {
+      "name": "SpecParcelType",
+      "type": "string"
+    },
+    {
+      "name": "SubParcelType",
+      "type": "string"
+    },
+    {
+      "name": "NbrOfSubAccts",
+      "type": "int64"
+    },
+    {
+      "name": "NbrOfCondos",
+      "type": "int64"
+    },
+    {
+      "name": "LRMSParcel",
+      "type": "int64"
+    },
+    {
+      "name": "AcctPrimary",
+      "type": "int64"
+    },
+    {
+      "name": "GisPrimary",
+      "type": "int64"
+    },
+    {
+      "name": "GisCityBLock",
+      "type": "double"
+    },
+    {
+      "name": "GisParcel",
+      "type": "int64"
+    },
+    {
+      "name": "GisOwnerCode",
+      "type": "int64"
+    },
+    {
+      "name": "Handle",
+      "type": "int64"
+    },
+    {
+      "name": "Parcel9",
+      "type": "int64"
+    },
+    {
+      "name": "OwnerOcc",
+      "type": "string"
+    },
+    {
+      "name": "FirstDate",
+      "type": "string"
+    },
+    {
+      "name": "LastDate",
+      "type": "timestamp"
+    },
+    {
+      "name": "OwnerUpdate",
+      "type": "string"
+    }
+  ],
+  "links": [
+    {
+      "rel": "root",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
+    },
+    {
+      "rel": "describedby",
+      "href": "./README.md",
+      "type": "text/markdown"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown"
+    },
+    {
+      "rel": "license",
+      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=3",
+      "type": "text/html",
+      "title": "Dataset page on the City of St. Louis open data portal"
+    },
+    {
+      "rel": "via",
+      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=3",
+      "type": "text/html",
+      "title": "Source dataset on stlouis-mo.gov"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "./property-taxes.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "pmtiles:layers": [
+        "property-taxes"
+      ]
+    }
+  ],
+  "assets": {
+    "property-taxes": {
+      "href": "./property-taxes.parquet",
+      "type": "application/vnd.apache.parquet",
+      "roles": [
+        "data"
+      ],
+      "title": "Property Taxes (Parquet)",
+      "file:size": 14372080,
+      "file:checksum": "1220badeef091761c2a6e7f7012a42e84fa367719ef4e60493e21a21da525a29c9fb"
+    },
+    "property-taxes-tiles": {
+      "href": "./property-taxes.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "roles": [
+        "visual"
+      ],
+      "title": "Property Taxes (PMTiles)",
+      "file:size": 23740408,
+      "file:checksum": "12209e0adce78fbc95be5ae9cf324115cb9b54a5ba722572e4c539b0240cdf9fd3c7"
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ],
+      "title": "Property Taxes rendered with the default style",
+      "file:size": 391916,
+      "file:checksum": "1220bd41a2829d55133f42f37eb1714cc4738fd47bb34f44f8a1494afd7bbc618608"
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "default",
+        "style"
+      ],
+      "title": "Assessed total",
+      "description": "The assessor's tax roll joined to parcel geometry: total assessed value in quintile steps.",
+      "file:size": 1371,
+      "file:checksum": "1220b7f6be0ad56c79a72234af836ed21dbec0b48f156405dec15de5577e4430e9e8"
+    },
+    "styles/style-land-value": {
+      "href": "./styles/style-land-value.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "style"
+      ],
+      "title": "Assessed land value",
+      "description": "Land-only assessed value (AsdLand) in steps \u2014 land value geography without improvements.",
+      "file:size": 1297,
+      "file:checksum": "122019ca0a761c4ec1889fe334face09964a8b6fd6f510ae9ed28873044df55d939d"
+    },
+    "styles/style-solid": {
+      "href": "./styles/style-solid.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "style"
+      ],
+      "title": "Tax roll parcels",
+      "description": "Every joined parcel in one color.",
+      "file:size": 506,
+      "file:checksum": "1220fa3a2804f98c3255b798e7ed5a96401e006cfe8875e50f754ebb4e4afab33818"
+    }
+  },
+  "title": "Property Taxes",
+  "updated": "2026-08-05T17:48:01+00:00",
+  "themes": [
+    {
+      "scheme": "https://www.stlouis-mo.gov/data/topics/",
+      "concepts": [
+        {
+          "id": "government",
+          "title": "Government"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "asset-parcel",
+    "property address",
+    "taxes"
+  ],
+  "providers": [
+    {
+      "name": "City of St. Louis \u2014 Assessor's Office",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=3"
+    },
+    {
+      "name": "TGE Labs",
+      "roles": [
+        "host"
+      ],
+      "url": "https://github.com/cholmes/portolan-catalog-stlouis"
+    }
+  ]
+}

@@ -37,6 +37,7 @@ This feature represents the District boundary for the St. Louis Port Authority. 
 | ./styles/default.json | 807 B | 1220f493599e... |
 | ./styles/style-dashed.json | 570 B | 1220ba222a0f... |
 | ./styles/style-outline.json | 485 B | 122071b2778f... |
+| ./thumbnail.png | 379.3 KB | 1220750c35a2... |
 
 ## Quick Start
 

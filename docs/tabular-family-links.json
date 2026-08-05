@@ -1,0 +1,216 @@
+{
+ "property-taxes": [
+  [
+   "Download Access Database",
+   "https://www.stlouis-mo.gov/data/upload/data-files/prcl.zip"
+  ]
+ ],
+ "building-permits": [
+  [
+   "View Website",
+   "https://www.stlouis-mo.gov/data/dashboards/building-permits/neighborhoods.cfm"
+  ],
+  [
+   "View Website",
+   "https://www.stlouis-mo.gov/data/dashboards/building-permits/project-types.cfm"
+  ],
+  [
+   "View Website",
+   "https://www.stlouis-mo.gov/data/dashboards/building-permits/wards.cfm"
+  ],
+  [
+   "View Website",
+   "https://www.stlouis-mo.gov/data/dashboards/building-permits/years.cfm"
+  ],
+  [
+   "View Website",
+   "https://www.stlouis-mo.gov/data/dashboards/building-permits/30-days.cfm"
+  ]
+ ],
+ "demolition-permits": [
+  [
+   "View API/Web Service",
+   "https://www.stlcitypermits.com/API/Demolition/GetDemolitionPermits"
+  ],
+  [
+   "View Website",
+   "https://www.stlouis-mo.gov/data/dashboards/demolition-permits/neighborhoods.cfm"
+  ],
+  [
+   "View Website",
+   "https://www.stlouis-mo.gov/data/dashboards/demolition-permits/years.cfm"
+  ],
+  [
+   "View Website",
+   "https://www.stlouis-mo.gov/data/dashboards/demolition-permits/30-days.cfm"
+  ]
+ ],
+ "electrical-permits": [
+  [
+   "View API/Web Service",
+   "https://www.stlcitypermits.com/API/Permits/GetElectricalPermits"
+  ],
+  [
+   "Download CSV",
+   "https://www.stlouis-mo.gov/data/upload/data-files/electrical-permits.zip"
+  ],
+  [
+   "View Website",
+   "https://www.stlouis-mo.gov/data/dashboards/electrical-permits/neighborhoods.cfm"
+  ],
+  [
+   "View Website",
+   "https://www.stlouis-mo.gov/data/dashboards/electrical-permits/wards.cfm"
+  ],
+  [
+   "View Website",
+   "https://www.stlouis-mo.gov/data/dashboards/electrical-permits/years.cfm"
+  ],
+  [
+   "View Website",
+   "https://www.stlouis-mo.gov/data/dashboards/electrical-permits/30-days.cfm"
+  ]
+ ],
+ "mechanical-permits": [
+  [
+   "View API/Web Service",
+   "https://www.stlcitypermits.com/API/Permits/GetMechanicalPermits"
+  ],
+  [
+   "Download CSV",
+   "https://www.stlouis-mo.gov/data/upload/data-files/mechanical-permits.zip"
+  ],
+  [
+   "View Website",
+   "https://www.stlouis-mo.gov/data/dashboards/mechanical-permits/neighborhoods.cfm"
+  ],
+  [
+   "View Website",
+   "https://www.stlouis-mo.gov/data/dashboards/mechanical-permits/wards.cfm"
+  ],
+  [
+   "View Website",
+   "https://www.stlouis-mo.gov/data/dashboards/mechanical-permits/years.cfm"
+  ],
+  [
+   "View Website",
+   "https://www.stlouis-mo.gov/data/dashboards/mechanical-permits/30-days.cfm"
+  ]
+ ],
+ "plumbing-permits": [
+  [
+   "View API/Web Service",
+   "https://www.stlcitypermits.com/API/Permits/GetPlumbingPermits"
+  ],
+  [
+   "Download CSV",
+   "https://www.stlouis-mo.gov/data/upload/data-files/plumbing-permits.zip"
+  ],
+  [
+   "View Website",
+   "https://www.stlouis-mo.gov/data/dashboards/plumbing-permits/neighborhoods.cfm"
+  ],
+  [
+   "View Website",
+   "https://www.stlouis-mo.gov/data/dashboards/plumbing-permits/wards.cfm"
+  ],
+  [
+   "View Website",
+   "https://www.stlouis-mo.gov/data/dashboards/plumbing-permits/years.cfm"
+  ],
+  [
+   "View Website",
+   "https://www.stlouis-mo.gov/data/dashboards/plumbing-permits/30-days.cfm"
+  ]
+ ],
+ "sprinkler-permits": [
+  [
+   "View API/Web Service",
+   "https://www.stlcitypermits.com/API/Permits/GetSprinklerPermits"
+  ]
+ ],
+ "street-permits": [
+  [
+   "Download CSV",
+   "https://www.stlouis-mo.gov/data/upload/data-files/streets/street-permits.csv"
+  ]
+ ],
+ "occupancy-permits": [
+  [
+   "Download CSV",
+   "https://static.stlouis-mo.gov/open-data/BUILDING/certificates_of_inspection.csv"
+  ],
+  [
+   "Download CSV",
+   "https://www.stlouis-mo.gov/data/upload/data-files/occupancy-permits.zip"
+  ],
+  [
+   "View Website",
+   "https://www.stlouis-mo.gov/data/dashboards/occupancy-permits/neighborhoods.cfm"
+  ],
+  [
+   "View Website",
+   "https://www.stlouis-mo.gov/data/dashboards/occupancy-permits/years.cfm"
+  ],
+  [
+   "View Website",
+   "https://www.stlouis-mo.gov/data/dashboards/occupancy-permits/30-days.cfm"
+  ]
+ ],
+ "commercial-occupancy": [
+  [
+   "View API/Web Service",
+   "https://www.stlcitypermits.com/API/Occupancy/GetCommercialOccupancyInspections"
+  ]
+ ],
+ "building-inspections": [
+  [
+   "View API/Web Service",
+   "https://stlcitypermits.com/API/HCES/GetAllInspectionsReporting"
+  ],
+  [
+   "View API/Web Service",
+   "https://www.stlcitypermits.com/API/HCES/GetExistingStructureInspections"
+  ],
+  [
+   "View API/Web Service",
+   "https://www.stlcitypermits.com/API/Occupancy/GetAllInspections"
+  ],
+  [
+   "View API/Web Service",
+   "https://www.stlcitypermits.com/API/HCES/GetInspectionTypes"
+  ]
+ ],
+ "housing-conservation-inspections": [
+  [
+   "View API/Web Service",
+   "https://www.stlcitypermits.com/API/HCES/GetHousingConservationInspections"
+  ]
+ ],
+ "vacant-buildings": [
+  [
+   "View API/Web Service",
+   "https://www.stlcitypermits.com/API/VacantBuilding/GetAllVacantBuildings"
+  ],
+  [
+   "View API/Web Service",
+   "https://www.stlcitypermits.com/API/VacantBuilding/GetVacantBuildingDetail"
+  ],
+  [
+   "View API/Web Service",
+   "https://www.stlcitypermits.com/API/VacantBuilding/GetVacantBuildingOverview"
+  ]
+ ],
+ "food-inspections": [
+  [
+   "View Website",
+   "https://www.healthspace.com/Clients/Missouri/StLouis/St_Louis_Web_Live.nsf/"
+  ]
+ ],
+ "animal-bites": [
+  [
+   "Download CSV",
+   "https://static.stlouis-mo.gov/open-data/HEALTH/ANIMAL-CONTROL/ANIMAL_BITES.csv"
+  ]
+ ]
+}

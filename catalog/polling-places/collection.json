@@ -17,12 +17,6 @@
       "title": "Agent/LLM usage guide"
     },
     {
-      "rel": "parent",
-      "href": "../catalog.json",
-      "type": "application/json",
-      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
-    },
-    {
       "rel": "describedby",
       "href": "./README.md",
       "type": "text/markdown"
@@ -52,6 +46,12 @@
       "pmtiles:layers": [
         "polling-places"
       ]
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
     }
   ],
   "stac_extensions": [
@@ -141,6 +141,18 @@
   ],
   "portolan:total_size_bytes": 21526,
   "portolan:asset_count": 1,
+  "updated": "2026-08-05T17:48:01+00:00",
+  "themes": [
+    {
+      "scheme": "https://www.stlouis-mo.gov/data/topics/",
+      "concepts": [
+        {
+          "id": "government",
+          "title": "Government"
+        }
+      ]
+    }
+  ],
   "title": "Polling Centers",
   "extent": {
     "spatial": {
@@ -163,95 +175,6 @@
     }
   },
   "license": "other",
-  "assets": {
-    "polling-places": {
-      "href": "./polling-places.parquet",
-      "type": "application/vnd.apache.parquet",
-      "file:size": 21526,
-      "file:checksum": "1220db38dfc9644b153035dc581019acadba779907a939e4f2f8e3182375bc7f2ac0",
-      "roles": [
-        "data"
-      ],
-      "title": "Polling Centers (GeoParquet)"
-    },
-    "polling-places-tiles": {
-      "href": "./polling-places.pmtiles",
-      "type": "application/vnd.pmtiles",
-      "roles": [
-        "visual"
-      ],
-      "title": "Polling Centers (PMTiles)",
-      "file:size": 50617,
-      "file:checksum": "1220de18d67583be189eab9a3dba476e329ccc298e5a3e9f30219085454cfa5088b2"
-    },
-    "styles/city-renderer": {
-      "href": "./styles/city-renderer.json",
-      "type": "application/vnd.mapbox.style+json",
-      "roles": [
-        "style"
-      ],
-      "title": "City renderer",
-      "description": "The city's own symbology, extracted from the source ArcGIS renderer.",
-      "file:size": 532,
-      "file:checksum": "12204d13d33244284cb86ae552db01180bbde7cdde8d03fae98173e7ceec4cf82d88"
-    },
-    "styles/default": {
-      "href": "./styles/default.json",
-      "type": "application/vnd.mapbox.style+json",
-      "roles": [
-        "default",
-        "style"
-      ],
-      "title": "Polling centers",
-      "description": "The 152 polling centers, labeled.",
-      "file:size": 1280,
-      "file:checksum": "122072a2977ce3e8948fc5b2cbb49e14f37f108819e11906fefddb4ed7a29f84da6f"
-    },
-    "styles/style-accessible": {
-      "href": "./styles/style-accessible.json",
-      "type": "application/vnd.mapbox.style+json",
-      "roles": [
-        "style"
-      ],
-      "title": "Accessible entry",
-      "description": "Sites with a marked accessible entrance (green) vs. not (red); unrecorded gray.",
-      "file:size": 1431,
-      "file:checksum": "12209bc43f284fa2b4c61aea4d48a1281ea8c675e9e864ab84787f4f80768b8d9afe"
-    },
-    "styles/style-citywide": {
-      "href": "./styles/style-citywide.json",
-      "type": "application/vnd.mapbox.style+json",
-      "roles": [
-        "style"
-      ],
-      "title": "Citywide voting sites",
-      "description": "Centers where any city voter can vote (blue) against precinct-bound sites (light).",
-      "file:size": 1367,
-      "file:checksum": "1220cab25d7b3ba9e5361f15f507fad1f9a02a789a406cd94d9f4cdf6a3ae7ae4869"
-    },
-    "thumbnail": {
-      "href": "./thumbnail.png",
-      "type": "image/png",
-      "roles": [
-        "thumbnail"
-      ],
-      "title": "Polling Centers rendered with the default style",
-      "file:size": 368413,
-      "file:checksum": "1220a532e3f4c8870f4f42b7334f2ed7d44f9279953d3041a74cf8cd403a8274d421"
-    }
-  },
-  "updated": "2026-08-05T17:00:27+00:00",
-  "themes": [
-    {
-      "scheme": "https://www.stlouis-mo.gov/data/topics/",
-      "concepts": [
-        {
-          "id": "government",
-          "title": "Government"
-        }
-      ]
-    }
-  ],
   "keywords": [
     "polling centers",
     "elections"
@@ -272,5 +195,82 @@
       ],
       "url": "https://github.com/cholmes/portolan-catalog-stlouis"
     }
-  ]
+  ],
+  "assets": {
+    "polling-places": {
+      "href": "./polling-places.parquet",
+      "type": "application/vnd.apache.parquet",
+      "title": "Polling Centers (GeoParquet)",
+      "file:size": 21526,
+      "file:checksum": "1220db38dfc9644b153035dc581019acadba779907a939e4f2f8e3182375bc7f2ac0",
+      "roles": [
+        "data"
+      ]
+    },
+    "polling-places-tiles": {
+      "href": "./polling-places.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "Polling Centers (PMTiles)",
+      "file:size": 50617,
+      "file:checksum": "1220de18d67583be189eab9a3dba476e329ccc298e5a3e9f30219085454cfa5088b2",
+      "roles": [
+        "visual"
+      ]
+    },
+    "styles/city-renderer": {
+      "href": "./styles/city-renderer.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "City renderer",
+      "description": "The city's own symbology, extracted from the source ArcGIS renderer.",
+      "file:size": 532,
+      "file:checksum": "12204d13d33244284cb86ae552db01180bbde7cdde8d03fae98173e7ceec4cf82d88",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Polling centers",
+      "description": "The 152 polling centers, labeled.",
+      "file:size": 1280,
+      "file:checksum": "122072a2977ce3e8948fc5b2cbb49e14f37f108819e11906fefddb4ed7a29f84da6f",
+      "roles": [
+        "default",
+        "style"
+      ]
+    },
+    "styles/style-accessible": {
+      "href": "./styles/style-accessible.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Accessible entry",
+      "description": "Sites with a marked accessible entrance (green) vs. not (red); unrecorded gray.",
+      "file:size": 1431,
+      "file:checksum": "12209bc43f284fa2b4c61aea4d48a1281ea8c675e9e864ab84787f4f80768b8d9afe",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/style-citywide": {
+      "href": "./styles/style-citywide.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Citywide voting sites",
+      "description": "Centers where any city voter can vote (blue) against precinct-bound sites (light).",
+      "file:size": 1367,
+      "file:checksum": "1220cab25d7b3ba9e5361f15f507fad1f9a02a789a406cd94d9f4cdf6a3ae7ae4869",
+      "roles": [
+        "style"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "title": "Polling Centers rendered with the default style",
+      "file:size": 368413,
+      "file:checksum": "1220a532e3f4c8870f4f42b7334f2ed7d44f9279953d3041a74cf8cd403a8274d421",
+      "roles": [
+        "thumbnail"
+      ]
+    }
+  }
 }

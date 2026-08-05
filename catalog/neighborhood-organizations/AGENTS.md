@@ -21,4 +21,4 @@ A 2020 snapshot (source: 'as exported 6-20-20'); contacts and activity status ag
 
 ## Provenance
 
-Mirror of [Neighborhood Organizations](https://stlcity.maps.arcgis.com/home/item.html?id=ac198aeb9592458b8591c7258e719ad1) from the City of St. Louis open data portal; source: https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/Neighborhood_Organizations/FeatureServer. No explicit license is published — see the portal page. Synced 2026-08-05T17:00:27+00:00.
+Mirror of [Neighborhood Organizations](https://stlcity.maps.arcgis.com/home/item.html?id=ac198aeb9592458b8591c7258e719ad1) from the City of St. Louis open data portal; source: https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/Neighborhood_Organizations/FeatureServer. No explicit license is published — see the portal page. Synced 2026-08-05T17:48:01+00:00.

@@ -1,0 +1,25 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-05T17:58:24.774523Z",
+      "breaking": false,
+      "assets": {
+        "animal-bites.parquet": {
+          "sha256": "622cd13f4733d1fc3aab15aec54fb76307d964ff61797e710caefcf9ce916ea2",
+          "size_bytes": 260192,
+          "href": "animal-bites/animal-bites.parquet",
+          "source_mtime": 1785952374.0232887,
+          "mtime": 1785952374.0232887,
+          "feature_count": 6359,
+          "schema_fingerprint": "028ed56d3d67dde0"
+        }
+      },
+      "changes": [
+        "animal-bites.parquet"
+      ]
+    }
+  ]
+}

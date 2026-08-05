@@ -39,6 +39,7 @@ Lead Service Line Inventory Feature Layer Service
 | ./styles/default.json | 1.8 KB | 122012ecec15... |
 | ./styles/style-customer-side.json | 1.5 KB | 12205173f9f8... |
 | ./styles/style-material.json | 2.0 KB | 1220dfbbd860... |
+| ./thumbnail.png | 379.8 KB | 1220af3eb899... |
 
 ## Quick Start
 

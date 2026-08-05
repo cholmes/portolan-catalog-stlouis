@@ -17,12 +17,6 @@
       "title": "Agent/LLM usage guide"
     },
     {
-      "rel": "parent",
-      "href": "../catalog.json",
-      "type": "application/json",
-      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
-    },
-    {
       "rel": "describedby",
       "href": "./README.md",
       "type": "text/markdown"
@@ -46,6 +40,12 @@
       "pmtiles:layers": [
         "wards-2010"
       ]
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
     }
   ],
   "stac_extensions": [
@@ -87,6 +87,18 @@
   ],
   "portolan:total_size_bytes": 82744,
   "portolan:asset_count": 1,
+  "updated": "2026-08-05T17:48:01+00:00",
+  "themes": [
+    {
+      "scheme": "https://www.stlouis-mo.gov/data/topics/",
+      "concepts": [
+        {
+          "id": "government",
+          "title": "Government"
+        }
+      ]
+    }
+  ],
   "title": "Ward Boundaries (2010)",
   "extent": {
     "spatial": {
@@ -109,84 +121,6 @@
     }
   },
   "license": "other",
-  "assets": {
-    "wards-2010": {
-      "href": "./wards-2010.parquet",
-      "type": "application/vnd.apache.parquet",
-      "file:size": 82744,
-      "file:checksum": "1220c30b3b2652c5ec64d0fe9a51f1b749fb74704df4a301531919d20e656c40567b",
-      "roles": [
-        "data"
-      ],
-      "title": "Ward Boundaries (2010) (GeoParquet)"
-    },
-    "wards-2010-tiles": {
-      "href": "./wards-2010.pmtiles",
-      "type": "application/vnd.pmtiles",
-      "roles": [
-        "visual"
-      ],
-      "title": "Ward Boundaries (2010) (PMTiles)",
-      "file:size": 104731,
-      "file:checksum": "12207512dc9aef79aa20d11a77c7ca5b932ba01ace4c5c1e8e59710c31f38488b93d"
-    },
-    "styles/default": {
-      "href": "./styles/default.json",
-      "type": "application/vnd.mapbox.style+json",
-      "roles": [
-        "default",
-        "style"
-      ],
-      "title": "Wards (2010)",
-      "description": "The 28 aldermanic wards in force 2011-2022, repeating colors, labeled \u2014 the geography most older city datasets (WARD10 columns) reference.",
-      "file:size": 1981,
-      "file:checksum": "122095ba3f8a8eb265b019fc1b2e4775c260b2aaf88bdb834a5c64b3d1466a0b75ba"
-    },
-    "styles/style-boundaries": {
-      "href": "./styles/style-boundaries.json",
-      "type": "application/vnd.mapbox.style+json",
-      "roles": [
-        "style"
-      ],
-      "title": "Ward boundaries",
-      "description": "Outlines only.",
-      "file:size": 462,
-      "file:checksum": "1220264b0623293e923b919b332cb53e979cd34d54086b99b383caba871fbe3e0307"
-    },
-    "styles/style-subtle": {
-      "href": "./styles/style-subtle.json",
-      "type": "application/vnd.mapbox.style+json",
-      "roles": [
-        "style"
-      ],
-      "title": "Subtle wards",
-      "description": "Light tint for underlays.",
-      "file:size": 712,
-      "file:checksum": "12204b1a1219aaf2cd1cf5b80700f86b19f0761405b8aae3aead25ce46fe1dd46647"
-    },
-    "thumbnail": {
-      "href": "./thumbnail.png",
-      "type": "image/png",
-      "roles": [
-        "thumbnail"
-      ],
-      "title": "Ward Boundaries (2010) rendered with the default style",
-      "file:size": 324213,
-      "file:checksum": "122031b5cdf3342b1dda113f5f04887255cb90794ac7df5c5b0978dbae28d58fb3a8"
-    }
-  },
-  "updated": "2026-08-05T17:00:27+00:00",
-  "themes": [
-    {
-      "scheme": "https://www.stlouis-mo.gov/data/topics/",
-      "concepts": [
-        {
-          "id": "government",
-          "title": "Government"
-        }
-      ]
-    }
-  ],
   "keywords": [
     "wards",
     "boundaries"
@@ -207,5 +141,71 @@
       ],
       "url": "https://github.com/cholmes/portolan-catalog-stlouis"
     }
-  ]
+  ],
+  "assets": {
+    "wards-2010": {
+      "href": "./wards-2010.parquet",
+      "type": "application/vnd.apache.parquet",
+      "title": "Ward Boundaries (2010) (GeoParquet)",
+      "file:size": 82744,
+      "file:checksum": "1220c30b3b2652c5ec64d0fe9a51f1b749fb74704df4a301531919d20e656c40567b",
+      "roles": [
+        "data"
+      ]
+    },
+    "wards-2010-tiles": {
+      "href": "./wards-2010.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "Ward Boundaries (2010) (PMTiles)",
+      "file:size": 104731,
+      "file:checksum": "12207512dc9aef79aa20d11a77c7ca5b932ba01ace4c5c1e8e59710c31f38488b93d",
+      "roles": [
+        "visual"
+      ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Wards (2010)",
+      "description": "The 28 aldermanic wards in force 2011-2022, repeating colors, labeled \u2014 the geography most older city datasets (WARD10 columns) reference.",
+      "file:size": 1981,
+      "file:checksum": "122095ba3f8a8eb265b019fc1b2e4775c260b2aaf88bdb834a5c64b3d1466a0b75ba",
+      "roles": [
+        "default",
+        "style"
+      ]
+    },
+    "styles/style-boundaries": {
+      "href": "./styles/style-boundaries.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Ward boundaries",
+      "description": "Outlines only.",
+      "file:size": 462,
+      "file:checksum": "1220264b0623293e923b919b332cb53e979cd34d54086b99b383caba871fbe3e0307",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/style-subtle": {
+      "href": "./styles/style-subtle.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Subtle wards",
+      "description": "Light tint for underlays.",
+      "file:size": 712,
+      "file:checksum": "12204b1a1219aaf2cd1cf5b80700f86b19f0761405b8aae3aead25ce46fe1dd46647",
+      "roles": [
+        "style"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "title": "Ward Boundaries (2010) rendered with the default style",
+      "file:size": 324213,
+      "file:checksum": "122031b5cdf3342b1dda113f5f04887255cb90794ac7df5c5b0978dbae28d58fb3a8",
+      "roles": [
+        "thumbnail"
+      ]
+    }
+  }
 }

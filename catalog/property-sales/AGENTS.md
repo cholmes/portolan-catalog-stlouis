@@ -28,6 +28,28 @@ Full schema: `table:columns` in collection.json.
 
 parcels via AsrParcelId = ParcelId (10-digit, zero-padded).
 
+## Reproduce the geometry join
+
+This collection is published as plain (non-geo) Parquet, exactly as the city publishes it; its map layer (`property-sales.pmtiles`) is materialized by joining to `parcels`. To build your own GeoParquet:
+
+```sql
+INSTALL spatial; LOAD spatial; INSTALL httpfs; LOAD httpfs;
+COPY (
+  SELECT t.AsrParcelId, t.SalePrice, t.SaleTypeDescr, TRY_CAST(substr(strptime(t.SaleDate, '%m/%d/%y %H:%M:%S')::VARCHAR, 1, 4) AS INT) AS SALE_YEAR, p.geometry
+  FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/property-sales/property-sales.parquet' t
+  JOIN 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/parcels/parcels.parquet' p
+    ON t.AsrParcelId = p.ParcelId
+) TO 'property-sales-geo.parquet' (FORMAT PARQUET, COMPRESSION ZSTD);
+```
+
+Then convert as needed:
+
+```bash
+gpio convert geoparquet property-sales-geo.parquet property-sales-geo-optimized.parquet
+gpio convert geopackage property-sales-geo.parquet property-sales.gpkg
+gpio convert shapefile property-sales-geo.parquet property-sales.shp
+```
+
 ## Example
 
 ```sql
@@ -42,4 +64,4 @@ GROUP BY 1 ORDER BY 2 DESC LIMIT 15;
 
 ## Provenance
 
-Mirror of [Property Sales](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=31) from the City of St. Louis open data portal; source: https://www.stlouis-mo.gov/data/upload/data-files/prclsale.zip. No explicit license is published — see the portal page. Synced 2026-08-05T17:00:27+00:00.
+Mirror of [Property Sales](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=31) from the City of St. Louis open data portal; source: https://www.stlouis-mo.gov/data/upload/data-files/prclsale.zip. No explicit license is published — see the portal page. Synced 2026-08-05T17:48:01+00:00.

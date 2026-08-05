@@ -49,6 +49,7 @@ Floodplain areas for the City of St. Louis, from the city's Floodplain map servi
 | ./styles/default.json | 1.3 KB | 1220b07ba1aa... |
 | ./styles/style-boundaries.json | 462 B | 122031b21afe... |
 | ./styles/style-sfha.json | 1.0 KB | 1220d0c79c3c... |
+| ./thumbnail.png | 383.8 KB | 1220977d67cb... |
 
 ## Quick Start
 

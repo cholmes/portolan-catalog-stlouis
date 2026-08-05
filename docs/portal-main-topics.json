@@ -123,5 +123,31 @@
  ],
  "neighborhood-organizations": [
   "Community"
+ ],
+ "property-taxes": [
+  "Government"
+ ],
+ "electrical-permits": [
+  "Government",
+  "Transportation, Infrastructure, and Utilities"
+ ],
+ "mechanical-permits": [
+  "Government",
+  "Transportation, Infrastructure, and Utilities"
+ ],
+ "plumbing-permits": [
+  "Government",
+  "Transportation, Infrastructure, and Utilities"
+ ],
+ "street-permits": [
+  "Government",
+  "Transportation, Infrastructure, and Utilities"
+ ],
+ "occupancy-permits": [
+  "Government"
+ ],
+ "animal-bites": [
+  "Health",
+  "Leisure and Culture"
  ]
 }

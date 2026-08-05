@@ -1,0 +1,42 @@
+{
+  "version": 8,
+  "name": "Animal bites",
+  "metadata": {
+    "description": "Reported animal bites since 2008 as points (Web-Mercator coordinates in the source, reprojected)."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../animal-bites.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "circle",
+      "type": "circle",
+      "source": "data",
+      "source-layer": "animal-bites",
+      "paint": {
+        "circle-color": "#8b3a2e",
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          10,
+          1.04,
+          13,
+          2.6,
+          16,
+          5.720000000000001
+        ],
+        "circle-opacity": 0.85,
+        "circle-stroke-color": "#FFFFFF",
+        "circle-stroke-width": 0.5
+      }
+    }
+  ]
+}

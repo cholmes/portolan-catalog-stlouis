@@ -22,4 +22,4 @@ Full schema: `table:columns` in collection.json.
 
 ## Provenance
 
-Mirror of [Special Business Districts (SBDs)](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=62) from the City of St. Louis open data portal; source: https://static.stlouis-mo.gov/open-data/SLDC/TAXING-DISTRICTS/SBD/STLSBDs_Shapefile.zip. No explicit license is published — see the portal page. Synced 2026-08-05T17:00:27+00:00.
+Mirror of [Special Business Districts (SBDs)](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=62) from the City of St. Louis open data portal; source: https://static.stlouis-mo.gov/open-data/SLDC/TAXING-DISTRICTS/SBD/STLSBDs_Shapefile.zip. No explicit license is published — see the portal page. Synced 2026-08-05T17:48:01+00:00.

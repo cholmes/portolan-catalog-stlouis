@@ -52,6 +52,7 @@ Strategic land use (SLUP),parcel, and zoning data
 | ./styles/default.json | 1.8 KB | 1220eb78407e... |
 | ./styles/style-amendments.json | 1.2 KB | 1220021c03a0... |
 | ./styles/style-boundaries.json | 462 B | 122028fc3221... |
+| ./thumbnail.png | 389.1 KB | 12207f5aad9c... |
 
 ## Quick Start
 

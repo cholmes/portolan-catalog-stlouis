@@ -63,6 +63,7 @@ The Market Value Analysis (MVA) is an in-depth study and mapping of a community'
 | ./styles/default.json | 1.9 KB | 12203597c5ea... |
 | ./styles/style-sale-price.json | 1.4 KB | 12205fef56c8... |
 | ./styles/style-vacancy-rate.json | 1.3 KB | 12208dfc0c19... |
+| ./thumbnail.png | 402.7 KB | 122008bcb57c... |
 
 ## Quick Start
 

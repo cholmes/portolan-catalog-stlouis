@@ -1104,5 +1104,141 @@ emit("neighborhood-organizations", "style-boundaries", style(
     "neighborhood-organizations", "Coverage boundaries",
     "Outlines only.", [line("neighborhood-organizations", "#7c5295", 1.4)]))
 
+# --------------------------------------------------------------------------
+# Wave 3 (2026-08): joined-PMTiles tabular collections + animal bites
+# The tabular collections keep non-geo parquet as their data asset; these
+# styles drive the join-materialized PMTiles (tools/make_joined_pmtiles.py).
+# --------------------------------------------------------------------------
+
+PERMIT_YEAR = ["step", ["get", "PERMIT_YEAR"], LIGHT,
+               1990, "#c6dbe8", 2000, "#8fbdd6", 2010, "#5591b5",
+               2015, "#2d6a8e", 2020, DARK]
+PERMIT_RECENT = ["step", ["get", "PERMIT_YEAR"], LIGHT, 2020, RED]
+
+def permit_styles(cid, what):
+    emit(cid, "default", style(
+        cid, f"{what} by year",
+        f"Parcels with {what.lower()}, stepped by permit year (joined to "
+        "the parcels layer on HANDLE; a parcel appears once per permit).",
+        [fill(cid, PERMIT_YEAR, 0.7, "#ffffff00")], legend=PERMIT_YEAR),
+        default=True)
+    emit(cid, "style-recent", style(
+        cid, "Permits since 2020",
+        "Parcels with activity since 2020 in red against the older record.",
+        [fill(cid, PERMIT_RECENT, 0.7, "#ffffff00")], legend=PERMIT_RECENT))
+    emit(cid, "style-solid", style(
+        cid, "All permitted parcels",
+        "Every joined parcel in one color, for overlays.",
+        [fill(cid, BLUE, 0.55, "#ffffff00")]))
+
+permit_styles("electrical-permits", "Electrical permits")
+permit_styles("mechanical-permits", "Mechanical permits")
+permit_styles("plumbing-permits", "Plumbing permits")
+permit_styles("occupancy-permits", "Occupancy permits")
+
+TAX_ASD = step("AsdTotal", "#eef3f6",
+               [1600, "#c6dbe8", 7700, "#8fbdd6", 25600, "#5591b5",
+                44400, "#2d6a8e", 91300, DARK])
+TAX_LAND = step("AsdLand", "#eef3f6",
+                [500, "#d9f0d3", 2000, "#a6dba0", 5000, "#5aae61",
+                 15000, "#1b7837"])
+emit("property-taxes", "default", style(
+    "property-taxes", "Assessed total",
+    "The assessor's tax roll joined to parcel geometry: total assessed "
+    "value in quintile steps.",
+    [fill("property-taxes", TAX_ASD, 0.8, "#ffffff00")], legend=TAX_ASD),
+    default=True)
+emit("property-taxes", "style-land-value", style(
+    "property-taxes", "Assessed land value",
+    "Land-only assessed value (AsdLand) in steps — land value geography "
+    "without improvements.",
+    [fill("property-taxes", TAX_LAND, 0.8, "#ffffff00")], legend=TAX_LAND))
+emit("property-taxes", "style-solid", style(
+    "property-taxes", "Tax roll parcels",
+    "Every joined parcel in one color.",
+    [fill("property-taxes", BLUE, 0.5, "#ffffff00")]))
+
+SALE_PRICE = step("SalePrice", "#eef3f6",
+                  [10000, "#c6dbe8", 60000, "#8fbdd6", 150000, "#5591b5",
+                   300000, "#2d6a8e", 600000, DARK])
+SALE_YEAR = ["step", ["get", "SALE_YEAR"], LIGHT,
+             1990, "#c6dbe8", 2000, "#8fbdd6", 2010, "#5591b5", 2020, RED]
+emit("property-sales", "default", style(
+    "property-sales", "Sale price",
+    "Recorded sales joined to parcel geometry, stepped by sale price; a "
+    "parcel appears once per sale.",
+    [fill("property-sales", SALE_PRICE, 0.75, "#ffffff00")],
+    legend=SALE_PRICE), default=True)
+emit("property-sales", "style-year", style(
+    "property-sales", "Sale year",
+    "Sales stepped by decade, 2020s in red.",
+    [fill("property-sales", SALE_YEAR, 0.75, "#ffffff00")], legend=SALE_YEAR))
+emit("property-sales", "style-solid", style(
+    "property-sales", "All sold parcels",
+    "Every parcel with a recorded sale.",
+    [fill("property-sales", GREEN, 0.5, "#ffffff00")]))
+
+STREET_N = step("n_permits", "#eef3f6",
+                [50, "#c6dbe8", 250, "#8fbdd6", 750, "#5591b5", 1500, DARK])
+emit("street-permits", "default", style(
+    "street-permits", "Street permits by neighborhood",
+    "Street-permit records aggregated to neighborhoods (the source lists "
+    "neighborhood names, not parcels): count of permits per neighborhood.",
+    [fill("street-permits", STREET_N, 0.75, "#FFFFFF"),
+     line("street-permits", "#FFFFFF", 0.8)], legend=STREET_N), default=True)
+emit("street-permits", "style-boundaries", style(
+    "street-permits", "Neighborhood outlines",
+    "Outlines only.", [line("street-permits", BLUE, 1.2)]))
+emit("street-permits", "style-solid", style(
+    "street-permits", "Covered neighborhoods",
+    "Neighborhoods with any street permit.",
+    [fill("street-permits", LIGHTBLUE, 0.4, BLUE)]))
+
+TURNOUT = ["step", ["get", "Turnout_Percentage"], "#f5e6e6",
+           30, "#e8c4c4", 45, "#c98b8b", 55, "#8b3a3a", 65, "#5a1a1a"]
+REGV = step("Registered_Voters", "#eef3f6",
+            [500, "#c6dbe8", 1000, "#8fbdd6", 1500, "#5591b5", 2000, DARK])
+emit("election-results-nov-2024", "default", style(
+    "election-results-nov-2024", "Turnout by precinct",
+    "November 2024 general election turnout percentage by precinct "
+    "(precinct-level summary of the vote-totals table, joined to precinct "
+    "geometry).",
+    [fill("election-results-nov-2024", TURNOUT, 0.78, "#FFFFFF"),
+     line("election-results-nov-2024", "#FFFFFF", 0.6)], legend=TURNOUT),
+    default=True)
+emit("election-results-nov-2024", "style-registered", style(
+    "election-results-nov-2024", "Registered voters",
+    "Registered voters per precinct in steps.",
+    [fill("election-results-nov-2024", REGV, 0.78, "#FFFFFF")], legend=REGV))
+emit("election-results-nov-2024", "style-ballots", style(
+    "election-results-nov-2024", "Ballots cast",
+    "Ballots cast per precinct.",
+    [fill("election-results-nov-2024",
+          step("Ballots_Cast", "#eef3f6",
+               [300, "#c6dbe8", 600, "#8fbdd6", 900, "#5591b5", 1200, DARK]),
+          0.78, "#FFFFFF")],
+    legend=step("Ballots_Cast", "#eef3f6",
+                [300, "#c6dbe8", 600, "#8fbdd6", 900, "#5591b5", 1200, DARK])))
+
+BITES = match("ANIMAL_TYPE", {
+    "Dog": "#8b3a2e", "dog": "#8b3a2e", "small dog": "#8b3a2e",
+    "Cat": ORANGE, "Wildlife": GREEN,
+    "Unknown or not provided": GRAY}, GRAY)
+emit("animal-bites", "default", style(
+    "animal-bites", "Animal bites",
+    "Reported animal bites since 2008 as points (Web-Mercator coordinates "
+    "in the source, reprojected).",
+    [circle("animal-bites", "#8b3a2e", zoom_radius(2.6), stroke="#FFFFFF")]),
+    default=True)
+emit("animal-bites", "style-animal", style(
+    "animal-bites", "By animal",
+    "Dogs (brown, 5,300+), cats (orange), wildlife (green), unknown gray.",
+    [circle("animal-bites", BITES, zoom_radius(2.6), stroke="#FFFFFF")],
+    legend=BITES))
+emit("animal-bites", "style-plain", style(
+    "animal-bites", "Locations only",
+    "Neutral points for overlays.",
+    [circle("animal-bites", DARK, zoom_radius(2.2))]))
+
 if __name__ == "__main__":
     main()

@@ -1,0 +1,77 @@
+{
+  "version": 8,
+  "name": "Turnout by precinct",
+  "metadata": {
+    "description": "November 2024 general election turnout percentage by precinct (precinct-level summary of the vote-totals table, joined to precinct geometry)."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../election-results-nov-2024.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "election-results-nov-2024-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "election-results-nov-2024",
+      "paint": {
+        "fill-color": [
+          "step",
+          [
+            "get",
+            "Turnout_Percentage"
+          ],
+          "#f5e6e6",
+          30,
+          "#e8c4c4",
+          45,
+          "#c98b8b",
+          55,
+          "#8b3a3a",
+          65,
+          "#5a1a1a"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "election-results-nov-2024",
+      "paint": {
+        "fill-color": [
+          "step",
+          [
+            "get",
+            "Turnout_Percentage"
+          ],
+          "#f5e6e6",
+          30,
+          "#e8c4c4",
+          45,
+          "#c98b8b",
+          55,
+          "#8b3a3a",
+          65,
+          "#5a1a1a"
+        ],
+        "fill-opacity": 0.78,
+        "fill-outline-color": "#FFFFFF"
+      }
+    },
+    {
+      "id": "line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "election-results-nov-2024",
+      "paint": {
+        "line-color": "#FFFFFF",
+        "line-width": 0.6,
+        "line-opacity": 1.0
+      }
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+ "collection": "property-taxes",
+ "title": "Property Taxes",
+ "portal_page": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=3",
+ "department": "Assessor's Office",
+ "source": "https://www.stlouis-mo.gov/data/upload/data-files/prcl.zip",
+ "source_type": "static",
+ "synced": "2026-08-05T17:48:01+00:00",
+ "fetch": {
+  "status": "ok",
+  "file": "prcl.zip",
+  "sha256": "2249855ba912b7f6849b263b4a1ce28b838c7196185fd4a1eded99c188ab74a6",
+  "bytes": 112708216,
+  "unpacked": [
+   "prcl.mdb"
+  ]
+ }
+}

@@ -46,6 +46,7 @@ Polling Centers
 | ./styles/default.json | 1.2 KB | 122072a2977c... |
 | ./styles/style-accessible.json | 1.4 KB | 12209bc43f28... |
 | ./styles/style-citywide.json | 1.3 KB | 1220cab25d7b... |
+| ./thumbnail.png | 359.8 KB | 1220a532e3f4... |
 
 ## Quick Start
 

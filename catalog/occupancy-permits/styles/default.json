@@ -1,0 +1,70 @@
+{
+  "version": 8,
+  "name": "Occupancy permits by year",
+  "metadata": {
+    "description": "Parcels with occupancy permits, stepped by permit year (joined to the parcels layer on HANDLE; a parcel appears once per permit)."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../occupancy-permits.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "occupancy-permits-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "occupancy-permits",
+      "paint": {
+        "fill-color": [
+          "step",
+          [
+            "get",
+            "PERMIT_YEAR"
+          ],
+          "#dfe6ea",
+          1990,
+          "#c6dbe8",
+          2000,
+          "#8fbdd6",
+          2010,
+          "#5591b5",
+          2015,
+          "#2d6a8e",
+          2020,
+          "#174054"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "occupancy-permits",
+      "paint": {
+        "fill-color": [
+          "step",
+          [
+            "get",
+            "PERMIT_YEAR"
+          ],
+          "#dfe6ea",
+          1990,
+          "#c6dbe8",
+          2000,
+          "#8fbdd6",
+          2010,
+          "#5591b5",
+          2015,
+          "#2d6a8e",
+          2020,
+          "#174054"
+        ],
+        "fill-opacity": 0.7,
+        "fill-outline-color": "#ffffff00"
+      }
+    }
+  ]
+}

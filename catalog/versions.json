@@ -212,7 +212,13 @@
       "updated": "2026-08-05T16:58:04.841060+00:00",
       "asset_count": 1,
       "total_size_bytes": 8781788
+    },
+    "animal-bites": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-05T17:58:24.774989+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 260192
     }
   },
-  "updated": "2026-08-05T16:58:04.841060+00:00"
+  "updated": "2026-08-05T17:58:24.774989+00:00"
 }

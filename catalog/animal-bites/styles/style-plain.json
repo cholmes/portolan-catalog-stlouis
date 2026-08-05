@@ -1,0 +1,40 @@
+{
+  "version": 8,
+  "name": "Locations only",
+  "metadata": {
+    "description": "Neutral points for overlays."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../animal-bites.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "circle",
+      "type": "circle",
+      "source": "data",
+      "source-layer": "animal-bites",
+      "paint": {
+        "circle-color": "#174054",
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          10,
+          0.8800000000000001,
+          13,
+          2.2,
+          16,
+          4.840000000000001
+        ],
+        "circle-opacity": 0.85
+      }
+    }
+  ]
+}

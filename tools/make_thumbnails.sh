@@ -83,7 +83,10 @@ FILL = {"historic-districts", "opportunity-zones",
         "port-authority-district", "land-use", "lead-service-lines",
         "market-value-analysis", "vacancy-composite", "polling-places",
         "tornado-damage-2025", "flood-controls", "neighborhood-organizations",
-        "siren-locations"}
+        "siren-locations", "property-taxes", "property-sales",
+        "electrical-permits", "mechanical-permits", "plumbing-permits",
+        "occupancy-permits", "street-permits", "election-results-nov-2024",
+        "animal-bites"}
 
 cat = pathlib.Path(os.environ["CATALOG_DIR"])
 for coll in sorted(cat.iterdir()):

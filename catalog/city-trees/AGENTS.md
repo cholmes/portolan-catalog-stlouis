@@ -32,4 +32,4 @@ Address fields (STREET_NUM, STREET) join loosely to parcel situs addresses.
 
 ## Provenance
 
-Mirror of [City Trees (Planting Sites)](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=121) from the City of St. Louis open data portal; source: https://maps9.stlouis-mo.gov/arcgis/rest/services/FORESTRY/FORESTRY_TREES/MapServer. No explicit license is published — see the portal page. Synced 2026-08-05T17:00:27+00:00.
+Mirror of [City Trees (Planting Sites)](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=121) from the City of St. Louis open data portal; source: https://maps9.stlouis-mo.gov/arcgis/rest/services/FORESTRY/FORESTRY_TREES/MapServer. No explicit license is published — see the portal page. Synced 2026-08-05T17:48:01+00:00.

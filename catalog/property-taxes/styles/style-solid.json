@@ -1,0 +1,26 @@
+{
+  "version": 8,
+  "name": "Tax roll parcels",
+  "metadata": {
+    "description": "Every joined parcel in one color."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../property-taxes.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "property-taxes",
+      "paint": {
+        "fill-color": "#1e526b",
+        "fill-opacity": 0.5,
+        "fill-outline-color": "#ffffff00"
+      }
+    }
+  ]
+}
