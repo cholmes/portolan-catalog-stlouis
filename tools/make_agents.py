@@ -317,10 +317,16 @@ def collection_agents(coll_id: str) -> str:
     return "\n".join(out)
 
 
+# Counted rather than stated: the catalog has grown from the original 20.
+N_COLLECTIONS = len(list(CATALOG.glob("*/*/collection.json")))
+N_TILED = len(list(CATALOG.glob("*/*/*.pmtiles")))
+FORMATS = ("GeoParquet and PMTiles" if N_TILED == N_COLLECTIONS
+           else f"GeoParquet, {N_TILED} of them also as PMTiles")
+
 ROOT_AGENTS = f"""# AGENTS.md — City of St. Louis Open Data (Cloud-Native Mirror)
 
-Twenty collections mirrored from https://www.stlouis-mo.gov/data/ as
-GeoParquet (+ PMTiles for the 19 geospatial ones). Everything is
+{N_COLLECTIONS} collections mirrored from the [City of St. Louis open data
+portal](https://www.stlouis-mo.gov/data/) as {FORMATS}. Everything is
 range-readable over HTTPS — no download needed.
 
 ## Access pattern

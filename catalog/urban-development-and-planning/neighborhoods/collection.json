@@ -207,8 +207,8 @@
       "type": "application/vnd.mapbox.style+json",
       "title": "Neighborhoods",
       "description": "The 88 official neighborhoods, each tinted from a repeating ten-color set so adjacent neighborhoods read apart, with name labels. Colors carry no meaning.",
-      "file:size": 1873,
-      "file:checksum": "122014282c3d3d461a016ee78cec9ec5e057a16f3854d7785c07607792a61a467a9c",
+      "file:size": 1954,
+      "file:checksum": "122072c69be5924dc0d8b18007fd7310ad58c5715f03cf80ee3761498cc601f68fe8",
       "roles": [
         "default",
         "style"
@@ -240,8 +240,8 @@
       "href": "./thumbnail.png",
       "type": "image/png",
       "title": "Neighborhood Boundaries rendered with the default style",
-      "file:size": 313404,
-      "file:checksum": "12204bb29296735a9131f64106993e7e1d98163c396b17351024a91518bb631eaa97",
+      "file:size": 353773,
+      "file:checksum": "122036696442dc72f11ba3e81b0838aaf54610e19f56032646a10a5c50444120e1b4",
       "roles": [
         "thumbnail"
       ]

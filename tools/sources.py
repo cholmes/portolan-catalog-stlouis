@@ -7,6 +7,8 @@ where a live service exists (better metadata + the city's own symbology),
 otherwise from the portal's static download.
 """
 
+import re
+
 PORTAL = "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id="
 
 # type: "arcgis" → portolan extract arcgis --raw; "static" → download.sh
@@ -492,3 +494,23 @@ GROUP_OF = {cid: g for g, cids in GROUPS.items() for cid in cids}
 def coll_rel(cid: str) -> str:
     """Collection directory path relative to the catalog root."""
     return f"{GROUP_OF[cid]}/{cid}"
+
+
+# The city writes URLs as bare text in its portal descriptions ("File new
+# service request here: https://..."). STAC descriptions and READMEs are
+# markdown, and the browser and source.coop render them as such, so a bare URL
+# shows up as dead text. Wrap it as a markdown link, keeping the URL as its own
+# label so nothing is invented. Skips URLs already linked or in angle brackets.
+BARE_URL = re.compile(r"""(?<![(<\[\]])\bhttps?://[^\s<>()\[\]"']+""")
+
+
+def linkify(text: str) -> str:
+    def wrap(m):
+        url = m.group(0)
+        # Sentence punctuation trailing the URL is not part of it.
+        trail = ""
+        while url and url[-1] in ".,;:!?":
+            trail, url = url[-1] + trail, url[:-1]
+        return f"[{url}]({url}){trail}"
+
+    return BARE_URL.sub(wrap, text) if text else text

@@ -26,6 +26,11 @@ from sources import coll_rel
 
 ROOT = Path(__file__).resolve().parent.parent
 CATALOG = ROOT / "catalog"
+STAGING = ROOT / "staging"
+
+# Public glyph source, matching the CARTO basemaps the browser ships with, so
+# label layers render the same standalone as they do in the browser.
+GLYPHS = "https://tiles.basemaps.cartocdn.com/fonts/{fontstack}/{range}.pbf"
 
 # City palette, sampled from stlouis-mo.gov
 BLUE = "#1e526b"
@@ -94,7 +99,7 @@ def style(coll_id, name, description, layers, legend=None, no_legend=False):
     meta = {"description": description}
     if no_legend:
         meta["legend"] = "none"
-    return {
+    obj = {
         "version": 8,
         "name": name,
         "metadata": meta,
@@ -102,6 +107,12 @@ def style(coll_id, name, description, layers, legend=None, no_legend=False):
                              "url": f"pmtiles://../{coll_id}.pmtiles"}},
         "layers": layers,
     }
+    # A symbol layer draws nothing without a glyph source. The browser inherits
+    # one from whichever basemap is loaded, but a style asset should also
+    # render on its own (thumbnails, any other client), so name one.
+    if any(l["type"] == "symbol" for l in layers):
+        obj["glyphs"] = GLYPHS
+    return obj
 
 
 def fill(coll_id, color, opacity=0.55, outline=INK, lid="fill"):
@@ -703,12 +714,189 @@ emit("lra-property", "style-solid", style(
     [fill("lra-property", RED, 0.55, "#FFFFFF")]))
 
 
+# Fields the ingest renamed on the way into the tiles. The city's renderers
+# key on the service's own column names; where the tiles carry the same values
+# under a different name, point the renderer at that instead of losing it.
+TILE_FIELD_RENAMES = {"lra-property": {"Case_Status": "Status"}}
+
+
+def tile_fields(coll_id: str) -> set:
+    """Attribute names actually present in a collection's PMTiles."""
+    p = CATALOG / coll_rel(coll_id) / f"{coll_id}.pmtiles"
+    if not p.exists():
+        return set()
+    try:
+        from pmtiles.reader import MmapSource, Reader
+    except ImportError:
+        return set()
+    with open(p, "rb") as f:
+        meta = Reader(MmapSource(f)).metadata()
+    layers = meta.get("vector_layers") or json.loads(
+        meta.get("json", "{}")).get("vector_layers", [])
+    return {k for l in layers for k in (l.get("fields") or {})}
+
+
+def retarget_fields(coll_id: str, s: dict) -> None:
+    """Reconcile an extracted renderer with the attributes in the tiles.
+
+    Renamed fields are followed; a field that survives nowhere leaves its
+    `match` unmatchable, so every feature would fall to the default color.
+    When the renderer paints every class the same anyway (the city does this
+    where the categories are informational only), collapse to that one color
+    rather than leaving a fake legend behind.
+    """
+    have = tile_fields(coll_id)
+    if not have:
+        return
+    renames = TILE_FIELD_RENAMES.get(coll_id, {})
+
+    def walk(node):
+        if isinstance(node, list):
+            if len(node) == 2 and node[0] == "get" and node[1] in renames:
+                node[1] = renames[node[1]]
+            for x in node:
+                walk(x)
+        elif isinstance(node, dict):
+            for x in node.values():
+                walk(x)
+
+    walk(s.get("layers", []))
+
+    def missing(expr):
+        return (isinstance(expr, list) and expr and expr[0] == "match"
+                and isinstance(expr[1], list) and expr[1][0] == "get"
+                and expr[1][1] not in have)
+
+    for layer in list(s.get("layers", [])):
+        for prop, expr in list(layer.get("paint", {}).items()):
+            if not missing(expr):
+                continue
+            colors = set(expr[3:-1:2])
+            if len(colors) == 1:
+                layer["paint"][prop] = colors.pop()
+                print(f"  ! {coll_id}: {expr[1][1]} not in tiles; renderer "
+                      f"paints one color, collapsed {prop} to a constant")
+            else:
+                print(f"  ! {coll_id}: {expr[1][1]} not in tiles; {prop} "
+                      f"cannot be honored")
+    # A legend layer whose expression just collapsed is no longer a legend.
+    s["layers"] = [l for l in s["layers"]
+                   if not (l["id"].endswith("-legend")
+                           and isinstance(l.get("paint", {}).get("fill-color"), str))]
+
+
+def _esri_symbols(rend: dict):
+    """[(value, symbol)] for a simple or uniqueValue polygon renderer.
+
+    `value` is None for a simple renderer, else the field1 value the symbol
+    applies to. Both the modern `uniqueValueGroups` shape and the legacy
+    `uniqueValueInfos` shape appear across the city's servers.
+    """
+    if rend.get("type") == "simple":
+        return [(None, rend.get("symbol") or {})]
+    out = []
+    for group in rend.get("uniqueValueGroups") or []:
+        for cls in group.get("classes") or []:
+            for values in cls.get("values") or []:
+                out.append((values[0], cls.get("symbol") or {}))
+    for info in rend.get("uniqueValueInfos") or []:
+        out.append((info.get("value"), info.get("symbol") or {}))
+    return out
+
+
+def _rgba_hex(color) -> str:
+    r, g, b = (color or [0, 0, 0, 0])[:3]
+    return f"#{r:02x}{g:02x}{b:02x}"
+
+
+def rescue_hollow_fill(coll_id: str, s: dict) -> bool:
+    """Restate a hollow ESRI polygon symbol's outline as a MapLibre line layer.
+
+    The city draws its boundary layers (wards, ZIP codes, police districts,
+    the city limits, some historic districts) as a fully transparent
+    `esriSFSSolid` fill plus a colored outline. The extractor keeps the fill
+    and drops the outline, and `fill-outline-color` draws nothing at
+    `fill-opacity: 0` — so those styles rendered blank. Rebuild the outline
+    from the renderer's own colors and widths. Where the fill alpha varies by
+    class, restore that too rather than flattening every class to invisible.
+    """
+    meta = STAGING / "extracts" / coll_id / "layer-metadata.json"
+    layers = s.get("layers", [])
+    fills = [l for l in layers if l.get("type") == "fill"]
+    # Only polygon styles can be blanked this way: a point or line collection's
+    # zero-opacity fill is the inert legend layer, and its circles/lines draw
+    # perfectly well on their own.
+    if not fills or any(l.get("type") != "fill" for l in layers):
+        return False
+    if any(l.get("paint", {}).get("fill-opacity") != 0.0 for l in fills):
+        return False
+
+    if not meta.exists():
+        # No renderer metadata kept: fall back to the color the extractor
+        # already wrote as the (unrenderable) fill outline.
+        outline = fills[0].get("paint", {}).get("fill-outline-color")
+        if not isinstance(outline, str):
+            return False
+        s["layers"].append({
+            "id": f"{coll_id}-outline", "type": "line", "source": "data",
+            "source-layer": coll_id,
+            "paint": {"line-color": outline, "line-width": 1},
+        })
+        return True
+
+    rend = (json.loads(meta.read_text()).get("drawingInfo") or {}).get("renderer") or {}
+    field = rend.get("field1")
+    symbols = [(v, sym) for v, sym in _esri_symbols(rend) if sym.get("outline")]
+    if not symbols:
+        return False
+
+    def by_value(pick, default):
+        """Constant when every class agrees, else a match on field1."""
+        vals = {v: pick(sym) for v, sym in symbols}
+        uniq = set(vals.values())
+        if len(uniq) == 1:
+            return uniq.pop()
+        expr = ["match", ["get", field]]
+        for v, got in vals.items():
+            expr += [v, got]
+        expr.append(default)
+        return expr
+
+    s["layers"].append({
+        "id": f"{coll_id}-outline", "type": "line", "source": "data",
+        "source-layer": coll_id,
+        "paint": {
+            "line-color": by_value(lambda sym: _rgba_hex(sym["outline"].get("color")), GRAY),
+            # ESRI widths are points; MapLibre wants pixels.
+            "line-width": by_value(
+                lambda sym: round(sym["outline"].get("width", 1) * 4 / 3, 2), 1),
+        },
+    })
+    # Classes the city fills solid should stay filled — only the hollow ones
+    # are meant to be invisible.
+    alphas = {v: (sym.get("color") or [0, 0, 0, 0])[3] for v, sym in _esri_symbols(rend)}
+    if field and any(a for a in alphas.values()):
+        expr = ["match", ["get", field]]
+        for v, a in alphas.items():
+            expr += [v, round(a / 255 * 0.6, 2)]
+        expr.append(0)
+        fills[0].setdefault("paint", {})["fill-opacity"] = expr
+    return True
+
+
 def normalize_city_renderers() -> None:
     """Finish the styles extracted from the city's ArcGIS renderers.
 
     The extractor writes the renderer's layers but no tile source URL, and
     knows nothing about the browser's legend mechanism. Inject the pmtiles
     source and, for data-driven renderers, the inert legend fill layer.
+
+    Boundary layers (wards, ZIP codes, police districts, the city limits) are
+    published by the city as *hollow* polygons: a fully transparent
+    `esriSFSSolid` fill plus a colored outline. `fill-outline-color` renders
+    nothing when `fill-opacity` is 0, so those styles came out blank. Restate
+    the renderer's own outline as a line layer — same color, straight from the
+    service, nothing invented.
     """
     for f in sorted(CATALOG.glob("*/*/styles/city-renderer.json")):
         coll_id = f.parent.parent.name
@@ -723,6 +911,8 @@ def normalize_city_renderers() -> None:
         s["name"] = s.get("name") or "City renderer"
         if s["name"] in ("Simple Style", "Categorical Style"):
             s["name"] = "City renderer"
+
+        retarget_fields(coll_id, s)
 
         def expr(layer, prop):
             v = layer.get("paint", {}).get(prop)
@@ -743,8 +933,10 @@ def normalize_city_renderers() -> None:
                 "source-layer": coll_id,
                 "paint": {"fill-color": legend, "fill-opacity": 0},
             }] + s["layers"]
+        rescued = rescue_hollow_fill(coll_id, s)
         f.write_text(json.dumps(s, indent=2) + "\n")
-        print(f"✓ normalized {coll_id}/styles/city-renderer.json")
+        print(f"✓ normalized {coll_id}/styles/city-renderer.json"
+              f"{' (outline rescued)' if rescued else ''}")
 
 
 def main() -> None:
@@ -1368,20 +1560,29 @@ emit("historic-landmarks", "style-national-register", style(
             zoom_radius(4))],
     legend=["match", ["get", "SITE_TYPE"], "NR_SITE", BLUE, "#00000000"]))
 
+# The 5-digit code lives in ZCTA (and, identically, NAME — which is what the
+# city's own labelingInfo uses). There is no ZIP column.
 emit("zip-codes", "default", style(
-    "zip-codes", "ZIP codes",
-    "The 30 ZIP code areas touching the city, repeating colors, labeled.",
-    [fill("zip-codes", repeat_fill(["to-number", ["get", "ZIP"]], 10), 0.55,
+    "zip-codes", "ZIP codes labeled",
+    "The 30 ZIP code areas touching the city, each labeled with its code.",
+    [fill("zip-codes", LIGHTBLUE, 0.35, DARK),
+     line("zip-codes", DARK, 1.2),
+     label("zip-codes", "ZCTA", 12, 9)], no_legend=True), default=True)
+emit("zip-codes", "style-mosaic", style(
+    "zip-codes", "ZIP mosaic",
+    "Repeating colors so adjacent ZIP areas are easy to tell apart, labeled.",
+    [fill("zip-codes", repeat_fill(["to-number", ["get", "ZCTA"]], 10), 0.55,
           "#FFFFFF"),
      line("zip-codes", "#FFFFFF", 1.0),
-     label("zip-codes", "ZIP", 11, 10)], no_legend=True), default=True)
+     label("zip-codes", "ZCTA", 11, 9)], no_legend=True))
 emit("zip-codes", "style-boundaries", style(
     "zip-codes", "ZIP boundaries",
     "Outlines only.", [line("zip-codes", DARK, 1.5)]))
 emit("zip-codes", "style-subtle", style(
     "zip-codes", "Subtle tint",
-    "Light fill for underlays.",
-    [fill("zip-codes", LIGHT, 0.3, GRAY)]))
+    "Pale fill for underlaying other data, with the codes still readable.",
+    [fill("zip-codes", LIGHTBLUE, 0.4, GRAY),
+     label("zip-codes", "ZCTA", 11, 11)]))
 
 emit("parking-meters", "default", style(
     "parking-meters", "Parking meters",

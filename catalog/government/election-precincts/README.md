@@ -17,7 +17,7 @@ Wards & current election precincts for the City of St. Louis. Mirrored from [the
 
 | Column | Type | Description |
 |--------|------|-------------|
-| name | string |  |
+| name | string | Precinct name/identifier for the election precinct polygon. |
 | globalid | string |  |
 | geometry | binary |  |
 | geometry_bbox | struct<xmin: float not null, ymin: float not null, xmax: float not null, ymax: float not null> |  |
@@ -31,7 +31,7 @@ Wards & current election precincts for the City of St. Louis. Mirrored from [the
 | ./styles/default.json | 3.2 KB | 12201a21287c... |
 | ./styles/style-boundaries.json | 482 B | 122014e02715... |
 | ./styles/style-tint.json | 510 B | 122016607d55... |
-| ./README.md | 2.5 KB | 12209269b190... |
+| ./README.md | 2.5 KB | 1220eca8134d... |
 | ./thumbnail.png | 328.4 KB | 12203c318c7f... |
 
 ## Quick Start

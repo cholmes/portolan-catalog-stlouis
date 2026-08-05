@@ -188,8 +188,8 @@
       "type": "application/vnd.mapbox.style+json",
       "title": "City renderer",
       "description": "The city's own symbology, extracted from the source ArcGIS renderer.",
-      "file:size": 543,
-      "file:checksum": "12209932dec2d8d6e804b18469df20d01611a423db369e971fb4c13f276ad78cabd0",
+      "file:size": 769,
+      "file:checksum": "12203a97278be69c00975c4eb9075148c19d3ff8b76bb99012d784a1acc5aeafcb23",
       "roles": [
         "style"
       ]
@@ -199,8 +199,8 @@
       "type": "application/vnd.mapbox.style+json",
       "title": "Police districts",
       "description": "The six SLMPD districts, one color each, labeled by number.",
-      "file:size": 2123,
-      "file:checksum": "1220c6914f04ab738863bf01ba1915d0744c95cdcb9cbe363bd613dbb3293293a8a6",
+      "file:size": 2204,
+      "file:checksum": "12206fc6deefb522b6f46a8766840031726af52a7ee78bef0b25eb01bee568862480",
       "roles": [
         "default",
         "style"
@@ -232,8 +232,8 @@
       "href": "./thumbnail.png",
       "type": "image/png",
       "title": "Police District Boundaries rendered with the default style",
-      "file:size": 293613,
-      "file:checksum": "1220d67fb3044f90941aecb1ab6c98e88b639967068d8dec385201a42dfbb13edc50",
+      "file:size": 295720,
+      "file:checksum": "12201f9a71bd287624d173ae60a1c5562e1f2e93b60a32482257f3a67633e30bc75d",
       "roles": [
         "thumbnail"
       ]

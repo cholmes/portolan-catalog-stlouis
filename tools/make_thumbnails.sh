@@ -135,8 +135,10 @@ style['sources'] = {
              'tiles': ['pmtiles://%s/{z}/{x}/{y}' % os.environ['PMTILES_PATH']]},
 }
 style['layers'] = [{'id': 'basemap', 'type': 'raster', 'source': 'basemap'}] + style.get('layers', [])
-# chiitiler has no glyph server configured, so drop text from the render.
-style['layers'] = [l for l in style['layers'] if l.get('type') != 'symbol']
+# Labels need a glyph source. Styles that name one keep their text; for any
+# that do not, drop the symbol layers rather than have them render blank.
+if not style.get('glyphs'):
+    style['layers'] = [l for l in style['layers'] if l.get('type') != 'symbol']
 json.dump(style, open(os.environ['RENDER'], 'w'))
 PYSTYLE
 

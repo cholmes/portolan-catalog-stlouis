@@ -17,18 +17,18 @@ Dataset describes real estate sale prices for recent property sales in the city.
 
 | Column | Type | Description |
 |--------|------|-------------|
-| CityBlock | double |  |
+| CityBlock | double | City block component of the sold parcel's key; Parcel and OwnerCode complete the key (see parcels). |
 | Parcel | int64 |  |
 | OwnerCode | int64 |  |
-| SaleNum | int64 |  |
-| AsrParcelId | string |  |
-| SaleType | int64 |  |
+| SaleNum | int64 | Sequential sale number for the parcel. |
+| AsrParcelId | string | Assessor's parcel ID (2021 numbering schema). |
+| SaleType | int64 | Coded sale type from the city 'Sale Type' vocabulary, e.g. 11 Investor, 25 House/Vacant Lot, 36/37 Condo with/without parking, 42 Government, 46 Gift, 47-49 Exempt, 70 Foreclosure, 80 Foreclosure Sale, 61 Inter-Corporate; SaleTypeDescr carries the decoded description and SaleTypeOther any free-text type. |
 | SaleTypeOther | string |  |
-| SaleDate | string |  |
-| SalePrice | double |  |
-| NbrOfParcels | int64 |  |
+| SaleDate | string | Date of the sale; LRMSSaleDate is the sale date as carried in the LRMS land-records system. |
+| SalePrice | double | Sale price in dollars. |
+| NbrOfParcels | int64 | Number of parcels included in the transaction; SalePricePerParcel is SalePrice divided across them. |
 | SalePricePerParcel | double |  |
-| SaleDocNum | int64 |  |
+| SaleDocNum | int64 | Recorder of Deeds document number for the sale. |
 | LRMSSaleDate | string |  |
 | SaleTypeDescr | string |  |
 

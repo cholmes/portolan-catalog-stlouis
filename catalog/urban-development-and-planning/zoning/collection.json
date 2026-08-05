@@ -75,11 +75,13 @@
     },
     {
       "name": "HANDLE",
-      "type": "string"
+      "type": "string",
+      "description": "Citywide parcel handle of the parcel the zoning polygon corresponds to (join key to the parcels collections)."
     },
     {
       "name": "LAYER",
-      "type": "string"
+      "type": "string",
+      "description": "Zoning district letter, per the city's ArcGIS renderer: A Single-Family Residential Dwelling District, B Two-Family Dwelling District, C/D/E Multiple-Family Dwelling Districts, F Neighborhood Commercial District, G Local Commercial and Office District, H Area Commercial District, I Central Business District, J Industrial District, K Unrestricted District, L Jefferson Memorial District."
     },
     {
       "name": "Shape.STArea()",

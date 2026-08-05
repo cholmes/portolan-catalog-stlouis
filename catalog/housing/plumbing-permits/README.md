@@ -20,31 +20,31 @@ Plumbing permit information by property type, year, neighborhood, ward, and proj
 | ADDRADJUSTED | string |  |
 | ADDRNUM | string |  |
 | ADDRSUF | string |  |
-| APPDATE | string |  |
-| APPDESCRIPTION | string |  |
-| APPNUM | string |  |
-| APPTYPE | string |  |
+| APPDATE | string | Date the permit application was filed; ISSUEDATE/COMPLETEDATE/CANCELDATE are the issue, completion and cancellation dates. |
+| APPDESCRIPTION | string | Free-text description of the permitted work. |
+| APPNUM | string | Permit application number. |
+| APPTYPE | string | Permit application type code; 'AP' (Plumbing) in this dataset (city 'Permit Application Type' vocabulary). |
 | ASRNBRHD | string |  |
 | CANCELDATE | string |  |
-| CANCELTYPE | string |  |
+| CANCELTYPE | string | Cancellation code; only 'C' appears and no decode is published. |
 | CDADIST | string |  |
 | CDASUBDIST | string |  |
 | CENSBLOCK00 | string |  |
 | CITYBLOCK | string |  |
 | COMPLETEDATE | string |  |
-| ESTPROJECTCOST | string |  |
+| ESTPROJECTCOST | string | Estimated project cost in dollars. |
 | FIRSTDATE | string |  |
 | GEOCITYBLOCKPART | string |  |
-| HANDLE | string |  |
+| HANDLE | string | Citywide parcel handle (join key to parcels). |
 | ISSUEDATE | string |  |
 | LASTDATE | string |  |
-| MAINSTRUCTYPE | string |  |
+| MAINSTRUCTYPE | string | Main structure type code (city 'Permit Structure Type' vocabulary; STRUCTYPE1-3 are additional). |
 | NBRHD | string |  |
-| NBROFUNITS | string |  |
+| NBROFUNITS | string | Number of units covered by the permit. |
 | NLC | string |  |
 | OWNERADDR | string |  |
 | OWNERCITY | string |  |
-| OWNERCODE | string |  |
+| OWNERCODE | string | Taxing-status component of the parcel key (see parcels.OwnerCode). |
 | OWNERNAME | string |  |
 | OWNERSTATE | string |  |
 | OWNERZIP | string |  |
@@ -52,9 +52,9 @@ Plumbing permit information by property type, year, neighborhood, ward, and proj
 | PARCEL9 | string |  |
 | PARITY | string |  |
 | POLICEDIST | string |  |
-| PRCLERR | string |  |
+| PRCLERR | string | Parcel geocoding match/error code (city ComCode.mdb CdPrclErr). |
 | PRECINCT02 | string |  |
-| PROJECTTYPE | string |  |
+| PROJECTTYPE | string | Project type: 1 New Construction, 2 Addition, 3 Alteration, 4 Repair, 5 Replacement, 6 Demolition, 9 Other (city 'Permit Project Type' vocabulary). |
 | STDIR | string |  |
 | STNAME | string |  |
 | STRUCTYPE1 | string |  |

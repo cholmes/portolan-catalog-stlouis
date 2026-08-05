@@ -18,36 +18,36 @@ The Market Value Analysis (MVA) is an in-depth study and mapping of a community'
 | Column | Type | Description |
 |--------|------|-------------|
 | OBJECTID | int64 |  |
-| geoid | string |  |
-| MVACluster | string |  |
-| MSP2123_CA | int32 |  |
-| MSPVar2123 | float |  |
-| PHHOO | float |  |
-| CHHOO | int32 |  |
-| CHH | int32 |  |
-| PPerm10k | float |  |
-| CPerm10k | int32 |  |
-| CResPcl | int32 |  |
-| PDSale2123 | float |  |
-| CDSale2123 | int32 |  |
-| CSales2123 | int32 |  |
-| PVacBuild | float |  |
-| CVacBuild | int32 |  |
-| CHU_All | int32 |  |
-| PVResLand | float |  |
-| VacLotAcre | double |  |
-| PclResAcre | double |  |
-| PResArea | float |  |
-| PclAcres | double |  |
-| Subsidy | float |  |
-| CSubHH | double |  |
-| CHHRO | int32 |  |
-| CPOP | int32 |  |
-| CPOPWH | int32 |  |
-| CPOPBK | int32 |  |
-| CPOPAS | int32 |  |
-| CPOPHISP | int32 |  |
-| CPOPOTH | int32 |  |
+| geoid | string | Census 2020 block group code (AGOL layer documentation). |
+| MVACluster | string | Market cluster letter assigned to the block group by Reinvestment Fund's 2024 Market Value Analysis of St. Louis — clusters group block groups with similar housing-market conditions. |
+| MSP2123_CA | int32 | Median sales price of residential home sales 2021-2023, excluding sales under $1,000, condo-adjusted (AGOL layer documentation). |
+| MSPVar2123 | float | Variation of home values 2021-2023 (standard deviation divided by average value). |
+| PHHOO | float | Households that reported owning their home as a share of all households, ACS 2018-2022. |
+| CHHOO | int32 | Count of households that reported owning their homes, ACS 2018-2022 (documented as 'CHOO' in the layer description). |
+| CHH | int32 | Count of all households, ACS 2018-2022 (documented as 'CHIH' in the layer description). |
+| PPerm10k | float | Share of residential parcels with renovation/addition permits June 2022-June 2024 whose total permit value exceeded $10,000 (excluding demolitions). |
+| CPerm10k | int32 | Count of residential parcels with such >$10,000 renovation/addition permits, June 2022-June 2024. |
+| CResPcl | int32 | Count of residential parcels in the block group (denominator for the parcel-share indicators; AGOL description text is garbled for this field). |
+| PDSale2123 | float | Distressed residential sales (foreclosures, sheriff sales, tax sales, bank-sold) as a share of residential transactions 2021-2023. |
+| CDSale2123 | int32 | Count of distressed residential home sales 2021-2023. |
+| CSales2123 | int32 | Count of residential home sales 2021-2023. |
+| PVacBuild | float | Vacant housing units as a share of all housing units, 2024. |
+| CVacBuild | int32 | Count of vacant housing units. |
+| CHU_All | int32 | Count of all housing units. |
+| PVResLand | float | Vacant residential land as a share of all residential land, 2024. |
+| VacLotAcre | double | Vacant residential land area in acres. |
+| PclResAcre | double | Residential land area in acres. |
+| PResArea | float | Residential land area as a share of all land area, 2024. |
+| PclAcres | double | All land area in acres. |
+| Subsidy | float | Share of households with a housing subsidy (LIHTC, Public Housing, Housing Choice Voucher, Multifamily), from the National Housing Preservation Database/HUD-POSH/St. Louis Housing Authority. |
+| CSubHH | double | Count of households with a housing subsidy (same sources as Subsidy). |
+| CHHRO | int32 | Count of renter households, ACS 2018-2022. |
+| CPOP | int32 | Total population count, ACS 2018-2022. |
+| CPOPWH | int32 | Non-Hispanic white population count, ACS 2018-2022. |
+| CPOPBK | int32 | Non-Hispanic Black population count, ACS 2018-2022. |
+| CPOPAS | int32 | Non-Hispanic Asian population count, ACS 2018-2022. |
+| CPOPHISP | int32 | Hispanic population count, ACS 2018-2022. |
+| CPOPOTH | int32 | Other-race population count, ACS 2018-2022. |
 | Shape__Area | double |  |
 | Shape__Length | double |  |
 | geometry | binary |  |

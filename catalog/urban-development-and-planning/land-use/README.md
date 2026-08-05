@@ -19,24 +19,24 @@ Strategic land use (SLUP),parcel, and zoning data Mirrored from [the city's open
 |--------|------|-------------|
 | FID | int64 |  |
 | OBJECTID_1 | int32 |  |
-| Status | string |  |
-| SLUP_LATES | string |  |
+| Status | string | Status of the plan geography (all rows are 'Active' via the Boundary field in the current extract). |
+| SLUP_LATES | string | Strategic Land Use Plan category code (latest designation): NPA Neighborhood Preservation Area, NDA Neighborhood Development Area, NCA Neighborhood Commercial Area, RCA Regional Commercial Area, BIPA Business/Industrial Preservation Area, BIDA Business/Industrial Development Area, IPDA Institutional Preservation and Development Area, ROSPDA Recreational/Open Space Preservation and Development Area, SMUA Specialty Mixed Use Area, OA Opportunity Area (category names from the city's adopted 2005 Strategic Land Use Plan document). |
 | SUM_COUNTE | double |  |
 | ORIG_FID | int32 |  |
-| Boundary | string |  |
+| Boundary | string | Whether the geography is the active plan boundary ('Active' in current data). |
 | NOCATS | string |  |
-| NAME | string |  |
-| PLANNER | string |  |
-| UPDATED | timestamp[us] |  |
-| COMMENTS | string |  |
-| PDA_RESOLU | string |  |
+| NAME | string | Name of the SLUP amendment area the polygon belongs to, where applicable (e.g. '26 Midtown Corridor'); blank for unamended base-plan areas. |
+| PLANNER | string | Planning staff member associated with the amendment record. |
+| UPDATED | timestamp[us] | Date the record was last updated. |
+| COMMENTS | string | Planner's free-text comments on the amendment/designation. |
+| PDA_RESOLU | string | Planning agency resolution reference for the amendment that set this designation (PDA_RESOL_ is the truncated companion field; inferred from name). |
 | PDA_RESOL_ | string |  |
-| APPROVED | string |  |
+| APPROVED | string | Approval date/flag for the amendment (name-based). |
 | WIP_MTG_DA | timestamp[us] |  |
-| GEOGRAPHY | string |  |
+| GEOGRAPHY | string | List of city block numbers / census identifiers the amendment covers (observed values are space-separated block numbers). |
 | Shape_Leng | double |  |
 | Shape_Area | double |  |
-| Acres | double |  |
+| Acres | double | Polygon area in acres. |
 | Shape__Area | double |  |
 | Shape__Length | double |  |
 | geometry | binary |  |

@@ -20,41 +20,41 @@ Data on commercial, industrial, and residential electrical permits in the City o
 | ADDRADJUSTED | string |  |
 | ADDRNUM | string |  |
 | ADDRSUF | string |  |
-| APPDATE | string |  |
-| APPDESCRIPTION | string |  |
-| APPNUM | string |  |
-| APPTYPE | string |  |
+| APPDATE | string | Date the permit application was filed. |
+| APPDESCRIPTION | string | Free-text description of the permitted work. |
+| APPNUM | string | Permit application number. |
+| APPTYPE | string | Permit application type code; always 'AE' (Electrical) in this dataset — codes come from the city 'Permit Application Type' vocabulary (AB Building, AD Demolition, AE Electrical, AM Mechanical, AO Occupancy, AP Plumbing, etc.). |
 | ASRNBRHD | string |  |
-| CANCELDATE | string |  |
-| CANCELTYPE | string |  |
+| CANCELDATE | string | Date the application was cancelled, if it was. |
+| CANCELTYPE | string | Cancellation code; only the value 'C' (cancelled) appears in the data and the city publishes no decode for it. |
 | CDADIST | string |  |
 | CDASUBDIST | string |  |
 | CENSBLOCK00 | string |  |
-| CITYBLOCK | string |  |
-| COMPLETEDATE | string |  |
-| ESTPROJECTCOST | string |  |
-| FIRSTDATE | string |  |
+| CITYBLOCK | string | City block number of the permitted parcel; PARCEL is the parcel number within the block, PARCEL9 the nine-digit CityBlock+Parcel root. |
+| COMPLETEDATE | string | Date the permitted work was completed/finaled. |
+| ESTPROJECTCOST | string | Estimated project cost in dollars as declared on the application. |
+| FIRSTDATE | string | Date the record first appeared in the extract; LASTDATE is its last update (name-based). |
 | GEOCITYBLOCKPART | string |  |
-| HANDLE | string |  |
-| ISSUEDATE | string |  |
+| HANDLE | string | Citywide parcel handle the permit is attached to (join key to the parcels collections). |
+| ISSUEDATE | string | Date the permit was issued. |
 | LASTDATE | string |  |
-| MAINSTRUCTYPE | string |  |
-| NBRHD | string |  |
-| NBROFUNITS | string |  |
+| MAINSTRUCTYPE | string | Main structure type code, e.g. 1 One-or-Two Family, 2 Multi Family, 3 Hotel, 19 Industrial, 20 Commercial, 23 Garage (city 'Permit Structure Type' vocabulary); STRUCTYPE1-3 carry additional structure types. |
+| NBRHD | string | City neighborhood number (city 'Neighborhood' vocabulary); ASRNBRHD is the assessor's neighborhood. |
+| NBROFUNITS | string | Number of dwelling/occupancy units covered by the permit. |
 | NLC | string |  |
 | OWNERADDR | string |  |
 | OWNERCITY | string |  |
-| OWNERCODE | string |  |
-| OWNERNAME | string |  |
+| OWNERCODE | string | Taxing-status component of the parcel key (see parcels.OwnerCode decode). |
+| OWNERNAME | string | Property owner of record at permit time (OWNERADDR/OWNERCITY/OWNERSTATE/OWNERZIP are the owner's mailing address). |
 | OWNERSTATE | string |  |
 | OWNERZIP | string |  |
 | PARCEL | string |  |
 | PARCEL9 | string |  |
 | PARITY | string |  |
 | POLICEDIST | string |  |
-| PRCLERR | string |  |
+| PRCLERR | string | Parcel geocoding match/error code from the city's address-matching system (decode table CdPrclErr in the city's ComCode.mdb, e.g. 1-5 matches to non-LRMS addresses, 9 Outside City). |
 | PRECINCT02 | string |  |
-| PROJECTTYPE | string |  |
+| PROJECTTYPE | string | Project type code: 1 New Construction, 2 Addition, 3 Alteration, 4 Repair, 5 Replacement, 6 Demolition, 7 Occupancy, 8 Blasting, 9 Other (city 'Permit Project Type' vocabulary). |
 | STDIR | string |  |
 | STNAME | string |  |
 | STRUCTYPE1 | string |  |
@@ -64,7 +64,7 @@ Data on commercial, industrial, and residential electrical permits in the City o
 | TMPCITYBLOCK | string |  |
 | TMPPARCEL | string |  |
 | UNITNUM | string |  |
-| UPDATEGEO | string |  |
+| UPDATEGEO | string | Date/flag of the last geocoding update for the record (name-based). |
 | WARD00 | string |  |
 
 ## Files

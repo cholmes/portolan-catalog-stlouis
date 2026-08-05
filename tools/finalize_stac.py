@@ -23,7 +23,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from sources import SOURCES, GROUPS, GROUP_TITLES, GROUP_OF, coll_rel
+from sources import SOURCES, GROUPS, GROUP_TITLES, GROUP_OF, coll_rel, linkify
 
 ROOT = Path(__file__).resolve().parent.parent
 CATALOG = ROOT / "catalog"
@@ -137,7 +137,7 @@ def build_tabular(cid: str) -> None:
         "table:row_count": n,
         "table:columns": [
             {"name": c["n"], "type": DUCK_TO_TABLE.get(c["t"], c["t"].lower()),
-             **({"description": COLUMN_NOTES[cid][c["n"]]}
+             **({"description": linkify(COLUMN_NOTES[cid][c["n"]])}
                 if COLUMN_NOTES.get(cid, {}).get(c["n"]) else {})}
             for c in cols
         ],
@@ -170,7 +170,7 @@ def finalize_collection(coll_id: str) -> None:
     f = coll_dir / "collection.json"
     coll = json.loads(f.read_text())
     src = SOURCES[coll_id]
-    meta_desc = DESCRIPTIONS.get(coll_id, {}).get("description") or ""
+    meta_desc = linkify(DESCRIPTIONS.get(coll_id, {}).get("description") or "")
 
     coll["id"] = coll_rel(coll_id)
     coll["title"] = src["title"]
@@ -218,7 +218,7 @@ def finalize_collection(coll_id: str) -> None:
     if notes and coll.get("table:columns"):
         for col in coll["table:columns"]:
             if col["name"] in notes:
-                col["description"] = notes[col["name"]]
+                col["description"] = linkify(notes[col["name"]])
 
     # Recompute the spatial extent from the parquet itself — the CLI's
     # tracked extent can go stale when files are rewritten out from under it.

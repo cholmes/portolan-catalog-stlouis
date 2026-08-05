@@ -35,23 +35,28 @@
   "table:columns": [
     {
       "name": "CityBlock",
-      "type": "double"
+      "type": "double",
+      "description": "City block number, first component of the parcel key (portal: 'key fields: CITYBLOCK, PARCEL, OWNERCODE')."
     },
     {
       "name": "Parcel",
-      "type": "int64"
+      "type": "int64",
+      "description": "Parcel number within the city block, second component of the parcel key."
     },
     {
       "name": "OwnerCode",
-      "type": "int64"
+      "type": "int64",
+      "description": "Taxing-status component of the parcel key: 0 Standard, 1 Redev Taxable, 2 Redev Exempt, 3 In Lieu of Payment, 4 Charity Exempt, 5 Charity Taxable, 6 Mixed Res, 7 Mixed Comm, 8 Sign, 9 Demo/Maintenance Charge (city PrclCode.mdb CdOwnerCode)."
     },
     {
       "name": "AsrParcelId",
-      "type": "string"
+      "type": "string",
+      "description": "The Assessor's parcel ID in the numbering schema introduced in 2021 (portal field definition for ParcelId)."
     },
     {
       "name": "ColParcelId",
-      "type": "string"
+      "type": "string",
+      "description": "Unformatted Collector of Revenue parcel ID \u2014 the pre-2021 numbering scheme used across many city departments (portal field definition)."
     },
     {
       "name": "ColCityBlock",
@@ -63,7 +68,8 @@
     },
     {
       "name": "ParcelId",
-      "type": "string"
+      "type": "string",
+      "description": "Unformatted parcel ID in the Assessor's 2021 numbering schema (portal field definition)."
     },
     {
       "name": "PrimAddrRecNum",
@@ -75,7 +81,8 @@
     },
     {
       "name": "LowAddrNum",
-      "type": "int64"
+      "type": "int64",
+      "description": "Lowest house number referencing this parcel on its primary street (portal field definition); HighAddrNum is the highest."
     },
     {
       "name": "LowAddrSuf",
@@ -91,7 +98,8 @@
     },
     {
       "name": "NLC",
-      "type": "int64"
+      "type": "int64",
+      "description": "City internal numeric street code for the parcel's primary street (see parcels.NLC)."
     },
     {
       "name": "Parity",
@@ -171,35 +179,43 @@
     },
     {
       "name": "AsrClassCode",
-      "type": "int64"
+      "type": "int64",
+      "description": "Assessor's owner-class code (100 Individual, 200 Company, 49 Land Re-Utilization, etc.; city controlled vocabulary 'Assessor Class Code')."
     },
     {
       "name": "PropertyClassCode",
-      "type": "int64"
+      "type": "int64",
+      "description": "Statutory property classification: 10 Agricultural, 12 Commercial, 15 Residential, 17 Exempt, plus mixed-class combination codes (city controlled vocabulary 'Property Class Code')."
     },
     {
       "name": "AsrLandUse1",
-      "type": "int64"
+      "type": "int64",
+      "description": "Assessor's primary land-use code (city controlled vocabulary 'Assessor Land Use'; e.g. 1110 Single Family Units, 1010 Vacant Residential Lot, 5000 Trade \u2014 see parcels.AsrLandUse1 for more codes)."
     },
     {
       "name": "AsrLanduse2",
-      "type": "int64"
+      "type": "int64",
+      "description": "Secondary land-use code, 'present, if necessary, otherwise 0' (portal field definition)."
     },
     {
       "name": "IsAbatedProperty",
-      "type": "int64"
+      "type": "int64",
+      "description": "0/1 flag that the parcel has a tax abatement."
     },
     {
       "name": "AbatementType",
-      "type": "string"
+      "type": "string",
+      "description": "Program under which the abatement was granted: CH99 Chapter 99, CH100 Chapter 100, CH353 Chapter 353, EEZ Enterprise Zone (city controlled vocabulary 'Abatement Type')."
     },
     {
       "name": "AbatementStartYear",
-      "type": "int64"
+      "type": "int64",
+      "description": "First tax year of the abatement period."
     },
     {
       "name": "AbatementEndYear",
-      "type": "int64"
+      "type": "int64",
+      "description": "Last tax year of the abatement period."
     },
     {
       "name": "RedevPhase",
@@ -219,7 +235,8 @@
     },
     {
       "name": "VacantLot",
-      "type": "int64"
+      "type": "int64",
+      "description": "0/1 vacant-lot flag (see parcels.VacantLot)."
     },
     {
       "name": "SpecBusDist",
@@ -247,7 +264,8 @@
     },
     {
       "name": "NbrOfUnitsSource",
-      "type": "int64"
+      "type": "int64",
+      "description": "Source system for the NbrOfUnits value: 1 DevNet Building Apartment Data, 2/3 DevNet Land Use with/without Building Rec, 10 Permits, 50 Pre-DevNet Parcel Unit Data, 110/120 overrides, 20 Other (city controlled vocabulary 'Number Of Units Source')."
     },
     {
       "name": "NbrOfUnits",
@@ -267,7 +285,8 @@
     },
     {
       "name": "RecDailyDate",
-      "type": "string"
+      "type": "string",
+      "description": "Recorder of Deeds daily-record date for the latest recorded instrument; RecDailyNum, RecBookNum and RecPageNum are the daily number and book/page references."
     },
     {
       "name": "RecDailyNum",
@@ -283,19 +302,23 @@
     },
     {
       "name": "AsdLand",
-      "type": "double"
+      "type": "double",
+      "description": "Assessed value of land in dollars (Missouri assessed value = 19% residential / 32% commercial / 12% agricultural of appraised value, RSMo 137.115)."
     },
     {
       "name": "AsdImprove",
-      "type": "double"
+      "type": "double",
+      "description": "Assessed value of improvements in dollars."
     },
     {
       "name": "AsdTotal",
-      "type": "double"
+      "type": "double",
+      "description": "Total assessed value in dollars."
     },
     {
       "name": "AsdResLand",
-      "type": "double"
+      "type": "double",
+      "description": "Assessed land value attributed to the residential class portion (AsdResImprove, AsdComLand, AsdComImprove, AsdAgrLand, AsdAgrImprove are the parallel class-portion splits)."
     },
     {
       "name": "AsdResImprove",
@@ -319,7 +342,8 @@
     },
     {
       "name": "BillYear",
-      "type": "int64"
+      "type": "int64",
+      "description": "Tax year of the bill the Bill* fields refer to."
     },
     {
       "name": "BillSuffix",
@@ -327,15 +351,18 @@
     },
     {
       "name": "BillLand",
-      "type": "double"
+      "type": "double",
+      "description": "Land assessed value as billed for BillYear; the Asd* vs Bill* distinction (current assessment vs billed assessment) is not formally documented on the portal."
     },
     {
       "name": "BillImprove",
-      "type": "double"
+      "type": "double",
+      "description": "Improvement assessed value as billed for BillYear."
     },
     {
       "name": "BillTotal",
-      "type": "double"
+      "type": "double",
+      "description": "Total assessed value as billed for BillYear."
     },
     {
       "name": "BillResLand",
@@ -363,15 +390,18 @@
     },
     {
       "name": "BillTaxAmt",
-      "type": "double"
+      "type": "double",
+      "description": "Total tax amount billed for BillYear in dollars (name-based)."
     },
     {
       "name": "TaxBalDue",
-      "type": "double"
+      "type": "double",
+      "description": "Outstanding tax balance due in dollars (name-based)."
     },
     {
       "name": "AprLand",
-      "type": "double"
+      "type": "double",
+      "description": "Appraised (market) value of land in dollars; AprResLand/AprResImprove/AprComLand/AprComImprove/AprAgrLand/AprAgrImprove split it by property class, and AprExemptLand/AprExemptImprove carry exempt portions."
     },
     {
       "name": "AprResLand",
@@ -407,7 +437,8 @@
     },
     {
       "name": "CostAprImprove",
-      "type": "double"
+      "type": "double",
+      "description": "Cost-approach appraised value of improvements (name-based)."
     },
     {
       "name": "AsmtAppealYear",
@@ -419,7 +450,8 @@
     },
     {
       "name": "AsmtAppealType",
-      "type": "string"
+      "type": "string",
+      "description": "Type of assessment appeal filed (city controlled vocabulary 'Assessment Appeal Type')."
     },
     {
       "name": "PriorAsdDate",
@@ -427,7 +459,8 @@
     },
     {
       "name": "PriorAsdLand",
-      "type": "double"
+      "type": "double",
+      "description": "Assessed land value from the prior assessment (PriorAsdImprove/PriorAsdTotal/PriorAsdDate/PriorTaxAmt are the matching prior-cycle values)."
     },
     {
       "name": "PriorAsdImprove",
@@ -579,7 +612,8 @@
     },
     {
       "name": "IsHUDQualifiedTract",
-      "type": "int64"
+      "type": "int64",
+      "description": "Flag that the parcel lies in a HUD Qualified Census Tract (name-based)."
     },
     {
       "name": "ComNeedGrantCode",
@@ -711,7 +745,8 @@
     },
     {
       "name": "FloodPlain",
-      "type": "int64"
+      "type": "int64",
+      "description": "Floodplain status of the parcel: 10/11 100-Year Flood all/part in, 50/51 500-Year Flood all/part in, 30/31 Levee all/part in (city controlled vocabulary 'Flood Plain Type')."
     },
     {
       "name": "OnFloodBlock",
@@ -719,31 +754,38 @@
     },
     {
       "name": "SpecParcelType",
-      "type": "string"
+      "type": "string",
+      "description": "Special-parcel type: C/K Condo Master, H Highway ROW, R Other ROW, S Special Account, W Water, X Non-parcel Area (city PrclCode.mdb CdSpecParcelType)."
     },
     {
       "name": "SubParcelType",
-      "type": "string"
+      "type": "string",
+      "description": "Sub-parcel type code (A Account Separation, B Back Taxes Owed, C Condo, G Garage/Parking Condo, K Commercial Condo, M Multi-Owner, X Other, plus retirement codes; city 'Parcel Sub Type' vocabulary)."
     },
     {
       "name": "NbrOfSubAccts",
-      "type": "int64"
+      "type": "int64",
+      "description": "Number of sub-accounts under this parcel (e.g. condo units billed separately; name-based)."
     },
     {
       "name": "NbrOfCondos",
-      "type": "int64"
+      "type": "int64",
+      "description": "Number of condominium units associated with the parcel (name-based)."
     },
     {
       "name": "LRMSParcel",
-      "type": "int64"
+      "type": "int64",
+      "description": "Flag/identifier linking the parcel to the city's LRMS land-records system (the LRMS acronym appears throughout city address vocabularies without an expansion; not formally documented)."
     },
     {
       "name": "AcctPrimary",
-      "type": "int64"
+      "type": "int64",
+      "description": "Flag marking the primary account record for the parcel (name-based)."
     },
     {
       "name": "GisPrimary",
-      "type": "int64"
+      "type": "int64",
+      "description": "Flag marking the record that represents the parcel in GIS when multiple accounts share a parcel (name-based); GisCityBLock/GisParcel/GisOwnerCode are the GIS-side key components."
     },
     {
       "name": "GisCityBLock",
@@ -759,27 +801,33 @@
     },
     {
       "name": "Handle",
-      "type": "int64"
+      "type": "int64",
+      "description": "Citywide parcel join key (see parcels.HANDLE); the portal marks the numbering schema DEPRECATED."
     },
     {
       "name": "Parcel9",
-      "type": "int64"
+      "type": "int64",
+      "description": "Nine-digit parcel root built from CityBlock and Parcel (schema BBBBbbPPP), described in legacy city documentation as the 'root of all taxable info'."
     },
     {
       "name": "OwnerOcc",
-      "type": "string"
+      "type": "string",
+      "description": "Owner-occupancy dwelling-type code: 1 Single Family, 2 Two-Family, 4 Three-or-Four Family, 5 Five-plus Family, C Condo, X Other (city PrclCode.mdb CdOwnerOccCode)."
     },
     {
       "name": "FirstDate",
-      "type": "string"
+      "type": "string",
+      "description": "Date the record first appeared in the extract (name-based; not formally documented)."
     },
     {
       "name": "LastDate",
-      "type": "timestamp"
+      "type": "timestamp",
+      "description": "Date the record was last updated in the extract (name-based; not formally documented)."
     },
     {
       "name": "OwnerUpdate",
-      "type": "string"
+      "type": "string",
+      "description": "Date of the last ownership update on the record (name-based; not formally documented)."
     }
   ],
   "links": [

@@ -72,11 +72,13 @@
     },
     {
       "name": "ParcelId",
-      "type": "string"
+      "type": "string",
+      "description": "Parcel ID of the polling location (joinable to the parcels collections); handle is the parcel handle."
     },
     {
       "name": "Wait_Time__Minutes_",
-      "type": "int16"
+      "type": "int16",
+      "description": "Reported wait time in minutes."
     },
     {
       "name": "Phone",
@@ -88,7 +90,8 @@
     },
     {
       "name": "Early_Voting_Available",
-      "type": "string"
+      "type": "string",
+      "description": "Whether early voting is available at the site; noExcuseVoting and cityWideVoting flag no-excuse absentee and any-voter citywide voting sites."
     },
     {
       "name": "pollingPlaceID",
@@ -96,7 +99,8 @@
     },
     {
       "name": "pollingPlace",
-      "type": "string"
+      "type": "string",
+      "description": "Name of the polling place; pollingPlaceAddress and pollingPlaceZipCode locate it and pollingPlaceID identifies it."
     },
     {
       "name": "pollingPlaceAddress",
@@ -116,7 +120,8 @@
     },
     {
       "name": "disabledentry",
-      "type": "string"
+      "type": "string",
+      "description": "Accessible-entry flag for the site; entrydetails carries entry directions."
     },
     {
       "name": "entrydetails",
@@ -243,8 +248,8 @@
       "type": "application/vnd.mapbox.style+json",
       "title": "Polling centers",
       "description": "The 152 polling centers, labeled.",
-      "file:size": 1280,
-      "file:checksum": "122072a2977ce3e8948fc5b2cbb49e14f37f108819e11906fefddb4ed7a29f84da6f",
+      "file:size": 1361,
+      "file:checksum": "122038b36713540c1275d43d501c96e03ec047aa00b32758e1b941d91ed52e4d3e3c",
       "roles": [
         "default",
         "style"

@@ -35,23 +35,28 @@
   "table:columns": [
     {
       "name": "F_Precinct",
-      "type": "string"
+      "type": "string",
+      "description": "Precinct label as reported in the November 2024 canvass file."
     },
     {
       "name": "Precinct_ID",
-      "type": "int64"
+      "type": "int64",
+      "description": "Precinct identifier."
     },
     {
       "name": "Precinct_Reporting",
-      "type": "string"
+      "type": "string",
+      "description": "Whether/what share of the precinct had reported."
     },
     {
       "name": "Registered_Voters",
-      "type": "int64"
+      "type": "int64",
+      "description": "Registered voters in the precinct."
     },
     {
       "name": "Ballots_Cast",
-      "type": "int64"
+      "type": "int64",
+      "description": "Ballots cast in the precinct; Turnout_Percentage is Ballots_Cast over Registered_Voters."
     },
     {
       "name": "Turnout_Percentage",
@@ -59,7 +64,8 @@
     },
     {
       "name": "Contest_Title",
-      "type": "string"
+      "type": "string",
+      "description": "Name of the contest (office or question); Contest_ID and Contest_Party identify it and its party where applicable."
     },
     {
       "name": "Contest_ID",
@@ -71,7 +77,8 @@
     },
     {
       "name": "Choice_Name",
-      "type": "string"
+      "type": "string",
+      "description": "Candidate or ballot-choice name; Choice_ID and Choice_Party identify it."
     },
     {
       "name": "Choice_ID",
@@ -83,15 +90,18 @@
     },
     {
       "name": "Total_Votes",
-      "type": "int64"
+      "type": "int64",
+      "description": "Total votes for the choice in the precinct across all voting modes."
     },
     {
       "name": "Total_Overvotes",
-      "type": "int64"
+      "type": "int64",
+      "description": "Overvotes \u2014 ballots where more choices were marked than allowed, so no vote counted (standard U.S. election tabulation term)."
     },
     {
       "name": "Total_Undervotes",
-      "type": "int64"
+      "type": "int64",
+      "description": "Undervotes \u2014 ballots where fewer choices were marked than allowed (including blank), so a potential vote was not cast."
     },
     {
       "name": "Total_Invalid_Votes",
@@ -99,7 +109,8 @@
     },
     {
       "name": "Absentee_Voting_Votes",
-      "type": "int64"
+      "type": "int64",
+      "description": "Votes for the choice cast by mail absentee; the parallel *_Overvotes/*_Undervotes/*_Invalid_Votes columns break those measures out per voting mode."
     },
     {
       "name": "Absentee_Voting_Overvotes",
@@ -115,7 +126,8 @@
     },
     {
       "name": "Absentee_Voting___In_Person_Vot",
-      "type": "int64"
+      "type": "int64",
+      "description": "Votes cast by in-person (no-excuse) absentee voting (column name truncated by the source; the __Ove/__Und/__Inv companions are its overvote/undervote/invalid counts)."
     },
     {
       "name": "Absentee_Voting___In_Person_Ove",
@@ -131,7 +143,8 @@
     },
     {
       "name": "Election_Day_Voting_Votes",
-      "type": "int64"
+      "type": "int64",
+      "description": "Votes for the choice cast at the polls on election day."
     },
     {
       "name": "Election_Day_Voting_Overvotes",
@@ -147,7 +160,8 @@
     },
     {
       "name": "Provisional_Voting_Votes",
-      "type": "int64"
+      "type": "int64",
+      "description": "Votes for the choice cast on provisional ballots."
     },
     {
       "name": "Provisional_Voting_Overvotes",

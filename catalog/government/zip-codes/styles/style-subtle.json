@@ -2,7 +2,7 @@
   "version": 8,
   "name": "Subtle tint",
   "metadata": {
-    "description": "Light fill for underlays."
+    "description": "Pale fill for underlaying other data, with the codes still readable."
   },
   "sources": {
     "data": {
@@ -17,10 +17,34 @@
       "source": "data",
       "source-layer": "zip-codes",
       "paint": {
-        "fill-color": "#dfe6ea",
-        "fill-opacity": 0.3,
+        "fill-color": "#a8d4e8",
+        "fill-opacity": 0.4,
         "fill-outline-color": "#9aa3a8"
       }
+    },
+    {
+      "id": "labels",
+      "type": "symbol",
+      "source": "data",
+      "source-layer": "zip-codes",
+      "minzoom": 11,
+      "layout": {
+        "text-field": [
+          "get",
+          "ZCTA"
+        ],
+        "text-font": [
+          "Noto Sans Regular"
+        ],
+        "text-size": 11,
+        "text-max-width": 9
+      },
+      "paint": {
+        "text-color": "#1A1A1A",
+        "text-halo-color": "#FFFFFF",
+        "text-halo-width": 1.2
+      }
     }
-  ]
+  ],
+  "glyphs": "https://tiles.basemaps.cartocdn.com/fonts/{fontstack}/{range}.pbf"
 }

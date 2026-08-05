@@ -284,7 +284,7 @@ Boundaries of City of St. Louis wards Mirrored from [the city's open data portal
 |------|------|----------|
 | ./wards.parquet | 161.9 KB | 1220489c01b0... |
 | ./wards.pmtiles | 483.0 KB | 1220c1ec8fb0... |
-| ./styles/city-renderer.json | 521 B | 122020f016a4... |
+| ./styles/city-renderer.json | 725 B | 122012cb82b8... |
 | ./styles/default.json | 2.7 KB | 122072c5f341... |
 | ./styles/style-boundaries.json | 452 B | 12207f5d8a7a... |
 | ./styles/style-subtle.json | 709 B | 122039df8a1c... |

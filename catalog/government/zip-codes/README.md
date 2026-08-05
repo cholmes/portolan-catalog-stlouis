@@ -40,11 +40,12 @@ ZIP code areas from the city's boundaries map service. Mirrored from [the city's
 |------|------|----------|
 | ./zip-codes.parquet | 28.4 KB | 1220939b241d... |
 | ./zip-codes.pmtiles | 127.3 KB | 1220b947413b... |
-| ./styles/city-renderer.json | 529 B | 1220ce84bc01... |
-| ./styles/default.json | 1.8 KB | 1220a1321ded... |
+| ./styles/city-renderer.json | 741 B | 12203fe270bd... |
+| ./styles/default.json | 1.2 KB | 12200f6191d5... |
 | ./styles/style-boundaries.json | 459 B | 1220dc4a979f... |
-| ./styles/style-subtle.json | 481 B | 12209f4aab33... |
+| ./styles/style-subtle.json | 1003 B | 1220721f29f4... |
 | ./thumbnail.png | 292.6 KB | 1220dd6253f6... |
+| ./styles/style-mosaic.json | 1.8 KB | 1220741b7ebf... |
 
 ## Quick Start
 

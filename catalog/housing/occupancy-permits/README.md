@@ -20,13 +20,13 @@ Commercial, industrial, and occupancy building permits in the City of St. Louis 
 | ADDRADJUSTED | string |  |
 | ADDRNUM | string |  |
 | ADDRSUF | string |  |
-| APPDATE | string |  |
+| APPDATE | string | Date the occupancy-permit application was filed; ISSUEDATE/COMPLETEDATE/CANCELDATE are the issue, completion and cancellation dates. |
 | APPDESCRIPTION | string |  |
-| APPNUM | string |  |
-| APPTYPE | string |  |
+| APPNUM | string | Permit application number. |
+| APPTYPE | string | Permit application type code; 'AO' Occupancy (or 'AX' Occupancy-Old) per the city 'Permit Application Type' vocabulary. |
 | ASRNBRHD | string |  |
 | CANCELDATE | string |  |
-| CANCELTYPE | string |  |
+| CANCELTYPE | string | Cancellation code; only 'C' appears and no decode is published. |
 | CAREOFADDR | string |  |
 | CAREOFCITY | string |  |
 | CAREOFNAME | string |  |
@@ -37,28 +37,28 @@ Commercial, industrial, and occupancy building permits in the City of St. Louis 
 | CENSBLOCK00 | string |  |
 | CITYBLOCK | string |  |
 | COMPLETEDATE | string |  |
-| ESTPROJECTCOST | string |  |
+| ESTPROJECTCOST | string | Estimated project cost in dollars. |
 | FIRSTDATE | string |  |
 | GEOCITYBLOCKPART | string |  |
-| HANDLE | string |  |
+| HANDLE | string | Citywide parcel handle (join key to parcels). |
 | ISSUEDATE | string |  |
 | LASTDATE | string |  |
-| MAINSTRUCTYPE | string |  |
+| MAINSTRUCTYPE | string | Main structure type code (city 'Permit Structure Type' vocabulary). |
 | NBRHD | string |  |
-| NBROFUNITS | string |  |
-| NEWUSE | string |  |
-| NEWUSEGROUP1 | string |  |
+| NBROFUNITS | string | Number of units covered by the permit. |
+| NEWUSE | string | Text description of the new (proposed) use of the structure. |
+| NEWUSEGROUP1 | string | Building-code use group of the new use, e.g. A Assembly, B Business, E Educational, F Factory, H Hazardous, I Institutional, M Mercantile, R Residential, S Storage, U Utility with numeric subgroups like R-2, F-1 (city 'Permit Use Group' vocabulary); NEWUSEGROUP2-3 are additional groups. |
 | NEWUSEGROUP2 | string |  |
 | NEWUSEGROUP3 | string |  |
 | NLC | string |  |
-| OCCNAME | string |  |
-| OLDUSE | string |  |
-| OLDUSEGROUP1 | string |  |
+| OCCNAME | string | Name of the occupant/business applying for occupancy (name-based). |
+| OLDUSE | string | Text description of the previous use of the structure. |
+| OLDUSEGROUP1 | string | Building-code use group of the previous use (same vocabulary; OLDUSEGROUP2-3 additional). |
 | OLDUSEGROUP2 | string |  |
 | OLDUSEGROUP3 | string |  |
 | OWNERADDR | string |  |
 | OWNERCITY | string |  |
-| OWNERCODE | string |  |
+| OWNERCODE | string | Taxing-status component of the parcel key (see parcels.OwnerCode). |
 | OWNERNAME | string |  |
 | OWNERSTATE | string |  |
 | OWNERZIP | string |  |
@@ -66,9 +66,9 @@ Commercial, industrial, and occupancy building permits in the City of St. Louis 
 | PARCEL9 | string |  |
 | PARITY | string |  |
 | POLICEDIST | string |  |
-| PRCLERR | string |  |
+| PRCLERR | string | Parcel geocoding match/error code (city ComCode.mdb CdPrclErr). |
 | PRECINCT02 | string |  |
-| PROJECTTYPE | string |  |
+| PROJECTTYPE | string | Project type code; occupancy permits are type 7 'Occupancy' (city 'Permit Project Type' vocabulary). |
 | STDIR | string |  |
 | STNAME | string |  |
 | STRUCTYPE1 | string |  |

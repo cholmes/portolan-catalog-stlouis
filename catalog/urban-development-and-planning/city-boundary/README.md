@@ -32,7 +32,7 @@ St. Louis City limits Mirrored from [the city's open data portal](https://www.st
 |------|------|----------|
 | ./city-boundary.parquet | 16.3 KB | 1220da821494... |
 | ./city-boundary.pmtiles | 21.0 KB | 12204ef4831f... |
-| ./styles/city-renderer.json | 537 B | 12206727402e... |
+| ./styles/city-renderer.json | 757 B | 122058eaed01... |
 | ./styles/default.json | 533 B | 122008134b13... |
 | ./styles/style-dashed.json | 564 B | 1220a66ee00c... |
 | ./styles/style-filled.json | 717 B | 12201fcce7bb... |

@@ -18,46 +18,46 @@ Parcel-level vacancy indicators for St. Louis: vacant buildings, condemnations, 
 | Column | Type | Description |
 |--------|------|-------------|
 | OBJECTID | int64 |  |
-| TOLEMI_ID | double |  |
-| PID1 | double |  |
+| TOLEMI_ID | double | Property identifier assigned by Tolemi (the BuildingBlocks data platform SLDC uses to assemble its vacancy composite; the source layer is SLDC.SLDC.Tol_Def_Vac_NP). |
+| PID1 | double | First parcel identifier for the property as carried in the Tolemi composite (exact scheme not documented; PID2 is a second identifier). |
 | PID2 | double |  |
-| STREET_ADD | string |  |
-| PROPERTY_T | string |  |
-| TOLEMI_DEF | string |  |
-| LRA_OWNED_ | int32 |  |
-| LRA_RORE | int32 |  |
-| VACANT_BUI | int32 |  |
-| CONDEMNATI | int32 |  |
-| NSR_OWNED_ | int32 |  |
+| STREET_ADD | string | Street address of the property (shapefile-truncated name). |
+| PROPERTY_T | string | Property type (shapefile-truncated 'PROPERTY_TYPE'; no decode published). |
+| TOLEMI_DEF | string | Tolemi 'definite vacancy' determination for the property — the flag/category under which the parcel qualified for this definite-vacant composite (layer name Tol_Def_Vac; no public decode found). |
+| LRA_OWNED_ | int32 | Whether the property is owned by the Land Reutilization Authority (shapefile-truncated flag). |
+| LRA_RORE | int32 | LRA inventory attribute (untruncated meaning not documented; no public decode found). |
+| VACANT_BUI | int32 | Vacant-building indicator (shapefile-truncated 'VACANT_BUILDING', i.e. on the city vacant building registry). |
+| CONDEMNATI | int32 | Condemnation indicator for the structure (shapefile-truncated 'CONDEMNATION'). |
+| NSR_OWNED_ | int32 | Flag for ownership recorded in the city's vacancy pipeline under 'NSR' (not expanded in any public documentation found). |
 | LRA_OWNE_1 | int32 |  |
-| PRIVATE_VA | int32 |  |
+| PRIVATE_VA | int32 | Privately-owned vacant indicator (shapefile-truncated 'PRIVATE_VACANT'). |
 | NSR_OWNE_1 | int32 |  |
-| LAND_SIZE | double |  |
-| STRUCTUREA | string |  |
-| YEAR_BUILT | double |  |
+| LAND_SIZE | double | Land area of the parcel (units not documented in the source; city parcel land areas are square feet). |
+| STRUCTUREA | string | Structure area (shapefile-truncated; likely 'STRUCTURE_AREA'). |
+| YEAR_BUILT | double | Year the structure was built. |
 | BUILDING_S | string |  |
 | NUMBER_OF_ | double |  |
 | BUILDING_1 | double |  |
-| OWNER_NAME | string |  |
+| OWNER_NAME | string | Owner name of record; OWNER_ADDR is the owner's mailing address. |
 | OWNER_ADDR | string |  |
-| OWNER_TENU | string |  |
-| TAX_DELINQ | string |  |
+| OWNER_TENU | string | Owner tenure (shapefile-truncated 'OWNER_TENURE'; no decode published). |
+| TAX_DELINQ | string | Tax delinquency indicator for the property. |
 | OWNER_PROP | double |  |
 | OWNER_VAC_ | double |  |
 | BUILDING_F | double |  |
 | FOREST_FEE | double |  |
-| LRA_STATUS | string |  |
+| LRA_STATUS | string | Status of the property within the LRA inventory; LRA_DATE is the associated date. |
 | LRA_DATE | string |  |
-| BISA_SCORE | double |  |
+| BISA_SCORE | double | Building Inspection/condition score carried in the composite ('BISA' not expanded in public documentation). |
 | ECON_INVES | double |  |
 | PROB_PROP_ | double |  |
 | PUBLIC_HEA | double |  |
 | COLPARCELI | double |  |
-| HANDLE | double |  |
-| NBRHD | double |  |
-| ZONING | string |  |
-| CENSBLOCK2 | string |  |
-| WARD20 | double |  |
+| HANDLE | double | Citywide parcel handle (join key to parcels); COLPARCELI is the truncated Collector parcel ID. |
+| NBRHD | double | City neighborhood number (city 'Neighborhood' vocabulary). |
+| ZONING | string | Zoning district code (city 'Zoning Code' vocabulary). |
+| CENSBLOCK2 | string | 2020 census block (shapefile-truncated 'CENSBLOCK20'). |
+| WARD20 | double | 2020-cycle aldermanic ward number. |
 | LATITUDE | double |  |
 | LONGITUDE | double |  |
 | SHAPE_1 | string |  |

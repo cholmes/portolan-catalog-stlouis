@@ -47,19 +47,23 @@
     },
     {
       "name": "APPDATE",
-      "type": "string"
+      "type": "string",
+      "description": "Date the permit application was filed."
     },
     {
       "name": "APPDESCRIPTION",
-      "type": "string"
+      "type": "string",
+      "description": "Free-text description of the permitted work."
     },
     {
       "name": "APPNUM",
-      "type": "string"
+      "type": "string",
+      "description": "Permit application number."
     },
     {
       "name": "APPTYPE",
-      "type": "string"
+      "type": "string",
+      "description": "Permit application type code; always 'AE' (Electrical) in this dataset \u2014 codes come from the city 'Permit Application Type' vocabulary (AB Building, AD Demolition, AE Electrical, AM Mechanical, AO Occupancy, AP Plumbing, etc.)."
     },
     {
       "name": "ASRNBRHD",
@@ -67,11 +71,13 @@
     },
     {
       "name": "CANCELDATE",
-      "type": "string"
+      "type": "string",
+      "description": "Date the application was cancelled, if it was."
     },
     {
       "name": "CANCELTYPE",
-      "type": "string"
+      "type": "string",
+      "description": "Cancellation code; only the value 'C' (cancelled) appears in the data and the city publishes no decode for it."
     },
     {
       "name": "CDADIST",
@@ -87,19 +93,23 @@
     },
     {
       "name": "CITYBLOCK",
-      "type": "string"
+      "type": "string",
+      "description": "City block number of the permitted parcel; PARCEL is the parcel number within the block, PARCEL9 the nine-digit CityBlock+Parcel root."
     },
     {
       "name": "COMPLETEDATE",
-      "type": "string"
+      "type": "string",
+      "description": "Date the permitted work was completed/finaled."
     },
     {
       "name": "ESTPROJECTCOST",
-      "type": "string"
+      "type": "string",
+      "description": "Estimated project cost in dollars as declared on the application."
     },
     {
       "name": "FIRSTDATE",
-      "type": "string"
+      "type": "string",
+      "description": "Date the record first appeared in the extract; LASTDATE is its last update (name-based)."
     },
     {
       "name": "GEOCITYBLOCKPART",
@@ -107,11 +117,13 @@
     },
     {
       "name": "HANDLE",
-      "type": "string"
+      "type": "string",
+      "description": "Citywide parcel handle the permit is attached to (join key to the parcels collections)."
     },
     {
       "name": "ISSUEDATE",
-      "type": "string"
+      "type": "string",
+      "description": "Date the permit was issued."
     },
     {
       "name": "LASTDATE",
@@ -119,15 +131,18 @@
     },
     {
       "name": "MAINSTRUCTYPE",
-      "type": "string"
+      "type": "string",
+      "description": "Main structure type code, e.g. 1 One-or-Two Family, 2 Multi Family, 3 Hotel, 19 Industrial, 20 Commercial, 23 Garage (city 'Permit Structure Type' vocabulary); STRUCTYPE1-3 carry additional structure types."
     },
     {
       "name": "NBRHD",
-      "type": "string"
+      "type": "string",
+      "description": "City neighborhood number (city 'Neighborhood' vocabulary); ASRNBRHD is the assessor's neighborhood."
     },
     {
       "name": "NBROFUNITS",
-      "type": "string"
+      "type": "string",
+      "description": "Number of dwelling/occupancy units covered by the permit."
     },
     {
       "name": "NLC",
@@ -143,11 +158,13 @@
     },
     {
       "name": "OWNERCODE",
-      "type": "string"
+      "type": "string",
+      "description": "Taxing-status component of the parcel key (see parcels.OwnerCode decode)."
     },
     {
       "name": "OWNERNAME",
-      "type": "string"
+      "type": "string",
+      "description": "Property owner of record at permit time (OWNERADDR/OWNERCITY/OWNERSTATE/OWNERZIP are the owner's mailing address)."
     },
     {
       "name": "OWNERSTATE",
@@ -175,7 +192,8 @@
     },
     {
       "name": "PRCLERR",
-      "type": "string"
+      "type": "string",
+      "description": "Parcel geocoding match/error code from the city's address-matching system (decode table CdPrclErr in the city's ComCode.mdb, e.g. 1-5 matches to non-LRMS addresses, 9 Outside City)."
     },
     {
       "name": "PRECINCT02",
@@ -183,7 +201,8 @@
     },
     {
       "name": "PROJECTTYPE",
-      "type": "string"
+      "type": "string",
+      "description": "Project type code: 1 New Construction, 2 Addition, 3 Alteration, 4 Repair, 5 Replacement, 6 Demolition, 7 Occupancy, 8 Blasting, 9 Other (city 'Permit Project Type' vocabulary)."
     },
     {
       "name": "STDIR",
@@ -223,7 +242,8 @@
     },
     {
       "name": "UPDATEGEO",
-      "type": "string"
+      "type": "string",
+      "description": "Date/flag of the last geocoding update for the record (name-based)."
     },
     {
       "name": "WARD00",

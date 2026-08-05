@@ -17,27 +17,27 @@ Downloadable NIBRS crime data published by the St. Louis Metropolitan Police Dep
 
 | Column | Type | Description |
 |--------|------|-------------|
-| IncidentDate | date32[day] |  |
-| OccurredFromTime | string |  |
-| IncidentNum | string |  |
-| Offense | string |  |
-| NIBRS | string |  |
-| NIBRSCategory | string |  |
-| SRS_UCR | string |  |
-| CrimeAgainst | string |  |
-| FelMisdCit | string |  |
-| IncidentTopSRS_UCR | string |  |
-| IncidentLocation | string |  |
-| IntersectionOtherLoc | string |  |
-| District | string |  |
-| Neighborhood | string |  |
+| IncidentDate | date32[day] | Date the incident was reported/recorded by SLMPD. |
+| OccurredFromTime | string | Date/time the offense began (NIBRS incidents record an occurred-from time). |
+| IncidentNum | string | SLMPD incident (complaint) number; multiple offense rows can share one incident. |
+| Offense | string | SLMPD's Missouri statutory offense description for the charge (e.g. 'MURDER 1ST DEGREE', 'STEALING - MOTOR VEHICLE'). |
+| NIBRS | string | FBI NIBRS offense code for the offense, e.g. 09A Murder/Nonnegligent Manslaughter, 13A Aggravated Assault, 23G Theft of Motor Vehicle Parts, 240 Motor Vehicle Theft, 290 Destruction/Damage/Vandalism (FBI NIBRS offense code list). |
+| NIBRSCategory | string | FBI NIBRS offense category name corresponding to the NIBRS code (e.g. 'Motor Vehicle Theft', 'Aggravated Assault'). |
+| SRS_UCR | string | Legacy FBI Summary Reporting System (SRS/UCR) Part I offense class for the offense: 01 Criminal Homicide, 02 Rape, 03 Robbery, 04 Aggravated Assault, 05 Burglary, 06 Larceny-Theft, 07 Motor Vehicle Theft, 08 Arson (null for non-Part-I offenses). |
+| CrimeAgainst | string | NIBRS 'Crimes Against' classification of the offense: Person, Property, or Society (FBI NIBRS groups every offense this way); 'Unspecified' appears for some records. |
+| FelMisdCit | string | Charge-severity flag: F felony, M misdemeanor, with C and I also present (per the column name 'Fel/Misd/Cit' C is presumably citation and I infraction; SLMPD publishes no decode). |
+| IncidentTopSRS_UCR | string | SRS/UCR class of the most serious offense in the incident (the SRS hierarchy rule reports only the highest offense; inferred from the field name and the SRS hierarchy convention). |
+| IncidentLocation | string | Street address or block-level location of the incident. |
+| IntersectionOtherLoc | string | Intersection or other non-address location description for the incident. |
+| District | string | SLMPD police district number where the incident occurred. |
+| Neighborhood | string | City neighborhood name of the incident location; NbhdNum is the corresponding neighborhood number (1-79 per the city 'Neighborhood' vocabulary). |
 | NbhdNum | string |  |
-| IncidentSupplemented | string |  |
-| LastSuppDate | string |  |
-| VictimNum | string |  |
-| FirearmUsed | string |  |
-| IncidentNature | string |  |
-| keep | bool |  |
+| IncidentSupplemented | string | Yes/No — whether the incident record has been supplemented (updated) since the original report. |
+| LastSuppDate | string | Date of the most recent supplement to the incident record. |
+| VictimNum | string | Victim record identifier assigned by SLMPD (an ID shared by rows describing the same victim, not a count of victims — verified against the data). |
+| FirearmUsed | string | Whether a firearm was used in the offense. |
+| IncidentNature | string | Nature-of-incident text as recorded by SLMPD. |
+| keep | bool | Flag added by this mirror's pipeline: true when the record had valid coordinates falling inside the city boundary (geometry is null when false). |
 | geometry | binary |  |
 | geometry_bbox | struct<xmin: float not null, ymin: float not null, xmax: float not null, ymax: float not null> |  |
 

@@ -21,30 +21,30 @@ Information about city blocks. A city block, residential block, urban block, or 
 | Join_Count | int32 |  |
 | TARGET_FID | int32 |  |
 | Name | string |  |
-| BLOCK_HANDLE | string |  |
-| GeoCityBlockPart | double |  |
+| BLOCK_HANDLE | string | Handle identifier of the city block (block-level analogue of the parcel HANDLE). |
+| GeoCityBlockPart | double | Sub-part designator when a GIS city block is split into parts. |
 | WARD10 | int16 |  |
 | PRECINCT10 | int16 |  |
 | INSPAREA10 | int16 |  |
 | Ward00 | int16 |  |
 | PRECINCT02 | int16 |  |
 | PRECINCT04 | int16 |  |
-| NBRHD | int16 |  |
+| NBRHD | int16 | City neighborhood number (city 'Neighborhood' vocabulary); WARD10/Ward20/Ward00/Ward90 and the PRECINCT*/CensTract*/CensBlock* columns are the block's assignments in each redistricting/census cycle. |
 | CDADIST | int16 |  |
 | CDASUBDIST | int16 |  |
-| POLICEDIST | int16 |  |
+| POLICEDIST | int16 | SLMPD police district containing the block. |
 | CensTract10 | double |  |
 | CensBlock10 | int16 |  |
 | CensBlock00 | double |  |
 | Ward90 | int16 |  |
 | Precinct90 | int16 |  |
 | CensBlock90 | double |  |
-| HouseConsDist | int16 |  |
+| HouseConsDist | int16 | Housing Conservation District the block falls in (city 'Housing Conservation District' vocabulary). |
 | ASRNBRHD | int16 |  |
 | EntZone | int16 |  |
 | IMPACTAREA | int16 |  |
 | CTDArea | int16 |  |
-| OnFloodBlock | int16 |  |
+| OnFloodBlock | int16 | Flag that the block touches a floodplain. |
 | SpecBusDist3 | int16 |  |
 | Ward20 | int16 |  |
 | Precinct20 | int16 |  |

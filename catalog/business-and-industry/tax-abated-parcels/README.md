@@ -49,7 +49,7 @@ Parcels within the City of Saint Louis that have obtained and activated an abate
 | LegalDesc4 | string |  |
 | LegalDesc5 | string |  |
 | AsrClassCode | int32 |  |
-| AsrLandUse1 | int32 |  |
+| AsrLandUse1 | int32 | Assessor land-use code (city 'Assessor Land Use' vocabulary; see parcels.AsrLandUse1). |
 | AsrLanduse2 | int32 |  |
 | RedevPhase | int32 |  |
 | RedevYearEnd | int32 |  |
@@ -127,7 +127,7 @@ Parcels within the City of Saint Louis that have obtained and activated an abate
 | NbrOfCondos | int32 |  |
 | LRMSParcel | int32 |  |
 | AcctPrimary | int32 |  |
-| HANDLE | string |  |
+| HANDLE | string | Citywide parcel handle (join key to the parcels collections). |
 | OWNEROCC | string |  |
 | FirstDate | int64 |  |
 | LastDate | int64 |  |
@@ -139,9 +139,9 @@ Parcels within the City of Saint Louis that have obtained and activated an abate
 | WARD | int32 |  |
 | TaxBalance | double |  |
 | PropertyClassCode | int32 |  |
-| IsAbatedProperty | int32 |  |
-| AbatementStartYear | int32 |  |
-| AbatementEndYear | int32 |  |
+| IsAbatedProperty | int32 | Flag that the parcel has an active tax abatement (this collection shares the full assessor parcel schema — see the parcels collection for the other columns). |
+| AbatementStartYear | int32 | First tax year of the abatement period. |
+| AbatementEndYear | int32 | Last tax year of the abatement period. |
 | SpecBusDist3 | int32 |  |
 | Ward20 | int32 |  |
 | Precinct20 | int32 |  |

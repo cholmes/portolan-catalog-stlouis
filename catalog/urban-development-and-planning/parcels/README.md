@@ -18,24 +18,24 @@ Current and historic parcel data Mirrored from [the city's open data portal](htt
 | Column | Type | Description |
 |--------|------|-------------|
 | OBJECTID | int64 |  |
-| LowerAsrParcelId | string |  |
-| ColParcelId | string |  |
-| ColCityBlock | int32 |  |
-| ColParcel | int32 |  |
-| PrimAddrRecNum | int16 |  |
-| AddrType | string |  |
-| LowAddrNum | int32 |  |
+| LowerAsrParcelId | string | The Assessor's post-2021 parcel ID carried in lowercase/unformatted form (variant of AsrParcelId; not separately documented on the portal). |
+| ColParcelId | string | Unformatted Collector of Revenue parcel ID — the pre-2021 parcel numbering scheme used across many city departments (portal field definition). |
+| ColCityBlock | int32 | Collector of Revenue's city block number (portal field definition). |
+| ColParcel | int32 | Collector of Revenue's parcel number, unique only within its parent city block (portal field definition). |
+| PrimAddrRecNum | int16 | Record number of the parcel's primary address among its address records (name-based). |
+| AddrType | string | Address-record type: 1 Assessor Legal Address, 2 Assessor Low/High Address, 3 Assessor Legal and Low/High Address, A Corrected/Added, L LRMS Address, P Permit non-Assessor Address, X Non-Assessor Parcel, plus dummy/retired codes Z/V/G/D/Q (city controlled vocabulary 'Address Type'). |
+| LowAddrNum | int32 | Lowest house number that can be used to reference this parcel on its primary street (portal field definition). |
 | LowAddrSuf | string |  |
-| HighAddrNum | int32 |  |
+| HighAddrNum | int32 | Highest house number that can be used to reference this parcel on its primary street (portal field definition). |
 | HighAddrSuf | string |  |
-| NLC | double |  |
-| PARITY | string |  |
+| NLC | double | The city's internal numeric street code ('NLC') identifying the parcel's primary street in St. Louis address databases; street-name decode not published (type codes exist in the city's corcode.mdb CdNLCType table). |
+| PARITY | string | Odd/even parity of the parcel's address numbers, i.e. which side of the street the parcel is on (name-based). |
 | StPreDir | string |  |
 | StName | string |  |
 | StType | string |  |
 | StSufDir | string |  |
 | StdUnitNum | string |  |
-| OWNERNAME | string |  |
+| OWNERNAME | string | Owner name of record; OWNERADDR/OWNERCITY/OWNERSTATE/OWNERZIP are the owner's registered mailing address (portal field definitions for the historical extract). |
 | OWNERNAME2 | string |  |
 | OWNERADDR | string |  |
 | OWNERCITY | string |  |
@@ -43,40 +43,40 @@ Current and historic parcel data Mirrored from [the city's open data portal](htt
 | OwnerCountry | string |  |
 | OWNERZIP | string |  |
 | OwnerRank | string |  |
-| LegalDesc1 | string |  |
+| LegalDesc1 | string | First line of the parcel's legal description (LegalDesc2-5 continue it). |
 | LegalDesc2 | string |  |
 | LegalDesc3 | string |  |
 | LegalDesc4 | string |  |
 | LegalDesc5 | string |  |
-| AsrClassCode | int16 |  |
-| AsrLandUse1 | int16 |  |
-| AsrLanduse2 | int16 |  |
-| RedevPhase | int16 |  |
-| RedevYearEnd | int16 |  |
+| AsrClassCode | int16 | Assessor's owner-class code identifying the type of owner, e.g. 100 Individual, 200 Company, 49 Land Re-Utilization (LRA), 14 State of Missouri, 2 MSD, plus many church/institution codes (city controlled vocabulary 'Assessor Class Code'). |
+| AsrLandUse1 | int16 | Assessor's primary land-use code from the city's official 'Assessor Land Use' vocabulary (922 codes), e.g. 1110 Single Family Units, 1010 Vacant Residential Lot, 1120 Two Family Unit, 1130 Three Family Unit, 1140 Four Family Unit, 1115 Condominium (>6 units/bldg), 2000 Manufacturing, 3000 Industrial, 4000 Transportation/Communication/Utilities, 5000 Trade, 6000 Services, 7000 Cultural/Entertainment/Recreational, 9000 Undeveloped Land and Water Areas. |
+| AsrLanduse2 | int16 | Assessor's secondary land-use code from the same vocabulary as AsrLandUse1; per the portal field definition it is 'present, if necessary, otherwise 0'. |
+| RedevPhase | int16 | Redevelopment-abatement phase the parcel is in (city abatement programs are Chapter 99, Chapter 100, Chapter 353 and Enterprise Zone per the 'Abatement Type' vocabulary); phase decode not published. |
+| RedevYearEnd | int16 | Year the parcel's current redevelopment phase ends. |
 | RedevPhase2 | int16 |  |
 | RedevYearEnd2 | int16 |  |
-| VacantLot | int16 |  |
-| SpecBusDist | int16 |  |
+| VacantLot | int16 | 0/1 flag marking the parcel as a vacant lot (counterpart of the Y/N 'Vacant Land' field the portal documents for the historical parcels extract). |
+| SpecBusDist | int16 | Special Business District / CID number the parcel falls in (city controlled vocabulary 'Special Business District CID'). |
 | SpecBusDist2 | int16 |  |
-| TIFDist | int16 |  |
+| TIFDist | int16 | Tax Increment Financing district number the parcel falls in (city controlled vocabulary 'TIF District'). |
 | LendingAgcy | int16 |  |
-| Condominium | int16 |  |
-| NbrOfUnits | int16 |  |
-| NbrOfApts | int16 |  |
-| FRONTAGE | double |  |
-| LANDAREA | int32 |  |
+| Condominium | int16 | Condominium flag on the parcel record (legacy documentation shows it as a 0-or-8 component folded into HANDLE; inferred). |
+| NbrOfUnits | int16 | Number of dwelling/occupancy units on the parcel. |
+| NbrOfApts | int16 | Number of apartment units on the parcel (name-based). |
+| FRONTAGE | double | Street frontage of the parcel, in feet (assessor lot dimension; portal label 'Frontage'). |
+| LANDAREA | int32 | Assessor-recorded lot area in square feet (values match the parcel polygon's area computed in the foot-based state-plane geometry). |
 | RecDailyDate | timestamp[ms] |  |
 | RecDailyNum | int32 |  |
 | RecBookNum | string |  |
 | RecPageNum | int16 |  |
-| AsdLand | double |  |
-| AsdImprove | double |  |
-| AsdTotal | double |  |
-| BillLand | double |  |
-| BillImprove | double |  |
-| BillTotal | double |  |
-| AprLand | double |  |
-| CostAprImprove | double |  |
+| AsdLand | double | Assessed value of the land portion of the parcel in dollars (in Missouri, assessed value is a statutory percentage of appraised value by property class: 19% residential, 32% commercial, 12% agricultural — RSMo 137.115). |
+| AsdImprove | double | Assessed value of improvements (buildings) in dollars. |
+| AsdTotal | double | Total assessed value (land + improvements) in dollars. |
+| BillLand | double | Land assessed value as carried on the tax bill; the Asd*/Bill* distinction (current working assessment vs. billed assessment) is not formally documented on the portal. |
+| BillImprove | double | Improvement assessed value as carried on the tax bill (see BillLand note). |
+| BillTotal | double | Total assessed value as carried on the tax bill (see BillLand note). |
+| AprLand | double | Appraised (market) value of the land in dollars, from which the assessed value is derived. |
+| CostAprImprove | double | Cost-approach appraised value of improvements in dollars (name-based; no formal portal definition found). |
 | AsmtAppealYear | int16 |  |
 | AsmtAppealNum | int32 |  |
 | AsmtAppealType | string |  |
@@ -85,17 +85,17 @@ Current and historic parcel data Mirrored from [the city's open data portal](htt
 | PriorAsdImprove | double |  |
 | PriorAsdTotal | double |  |
 | PriorTaxAmt | double |  |
-| CDALandUse1 | int16 |  |
-| CDALandUse2 | int16 |  |
+| CDALandUse1 | int16 | Land-use classification assigned by the CDA (Community Development Administration) planning scheme; no public decode table was found on the portal. |
+| CDALandUse2 | int16 | Secondary CDA land-use classification; no public decode table was found on the portal. |
 | LRMSUnitNum | string |  |
-| Zoning | string |  |
+| Zoning | string | Zoning district code for the parcel (city controlled vocabulary 'Zoning Code'; see the zoning collection's LAYER letters for district names). |
 | NbrOfBldgsRes | int16 |  |
 | NbrOfBldgsCom | int16 |  |
-| FirstYearBuilt | int16 |  |
-| LastYearBuilt | int16 |  |
-| ResSalePrice | double |  |
-| ResSaleDate | timestamp[ms] |  |
-| VacBldgYear | int16 |  |
+| FirstYearBuilt | int16 | Year the oldest building on the parcel was built. |
+| LastYearBuilt | int16 | Year the newest building on the parcel was built. |
+| ResSalePrice | double | Most recent residential sale price for the parcel in dollars (name-based). |
+| ResSaleDate | timestamp[ms] | Date of the most recent residential sale (name-based). |
+| VacBldgYear | int16 | Year the property entered the vacant-building registry (counterpart of VACBLDGYR in the historical extract; name-based). |
 | GeoCityBlockPart | double |  |
 | WARD10 | int16 |  |
 | PRECINCT10 | int16 |  |
@@ -103,7 +103,7 @@ Current and historic parcel data Mirrored from [the city's open data portal](htt
 | Ward00 | int16 |  |
 | PRECINCT02 | int16 |  |
 | PRECINCT04 | int16 |  |
-| NBRHD | int16 |  |
+| NBRHD | int16 | City neighborhood number 1-79 (city controlled vocabulary 'Neighborhood'). |
 | CDADIST | int16 |  |
 | CDASUBDIST | int16 |  |
 | POLICEDIST | int16 |  |
@@ -114,34 +114,34 @@ Current and historic parcel data Mirrored from [the city's open data portal](htt
 | Precinct90 | int16 |  |
 | CensBlock90 | double |  |
 | HouseConsDist | int16 |  |
-| ASRNBRHD | int16 |  |
+| ASRNBRHD | int16 | Assessor's neighborhood number (assessment neighborhood, distinct from the citizen neighborhood in NBRHD). |
 | EntZone | int16 |  |
 | IMPACTAREA | int16 |  |
 | CTDArea | int16 |  |
 | LEAFAREA | int16 |  |
 | ZIP | int32 |  |
-| OnFloodBlock | int16 |  |
-| SpecParcelType | string |  |
-| SubParcelType | string |  |
+| OnFloodBlock | int16 | Flag that the parcel's city block touches a floodplain (name-based; see the FloodPlain codes in property-taxes). |
+| SpecParcelType | string | Special-parcel type: C Condo Master (Res/Mixed), K Condo Master (Non-Res), H Highway ROW, R Other ROW, S Special Account, W Water, X Non-parcel Area (city PrclCode.mdb CdSpecParcelType table). |
+| SubParcelType | string | Sub-parcel type: A Account Separation, B Back Taxes Owed, C Condo, G Garage/Parking Condo, K Commercial Condo, I Industrial Condo, M Multi-Owner (e.g. leasehold), X Other (incl. signs, air/ground rights), plus bookkeeping codes D/E/P/Q/R/Y (city PrclCode.mdb CdSubParcelType / controlled vocabulary 'Parcel Sub Type'). |
 | NbrOfSubAccts | int16 |  |
 | NbrOfCondos | int16 |  |
 | LRMSParcel | int16 |  |
 | AcctPrimary | int16 |  |
-| HANDLE | string |  |
-| OWNEROCC | string |  |
+| HANDLE | string | Zero-padded citywide parcel identifier used as the common join key across St. Louis parcel datasets; the portal's field notes describe it as 'a numbering schema originally introduced to aid in the handling of condominiums' and mark it DEPRECATED. |
+| OWNEROCC | string | Owner-occupancy code giving the dwelling type of an owner-occupied parcel: 1 Single Family, 2 Two-Family, 4 Three-or-Four Family, 5 Five-plus Family, C Condo, X Other (city PrclCode.mdb CdOwnerOccCode table); null means not flagged owner-occupied. |
 | FirstDate | timestamp[ms] |  |
 | LastDate | timestamp[ms] |  |
 | OwnerUpdate | timestamp[ms] |  |
-| OwnerCode | int16 |  |
-| SITEADDR | string |  |
-| SQFT | int32 |  |
-| ParcelId | string |  |
-| WARD | int16 |  |
-| TaxBalance | double |  |
-| PropertyClassCode | int16 |  |
-| IsAbatedProperty | int16 |  |
-| AbatementStartYear | int16 |  |
-| AbatementEndYear | int16 |  |
+| OwnerCode | int16 | Third component of the parcel key, a taxing-status code: 0 Standard, 1 Redevelopment Taxable Portion, 2 Redevelopment Exempt Portion, 3 In Lieu of Payment, 4 Charitable Exempt Portion, 5 Charitable Taxable Portion, 6 Mixed Use Residential Portion, 7 Mixed Use Commercial Portion, 8 Sign, 9 Demo/Maintenance Charge (city PrclCode.mdb CdOwnerCode table). |
+| SITEADDR | string | Main address used for the parcel within city records (portal field definition). |
+| SQFT | int32 | Parcel area in square feet (matches the GIS polygon area; essentially duplicates LANDAREA where both are populated). |
+| ParcelId | string | Unformatted parcel ID in the numbering schema introduced by the Assessor's office in 2021 (portal field definition). |
+| WARD | int16 | Current aldermanic ward number; Ward20/Ward10/Ward00/Ward90 columns carry the 2020/2010/2000/1990 ward definitions respectively. |
+| TaxBalance | double | Outstanding (unpaid) property-tax balance for the parcel in dollars (name-based; no formal portal definition found). |
+| PropertyClassCode | int16 | Statutory property classification: 10 Agricultural, 12 Commercial, 15 Residential, 17 Exempt, and combination codes 11/13/14/16 for mixed classifications (city controlled vocabulary 'Property Class Code'). |
+| IsAbatedProperty | int16 | 0/1 flag indicating the parcel currently has a tax abatement (see AbatementStartYear/AbatementEndYear). |
+| AbatementStartYear | int16 | First tax year of the parcel's tax-abatement period. |
+| AbatementEndYear | int16 | Last tax year of the parcel's tax-abatement period. |
 | SpecBusDist3 | int16 |  |
 | Ward20 | int16 |  |
 | Precinct20 | int16 |  |
@@ -151,8 +151,8 @@ Current and historic parcel data Mirrored from [the city's open data portal](htt
 | MaintZoneWC | int16 |  |
 | TransDevDist | int16 |  |
 | SHAPE | binary |  |
-| CityBlock | double |  |
-| Parcel | double |  |
+| CityBlock | double | City block number component of the parcel key (portal: 'key fields: CITYBLOCK, PARCEL, OWNERCODE'); a float-like identifier where the decimal part distinguishes block subdivisions. |
+| Parcel | double | Parcel number within the city block, the second component of the CityBlock/Parcel/OwnerCode parcel key. |
 | SHAPE.STArea() | double |  |
 | SHAPE.STLength() | double |  |
 | geometry | binary |  |

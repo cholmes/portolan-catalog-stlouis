@@ -178,8 +178,8 @@
       ],
       "title": "City renderer",
       "description": "The city's own symbology, extracted from the source ArcGIS renderer.",
-      "file:size": 529,
-      "file:checksum": "1220ce84bc017ff321697f233a5911351c2a5afa5aa7cc08f0d9b9c02a078cc36c5c"
+      "file:size": 741,
+      "file:checksum": "12203fe270bda2d2e8a6327dd9abd643afeb6fcb5cb79cb07162c502f7666aa06520"
     },
     "styles/default": {
       "href": "./styles/default.json",
@@ -188,10 +188,10 @@
         "default",
         "style"
       ],
-      "title": "ZIP codes",
-      "description": "The 30 ZIP code areas touching the city, repeating colors, labeled.",
-      "file:size": 1820,
-      "file:checksum": "1220a1321dedace74720ddcf61a97a3bb493da9ef8137503ffd202bf90382561d0b9"
+      "title": "ZIP codes labeled",
+      "description": "The 30 ZIP code areas touching the city, each labeled with its code.",
+      "file:size": 1339,
+      "file:checksum": "1220cbf4bc51756f92f06eeb9bc91d206d4e22839c8ab54cefbc304560ea78aabd83"
     },
     "styles/style-boundaries": {
       "href": "./styles/style-boundaries.json",
@@ -211,9 +211,9 @@
         "style"
       ],
       "title": "Subtle tint",
-      "description": "Light fill for underlays.",
-      "file:size": 481,
-      "file:checksum": "12209f4aab33b4ef6774f253033d008995fccd19afe867e47787e8984449f4ca41ca"
+      "description": "Pale fill for underlaying other data, with the codes still readable.",
+      "file:size": 1084,
+      "file:checksum": "1220695b255f99fc91046e23e9cc48ecde55348957c254d3da3159cae4ff89a4a91b"
     },
     "thumbnail": {
       "href": "./thumbnail.png",
@@ -222,8 +222,19 @@
         "thumbnail"
       ],
       "title": "ZIP Codes rendered with the default style",
-      "file:size": 299597,
-      "file:checksum": "1220dd6253f6de7190aea2c5311b8fee7d98f80572df39ff9ae1a6974ef45aa69eb0"
+      "file:size": 341185,
+      "file:checksum": "12208c2fe76e7ceee0c33c180d14ca4200d17057cc82c7f6e6f7acf65f0d1fd70e29"
+    },
+    "styles/style-mosaic": {
+      "href": "./styles/style-mosaic.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "style"
+      ],
+      "title": "ZIP mosaic",
+      "description": "Repeating colors so adjacent ZIP areas are easy to tell apart, labeled.",
+      "file:size": 1907,
+      "file:checksum": "1220eaae8bdbed4d986b5005542f3584e51a7c44678c8dfc80409991c7ffacde8048"
     }
   },
   "updated": "2026-08-05T19:58:51+00:00",

@@ -195,8 +195,8 @@
       "type": "application/vnd.mapbox.style+json",
       "title": "City renderer",
       "description": "The city's own symbology, extracted from the source ArcGIS renderer.",
-      "file:size": 537,
-      "file:checksum": "12206727402eb2d9d355c0f5f4f1de2ae726c35d2ea978c89c4856aae164ed60c5d4",
+      "file:size": 757,
+      "file:checksum": "122058eaed012ce9082ff31b4ea7d4dda82af3c8e67db78367a35dd7a7435a5a0138",
       "roles": [
         "style"
       ]

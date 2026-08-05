@@ -47,7 +47,8 @@
     },
     {
       "name": "APPDATE",
-      "type": "string"
+      "type": "string",
+      "description": "Date the occupancy-permit application was filed; ISSUEDATE/COMPLETEDATE/CANCELDATE are the issue, completion and cancellation dates."
     },
     {
       "name": "APPDESCRIPTION",
@@ -55,11 +56,13 @@
     },
     {
       "name": "APPNUM",
-      "type": "string"
+      "type": "string",
+      "description": "Permit application number."
     },
     {
       "name": "APPTYPE",
-      "type": "string"
+      "type": "string",
+      "description": "Permit application type code; 'AO' Occupancy (or 'AX' Occupancy-Old) per the city 'Permit Application Type' vocabulary."
     },
     {
       "name": "ASRNBRHD",
@@ -71,7 +74,8 @@
     },
     {
       "name": "CANCELTYPE",
-      "type": "string"
+      "type": "string",
+      "description": "Cancellation code; only 'C' appears and no decode is published."
     },
     {
       "name": "CAREOFADDR",
@@ -115,7 +119,8 @@
     },
     {
       "name": "ESTPROJECTCOST",
-      "type": "string"
+      "type": "string",
+      "description": "Estimated project cost in dollars."
     },
     {
       "name": "FIRSTDATE",
@@ -127,7 +132,8 @@
     },
     {
       "name": "HANDLE",
-      "type": "string"
+      "type": "string",
+      "description": "Citywide parcel handle (join key to parcels)."
     },
     {
       "name": "ISSUEDATE",
@@ -139,7 +145,8 @@
     },
     {
       "name": "MAINSTRUCTYPE",
-      "type": "string"
+      "type": "string",
+      "description": "Main structure type code (city 'Permit Structure Type' vocabulary)."
     },
     {
       "name": "NBRHD",
@@ -147,15 +154,18 @@
     },
     {
       "name": "NBROFUNITS",
-      "type": "string"
+      "type": "string",
+      "description": "Number of units covered by the permit."
     },
     {
       "name": "NEWUSE",
-      "type": "string"
+      "type": "string",
+      "description": "Text description of the new (proposed) use of the structure."
     },
     {
       "name": "NEWUSEGROUP1",
-      "type": "string"
+      "type": "string",
+      "description": "Building-code use group of the new use, e.g. A Assembly, B Business, E Educational, F Factory, H Hazardous, I Institutional, M Mercantile, R Residential, S Storage, U Utility with numeric subgroups like R-2, F-1 (city 'Permit Use Group' vocabulary); NEWUSEGROUP2-3 are additional groups."
     },
     {
       "name": "NEWUSEGROUP2",
@@ -171,15 +181,18 @@
     },
     {
       "name": "OCCNAME",
-      "type": "string"
+      "type": "string",
+      "description": "Name of the occupant/business applying for occupancy (name-based)."
     },
     {
       "name": "OLDUSE",
-      "type": "string"
+      "type": "string",
+      "description": "Text description of the previous use of the structure."
     },
     {
       "name": "OLDUSEGROUP1",
-      "type": "string"
+      "type": "string",
+      "description": "Building-code use group of the previous use (same vocabulary; OLDUSEGROUP2-3 additional)."
     },
     {
       "name": "OLDUSEGROUP2",
@@ -199,7 +212,8 @@
     },
     {
       "name": "OWNERCODE",
-      "type": "string"
+      "type": "string",
+      "description": "Taxing-status component of the parcel key (see parcels.OwnerCode)."
     },
     {
       "name": "OWNERNAME",
@@ -231,7 +245,8 @@
     },
     {
       "name": "PRCLERR",
-      "type": "string"
+      "type": "string",
+      "description": "Parcel geocoding match/error code (city ComCode.mdb CdPrclErr)."
     },
     {
       "name": "PRECINCT02",
@@ -239,7 +254,8 @@
     },
     {
       "name": "PROJECTTYPE",
-      "type": "string"
+      "type": "string",
+      "description": "Project type code; occupancy permits are type 7 'Occupancy' (city 'Permit Project Type' vocabulary)."
     },
     {
       "name": "STDIR",

@@ -47,19 +47,23 @@
     },
     {
       "name": "APPDATE",
-      "type": "string"
+      "type": "string",
+      "description": "Date the permit application was filed; ISSUEDATE/COMPLETEDATE/CANCELDATE are the issue, completion and cancellation dates."
     },
     {
       "name": "APPDESCRIPTION",
-      "type": "string"
+      "type": "string",
+      "description": "Free-text description of the permitted work."
     },
     {
       "name": "APPNUM",
-      "type": "string"
+      "type": "string",
+      "description": "Permit application number."
     },
     {
       "name": "APPTYPE",
-      "type": "string"
+      "type": "string",
+      "description": "Permit application type code; 'AM' (Mechanical) in this dataset (city 'Permit Application Type' vocabulary)."
     },
     {
       "name": "ASRNBRHD",
@@ -71,7 +75,8 @@
     },
     {
       "name": "CANCELTYPE",
-      "type": "string"
+      "type": "string",
+      "description": "Cancellation code; only 'C' appears and no decode is published."
     },
     {
       "name": "CAREOFADDR",
@@ -83,7 +88,8 @@
     },
     {
       "name": "CAREOFNAME",
-      "type": "string"
+      "type": "string",
+      "description": "'Care of' contact name on the application (CAREOFADDR/CAREOFCITY/CAREOFSTATE/CAREOFZIP are that contact's address)."
     },
     {
       "name": "CAREOFSTATE",
@@ -115,7 +121,8 @@
     },
     {
       "name": "ESTPROJECTCOST",
-      "type": "string"
+      "type": "string",
+      "description": "Estimated project cost in dollars."
     },
     {
       "name": "FIRSTDATE",
@@ -127,7 +134,8 @@
     },
     {
       "name": "HANDLE",
-      "type": "string"
+      "type": "string",
+      "description": "Citywide parcel handle (join key to parcels)."
     },
     {
       "name": "ISSUEDATE",
@@ -139,7 +147,8 @@
     },
     {
       "name": "MAINSTRUCTYPE",
-      "type": "string"
+      "type": "string",
+      "description": "Main structure type code (city 'Permit Structure Type' vocabulary; STRUCTYPE1-3 are additional)."
     },
     {
       "name": "NBRHD",
@@ -147,7 +156,8 @@
     },
     {
       "name": "NBROFUNITS",
-      "type": "string"
+      "type": "string",
+      "description": "Number of units covered by the permit."
     },
     {
       "name": "NLC",
@@ -163,7 +173,8 @@
     },
     {
       "name": "OWNERCODE",
-      "type": "string"
+      "type": "string",
+      "description": "Taxing-status component of the parcel key (see parcels.OwnerCode)."
     },
     {
       "name": "OWNERNAME",
@@ -195,7 +206,8 @@
     },
     {
       "name": "PRCLERR",
-      "type": "string"
+      "type": "string",
+      "description": "Parcel geocoding match/error code (city ComCode.mdb CdPrclErr)."
     },
     {
       "name": "PRECINCT02",
@@ -203,7 +215,8 @@
     },
     {
       "name": "PROJECTTYPE",
-      "type": "string"
+      "type": "string",
+      "description": "Project type: 1 New Construction, 2 Addition, 3 Alteration, 4 Repair, 5 Replacement, 6 Demolition, 9 Other (city 'Permit Project Type' vocabulary)."
     },
     {
       "name": "STDIR",

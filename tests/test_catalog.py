@@ -25,6 +25,29 @@ def err(msg):
     errors.append(msg)
 
 
+def tile_fields(pmtiles: Path) -> set:
+    """Attribute names present in a PMTiles archive's vector layers."""
+    from pmtiles.reader import MmapSource, Reader
+    with open(pmtiles, "rb") as f:
+        meta = Reader(MmapSource(f)).metadata()
+    layers = meta.get("vector_layers") or json.loads(
+        meta.get("json", "{}")).get("vector_layers", [])
+    return {k for l in layers for k in (l.get("fields") or {})}
+
+
+def style_fields(node, out: set) -> set:
+    """Every attribute a style reads, i.e. the target of every ["get", …]."""
+    if isinstance(node, list):
+        if len(node) == 2 and node[0] == "get" and isinstance(node[1], str):
+            out.add(node[1])
+        for x in node:
+            style_fields(x, out)
+    elif isinstance(node, dict):
+        for x in node.values():
+            style_fields(x, out)
+    return out
+
+
 def check_collection(coll_dir: Path):
     cid = coll_dir.name  # leaf id: tile layers and style refs use this
     path_id = f"{coll_dir.parent.name}/{cid}"
@@ -95,9 +118,18 @@ def check_collection(coll_dir: Path):
     if style_assets and len(defaults) != 1:
         err(f"{cid}: expected exactly 1 default style, got {defaults}")
 
+    # A style that reads an attribute the tiles don't carry silently paints
+    # every feature its fallback color — the map looks fine but says nothing.
+    pmtiles = coll_dir / f"{cid}.pmtiles"
+    have = tile_fields(pmtiles) if pmtiles.exists() and not LIGHT else None
+
     # Styles: structure + legend rule
     for sf in sorted((coll_dir / "styles").glob("*.json")) if (coll_dir / "styles").exists() else []:
         s = json.loads(sf.read_text())
+        if have is not None:
+            missing = sorted(style_fields(s.get("layers", []), set()) - have)
+            if missing:
+                err(f"{cid}/{sf.name}: reads fields absent from the tiles: {missing}")
         if s.get("version") != 8:
             err(f"{cid}/{sf.name}: not version 8")
         src = s.get("sources", {}).get("data", {})

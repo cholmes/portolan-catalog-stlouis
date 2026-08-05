@@ -62,7 +62,8 @@
   "table:columns": [
     {
       "name": "name",
-      "type": "string"
+      "type": "string",
+      "description": "Precinct name/identifier for the election precinct polygon."
     },
     {
       "name": "globalid",
@@ -176,8 +177,8 @@
       "type": "application/vnd.mapbox.style+json",
       "title": "Precincts by ward",
       "description": "The 209 current voting precincts colored by their ward (from the precinct name, 'W <ward> P <precinct>'), labeled. Same ward colors as the wards collection.",
-      "file:size": 3256,
-      "file:checksum": "12201a21287cdff9444733f89c97fe01d46addf2405bd01bc4e8d04913ddcd4130e8",
+      "file:size": 3337,
+      "file:checksum": "1220426ddd5c1b8b9010a4e596d0120876e73f24b786e4927837196ee472f4f43414",
       "roles": [
         "default",
         "style"
@@ -208,8 +209,8 @@
     "documentation": {
       "href": "./README.md",
       "type": "text/markdown",
-      "file:size": 2518,
-      "file:checksum": "1220e5bda73b2e6c63af0c0b3354768865dcf9290671117c10d021dfdc993827e221",
+      "file:size": 2577,
+      "file:checksum": "1220b3fcce6dbffe62cb55003a000dc20feddbda6b973dd0779f42cb4c73b33d848a",
       "roles": [
         "documentation"
       ]

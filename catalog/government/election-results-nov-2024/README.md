@@ -17,35 +17,35 @@ This is the detailed vote extract (dve) from the November 5, 2024, General Munic
 
 | Column | Type | Description |
 |--------|------|-------------|
-| F_Precinct | string |  |
-| Precinct_ID | int64 |  |
-| Precinct_Reporting | string |  |
-| Registered_Voters | int64 |  |
-| Ballots_Cast | int64 |  |
+| F_Precinct | string | Precinct label as reported in the November 2024 canvass file. |
+| Precinct_ID | int64 | Precinct identifier. |
+| Precinct_Reporting | string | Whether/what share of the precinct had reported. |
+| Registered_Voters | int64 | Registered voters in the precinct. |
+| Ballots_Cast | int64 | Ballots cast in the precinct; Turnout_Percentage is Ballots_Cast over Registered_Voters. |
 | Turnout_Percentage | double |  |
-| Contest_Title | string |  |
+| Contest_Title | string | Name of the contest (office or question); Contest_ID and Contest_Party identify it and its party where applicable. |
 | Contest_ID | int64 |  |
 | Contest_Party | json |  |
-| Choice_Name | string |  |
+| Choice_Name | string | Candidate or ballot-choice name; Choice_ID and Choice_Party identify it. |
 | Choice_ID | int64 |  |
 | Choice_Party | string |  |
-| Total_Votes | int64 |  |
-| Total_Overvotes | int64 |  |
-| Total_Undervotes | int64 |  |
+| Total_Votes | int64 | Total votes for the choice in the precinct across all voting modes. |
+| Total_Overvotes | int64 | Overvotes — ballots where more choices were marked than allowed, so no vote counted (standard U.S. election tabulation term). |
+| Total_Undervotes | int64 | Undervotes — ballots where fewer choices were marked than allowed (including blank), so a potential vote was not cast. |
 | Total_Invalid_Votes | int64 |  |
-| Absentee_Voting_Votes | int64 |  |
+| Absentee_Voting_Votes | int64 | Votes for the choice cast by mail absentee; the parallel *_Overvotes/*_Undervotes/*_Invalid_Votes columns break those measures out per voting mode. |
 | Absentee_Voting_Overvotes | int64 |  |
 | Absentee_Voting_Undervotes | int64 |  |
 | Absentee_Voting_Invalid_Votes | int64 |  |
-| Absentee_Voting___In_Person_Vot | int64 |  |
+| Absentee_Voting___In_Person_Vot | int64 | Votes cast by in-person (no-excuse) absentee voting (column name truncated by the source; the __Ove/__Und/__Inv companions are its overvote/undervote/invalid counts). |
 | Absentee_Voting___In_Person_Ove | int64 |  |
 | Absentee_Voting___In_Person_Und | int64 |  |
 | Absentee_Voting___In_Person_Inv | int64 |  |
-| Election_Day_Voting_Votes | int64 |  |
+| Election_Day_Voting_Votes | int64 | Votes for the choice cast at the polls on election day. |
 | Election_Day_Voting_Overvotes | int64 |  |
 | Election_Day_Voting_Undervotes | int64 |  |
 | Election_Day_Voting_Invalid_Vot | int64 |  |
-| Provisional_Voting_Votes | int64 |  |
+| Provisional_Voting_Votes | int64 | Votes for the choice cast on provisional ballots. |
 | Provisional_Voting_Overvotes | int64 |  |
 | Provisional_Voting_Undervotes | int64 |  |
 | Provisional_Voting_Invalid_Vote | int64 |  |

@@ -62,23 +62,28 @@
   "table:columns": [
     {
       "name": "REQUESTID",
-      "type": "int32"
+      "type": "int32",
+      "description": "Request ID number of the submitted animal-bite ticket (portal field definition)."
     },
     {
       "name": "PROBLEMCODE",
-      "type": "string"
+      "type": "string",
+      "description": "Always 'Animal Bite' in this dataset (portal field definition)."
     },
     {
       "name": "HOUSE_NUMBER",
-      "type": "int32"
+      "type": "int32",
+      "description": "Hundred-block house number where the issue occurred (portal field definition \u2014 addresses are generalized to the block)."
     },
     {
       "name": "STREET",
-      "type": "string"
+      "type": "string",
+      "description": "Street or streets of the ticket location (portal field definition)."
     },
     {
       "name": "DATETIMEINIT",
-      "type": "timestamp[ms]"
+      "type": "timestamp[ms]",
+      "description": "Date/time the ticket was created (portal field definition); DATETIMECLOSED, DATECANCELLED and DATEINVTDONE are the closure, cancellation and investigation dates."
     },
     {
       "name": "DATETIMECLOSED",
@@ -86,7 +91,8 @@
     },
     {
       "name": "STATUS",
-      "type": "string"
+      "type": "string",
+      "description": "Status of the ticket (portal field definition)."
     },
     {
       "name": "DATEINVTDONE",
@@ -102,11 +108,13 @@
     },
     {
       "name": "NEIGHBORHOOD",
-      "type": "string"
+      "type": "string",
+      "description": "City neighborhood number (portal field definition)."
     },
     {
       "name": "WARD",
-      "type": "string"
+      "type": "string",
+      "description": "Ward of the ticket location (portal field definition)."
     },
     {
       "name": "PLAIN_ENGLISH_NAME_FOR_PROBLEMCODE",
@@ -114,7 +122,8 @@
     },
     {
       "name": "ANIMAL_TYPE",
-      "type": "string"
+      "type": "string",
+      "description": "Type of animal involved (portal label)."
     },
     {
       "name": "keep",

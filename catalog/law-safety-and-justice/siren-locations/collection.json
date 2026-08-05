@@ -76,11 +76,13 @@
     },
     {
       "name": "Siren",
-      "type": "int16"
+      "type": "int16",
+      "description": "Identifier of the outdoor warning siren (the portal's siren spreadsheet labels this 'Siren Number')."
     },
     {
       "name": "SIREN_LOCATION_ADDRESS",
-      "type": "string"
+      "type": "string",
+      "description": "Address/location of the siren (portal label 'Siren Location/Address')."
     },
     {
       "name": "Property_Comments",
@@ -92,11 +94,13 @@
     },
     {
       "name": "FACILITY",
-      "type": "string"
+      "type": "string",
+      "description": "Facility the siren is located at (name-based; this extract is a field-inspection layer richer than the portal spreadsheet)."
     },
     {
       "name": "Solar_Panels_Condition",
-      "type": "string"
+      "type": "string",
+      "description": "Condition of the siren's solar panels; Batteries_Condition and SolarandBatteryNotes are the companion battery fields (name-based inspection fields)."
     },
     {
       "name": "Batteries_Condition",
@@ -108,11 +112,13 @@
     },
     {
       "name": "TYPE",
-      "type": "string"
+      "type": "string",
+      "description": "Siren type/model (name-based)."
     },
     {
       "name": "Date_Last_Tested",
-      "type": "timestamp[us]"
+      "type": "timestamp[us]",
+      "description": "Date the siren was last tested; 'Working' records whether it worked (name-based inspection fields)."
     },
     {
       "name": "Working",
@@ -140,7 +146,8 @@
     },
     {
       "name": "PoleHeight",
-      "type": "double"
+      "type": "double",
+      "description": "Height of the siren pole; PoleMount, PoleLean, Polemountedin and PoleConditionNotes describe the pole installation and condition (name-based inspection fields)."
     },
     {
       "name": "Solar",

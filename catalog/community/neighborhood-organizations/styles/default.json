@@ -81,5 +81,6 @@
         "text-halo-width": 1.2
       }
     }
-  ]
+  ],
+  "glyphs": "https://tiles.basemaps.cartocdn.com/fonts/{fontstack}/{range}.pbf"
 }

@@ -178,8 +178,8 @@
       "type": "application/vnd.mapbox.style+json",
       "title": "Wards (2010)",
       "description": "The 28 aldermanic wards in force 2011-2022, repeating colors, labeled \u2014 the geography most older city datasets (WARD10 columns) reference.",
-      "file:size": 1981,
-      "file:checksum": "122095ba3f8a8eb265b019fc1b2e4775c260b2aaf88bdb834a5c64b3d1466a0b75ba",
+      "file:size": 2062,
+      "file:checksum": "1220e1a449207f72daada8a6af94352aa25882b0d9ad8c9c1193c662ca7c631ca563",
       "roles": [
         "default",
         "style"
@@ -211,8 +211,8 @@
       "href": "./thumbnail.png",
       "type": "image/png",
       "title": "Ward Boundaries (2010) rendered with the default style",
-      "file:size": 324213,
-      "file:checksum": "122031b5cdf3342b1dda113f5f04887255cb90794ac7df5c5b0978dbae28d58fb3a8",
+      "file:size": 332165,
+      "file:checksum": "12209ab9788805d8afbf3267c7fedd75a3e219c2796cb944e724c56062284c2a71b9",
       "roles": [
         "thumbnail"
       ]

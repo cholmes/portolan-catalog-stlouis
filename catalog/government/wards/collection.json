@@ -1200,8 +1200,8 @@
       "type": "application/vnd.mapbox.style+json",
       "title": "City renderer",
       "description": "The city's own symbology, extracted from the source ArcGIS renderer.",
-      "file:size": 521,
-      "file:checksum": "122020f016a4494d1753eed97ab007ce301c87d595044e7ac64d975d2e8890758063",
+      "file:size": 725,
+      "file:checksum": "122012cb82b8cdbdcd695eb59165a95edd996c28a983b7363b568835525e3e811441",
       "roles": [
         "style"
       ]
@@ -1211,8 +1211,8 @@
       "type": "application/vnd.mapbox.style+json",
       "title": "Wards (2020)",
       "description": "The fourteen wards from 2020 redistricting in bold saturated colors with heavy dark borders, labeled \u2014 deliberately weightier than the pastel precinct map.",
-      "file:size": 2743,
-      "file:checksum": "122072c5f341d3054fcc2dbccd1cda76fcf91e60d26df79a02d0f8ace43f0609d011",
+      "file:size": 2824,
+      "file:checksum": "12208fa26bfc03e4d3d7235b83cefc7dc87092c2c752fc259340585d8251dd7be328",
       "roles": [
         "default",
         "style"
@@ -1244,8 +1244,8 @@
       "href": "./thumbnail.png",
       "type": "image/png",
       "title": "Ward Boundaries (2020) rendered with the default style",
-      "file:size": 315282,
-      "file:checksum": "12202c444291001ed7555aafd6b1c160d7b7be9ee15eee918fe400d1316864f4c465",
+      "file:size": 334526,
+      "file:checksum": "12205e421b449b9dce4a57473206f4b80281e5ba31ae6e63dfaa54cefe1eebc10c3e",
       "roles": [
         "thumbnail"
       ]

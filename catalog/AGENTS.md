@@ -1,7 +1,7 @@
 # AGENTS.md — City of St. Louis Open Data (Cloud-Native Mirror)
 
-Twenty collections mirrored from https://www.stlouis-mo.gov/data/ as
-GeoParquet (+ PMTiles for the 19 geospatial ones). Everything is
+51 collections mirrored from the [City of St. Louis open data
+portal](https://www.stlouis-mo.gov/data/) as GeoParquet and PMTiles. Everything is
 range-readable over HTTPS — no download needed.
 
 ## Access pattern

@@ -72,11 +72,13 @@
     },
     {
       "name": "TOLEMI_ID",
-      "type": "double"
+      "type": "double",
+      "description": "Property identifier assigned by Tolemi (the BuildingBlocks data platform SLDC uses to assemble its vacancy composite; the source layer is SLDC.SLDC.Tol_Def_Vac_NP)."
     },
     {
       "name": "PID1",
-      "type": "double"
+      "type": "double",
+      "description": "First parcel identifier for the property as carried in the Tolemi composite (exact scheme not documented; PID2 is a second identifier)."
     },
     {
       "name": "PID2",
@@ -84,35 +86,43 @@
     },
     {
       "name": "STREET_ADD",
-      "type": "string"
+      "type": "string",
+      "description": "Street address of the property (shapefile-truncated name)."
     },
     {
       "name": "PROPERTY_T",
-      "type": "string"
+      "type": "string",
+      "description": "Property type (shapefile-truncated 'PROPERTY_TYPE'; no decode published)."
     },
     {
       "name": "TOLEMI_DEF",
-      "type": "string"
+      "type": "string",
+      "description": "Tolemi 'definite vacancy' determination for the property \u2014 the flag/category under which the parcel qualified for this definite-vacant composite (layer name Tol_Def_Vac; no public decode found)."
     },
     {
       "name": "LRA_OWNED_",
-      "type": "int32"
+      "type": "int32",
+      "description": "Whether the property is owned by the Land Reutilization Authority (shapefile-truncated flag)."
     },
     {
       "name": "LRA_RORE",
-      "type": "int32"
+      "type": "int32",
+      "description": "LRA inventory attribute (untruncated meaning not documented; no public decode found)."
     },
     {
       "name": "VACANT_BUI",
-      "type": "int32"
+      "type": "int32",
+      "description": "Vacant-building indicator (shapefile-truncated 'VACANT_BUILDING', i.e. on the city vacant building registry)."
     },
     {
       "name": "CONDEMNATI",
-      "type": "int32"
+      "type": "int32",
+      "description": "Condemnation indicator for the structure (shapefile-truncated 'CONDEMNATION')."
     },
     {
       "name": "NSR_OWNED_",
-      "type": "int32"
+      "type": "int32",
+      "description": "Flag for ownership recorded in the city's vacancy pipeline under 'NSR' (not expanded in any public documentation found)."
     },
     {
       "name": "LRA_OWNE_1",
@@ -120,7 +130,8 @@
     },
     {
       "name": "PRIVATE_VA",
-      "type": "int32"
+      "type": "int32",
+      "description": "Privately-owned vacant indicator (shapefile-truncated 'PRIVATE_VACANT')."
     },
     {
       "name": "NSR_OWNE_1",
@@ -128,15 +139,18 @@
     },
     {
       "name": "LAND_SIZE",
-      "type": "double"
+      "type": "double",
+      "description": "Land area of the parcel (units not documented in the source; city parcel land areas are square feet)."
     },
     {
       "name": "STRUCTUREA",
-      "type": "string"
+      "type": "string",
+      "description": "Structure area (shapefile-truncated; likely 'STRUCTURE_AREA')."
     },
     {
       "name": "YEAR_BUILT",
-      "type": "double"
+      "type": "double",
+      "description": "Year the structure was built."
     },
     {
       "name": "BUILDING_S",
@@ -152,7 +166,8 @@
     },
     {
       "name": "OWNER_NAME",
-      "type": "string"
+      "type": "string",
+      "description": "Owner name of record; OWNER_ADDR is the owner's mailing address."
     },
     {
       "name": "OWNER_ADDR",
@@ -160,11 +175,13 @@
     },
     {
       "name": "OWNER_TENU",
-      "type": "string"
+      "type": "string",
+      "description": "Owner tenure (shapefile-truncated 'OWNER_TENURE'; no decode published)."
     },
     {
       "name": "TAX_DELINQ",
-      "type": "string"
+      "type": "string",
+      "description": "Tax delinquency indicator for the property."
     },
     {
       "name": "OWNER_PROP",
@@ -184,7 +201,8 @@
     },
     {
       "name": "LRA_STATUS",
-      "type": "string"
+      "type": "string",
+      "description": "Status of the property within the LRA inventory; LRA_DATE is the associated date."
     },
     {
       "name": "LRA_DATE",
@@ -192,7 +210,8 @@
     },
     {
       "name": "BISA_SCORE",
-      "type": "double"
+      "type": "double",
+      "description": "Building Inspection/condition score carried in the composite ('BISA' not expanded in public documentation)."
     },
     {
       "name": "ECON_INVES",
@@ -212,23 +231,28 @@
     },
     {
       "name": "HANDLE",
-      "type": "double"
+      "type": "double",
+      "description": "Citywide parcel handle (join key to parcels); COLPARCELI is the truncated Collector parcel ID."
     },
     {
       "name": "NBRHD",
-      "type": "double"
+      "type": "double",
+      "description": "City neighborhood number (city 'Neighborhood' vocabulary)."
     },
     {
       "name": "ZONING",
-      "type": "string"
+      "type": "string",
+      "description": "Zoning district code (city 'Zoning Code' vocabulary)."
     },
     {
       "name": "CENSBLOCK2",
-      "type": "string"
+      "type": "string",
+      "description": "2020 census block (shapefile-truncated 'CENSBLOCK20')."
     },
     {
       "name": "WARD20",
-      "type": "double"
+      "type": "double",
+      "description": "2020-cycle aldermanic ward number."
     },
     {
       "name": "LATITUDE",

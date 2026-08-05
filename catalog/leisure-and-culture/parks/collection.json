@@ -239,8 +239,8 @@
       "type": "application/vnd.mapbox.style+json",
       "title": "City parks",
       "description": "All 117 city parks in park green with labels.",
-      "file:size": 968,
-      "file:checksum": "12207f07858885ef228184ea9ab28705ed6e8ff4554444c97110c1d9133f935557d2",
+      "file:size": 1049,
+      "file:checksum": "122015c26ff64bdd1a107d2e2899d89a95a70cab8133c493adeafd060f95b36cf761",
       "roles": [
         "default",
         "style"

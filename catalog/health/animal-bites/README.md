@@ -17,20 +17,20 @@ Animal bite reports made to the City of Saint Louis Department of Health and its
 
 | Column | Type | Description |
 |--------|------|-------------|
-| REQUESTID | int32 |  |
-| PROBLEMCODE | string |  |
-| HOUSE_NUMBER | int32 |  |
-| STREET | string |  |
-| DATETIMEINIT | timestamp[ms] |  |
+| REQUESTID | int32 | Request ID number of the submitted animal-bite ticket (portal field definition). |
+| PROBLEMCODE | string | Always 'Animal Bite' in this dataset (portal field definition). |
+| HOUSE_NUMBER | int32 | Hundred-block house number where the issue occurred (portal field definition — addresses are generalized to the block). |
+| STREET | string | Street or streets of the ticket location (portal field definition). |
+| DATETIMEINIT | timestamp[ms] | Date/time the ticket was created (portal field definition); DATETIMECLOSED, DATECANCELLED and DATEINVTDONE are the closure, cancellation and investigation dates. |
 | DATETIMECLOSED | timestamp[ms] |  |
-| STATUS | string |  |
+| STATUS | string | Status of the ticket (portal field definition). |
 | DATEINVTDONE | timestamp[ms] |  |
 | PRJCOMPLETEDATE | string |  |
 | DATECANCELLED | string |  |
-| NEIGHBORHOOD | string |  |
-| WARD | string |  |
+| NEIGHBORHOOD | string | City neighborhood number (portal field definition). |
+| WARD | string | Ward of the ticket location (portal field definition). |
 | PLAIN_ENGLISH_NAME_FOR_PROBLEMCODE | string |  |
-| ANIMAL_TYPE | string |  |
+| ANIMAL_TYPE | string | Type of animal involved (portal label). |
 | keep | bool |  |
 | geometry | binary |  |
 | geometry_bbox | struct<xmin: float not null, ymin: float not null, xmax: float not null, ymax: float not null> |  |

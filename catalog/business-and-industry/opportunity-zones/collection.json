@@ -2,7 +2,7 @@
   "type": "Collection",
   "id": "business-and-industry/opportunity-zones",
   "stac_version": "1.1.0",
-  "description": "Qualified Opportunity Zones (QOZs) within the City of Saint Louis. Qualified Opportunity Zones are nominated for that designation by the state and that nomination has been certified by the Secretary of the U.S. Treasury via his delegation authority to the Internal Revenue Service. More Info: https://www.irs.gov/newsroom/opportunity-zones-frequently-asked-questions https://www.cdfifund.gov/Pages/Opportunity-Zones.aspx",
+  "description": "Qualified Opportunity Zones (QOZs) within the City of Saint Louis. Qualified Opportunity Zones are nominated for that designation by the state and that nomination has been certified by the Secretary of the U.S. Treasury via his delegation authority to the Internal Revenue Service. More Info: [https://www.irs.gov/newsroom/opportunity-zones-frequently-asked-questions](https://www.irs.gov/newsroom/opportunity-zones-frequently-asked-questions) [https://www.cdfifund.gov/Pages/Opportunity-Zones.aspx](https://www.cdfifund.gov/Pages/Opportunity-Zones.aspx)",
   "links": [
     {
       "rel": "root",
@@ -242,8 +242,8 @@
       "type": "application/vnd.mapbox.style+json",
       "title": "Labeled zones",
       "description": "Zones with their district names.",
-      "file:size": 1002,
-      "file:checksum": "1220d4cd0cc3e665ff9bb6eed227ff7d19d833b28cbf5ccf551000c38bbafdaeb408",
+      "file:size": 1083,
+      "file:checksum": "122087df6f51ecbe59af03b59b16f9efae0d6db5b57262b5eaa7271df6546c03e6c4",
       "roles": [
         "style"
       ]

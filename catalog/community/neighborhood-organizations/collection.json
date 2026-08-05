@@ -294,8 +294,8 @@
       "type": "application/vnd.mapbox.style+json",
       "title": "Organizations by activity",
       "description": "The 103 neighborhood organizations as of the 2020 export: active (green), inactive (red), unknown (gray).",
-      "file:size": 1803,
-      "file:checksum": "12200bac4c01f8df55ccdb6fd5eab2835b5e656205c71d2c466139c204f768d4a918",
+      "file:size": 1884,
+      "file:checksum": "122033c74bb26fde149e45c4b74b098aba6560de9eb53e0a9c51b47a6051f41a4797",
       "roles": [
         "default",
         "style"

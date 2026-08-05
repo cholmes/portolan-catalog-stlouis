@@ -62,59 +62,73 @@
   "table:columns": [
     {
       "name": "IncidentDate",
-      "type": "date32[day]"
+      "type": "date32[day]",
+      "description": "Date the incident was reported/recorded by SLMPD."
     },
     {
       "name": "OccurredFromTime",
-      "type": "string"
+      "type": "string",
+      "description": "Date/time the offense began (NIBRS incidents record an occurred-from time)."
     },
     {
       "name": "IncidentNum",
-      "type": "string"
+      "type": "string",
+      "description": "SLMPD incident (complaint) number; multiple offense rows can share one incident."
     },
     {
       "name": "Offense",
-      "type": "string"
+      "type": "string",
+      "description": "SLMPD's Missouri statutory offense description for the charge (e.g. 'MURDER 1ST DEGREE', 'STEALING - MOTOR VEHICLE')."
     },
     {
       "name": "NIBRS",
-      "type": "string"
+      "type": "string",
+      "description": "FBI NIBRS offense code for the offense, e.g. 09A Murder/Nonnegligent Manslaughter, 13A Aggravated Assault, 23G Theft of Motor Vehicle Parts, 240 Motor Vehicle Theft, 290 Destruction/Damage/Vandalism (FBI NIBRS offense code list)."
     },
     {
       "name": "NIBRSCategory",
-      "type": "string"
+      "type": "string",
+      "description": "FBI NIBRS offense category name corresponding to the NIBRS code (e.g. 'Motor Vehicle Theft', 'Aggravated Assault')."
     },
     {
       "name": "SRS_UCR",
-      "type": "string"
+      "type": "string",
+      "description": "Legacy FBI Summary Reporting System (SRS/UCR) Part I offense class for the offense: 01 Criminal Homicide, 02 Rape, 03 Robbery, 04 Aggravated Assault, 05 Burglary, 06 Larceny-Theft, 07 Motor Vehicle Theft, 08 Arson (null for non-Part-I offenses)."
     },
     {
       "name": "CrimeAgainst",
-      "type": "string"
+      "type": "string",
+      "description": "NIBRS 'Crimes Against' classification of the offense: Person, Property, or Society (FBI NIBRS groups every offense this way); 'Unspecified' appears for some records."
     },
     {
       "name": "FelMisdCit",
-      "type": "string"
+      "type": "string",
+      "description": "Charge-severity flag: F felony, M misdemeanor, with C and I also present (per the column name 'Fel/Misd/Cit' C is presumably citation and I infraction; SLMPD publishes no decode)."
     },
     {
       "name": "IncidentTopSRS_UCR",
-      "type": "string"
+      "type": "string",
+      "description": "SRS/UCR class of the most serious offense in the incident (the SRS hierarchy rule reports only the highest offense; inferred from the field name and the SRS hierarchy convention)."
     },
     {
       "name": "IncidentLocation",
-      "type": "string"
+      "type": "string",
+      "description": "Street address or block-level location of the incident."
     },
     {
       "name": "IntersectionOtherLoc",
-      "type": "string"
+      "type": "string",
+      "description": "Intersection or other non-address location description for the incident."
     },
     {
       "name": "District",
-      "type": "string"
+      "type": "string",
+      "description": "SLMPD police district number where the incident occurred."
     },
     {
       "name": "Neighborhood",
-      "type": "string"
+      "type": "string",
+      "description": "City neighborhood name of the incident location; NbhdNum is the corresponding neighborhood number (1-79 per the city 'Neighborhood' vocabulary)."
     },
     {
       "name": "NbhdNum",
@@ -122,27 +136,33 @@
     },
     {
       "name": "IncidentSupplemented",
-      "type": "string"
+      "type": "string",
+      "description": "Yes/No \u2014 whether the incident record has been supplemented (updated) since the original report."
     },
     {
       "name": "LastSuppDate",
-      "type": "string"
+      "type": "string",
+      "description": "Date of the most recent supplement to the incident record."
     },
     {
       "name": "VictimNum",
-      "type": "string"
+      "type": "string",
+      "description": "Victim record identifier assigned by SLMPD (an ID shared by rows describing the same victim, not a count of victims \u2014 verified against the data)."
     },
     {
       "name": "FirearmUsed",
-      "type": "string"
+      "type": "string",
+      "description": "Whether a firearm was used in the offense."
     },
     {
       "name": "IncidentNature",
-      "type": "string"
+      "type": "string",
+      "description": "Nature-of-incident text as recorded by SLMPD."
     },
     {
       "name": "keep",
-      "type": "bool"
+      "type": "bool",
+      "description": "Flag added by this mirror's pipeline: true when the record had valid coordinates falling inside the city boundary (geometry is null when false)."
     },
     {
       "name": "geometry",

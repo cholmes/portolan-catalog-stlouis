@@ -189,7 +189,8 @@
     },
     {
       "name": "AsrLandUse1",
-      "type": "int32"
+      "type": "int32",
+      "description": "Assessor land-use code (city 'Assessor Land Use' vocabulary; see parcels.AsrLandUse1)."
     },
     {
       "name": "AsrLanduse2",
@@ -501,7 +502,8 @@
     },
     {
       "name": "HANDLE",
-      "type": "string"
+      "type": "string",
+      "description": "Citywide parcel handle (join key to the parcels collections)."
     },
     {
       "name": "OWNEROCC",
@@ -549,15 +551,18 @@
     },
     {
       "name": "IsAbatedProperty",
-      "type": "int32"
+      "type": "int32",
+      "description": "Flag that the parcel has an active tax abatement (this collection shares the full assessor parcel schema \u2014 see the parcels collection for the other columns)."
     },
     {
       "name": "AbatementStartYear",
-      "type": "int32"
+      "type": "int32",
+      "description": "First tax year of the abatement period."
     },
     {
       "name": "AbatementEndYear",
-      "type": "int32"
+      "type": "int32",
+      "description": "Last tax year of the abatement period."
     },
     {
       "name": "SpecBusDist3",

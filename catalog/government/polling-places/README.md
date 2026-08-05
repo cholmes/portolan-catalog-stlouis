@@ -18,18 +18,18 @@ Polling Centers Mirrored from [the city's open data portal](https://stlcity.maps
 | Column | Type | Description |
 |--------|------|-------------|
 | OBJECTID | int64 |  |
-| ParcelId | string |  |
-| Wait_Time__Minutes_ | int16 |  |
+| ParcelId | string | Parcel ID of the polling location (joinable to the parcels collections); handle is the parcel handle. |
+| Wait_Time__Minutes_ | int16 | Reported wait time in minutes. |
 | Phone | string |  |
 | Operational_Hours | string |  |
-| Early_Voting_Available | string |  |
+| Early_Voting_Available | string | Whether early voting is available at the site; noExcuseVoting and cityWideVoting flag no-excuse absentee and any-voter citywide voting sites. |
 | pollingPlaceID | int32 |  |
-| pollingPlace | string |  |
+| pollingPlace | string | Name of the polling place; pollingPlaceAddress and pollingPlaceZipCode locate it and pollingPlaceID identifies it. |
 | pollingPlaceAddress | string |  |
 | pollingPlaceZipCode | string |  |
 | cityWideVoting | int16 |  |
 | noExcuseVoting | int16 |  |
-| disabledentry | string |  |
+| disabledentry | string | Accessible-entry flag for the site; entrydetails carries entry directions. |
 | entrydetails | string |  |
 | handle | string |  |
 | status | int16 |  |

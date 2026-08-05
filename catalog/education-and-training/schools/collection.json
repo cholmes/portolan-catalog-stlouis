@@ -343,8 +343,8 @@
       "type": "application/vnd.mapbox.style+json",
       "title": "City schools",
       "description": "The 133 school locations, labeled.",
-      "file:size": 1259,
-      "file:checksum": "1220326a19e6e9925879e7a56d282452f4b6a2f1addf60a505b3e6a602d7f463d468",
+      "file:size": 1340,
+      "file:checksum": "1220b1c57489df659fdcc30e626689ecbc975aeb34f70a1f77926767c2597235a71a",
       "roles": [
         "default",
         "style"

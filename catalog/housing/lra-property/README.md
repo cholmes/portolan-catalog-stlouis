@@ -17,7 +17,7 @@ Land Reutilization Authority data and search. Mirrored from [the city's open dat
 
 | Column | Type | Description |
 |--------|------|-------------|
-| PropNS_Status | string |  |
+| PropNS_Status | string | Status of the property in the Proposition NS program (the voter-approved Neighborhood Stabilization bond program that stabilizes LRA-owned vacant buildings). |
 | Case_Status | string |  |
 | Address | string |  |
 | AddrNum | string |  |
@@ -29,12 +29,12 @@ Land Reutilization Authority data and search. Mirrored from [the city's open dat
 | StName | string |  |
 | StType | string |  |
 | StSufDir | string |  |
-| Handle | string |  |
+| Handle | string | Citywide parcel handle (join key to the parcels collections); CityBlock/Parcel/ParcelId are the parcel key fields. |
 | CityBlock | double |  |
 | Parcel | int32 |  |
 | ParcelId | string |  |
 | GUID | string |  |
-| LRA | string |  |
+| LRA | string | Flag/identifier that the property is in the Land Reutilization Authority (LRA) inventory — the city land bank's holdings. |
 | WARD | int16 |  |
 | NEIGHBORHOOD_NUM | int16 |  |
 | ZipCode | double |  |
@@ -45,17 +45,17 @@ Land Reutilization Authority data and search. Mirrored from [the city's open dat
 | Irregular_Lot | string |  |
 | Description | string |  |
 | Acres | double |  |
-| Status | string |  |
-| Usage | string |  |
-| Demolition | string |  |
+| Status | string | Inventory status of the LRA property. |
+| Usage | string | Current/intended usage classification of the property in the LRA inventory. |
+| Demolition | string | Demolition status/flag for the structure. |
 | Environmental | string |  |
 | Value | int32 |  |
 | Value_Estimated | int32 |  |
 | Class | string |  |
-| AppraisedVal | string |  |
-| LRA_PRICING | double |  |
+| AppraisedVal | string | Appraised value of the property; AssessorsTotal is the assessor's total assessed value. |
+| LRA_PRICING | double | LRA pricing category or price for the property. |
 | Featured | string |  |
-| ACQUISITION_DATE | timestamp[ms] |  |
+| ACQUISITION_DATE | timestamp[ms] | Date the LRA acquired the property. |
 | AssessorsTotal | double |  |
 | Frontage | double |  |
 | NbrOfUnits | int16 |  |
@@ -66,18 +66,18 @@ Land Reutilization Authority data and search. Mirrored from [the city's open dat
 | Notes | string |  |
 | PublicNotice | string |  |
 | BuildingCount | int16 |  |
-| GreenLienStatus | string |  |
+| GreenLienStatus | string | Status of any 'green lien' (vacant-lot greening assessment) on the property (name-based). |
 | BuriedMaterials | string |  |
 | PropertyType | string |  |
-| SideLotEligible | string |  |
+| SideLotEligible | string | Whether the lot qualifies for the LRA side-lot program (sale of vacant lots to adjacent owners). |
 | Stories | float |  |
 | CDBG_Source | string |  |
 | CDBG_Amount | int32 |  |
-| SALEPRICE | double |  |
+| SALEPRICE | double | Sale price when the property was sold out of the inventory; CLOSING_COMPLETED marks completed closings. |
 | CLOSING_COMPLETED | timestamp[ms] |  |
 | CASE_NUMBER | string |  |
 | Maintenance | string |  |
-| PCA_Date | timestamp[ms] |  |
+| PCA_Date | timestamp[ms] | Date of the property condition assessment (name-based). |
 | OBJECTID | int64 |  |
 | Shape__Area | double |  |
 | Shape__Length | double |  |
@@ -90,7 +90,7 @@ Land Reutilization Authority data and search. Mirrored from [the city's open dat
 |------|------|----------|
 | ./lra-property.parquet | 1.9 MB | 1220ca4cfc3e... |
 | ./lra-property.pmtiles | 1.8 MB | 122042d4e49c... |
-| ./styles/city-renderer.json | 1.3 KB | 12209a91d028... |
+| ./styles/city-renderer.json | 1.2 KB | 1220c00f954b... |
 | ./styles/default.json | 1.7 KB | 12207f98eac2... |
 | ./styles/style-solid.json | 506 B | 122033c6a1f3... |
 | ./styles/style-source.json | 1.6 KB | 12201a65e0c5... |

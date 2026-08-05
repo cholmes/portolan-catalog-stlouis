@@ -2,7 +2,7 @@
   "type": "Collection",
   "id": "business-and-industry/special-business-districts",
   "stac_version": "1.1.0",
-  "description": "Special business districts (SBDs) within the City of Saint Louis. SBDs are established by Missouri statute. More Info: http://revisor.mo.gov/main/OneChapter.aspx?chapter=67",
+  "description": "Special business districts (SBDs) within the City of Saint Louis. SBDs are established by Missouri statute. More Info: [http://revisor.mo.gov/main/OneChapter.aspx?chapter=67](http://revisor.mo.gov/main/OneChapter.aspx?chapter=67)",
   "links": [
     {
       "rel": "root",
@@ -290,8 +290,8 @@
       "type": "application/vnd.mapbox.style+json",
       "title": "Labeled SBDs",
       "description": "Districts with names.",
-      "file:size": 1008,
-      "file:checksum": "1220cd21824e66e2b105c14bb5a36a5a596ddf989b21f9efe1c943820e4422b502f8",
+      "file:size": 1089,
+      "file:checksum": "1220cdcc43d159332ac778edbbf99453ce4e8675b6be48eaf1d4ecda273f9e349ad6",
       "roles": [
         "style"
       ]
@@ -299,8 +299,8 @@
     "documentation": {
       "href": "./README.md",
       "type": "text/markdown",
-      "file:size": 3370,
-      "file:checksum": "12203cc35208303476da03fab9da102a6442445e04749468819daadf5e2bc41f9713",
+      "file:size": 3427,
+      "file:checksum": "122036c0e2e9f2c8f55c3c20569e89e876b270ccfb60235ff037c0e98a6fd9dd613c",
       "roles": [
         "documentation"
       ]

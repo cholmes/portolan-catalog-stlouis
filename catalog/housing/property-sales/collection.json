@@ -35,7 +35,8 @@
   "table:columns": [
     {
       "name": "CityBlock",
-      "type": "double"
+      "type": "double",
+      "description": "City block component of the sold parcel's key; Parcel and OwnerCode complete the key (see parcels)."
     },
     {
       "name": "Parcel",
@@ -47,15 +48,18 @@
     },
     {
       "name": "SaleNum",
-      "type": "int64"
+      "type": "int64",
+      "description": "Sequential sale number for the parcel."
     },
     {
       "name": "AsrParcelId",
-      "type": "string"
+      "type": "string",
+      "description": "Assessor's parcel ID (2021 numbering schema)."
     },
     {
       "name": "SaleType",
-      "type": "int64"
+      "type": "int64",
+      "description": "Coded sale type from the city 'Sale Type' vocabulary, e.g. 11 Investor, 25 House/Vacant Lot, 36/37 Condo with/without parking, 42 Government, 46 Gift, 47-49 Exempt, 70 Foreclosure, 80 Foreclosure Sale, 61 Inter-Corporate; SaleTypeDescr carries the decoded description and SaleTypeOther any free-text type."
     },
     {
       "name": "SaleTypeOther",
@@ -63,15 +67,18 @@
     },
     {
       "name": "SaleDate",
-      "type": "string"
+      "type": "string",
+      "description": "Date of the sale; LRMSSaleDate is the sale date as carried in the LRMS land-records system."
     },
     {
       "name": "SalePrice",
-      "type": "double"
+      "type": "double",
+      "description": "Sale price in dollars."
     },
     {
       "name": "NbrOfParcels",
-      "type": "int64"
+      "type": "int64",
+      "description": "Number of parcels included in the transaction; SalePricePerParcel is SalePrice divided across them."
     },
     {
       "name": "SalePricePerParcel",
@@ -79,7 +86,8 @@
     },
     {
       "name": "SaleDocNum",
-      "type": "int64"
+      "type": "int64",
+      "description": "Recorder of Deeds document number for the sale."
     },
     {
       "name": "LRMSSaleDate",

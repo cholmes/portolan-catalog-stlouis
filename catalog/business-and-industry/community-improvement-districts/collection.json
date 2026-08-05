@@ -2,7 +2,7 @@
   "type": "Collection",
   "id": "business-and-industry/community-improvement-districts",
   "stac_version": "1.1.0",
-  "description": "Community improvement districts (CIDs) within the City of Saint Louis. CIDs are established by the section of Missouri statute known as the \"Community Improvement District Act\". More info: http://revisor.mo.gov/main/OneSection.aspx?section=67.1401&bid=3019&hl=",
+  "description": "Community improvement districts (CIDs) within the City of Saint Louis. CIDs are established by the section of Missouri statute known as the \"Community Improvement District Act\". More info: [http://revisor.mo.gov/main/OneSection.aspx?section=67.1401&bid=3019&hl=](http://revisor.mo.gov/main/OneSection.aspx?section=67.1401&bid=3019&hl=)",
   "links": [
     {
       "rel": "root",
@@ -285,8 +285,8 @@
       "type": "application/vnd.mapbox.style+json",
       "title": "Labeled CIDs",
       "description": "Districts with names.",
-      "file:size": 1023,
-      "file:checksum": "12201f3a2c2df238eac80146b3c9cc3db9d192384d3b0d8d79c603835a92080b2e2a",
+      "file:size": 1104,
+      "file:checksum": "12200c5e13a654aac49afe94c23292e4466d2cbf424d880c42561220b04adb5a4aa1",
       "roles": [
         "style"
       ]

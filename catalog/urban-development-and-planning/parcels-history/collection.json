@@ -66,7 +66,8 @@
     },
     {
       "name": "HANDLE",
-      "type": "string"
+      "type": "string",
+      "description": "Zero-padded handle identifier for parcels (official portal field definition for this dataset) \u2014 the join key across city parcel data."
     },
     {
       "name": "COUNT_",
@@ -86,15 +87,18 @@
     },
     {
       "name": "UPDATED",
-      "type": "date32[day]"
+      "type": "date32[day]",
+      "description": "Date the source snapshot record was updated (portal label 'UPDATED')."
     },
     {
       "name": "SITEADDR",
-      "type": "string"
+      "type": "string",
+      "description": "Site address of the parcel (portal label)."
     },
     {
       "name": "OWNERNAME",
-      "type": "string"
+      "type": "string",
+      "description": "Owner name of record (OWNERNAME2 is the overflow line)."
     },
     {
       "name": "OWNERNAME2",
@@ -102,7 +106,8 @@
     },
     {
       "name": "OWNERADDR",
-      "type": "string"
+      "type": "string",
+      "description": "Owner's house number and street name mailing address (portal field definition); OWNERCITY/OWNERSTATE/OWNERZIP/OWNERCNTRY are the rest of the registered mailing address."
     },
     {
       "name": "OWNERCITY",
@@ -122,15 +127,18 @@
     },
     {
       "name": "OWNERGROUP",
-      "type": "string"
+      "type": "string",
+      "description": "Owner grouping assigned in the source extract (portal label only; no decode published)."
     },
     {
       "name": "NUMUNITS",
-      "type": "int64"
+      "type": "int64",
+      "description": "Number of units on the parcel (portal label)."
     },
     {
       "name": "ZONING1",
-      "type": "string"
+      "type": "string",
+      "description": "Zoning district code decoded by the city's 'Zoning Code' vocabulary (ZONING2-3 are additional districts where the parcel spans zones)."
     },
     {
       "name": "ZONING2",
@@ -142,23 +150,28 @@
     },
     {
       "name": "VACANTLAND",
-      "type": "string"
+      "type": "string",
+      "description": "Vacant-land flag, 'Y' or 'N' (portal field definition)."
     },
     {
       "name": "ASMTLAND",
-      "type": "decimal128(18, 11)"
+      "type": "decimal128(18, 11)",
+      "description": "Assessment (assessed value) of land in dollars (portal label 'Assessment Land')."
     },
     {
       "name": "ASMTIMPROV",
-      "type": "decimal128(18, 11)"
+      "type": "decimal128(18, 11)",
+      "description": "Assessment of improvements in dollars (portal label 'Assessment Improvements')."
     },
     {
       "name": "ASMTTOTAL",
-      "type": "decimal128(18, 11)"
+      "type": "decimal128(18, 11)",
+      "description": "Total assessed value in dollars (portal label 'Assessment Total')."
     },
     {
       "name": "LANDUSE1",
-      "type": "int32"
+      "type": "int32",
+      "description": "Land-use code decoded by the city's official 'Assessor Land Use' vocabulary, e.g. 1110 Single Family Units, 1010 Vacant Residential Lot (LANDUSE2-4 are additional codes; the portal maps these columns to that vocabulary)."
     },
     {
       "name": "LANDUSE2",
@@ -174,7 +187,8 @@
     },
     {
       "name": "ASRUSE1",
-      "type": "int32"
+      "type": "int32",
+      "description": "Assessor use code (portal label 'Assessor Use Code'); the portal publishes no decode vocabulary for this column (ASRUSE2-4 likewise)."
     },
     {
       "name": "ASRUSE2",
@@ -190,7 +204,8 @@
     },
     {
       "name": "ASRCLASS1",
-      "type": "int32"
+      "type": "int32",
+      "description": "Assessor class code \u2014 owner-type classification, decoded by the city's 'Assessor Class Code' vocabulary (ASRCLASS2-4 are additional codes)."
     },
     {
       "name": "ASRCLASS2",
@@ -206,7 +221,8 @@
     },
     {
       "name": "LEGAL1",
-      "type": "string"
+      "type": "string",
+      "description": "First line of the legal description (LEGAL2-5 continue it; portal labels 'Legal Description')."
     },
     {
       "name": "LEGAL2",
@@ -226,19 +242,23 @@
     },
     {
       "name": "NUMBLDGS",
-      "type": "int32"
+      "type": "int32",
+      "description": "Number of buildings on the parcel (portal label)."
     },
     {
       "name": "LANDAREA",
-      "type": "decimal128(30, 11)"
+      "type": "decimal128(30, 11)",
+      "description": "Lot area in square feet (portal label 'Land Area'; units per the current parcels extract where values match polygon areas in feet)."
     },
     {
       "name": "FRONTAGE",
-      "type": "decimal128(18, 11)"
+      "type": "decimal128(18, 11)",
+      "description": "Street frontage in feet (portal label 'Frontage')."
     },
     {
       "name": "DAILYDATE",
-      "type": "date32[day]"
+      "type": "date32[day]",
+      "description": "Recorder of Deeds daily-record date of the latest recorded instrument (portal label 'Daily Date'); DAILYNUM, BOOKNUM and BOOKPAGE are the daily number and deed book/page references."
     },
     {
       "name": "DAILYNUM",
@@ -254,7 +274,8 @@
     },
     {
       "name": "BDG1YEAR",
-      "type": "int32"
+      "type": "int32",
+      "description": "Year built of building 1 (portal label 'Building 1 Year'); BDG1AREA is its area and BDG1EXWALL its exterior-wall code."
     },
     {
       "name": "BDG1AREA",
@@ -274,7 +295,8 @@
     },
     {
       "name": "CITYBLOCK",
-      "type": "decimal128(18, 11)"
+      "type": "decimal128(18, 11)",
+      "description": "City block number of the parcel key; PARCEL is the parcel number within the block."
     },
     {
       "name": "PARCEL",
@@ -330,7 +352,8 @@
     },
     {
       "name": "NBRHD",
-      "type": "int32"
+      "type": "int32",
+      "description": "City neighborhood number (city 'Neighborhood' vocabulary)."
     },
     {
       "name": "CENSBLOCK",
@@ -354,7 +377,8 @@
     },
     {
       "name": "PARCEL10",
-      "type": "string"
+      "type": "string",
+      "description": "Ten-digit parcel identifier (CityBlock+Parcel+OwnerCode form; see the legacy BBBBbbPPPO schema); PARCEL9 is the nine-digit CityBlock+Parcel root."
     },
     {
       "name": "geometry",
@@ -366,19 +390,23 @@
     },
     {
       "name": "era",
-      "type": "string"
+      "type": "string",
+      "description": "Snapshot vintage added by this mirror: which yearly source extract (1997-2015 single years, plus a combined 2016-2020 file) the row came from."
     },
     {
       "name": "OWNEROCC",
-      "type": "string"
+      "type": "string",
+      "description": "Owner-occupancy dwelling-type code: 1 Single Family, 2 Two-Family, 4 Three-or-Four Family, 5 Five-plus Family, C Condo, X Other (city PrclCode.mdb CdOwnerOccCode)."
     },
     {
       "name": "VACBLDGYR",
-      "type": "int32"
+      "type": "int32",
+      "description": "Year the property entered the vacant building registry (name-based)."
     },
     {
       "name": "ASRNBRHD",
-      "type": "int32"
+      "type": "int32",
+      "description": "Assessor's assessment-neighborhood number."
     },
     {
       "name": "PRECINCT02",

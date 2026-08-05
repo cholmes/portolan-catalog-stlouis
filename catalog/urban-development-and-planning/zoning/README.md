@@ -19,8 +19,8 @@ Strategic land use (SLUP),parcel, and zoning data Mirrored from [the city's open
 |--------|------|-------------|
 | OBJECTID | int64 |  |
 | Shape | binary |  |
-| HANDLE | string |  |
-| LAYER | string |  |
+| HANDLE | string | Citywide parcel handle of the parcel the zoning polygon corresponds to (join key to the parcels collections). |
+| LAYER | string | Zoning district letter, per the city's ArcGIS renderer: A Single-Family Residential Dwelling District, B Two-Family Dwelling District, C/D/E Multiple-Family Dwelling Districts, F Neighborhood Commercial District, G Local Commercial and Office District, H Area Commercial District, I Central Business District, J Industrial District, K Unrestricted District, L Jefferson Memorial District. |
 | Shape.STArea() | double |  |
 | Shape.STLength() | double |  |
 | geometry | binary |  |

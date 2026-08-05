@@ -18,6 +18,16 @@
         "fill-opacity": 0.0,
         "fill-outline-color": "#73dfff"
       }
+    },
+    {
+      "id": "city-boundary-outline",
+      "type": "line",
+      "source": "data",
+      "source-layer": "city-boundary",
+      "paint": {
+        "line-color": "#73dfff",
+        "line-width": 5.33
+      }
     }
   ],
   "metadata": {

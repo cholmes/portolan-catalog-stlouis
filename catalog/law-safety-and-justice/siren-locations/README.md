@@ -19,23 +19,23 @@ Public emergency siren locations. While these sirens are generally thought of as
 |--------|------|-------------|
 | OBJECTID | int64 |  |
 | Shape | binary |  |
-| Siren | int16 |  |
-| SIREN_LOCATION_ADDRESS | string |  |
+| Siren | int16 | Identifier of the outdoor warning siren (the portal's siren spreadsheet labels this 'Siren Number'). |
+| SIREN_LOCATION_ADDRESS | string | Address/location of the siren (portal label 'Siren Location/Address'). |
 | Property_Comments | string |  |
 | PROPERTY_OWNER | string |  |
-| FACILITY | string |  |
-| Solar_Panels_Condition | string |  |
+| FACILITY | string | Facility the siren is located at (name-based; this extract is a field-inspection layer richer than the portal spreadsheet). |
+| Solar_Panels_Condition | string | Condition of the siren's solar panels; Batteries_Condition and SolarandBatteryNotes are the companion battery fields (name-based inspection fields). |
 | Batteries_Condition | string |  |
 | SolarandBatteryNotes | string |  |
-| TYPE | string |  |
-| Date_Last_Tested | timestamp[us] |  |
+| TYPE | string | Siren type/model (name-based). |
+| Date_Last_Tested | timestamp[us] | Date the siren was last tested; 'Working' records whether it worked (name-based inspection fields). |
 | Working | string |  |
 | Numberofcells | double |  |
 | Avg_Ambient | double |  |
 | Anyunusualsoundeventsduringtest | string |  |
 | Birthmarkvisible | string |  |
 | PoleMount | string |  |
-| PoleHeight | double |  |
+| PoleHeight | double | Height of the siren pole; PoleMount, PoleLean, Polemountedin and PoleConditionNotes describe the pole installation and condition (name-based inspection fields). |
 | Solar | string |  |
 | Any_nearby_encroachments_or_cle | string |  |
 | MinAmbient | double |  |

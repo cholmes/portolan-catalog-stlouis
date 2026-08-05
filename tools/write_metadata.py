@@ -12,7 +12,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from sources import SOURCES, coll_rel
+from sources import SOURCES, coll_rel, linkify
 
 ROOT = Path(__file__).resolve().parent.parent
 CATALOG = ROOT / "catalog"
@@ -121,7 +121,7 @@ def collection_yaml(coll_id: str) -> str:
     dept = src["department"]
     kw = ["st-louis", "missouri", "open-data"] + coll_id.split("-")
     from sources import coll_rel
-    linked = (f"{desc} Mirrored from [the city's open data portal]"
+    linked = (f"{linkify(desc)} Mirrored from [the city's open data portal]"
               f"({src['portal_page']}); explore it in the "
               f"[St. Louis data browser]({BROWSER}/#/{coll_rel(coll_id)}/collection.json).")
     lines = [

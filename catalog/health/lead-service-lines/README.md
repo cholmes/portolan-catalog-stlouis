@@ -17,15 +17,15 @@ Lead Service Line Inventory Feature Layer Service Mirrored from [the city's open
 
 | Column | Type | Description |
 |--------|------|-------------|
-| address | string |  |
-| utilmaterial | int16 |  |
-| utilsource | int16 |  |
-| utilstatus | int16 |  |
-| custmaterial | int16 |  |
-| custsource | int16 |  |
-| custstatus | int16 |  |
-| OBJECTID | int64 |  |
-| GlobalID | string |  |
+| address | string | Street address of the water service connection (layer field alias 'Address'). |
+| utilmaterial | int16 | Pipe material of the utility-owned (public right-of-way) side of the service line, coded: 0 Unknown, 81 Asbestos Cement, 83 Cast Iron, 84 Copper, 88 Ductile Iron, 89 Galvanized Pipe, 93 Polyethylene, 94 PVC, 109 Lead, 110 Brass (ArcGIS coded-value domain; alias 'Right of Way Material'). |
+| utilsource | int16 | How the right-of-way side's material was determined: 1 Existing Records, 2 Test Results, 3 Visual Confirmation, 5 Assumed (ArcGIS coded-value domain 'Utility_Source') — the material-determination basis EPA's Lead and Copper Rule Revisions service-line inventories require. |
+| utilstatus | int16 | Lead classification of the right-of-way side: 0 Unknown, 1 Lead, 2 Non-Lead, 3 Galvanized Requiring Replacement (ArcGIS domain; these are the four service-line categories of the EPA LCRR service line inventory). |
+| custmaterial | int16 | Pipe material of the customer-owned (building) side of the service line, same material codes as utilmaterial (ArcGIS domain 'Water_Service_Material'; alias 'Building Side Material'). |
+| custsource | int16 | How the building side's material was determined: 1 Existing Records, 2 Test Results, 3 Visual Confirmation, 4 Notified by Customer, 5 Assumed (ArcGIS domain 'Customer_Source'). |
+| custstatus | int16 | Lead classification of the building side: 0 Unknown, 1 Lead, 2 Non-Lead, 3 Galvanized Requiring Replacement (ArcGIS domain 'Status'; EPA LCRR inventory categories). |
+| OBJECTID | int64 | ArcGIS feature object ID. |
+| GlobalID | string | ArcGIS global unique identifier for the feature. |
 | geometry | binary |  |
 | bbox | struct<xmin: double, ymin: double, xmax: double, ymax: double> |  |
 
@@ -35,7 +35,7 @@ Lead Service Line Inventory Feature Layer Service Mirrored from [the city's open
 |------|------|----------|
 | ./lead-service-lines.parquet | 8.5 MB | 12205a267c78... |
 | ./lead-service-lines.pmtiles | 2.2 MB | 12208189bee6... |
-| ./styles/city-renderer.json | 2.2 KB | 12203812f50e... |
+| ./styles/city-renderer.json | 551 B | 1220f6a2278d... |
 | ./styles/default.json | 1.8 KB | 122090dd0be2... |
 | ./styles/style-customer-side.json | 1.7 KB | 1220e2ad8bc9... |
 | ./styles/style-material.json | 2.2 KB | 1220b6416e1b... |

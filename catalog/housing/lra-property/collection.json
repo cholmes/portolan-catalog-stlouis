@@ -67,7 +67,8 @@
   "table:columns": [
     {
       "name": "PropNS_Status",
-      "type": "string"
+      "type": "string",
+      "description": "Status of the property in the Proposition NS program (the voter-approved Neighborhood Stabilization bond program that stabilizes LRA-owned vacant buildings)."
     },
     {
       "name": "Case_Status",
@@ -115,7 +116,8 @@
     },
     {
       "name": "Handle",
-      "type": "string"
+      "type": "string",
+      "description": "Citywide parcel handle (join key to the parcels collections); CityBlock/Parcel/ParcelId are the parcel key fields."
     },
     {
       "name": "CityBlock",
@@ -135,7 +137,8 @@
     },
     {
       "name": "LRA",
-      "type": "string"
+      "type": "string",
+      "description": "Flag/identifier that the property is in the Land Reutilization Authority (LRA) inventory \u2014 the city land bank's holdings."
     },
     {
       "name": "WARD",
@@ -179,15 +182,18 @@
     },
     {
       "name": "Status",
-      "type": "string"
+      "type": "string",
+      "description": "Inventory status of the LRA property."
     },
     {
       "name": "Usage",
-      "type": "string"
+      "type": "string",
+      "description": "Current/intended usage classification of the property in the LRA inventory."
     },
     {
       "name": "Demolition",
-      "type": "string"
+      "type": "string",
+      "description": "Demolition status/flag for the structure."
     },
     {
       "name": "Environmental",
@@ -207,11 +213,13 @@
     },
     {
       "name": "AppraisedVal",
-      "type": "string"
+      "type": "string",
+      "description": "Appraised value of the property; AssessorsTotal is the assessor's total assessed value."
     },
     {
       "name": "LRA_PRICING",
-      "type": "double"
+      "type": "double",
+      "description": "LRA pricing category or price for the property."
     },
     {
       "name": "Featured",
@@ -219,7 +227,8 @@
     },
     {
       "name": "ACQUISITION_DATE",
-      "type": "timestamp[ms]"
+      "type": "timestamp[ms]",
+      "description": "Date the LRA acquired the property."
     },
     {
       "name": "AssessorsTotal",
@@ -263,7 +272,8 @@
     },
     {
       "name": "GreenLienStatus",
-      "type": "string"
+      "type": "string",
+      "description": "Status of any 'green lien' (vacant-lot greening assessment) on the property (name-based)."
     },
     {
       "name": "BuriedMaterials",
@@ -275,7 +285,8 @@
     },
     {
       "name": "SideLotEligible",
-      "type": "string"
+      "type": "string",
+      "description": "Whether the lot qualifies for the LRA side-lot program (sale of vacant lots to adjacent owners)."
     },
     {
       "name": "Stories",
@@ -291,7 +302,8 @@
     },
     {
       "name": "SALEPRICE",
-      "type": "double"
+      "type": "double",
+      "description": "Sale price when the property was sold out of the inventory; CLOSING_COMPLETED marks completed closings."
     },
     {
       "name": "CLOSING_COMPLETED",
@@ -307,7 +319,8 @@
     },
     {
       "name": "PCA_Date",
-      "type": "timestamp[ms]"
+      "type": "timestamp[ms]",
+      "description": "Date of the property condition assessment (name-based)."
     },
     {
       "name": "OBJECTID",
@@ -436,8 +449,8 @@
       "type": "application/vnd.mapbox.style+json",
       "title": "City renderer",
       "description": "The city's own symbology, extracted from the source ArcGIS renderer.",
-      "file:size": 1285,
-      "file:checksum": "12209a91d028bd9221c0e5309198a090ad51a551c57dafbc337268897bdb94fa261e",
+      "file:size": 1280,
+      "file:checksum": "1220c00f954b07afad7a3868256fe170c83b2b8c422db0ce3b208eacf154e83cb418",
       "roles": [
         "style"
       ]

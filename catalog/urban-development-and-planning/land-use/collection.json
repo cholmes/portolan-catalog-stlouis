@@ -76,11 +76,13 @@
     },
     {
       "name": "Status",
-      "type": "string"
+      "type": "string",
+      "description": "Status of the plan geography (all rows are 'Active' via the Boundary field in the current extract)."
     },
     {
       "name": "SLUP_LATES",
-      "type": "string"
+      "type": "string",
+      "description": "Strategic Land Use Plan category code (latest designation): NPA Neighborhood Preservation Area, NDA Neighborhood Development Area, NCA Neighborhood Commercial Area, RCA Regional Commercial Area, BIPA Business/Industrial Preservation Area, BIDA Business/Industrial Development Area, IPDA Institutional Preservation and Development Area, ROSPDA Recreational/Open Space Preservation and Development Area, SMUA Specialty Mixed Use Area, OA Opportunity Area (category names from the city's adopted 2005 Strategic Land Use Plan document)."
     },
     {
       "name": "SUM_COUNTE",
@@ -92,7 +94,8 @@
     },
     {
       "name": "Boundary",
-      "type": "string"
+      "type": "string",
+      "description": "Whether the geography is the active plan boundary ('Active' in current data)."
     },
     {
       "name": "NOCATS",
@@ -100,23 +103,28 @@
     },
     {
       "name": "NAME",
-      "type": "string"
+      "type": "string",
+      "description": "Name of the SLUP amendment area the polygon belongs to, where applicable (e.g. '26 Midtown Corridor'); blank for unamended base-plan areas."
     },
     {
       "name": "PLANNER",
-      "type": "string"
+      "type": "string",
+      "description": "Planning staff member associated with the amendment record."
     },
     {
       "name": "UPDATED",
-      "type": "timestamp[us]"
+      "type": "timestamp[us]",
+      "description": "Date the record was last updated."
     },
     {
       "name": "COMMENTS",
-      "type": "string"
+      "type": "string",
+      "description": "Planner's free-text comments on the amendment/designation."
     },
     {
       "name": "PDA_RESOLU",
-      "type": "string"
+      "type": "string",
+      "description": "Planning agency resolution reference for the amendment that set this designation (PDA_RESOL_ is the truncated companion field; inferred from name)."
     },
     {
       "name": "PDA_RESOL_",
@@ -124,7 +132,8 @@
     },
     {
       "name": "APPROVED",
-      "type": "string"
+      "type": "string",
+      "description": "Approval date/flag for the amendment (name-based)."
     },
     {
       "name": "WIP_MTG_DA",
@@ -132,7 +141,8 @@
     },
     {
       "name": "GEOGRAPHY",
-      "type": "string"
+      "type": "string",
+      "description": "List of city block numbers / census identifiers the amendment covers (observed values are space-separated block numbers)."
     },
     {
       "name": "Shape_Leng",
@@ -144,7 +154,8 @@
     },
     {
       "name": "Acres",
-      "type": "double"
+      "type": "double",
+      "description": "Polygon area in acres."
     },
     {
       "name": "Shape__Area",

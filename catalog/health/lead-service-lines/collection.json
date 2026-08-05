@@ -68,39 +68,48 @@
   "table:columns": [
     {
       "name": "address",
-      "type": "string"
+      "type": "string",
+      "description": "Street address of the water service connection (layer field alias 'Address')."
     },
     {
       "name": "utilmaterial",
-      "type": "int16"
+      "type": "int16",
+      "description": "Pipe material of the utility-owned (public right-of-way) side of the service line, coded: 0 Unknown, 81 Asbestos Cement, 83 Cast Iron, 84 Copper, 88 Ductile Iron, 89 Galvanized Pipe, 93 Polyethylene, 94 PVC, 109 Lead, 110 Brass (ArcGIS coded-value domain; alias 'Right of Way Material')."
     },
     {
       "name": "utilsource",
-      "type": "int16"
+      "type": "int16",
+      "description": "How the right-of-way side's material was determined: 1 Existing Records, 2 Test Results, 3 Visual Confirmation, 5 Assumed (ArcGIS coded-value domain 'Utility_Source') \u2014 the material-determination basis EPA's Lead and Copper Rule Revisions service-line inventories require."
     },
     {
       "name": "utilstatus",
-      "type": "int16"
+      "type": "int16",
+      "description": "Lead classification of the right-of-way side: 0 Unknown, 1 Lead, 2 Non-Lead, 3 Galvanized Requiring Replacement (ArcGIS domain; these are the four service-line categories of the EPA LCRR service line inventory)."
     },
     {
       "name": "custmaterial",
-      "type": "int16"
+      "type": "int16",
+      "description": "Pipe material of the customer-owned (building) side of the service line, same material codes as utilmaterial (ArcGIS domain 'Water_Service_Material'; alias 'Building Side Material')."
     },
     {
       "name": "custsource",
-      "type": "int16"
+      "type": "int16",
+      "description": "How the building side's material was determined: 1 Existing Records, 2 Test Results, 3 Visual Confirmation, 4 Notified by Customer, 5 Assumed (ArcGIS domain 'Customer_Source')."
     },
     {
       "name": "custstatus",
-      "type": "int16"
+      "type": "int16",
+      "description": "Lead classification of the building side: 0 Unknown, 1 Lead, 2 Non-Lead, 3 Galvanized Requiring Replacement (ArcGIS domain 'Status'; EPA LCRR inventory categories)."
     },
     {
       "name": "OBJECTID",
-      "type": "int64"
+      "type": "int64",
+      "description": "ArcGIS feature object ID."
     },
     {
       "name": "GlobalID",
-      "type": "string"
+      "type": "string",
+      "description": "ArcGIS global unique identifier for the feature."
     },
     {
       "name": "geometry",
@@ -208,8 +217,8 @@
       "type": "application/vnd.mapbox.style+json",
       "title": "City renderer",
       "description": "The city's own symbology, extracted from the source ArcGIS renderer.",
-      "file:size": 2215,
-      "file:checksum": "12203812f50e585096bf3ee022c01d0178418e43b618a34d38cb3f83c4f61c22dac6",
+      "file:size": 551,
+      "file:checksum": "1220f6a2278d28174e18702a8e842cfdae4d54c345e4e0c3b3729027d1d698b51fc3",
       "roles": [
         "style"
       ]

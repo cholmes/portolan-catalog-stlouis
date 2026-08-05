@@ -72,123 +72,153 @@
     },
     {
       "name": "geoid",
-      "type": "string"
+      "type": "string",
+      "description": "Census 2020 block group code (AGOL layer documentation)."
     },
     {
       "name": "MVACluster",
-      "type": "string"
+      "type": "string",
+      "description": "Market cluster letter assigned to the block group by Reinvestment Fund's 2024 Market Value Analysis of St. Louis \u2014 clusters group block groups with similar housing-market conditions."
     },
     {
       "name": "MSP2123_CA",
-      "type": "int32"
+      "type": "int32",
+      "description": "Median sales price of residential home sales 2021-2023, excluding sales under $1,000, condo-adjusted (AGOL layer documentation)."
     },
     {
       "name": "MSPVar2123",
-      "type": "float"
+      "type": "float",
+      "description": "Variation of home values 2021-2023 (standard deviation divided by average value)."
     },
     {
       "name": "PHHOO",
-      "type": "float"
+      "type": "float",
+      "description": "Households that reported owning their home as a share of all households, ACS 2018-2022."
     },
     {
       "name": "CHHOO",
-      "type": "int32"
+      "type": "int32",
+      "description": "Count of households that reported owning their homes, ACS 2018-2022 (documented as 'CHOO' in the layer description)."
     },
     {
       "name": "CHH",
-      "type": "int32"
+      "type": "int32",
+      "description": "Count of all households, ACS 2018-2022 (documented as 'CHIH' in the layer description)."
     },
     {
       "name": "PPerm10k",
-      "type": "float"
+      "type": "float",
+      "description": "Share of residential parcels with renovation/addition permits June 2022-June 2024 whose total permit value exceeded $10,000 (excluding demolitions)."
     },
     {
       "name": "CPerm10k",
-      "type": "int32"
+      "type": "int32",
+      "description": "Count of residential parcels with such >$10,000 renovation/addition permits, June 2022-June 2024."
     },
     {
       "name": "CResPcl",
-      "type": "int32"
+      "type": "int32",
+      "description": "Count of residential parcels in the block group (denominator for the parcel-share indicators; AGOL description text is garbled for this field)."
     },
     {
       "name": "PDSale2123",
-      "type": "float"
+      "type": "float",
+      "description": "Distressed residential sales (foreclosures, sheriff sales, tax sales, bank-sold) as a share of residential transactions 2021-2023."
     },
     {
       "name": "CDSale2123",
-      "type": "int32"
+      "type": "int32",
+      "description": "Count of distressed residential home sales 2021-2023."
     },
     {
       "name": "CSales2123",
-      "type": "int32"
+      "type": "int32",
+      "description": "Count of residential home sales 2021-2023."
     },
     {
       "name": "PVacBuild",
-      "type": "float"
+      "type": "float",
+      "description": "Vacant housing units as a share of all housing units, 2024."
     },
     {
       "name": "CVacBuild",
-      "type": "int32"
+      "type": "int32",
+      "description": "Count of vacant housing units."
     },
     {
       "name": "CHU_All",
-      "type": "int32"
+      "type": "int32",
+      "description": "Count of all housing units."
     },
     {
       "name": "PVResLand",
-      "type": "float"
+      "type": "float",
+      "description": "Vacant residential land as a share of all residential land, 2024."
     },
     {
       "name": "VacLotAcre",
-      "type": "double"
+      "type": "double",
+      "description": "Vacant residential land area in acres."
     },
     {
       "name": "PclResAcre",
-      "type": "double"
+      "type": "double",
+      "description": "Residential land area in acres."
     },
     {
       "name": "PResArea",
-      "type": "float"
+      "type": "float",
+      "description": "Residential land area as a share of all land area, 2024."
     },
     {
       "name": "PclAcres",
-      "type": "double"
+      "type": "double",
+      "description": "All land area in acres."
     },
     {
       "name": "Subsidy",
-      "type": "float"
+      "type": "float",
+      "description": "Share of households with a housing subsidy (LIHTC, Public Housing, Housing Choice Voucher, Multifamily), from the National Housing Preservation Database/HUD-POSH/St. Louis Housing Authority."
     },
     {
       "name": "CSubHH",
-      "type": "double"
+      "type": "double",
+      "description": "Count of households with a housing subsidy (same sources as Subsidy)."
     },
     {
       "name": "CHHRO",
-      "type": "int32"
+      "type": "int32",
+      "description": "Count of renter households, ACS 2018-2022."
     },
     {
       "name": "CPOP",
-      "type": "int32"
+      "type": "int32",
+      "description": "Total population count, ACS 2018-2022."
     },
     {
       "name": "CPOPWH",
-      "type": "int32"
+      "type": "int32",
+      "description": "Non-Hispanic white population count, ACS 2018-2022."
     },
     {
       "name": "CPOPBK",
-      "type": "int32"
+      "type": "int32",
+      "description": "Non-Hispanic Black population count, ACS 2018-2022."
     },
     {
       "name": "CPOPAS",
-      "type": "int32"
+      "type": "int32",
+      "description": "Non-Hispanic Asian population count, ACS 2018-2022."
     },
     {
       "name": "CPOPHISP",
-      "type": "int32"
+      "type": "int32",
+      "description": "Hispanic population count, ACS 2018-2022."
     },
     {
       "name": "CPOPOTH",
-      "type": "int32"
+      "type": "int32",
+      "description": "Other-race population count, ACS 2018-2022."
     },
     {
       "name": "Shape__Area",

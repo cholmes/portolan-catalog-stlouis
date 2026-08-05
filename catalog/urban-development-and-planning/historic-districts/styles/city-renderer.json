@@ -30,7 +30,62 @@
           "#c6e2b2",
           "#cccccc"
         ],
-        "fill-opacity": 0.0
+        "fill-opacity": [
+          "match",
+          [
+            "get",
+            "DIS_TYPE"
+          ],
+          "National",
+          0.0,
+          "Landmark",
+          0.6,
+          "Certified Local",
+          0.6,
+          "Local",
+          0.6,
+          0
+        ]
+      }
+    },
+    {
+      "id": "historic-districts-outline",
+      "type": "line",
+      "source": "data",
+      "source-layer": "historic-districts",
+      "paint": {
+        "line-color": [
+          "match",
+          [
+            "get",
+            "DIS_TYPE"
+          ],
+          "National",
+          "#a80000",
+          "Landmark",
+          "#000000",
+          "Certified Local",
+          "#000000",
+          "Local",
+          "#000000",
+          "#9aa3a8"
+        ],
+        "line-width": [
+          "match",
+          [
+            "get",
+            "DIS_TYPE"
+          ],
+          "National",
+          1.33,
+          "Landmark",
+          0.67,
+          "Certified Local",
+          0.67,
+          "Local",
+          0.67,
+          1
+        ]
       }
     }
   ],

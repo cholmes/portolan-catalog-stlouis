@@ -220,8 +220,8 @@
       "type": "application/vnd.mapbox.style+json",
       "title": "City renderer",
       "description": "The city's own symbology, extracted from the source ArcGIS renderer.",
-      "file:size": 799,
-      "file:checksum": "1220816daf12ab6993846e8909fc2a6c1c9d4394bbe42b046e65a1a70dbd2ece1b34",
+      "file:size": 1832,
+      "file:checksum": "1220776a69a8732c7f6753ae2446449ccc009a83b72a3d8598129ef934cf62033c72",
       "roles": [
         "style"
       ]
@@ -243,8 +243,8 @@
       "type": "application/vnd.mapbox.style+json",
       "title": "District boundaries",
       "description": "Outlines with labels.",
-      "file:size": 980,
-      "file:checksum": "1220cead87e2621ab31f2955a9cb785431d35b2877ba64fd74a16479f2aaaf185e48",
+      "file:size": 1061,
+      "file:checksum": "122011c577aba1cb8c0ea98c815436d84194867ab57ea3acbf044cf582e7e27d1c69",
       "roles": [
         "style"
       ]

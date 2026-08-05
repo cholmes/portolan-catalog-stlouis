@@ -2,7 +2,7 @@
   "type": "Collection",
   "id": "government/csb-311-requests",
   "stac_version": "1.1.0",
-  "description": "The Citizens' Service Bureau (CSB) is the customer service department for the City of St. Louis. This dataset provides access to some of the data collected when services are requested. The X/Y coordinates are in WGS 84 Web Mercator (EPSG:3857). File new service request here: https://www.stlouis-mo.gov/government/departments/public-safety/neighborhood-stabilization-office/citizens-service-bureau/csb-request-submit.cfm",
+  "description": "The Citizens' Service Bureau (CSB) is the customer service department for the City of St. Louis. This dataset provides access to some of the data collected when services are requested. The X/Y coordinates are in WGS 84 Web Mercator (EPSG:3857). File new service request here: [https://www.stlouis-mo.gov/government/departments/public-safety/neighborhood-stabilization-office/citizens-service-bureau/csb-request-submit.cfm](https://www.stlouis-mo.gov/government/departments/public-safety/neighborhood-stabilization-office/citizens-service-bureau/csb-request-submit.cfm)",
   "links": [
     {
       "rel": "root",
@@ -62,7 +62,8 @@
   "table:columns": [
     {
       "name": "CALLERTYPE",
-      "type": "string"
+      "type": "string",
+      "description": "Method used by the customer to report the issue \u2014 Phone, Web, Twitter, CSB LTR, CSB VCML, etc. (portal field definition)."
     },
     {
       "name": "CITY",
@@ -70,27 +71,33 @@
     },
     {
       "name": "DATECANCELLED",
-      "type": "timestamp[ms]"
+      "type": "timestamp[ms]",
+      "description": "Date cancelled \u2014 indicates the request was a duplicate, cancelled by the caller, or entered in error (portal field definition)."
     },
     {
       "name": "DATEINVTDONE",
-      "type": "timestamp[ms]"
+      "type": "timestamp[ms]",
+      "description": "Date the investigation/inspection was done, which may differ from when a clerk closed the request (portal field definition)."
     },
     {
       "name": "DATETIMECLOSED",
-      "type": "timestamp[ms]"
+      "type": "timestamp[ms]",
+      "description": "Date/time the request was closed, auto-stamped when an employee closed it (portal field definition)."
     },
     {
       "name": "DATETIMEINIT",
-      "type": "timestamp[ms]"
+      "type": "timestamp[ms]",
+      "description": "Date/time the request was initiated, auto-stamped when saved or submitted online (portal field definition)."
     },
     {
       "name": "DESCRIPTION",
-      "type": "string"
+      "type": "string",
+      "description": "Same as the problem code or a more specific explanation of it (portal field definition)."
     },
     {
       "name": "EXPLANATION",
-      "type": "string"
+      "type": "string",
+      "description": "Additional details about the problem code, including the conditions under which it should be used (portal field definition)."
     },
     {
       "name": "GRANDPARENT_ID",
@@ -102,15 +109,18 @@
     },
     {
       "name": "GROUP",
-      "type": "string"
+      "type": "string",
+      "description": "Category the Citizens' Service Bureau currently groups that request type within (portal field definition)."
     },
     {
       "name": "NEIGHBORHOOD",
-      "type": "string"
+      "type": "string",
+      "description": "City neighborhood number 1-79 of the problem location (portal field definition, city 'Neighborhood' vocabulary)."
     },
     {
       "name": "PARENT_ID",
-      "type": "int32"
+      "type": "int32",
+      "description": "Identifier of the parent problem-code node in the CSB problem-code hierarchy (GRANDPARENT_ID/PARENT_NODE/GRANDPARENT_NODE are the higher levels; inferred from names \u2014 not in the portal field list)."
     },
     {
       "name": "PARENT_NODE",
@@ -122,47 +132,58 @@
     },
     {
       "name": "PRJCOMPLETEDATE",
-      "type": "timestamp[ms]"
+      "type": "timestamp[ms]",
+      "description": "Projected completion date \u2014 the date by which the responsible division (SUBMITTO) should have the initial inspection completed (portal field definition)."
     },
     {
       "name": "PROBADDRESS",
-      "type": "string"
+      "type": "string",
+      "description": "Address or intersection where the problem is occurring (portal field definition)."
     },
     {
       "name": "PROBADDTYPE",
-      "type": "string"
+      "type": "string",
+      "description": "Problem address type: A = Parcel, B = Intersection (portal field definition)."
     },
     {
       "name": "PROBLEMCODE",
-      "type": "string"
+      "type": "string",
+      "description": "Type of report \u2014 the CSB problem code (portal field definition); PLAIN_ENGLISH_NAME_FOR_PROBLEMCODE is its public title."
     },
     {
       "name": "PROBLEMSID",
-      "type": "int32"
+      "type": "int32",
+      "description": "Internal identifier of the problem record (name-based; not in the portal field list)."
     },
     {
       "name": "PROBZIP",
-      "type": "string"
+      "type": "string",
+      "description": "ZIP code of the problem location, often blank (portal field definition)."
     },
     {
       "name": "PUBLICRESOLUTION",
-      "type": "string"
+      "type": "string",
+      "description": "Public-facing resolution text recorded when the request was resolved (name-based; not in the portal field list)."
     },
     {
       "name": "REQUESTID",
-      "type": "int32"
+      "type": "int32",
+      "description": "System-generated unique record number for the service request (portal field definition)."
     },
     {
       "name": "STATUS",
-      "type": "string"
+      "type": "string",
+      "description": "Status of the request (portal field definition)."
     },
     {
       "name": "SUBMITTO",
-      "type": "string"
+      "type": "string",
+      "description": "City division or department responsible for handling the request (portal field definition)."
     },
     {
       "name": "WARD",
-      "type": "string"
+      "type": "string",
+      "description": "Ward number of the problem location (portal field definition)."
     },
     {
       "name": "geometry",
@@ -330,8 +351,8 @@
     "documentation": {
       "href": "./README.md",
       "type": "text/markdown",
-      "file:size": 3620,
-      "file:checksum": "1220201345c11aeeed3abc5e9c9a10ade35f816556687949fc690835fa84af18731b",
+      "file:size": 5973,
+      "file:checksum": "1220c77b60e035834da9c279ea97ef9a46ba7b3fdeb66bc6889359a54b5ee5bf088d",
       "roles": [
         "documentation"
       ]

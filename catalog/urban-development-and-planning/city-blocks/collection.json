@@ -83,11 +83,13 @@
     },
     {
       "name": "BLOCK_HANDLE",
-      "type": "string"
+      "type": "string",
+      "description": "Handle identifier of the city block (block-level analogue of the parcel HANDLE)."
     },
     {
       "name": "GeoCityBlockPart",
-      "type": "double"
+      "type": "double",
+      "description": "Sub-part designator when a GIS city block is split into parts."
     },
     {
       "name": "WARD10",
@@ -115,7 +117,8 @@
     },
     {
       "name": "NBRHD",
-      "type": "int16"
+      "type": "int16",
+      "description": "City neighborhood number (city 'Neighborhood' vocabulary); WARD10/Ward20/Ward00/Ward90 and the PRECINCT*/CensTract*/CensBlock* columns are the block's assignments in each redistricting/census cycle."
     },
     {
       "name": "CDADIST",
@@ -127,7 +130,8 @@
     },
     {
       "name": "POLICEDIST",
-      "type": "int16"
+      "type": "int16",
+      "description": "SLMPD police district containing the block."
     },
     {
       "name": "CensTract10",
@@ -155,7 +159,8 @@
     },
     {
       "name": "HouseConsDist",
-      "type": "int16"
+      "type": "int16",
+      "description": "Housing Conservation District the block falls in (city 'Housing Conservation District' vocabulary)."
     },
     {
       "name": "ASRNBRHD",
@@ -175,7 +180,8 @@
     },
     {
       "name": "OnFloodBlock",
-      "type": "int16"
+      "type": "int16",
+      "description": "Flag that the block touches a floodplain."
     },
     {
       "name": "SpecBusDist3",
@@ -335,8 +341,8 @@
       "type": "application/vnd.mapbox.style+json",
       "title": "City blocks",
       "description": "Every numbered block as a readable unit: semi-transparent city-blue fill, white borders, and the block number labeled at high zoom.",
-      "file:size": 1302,
-      "file:checksum": "1220c54ea2ecacd7d24d6b0560587528d6042ef0afe6a6e1c6191305b33681859a16",
+      "file:size": 1383,
+      "file:checksum": "1220b391f63b012f2bcce877c2261ca6c04e8585b6565e215ce8f363440d3c33da54",
       "roles": [
         "default",
         "style"
@@ -379,8 +385,8 @@
       "type": "application/vnd.mapbox.style+json",
       "title": "Blocks by census tract (2010)",
       "description": "Blocks tinted by 2010 census tract (CensTract10, repeating colors), labeled with the block number.",
-      "file:size": 2028,
-      "file:checksum": "12202fb3f078ebff75355d86a7e2ec76457725ef97b2ef6903772055c7553e64f982",
+      "file:size": 2109,
+      "file:checksum": "1220f78c4c113703050df2f6183bd042229623ce46720cc6a12928aa78bf587d4116",
       "roles": [
         "style"
       ]
@@ -390,8 +396,8 @@
       "type": "application/vnd.mapbox.style+json",
       "title": "Blocks by precinct (2010)",
       "description": "Blocks tinted by 2010 precinct (PRECINCT10, repeating colors), labeled with the block number.",
-      "file:size": 1885,
-      "file:checksum": "1220332fb2902b4fd55d04dec690736d49056a49bba531f9c5781bfb275cb163c879",
+      "file:size": 1966,
+      "file:checksum": "1220f90efd1b29db7849437f857dff3ed9b89b06162f776b3f99ccf4d70bbb962e1e",
       "roles": [
         "style"
       ]
@@ -401,8 +407,8 @@
       "type": "application/vnd.mapbox.style+json",
       "title": "Blocks by ward (2010)",
       "description": "Blocks tinted by their 2010 ward (WARD10, repeating colors) with block-number labels \u2014 see which ward each block sat in.",
-      "file:size": 1839,
-      "file:checksum": "1220125e2c13e2d51e1f39ba23d4b8ce430a6690dc0c38dca319c059c3289912988e",
+      "file:size": 1920,
+      "file:checksum": "12209819ca16cf986417591a5b591328aa00b89d9c91430dc2860f0a22d598e87444",
       "roles": [
         "style"
       ]
