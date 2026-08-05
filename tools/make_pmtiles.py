@@ -56,6 +56,12 @@ TILING = {
         "maxzoom": 15, "cap": 800_000,
         "columns": ["Handle", "Address", "Status", "Usage", "Property_Source",
                     "Cost", "LRA_PRICING", "SQFT", "NEIGHBORHOOD_NUM", "WARD"]},
+    "lead-service-lines": {
+        "maxzoom": 15, "cap": 800_000,
+        "columns": ["address", "utilmaterial", "utilstatus", "custmaterial",
+                    "custstatus", "utilsource", "custsource"]},
+    "vacancy-composite": {"maxzoom": 15, "cap": 800_000, "columns": None},
+    "land-use": {"maxzoom": 15, "cap": 800_000, "columns": None},
     "tax-abated-parcels": {
         "maxzoom": 15, "cap": 800_000,
         "columns": ["HANDLE", "SITEADDR", "AbatementStartYear",

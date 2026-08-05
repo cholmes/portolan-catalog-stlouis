@@ -1,0 +1,40 @@
+{
+  "version": 8,
+  "name": "City renderer",
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../neighborhood-organizations.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "categorical-fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "neighborhood-organizations",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "active"
+          ],
+          "<Null>",
+          "#ead4fc",
+          "No",
+          "#b9fcb3",
+          "Unknown",
+          "#fcd4b3",
+          "Yes",
+          "#c2fcfc",
+          "#cccccc"
+        ],
+        "fill-opacity": 1.0
+      }
+    }
+  ],
+  "metadata": {
+    "description": "The city's own symbology, extracted from the source ArcGIS renderer."
+  }
+}

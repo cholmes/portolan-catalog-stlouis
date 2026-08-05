@@ -1,0 +1,255 @@
+{
+ "collection": "vacancy-composite",
+ "title": "Parcel Vacancy Composite",
+ "portal_page": "https://stlcity.maps.arcgis.com/home/item.html?id=98a6f429617546be9d9b467c5ad1dafc",
+ "department": "St. Louis Development Corporation",
+ "source": "https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/SLDC_SLDC_Tol_Def_Vac_NP/FeatureServer",
+ "source_type": "arcgis",
+ "synced": "2026-08-05T16:51:48+00:00",
+ "fetch": {
+  "status": "ok",
+  "parquets": [
+   "staging/extracts/vacancy-composite/sldc_sldc_tol_def_vac_np/sldc_sldc_tol_def_vac_np.parquet"
+  ],
+  "layer_url": "https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/SLDC_SLDC_Tol_Def_Vac_NP/FeatureServer/0",
+  "layer_description": null,
+  "fields": [
+   {
+    "name": "OBJECTID",
+    "alias": "OBJECTID",
+    "type": "esriFieldTypeOID"
+   },
+   {
+    "name": "TOLEMI_ID",
+    "alias": "TOLEMI_ID",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "PID1",
+    "alias": "PID1",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "PID2",
+    "alias": "PID2",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "STREET_ADD",
+    "alias": "STREET_ADD",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "PROPERTY_T",
+    "alias": "PROPERTY_T",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "TOLEMI_DEF",
+    "alias": "TOLEMI_DEF",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "LRA_OWNED_",
+    "alias": "LRA_OWNED_",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "LRA_RORE",
+    "alias": "LRA_RORE",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "VACANT_BUI",
+    "alias": "VACANT_BUI",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "CONDEMNATI",
+    "alias": "CONDEMNATI",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "NSR_OWNED_",
+    "alias": "NSR_OWNED_",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "LRA_OWNE_1",
+    "alias": "LRA_OWNE_1",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "PRIVATE_VA",
+    "alias": "PRIVATE_VA",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "NSR_OWNE_1",
+    "alias": "NSR_OWNE_1",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "LAND_SIZE",
+    "alias": "LAND_SIZE",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "STRUCTUREA",
+    "alias": "STRUCTUREA",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "YEAR_BUILT",
+    "alias": "YEAR_BUILT",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "BUILDING_S",
+    "alias": "BUILDING_S",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "NUMBER_OF_",
+    "alias": "NUMBER_OF_",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "BUILDING_1",
+    "alias": "BUILDING_1",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "OWNER_NAME",
+    "alias": "OWNER_NAME",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "OWNER_ADDR",
+    "alias": "OWNER_ADDR",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "OWNER_TENU",
+    "alias": "OWNER_TENU",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "TAX_DELINQ",
+    "alias": "TAX_DELINQ",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "OWNER_PROP",
+    "alias": "OWNER_PROP",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "OWNER_VAC_",
+    "alias": "OWNER_VAC_",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "BUILDING_F",
+    "alias": "BUILDING_F",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "FOREST_FEE",
+    "alias": "FOREST_FEE",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "LRA_STATUS",
+    "alias": "LRA_STATUS",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "LRA_DATE",
+    "alias": "LRA_DATE",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "BISA_SCORE",
+    "alias": "BISA_SCORE",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "ECON_INVES",
+    "alias": "ECON_INVES",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "PROB_PROP_",
+    "alias": "PROB_PROP_",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "PUBLIC_HEA",
+    "alias": "PUBLIC_HEA",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "COLPARCELI",
+    "alias": "COLPARCELI",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "HANDLE",
+    "alias": "HANDLE",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "NBRHD",
+    "alias": "NBRHD",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "ZONING",
+    "alias": "ZONING",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "CENSBLOCK2",
+    "alias": "CENSBLOCK2",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "WARD20",
+    "alias": "WARD20",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "LATITUDE",
+    "alias": "LATITUDE",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "LONGITUDE",
+    "alias": "LONGITUDE",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "SHAPE_1",
+    "alias": "SHAPE_1",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "SHAPE_1_GE",
+    "alias": "SHAPE_1_GE",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Shape__Area",
+    "alias": "Shape__Area",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Shape__Length",
+    "alias": "Shape__Length",
+    "type": "esriFieldTypeDouble"
+   }
+  ],
+  "city_style": "staging/extracts/vacancy-composite/styles/city-renderer.json"
+ }
+}

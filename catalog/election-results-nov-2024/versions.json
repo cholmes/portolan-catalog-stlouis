@@ -1,0 +1,30 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-05T17:04:33.863888Z",
+      "breaking": false,
+      "assets": {
+        "election-results-nov-2024.parquet": {
+          "sha256": "e10febd3491a6fe2df2862b7cb3eb4d001c6e65db81162e064226b3fffb05a11",
+          "size_bytes": 326504,
+          "href": "election-results-nov-2024/election-results-nov-2024.parquet",
+          "mtime": 1785949272.2399096
+        }
+      },
+      "changes": [
+        "election-results-nov-2024.parquet"
+      ],
+      "schema": {
+        "type": "unknown",
+        "fingerprint": {
+          "columns": [],
+          "types": {}
+        }
+      },
+      "message": ""
+    }
+  ]
+}

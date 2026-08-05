@@ -1,0 +1,14 @@
+title: "Forest Park Trees"
+description: "Forest Park Trees data"
+contact:
+  name: "Chris Holmes"
+  email: "cholmes@9eo.org"
+license: "other"
+license_url: "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=123"
+attribution: "City of St. Louis — Forestry"
+source_url: "https://maps8.stlouis-mo.gov/arcgis/rest/services/FORESTRY/FOREST_PARK_TREES/FeatureServer"
+keywords: [st-louis, missouri, open-data, forest, park, trees]
+processing_notes: |
+  Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=123).
+  Source: https://maps8.stlouis-mo.gov/arcgis/rest/services/FORESTRY/FOREST_PARK_TREES/FeatureServer (ArcGIS REST service),
+  converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.

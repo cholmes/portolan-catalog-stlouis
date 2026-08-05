@@ -1,0 +1,14 @@
+title: "Neighborhood Organizations"
+description: "Neighborhood Organizations as exported 6-20-20"
+contact:
+  name: "Chris Holmes"
+  email: "cholmes@9eo.org"
+license: "other"
+license_url: "https://stlcity.maps.arcgis.com/home/item.html?id=ac198aeb9592458b8591c7258e719ad1"
+attribution: "City of St. Louis — Neighborhood Stabilization / CSB"
+source_url: "https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/Neighborhood_Organizations/FeatureServer"
+keywords: [st-louis, missouri, open-data, neighborhood, organizations]
+processing_notes: |
+  Mirrored from the City of St. Louis open data portal (https://stlcity.maps.arcgis.com/home/item.html?id=ac198aeb9592458b8591c7258e719ad1).
+  Source: https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/Neighborhood_Organizations/FeatureServer (ArcGIS REST service),
+  converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.

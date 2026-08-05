@@ -1,0 +1,39 @@
+{
+  "version": 8,
+  "name": "Categorical Style",
+  "sources": {
+    "data": {
+      "type": "vector"
+    }
+  },
+  "layers": [
+    {
+      "id": "categorical-circle",
+      "type": "circle",
+      "source": "data",
+      "source-layer": "forest_park_trees",
+      "paint": {
+        "circle-color": [
+          "match",
+          [
+            "get",
+            "Condition"
+          ],
+          "Dead",
+          "#ff0000",
+          "Poor",
+          "#ffaa00",
+          "Fair",
+          "#ffff00",
+          "Good",
+          "#37a600",
+          "Excellent",
+          "#4d7300",
+          "#cccccc"
+        ],
+        "circle-radius": 5,
+        "circle-opacity": 1.0
+      }
+    }
+  ]
+}

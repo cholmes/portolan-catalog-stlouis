@@ -79,7 +79,11 @@ DETAIL = {
 FILL = {"historic-districts", "opportunity-zones",
         "lra-property", "tax-abated-parcels", "community-improvement-districts",
         "special-business-districts", "bike-infrastructure", "parks",
-        "city-trees"}
+        "city-trees", "forest-park-trees", "schools", "floodplain",
+        "port-authority-district", "land-use", "lead-service-lines",
+        "market-value-analysis", "vacancy-composite", "polling-places",
+        "tornado-damage-2025", "flood-controls", "neighborhood-organizations",
+        "siren-locations"}
 
 cat = pathlib.Path(os.environ["CATALOG_DIR"])
 for coll in sorted(cat.iterdir()):

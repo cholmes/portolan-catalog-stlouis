@@ -1,0 +1,25 @@
+{
+ "collection": "wards-2010",
+ "title": "Ward Boundaries (2010)",
+ "portal_page": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=131",
+ "department": "Planning and Urban Design",
+ "source": "https://static.stlouis-mo.gov/open-data/planning/wards/wards_2010.zip",
+ "source_type": "static",
+ "synced": "2026-08-05T16:51:48+00:00",
+ "fetch": {
+  "status": "ok",
+  "file": "wards_2010.zip",
+  "sha256": "79f1b82326d52ef7ceb765d95500b1642e53bd791cce4f721cdc14ad3f54c67c",
+  "bytes": 169322,
+  "unpacked": [
+   "Wards_2010.cpg",
+   "Wards_2010.dbf",
+   "Wards_2010.prj",
+   "Wards_2010.sbn",
+   "Wards_2010.sbx",
+   "Wards_2010.shp",
+   "Wards_2010.shp.xml",
+   "Wards_2010.shx"
+  ]
+ }
+}

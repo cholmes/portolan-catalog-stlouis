@@ -1,0 +1,14 @@
+title: "Bike Infrastructure"
+description: "Bicycle infrastructure from the city's Biking Infrastructure Map service: existing bike facilities by type, the Brickline Greenway and Hodiamont Trail, park paths, multi-use paths, and planned and funded major bike facility projects."
+contact:
+  name: "Chris Holmes"
+  email: "cholmes@9eo.org"
+license: "other"
+license_url: "https://maps8.stlouis-mo.gov/arcgis/rest/services/PDA/Biking_Infrastructure_Map/MapServer"
+attribution: "City of St. Louis — Planning and Urban Design"
+source_url: "https://maps8.stlouis-mo.gov/arcgis/rest/services/PDA/Biking_Infrastructure_Map/MapServer"
+keywords: [st-louis, missouri, open-data, bike, infrastructure]
+processing_notes: |
+  Mirrored from the City of St. Louis open data portal (https://maps8.stlouis-mo.gov/arcgis/rest/services/PDA/Biking_Infrastructure_Map/MapServer).
+  Source: https://maps8.stlouis-mo.gov/arcgis/rest/services/PDA/Biking_Infrastructure_Map/MapServer (ArcGIS REST service),
+  converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.

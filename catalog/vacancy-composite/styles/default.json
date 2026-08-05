@@ -1,0 +1,58 @@
+{
+  "version": 8,
+  "name": "Vacant land vs structures",
+  "metadata": {
+    "description": "SLDC's parcel-level vacancy composite: 13,987 vacant lots (orange) and 6,707 vacant structures (red)."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../vacancy-composite.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "vacancy-composite-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "vacancy-composite",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "PROPERTY_T"
+          ],
+          "Land",
+          "#e89d07",
+          "Structure",
+          "#c03221",
+          "#9aa3a8"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "vacancy-composite",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "PROPERTY_T"
+          ],
+          "Land",
+          "#e89d07",
+          "Structure",
+          "#c03221",
+          "#9aa3a8"
+        ],
+        "fill-opacity": 0.75,
+        "fill-outline-color": "#FFFFFF"
+      }
+    }
+  ]
+}

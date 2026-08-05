@@ -1,0 +1,14 @@
+title: "2024 Market Value Analysis"
+description: "The Market Value Analysis (MVA) is an in-depth study and mapping of a community's housing market. It reveals the mosaic of market conditions in St. Louis."
+contact:
+  name: "Chris Holmes"
+  email: "cholmes@9eo.org"
+license: "other"
+license_url: "https://stlcity.maps.arcgis.com/home/item.html?id=e71e3ebca1f345a4b7db134d30c5d9ff"
+attribution: "City of St. Louis — Community Development Administration"
+source_url: "https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/2024_Market_Value_Analysis/FeatureServer"
+keywords: [st-louis, missouri, open-data, market, value, analysis]
+processing_notes: |
+  Mirrored from the City of St. Louis open data portal (https://stlcity.maps.arcgis.com/home/item.html?id=e71e3ebca1f345a4b7db134d30c5d9ff).
+  Source: https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/2024_Market_Value_Analysis/FeatureServer (ArcGIS REST service),
+  converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.

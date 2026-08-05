@@ -1,0 +1,165 @@
+{
+ "collection": "neighborhood-organizations",
+ "title": "Neighborhood Organizations",
+ "portal_page": "https://stlcity.maps.arcgis.com/home/item.html?id=ac198aeb9592458b8591c7258e719ad1",
+ "department": "Neighborhood Stabilization / CSB",
+ "source": "https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/Neighborhood_Organizations/FeatureServer",
+ "source_type": "arcgis",
+ "synced": "2026-08-05T16:51:48+00:00",
+ "fetch": {
+  "status": "ok",
+  "parquets": [
+   "staging/extracts/neighborhood-organizations/all_community_orgs/all_community_orgs.parquet"
+  ],
+  "layer_url": "https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/Neighborhood_Organizations/FeatureServer/0",
+  "layer_description": null,
+  "fields": [
+   {
+    "name": "OBJECTID",
+    "alias": "OBJECTID",
+    "type": "esriFieldTypeOID"
+   },
+   {
+    "name": "F501c3",
+    "alias": "F501c3",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "active",
+    "alias": "active",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "altContactName",
+    "alias": "altContactName",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "bndryConfirmed",
+    "alias": "bndryConfirmed",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "boundaryDesc",
+    "alias": "boundaryDesc",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "boundarySrc",
+    "alias": "boundarySrc",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "catchment",
+    "alias": "catchment",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "cbdo",
+    "alias": "cbdo",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "cbnMember",
+    "alias": "cbnMember",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "chdo",
+    "alias": "chdo",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "cityCounty",
+    "alias": "cityCounty",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "facebook",
+    "alias": "facebook",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "fillColor",
+    "alias": "fillColor",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "incorporated",
+    "alias": "incorporated",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "labelForMap",
+    "alias": "labelForMap",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "labelPoint",
+    "alias": "labelPoint",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "lastUpdate",
+    "alias": "lastUpdate",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "mainContactName",
+    "alias": "mainContactName",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "matchToCityNbrhd",
+    "alias": "matchToCityNbrhd",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "mtgDateTime",
+    "alias": "mtgDateTime",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "mtgLocation",
+    "alias": "mtgLocation",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "name",
+    "alias": "name",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "nbrhdNum",
+    "alias": "nbrhdNum",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "orgType",
+    "alias": "orgType",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "slacoMember",
+    "alias": "slacoMember",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "nameId",
+    "alias": "nameId",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Shape__Area",
+    "alias": "Shape__Area",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Shape__Length",
+    "alias": "Shape__Length",
+    "type": "esriFieldTypeDouble"
+   }
+  ],
+  "city_style": "staging/extracts/neighborhood-organizations/styles/city-renderer.json"
+ }
+}

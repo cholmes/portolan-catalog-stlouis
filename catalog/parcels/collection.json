@@ -630,7 +630,18 @@
     "styles/default",
     "styles/city-renderer"
   ],
-  "updated": "2026-08-05T04:46:13+00:00",
+  "updated": "2026-08-05T17:00:27+00:00",
+  "themes": [
+    {
+      "scheme": "https://www.stlouis-mo.gov/data/topics/",
+      "concepts": [
+        {
+          "id": "urban-development-and-planning",
+          "title": "Urban Development and Planning"
+        }
+      ]
+    }
+  ],
   "title": "Parcels",
   "extent": {
     "spatial": {
@@ -653,6 +664,9 @@
     }
   },
   "license": "other",
+  "keywords": [
+    "parcels"
+  ],
   "providers": [
     {
       "name": "City of St. Louis \u2014 Assessor's Office",
@@ -768,19 +782,5 @@
         "thumbnail"
       ]
     }
-  },
-  "themes": [
-    {
-      "scheme": "https://www.stlouis-mo.gov/data/topics/",
-      "concepts": [
-        {
-          "id": "urban-development-and-planning",
-          "title": "Urban Development and Planning"
-        }
-      ]
-    }
-  ],
-  "keywords": [
-    "parcels"
-  ]
+  }
 }

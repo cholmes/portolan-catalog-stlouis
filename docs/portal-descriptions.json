@@ -122,5 +122,65 @@
  "bike-infrastructure": {
   "portal_id": null,
   "description": "Bicycle infrastructure from the city's Biking Infrastructure Map service: existing bike facilities by type, the Brickline Greenway and Hodiamont Trail, park paths, multi-use paths, and planned and funded major bike facility projects."
+ },
+ "forest-park-trees": {
+  "portal_id": "123",
+  "description": "Forest Park Trees data"
+ },
+ "siren-locations": {
+  "portal_id": "132",
+  "description": "Public emergency siren locations. While these sirens are generally thought of as \"tornado sirens\" they can be used in other circumstances/emergencies."
+ },
+ "schools": {
+  "portal_id": "125",
+  "description": "City of St. Louis public school information including school name, school address, grades, and ages."
+ },
+ "port-authority-district": {
+  "portal_id": "55",
+  "description": "This feature represents the District boundary for the St. Louis Port Authority. It was created from Section One text in Ordinance 71179 from May 15, 2020."
+ },
+ "wards-2010": {
+  "portal_id": "131",
+  "description": "Boundaries of City of St. Louis wards"
+ },
+ "land-use": {
+  "portal_id": "78",
+  "description": "Strategic land use (SLUP),parcel, and zoning data"
+ },
+ "floodplain": {
+  "portal_id": null,
+  "description": "Floodplain areas for the City of St. Louis, from the city's Floodplain map service."
+ },
+ "lead-service-lines": {
+  "portal_id": null,
+  "description": "Lead Service Line Inventory Feature Layer Service"
+ },
+ "market-value-analysis": {
+  "portal_id": null,
+  "description": "The Market Value Analysis (MVA) is an in-depth study and mapping of a community's housing market. It reveals the mosaic of market conditions in St. Louis."
+ },
+ "vacancy-composite": {
+  "portal_id": null,
+  "description": "Parcel-level vacancy indicators for St. Louis: vacant buildings, condemnations, tax delinquency, LRA ownership, and private vacancy, compiled by SLDC."
+ },
+ "polling-places": {
+  "portal_id": null,
+  "description": "Polling Centers"
+ },
+ "election-results-nov-2024": {
+  "portal_id": null,
+  "description": "This is the detailed vote extract (dve) from the November 5, 2024, General Municipal Election for the City of St. Louis."
+ },
+ "tornado-damage-2025": {
+  "portal_id": null,
+  "description": "NWS/NOAA damage assessment data for the May 2025 St. Louis tornado, with Prop NS property stabilization and sales status."
+ },
+ "flood-controls": {
+  "portal_id": null,
+  "description": "Floods Controls"
+ },
+ "neighborhood-organizations": {
+  "portal_id": null,
+  "description": "Neighborhood Organizations as exported 6-20-20"
  }
 }

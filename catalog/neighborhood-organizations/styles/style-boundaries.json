@@ -1,0 +1,26 @@
+{
+  "version": 8,
+  "name": "Coverage boundaries",
+  "metadata": {
+    "description": "Outlines only."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../neighborhood-organizations.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "neighborhood-organizations",
+      "paint": {
+        "line-color": "#7c5295",
+        "line-width": 1.4,
+        "line-opacity": 1.0
+      }
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "version": 8,
+  "name": "Simple Style",
+  "sources": {
+    "data": {
+      "type": "vector"
+    }
+  },
+  "layers": [
+    {
+      "id": "layer-0",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "land-use",
+      "paint": {
+        "fill-color": "#4c81cd",
+        "fill-opacity": 0.7490196078431373,
+        "fill-outline-color": "#000000"
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-05T16:58:04.382726Z",
+      "breaking": false,
+      "assets": {
+        "siren-locations.parquet": {
+          "sha256": "386411562e9abc3d03148e0fb3bde07da4f66e40f22df482113153d89d2c6a40",
+          "size_bytes": 28001,
+          "href": "siren-locations/siren-locations.parquet",
+          "source_mtime": 1785949014.46051,
+          "mtime": 1785949014.46051,
+          "feature_count": 58,
+          "schema_fingerprint": "84e66f9c16737c51"
+        }
+      },
+      "changes": [
+        "siren-locations.parquet"
+      ]
+    }
+  ]
+}

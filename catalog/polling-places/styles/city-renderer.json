@@ -1,0 +1,26 @@
+{
+  "version": 8,
+  "name": "City renderer",
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../polling-places.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "layer-0",
+      "type": "circle",
+      "source": "data",
+      "source-layer": "polling-places",
+      "paint": {
+        "circle-color": "#888888",
+        "circle-radius": 8,
+        "circle-opacity": 1.0
+      }
+    }
+  ],
+  "metadata": {
+    "description": "The city's own symbology, extracted from the source ArcGIS renderer."
+  }
+}

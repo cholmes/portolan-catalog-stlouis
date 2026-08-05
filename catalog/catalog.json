@@ -157,15 +157,105 @@
       "href": "./bike-infrastructure/collection.json",
       "type": "application/json",
       "title": "Bike Infrastructure"
+    },
+    {
+      "rel": "child",
+      "href": "./siren-locations/collection.json",
+      "title": "Siren Locations",
+      "type": "application/json"
+    },
+    {
+      "rel": "child",
+      "href": "./schools/collection.json",
+      "title": "City Public Schools",
+      "type": "application/json"
+    },
+    {
+      "rel": "child",
+      "href": "./forest-park-trees/collection.json",
+      "title": "Forest Park Trees",
+      "type": "application/json"
+    },
+    {
+      "rel": "child",
+      "href": "./port-authority-district/collection.json",
+      "title": "Port Authority District",
+      "type": "application/json"
+    },
+    {
+      "rel": "child",
+      "href": "./wards-2010/collection.json",
+      "title": "Ward Boundaries (2010)",
+      "type": "application/json"
+    },
+    {
+      "rel": "child",
+      "href": "./floodplain/collection.json",
+      "title": "Floodplain",
+      "type": "application/json"
+    },
+    {
+      "rel": "child",
+      "href": "./market-value-analysis/collection.json",
+      "title": "2024 Market Value Analysis",
+      "type": "application/json"
+    },
+    {
+      "rel": "child",
+      "href": "./polling-places/collection.json",
+      "title": "Polling Centers",
+      "type": "application/json"
+    },
+    {
+      "rel": "child",
+      "href": "./election-results-nov-2024/collection.json",
+      "title": "November 2024 Election Results by Precinct",
+      "type": "application/json"
+    },
+    {
+      "rel": "child",
+      "href": "./tornado-damage-2025/collection.json",
+      "title": "May 2025 Tornado Damage",
+      "type": "application/json"
+    },
+    {
+      "rel": "child",
+      "href": "./land-use/collection.json",
+      "title": "Strategic Land Use Plan",
+      "type": "application/json"
+    },
+    {
+      "rel": "child",
+      "href": "./flood-controls/collection.json",
+      "title": "Flood Controls",
+      "type": "application/json"
+    },
+    {
+      "rel": "child",
+      "href": "./neighborhood-organizations/collection.json",
+      "title": "Neighborhood Organizations",
+      "type": "application/json"
+    },
+    {
+      "rel": "child",
+      "href": "./vacancy-composite/collection.json",
+      "title": "Parcel Vacancy Composite",
+      "type": "application/json"
+    },
+    {
+      "rel": "child",
+      "href": "./lead-service-lines/collection.json",
+      "type": "application/json",
+      "title": "Lead Service Line Inventory"
     }
   ],
   "stac_extensions": [
     "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json"
   ],
-  "portolan:total_size_bytes": 270356637,
-  "portolan:asset_count": 22,
-  "portolan:collection_count": 21,
-  "updated": "2026-08-05T04:46:13+00:00",
+  "portolan:total_size_bytes": 297298119,
+  "portolan:asset_count": 37,
+  "portolan:collection_count": 36,
+  "updated": "2026-08-05T17:00:27+00:00",
   "providers": [
     {
       "name": "City of St. Louis",

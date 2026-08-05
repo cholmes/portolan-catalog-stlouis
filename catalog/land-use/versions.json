@@ -1,0 +1,25 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-05T16:58:04.693622Z",
+      "breaking": false,
+      "assets": {
+        "land-use.parquet": {
+          "sha256": "dfbfaa378923225d5c2d44b4221a929bd343ae65b5aa02b91e9a7b5e739a7003",
+          "size_bytes": 5599054,
+          "href": "land-use/land-use.parquet",
+          "source_mtime": 1785948932.272727,
+          "mtime": 1785948932.272727,
+          "feature_count": 11567,
+          "schema_fingerprint": "194f03ae2d9c436d"
+        }
+      },
+      "changes": [
+        "land-use.parquet"
+      ]
+    }
+  ]
+}

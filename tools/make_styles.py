@@ -787,5 +787,322 @@ emit("bike-infrastructure", "style-planned", style(
     "the existing network (light).",
     [line("bike-infrastructure", BIKE_PLANNED, 2.4)], legend=BIKE_PLANNED))
 
+# --------------------------------------------------------------------------
+# Wave 2 collections (2026-08): AGOL finds + remaining portal datasets
+# --------------------------------------------------------------------------
+
+# lead-service-lines — 112,950 address points; domain codes from the service
+LSLI_STATUS_LABELS = {  # verbatim ArcGIS domain: code → name
+    0: "Unknown", 1: "Lead", 2: "Non-Lead",
+    3: "Galvanized Requiring Replacement"}
+LSLI_STATUS = ["match", ["get", "utilstatus"],
+               1, RED, 3, ORANGE, 2, GREEN, 0, GRAY, LIGHT]
+LSLI_CUST = ["match", ["get", "custstatus"],
+             1, RED, 3, ORANGE, 2, GREEN, 0, GRAY, LIGHT]
+LSLI_MAT = ["match", ["get", "utilmaterial"],
+            109, RED, 89, ORANGE, 84, GREEN, 88, "#4a9d9c", 83, "#7c5295",
+            94, LIGHTBLUE, 93, "#a6c96a", 81, "#8b6f5e", 110, "#c98bab",
+            0, GRAY, LIGHT]
+emit("lead-service-lines", "default", style(
+    "lead-service-lines", "Utility-side service line status",
+    "Every water service line by the utility-side status from the Water "
+    "Division's EPA lead inventory: Lead red, Galvanized-requiring-"
+    "replacement orange, Non-Lead green, Unknown gray. Codes follow the "
+    "service's own domain (1 Lead, 2 Non-Lead, 3 Galvanized, 0 Unknown).",
+    [circle("lead-service-lines", LSLI_STATUS, zoom_radius(2.2),
+            stroke="#FFFFFF")], legend=LSLI_STATUS), default=True)
+emit("lead-service-lines", "style-customer-side", style(
+    "lead-service-lines", "Customer-side status",
+    "Same classification for the customer-owned side of each service line.",
+    [circle("lead-service-lines", LSLI_CUST, zoom_radius(2.2),
+            stroke="#FFFFFF")], legend=LSLI_CUST))
+emit("lead-service-lines", "style-material", style(
+    "lead-service-lines", "Pipe material",
+    "Utility-side pipe material by the service's own domain codes: Lead "
+    "(109) red, Galvanized (89) orange, Copper (84) green, Ductile Iron "
+    "(88) teal, Cast Iron (83) purple, PVC/PE light, Unknown (0) gray.",
+    [circle("lead-service-lines", LSLI_MAT, zoom_radius(2.2))],
+    legend=LSLI_MAT))
+
+# market-value-analysis — 314 block groups, MVA clusters A (strongest) - I
+MVA = match("MVACluster", {
+    "A": "#1a6b1a", "B": "#2e8b2e", "C": "#7fb356", "D": "#c9c93e",
+    "E": "#e8c46a", "F": ORANGE, "G": "#d0752e", "H": "#c0392b", "I": "#8b1a1a"})
+emit("market-value-analysis", "default", style(
+    "market-value-analysis", "MVA cluster",
+    "The 2024 Market Value Analysis housing-market clusters, A (strongest "
+    "markets, dark green) through I (most distressed, dark red), by census "
+    "block group.",
+    [fill("market-value-analysis", MVA, 0.72, "#FFFFFF"),
+     line("market-value-analysis", "#FFFFFF", 0.8)], legend=MVA), default=True)
+MVA_PRICE = step("MSP2123_CA", "#eef3f6",
+                 [50000, "#c6dbe8", 100000, "#8fbdd6", 175000, "#5591b5",
+                  250000, "#2d6a8e", 350000, DARK])
+emit("market-value-analysis", "style-sale-price", style(
+    "market-value-analysis", "Median sale price 2021-23",
+    "Census-adjusted median sale price (MSP2123_CA) in steps from under "
+    "$50k to over $350k.",
+    [fill("market-value-analysis", MVA_PRICE, 0.8, "#FFFFFF")],
+    legend=MVA_PRICE))
+MVA_VAC = step("PVacBuild", "#eef3f6",
+               [0.02, "#e8c46a", 0.05, ORANGE, 0.1, "#d0752e", 0.2, RED])
+emit("market-value-analysis", "style-vacancy-rate", style(
+    "market-value-analysis", "Vacant building share",
+    "Share of buildings vacant (PVacBuild) in steps: under 2 percent "
+    "through over 20 percent.",
+    [fill("market-value-analysis", MVA_VAC, 0.8, "#FFFFFF")],
+    legend=MVA_VAC))
+
+# vacancy-composite — 20,694 parcels, Tolemi vacancy classification
+VAC_TYPE = match("PROPERTY_T", {"Land": ORANGE, "Structure": RED})
+VAC_DEF = match("TOLEMI_DEF", {
+    "LRA-Owned Vacant Lot": "#e2a76f",
+    "Private Vacant Lot": ORANGE,
+    "Northside Regeneration Vacant Lot": "#c9b970",
+    "BD Vacant Building Registry - Residential": RED,
+    "Structural Condemnation and No Occupancy": "#8b1a1a",
+    "LRA-Owned Building": "#c0392b"}, GRAY)
+emit("vacancy-composite", "default", style(
+    "vacancy-composite", "Vacant land vs structures",
+    "SLDC's parcel-level vacancy composite: 13,987 vacant lots (orange) "
+    "and 6,707 vacant structures (red).",
+    [fill("vacancy-composite", VAC_TYPE, 0.75, "#FFFFFF")],
+    legend=VAC_TYPE), default=True)
+emit("vacancy-composite", "style-source", style(
+    "vacancy-composite", "Vacancy classification",
+    "The composite's own top classes: LRA lots, private lots, Northside "
+    "Regeneration lots, vacant-building registry, condemnations; smaller "
+    "combined classes gray.",
+    [fill("vacancy-composite", VAC_DEF, 0.75, "#FFFFFF")], legend=VAC_DEF))
+VAC_YEAR = ["step", ["get", "YEAR_BUILT"], "#d9dee1",
+            1, "#4a2d78", 1880, "#7c5295", 1900, "#b085c9", 1930, "#e0a8e0",
+            1960, RED]
+emit("vacancy-composite", "style-year-built", style(
+    "vacancy-composite", "Vacant stock by year built",
+    "Year built of the vacant stock in era steps; 0 or unknown light gray "
+    "— most of the vacancy crescent predates 1930.",
+    [fill("vacancy-composite", VAC_YEAR, 0.75, "#FFFFFF")], legend=VAC_YEAR))
+
+# land-use — 11,567 SLUP polygons
+SLUP = match("SLUP_LATES", {
+    "NPA": "#a6c96a", "NCA": GREEN, "NDA": "#3f6600", "IPDA": "#7c5295",
+    "SMUA": ORANGE, "BIPA": "#e8c46a", "BIDA": "#d0752e", "ROSPDA": "#4a9d9c",
+    "OGPA": "#88b8a3", "SPCA": LIGHTBLUE}, GRAY)
+emit("land-use", "default", style(
+    "land-use", "Strategic land use categories",
+    "The Strategic Land Use Plan by its category codes (NPA neighborhood "
+    "preservation is the bulk; the source publishes codes only).",
+    [fill("land-use", SLUP, 0.72, "#ffffff00")], legend=SLUP), default=True)
+SLUP_STATUS = match("Status", {"Original": LIGHT, "Amended": ORANGE,
+                               "Amendment": RED})
+emit("land-use", "style-amendments", style(
+    "land-use", "Plan amendments",
+    "Where the 2005 plan has been amended (orange/red) against untouched "
+    "Original designations (light).",
+    [fill("land-use", SLUP_STATUS, 0.72, "#ffffff00")], legend=SLUP_STATUS))
+emit("land-use", "style-boundaries", style(
+    "land-use", "Category boundaries",
+    "Outlines only.", [line("land-use", DARK, 0.6)]))
+
+# forest-park-trees — 15,450 trees
+FP_COND = match("Condition", {
+    "Excellent": "#1a6b1a", "Very Good": "#2e8b2e", "Good": GREEN,
+    "Fair": "#c9c93e", "Poor": ORANGE, "Critical": "#d05f27",
+    "Dead": RED, "Stump": "#8b6f5e"}, LIGHT)
+FP_SIZE = step("DBH", "#c8e6c9", [6, "#8fce8f", 15, GREEN, 30, "#2d6a2d"])
+emit("forest-park-trees", "default", style(
+    "forest-park-trees", "Forest Park trees",
+    "All 15,450 inventoried trees in Forest Park, sized by zoom.",
+    [circle("forest-park-trees", GREEN, zoom_radius(2.2), stroke="#FFFFFF")]),
+    default=True)
+emit("forest-park-trees", "style-condition", style(
+    "forest-park-trees", "Tree condition",
+    "Condition rating from Excellent (dark green) to Dead (red).",
+    [circle("forest-park-trees", FP_COND, zoom_radius(2.2),
+            stroke="#FFFFFF")], legend=FP_COND))
+emit("forest-park-trees", "style-size", style(
+    "forest-park-trees", "Trunk diameter",
+    "DBH steps at 6, 15, and 30 inches — the park's veteran canopy in "
+    "dark green.",
+    [circle("forest-park-trees", FP_SIZE, zoom_radius(2.2),
+            stroke="#FFFFFF")], legend=FP_SIZE))
+
+# schools — 133 points
+SCHOOLS_SYS = match("USER_School_System", {
+    "SLPS": BLUE, "Charter": ORANGE, "Private": "#7c5295"}, GRAY)
+emit("schools", "default", style(
+    "schools", "City schools",
+    "The 133 school locations, labeled.",
+    [circle("schools", BLUE, zoom_radius(4), stroke="#FFFFFF"),
+     label("schools", "USER_School_Name", 10, 12)]), default=True)
+emit("schools", "style-system", style(
+    "schools", "By school system",
+    "Colored by the source's school-system field.",
+    [circle("schools", SCHOOLS_SYS, zoom_radius(4), stroke="#FFFFFF")],
+    legend=SCHOOLS_SYS))
+emit("schools", "style-plain", style(
+    "schools", "Locations only",
+    "Unlabeled points for overlays.",
+    [circle("schools", DARK, zoom_radius(3.5), stroke="#FFFFFF")]))
+
+# floodplain — 329 FEMA zones
+FLOOD = match("FLD_ZONE", {
+    "AE": BLUE, "0.2 PCT ANNUAL CHANCE FLOOD HAZARD": LIGHTBLUE,
+    "X PROTECTED BY LEVEE": "#4a9d9c"}, GRAY)
+emit("floodplain", "default", style(
+    "floodplain", "Flood zones",
+    "FEMA flood zones: AE 1-percent-annual-chance in blue, 0.2-percent in "
+    "light blue, levee-protected X zones teal.",
+    [fill("floodplain", FLOOD, 0.55, "#FFFFFF")], legend=FLOOD), default=True)
+emit("floodplain", "style-sfha", style(
+    "floodplain", "Special flood hazard area",
+    "Just the regulatory SFHA (SFHA_TF = T) in blue against the rest.",
+    [fill("floodplain", ["match", ["get", "SFHA_TF"], "T", BLUE, LIGHT],
+          0.6, "#FFFFFF")],
+    legend=["match", ["get", "SFHA_TF"], "T", BLUE, LIGHT]))
+emit("floodplain", "style-boundaries", style(
+    "floodplain", "Zone boundaries",
+    "Outlines only.", [line("floodplain", BLUE, 1.2)]))
+
+# port-authority-district — 1 polygon
+emit("port-authority-district", "default", style(
+    "port-authority-district", "Port Authority District",
+    "The Port Authority District boundary along the Mississippi riverfront.",
+    [fill("port-authority-district", "#4a9d9c", 0.4, "#2d6a68"),
+     line("port-authority-district", "#2d6a68", 2.0)]), default=True)
+emit("port-authority-district", "style-outline", style(
+    "port-authority-district", "Outline",
+    "Boundary line only.", [line("port-authority-district", "#2d6a68", 2.5)]))
+emit("port-authority-district", "style-dashed", style(
+    "port-authority-district", "Dashed context line",
+    "Dashed outline for overlays.",
+    [line("port-authority-district", "#2d6a68", 2.0, dash=[3, 2])]))
+
+# wards-2010 — the previous 28 wards
+W10 = repeat_fill(["get", "Ward"], 14)
+emit("wards-2010", "default", style(
+    "wards-2010", "Wards (2010)",
+    "The 28 aldermanic wards in force 2011-2022, repeating colors, labeled "
+    "— the geography most older city datasets (WARD10 columns) reference.",
+    [fill("wards-2010", W10, 0.6, "#FFFFFF"), line("wards-2010", "#FFFFFF", 1.0),
+     label("wards-2010", "Ward", 11, 10)], no_legend=True), default=True)
+emit("wards-2010", "style-boundaries", style(
+    "wards-2010", "Ward boundaries",
+    "Outlines only.", [line("wards-2010", "#7c5295", 1.6)]))
+emit("wards-2010", "style-subtle", style(
+    "wards-2010", "Subtle wards",
+    "Light tint for underlays.",
+    [fill("wards-2010", LIGHT, 0.3, "#7c5295"), line("wards-2010", "#7c5295", 0.8)]))
+
+# siren-locations — 58 outdoor warning sirens
+emit("siren-locations", "default", style(
+    "siren-locations", "Outdoor warning sirens",
+    "The 58 outdoor warning sirens, in alert red.",
+    [circle("siren-locations", RED, zoom_radius(5), stroke="#FFFFFF")]),
+    default=True)
+SIREN_OWNER = ["match", ["get", "PROPERTY_OWNER"],
+               "CITY OF ST LOUIS", BLUE, "City of St Louis", BLUE, ORANGE]
+emit("siren-locations", "style-ownership", style(
+    "siren-locations", "Site ownership",
+    "Sirens on city-owned property (blue) vs. other owners (orange).",
+    [circle("siren-locations", SIREN_OWNER, zoom_radius(5),
+            stroke="#FFFFFF")], legend=SIREN_OWNER))
+emit("siren-locations", "style-plain", style(
+    "siren-locations", "Locations only",
+    "Neutral points for overlays.",
+    [circle("siren-locations", DARK, zoom_radius(4), stroke="#FFFFFF")]))
+
+# polling-places — 152 polling centers
+POLL_ACCESS = match("disabledentry", {"Yes": GREEN, "No": RED}, GRAY)
+POLL_CITYWIDE = match("cityWideVoting", {"Yes": BLUE}, LIGHT)
+emit("polling-places", "default", style(
+    "polling-places", "Polling centers",
+    "The 152 polling centers, labeled.",
+    [circle("polling-places", "#7c5295", zoom_radius(4.5), stroke="#FFFFFF"),
+     label("polling-places", "pollingPlace", 10, 12)]), default=True)
+emit("polling-places", "style-accessible", style(
+    "polling-places", "Accessible entry",
+    "Sites with a marked accessible entrance (green) vs. not (red); "
+    "unrecorded gray.",
+    [circle("polling-places", POLL_ACCESS, zoom_radius(4.5),
+            stroke="#FFFFFF")], legend=POLL_ACCESS))
+emit("polling-places", "style-citywide", style(
+    "polling-places", "Citywide voting sites",
+    "Centers where any city voter can vote (blue) against precinct-bound "
+    "sites (light).",
+    [circle("polling-places", POLL_CITYWIDE, zoom_radius(4.5),
+            stroke="#FFFFFF")], legend=POLL_CITYWIDE))
+
+# tornado-damage-2025 — NWS damage path + 286 survey points
+TORN_EF = ["match", ["get", "efscale"],
+           "EF0", "#c9c93e", "EF1", ORANGE, "EF2", "#d0752e", "EF3", RED,
+           "EF4", "#8b1a1a", GRAY]
+emit("tornado-damage-2025", "default", style(
+    "tornado-damage-2025", "Damage survey",
+    "The NWS damage-assessment record of the May 16, 2025 tornado: the "
+    "damage path with 286 surveyed damage points colored by EF-scale "
+    "rating.",
+    [fill("tornado-damage-2025", "#e8c46a", 0.25, "#b57506"),
+     line("tornado-damage-2025", "#b57506", 1.5),
+     circle("tornado-damage-2025", TORN_EF, zoom_radius(3.5),
+            stroke="#FFFFFF")], legend=TORN_EF), default=True)
+TORN_LAYER = match("source_layer", {
+    "Nws Dat Damage Paths": ORANGE, "Nws Dat Damage Pnts": RED})
+emit("tornado-damage-2025", "style-layers", style(
+    "tornado-damage-2025", "Path vs points",
+    "The damage path polygon (orange) and the individual survey points "
+    "(red).",
+    [fill("tornado-damage-2025", "#e8c46a", 0.3, "#b57506"),
+     circle("tornado-damage-2025", RED, zoom_radius(3))], legend=TORN_LAYER))
+emit("tornado-damage-2025", "style-path", style(
+    "tornado-damage-2025", "Damage path",
+    "The tornado track alone.",
+    [fill("tornado-damage-2025", ORANGE, 0.35, "#b57506"),
+     line("tornado-damage-2025", "#b57506", 2.0)]))
+
+# flood-controls — 42 floodwall segments + 29 closure points
+FLOODC = match("source_layer", {
+    "Stlouis Gis Floodwall": BLUE, "Streets Dbo Flood Control": RED})
+emit("flood-controls", "default", style(
+    "flood-controls", "Floodwall and closures",
+    "The riverfront floodwall (blue lines) with its 29 closure structures "
+    "(red points).",
+    [line("flood-controls", BLUE, 2.5),
+     circle("flood-controls", RED, zoom_radius(4), stroke="#FFFFFF")],
+    legend=FLOODC), default=True)
+FLOOD_STAGE = ["step", ["to-number", ["get", "FLOOD_STAGE"]], GRAY,
+               1, GREEN, 30, "#c9c93e", 38, ORANGE, 46, RED]
+emit("flood-controls", "style-closing-stage", style(
+    "flood-controls", "Closure flood stage",
+    "Closure structures stepped by the river stage at which they close "
+    "(feet on the St. Louis gage).",
+    [circle("flood-controls", FLOOD_STAGE, zoom_radius(4.5),
+            stroke="#FFFFFF"), line("flood-controls", LIGHT, 1.5)],
+    legend=FLOOD_STAGE))
+emit("flood-controls", "style-plain", style(
+    "flood-controls", "Structures only",
+    "Neutral rendering for overlays.",
+    [line("flood-controls", DARK, 2.0),
+     circle("flood-controls", DARK, zoom_radius(3.5))]))
+
+# neighborhood-organizations — 103 org boundaries (2020 snapshot)
+ORG_ACTIVE = match("active", {"Yes": GREEN, "No": RED, "Unknown": GRAY}, LIGHT)
+ORG_501 = match("F501c3", {"Yes": BLUE, "No": ORANGE}, GRAY)
+emit("neighborhood-organizations", "default", style(
+    "neighborhood-organizations", "Organizations by activity",
+    "The 103 neighborhood organizations as of the 2020 export: active "
+    "(green), inactive (red), unknown (gray).",
+    [fill("neighborhood-organizations", ORG_ACTIVE, 0.55, "#FFFFFF"),
+     label("neighborhood-organizations", "labelForMap", 10, 12)],
+    legend=ORG_ACTIVE), default=True)
+emit("neighborhood-organizations", "style-501c3", style(
+    "neighborhood-organizations", "501(c)(3) status",
+    "Organizations with nonprofit status (blue) vs. without (orange).",
+    [fill("neighborhood-organizations", ORG_501, 0.55, "#FFFFFF")],
+    legend=ORG_501))
+emit("neighborhood-organizations", "style-boundaries", style(
+    "neighborhood-organizations", "Coverage boundaries",
+    "Outlines only.", [line("neighborhood-organizations", "#7c5295", 1.4)]))
+
 if __name__ == "__main__":
     main()

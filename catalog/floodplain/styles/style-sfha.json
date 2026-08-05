@@ -1,0 +1,54 @@
+{
+  "version": 8,
+  "name": "Special flood hazard area",
+  "metadata": {
+    "description": "Just the regulatory SFHA (SFHA_TF = T) in blue against the rest."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../floodplain.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "floodplain-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "floodplain",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "SFHA_TF"
+          ],
+          "T",
+          "#1e526b",
+          "#dfe6ea"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "floodplain",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "SFHA_TF"
+          ],
+          "T",
+          "#1e526b",
+          "#dfe6ea"
+        ],
+        "fill-opacity": 0.6,
+        "fill-outline-color": "#FFFFFF"
+      }
+    }
+  ]
+}

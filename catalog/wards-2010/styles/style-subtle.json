@@ -1,0 +1,37 @@
+{
+  "version": 8,
+  "name": "Subtle wards",
+  "metadata": {
+    "description": "Light tint for underlays."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../wards-2010.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "wards-2010",
+      "paint": {
+        "fill-color": "#dfe6ea",
+        "fill-opacity": 0.3,
+        "fill-outline-color": "#7c5295"
+      }
+    },
+    {
+      "id": "line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "wards-2010",
+      "paint": {
+        "line-color": "#7c5295",
+        "line-width": 0.8,
+        "line-opacity": 1.0
+      }
+    }
+  ]
+}

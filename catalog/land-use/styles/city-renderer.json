@@ -1,0 +1,26 @@
+{
+  "version": 8,
+  "name": "City renderer",
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../land-use.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "layer-0",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "land-use",
+      "paint": {
+        "fill-color": "#4c81cd",
+        "fill-opacity": 0.7490196078431373,
+        "fill-outline-color": "#000000"
+      }
+    }
+  ],
+  "metadata": {
+    "description": "The city's own symbology, extracted from the source ArcGIS renderer."
+  }
+}

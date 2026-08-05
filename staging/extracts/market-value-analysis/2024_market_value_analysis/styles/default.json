@@ -1,0 +1,48 @@
+{
+  "version": 8,
+  "name": "Categorical Style",
+  "sources": {
+    "data": {
+      "type": "vector"
+    }
+  },
+  "layers": [
+    {
+      "id": "categorical-fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "2024_market_value_analysis",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "MVACluster"
+          ],
+          "A",
+          "#7296cc",
+          "B",
+          "#afcaf0",
+          "C",
+          "#9c83c7",
+          "D",
+          "#c0aae6",
+          "E",
+          "#799ba6",
+          "F",
+          "#b8d9ce",
+          "G",
+          "#ebad4b",
+          "H",
+          "#ffd791",
+          "I",
+          "#ffffc9",
+          "Insufficient Data",
+          "#343434",
+          "#cccccc"
+        ],
+        "fill-opacity": 1.0
+      }
+    }
+  ]
+}

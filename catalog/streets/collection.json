@@ -352,7 +352,22 @@
     "styles/style-class",
     "styles/style-suffix"
   ],
-  "updated": "2026-08-05T04:46:13+00:00",
+  "updated": "2026-08-05T17:00:27+00:00",
+  "themes": [
+    {
+      "scheme": "https://www.stlouis-mo.gov/data/topics/",
+      "concepts": [
+        {
+          "id": "transportation-infrastructure-and-utilities",
+          "title": "Transportation, Infrastructure, and Utilities"
+        },
+        {
+          "id": "urban-development-and-planning",
+          "title": "Urban Development and Planning"
+        }
+      ]
+    }
+  ],
   "title": "City Streets",
   "extent": {
     "spatial": {
@@ -375,6 +390,9 @@
     }
   },
   "license": "other",
+  "keywords": [
+    "streets"
+  ],
   "providers": [
     {
       "name": "City of St. Louis \u2014 Streets - Director's Office",
@@ -468,23 +486,5 @@
         "thumbnail"
       ]
     }
-  },
-  "themes": [
-    {
-      "scheme": "https://www.stlouis-mo.gov/data/topics/",
-      "concepts": [
-        {
-          "id": "transportation-infrastructure-and-utilities",
-          "title": "Transportation, Infrastructure, and Utilities"
-        },
-        {
-          "id": "urban-development-and-planning",
-          "title": "Urban Development and Planning"
-        }
-      ]
-    }
-  ],
-  "keywords": [
-    "streets"
-  ]
+  }
 }

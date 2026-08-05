@@ -1,0 +1,100 @@
+{
+ "collection": "polling-places",
+ "title": "Polling Centers",
+ "portal_page": "https://stlcity.maps.arcgis.com/home/item.html?id=87bc5cf8db58428295792e690397ed75",
+ "department": "Board of Election Commissioners",
+ "source": "https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/Polling_Centers_WFL1/FeatureServer",
+ "source_type": "arcgis",
+ "synced": "2026-08-05T16:51:48+00:00",
+ "fetch": {
+  "status": "ok",
+  "parquets": [
+   "staging/extracts/polling-places/polling_centers/polling_centers.parquet"
+  ],
+  "layer_url": "https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/Polling_Centers_WFL1/FeatureServer/1",
+  "layer_description": null,
+  "fields": [
+   {
+    "name": "OBJECTID",
+    "alias": "OBJECTID",
+    "type": "esriFieldTypeOID"
+   },
+   {
+    "name": "ParcelId",
+    "alias": "ParcelId",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Wait_Time__Minutes_",
+    "alias": "Wait Time (Minutes)",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "Phone",
+    "alias": "Phone",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Operational_Hours",
+    "alias": "Operational Hours",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Early_Voting_Available",
+    "alias": "Early Voting Available",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "pollingPlaceID",
+    "alias": "pollingPlaceID",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "pollingPlace",
+    "alias": "pollingPlace",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "pollingPlaceAddress",
+    "alias": "pollingPlaceAddress",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "pollingPlaceZipCode",
+    "alias": "pollingPlaceZipCode",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "cityWideVoting",
+    "alias": "cityWideVoting",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "noExcuseVoting",
+    "alias": "noExcuseVoting",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "disabledentry",
+    "alias": "disabledentry",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "entrydetails",
+    "alias": "entrydetails",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "handle",
+    "alias": "handle",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "status",
+    "alias": "status",
+    "type": "esriFieldTypeSmallInteger"
+   }
+  ],
+  "city_style": "staging/extracts/polling-places/styles/city-renderer.json"
+ }
+}

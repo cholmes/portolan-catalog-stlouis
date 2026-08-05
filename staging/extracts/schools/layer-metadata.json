@@ -1,0 +1,1611 @@
+{
+ "currentVersion": 11.2,
+ "cimVersion": "3.2.0",
+ "id": 0,
+ "name": "Schools",
+ "type": "Feature Layer",
+ "parentLayer": null,
+ "defaultVisibility": true,
+ "minScale": 0,
+ "maxScale": 0,
+ "canScaleSymbols": false,
+ "geometryType": "esriGeometryPoint",
+ "description": "",
+ "copyrightText": "",
+ "editFieldsInfo": null,
+ "ownershipBasedAccessControlForFeatures": null,
+ "syncCanReturnChanges": false,
+ "relationships": [],
+ "isDataVersioned": false,
+ "isDataArchived": false,
+ "infoInEstimates": [
+  "extent",
+  "count"
+ ],
+ "isDataBranchVersioned": false,
+ "isDataReplicaTracked": false,
+ "isCoGoEnabled": false,
+ "supportsRollbackOnFailureParameter": true,
+ "archivingInfo": {
+  "supportsQueryWithHistoricMoment": false,
+  "startArchivingMoment": -1
+ },
+ "supportsStatistics": true,
+ "supportsExceedsLimitStatistics": true,
+ "supportsAdvancedQueries": true,
+ "supportsValidateSQL": true,
+ "supportsCoordinatesQuantization": true,
+ "supportsQuantizationEditMode": true,
+ "supportsCalculate": true,
+ "supportsASyncCalculate": true,
+ "supportsDatumTransformation": true,
+ "advancedQueryCapabilities": {
+  "supportsPagination": true,
+  "supportsTrueCurve": true,
+  "supportsQueryWithDistance": true,
+  "supportsReturningQueryExtent": true,
+  "supportsStatistics": true,
+  "supportsPercentileStatistics": true,
+  "supportsHavingClause": true,
+  "supportsOrderBy": true,
+  "supportsDistinct": true,
+  "supportsCountDistinct": true,
+  "supportsAdvancedQueryRelated": true,
+  "supportsQueryRelatedPagination": true,
+  "supportsCurrentUserQueries": true,
+  "supportsQueryWithResultType": true,
+  "supportsReturningGeometryCentroid": false,
+  "supportsSqlExpression": true,
+  "supportsQueryWithDatumTransformation": true,
+  "supportsLod": false,
+  "supportsQueryWithLodSR": false,
+  "supportsQueryAnalytic": true
+ },
+ "advancedQueryAnalyticCapabilities": {
+  "supportsLinearRegression": true,
+  "supportsAsync": false,
+  "supportsPercentileAnalytic": true
+ },
+ "advancedEditingCapabilities": {
+  "supportedSqlFormatsInCalculate": [
+   "standard"
+  ],
+  "supportsAsyncApplyEdits": true,
+  "supportsApplyEditsbyUploadID": true,
+  "supportedApplyEditsUploadIDFormats": "JSON"
+ },
+ "hasMetadata": true,
+ "extent": {
+  "xmin": 875946.9022967443,
+  "ymin": 990883.7955317423,
+  "xmax": 908359.2833379954,
+  "ymax": 1051595.482178986,
+  "spatialReference": {
+   "wkid": 102696,
+   "latestWkid": 102696,
+   "xyTolerance": 0.003280833333333333,
+   "zTolerance": 0.001,
+   "mTolerance": 0.001,
+   "falseX": -17627100,
+   "falseY": -45827300,
+   "xyUnits": 3048.0037202065128,
+   "falseZ": -100000,
+   "zUnits": 10000,
+   "falseM": -100000,
+   "mUnits": 10000
+  }
+ },
+ "sourceSpatialReference": {
+  "wkid": 102696,
+  "latestWkid": 102696,
+  "xyTolerance": 0.003280833333333333,
+  "zTolerance": 0.001,
+  "mTolerance": 0.001,
+  "falseX": -17627100,
+  "falseY": -45827300,
+  "xyUnits": 3048.0060960121928,
+  "falseZ": 0,
+  "zUnits": 1,
+  "falseM": 0,
+  "mUnits": 1
+ },
+ "drawingInfo": {
+  "renderer": {
+   "type": "uniqueValue",
+   "field1": "USER_School_System",
+   "uniqueValueGroups": [
+    {
+     "heading": "City Schools (Types)",
+     "classes": [
+      {
+       "label": "Charter",
+       "description": "Charter",
+       "symbol": {
+        "type": "esriPMS",
+        "url": "f206b82a80788309052a36fb8078ddb3",
+        "imageData": "iVBORw0KGgoAAAANSUhEUgAAABYAAAAYCAYAAAD+vg1LAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABkUlEQVRIie2VMU/CUBDH795rG4PRkIi0FBIHB0cGExcXEgYW0zg6MbiY6OSC38DBxcnFOLHol9DFIBHjYOKKTFpKwcQBoxT6zCsygC3Qpmz+kzbXe5ffXd693hNgRhJ8xEYAwAaA7u8TCliqqck7ETDdZqx4bX0f7zeb1XEJ/FTsaB4xr0lz+WwiOTaBb/BogtSSnNVaxg2EBW4zVnzvsXOtZdy7rQtBgHrXvsiYejm0PbaAPa3pr3sA8DUpdghcjqublNhJr2DKUC7J8raIyI/dkOqMPWiGUXMFLxDQokQoeJaBACtUvHRbitj2CQAcuYIHMnu9QwvZG7djKOxKCDkvH/9epvQURuQK/rDhMWPWb7n9rKjrEpKcl68P/ssIfNwmyRUco7hVUZQEt0VEZZzPYkyfGhwlpBAFMpXPV8Xmf/Nm1TwhhOYJg8HkwK7i8dUNKp0hMqeSIFpEkn9JpNKVXudgp9GoOmCFUZX/os4wCCiCoEgACmcBQB+cMfUSvxQCU4fV4a/BvvIx+BkS2NEPUHa4i8CBjEMAAAAASUVORK5CYII=",
+        "contentType": "image/png",
+        "width": 16,
+        "height": 18,
+        "angle": 0,
+        "xoffset": 0,
+        "yoffset": 7.5
+       },
+       "values": [
+        [
+         "Charter"
+        ]
+       ]
+      },
+      {
+       "label": "Independent",
+       "description": "Independent",
+       "symbol": {
+        "type": "esriPMS",
+        "url": "d05b5c86ab3f584b1302f2b8427e82b0",
+        "imageData": "iVBORw0KGgoAAAANSUhEUgAAABYAAAAYCAYAAAD+vg1LAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABj0lEQVRIiWNhoBFgIUEtFwMDwz8GBoY/UEwVg9nMarYcY2Ri0f/769uiz3dPtN1c3XUXnwWkuBgMmNm44gQ0neJMKizwWkCywegWaCdKOl+dX7iPgVoG//31bdGfL59mXZ1feBKbPAs5Bv76+HbOpempx6kWxv///bl4piMonYGB4QchtSgGG+QssGZiZZbGpZiRkVncMG9+ACMzCyjZoYA/n1+cvjSn9D5Wg1k4uf2YOXnL8LmETUByOTZxJhaOLgYGhnKsBsPA7y8fChn+/34GYrNwCiQxsrC64xRjYGBg5RHoZ0ADWA3+8/3z2UvTUw+D2Calq42ZWVjdcYlBDWagWnIjBLAazMYj4GNUuFgSzGFmlsAn9u/v3+dEG8zMyVvGzMBLpBgJLv49Gnm0ijwWKkQeC6xgAhumE9+szCVtMJWBiRHsEnIAMwdPnFnVZv1vTy9kX1lYexdsMBOXhBQoi5JrKBgwMkowsrBKgMxiYGCAGHxpeupRBgYGbooMRoBfIAIWrqBi8BuVDAYDAC5vuktiKO28AAAAAElFTkSuQmCC",
+        "contentType": "image/png",
+        "width": 16,
+        "height": 18,
+        "angle": 0,
+        "xoffset": 0,
+        "yoffset": 7.5
+       },
+       "values": [
+        [
+         "Independent"
+        ]
+       ]
+      },
+      {
+       "label": "Parochial",
+       "description": "Parochial",
+       "symbol": {
+        "type": "esriPMS",
+        "url": "644ea9f0e438bee3f6b5cb226ea79a41",
+        "imageData": "iVBORw0KGgoAAAANSUhEUgAAABYAAAAYCAYAAAD+vg1LAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABjklEQVRIiWNhoBFgIUEtFwMDwz8GBoY/UEwVg9l81ngcY2Rm0v/z/c+i1xdetJ3punQXnwWkuBgMWDhZ4iQtZeI8l0ngtYBkg9EtsGrncT5WeWwfhjwDmeDP9z+Lfnz8PetY5bGT2ORZyDHw25ufcw7mHTxOtTD+//ffxe1Ru9IZGBh+EFKLYrDjdEdrZjYGaZyqmZjEnWc5BDAyM4KSHQr49e7r6UOlp+5jNZiDl8WPhZu1DJ9LuES5lmMTZ2Vn6WJgYCjHajAM/Prwq/Dvv7/PQGx2XvYkJlYmd1xiID6bAFs/AxrAavCPz7/PHsw7eBjE9lziagwyBJcY1GAGqiU3QgCrwVxCbD4ucx0lwRwmRgl8Yv9+/39OtMEs3KxlLNysRImR5OJfo5FHq8hjoULkscAKJrBhVs3GyoLqolMZmRjALiEHMHOxxnmv8tB/f/N19rHas3fBBrPy80iBchK5hoIAIyODBCMrkwTILAYGBojBB/MOHmVgYOCmxGAk8AtEwMIVVAx+o5LBYAAABy6+Jw7EvfAAAAAASUVORK5CYII=",
+        "contentType": "image/png",
+        "width": 16,
+        "height": 18,
+        "angle": 0,
+        "xoffset": 0,
+        "yoffset": 7.5
+       },
+       "values": [
+        [
+         "Parochial"
+        ]
+       ]
+      },
+      {
+       "label": "Public",
+       "description": "Public",
+       "symbol": {
+        "type": "esriPMS",
+        "url": "cad2cef952b179a098318dcf08fed241",
+        "imageData": "iVBORw0KGgoAAAANSUhEUgAAABYAAAAYCAYAAAD+vg1LAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABiElEQVRIiWNhoBFgIUEtFwMDwz8GBoY/UEwVg9mm+cw/xsTEov/jz49Fl16da5t3ZvpdfBaQ4mIw4GDhiDOTsorT8zLCawHJBqNbIGQn7txzqGEfA7UM/vHnx6JPv7/M6jnUcBKbPAs5Br79+X5O896y41QL43///lws2JaaDjKfkFoUg5tc+63Z/jNJ41LMyMgs3urcF8DMyAxKdijgza/Xp3sOtdzHajA3C5cfNytXGT6XCHOLLscmzsrK0cXAwFCO1WAY+PzzY+Hfv3+fgdjcHLxJrEys7rjEQHxedv5+BjSA1eBPf76dbd5bdhjE7vWcaQwyBJcY1GAGqiU3QgCrwQJs/D4dLhMlQWxmRiYJfGL//v1+TrTB3KAIZOUiTowUF38ejTxaRR4LFSKPBVYwgQ3LtSpVVhPSnMrMwAh2CTmAi4UzbrLPPP1b765nTz7WfRdssACnqBQoJ5FrKAgwMjJKsDKySoDMYmBggBjcvLfsKMhnlBiMBH6BCFi4gorBb1QyGAwAkxq/GKzNxjsAAAAASUVORK5CYII=",
+        "contentType": "image/png",
+        "width": 16,
+        "height": 18,
+        "angle": 0,
+        "xoffset": 0,
+        "yoffset": 7.5
+       },
+       "values": [
+        [
+         "Public"
+        ]
+       ]
+      },
+      {
+       "label": "Public - Alternative",
+       "description": "Public - Alternative",
+       "symbol": {
+        "type": "esriPMS",
+        "url": "002d702212975a263029087b8ea212d2",
+        "imageData": "iVBORw0KGgoAAAANSUhEUgAAABYAAAAYCAYAAAD+vg1LAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABfUlEQVRIie2Uv0tCURiGn2tXvShJRqBWQ9CWg0NDg6NDS0RLjUYtDUXgokG0RrQ0hRCC5NLQP9BSS1hENLQnDllhUFBmqKnEuemgXH9drlsv3MO57/l4vo/znXNk+iS5h1gbUAXKtc8QsKW0w5XZhC9XJHGWYnfplFS7BL1UrGrQSnBxiuDnVvsEPYObEyRXCPjjXGAUOFck8frFkT/Ojda6rAf4+EHMG+XasD3+qXLv2GMNKHSKbQA/bOBXzIy1DJZwpTdZMA+ox65BTzluZ2KkNcHDduadCuF2lUw4OdHybRb2gYgmuK5snlC5wrOYj9hYtcrMtvLEv8vOAU3SBL/lufNGuRTz9wjTAtLKq4Ex7Lh1kibY42AuE8KjBki423mlCi9dg50KYafSnddTxdn/5vWrebIBzZPrD5MKO19m0j/Oocn0V4keDVkJFrbxJTOsB45JqWC3jVFxk/RChSQJt1XGLVhQA3ujJAGNi6lLJTHU91U8g98GgVX9Ags4lpf/CscvAAAAAElFTkSuQmCC",
+        "contentType": "image/png",
+        "width": 16,
+        "height": 18,
+        "angle": 0,
+        "xoffset": 0,
+        "yoffset": 7.5
+       },
+       "values": [
+        [
+         "Public - Alternative"
+        ]
+       ]
+      },
+      {
+       "label": "Public - College & Career Readiness",
+       "description": "Public - College & Career Readiness",
+       "symbol": {
+        "type": "esriPMS",
+        "url": "2b3260052d4a0cdab2f08f07d85978a9",
+        "imageData": "iVBORw0KGgoAAAANSUhEUgAAABYAAAAYCAYAAAD+vg1LAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABk0lEQVRIiWNhoBFgIUEtFwMDwz8GBoY/UEwVg9l+/TI6xsrKqP/5879FO3Z8aAsLu38XnwWkuBgMeHmZ4kJDheI+fRLAawHJBqNbcPQom7O19c19DNQy+PPnf4tevfo1y9r65kls8izkGPj48c852trXjlMtjH///n+Rj+98OgMDww9CalEMvnNH25qDg1Eap2IWRvH797UDWFkZQckOBTx9+vu0ufnN+1gNFhJi9RMUZC7D5xIFBY7l2MS5uFi6GBgYyrEaDAMvX/4u/PPn3zMQW0SELYmdndEdlxiILy7O2s+ABrAa/Pbtn7Pa2tcOg9jv3hkYs7Mzu+MSgxrMQLXkRghgNVhSks3nyRMdSbACFkYJfGK/fv17TrTBgoLMZYKCzESJMTCgiuE1+OVo5NEq8lioEHkssIIJbNjevSrK1tZ8U5mYGMAuIQcICDDH/fhhpH/06KdsZ+c7d8EGS0iwSYGyKLmGggAjI4MEOzujBMgsBgYGiMHa2teOMjAwcFNiMBL4BSJg4QoqBr9RyWAwAAAUvMKl2JeyfwAAAABJRU5ErkJggg==",
+        "contentType": "image/png",
+        "width": 16,
+        "height": 18,
+        "angle": 0,
+        "xoffset": 0,
+        "yoffset": 7.5
+       },
+       "values": [
+        [
+         "Public - College & Career Readiness"
+        ]
+       ]
+      },
+      {
+       "label": "Public - ESOL",
+       "description": "Public - ESOL",
+       "symbol": {
+        "type": "esriPMS",
+        "url": "9ec42fa08382780eec846fd44410c530",
+        "imageData": "iVBORw0KGgoAAAANSUhEUgAAABYAAAAYCAYAAAD+vg1LAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABiElEQVRIiWNhoBFgIUEtFwMDwz8GBoY/UEwVg9kWh6ofY2Zk1P/x59+iiy+/tE08+uwuPgtIcTEYcLAwxZlL88XNC+LBawHJBqNb0ODE6tyw7+E+BmoZ/OPPv0Ufv/+d1bDv4Uls8izkGPjm6+85ZTvvH6daGP/9//9i0rpb6SDzCalFMbjfU9malYVRGpdiRgZG8YneygHMTIygZIcC3v/8fbp218P7WA3mZmfy42FjLsPnElFu1uXYxNmYGbsYGBjKsRoMAx++/yn8x8DwDMTmZWNOYmVmdMclBuILcLL0M6ABrAZ/+fX3bNnO+4dB7FkBqsaszMzuuMSgBjNQLbkRAlgNFuBk8ZniqyIJVsDEKIFP7M/f/8+JNpgHSwQSK4bX4A+jkUeryGOhQuSxwAomsGE1TrLKqoJcU5mYGMAuIQdwsTLHLQxW17/9/lt2y77Hd8EG87GySIGyKLmGggATI4MEEzOjBMgsBgYGiMFlO+8fBZVBlBiMBH6BCFi4gorBb1QyGAwAnvC1ksbucPAAAAAASUVORK5CYII=",
+        "contentType": "image/png",
+        "width": 16,
+        "height": 18,
+        "angle": 0,
+        "xoffset": 0,
+        "yoffset": 7.5
+       },
+       "values": [
+        [
+         "Public - ESOL"
+        ]
+       ]
+      },
+      {
+       "label": "Public - Early Childood Center",
+       "description": "Public - Early Childood Center",
+       "symbol": {
+        "type": "esriPMS",
+        "url": "157dec037314b36214bb373f44c049e0",
+        "imageData": "iVBORw0KGgoAAAANSUhEUgAAABYAAAAYCAYAAAD+vg1LAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABjklEQVRIiWNhoBFgIUEtFwMDwz8GBoY/UEwVg9k+1+05xsLMrP/55/dFO28fa4td3XIXnwWkuBgMeNk540J0nOPcVa3wWkCywegWSPGLOzvPyd3HQC2DP//8vujVt3eznOfknsQmz0KOgY8/v5xjPDnxONXC+M/fvxfF2rzSGRgYfhBSi2LwlYIl1uwsrNK4FDMxMYlfK1wawMrMAkp2KODZh1en7efk3sdqsDAnv58AB08ZPpcoCkgtxybOw8rVxcDAUI7VYBh49fVd4a9/f56B2KKcgknsLKzuuMRAfDFuoX4GNIDV4DffP501npx4GMR+XrnZGGQILjGowQxUS26EAFaDpXhEfG6XrJQEsZkZmSXwif36++s50QYLcPCUCXDwECVGkotfjUYerSKPhQqRxwIrmMCGbYvvUraSM5jKzMgEdgk5gI+dO+5D7S79Y48uZHstLLsLNlicT1QKlJPINRQEmBgZJdhZWCVAZjEwMEAMNp6ceJSBgYGbEoORwC8QAQtXUDH4jUoGgwEAKaDAFG6L9XMAAAAASUVORK5CYII=",
+        "contentType": "image/png",
+        "width": 16,
+        "height": 18,
+        "angle": 0,
+        "xoffset": 0,
+        "yoffset": 7.5
+       },
+       "values": [
+        [
+         "Public - Early Childood Center"
+        ]
+       ]
+      },
+      {
+       "label": "Public - Special Education",
+       "description": "Public - Special Education",
+       "symbol": {
+        "type": "esriPMS",
+        "url": "bce946ef62d1cd2245647a6d76ffc52d",
+        "imageData": "iVBORw0KGgoAAAANSUhEUgAAABYAAAAYCAYAAAD+vg1LAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABjUlEQVRIiWNhoBFgIUEtFwMDwz8GBoY/UEwVg9mmTZt2jJmZWf/nz5+LLly40DZv3ry7+CwgxcVgwM7OHmdubh5nYGCA1wKSDUa3QExMzLmjo2MfA7UM/vnz56IvX77M6ujoOIlNnoUcAz98+DCnrq7uONXC+O/fvxfz8vLSGRgYfhBSi2JwW1ubNRMTkzQuxUxMTOKtra0BzMzMoGSHAt68eXO6p6fnPlaDOTk5/bi4uMrwuURERGQ5NnF2dvYuBgaGcqwGw8CnT58K//79+wzE5uHhSWJlZXXHJQbi8/Hx9TOgAawGf//+/WxdXd1hELu/v98YZAguMajBDFRLboQAVoN5eXl9Ojo6JEFsZmZmCXxif/78eU60wVxcXGVcXFxEiZHk4k+jkUeryGOhQuSxwAomsGG5ubnK6urqU5mYmMAuIQdwcnLGTZkyRf/mzZvZkydPvgs2WFRUVAqUk8g1FAQYGRklWFlZJUBmMTAwQAyuq6s7ysDAwE2JwUjgF4iAhSuoGPxGJYPBAABTG77UyCwJIAAAAABJRU5ErkJggg==",
+        "contentType": "image/png",
+        "width": 16,
+        "height": 18,
+        "angle": 0,
+        "xoffset": 0,
+        "yoffset": 7.5
+       },
+       "values": [
+        [
+         "Public - Special Education"
+        ]
+       ]
+      }
+     ]
+    }
+   ],
+   "uniqueValueInfos": [
+    {
+     "symbol": {
+      "type": "esriPMS",
+      "url": "f206b82a80788309052a36fb8078ddb3",
+      "imageData": "iVBORw0KGgoAAAANSUhEUgAAABYAAAAYCAYAAAD+vg1LAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABkUlEQVRIie2VMU/CUBDH795rG4PRkIi0FBIHB0cGExcXEgYW0zg6MbiY6OSC38DBxcnFOLHol9DFIBHjYOKKTFpKwcQBoxT6zCsygC3Qpmz+kzbXe5ffXd693hNgRhJ8xEYAwAaA7u8TCliqqck7ETDdZqx4bX0f7zeb1XEJ/FTsaB4xr0lz+WwiOTaBb/BogtSSnNVaxg2EBW4zVnzvsXOtZdy7rQtBgHrXvsiYejm0PbaAPa3pr3sA8DUpdghcjqublNhJr2DKUC7J8raIyI/dkOqMPWiGUXMFLxDQokQoeJaBACtUvHRbitj2CQAcuYIHMnu9QwvZG7djKOxKCDkvH/9epvQURuQK/rDhMWPWb7n9rKjrEpKcl68P/ssIfNwmyRUco7hVUZQEt0VEZZzPYkyfGhwlpBAFMpXPV8Xmf/Nm1TwhhOYJg8HkwK7i8dUNKp0hMqeSIFpEkn9JpNKVXudgp9GoOmCFUZX/os4wCCiCoEgACmcBQB+cMfUSvxQCU4fV4a/BvvIx+BkS2NEPUHa4i8CBjEMAAAAASUVORK5CYII=",
+      "contentType": "image/png",
+      "width": 16,
+      "height": 18,
+      "angle": 0,
+      "xoffset": 0,
+      "yoffset": 7.5
+     },
+     "value": "Charter",
+     "label": "Charter"
+    },
+    {
+     "symbol": {
+      "type": "esriPMS",
+      "url": "d05b5c86ab3f584b1302f2b8427e82b0",
+      "imageData": "iVBORw0KGgoAAAANSUhEUgAAABYAAAAYCAYAAAD+vg1LAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABj0lEQVRIiWNhoBFgIUEtFwMDwz8GBoY/UEwVg9nMarYcY2Ri0f/769uiz3dPtN1c3XUXnwWkuBgMmNm44gQ0neJMKizwWkCywegWaCdKOl+dX7iPgVoG//31bdGfL59mXZ1feBKbPAs5Bv76+HbOpempx6kWxv///bl4piMonYGB4QchtSgGG+QssGZiZZbGpZiRkVncMG9+ACMzCyjZoYA/n1+cvjSn9D5Wg1k4uf2YOXnL8LmETUByOTZxJhaOLgYGhnKsBsPA7y8fChn+/34GYrNwCiQxsrC64xRjYGBg5RHoZ0ADWA3+8/3z2UvTUw+D2Calq42ZWVjdcYlBDWagWnIjBLAazMYj4GNUuFgSzGFmlsAn9u/v3+dEG8zMyVvGzMBLpBgJLv49Gnm0ijwWKkQeC6xgAhumE9+szCVtMJWBiRHsEnIAMwdPnFnVZv1vTy9kX1lYexdsMBOXhBQoi5JrKBgwMkowsrBKgMxiYGCAGHxpeupRBgYGbooMRoBfIAIWrqBi8BuVDAYDAC5vuktiKO28AAAAAElFTkSuQmCC",
+      "contentType": "image/png",
+      "width": 16,
+      "height": 18,
+      "angle": 0,
+      "xoffset": 0,
+      "yoffset": 7.5
+     },
+     "value": "Independent",
+     "label": "Independent"
+    },
+    {
+     "symbol": {
+      "type": "esriPMS",
+      "url": "644ea9f0e438bee3f6b5cb226ea79a41",
+      "imageData": "iVBORw0KGgoAAAANSUhEUgAAABYAAAAYCAYAAAD+vg1LAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABjklEQVRIiWNhoBFgIUEtFwMDwz8GBoY/UEwVg9l81ngcY2Rm0v/z/c+i1xdetJ3punQXnwWkuBgMWDhZ4iQtZeI8l0ngtYBkg9EtsGrncT5WeWwfhjwDmeDP9z+Lfnz8PetY5bGT2ORZyDHw25ufcw7mHTxOtTD+//ffxe1Ru9IZGBh+EFKLYrDjdEdrZjYGaZyqmZjEnWc5BDAyM4KSHQr49e7r6UOlp+5jNZiDl8WPhZu1DJ9LuES5lmMTZ2Vn6WJgYCjHajAM/Prwq/Dvv7/PQGx2XvYkJlYmd1xiID6bAFs/AxrAavCPz7/PHsw7eBjE9lziagwyBJcY1GAGqiU3QgCrwVxCbD4ucx0lwRwmRgl8Yv9+/39OtMEs3KxlLNysRImR5OJfo5FHq8hjoULkscAKJrBhVs3GyoLqolMZmRjALiEHMHOxxnmv8tB/f/N19rHas3fBBrPy80iBchK5hoIAIyODBCMrkwTILAYGBojBB/MOHmVgYOCmxGAk8AtEwMIVVAx+o5LBYAAABy6+Jw7EvfAAAAAASUVORK5CYII=",
+      "contentType": "image/png",
+      "width": 16,
+      "height": 18,
+      "angle": 0,
+      "xoffset": 0,
+      "yoffset": 7.5
+     },
+     "value": "Parochial",
+     "label": "Parochial"
+    },
+    {
+     "symbol": {
+      "type": "esriPMS",
+      "url": "cad2cef952b179a098318dcf08fed241",
+      "imageData": "iVBORw0KGgoAAAANSUhEUgAAABYAAAAYCAYAAAD+vg1LAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABiElEQVRIiWNhoBFgIUEtFwMDwz8GBoY/UEwVg9mm+cw/xsTEov/jz49Fl16da5t3ZvpdfBaQ4mIw4GDhiDOTsorT8zLCawHJBqNbIGQn7txzqGEfA7UM/vHnx6JPv7/M6jnUcBKbPAs5Br79+X5O896y41QL43///lws2JaaDjKfkFoUg5tc+63Z/jNJ41LMyMgs3urcF8DMyAxKdijgza/Xp3sOtdzHajA3C5cfNytXGT6XCHOLLscmzsrK0cXAwFCO1WAY+PzzY+Hfv3+fgdjcHLxJrEys7rjEQHxedv5+BjSA1eBPf76dbd5bdhjE7vWcaQwyBJcY1GAGqiU3QgCrwQJs/D4dLhMlQWxmRiYJfGL//v1+TrTB3KAIZOUiTowUF38ejTxaRR4LFSKPBVYwgQ3LtSpVVhPSnMrMwAh2CTmAi4UzbrLPPP1b765nTz7WfRdssACnqBQoJ5FrKAgwMjJKsDKySoDMYmBggBjcvLfsKMhnlBiMBH6BCFi4gorBb1QyGAwAkxq/GKzNxjsAAAAASUVORK5CYII=",
+      "contentType": "image/png",
+      "width": 16,
+      "height": 18,
+      "angle": 0,
+      "xoffset": 0,
+      "yoffset": 7.5
+     },
+     "value": "Public",
+     "label": "Public"
+    },
+    {
+     "symbol": {
+      "type": "esriPMS",
+      "url": "002d702212975a263029087b8ea212d2",
+      "imageData": "iVBORw0KGgoAAAANSUhEUgAAABYAAAAYCAYAAAD+vg1LAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABfUlEQVRIie2Uv0tCURiGn2tXvShJRqBWQ9CWg0NDg6NDS0RLjUYtDUXgokG0RrQ0hRCC5NLQP9BSS1hENLQnDllhUFBmqKnEuemgXH9drlsv3MO57/l4vo/znXNk+iS5h1gbUAXKtc8QsKW0w5XZhC9XJHGWYnfplFS7BL1UrGrQSnBxiuDnVvsEPYObEyRXCPjjXGAUOFck8frFkT/Ojda6rAf4+EHMG+XasD3+qXLv2GMNKHSKbQA/bOBXzIy1DJZwpTdZMA+ox65BTzluZ2KkNcHDduadCuF2lUw4OdHybRb2gYgmuK5snlC5wrOYj9hYtcrMtvLEv8vOAU3SBL/lufNGuRTz9wjTAtLKq4Ex7Lh1kibY42AuE8KjBki423mlCi9dg50KYafSnddTxdn/5vWrebIBzZPrD5MKO19m0j/Oocn0V4keDVkJFrbxJTOsB45JqWC3jVFxk/RChSQJt1XGLVhQA3ujJAGNi6lLJTHU91U8g98GgVX9Ags4lpf/CscvAAAAAElFTkSuQmCC",
+      "contentType": "image/png",
+      "width": 16,
+      "height": 18,
+      "angle": 0,
+      "xoffset": 0,
+      "yoffset": 7.5
+     },
+     "value": "Public - Alternative",
+     "label": "Public - Alternative"
+    },
+    {
+     "symbol": {
+      "type": "esriPMS",
+      "url": "2b3260052d4a0cdab2f08f07d85978a9",
+      "imageData": "iVBORw0KGgoAAAANSUhEUgAAABYAAAAYCAYAAAD+vg1LAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABk0lEQVRIiWNhoBFgIUEtFwMDwz8GBoY/UEwVg9l+/TI6xsrKqP/5879FO3Z8aAsLu38XnwWkuBgMeHmZ4kJDheI+fRLAawHJBqNbcPQom7O19c19DNQy+PPnf4tevfo1y9r65kls8izkGPj48c852trXjlMtjH///n+Rj+98OgMDww9CalEMvnNH25qDg1Eap2IWRvH797UDWFkZQckOBTx9+vu0ufnN+1gNFhJi9RMUZC7D5xIFBY7l2MS5uFi6GBgYyrEaDAMvX/4u/PPn3zMQW0SELYmdndEdlxiILy7O2s+ABrAa/Pbtn7Pa2tcOg9jv3hkYs7Mzu+MSgxrMQLXkRghgNVhSks3nyRMdSbACFkYJfGK/fv17TrTBgoLMZYKCzESJMTCgiuE1+OVo5NEq8lioEHkssIIJbNjevSrK1tZ8U5mYGMAuIQcICDDH/fhhpH/06KdsZ+c7d8EGS0iwSYGyKLmGggAjI4MEOzujBMgsBgYGiMHa2teOMjAwcFNiMBL4BSJg4QoqBr9RyWAwAAAUvMKl2JeyfwAAAABJRU5ErkJggg==",
+      "contentType": "image/png",
+      "width": 16,
+      "height": 18,
+      "angle": 0,
+      "xoffset": 0,
+      "yoffset": 7.5
+     },
+     "value": "Public - College & Career Readiness",
+     "label": "Public - College & Career Readiness"
+    },
+    {
+     "symbol": {
+      "type": "esriPMS",
+      "url": "9ec42fa08382780eec846fd44410c530",
+      "imageData": "iVBORw0KGgoAAAANSUhEUgAAABYAAAAYCAYAAAD+vg1LAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABiElEQVRIiWNhoBFgIUEtFwMDwz8GBoY/UEwVg9kWh6ofY2Zk1P/x59+iiy+/tE08+uwuPgtIcTEYcLAwxZlL88XNC+LBawHJBqNb0ODE6tyw7+E+BmoZ/OPPv0Ufv/+d1bDv4Uls8izkGPjm6+85ZTvvH6daGP/9//9i0rpb6SDzCalFMbjfU9malYVRGpdiRgZG8YneygHMTIygZIcC3v/8fbp218P7WA3mZmfy42FjLsPnElFu1uXYxNmYGbsYGBjKsRoMAx++/yn8x8DwDMTmZWNOYmVmdMclBuILcLL0M6ABrAZ/+fX3bNnO+4dB7FkBqsaszMzuuMSgBjNQLbkRAlgNFuBk8ZniqyIJVsDEKIFP7M/f/8+JNpgHSwQSK4bX4A+jkUeryGOhQuSxwAomsGE1TrLKqoJcU5mYGMAuIQdwsTLHLQxW17/9/lt2y77Hd8EG87GySIGyKLmGggATI4MEEzOjBMgsBgYGiMFlO+8fBZVBlBiMBH6BCFi4gorBb1QyGAwAnvC1ksbucPAAAAAASUVORK5CYII=",
+      "contentType": "image/png",
+      "width": 16,
+      "height": 18,
+      "angle": 0,
+      "xoffset": 0,
+      "yoffset": 7.5
+     },
+     "value": "Public - ESOL",
+     "label": "Public - ESOL"
+    },
+    {
+     "symbol": {
+      "type": "esriPMS",
+      "url": "157dec037314b36214bb373f44c049e0",
+      "imageData": "iVBORw0KGgoAAAANSUhEUgAAABYAAAAYCAYAAAD+vg1LAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABjklEQVRIiWNhoBFgIUEtFwMDwz8GBoY/UEwVg9k+1+05xsLMrP/55/dFO28fa4td3XIXnwWkuBgMeNk540J0nOPcVa3wWkCywegWSPGLOzvPyd3HQC2DP//8vujVt3eznOfknsQmz0KOgY8/v5xjPDnxONXC+M/fvxfF2rzSGRgYfhBSi2LwlYIl1uwsrNK4FDMxMYlfK1wawMrMAkp2KODZh1en7efk3sdqsDAnv58AB08ZPpcoCkgtxybOw8rVxcDAUI7VYBh49fVd4a9/f56B2KKcgknsLKzuuMRAfDFuoX4GNIDV4DffP501npx4GMR+XrnZGGQILjGowQxUS26EAFaDpXhEfG6XrJQEsZkZmSXwif36++s50QYLcPCUCXDwECVGkotfjUYerSKPhQqRxwIrmMCGbYvvUraSM5jKzMgEdgk5gI+dO+5D7S79Y48uZHstLLsLNlicT1QKlJPINRQEmBgZJdhZWCVAZjEwMEAMNp6ceJSBgYGbEoORwC8QAQtXUDH4jUoGgwEAKaDAFG6L9XMAAAAASUVORK5CYII=",
+      "contentType": "image/png",
+      "width": 16,
+      "height": 18,
+      "angle": 0,
+      "xoffset": 0,
+      "yoffset": 7.5
+     },
+     "value": "Public - Early Childood Center",
+     "label": "Public - Early Childood Center"
+    },
+    {
+     "symbol": {
+      "type": "esriPMS",
+      "url": "bce946ef62d1cd2245647a6d76ffc52d",
+      "imageData": "iVBORw0KGgoAAAANSUhEUgAAABYAAAAYCAYAAAD+vg1LAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABjUlEQVRIiWNhoBFgIUEtFwMDwz8GBoY/UEwVg9mmTZt2jJmZWf/nz5+LLly40DZv3ry7+CwgxcVgwM7OHmdubh5nYGCA1wKSDUa3QExMzLmjo2MfA7UM/vnz56IvX77M6ujoOIlNnoUcAz98+DCnrq7uONXC+O/fvxfz8vLSGRgYfhBSi2JwW1ubNRMTkzQuxUxMTOKtra0BzMzMoGSHAt68eXO6p6fnPlaDOTk5/bi4uMrwuURERGQ5NnF2dvYuBgaGcqwGw8CnT58K//79+wzE5uHhSWJlZXXHJQbi8/Hx9TOgAawGf//+/WxdXd1hELu/v98YZAguMajBDFRLboQAVoN5eXl9Ojo6JEFsZmZmCXxif/78eU60wVxcXGVcXFxEiZHk4k+jkUeryGOhQuSxwAomsGG5ubnK6urqU5mYmMAuIQdwcnLGTZkyRf/mzZvZkydPvgs2WFRUVAqUk8g1FAQYGRklWFlZJUBmMTAwQAyuq6s7ysDAwE2JwUjgF4iAhSuoGPxGJYPBAABTG77UyCwJIAAAAABJRU5ErkJggg==",
+      "contentType": "image/png",
+      "width": 16,
+      "height": 18,
+      "angle": 0,
+      "xoffset": 0,
+      "yoffset": 7.5
+     },
+     "value": "Public - Special Education",
+     "label": "Public - Special Education"
+    }
+   ],
+   "fieldDelimiter": ",",
+   "authoringInfo": {
+    "colorRamp": {
+     "type": "multipart",
+     "colorRamps": [
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        227,
+        25,
+        28,
+        255
+       ],
+       "toColor": [
+        227,
+        25,
+        28,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        55,
+        126,
+        184,
+        255
+       ],
+       "toColor": [
+        55,
+        126,
+        184,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        77,
+        176,
+        74,
+        255
+       ],
+       "toColor": [
+        77,
+        176,
+        74,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        152,
+        78,
+        163,
+        255
+       ],
+       "toColor": [
+        152,
+        78,
+        163,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        255,
+        128,
+        0,
+        255
+       ],
+       "toColor": [
+        255,
+        128,
+        0,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        255,
+        255,
+        51,
+        255
+       ],
+       "toColor": [
+        255,
+        255,
+        51,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        166,
+        86,
+        40,
+        255
+       ],
+       "toColor": [
+        166,
+        86,
+        40,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        247,
+        129,
+        192,
+        255
+       ],
+       "toColor": [
+        247,
+        129,
+        192,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        153,
+        153,
+        153,
+        255
+       ],
+       "toColor": [
+        153,
+        153,
+        153,
+        255
+       ]
+      }
+     ]
+    }
+   }
+  },
+  "scaleSymbols": true,
+  "transparency": 0,
+  "labelingInfo": null
+ },
+ "hasM": false,
+ "hasZ": false,
+ "allowGeometryUpdates": true,
+ "allowTrueCurvesUpdates": true,
+ "onlyAllowTrueCurveUpdatesByTrueCurveClients": true,
+ "hasAttachments": false,
+ "supportsApplyEditsWithGlobalIds": false,
+ "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+ "objectIdField": "OBJECTID",
+ "globalIdField": "",
+ "displayField": "StName",
+ "typeIdField": "USER_School_System",
+ "subtypeField": "",
+ "fields": [
+  {
+   "name": "OBJECTID",
+   "type": "esriFieldTypeOID",
+   "alias": "ObjectID",
+   "domain": null,
+   "editable": false,
+   "nullable": false,
+   "defaultValue": null,
+   "modelName": "OBJECTID"
+  },
+  {
+   "name": "Score",
+   "type": "esriFieldTypeDouble",
+   "alias": "Score",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "Score"
+  },
+  {
+   "name": "Match_type",
+   "type": "esriFieldTypeString",
+   "alias": "Match_type",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 2,
+   "defaultValue": null,
+   "modelName": "Match_type"
+  },
+  {
+   "name": "Match_addr",
+   "type": "esriFieldTypeString",
+   "alias": "Match_addr",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 120,
+   "defaultValue": null,
+   "modelName": "Match_addr"
+  },
+  {
+   "name": "Addr_type",
+   "type": "esriFieldTypeString",
+   "alias": "Addr_type",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 20,
+   "defaultValue": null,
+   "modelName": "Addr_type"
+  },
+  {
+   "name": "AddNum",
+   "type": "esriFieldTypeString",
+   "alias": "AddNum",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 12,
+   "defaultValue": null,
+   "modelName": "AddNum"
+  },
+  {
+   "name": "Side",
+   "type": "esriFieldTypeString",
+   "alias": "Side",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 1,
+   "defaultValue": null,
+   "modelName": "Side"
+  },
+  {
+   "name": "StPreDir",
+   "type": "esriFieldTypeString",
+   "alias": "StPreDir",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 20,
+   "defaultValue": null,
+   "modelName": "StPreDir"
+  },
+  {
+   "name": "StPreType",
+   "type": "esriFieldTypeString",
+   "alias": "StPreType",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 20,
+   "defaultValue": null,
+   "modelName": "StPreType"
+  },
+  {
+   "name": "StName",
+   "type": "esriFieldTypeString",
+   "alias": "StName",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 70,
+   "defaultValue": null,
+   "modelName": "StName"
+  },
+  {
+   "name": "StType",
+   "type": "esriFieldTypeString",
+   "alias": "StType",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 20,
+   "defaultValue": null,
+   "modelName": "StType"
+  },
+  {
+   "name": "StDir",
+   "type": "esriFieldTypeString",
+   "alias": "StDir",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 20,
+   "defaultValue": null,
+   "modelName": "StDir"
+  },
+  {
+   "name": "StAddr",
+   "type": "esriFieldTypeString",
+   "alias": "StAddr",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 120,
+   "defaultValue": null,
+   "modelName": "StAddr"
+  },
+  {
+   "name": "City",
+   "type": "esriFieldTypeString",
+   "alias": "City",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 70,
+   "defaultValue": null,
+   "modelName": "City"
+  },
+  {
+   "name": "County",
+   "type": "esriFieldTypeString",
+   "alias": "County",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 70,
+   "defaultValue": null,
+   "modelName": "County"
+  },
+  {
+   "name": "State",
+   "type": "esriFieldTypeString",
+   "alias": "State",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 100,
+   "defaultValue": null,
+   "modelName": "State"
+  },
+  {
+   "name": "StateAbbr",
+   "type": "esriFieldTypeString",
+   "alias": "StateAbbr",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 100,
+   "defaultValue": null,
+   "modelName": "StateAbbr"
+  },
+  {
+   "name": "RegionAbbr",
+   "type": "esriFieldTypeString",
+   "alias": "RegionAbbr",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 100,
+   "defaultValue": null,
+   "modelName": "RegionAbbr"
+  },
+  {
+   "name": "ZIP",
+   "type": "esriFieldTypeString",
+   "alias": "ZIP",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 10,
+   "defaultValue": null,
+   "modelName": "ZIP"
+  },
+  {
+   "name": "ZIP4",
+   "type": "esriFieldTypeString",
+   "alias": "ZIP4",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 10,
+   "defaultValue": null,
+   "modelName": "ZIP4"
+  },
+  {
+   "name": "X",
+   "type": "esriFieldTypeDouble",
+   "alias": "X",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "X"
+  },
+  {
+   "name": "Y",
+   "type": "esriFieldTypeDouble",
+   "alias": "Y",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "Y"
+  },
+  {
+   "name": "DisplayX",
+   "type": "esriFieldTypeDouble",
+   "alias": "DisplayX",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "DisplayX"
+  },
+  {
+   "name": "DisplayY",
+   "type": "esriFieldTypeDouble",
+   "alias": "DisplayY",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "DisplayY"
+  },
+  {
+   "name": "Xmin",
+   "type": "esriFieldTypeDouble",
+   "alias": "Xmin",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "Xmin"
+  },
+  {
+   "name": "Xmax",
+   "type": "esriFieldTypeDouble",
+   "alias": "Xmax",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "Xmax"
+  },
+  {
+   "name": "Ymin",
+   "type": "esriFieldTypeDouble",
+   "alias": "Ymin",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "Ymin"
+  },
+  {
+   "name": "Ymax",
+   "type": "esriFieldTypeDouble",
+   "alias": "Ymax",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "Ymax"
+  },
+  {
+   "name": "User_fld",
+   "type": "esriFieldTypeString",
+   "alias": "User_fld",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 120,
+   "defaultValue": null,
+   "modelName": "User_fld"
+  },
+  {
+   "name": "Comp_score",
+   "type": "esriFieldTypeString",
+   "alias": "Comp_score",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 200,
+   "defaultValue": null,
+   "modelName": "Comp_score"
+  },
+  {
+   "name": "Status",
+   "type": "esriFieldTypeString",
+   "alias": "Status",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 1,
+   "defaultValue": null,
+   "modelName": "Status"
+  },
+  {
+   "name": "IN_Street",
+   "type": "esriFieldTypeString",
+   "alias": "Street or Intersection",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 100,
+   "defaultValue": "",
+   "modelName": "IN_Street"
+  },
+  {
+   "name": "IN_ZIP",
+   "type": "esriFieldTypeString",
+   "alias": "ZIP Code",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 10,
+   "defaultValue": "",
+   "modelName": "IN_ZIP"
+  },
+  {
+   "name": "USER_School_Name",
+   "type": "esriFieldTypeString",
+   "alias": "School Name",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 1073741822,
+   "defaultValue": "",
+   "modelName": "USER_School_Name"
+  },
+  {
+   "name": "USER_Street_Address",
+   "type": "esriFieldTypeString",
+   "alias": "Street Address",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 1073741822,
+   "defaultValue": "",
+   "modelName": "USER_Street_Address"
+  },
+  {
+   "name": "USER_State",
+   "type": "esriFieldTypeString",
+   "alias": "State",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 1073741822,
+   "defaultValue": "",
+   "modelName": "USER_State"
+  },
+  {
+   "name": "USER_City",
+   "type": "esriFieldTypeString",
+   "alias": "City",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 1073741822,
+   "defaultValue": "",
+   "modelName": "USER_City"
+  },
+  {
+   "name": "USER_ZIP",
+   "type": "esriFieldTypeInteger",
+   "alias": "ZIP",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": 0,
+   "modelName": "USER_ZIP"
+  },
+  {
+   "name": "USER_School_System",
+   "type": "esriFieldTypeString",
+   "alias": "School System",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "length": 1073741822,
+   "defaultValue": "",
+   "modelName": "USER_School_System"
+  },
+  {
+   "name": "POINT_X",
+   "type": "esriFieldTypeDouble",
+   "alias": "POINT_X",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "POINT_X"
+  },
+  {
+   "name": "POINT_Y",
+   "type": "esriFieldTypeDouble",
+   "alias": "POINT_Y",
+   "domain": null,
+   "editable": true,
+   "nullable": true,
+   "defaultValue": null,
+   "modelName": "POINT_Y"
+  }
+ ],
+ "geometryField": {
+  "name": "Shape",
+  "type": "esriFieldTypeGeometry",
+  "alias": "Shape",
+  "domain": null,
+  "editable": true,
+  "nullable": true,
+  "defaultValue": null,
+  "modelName": "Shape"
+ },
+ "indexes": [
+  {
+   "name": "R539_pk",
+   "fields": "OBJECTID",
+   "isAscending": true,
+   "isUnique": true,
+   "description": ""
+  },
+  {
+   "name": "S508_idx",
+   "fields": "Shape",
+   "isAscending": true,
+   "isUnique": true,
+   "description": ""
+  }
+ ],
+ "datesInUnknownTimezone": false,
+ "dateFieldsTimeReference": {
+  "timeZone": "UTC",
+  "respectsDaylightSaving": false
+ },
+ "preferredTimeReference": null,
+ "types": [
+  {
+   "id": "Charter",
+   "name": "Charter",
+   "domains": {},
+   "templates": [
+    {
+     "name": "Charter",
+     "description": "",
+     "prototype": {
+      "attributes": {
+       "POINT_X": null,
+       "POINT_Y": null,
+       "Score": null,
+       "Match_type": null,
+       "Match_addr": null,
+       "Addr_type": null,
+       "AddNum": null,
+       "Side": null,
+       "StPreDir": null,
+       "StPreType": null,
+       "StName": null,
+       "StType": null,
+       "StDir": null,
+       "StAddr": null,
+       "City": null,
+       "County": null,
+       "State": null,
+       "StateAbbr": null,
+       "RegionAbbr": null,
+       "ZIP": null,
+       "ZIP4": null,
+       "X": null,
+       "Y": null,
+       "DisplayX": null,
+       "DisplayY": null,
+       "Xmin": null,
+       "Xmax": null,
+       "Ymin": null,
+       "Ymax": null,
+       "User_fld": null,
+       "Comp_score": null,
+       "Status": null,
+       "IN_Street": "",
+       "IN_ZIP": "",
+       "USER_School_Name": "",
+       "USER_Street_Address": "",
+       "USER_State": "",
+       "USER_City": "",
+       "USER_ZIP": 0,
+       "USER_School_System": "Charter"
+      }
+     },
+     "drawingTool": "esriFeatureEditToolPoint"
+    }
+   ]
+  },
+  {
+   "id": "Independent",
+   "name": "Independent",
+   "domains": {},
+   "templates": [
+    {
+     "name": "Independent",
+     "description": "",
+     "prototype": {
+      "attributes": {
+       "POINT_X": null,
+       "POINT_Y": null,
+       "Score": null,
+       "Match_type": null,
+       "Match_addr": null,
+       "Addr_type": null,
+       "AddNum": null,
+       "Side": null,
+       "StPreDir": null,
+       "StPreType": null,
+       "StName": null,
+       "StType": null,
+       "StDir": null,
+       "StAddr": null,
+       "City": null,
+       "County": null,
+       "State": null,
+       "StateAbbr": null,
+       "RegionAbbr": null,
+       "ZIP": null,
+       "ZIP4": null,
+       "X": null,
+       "Y": null,
+       "DisplayX": null,
+       "DisplayY": null,
+       "Xmin": null,
+       "Xmax": null,
+       "Ymin": null,
+       "Ymax": null,
+       "User_fld": null,
+       "Comp_score": null,
+       "Status": null,
+       "IN_Street": "",
+       "IN_ZIP": "",
+       "USER_School_Name": "",
+       "USER_Street_Address": "",
+       "USER_State": "",
+       "USER_City": "",
+       "USER_ZIP": 0,
+       "USER_School_System": "Independent"
+      }
+     },
+     "drawingTool": "esriFeatureEditToolPoint"
+    }
+   ]
+  },
+  {
+   "id": "Parochial",
+   "name": "Parochial",
+   "domains": {},
+   "templates": [
+    {
+     "name": "Parochial",
+     "description": "",
+     "prototype": {
+      "attributes": {
+       "POINT_X": null,
+       "POINT_Y": null,
+       "Score": null,
+       "Match_type": null,
+       "Match_addr": null,
+       "Addr_type": null,
+       "AddNum": null,
+       "Side": null,
+       "StPreDir": null,
+       "StPreType": null,
+       "StName": null,
+       "StType": null,
+       "StDir": null,
+       "StAddr": null,
+       "City": null,
+       "County": null,
+       "State": null,
+       "StateAbbr": null,
+       "RegionAbbr": null,
+       "ZIP": null,
+       "ZIP4": null,
+       "X": null,
+       "Y": null,
+       "DisplayX": null,
+       "DisplayY": null,
+       "Xmin": null,
+       "Xmax": null,
+       "Ymin": null,
+       "Ymax": null,
+       "User_fld": null,
+       "Comp_score": null,
+       "Status": null,
+       "IN_Street": "",
+       "IN_ZIP": "",
+       "USER_School_Name": "",
+       "USER_Street_Address": "",
+       "USER_State": "",
+       "USER_City": "",
+       "USER_ZIP": 0,
+       "USER_School_System": "Parochial"
+      }
+     },
+     "drawingTool": "esriFeatureEditToolPoint"
+    }
+   ]
+  },
+  {
+   "id": "Public",
+   "name": "Public",
+   "domains": {},
+   "templates": [
+    {
+     "name": "Public",
+     "description": "",
+     "prototype": {
+      "attributes": {
+       "POINT_X": null,
+       "POINT_Y": null,
+       "Score": null,
+       "Match_type": null,
+       "Match_addr": null,
+       "Addr_type": null,
+       "AddNum": null,
+       "Side": null,
+       "StPreDir": null,
+       "StPreType": null,
+       "StName": null,
+       "StType": null,
+       "StDir": null,
+       "StAddr": null,
+       "City": null,
+       "County": null,
+       "State": null,
+       "StateAbbr": null,
+       "RegionAbbr": null,
+       "ZIP": null,
+       "ZIP4": null,
+       "X": null,
+       "Y": null,
+       "DisplayX": null,
+       "DisplayY": null,
+       "Xmin": null,
+       "Xmax": null,
+       "Ymin": null,
+       "Ymax": null,
+       "User_fld": null,
+       "Comp_score": null,
+       "Status": null,
+       "IN_Street": "",
+       "IN_ZIP": "",
+       "USER_School_Name": "",
+       "USER_Street_Address": "",
+       "USER_State": "",
+       "USER_City": "",
+       "USER_ZIP": 0,
+       "USER_School_System": "Public"
+      }
+     },
+     "drawingTool": "esriFeatureEditToolPoint"
+    }
+   ]
+  },
+  {
+   "id": "Public - Alternative",
+   "name": "Public - Alternative",
+   "domains": {},
+   "templates": [
+    {
+     "name": "Public - Alternative",
+     "description": "",
+     "prototype": {
+      "attributes": {
+       "POINT_X": null,
+       "POINT_Y": null,
+       "Score": null,
+       "Match_type": null,
+       "Match_addr": null,
+       "Addr_type": null,
+       "AddNum": null,
+       "Side": null,
+       "StPreDir": null,
+       "StPreType": null,
+       "StName": null,
+       "StType": null,
+       "StDir": null,
+       "StAddr": null,
+       "City": null,
+       "County": null,
+       "State": null,
+       "StateAbbr": null,
+       "RegionAbbr": null,
+       "ZIP": null,
+       "ZIP4": null,
+       "X": null,
+       "Y": null,
+       "DisplayX": null,
+       "DisplayY": null,
+       "Xmin": null,
+       "Xmax": null,
+       "Ymin": null,
+       "Ymax": null,
+       "User_fld": null,
+       "Comp_score": null,
+       "Status": null,
+       "IN_Street": "",
+       "IN_ZIP": "",
+       "USER_School_Name": "",
+       "USER_Street_Address": "",
+       "USER_State": "",
+       "USER_City": "",
+       "USER_ZIP": 0,
+       "USER_School_System": "Public - Alternative"
+      }
+     },
+     "drawingTool": "esriFeatureEditToolPoint"
+    }
+   ]
+  },
+  {
+   "id": "Public - College & Career Readiness",
+   "name": "Public - College & Career Readiness",
+   "domains": {},
+   "templates": [
+    {
+     "name": "Public - College & Career Readiness",
+     "description": "",
+     "prototype": {
+      "attributes": {
+       "POINT_X": null,
+       "POINT_Y": null,
+       "Score": null,
+       "Match_type": null,
+       "Match_addr": null,
+       "Addr_type": null,
+       "AddNum": null,
+       "Side": null,
+       "StPreDir": null,
+       "StPreType": null,
+       "StName": null,
+       "StType": null,
+       "StDir": null,
+       "StAddr": null,
+       "City": null,
+       "County": null,
+       "State": null,
+       "StateAbbr": null,
+       "RegionAbbr": null,
+       "ZIP": null,
+       "ZIP4": null,
+       "X": null,
+       "Y": null,
+       "DisplayX": null,
+       "DisplayY": null,
+       "Xmin": null,
+       "Xmax": null,
+       "Ymin": null,
+       "Ymax": null,
+       "User_fld": null,
+       "Comp_score": null,
+       "Status": null,
+       "IN_Street": "",
+       "IN_ZIP": "",
+       "USER_School_Name": "",
+       "USER_Street_Address": "",
+       "USER_State": "",
+       "USER_City": "",
+       "USER_ZIP": 0,
+       "USER_School_System": "Public - College & Career Readiness"
+      }
+     },
+     "drawingTool": "esriFeatureEditToolPoint"
+    }
+   ]
+  },
+  {
+   "id": "Public - ESOL",
+   "name": "Public - ESOL",
+   "domains": {},
+   "templates": [
+    {
+     "name": "Public - ESOL",
+     "description": "",
+     "prototype": {
+      "attributes": {
+       "POINT_X": null,
+       "POINT_Y": null,
+       "Score": null,
+       "Match_type": null,
+       "Match_addr": null,
+       "Addr_type": null,
+       "AddNum": null,
+       "Side": null,
+       "StPreDir": null,
+       "StPreType": null,
+       "StName": null,
+       "StType": null,
+       "StDir": null,
+       "StAddr": null,
+       "City": null,
+       "County": null,
+       "State": null,
+       "StateAbbr": null,
+       "RegionAbbr": null,
+       "ZIP": null,
+       "ZIP4": null,
+       "X": null,
+       "Y": null,
+       "DisplayX": null,
+       "DisplayY": null,
+       "Xmin": null,
+       "Xmax": null,
+       "Ymin": null,
+       "Ymax": null,
+       "User_fld": null,
+       "Comp_score": null,
+       "Status": null,
+       "IN_Street": "",
+       "IN_ZIP": "",
+       "USER_School_Name": "",
+       "USER_Street_Address": "",
+       "USER_State": "",
+       "USER_City": "",
+       "USER_ZIP": 0,
+       "USER_School_System": "Public - ESOL"
+      }
+     },
+     "drawingTool": "esriFeatureEditToolPoint"
+    }
+   ]
+  },
+  {
+   "id": "Public - Early Childood Center",
+   "name": "Public - Early Childood Center",
+   "domains": {},
+   "templates": [
+    {
+     "name": "Public - Early Childood Center",
+     "description": "",
+     "prototype": {
+      "attributes": {
+       "POINT_X": null,
+       "POINT_Y": null,
+       "Score": null,
+       "Match_type": null,
+       "Match_addr": null,
+       "Addr_type": null,
+       "AddNum": null,
+       "Side": null,
+       "StPreDir": null,
+       "StPreType": null,
+       "StName": null,
+       "StType": null,
+       "StDir": null,
+       "StAddr": null,
+       "City": null,
+       "County": null,
+       "State": null,
+       "StateAbbr": null,
+       "RegionAbbr": null,
+       "ZIP": null,
+       "ZIP4": null,
+       "X": null,
+       "Y": null,
+       "DisplayX": null,
+       "DisplayY": null,
+       "Xmin": null,
+       "Xmax": null,
+       "Ymin": null,
+       "Ymax": null,
+       "User_fld": null,
+       "Comp_score": null,
+       "Status": null,
+       "IN_Street": "",
+       "IN_ZIP": "",
+       "USER_School_Name": "",
+       "USER_Street_Address": "",
+       "USER_State": "",
+       "USER_City": "",
+       "USER_ZIP": 0,
+       "USER_School_System": "Public - Early Childood Center"
+      }
+     },
+     "drawingTool": "esriFeatureEditToolPoint"
+    }
+   ]
+  },
+  {
+   "id": "Public - Special Education",
+   "name": "Public - Special Education",
+   "domains": {},
+   "templates": [
+    {
+     "name": "Public - Special Education",
+     "description": "",
+     "prototype": {
+      "attributes": {
+       "POINT_X": null,
+       "POINT_Y": null,
+       "Score": null,
+       "Match_type": null,
+       "Match_addr": null,
+       "Addr_type": null,
+       "AddNum": null,
+       "Side": null,
+       "StPreDir": null,
+       "StPreType": null,
+       "StName": null,
+       "StType": null,
+       "StDir": null,
+       "StAddr": null,
+       "City": null,
+       "County": null,
+       "State": null,
+       "StateAbbr": null,
+       "RegionAbbr": null,
+       "ZIP": null,
+       "ZIP4": null,
+       "X": null,
+       "Y": null,
+       "DisplayX": null,
+       "DisplayY": null,
+       "Xmin": null,
+       "Xmax": null,
+       "Ymin": null,
+       "Ymax": null,
+       "User_fld": null,
+       "Comp_score": null,
+       "Status": null,
+       "IN_Street": "",
+       "IN_ZIP": "",
+       "USER_School_Name": "",
+       "USER_Street_Address": "",
+       "USER_State": "",
+       "USER_City": "",
+       "USER_ZIP": 0,
+       "USER_School_System": "Public - Special Education"
+      }
+     },
+     "drawingTool": "esriFeatureEditToolPoint"
+    }
+   ]
+  }
+ ],
+ "templates": [],
+ "maxRecordCount": 2000,
+ "supportedQueryFormats": "JSON, geoJSON, PBF",
+ "supportedExportFormats": "sqlite,filegdb,shapefile,csv,geojson",
+ "capabilities": "Query,Create,Update,Delete,Uploads,Editing",
+ "useStandardizedQueries": true,
+ "bigIntegerRestrictedTo53Bits": true,
+ "supportedSpatialRelationships": [
+  "esriSpatialRelIntersects",
+  "esriSpatialRelContains",
+  "esriSpatialRelCrosses",
+  "esriSpatialRelEnvelopeIntersects",
+  "esriSpatialRelIndexIntersects",
+  "esriSpatialRelOverlaps",
+  "esriSpatialRelTouches",
+  "esriSpatialRelWithin",
+  "esriSpatialRelRelation"
+ ],
+ "standardMaxRecordCount": 32000,
+ "tileMaxRecordCount": 8000,
+ "standardMaxRecordCountNoGeometry": 32000,
+ "maxRecordCountFactor": 1,
+ "serviceItemId": "c8f678358dee44e59cdf655bc671c1f5"
+}

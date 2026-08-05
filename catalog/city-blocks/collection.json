@@ -234,7 +234,18 @@
     "styles/default",
     "styles/city-renderer"
   ],
-  "updated": "2026-08-05T04:46:13+00:00",
+  "updated": "2026-08-05T17:00:27+00:00",
+  "themes": [
+    {
+      "scheme": "https://www.stlouis-mo.gov/data/topics/",
+      "concepts": [
+        {
+          "id": "urban-development-and-planning",
+          "title": "Urban Development and Planning"
+        }
+      ]
+    }
+  ],
   "title": "City Blocks",
   "extent": {
     "spatial": {
@@ -257,6 +268,9 @@
     }
   },
   "license": "other",
+  "keywords": [
+    "city blocks"
+  ],
   "providers": [
     {
       "name": "City of St. Louis \u2014 Assessor's Office",
@@ -353,49 +367,35 @@
     "styles/style-by-census-tract": {
       "href": "./styles/style-by-census-tract.json",
       "type": "application/vnd.mapbox.style+json",
-      "roles": [
-        "style"
-      ],
       "title": "Blocks by census tract (2010)",
       "description": "Blocks tinted by 2010 census tract (CensTract10, repeating colors), labeled with the block number.",
       "file:size": 2028,
-      "file:checksum": "12202fb3f078ebff75355d86a7e2ec76457725ef97b2ef6903772055c7553e64f982"
+      "file:checksum": "12202fb3f078ebff75355d86a7e2ec76457725ef97b2ef6903772055c7553e64f982",
+      "roles": [
+        "style"
+      ]
     },
     "styles/style-by-precinct": {
       "href": "./styles/style-by-precinct.json",
       "type": "application/vnd.mapbox.style+json",
-      "roles": [
-        "style"
-      ],
       "title": "Blocks by precinct (2010)",
       "description": "Blocks tinted by 2010 precinct (PRECINCT10, repeating colors), labeled with the block number.",
       "file:size": 1885,
-      "file:checksum": "1220332fb2902b4fd55d04dec690736d49056a49bba531f9c5781bfb275cb163c879"
+      "file:checksum": "1220332fb2902b4fd55d04dec690736d49056a49bba531f9c5781bfb275cb163c879",
+      "roles": [
+        "style"
+      ]
     },
     "styles/style-by-ward": {
       "href": "./styles/style-by-ward.json",
       "type": "application/vnd.mapbox.style+json",
-      "roles": [
-        "style"
-      ],
       "title": "Blocks by ward (2010)",
       "description": "Blocks tinted by their 2010 ward (WARD10, repeating colors) with block-number labels \u2014 see which ward each block sat in.",
       "file:size": 1839,
-      "file:checksum": "1220125e2c13e2d51e1f39ba23d4b8ce430a6690dc0c38dca319c059c3289912988e"
-    }
-  },
-  "themes": [
-    {
-      "scheme": "https://www.stlouis-mo.gov/data/topics/",
-      "concepts": [
-        {
-          "id": "urban-development-and-planning",
-          "title": "Urban Development and Planning"
-        }
+      "file:checksum": "1220125e2c13e2d51e1f39ba23d4b8ce430a6690dc0c38dca319c059c3289912988e",
+      "roles": [
+        "style"
       ]
     }
-  ],
-  "keywords": [
-    "city blocks"
-  ]
+  }
 }

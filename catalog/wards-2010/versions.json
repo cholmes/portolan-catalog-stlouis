@@ -1,0 +1,25 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-05T16:58:04.498149Z",
+      "breaking": false,
+      "assets": {
+        "wards-2010.parquet": {
+          "sha256": "c30b3b2652c5ec64d0fe9a51f1b749fb74704df4a301531919d20e656c40567b",
+          "size_bytes": 82744,
+          "href": "wards-2010/wards-2010.parquet",
+          "source_mtime": 1785949064.827901,
+          "mtime": 1785949064.827901,
+          "feature_count": 28,
+          "schema_fingerprint": "da8870cf34b24267"
+        }
+      },
+      "changes": [
+        "wards-2010.parquet"
+      ]
+    }
+  ]
+}

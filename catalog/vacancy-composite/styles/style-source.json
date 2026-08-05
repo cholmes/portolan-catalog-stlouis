@@ -1,0 +1,74 @@
+{
+  "version": 8,
+  "name": "Vacancy classification",
+  "metadata": {
+    "description": "The composite's own top classes: LRA lots, private lots, Northside Regeneration lots, vacant-building registry, condemnations; smaller combined classes gray."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../vacancy-composite.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "vacancy-composite-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "vacancy-composite",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "TOLEMI_DEF"
+          ],
+          "LRA-Owned Vacant Lot",
+          "#e2a76f",
+          "Private Vacant Lot",
+          "#e89d07",
+          "Northside Regeneration Vacant Lot",
+          "#c9b970",
+          "BD Vacant Building Registry - Residential",
+          "#c03221",
+          "Structural Condemnation and No Occupancy",
+          "#8b1a1a",
+          "LRA-Owned Building",
+          "#c0392b",
+          "#9aa3a8"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "vacancy-composite",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "TOLEMI_DEF"
+          ],
+          "LRA-Owned Vacant Lot",
+          "#e2a76f",
+          "Private Vacant Lot",
+          "#e89d07",
+          "Northside Regeneration Vacant Lot",
+          "#c9b970",
+          "BD Vacant Building Registry - Residential",
+          "#c03221",
+          "Structural Condemnation and No Occupancy",
+          "#8b1a1a",
+          "LRA-Owned Building",
+          "#c0392b",
+          "#9aa3a8"
+        ],
+        "fill-opacity": 0.75,
+        "fill-outline-color": "#FFFFFF"
+      }
+    }
+  ]
+}

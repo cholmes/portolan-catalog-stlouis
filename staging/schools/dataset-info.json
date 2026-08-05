@@ -1,0 +1,225 @@
+{
+ "collection": "schools",
+ "title": "City Public Schools",
+ "portal_page": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=125",
+ "department": "Planning and Urban Design",
+ "source": "https://maps8.stlouis-mo.gov/arcgis/rest/services/PDA/Schools/FeatureServer",
+ "source_type": "arcgis",
+ "synced": "2026-08-05T16:51:48+00:00",
+ "fetch": {
+  "status": "ok",
+  "parquets": [
+   "staging/extracts/schools/schools/schools.parquet"
+  ],
+  "layer_url": "https://maps8.stlouis-mo.gov/arcgis/rest/services/PDA/Schools/FeatureServer/0",
+  "layer_description": null,
+  "fields": [
+   {
+    "name": "OBJECTID",
+    "alias": "ObjectID",
+    "type": "esriFieldTypeOID"
+   },
+   {
+    "name": "Score",
+    "alias": "Score",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Match_type",
+    "alias": "Match_type",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Match_addr",
+    "alias": "Match_addr",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Addr_type",
+    "alias": "Addr_type",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "AddNum",
+    "alias": "AddNum",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Side",
+    "alias": "Side",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "StPreDir",
+    "alias": "StPreDir",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "StPreType",
+    "alias": "StPreType",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "StName",
+    "alias": "StName",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "StType",
+    "alias": "StType",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "StDir",
+    "alias": "StDir",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "StAddr",
+    "alias": "StAddr",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "City",
+    "alias": "City",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "County",
+    "alias": "County",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "State",
+    "alias": "State",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "StateAbbr",
+    "alias": "StateAbbr",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "RegionAbbr",
+    "alias": "RegionAbbr",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "ZIP",
+    "alias": "ZIP",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "ZIP4",
+    "alias": "ZIP4",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "X",
+    "alias": "X",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Y",
+    "alias": "Y",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "DisplayX",
+    "alias": "DisplayX",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "DisplayY",
+    "alias": "DisplayY",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Xmin",
+    "alias": "Xmin",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Xmax",
+    "alias": "Xmax",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Ymin",
+    "alias": "Ymin",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Ymax",
+    "alias": "Ymax",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "User_fld",
+    "alias": "User_fld",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Comp_score",
+    "alias": "Comp_score",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Status",
+    "alias": "Status",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "IN_Street",
+    "alias": "Street or Intersection",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "IN_ZIP",
+    "alias": "ZIP Code",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "USER_School_Name",
+    "alias": "School Name",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "USER_Street_Address",
+    "alias": "Street Address",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "USER_State",
+    "alias": "State",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "USER_City",
+    "alias": "City",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "USER_ZIP",
+    "alias": "ZIP",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "USER_School_System",
+    "alias": "School System",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "POINT_X",
+    "alias": "POINT_X",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "POINT_Y",
+    "alias": "POINT_Y",
+    "type": "esriFieldTypeDouble"
+   }
+  ],
+  "city_style": "staging/extracts/schools/styles/city-renderer.json"
+ }
+}

@@ -334,7 +334,26 @@
     "styles/default",
     "styles/city-renderer"
   ],
-  "updated": "2026-08-05T04:46:13+00:00",
+  "updated": "2026-08-05T17:00:27+00:00",
+  "themes": [
+    {
+      "scheme": "https://www.stlouis-mo.gov/data/topics/",
+      "concepts": [
+        {
+          "id": "government",
+          "title": "Government"
+        },
+        {
+          "id": "housing",
+          "title": "Housing"
+        },
+        {
+          "id": "urban-development-and-planning",
+          "title": "Urban Development and Planning"
+        }
+      ]
+    }
+  ],
   "title": "LRA Property",
   "extent": {
     "spatial": {
@@ -357,6 +376,13 @@
     }
   },
   "license": "other",
+  "keywords": [
+    "asset-parcel",
+    "inspections",
+    "property address",
+    "property owner",
+    "service provided details"
+  ],
   "providers": [
     {
       "name": "City of St. Louis \u2014 St. Louis Development Corporation",
@@ -461,31 +487,5 @@
         "thumbnail"
       ]
     }
-  },
-  "themes": [
-    {
-      "scheme": "https://www.stlouis-mo.gov/data/topics/",
-      "concepts": [
-        {
-          "id": "government",
-          "title": "Government"
-        },
-        {
-          "id": "housing",
-          "title": "Housing"
-        },
-        {
-          "id": "urban-development-and-planning",
-          "title": "Urban Development and Planning"
-        }
-      ]
-    }
-  ],
-  "keywords": [
-    "asset-parcel",
-    "inspections",
-    "property address",
-    "property owner",
-    "service provided details"
-  ]
+  }
 }

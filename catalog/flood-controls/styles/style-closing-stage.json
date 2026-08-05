@@ -1,0 +1,99 @@
+{
+  "version": 8,
+  "name": "Closure flood stage",
+  "metadata": {
+    "description": "Closure structures stepped by the river stage at which they close (feet on the St. Louis gage)."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../flood-controls.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "flood-controls-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "flood-controls",
+      "paint": {
+        "fill-color": [
+          "step",
+          [
+            "to-number",
+            [
+              "get",
+              "FLOOD_STAGE"
+            ]
+          ],
+          "#9aa3a8",
+          1,
+          "#538400",
+          30,
+          "#c9c93e",
+          38,
+          "#e89d07",
+          46,
+          "#c03221"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "circle",
+      "type": "circle",
+      "source": "data",
+      "source-layer": "flood-controls",
+      "paint": {
+        "circle-color": [
+          "step",
+          [
+            "to-number",
+            [
+              "get",
+              "FLOOD_STAGE"
+            ]
+          ],
+          "#9aa3a8",
+          1,
+          "#538400",
+          30,
+          "#c9c93e",
+          38,
+          "#e89d07",
+          46,
+          "#c03221"
+        ],
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          10,
+          1.8,
+          13,
+          4.5,
+          16,
+          9.9
+        ],
+        "circle-opacity": 0.85,
+        "circle-stroke-color": "#FFFFFF",
+        "circle-stroke-width": 0.5
+      }
+    },
+    {
+      "id": "line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "flood-controls",
+      "paint": {
+        "line-color": "#dfe6ea",
+        "line-width": 1.5,
+        "line-opacity": 1.0
+      }
+    }
+  ]
+}

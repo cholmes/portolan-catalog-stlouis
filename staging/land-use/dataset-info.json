@@ -1,0 +1,130 @@
+{
+ "collection": "land-use",
+ "title": "Strategic Land Use Plan",
+ "portal_page": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=78",
+ "department": "Planning and Urban Design",
+ "source": "https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/Strategic_Land_Use_Plan/FeatureServer",
+ "source_type": "arcgis",
+ "synced": "2026-08-05T16:51:48+00:00",
+ "fetch": {
+  "status": "ok",
+  "parquets": [
+   "staging/extracts/land-use/strategic_land_use_plan/strategic_land_use_plan.parquet"
+  ],
+  "layer_url": "https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/Strategic_Land_Use_Plan/FeatureServer/0",
+  "layer_description": null,
+  "fields": [
+   {
+    "name": "FID",
+    "alias": "FID",
+    "type": "esriFieldTypeOID"
+   },
+   {
+    "name": "OBJECTID_1",
+    "alias": "OBJECTID_1",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "Status",
+    "alias": "Status",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "SLUP_LATES",
+    "alias": "SLUP_LATES",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "SUM_COUNTE",
+    "alias": "SUM_COUNTE",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "ORIG_FID",
+    "alias": "ORIG_FID",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "Boundary",
+    "alias": "Boundary",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "NOCATS",
+    "alias": "NOCATS",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "NAME",
+    "alias": "NAME",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "PLANNER",
+    "alias": "PLANNER",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "UPDATED",
+    "alias": "UPDATED",
+    "type": "esriFieldTypeDate"
+   },
+   {
+    "name": "COMMENTS",
+    "alias": "COMMENTS",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "PDA_RESOLU",
+    "alias": "PDA_RESOLU",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "PDA_RESOL_",
+    "alias": "PDA_RESOL_",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "APPROVED",
+    "alias": "APPROVED",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "WIP_MTG_DA",
+    "alias": "WIP_MTG_DA",
+    "type": "esriFieldTypeDate"
+   },
+   {
+    "name": "GEOGRAPHY",
+    "alias": "GEOGRAPHY",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Shape_Leng",
+    "alias": "Shape_Leng",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Shape_Area",
+    "alias": "Shape_Area",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Acres",
+    "alias": "Acres",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Shape__Area",
+    "alias": "Shape__Area",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Shape__Length",
+    "alias": "Shape__Length",
+    "type": "esriFieldTypeDouble"
+   }
+  ],
+  "city_style": "staging/extracts/land-use/styles/city-renderer.json"
+ }
+}

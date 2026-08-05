@@ -10,14 +10,11 @@ and parcel-joinable datasets. Not an official city service.
 ## Collections
 
 <details>
-<summary>📁 21 collections (click to expand)</summary>
+<summary>📁 36 collections (click to expand)</summary>
 
-### [City of St. Louis Open Data (Cloud-Native Mirror)](catalog/bike-infrastructure/)
+### [Bike Infrastructure](catalog/bike-infrastructure/)
 
-Cloud-native mirror of datasets from the
-[City of St. Louis open data portal](https://www.stlouis-mo.gov/data/):
-GeoParquet, PMTiles, and STAC metadata for the city's most-used geospatial
-and parce...
+Bicycle infrastructure from the city's Biking Infrastructure Map service: existing bike facilities by type, the Brickline Greenway and Hodiamont Trail, park paths, multi-use paths, and planned and ...
 
 ### [City Blocks](catalog/city-blocks/)
 
@@ -43,13 +40,45 @@ The Citizens' Service Bureau (CSB) is the customer service department for the Ci
 
 Wards & current election precincts for the City of St. Louis.
 
+### [November 2024 Election Results by Precinct](catalog/election-results-nov-2024/)
+
+This is the detailed vote extract (dve) from the November 5, 2024, General Municipal Election for the City of St. Louis.
+
+### [Flood Controls](catalog/flood-controls/)
+
+Floods Controls
+
+### [Floodplain](catalog/floodplain/)
+
+Floodplain areas for the City of St. Louis, from the city's Floodplain map service.
+
+### [Forest Park Trees](catalog/forest-park-trees/)
+
+Forest Park Trees data
+
 ### [Historic Districts](catalog/historic-districts/)
 
 Data on St. Louis certified local historic districts
 
+### [Strategic Land Use Plan](catalog/land-use/)
+
+Strategic land use (SLUP),parcel, and zoning data
+
+### [Lead Service Line Inventory](catalog/lead-service-lines/)
+
+Lead Service Line Inventory Feature Layer Service
+
 ### [LRA Property](catalog/lra-property/)
 
 Land Reutilization Authority data and search.
+
+### [2024 Market Value Analysis](catalog/market-value-analysis/)
+
+The Market Value Analysis (MVA) is an in-depth study and mapping of a community's housing market. It reveals the mosaic of market conditions in St. Louis.
+
+### [Neighborhood Organizations](catalog/neighborhood-organizations/)
+
+Neighborhood Organizations as exported 6-20-20
 
 ### [Neighborhood Boundaries](catalog/neighborhoods/)
 
@@ -71,9 +100,25 @@ A database containing information on city parks, park amenities, and amenity att
 
 GIS data for police district boundaries
 
+### [Polling Centers](catalog/polling-places/)
+
+Polling Centers
+
+### [Port Authority District](catalog/port-authority-district/)
+
+This feature represents the District boundary for the St. Louis Port Authority. It was created from Section One text in Ordinance 71179 from May 15, 2020.
+
 ### [Property Sales](catalog/property-sales/)
 
 Dataset describes real estate sale prices for recent property sales in the city. A separate table describes codes for different type of sales.
+
+### [City Public Schools](catalog/schools/)
+
+City of St. Louis public school information including school name, school address, grades, and ages.
+
+### [Siren Locations](catalog/siren-locations/)
+
+Public emergency siren locations. While these sirens are generally thought of as "tornado sirens" they can be used in other circumstances/emergencies.
 
 ### [Special Business Districts (SBDs)](catalog/special-business-districts/)
 
@@ -91,7 +136,19 @@ Parcels within the City of Saint Louis that have obtained and activated an abate
 
 Tax Increment Financing is a development tool designed to help finance certain eligible improvements to property in designated redevelopment areas (TIF Districts) by utilizing the new, or increment...
 
+### [May 2025 Tornado Damage](catalog/tornado-damage-2025/)
+
+NWS/NOAA damage assessment data for the May 2025 St. Louis tornado, with Prop NS property stabilization and sales status.
+
+### [Parcel Vacancy Composite](catalog/vacancy-composite/)
+
+Parcel-level vacancy indicators for St. Louis: vacant buildings, condemnations, tax delinquency, LRA ownership, and private vacancy, compiled by SLDC.
+
 ### [Ward Boundaries (2020)](catalog/wards/)
+
+Boundaries of City of St. Louis wards
+
+### [Ward Boundaries (2010)](catalog/wards-2010/)
 
 Boundaries of City of St. Louis wards
 
@@ -105,7 +162,7 @@ Strategic land use (SLUP),parcel, and zoning data
 
 **Spatial Extent**
 
-- West: -90.3257, South: 38.5319, East: -90.1355, North: 38.7747
+- West: -90.3344, South: 38.5314, East: -89.9733, North: 38.7971
 
 **Temporal Extent**
 

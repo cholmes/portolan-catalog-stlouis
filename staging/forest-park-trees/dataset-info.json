@@ -1,0 +1,240 @@
+{
+ "collection": "forest-park-trees",
+ "title": "Forest Park Trees",
+ "portal_page": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=123",
+ "department": "Forestry",
+ "source": "https://maps8.stlouis-mo.gov/arcgis/rest/services/FORESTRY/FOREST_PARK_TREES/FeatureServer",
+ "source_type": "arcgis",
+ "synced": "2026-08-05T16:51:48+00:00",
+ "fetch": {
+  "status": "ok",
+  "parquets": [
+   "staging/extracts/forest-park-trees/forest_park_trees/forest_park_trees.parquet"
+  ],
+  "layer_url": "https://maps8.stlouis-mo.gov/arcgis/rest/services/FORESTRY/FOREST_PARK_TREES/FeatureServer/2",
+  "layer_description": null,
+  "fields": [
+   {
+    "name": "OBJECTID",
+    "alias": "OBJECTID",
+    "type": "esriFieldTypeOID"
+   },
+   {
+    "name": "ID",
+    "alias": "ID",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "Status",
+    "alias": "Status",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Use_Class",
+    "alias": "Use_Class",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "Risk_Rating",
+    "alias": "Risk_Rating",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Site",
+    "alias": "Site",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Common_Names",
+    "alias": "Common_Names",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "DBH",
+    "alias": "Size_DBH",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Stems",
+    "alias": "Stems",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "Condition",
+    "alias": "Condition",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Maintenance",
+    "alias": "Maintenance",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Comment",
+    "alias": "Comment",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Special",
+    "alias": "Special",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Data_Collected_By",
+    "alias": "Data_Collected_By",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Size_Class",
+    "alias": "Size_Class",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Zone",
+    "alias": "Zone",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "Scientific_Name",
+    "alias": "Scientific_Name",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Cultivar",
+    "alias": "Cultivar",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Second_ID",
+    "alias": "Second_ID",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Notes",
+    "alias": "Notes",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Removed_By",
+    "alias": "Removed_By",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Planted_By",
+    "alias": "Planted_By",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Data_Collected_Date",
+    "alias": "Data_Collected_Date",
+    "type": "esriFieldTypeDate"
+   },
+   {
+    "name": "Removal_Date",
+    "alias": "Removal_Date",
+    "type": "esriFieldTypeDate"
+   },
+   {
+    "name": "Planted_Date",
+    "alias": "Planted_Date",
+    "type": "esriFieldTypeDate"
+   },
+   {
+    "name": "Disease_Insect_Tool",
+    "alias": "Disease_Insect_Tool",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Storm_Tool",
+    "alias": "Storm_Tool",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Picture",
+    "alias": "Picture",
+    "type": "esriFieldTypeRaster"
+   },
+   {
+    "name": "GUID",
+    "alias": "GUID",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Dedication_Program",
+    "alias": "Dedication_Program",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Dedicated_Year",
+    "alias": "Dedicated_Year",
+    "type": "esriFieldTypeDate"
+   },
+   {
+    "name": "Dedicated_To",
+    "alias": "Dedicated_To",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Hardware_Installed",
+    "alias": "Hardware_Installed",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Occupancy_Rate",
+    "alias": "Occupancy_Rate",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Genus",
+    "alias": "Genus",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Family",
+    "alias": "Family",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Subtaxa",
+    "alias": "Subtaxa",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Height",
+    "alias": "Height",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "Crown_Spread",
+    "alias": "Crown_Spread",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "FPAC_Zone",
+    "alias": "FPAC_Zone",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "FPF_Zone",
+    "alias": "FPF_Zone",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "Multi_Stemmed",
+    "alias": "Multi_Stemmed",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "Replacement_Eligibility",
+    "alias": "Replacement_Eligibility",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "Native",
+    "alias": "Native",
+    "type": "esriFieldTypeString"
+   }
+  ],
+  "city_style": "staging/extracts/forest-park-trees/styles/city-renderer.json"
+ }
+}

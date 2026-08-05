@@ -619,7 +619,22 @@
   "portolan:styles": [
     "styles/default"
   ],
-  "updated": "2026-08-05T04:46:13+00:00",
+  "updated": "2026-08-05T17:00:27+00:00",
+  "themes": [
+    {
+      "scheme": "https://www.stlouis-mo.gov/data/topics/",
+      "concepts": [
+        {
+          "id": "business-and-industry",
+          "title": "Business and Industry"
+        },
+        {
+          "id": "urban-development-and-planning",
+          "title": "Urban Development and Planning"
+        }
+      ]
+    }
+  ],
   "title": "Tax-abated Parcels",
   "extent": {
     "spatial": {
@@ -724,20 +739,5 @@
         "thumbnail"
       ]
     }
-  },
-  "themes": [
-    {
-      "scheme": "https://www.stlouis-mo.gov/data/topics/",
-      "concepts": [
-        {
-          "id": "business-and-industry",
-          "title": "Business and Industry"
-        },
-        {
-          "id": "urban-development-and-planning",
-          "title": "Urban Development and Planning"
-        }
-      ]
-    }
-  ]
+  }
 }

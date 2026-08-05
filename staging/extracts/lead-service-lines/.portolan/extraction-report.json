@@ -1,0 +1,39 @@
+{
+  "extraction_date": "2026-08-05T16:53:36.931130+00:00",
+  "source_url": "https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/STLWD_LSLI__Read_Only_View/FeatureServer",
+  "portolan_version": "1.0.0a0",
+  "gpio_version": "1.3.0",
+  "metadata_extracted": {
+    "source_url": "https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/STLWD_LSLI__Read_Only_View/FeatureServer",
+    "description": null,
+    "attribution": null,
+    "keywords": null,
+    "contact_name": null,
+    "processing_notes": null,
+    "known_issues": null,
+    "license_info_raw": null
+  },
+  "layers": [
+    {
+      "id": 0,
+      "name": "Utility Side | Customer Side",
+      "status": "success",
+      "warnings": [],
+      "attempts": 1,
+      "features": 112950,
+      "size_bytes": 4440453,
+      "duration_seconds": 54.977920667035505,
+      "output_path": "utility_side_customer_side/utility_side_customer_side.parquet"
+    }
+  ],
+  "summary": {
+    "total_layers": 1,
+    "succeeded": 1,
+    "failed": 0,
+    "skipped": 0,
+    "empty": 0,
+    "total_features": 112950,
+    "total_size_bytes": 4440453,
+    "total_duration_seconds": 54.977920667035505
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "version": 8,
+  "name": "City renderer",
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../forest-park-trees.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "forest-park-trees-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "forest-park-trees",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "Condition"
+          ],
+          "Dead",
+          "#ff0000",
+          "Poor",
+          "#ffaa00",
+          "Fair",
+          "#ffff00",
+          "Good",
+          "#37a600",
+          "Excellent",
+          "#4d7300",
+          "#cccccc"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "categorical-circle",
+      "type": "circle",
+      "source": "data",
+      "source-layer": "forest-park-trees",
+      "paint": {
+        "circle-color": [
+          "match",
+          [
+            "get",
+            "Condition"
+          ],
+          "Dead",
+          "#ff0000",
+          "Poor",
+          "#ffaa00",
+          "Fair",
+          "#ffff00",
+          "Good",
+          "#37a600",
+          "Excellent",
+          "#4d7300",
+          "#cccccc"
+        ],
+        "circle-radius": 5,
+        "circle-opacity": 1.0
+      }
+    }
+  ],
+  "metadata": {
+    "description": "The city's own symbology, extracted from the source ArcGIS renderer."
+  }
+}

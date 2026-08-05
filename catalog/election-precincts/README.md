@@ -31,7 +31,7 @@ Wards & current election precincts for the City of St. Louis.
 | ./styles/default.json | 3.2 KB | 12201a21287c... |
 | ./styles/style-boundaries.json | 482 B | 122014e02715... |
 | ./styles/style-tint.json | 510 B | 122016607d55... |
-| ./README.md | 2.2 KB | 12205151c496... |
+| ./README.md | 2.2 KB | 12208b79b1f8... |
 | ./thumbnail.png | 328.4 KB | 12203c318c7f... |
 
 ## Quick Start

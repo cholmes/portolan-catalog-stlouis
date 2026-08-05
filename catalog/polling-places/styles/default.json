@@ -1,0 +1,65 @@
+{
+  "version": 8,
+  "name": "Polling centers",
+  "metadata": {
+    "description": "The 152 polling centers, labeled."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../polling-places.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "circle",
+      "type": "circle",
+      "source": "data",
+      "source-layer": "polling-places",
+      "paint": {
+        "circle-color": "#7c5295",
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          10,
+          1.8,
+          13,
+          4.5,
+          16,
+          9.9
+        ],
+        "circle-opacity": 0.85,
+        "circle-stroke-color": "#FFFFFF",
+        "circle-stroke-width": 0.5
+      }
+    },
+    {
+      "id": "labels",
+      "type": "symbol",
+      "source": "data",
+      "source-layer": "polling-places",
+      "minzoom": 12,
+      "layout": {
+        "text-field": [
+          "get",
+          "pollingPlace"
+        ],
+        "text-font": [
+          "Noto Sans Regular"
+        ],
+        "text-size": 10,
+        "text-max-width": 9
+      },
+      "paint": {
+        "text-color": "#1A1A1A",
+        "text-halo-color": "#FFFFFF",
+        "text-halo-width": 1.2
+      }
+    }
+  ]
+}

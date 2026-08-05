@@ -122,7 +122,22 @@
     "styles/default",
     "styles/city-renderer"
   ],
-  "updated": "2026-08-05T04:46:13+00:00",
+  "updated": "2026-08-05T17:00:27+00:00",
+  "themes": [
+    {
+      "scheme": "https://www.stlouis-mo.gov/data/topics/",
+      "concepts": [
+        {
+          "id": "business-and-industry",
+          "title": "Business and Industry"
+        },
+        {
+          "id": "urban-development-and-planning",
+          "title": "Urban Development and Planning"
+        }
+      ]
+    }
+  ],
   "title": "Tax Increment Financing (TIF) Districts",
   "extent": {
     "spatial": {
@@ -145,6 +160,13 @@
     }
   },
   "license": "other",
+  "keywords": [
+    "planning",
+    "sldc",
+    "st. louis development corporation",
+    "tax increment financing",
+    "tif"
+  ],
   "providers": [
     {
       "name": "City of St. Louis \u2014 St. Louis Development Corporation",
@@ -238,27 +260,5 @@
         "thumbnail"
       ]
     }
-  },
-  "themes": [
-    {
-      "scheme": "https://www.stlouis-mo.gov/data/topics/",
-      "concepts": [
-        {
-          "id": "business-and-industry",
-          "title": "Business and Industry"
-        },
-        {
-          "id": "urban-development-and-planning",
-          "title": "Urban Development and Planning"
-        }
-      ]
-    }
-  ],
-  "keywords": [
-    "planning",
-    "sldc",
-    "st. louis development corporation",
-    "tax increment financing",
-    "tif"
-  ]
+  }
 }

@@ -122,7 +122,97 @@
       "updated": "2026-08-05T04:49:33.787255+00:00",
       "asset_count": 1,
       "total_size_bytes": 436764
+    },
+    "siren-locations": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-05T16:58:04.383412+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 28001
+    },
+    "schools": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-05T16:58:04.411438+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 38061
+    },
+    "forest-park-trees": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-05T16:58:04.440751+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 1450857
+    },
+    "port-authority-district": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-05T16:58:04.467983+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 16890
+    },
+    "wards-2010": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-05T16:58:04.498538+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 82744
+    },
+    "floodplain": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-05T16:58:04.530307+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 3832336
+    },
+    "market-value-analysis": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-05T16:58:04.563442+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 284884
+    },
+    "polling-places": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-05T16:58:04.594190+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 21526
+    },
+    "election-results-nov-2024": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-05T16:58:04.626693+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 286126
+    },
+    "tornado-damage-2025": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-05T16:58:04.659809+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 39735
+    },
+    "land-use": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-05T16:58:04.694044+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 5599054
+    },
+    "flood-controls": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-05T16:58:04.727618+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 14896
+    },
+    "neighborhood-organizations": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-05T16:58:04.765407+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 80382
+    },
+    "vacancy-composite": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-05T16:58:04.803600+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 6384202
+    },
+    "lead-service-lines": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-05T16:58:04.841060+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 8781788
     }
   },
-  "updated": "2026-08-05T04:49:33.787255+00:00"
+  "updated": "2026-08-05T16:58:04.841060+00:00"
 }

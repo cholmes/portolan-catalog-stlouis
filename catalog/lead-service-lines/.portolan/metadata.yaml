@@ -1,0 +1,14 @@
+title: "Lead Service Line Inventory"
+description: "Lead Service Line Inventory Feature Layer Service"
+contact:
+  name: "Chris Holmes"
+  email: "cholmes@9eo.org"
+license: "other"
+license_url: "https://stlcity.maps.arcgis.com/home/item.html?id=80c69343cc2d418fb1796a342a863aac"
+attribution: "City of St. Louis — Water Division"
+source_url: "https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/STLWD_LSLI__Read_Only_View/FeatureServer"
+keywords: [st-louis, missouri, open-data, lead, service, lines]
+processing_notes: |
+  Mirrored from the City of St. Louis open data portal (https://stlcity.maps.arcgis.com/home/item.html?id=80c69343cc2d418fb1796a342a863aac).
+  Source: https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/STLWD_LSLI__Read_Only_View/FeatureServer (ArcGIS REST service),
+  converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.

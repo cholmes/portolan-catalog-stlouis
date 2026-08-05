@@ -1,0 +1,215 @@
+{
+ "collection": "siren-locations",
+ "title": "Siren Locations",
+ "portal_page": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=132",
+ "department": "City Emergency Management Agency",
+ "source": "https://maps8.stlouis-mo.gov/arcgis/rest/services/BPS/City_of_St__Louis_Firehouses_and_Outdoor_Warning_Sirens1/MapServer",
+ "source_type": "arcgis",
+ "synced": "2026-08-05T16:56:25+00:00",
+ "fetch": {
+  "status": "ok",
+  "parquets": [
+   "staging/extracts/siren-locations/outdoor_warning_siren_locations/outdoor_warning_siren_locations.parquet"
+  ],
+  "layer_url": "https://maps8.stlouis-mo.gov/arcgis/rest/services/BPS/City_of_St__Louis_Firehouses_and_Outdoor_Warning_Sirens1/MapServer/0",
+  "layer_description": null,
+  "fields": [
+   {
+    "name": "OBJECTID",
+    "alias": "ObjectID",
+    "type": "esriFieldTypeOID"
+   },
+   {
+    "name": "Shape",
+    "alias": "Shape",
+    "type": "esriFieldTypeGeometry"
+   },
+   {
+    "name": "Siren",
+    "alias": "Siren Number",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "SIREN_LOCATION_ADDRESS",
+    "alias": "SIREN LOCATION/ADDRESS",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Property_Comments",
+    "alias": "Property Comments",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "PROPERTY_OWNER",
+    "alias": "Property Owner",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "FACILITY",
+    "alias": "Facility",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Solar_Panels_Condition",
+    "alias": "Solar Panels Condition",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Batteries_Condition",
+    "alias": "Batteries Condition",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "SolarandBatteryNotes",
+    "alias": "Solar and Battery Notes",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "TYPE",
+    "alias": "Siren Type",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Date_Last_Tested",
+    "alias": "Date Last Tested",
+    "type": "esriFieldTypeDate"
+   },
+   {
+    "name": "Working",
+    "alias": "Working",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Numberofcells",
+    "alias": "Number of cells",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Avg_Ambient",
+    "alias": "Average Ambient",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Anyunusualsoundeventsduringtest",
+    "alias": "Unusal Sound Events During Testing",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Birthmarkvisible",
+    "alias": "Birthmark Visible",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "PoleMount",
+    "alias": "Pole Mount",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "PoleHeight",
+    "alias": "Pole Height",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Solar",
+    "alias": "Solar",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Any_nearby_encroachments_or_cle",
+    "alias": "Nearby Encroachments or Overhead/Vertical Clearance Issues",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "MinAmbient",
+    "alias": "Minimum Ambient",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "MaxAmbient",
+    "alias": "Maximum Ambient",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "PoleConditionNotes",
+    "alias": "Pole Condition Notes",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "OtherNotes",
+    "alias": "Other Notes",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "PoleLean",
+    "alias": "Pole Lean",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Polemountedin",
+    "alias": "Pole mounted In",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Isthepoledirectlyadjacenttotraf",
+    "alias": "Pole Directly Adjacent to Driving Traffic Within 20 feet",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "GeneralSurroundings",
+    "alias": "General Surroundings",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Isthepolepubliclyaccessibleorbe",
+    "alias": "Pole Publicly Accessible",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Location_Description",
+    "alias": "Location Description",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Z",
+    "alias": "Z",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Xfield",
+    "alias": "X",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Yfield",
+    "alias": "Y",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "GlobalID",
+    "alias": "GlobalID",
+    "type": "esriFieldTypeGlobalID"
+   },
+   {
+    "name": "CreationDate",
+    "alias": "CreationDate",
+    "type": "esriFieldTypeDate"
+   },
+   {
+    "name": "Creator",
+    "alias": "Creator",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "EditDate",
+    "alias": "EditDate",
+    "type": "esriFieldTypeDate"
+   },
+   {
+    "name": "Editor",
+    "alias": "Editor",
+    "type": "esriFieldTypeString"
+   }
+  ],
+  "city_style": "staging/extracts/siren-locations/styles/city-renderer.json"
+ }
+}

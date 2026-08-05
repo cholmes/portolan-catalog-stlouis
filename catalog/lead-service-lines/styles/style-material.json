@@ -1,0 +1,104 @@
+{
+  "version": 8,
+  "name": "Pipe material",
+  "metadata": {
+    "description": "Utility-side pipe material by the service's own domain codes: Lead (109) red, Galvanized (89) orange, Copper (84) green, Ductile Iron (88) teal, Cast Iron (83) purple, PVC/PE light, Unknown (0) gray."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../lead-service-lines.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "lead-service-lines-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "lead-service-lines",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "utilmaterial"
+          ],
+          109,
+          "#c03221",
+          89,
+          "#e89d07",
+          84,
+          "#538400",
+          88,
+          "#4a9d9c",
+          83,
+          "#7c5295",
+          94,
+          "#a8d4e8",
+          93,
+          "#a6c96a",
+          81,
+          "#8b6f5e",
+          110,
+          "#c98bab",
+          0,
+          "#9aa3a8",
+          "#dfe6ea"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "circle",
+      "type": "circle",
+      "source": "data",
+      "source-layer": "lead-service-lines",
+      "paint": {
+        "circle-color": [
+          "match",
+          [
+            "get",
+            "utilmaterial"
+          ],
+          109,
+          "#c03221",
+          89,
+          "#e89d07",
+          84,
+          "#538400",
+          88,
+          "#4a9d9c",
+          83,
+          "#7c5295",
+          94,
+          "#a8d4e8",
+          93,
+          "#a6c96a",
+          81,
+          "#8b6f5e",
+          110,
+          "#c98bab",
+          0,
+          "#9aa3a8",
+          "#dfe6ea"
+        ],
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          10,
+          0.8800000000000001,
+          13,
+          2.2,
+          16,
+          4.840000000000001
+        ],
+        "circle-opacity": 0.85
+      }
+    }
+  ]
+}

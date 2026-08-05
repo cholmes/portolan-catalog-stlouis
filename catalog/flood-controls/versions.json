@@ -1,0 +1,25 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-05T16:58:04.727016Z",
+      "breaking": false,
+      "assets": {
+        "flood-controls.parquet": {
+          "sha256": "6a435498deaa44f168a038b9b08db83f137c4b160a69de3670cad56da79a552d",
+          "size_bytes": 14896,
+          "href": "flood-controls/flood-controls.parquet",
+          "source_mtime": 1785948935.714746,
+          "mtime": 1785948935.714746,
+          "feature_count": 71,
+          "schema_fingerprint": "4c73c6b73820c60c"
+        }
+      },
+      "changes": [
+        "flood-controls.parquet"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "extraction_date": "2026-08-05T16:52:20.754044+00:00",
+  "source_url": "https://maps8.stlouis-mo.gov/arcgis/rest/services/STLOUIS/Floodplain/MapServer",
+  "portolan_version": "1.0.0a0",
+  "gpio_version": "1.3.0",
+  "metadata_extracted": {
+    "source_url": "https://maps8.stlouis-mo.gov/arcgis/rest/services/STLOUIS/Floodplain/MapServer",
+    "description": null,
+    "attribution": null,
+    "keywords": [
+      "floodplain",
+      "flooding",
+      "flood",
+      "risk"
+    ],
+    "contact_name": null,
+    "processing_notes": null,
+    "known_issues": null,
+    "license_info_raw": null
+  },
+  "layers": [
+    {
+      "id": 0,
+      "name": "2011",
+      "status": "success",
+      "warnings": [],
+      "attempts": 1,
+      "features": 329,
+      "size_bytes": 2736264,
+      "duration_seconds": 11.995449874782935,
+      "output_path": "2011/2011.parquet"
+    }
+  ],
+  "summary": {
+    "total_layers": 1,
+    "succeeded": 1,
+    "failed": 0,
+    "skipped": 0,
+    "empty": 0,
+    "total_features": 329,
+    "total_size_bytes": 2736264,
+    "total_duration_seconds": 11.995449874782935
+  }
+}

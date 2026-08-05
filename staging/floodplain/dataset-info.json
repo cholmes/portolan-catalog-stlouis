@@ -1,0 +1,115 @@
+{
+ "collection": "floodplain",
+ "title": "Floodplain",
+ "portal_page": "https://maps8.stlouis-mo.gov/arcgis/rest/services/STLOUIS/Floodplain/MapServer",
+ "department": "Information Technology Services Agency",
+ "source": "https://maps8.stlouis-mo.gov/arcgis/rest/services/STLOUIS/Floodplain/MapServer",
+ "source_type": "arcgis",
+ "synced": "2026-08-05T16:51:48+00:00",
+ "fetch": {
+  "status": "ok",
+  "parquets": [
+   "staging/extracts/floodplain/2011/2011.parquet"
+  ],
+  "layer_url": "https://maps8.stlouis-mo.gov/arcgis/rest/services/STLOUIS/Floodplain/MapServer/0",
+  "layer_description": null,
+  "fields": [
+   {
+    "name": "OBJECTID",
+    "alias": "OBJECTID",
+    "type": "esriFieldTypeOID"
+   },
+   {
+    "name": "FLD_AR_ID",
+    "alias": "FLD_AR_ID",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "FLD_ZONE",
+    "alias": "FLD_ZONE",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "FLOODWAY",
+    "alias": "FLOODWAY",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "SFHA_TF",
+    "alias": "SFHA_TF",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "STATIC_BFE",
+    "alias": "STATIC_BFE",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "V_DATUM",
+    "alias": "V_DATUM",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "DEPTH",
+    "alias": "DEPTH",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "LEN_UNIT",
+    "alias": "LEN_UNIT",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "VELOCITY",
+    "alias": "VELOCITY",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "VEL_UNIT",
+    "alias": "VEL_UNIT",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "AR_REVERT",
+    "alias": "AR_REVERT",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "BFE_REVERT",
+    "alias": "BFE_REVERT",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "DEP_REVERT",
+    "alias": "DEP_REVERT",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "SOURCE_CIT",
+    "alias": "SOURCE_CIT",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "FLOOD_TYPE",
+    "alias": "FLOOD_TYPE",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Shape",
+    "alias": "Shape",
+    "type": "esriFieldTypeGeometry"
+   },
+   {
+    "name": "Shape_Length",
+    "alias": "Shape_Length",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Shape_Area",
+    "alias": "Shape_Area",
+    "type": "esriFieldTypeDouble"
+   }
+  ],
+  "city_style": "staging/extracts/floodplain/styles/city-renderer.json"
+ }
+}

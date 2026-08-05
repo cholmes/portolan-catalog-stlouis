@@ -1,0 +1,26 @@
+{
+  "version": 8,
+  "name": "Ward boundaries",
+  "metadata": {
+    "description": "Outlines only."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../wards-2010.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "wards-2010",
+      "paint": {
+        "line-color": "#7c5295",
+        "line-width": 1.6,
+        "line-opacity": 1.0
+      }
+    }
+  ]
+}

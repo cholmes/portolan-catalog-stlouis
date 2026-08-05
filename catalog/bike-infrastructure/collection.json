@@ -11,12 +11,6 @@
       "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
     },
     {
-      "rel": "parent",
-      "href": "../catalog.json",
-      "type": "application/json",
-      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
-    },
-    {
       "rel": "agents",
       "href": "./AGENTS.md",
       "type": "text/markdown",
@@ -46,6 +40,12 @@
       "rel": "describedby",
       "href": "./README.md",
       "type": "text/markdown"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
     }
   ],
   "stac_extensions": [
@@ -283,6 +283,22 @@
   ],
   "portolan:total_size_bytes": 436764,
   "portolan:asset_count": 1,
+  "portolan:styles": [
+    "styles/default",
+    "styles/city-renderer"
+  ],
+  "updated": "2026-08-05T17:00:27+00:00",
+  "themes": [
+    {
+      "scheme": "https://www.stlouis-mo.gov/data/topics/",
+      "concepts": [
+        {
+          "id": "transportation-infrastructure-and-utilities",
+          "title": "Transportation, Infrastructure, and Utilities"
+        }
+      ]
+    }
+  ],
   "title": "Bike Infrastructure",
   "extent": {
     "spatial": {
@@ -305,99 +321,6 @@
     }
   },
   "license": "other",
-  "assets": {
-    "bike-infrastructure": {
-      "href": "./bike-infrastructure.parquet",
-      "type": "application/vnd.apache.parquet",
-      "file:size": 436764,
-      "file:checksum": "12201e093aea3c1a1fdbf97f9991dcc890b33e7fcaf2b0c23d73c32cb6da871a25f2",
-      "roles": [
-        "data"
-      ],
-      "title": "Bike Infrastructure (GeoParquet)"
-    },
-    "bike-infrastructure-tiles": {
-      "href": "./bike-infrastructure.pmtiles",
-      "type": "application/vnd.pmtiles",
-      "title": "bike-infrastructure (vector tiles)",
-      "roles": [
-        "visual"
-      ],
-      "file:size": 1293714,
-      "file:checksum": "12208472f2d6a30585b4c72cd4b32c13d0e06a3cd78814ca493759dc407bba38e99e"
-    },
-    "styles/city-renderer": {
-      "href": "./styles/city-renderer.json",
-      "type": "application/vnd.mapbox.style+json",
-      "title": "City renderer",
-      "roles": [
-        "style"
-      ],
-      "description": "The city's own symbology, extracted from the source ArcGIS renderer.",
-      "file:size": 533,
-      "file:checksum": "12209ef360ebc40fd01cf99e3f85fad86d4a9ce3b785f8325d10766094a109e8c29f"
-    },
-    "styles/default": {
-      "href": "./styles/default.json",
-      "type": "application/vnd.mapbox.style+json",
-      "title": "Bike facilities by type",
-      "roles": [
-        "default",
-        "style"
-      ],
-      "description": "Every bike facility colored by the city's own facility types \u2014 from separated and buffered lanes (greens) through paint-only shared-lane markings (orange). Protection level reads as green-to-orange.",
-      "file:size": 2033,
-      "file:checksum": "1220ed376ccaf1b3e3c08361973b9fb01c6afa8e2659f3caec9a09ac4be39910dff5"
-    },
-    "thumbnail": {
-      "href": "./thumbnail.png",
-      "type": "image/png",
-      "roles": [
-        "thumbnail"
-      ],
-      "title": "Bike Infrastructure rendered with the default style",
-      "file:size": 413862,
-      "file:checksum": "1220a200124e2292b59a316f264b13fef1e1ad88cda4d3c81b5645335b1ebc9962e2"
-    },
-    "styles/style-network": {
-      "href": "./styles/style-network.json",
-      "type": "application/vnd.mapbox.style+json",
-      "roles": [
-        "style"
-      ],
-      "title": "Network layers",
-      "description": "The five source layers: street bike facilities, the Brickline Greenway and Hodiamont Trail, park paths, multi-use paths, and planned/funded major projects.",
-      "file:size": 1672,
-      "file:checksum": "12209a4c0034bb3d285c0a454e113eec5cae91ccc4d6d5e22be296a85e89b05ce121"
-    },
-    "styles/style-planned": {
-      "href": "./styles/style-planned.json",
-      "type": "application/vnd.mapbox.style+json",
-      "roles": [
-        "style"
-      ],
-      "title": "Planned projects",
-      "description": "The nine planned and funded major bike facility projects in red over the existing network (light).",
-      "file:size": 1183,
-      "file:checksum": "12200f1f97e5c39103b351fff1c9db62c13a7ded81de91edce733982126938a4a92d"
-    }
-  },
-  "portolan:styles": [
-    "styles/default",
-    "styles/city-renderer"
-  ],
-  "updated": "2026-08-05T04:46:13+00:00",
-  "themes": [
-    {
-      "scheme": "https://www.stlouis-mo.gov/data/topics/",
-      "concepts": [
-        {
-          "id": "transportation-infrastructure-and-utilities",
-          "title": "Transportation, Infrastructure, and Utilities"
-        }
-      ]
-    }
-  ],
   "keywords": [
     "bike",
     "gis",
@@ -419,5 +342,82 @@
       ],
       "url": "https://github.com/cholmes/portolan-catalog-stlouis"
     }
-  ]
+  ],
+  "assets": {
+    "bike-infrastructure": {
+      "href": "./bike-infrastructure.parquet",
+      "type": "application/vnd.apache.parquet",
+      "title": "Bike Infrastructure (GeoParquet)",
+      "file:size": 436764,
+      "file:checksum": "12201e093aea3c1a1fdbf97f9991dcc890b33e7fcaf2b0c23d73c32cb6da871a25f2",
+      "roles": [
+        "data"
+      ]
+    },
+    "bike-infrastructure-tiles": {
+      "href": "./bike-infrastructure.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "bike-infrastructure (vector tiles)",
+      "file:size": 1293714,
+      "file:checksum": "12208472f2d6a30585b4c72cd4b32c13d0e06a3cd78814ca493759dc407bba38e99e",
+      "roles": [
+        "visual"
+      ]
+    },
+    "styles/city-renderer": {
+      "href": "./styles/city-renderer.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "City renderer",
+      "description": "The city's own symbology, extracted from the source ArcGIS renderer.",
+      "file:size": 533,
+      "file:checksum": "12209ef360ebc40fd01cf99e3f85fad86d4a9ce3b785f8325d10766094a109e8c29f",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Bike facilities by type",
+      "description": "Every bike facility colored by the city's own facility types \u2014 from separated and buffered lanes (greens) through paint-only shared-lane markings (orange). Protection level reads as green-to-orange.",
+      "file:size": 2033,
+      "file:checksum": "1220ed376ccaf1b3e3c08361973b9fb01c6afa8e2659f3caec9a09ac4be39910dff5",
+      "roles": [
+        "default",
+        "style"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "title": "Bike Infrastructure rendered with the default style",
+      "file:size": 413862,
+      "file:checksum": "1220a200124e2292b59a316f264b13fef1e1ad88cda4d3c81b5645335b1ebc9962e2",
+      "roles": [
+        "thumbnail"
+      ]
+    },
+    "styles/style-network": {
+      "href": "./styles/style-network.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Network layers",
+      "description": "The five source layers: street bike facilities, the Brickline Greenway and Hodiamont Trail, park paths, multi-use paths, and planned/funded major projects.",
+      "file:size": 1672,
+      "file:checksum": "12209a4c0034bb3d285c0a454e113eec5cae91ccc4d6d5e22be296a85e89b05ce121",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/style-planned": {
+      "href": "./styles/style-planned.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Planned projects",
+      "description": "The nine planned and funded major bike facility projects in red over the existing network (light).",
+      "file:size": 1183,
+      "file:checksum": "12200f1f97e5c39103b351fff1c9db62c13a7ded81de91edce733982126938a4a92d",
+      "roles": [
+        "style"
+      ]
+    }
+  }
 }

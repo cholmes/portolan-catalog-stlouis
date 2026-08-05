@@ -1,0 +1,100 @@
+{
+  "version": 8,
+  "name": "Wards (2010)",
+  "metadata": {
+    "description": "The 28 aldermanic wards in force 2011-2022, repeating colors, labeled \u2014 the geography most older city datasets (WARD10 columns) reference.",
+    "legend": "none"
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../wards-2010.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "wards-2010",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "%",
+            [
+              "get",
+              "Ward"
+            ],
+            14
+          ],
+          0,
+          "#7fb3d0",
+          1,
+          "#e2a76f",
+          2,
+          "#95c68f",
+          3,
+          "#d98d8d",
+          4,
+          "#a99bd0",
+          5,
+          "#c9b970",
+          6,
+          "#8fc6c0",
+          7,
+          "#d093b5",
+          8,
+          "#b0a377",
+          9,
+          "#9cb0e0",
+          10,
+          "#e0b394",
+          11,
+          "#88b8a3",
+          12,
+          "#c99ac0",
+          13,
+          "#adc487",
+          "#9aa3a8"
+        ],
+        "fill-opacity": 0.6,
+        "fill-outline-color": "#FFFFFF"
+      }
+    },
+    {
+      "id": "line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "wards-2010",
+      "paint": {
+        "line-color": "#FFFFFF",
+        "line-width": 1.0,
+        "line-opacity": 1.0
+      }
+    },
+    {
+      "id": "labels",
+      "type": "symbol",
+      "source": "data",
+      "source-layer": "wards-2010",
+      "minzoom": 10,
+      "layout": {
+        "text-field": [
+          "get",
+          "Ward"
+        ],
+        "text-font": [
+          "Noto Sans Regular"
+        ],
+        "text-size": 11,
+        "text-max-width": 9
+      },
+      "paint": {
+        "text-color": "#1A1A1A",
+        "text-halo-color": "#FFFFFF",
+        "text-halo-width": 1.2
+      }
+    }
+  ]
+}

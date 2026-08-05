@@ -1,0 +1,26 @@
+{
+  "version": 8,
+  "name": "Outline",
+  "metadata": {
+    "description": "Boundary line only."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../port-authority-district.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "port-authority-district",
+      "paint": {
+        "line-color": "#2d6a68",
+        "line-width": 2.5,
+        "line-opacity": 1.0
+      }
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "version": 8,
+  "name": "Flood zones",
+  "metadata": {
+    "description": "FEMA flood zones: AE 1-percent-annual-chance in blue, 0.2-percent in light blue, levee-protected X zones teal."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../floodplain.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "floodplain-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "floodplain",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "FLD_ZONE"
+          ],
+          "AE",
+          "#1e526b",
+          "0.2 PCT ANNUAL CHANCE FLOOD HAZARD",
+          "#a8d4e8",
+          "X PROTECTED BY LEVEE",
+          "#4a9d9c",
+          "#9aa3a8"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "floodplain",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "FLD_ZONE"
+          ],
+          "AE",
+          "#1e526b",
+          "0.2 PCT ANNUAL CHANCE FLOOD HAZARD",
+          "#a8d4e8",
+          "X PROTECTED BY LEVEE",
+          "#4a9d9c",
+          "#9aa3a8"
+        ],
+        "fill-opacity": 0.55,
+        "fill-outline-color": "#FFFFFF"
+      }
+    }
+  ]
+}

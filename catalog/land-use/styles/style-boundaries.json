@@ -1,0 +1,26 @@
+{
+  "version": 8,
+  "name": "Category boundaries",
+  "metadata": {
+    "description": "Outlines only."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../land-use.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "land-use",
+      "paint": {
+        "line-color": "#174054",
+        "line-width": 0.6,
+        "line-opacity": 1.0
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-05T16:58:04.659436Z",
+      "breaking": false,
+      "assets": {
+        "tornado-damage-2025.parquet": {
+          "sha256": "071dd3877f4173cdb59f4dd5c33a8db5a5b5bec6525fb40a1b8edb348d33d638",
+          "size_bytes": 39735,
+          "href": "tornado-damage-2025/tornado-damage-2025.parquet",
+          "source_mtime": 1785948935.2901895,
+          "mtime": 1785948935.2901895,
+          "feature_count": 287,
+          "schema_fingerprint": "8c7c34258dc9b8c2"
+        }
+      },
+      "changes": [
+        "tornado-damage-2025.parquet"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "version": 8,
+  "name": "Zone boundaries",
+  "metadata": {
+    "description": "Outlines only."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../floodplain.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "floodplain",
+      "paint": {
+        "line-color": "#1e526b",
+        "line-width": 1.2,
+        "line-opacity": 1.0
+      }
+    }
+  ]
+}

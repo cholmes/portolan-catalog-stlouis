@@ -1,0 +1,252 @@
+{
+  "type": "Collection",
+  "id": "lead-service-lines",
+  "stac_version": "1.1.0",
+  "description": "Lead Service Line Inventory Feature Layer Service",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown",
+      "title": "Agent/LLM usage guide"
+    },
+    {
+      "rel": "describedby",
+      "href": "./README.md",
+      "type": "text/markdown"
+    },
+    {
+      "rel": "license",
+      "href": "https://stlcity.maps.arcgis.com/home/item.html?id=80c69343cc2d418fb1796a342a863aac",
+      "type": "text/html",
+      "title": "Dataset page on the City of St. Louis open data portal"
+    },
+    {
+      "rel": "via",
+      "href": "https://stlcity.maps.arcgis.com/home/item.html?id=80c69343cc2d418fb1796a342a863aac",
+      "type": "text/html",
+      "title": "Source dataset on stlouis-mo.gov"
+    },
+    {
+      "rel": "via",
+      "href": "https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/STLWD_LSLI__Read_Only_View/FeatureServer",
+      "type": "text/html",
+      "title": "Source ArcGIS service"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "./lead-service-lines.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "pmtiles:layers": [
+        "lead-service-lines"
+      ]
+    }
+  ],
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
+  ],
+  "geoparquet:geometry_type": "Point",
+  "geoparquet:feature_count": 112950,
+  "table:row_count": 112950,
+  "table:primary_geometry": "geometry",
+  "table:columns": [
+    {
+      "name": "address",
+      "type": "string"
+    },
+    {
+      "name": "utilmaterial",
+      "type": "int16"
+    },
+    {
+      "name": "utilsource",
+      "type": "int16"
+    },
+    {
+      "name": "utilstatus",
+      "type": "int16"
+    },
+    {
+      "name": "custmaterial",
+      "type": "int16"
+    },
+    {
+      "name": "custsource",
+      "type": "int16"
+    },
+    {
+      "name": "custstatus",
+      "type": "int16"
+    },
+    {
+      "name": "OBJECTID",
+      "type": "int64"
+    },
+    {
+      "name": "GlobalID",
+      "type": "string"
+    },
+    {
+      "name": "geometry",
+      "type": "binary"
+    },
+    {
+      "name": "bbox",
+      "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>"
+    }
+  ],
+  "portolan:total_size_bytes": 8781788,
+  "portolan:asset_count": 1,
+  "title": "Lead Service Line Inventory",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -90.3196726708832,
+          38.5340158845404,
+          -90.1810161864447,
+          38.7645417490548
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "license": "other",
+  "assets": {
+    "lead-service-lines": {
+      "href": "./lead-service-lines.parquet",
+      "type": "application/vnd.apache.parquet",
+      "file:size": 8781788,
+      "file:checksum": "1220ac80f73d395703b95e59c29667c7c319d68e963c746c23de64919408b1e8511b",
+      "roles": [
+        "data"
+      ],
+      "title": "Lead Service Line Inventory (GeoParquet)"
+    },
+    "lead-service-lines-tiles": {
+      "href": "./lead-service-lines.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "roles": [
+        "visual"
+      ],
+      "title": "Lead Service Line Inventory (PMTiles)",
+      "file:size": 2351427,
+      "file:checksum": "12208d4ec4b409c98f2f3b862343dc9db1ffda8b80ae658f5824cd55c52dd018194c"
+    },
+    "styles/city-renderer": {
+      "href": "./styles/city-renderer.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "style"
+      ],
+      "title": "City renderer",
+      "description": "The city's own symbology, extracted from the source ArcGIS renderer.",
+      "file:size": 2215,
+      "file:checksum": "12203812f50e585096bf3ee022c01d0178418e43b618a34d38cb3f83c4f61c22dac6"
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "default",
+        "style"
+      ],
+      "title": "Utility-side service line status",
+      "description": "Every water service line by the utility-side status from the Water Division's EPA lead inventory: Lead red, Galvanized-requiring-replacement orange, Non-Lead green, Unknown gray. Codes follow the service's own domain (1 Lead, 2 Non-Lead, 3 Galvanized, 0 Unknown).",
+      "file:size": 1792,
+      "file:checksum": "122012ecec15c8e7a20b82f773267ae3167a1683a279dde4998d794a56e3466c57d0"
+    },
+    "styles/style-customer-side": {
+      "href": "./styles/style-customer-side.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "style"
+      ],
+      "title": "Customer-side status",
+      "description": "Same classification for the customer-owned side of each service line.",
+      "file:size": 1586,
+      "file:checksum": "12205173f9f8e0deb0b1a9ff933090ebb43ff1289a0b891427ca9fca608956adfb3c"
+    },
+    "styles/style-material": {
+      "href": "./styles/style-material.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "style"
+      ],
+      "title": "Pipe material",
+      "description": "Utility-side pipe material by the service's own domain codes: Lead (109) red, Galvanized (89) orange, Copper (84) green, Ductile Iron (88) teal, Cast Iron (83) purple, PVC/PE light, Unknown (0) gray.",
+      "file:size": 2065,
+      "file:checksum": "1220dfbbd860afe21cbc29ef09bc9ac115074562e8418502d46687aee7acae240296"
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ],
+      "title": "Lead Service Line Inventory rendered with the default style",
+      "file:size": 388907,
+      "file:checksum": "1220af3eb899ce1103fc34aeeb24e537357df6c471c860fa3667cdd2311efb8b7d5c"
+    }
+  },
+  "updated": "2026-08-05T17:00:27+00:00",
+  "themes": [
+    {
+      "scheme": "https://www.stlouis-mo.gov/data/topics/",
+      "concepts": [
+        {
+          "id": "environment",
+          "title": "Environment"
+        },
+        {
+          "id": "health",
+          "title": "Health"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "water",
+    "lead"
+  ],
+  "providers": [
+    {
+      "name": "City of St. Louis \u2014 Water Division",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://stlcity.maps.arcgis.com/home/item.html?id=80c69343cc2d418fb1796a342a863aac"
+    },
+    {
+      "name": "TGE Labs",
+      "roles": [
+        "host"
+      ],
+      "url": "https://github.com/cholmes/portolan-catalog-stlouis"
+    }
+  ]
+}

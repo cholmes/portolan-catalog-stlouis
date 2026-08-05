@@ -1,0 +1,156 @@
+{
+ "collection": "tornado-damage-2025",
+ "title": "May 2025 Tornado Damage",
+ "portal_page": "https://stlcity.maps.arcgis.com/home/item.html?id=d2f73ad3cd2b434b91c6eacaef94df32",
+ "department": "City Emergency Management Agency",
+ "source": "https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/NS_Tornado_Map_WFL1/FeatureServer",
+ "source_type": "arcgis",
+ "synced": "2026-08-05T16:51:48+00:00",
+ "fetch": {
+  "status": "ok",
+  "parquets": [
+   "staging/extracts/tornado-damage-2025/nws_dat_damage_paths/nws_dat_damage_paths.parquet",
+   "staging/extracts/tornado-damage-2025/nws_dat_damage_pnts/nws_dat_damage_pnts.parquet"
+  ],
+  "layer_url": "https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/NS_Tornado_Map_WFL1/FeatureServer/0",
+  "layer_description": null,
+  "fields": [
+   {
+    "name": "FID",
+    "alias": "FID",
+    "type": "esriFieldTypeOID"
+   },
+   {
+    "name": "Id",
+    "alias": "Id",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "event_id",
+    "alias": "event_id",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "stormdate",
+    "alias": "stormdate",
+    "type": "esriFieldTypeDate"
+   },
+   {
+    "name": "stormtime",
+    "alias": "stormtime",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "starttime",
+    "alias": "starttime",
+    "type": "esriFieldTypeDate"
+   },
+   {
+    "name": "starttimez",
+    "alias": "starttimez",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "endtime",
+    "alias": "endtime",
+    "type": "esriFieldTypeDate"
+   },
+   {
+    "name": "endtimez",
+    "alias": "endtimez",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "startlat",
+    "alias": "startlat",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "startlon",
+    "alias": "startlon",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "endlat",
+    "alias": "endlat",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "endlon",
+    "alias": "endlon",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "length",
+    "alias": "length",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "width",
+    "alias": "width",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "injuries",
+    "alias": "injuries",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "fatalities",
+    "alias": "fatalities",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "efscale",
+    "alias": "efscale",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "efnum",
+    "alias": "efnum",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "qc",
+    "alias": "qc",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "maxwind",
+    "alias": "maxwind",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "cropdamage",
+    "alias": "cropdamage",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "propdamage",
+    "alias": "propdamage",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "comments",
+    "alias": "comments",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "wfo",
+    "alias": "wfo",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "image_full",
+    "alias": "image_full",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Shape__Length",
+    "alias": "Shape__Length",
+    "type": "esriFieldTypeDouble"
+   }
+  ],
+  "city_style": "staging/extracts/tornado-damage-2025/styles/city-renderer.json"
+ }
+}

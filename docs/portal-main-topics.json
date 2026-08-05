@@ -74,5 +74,54 @@
  ],
  "bike-infrastructure": [
   "Transportation, Infrastructure, and Utilities"
+ ],
+ "forest-park-trees": [
+  "Leisure and Culture"
+ ],
+ "siren-locations": [
+  "Transportation, Infrastructure, and Utilities"
+ ],
+ "schools": [
+  "Education and Training"
+ ],
+ "floodplain": [
+  "Environment"
+ ],
+ "port-authority-district": [
+  "Transportation, Infrastructure, and Utilities",
+  "Urban Development and Planning"
+ ],
+ "wards-2010": [
+  "Government"
+ ],
+ "land-use": [
+  "Urban Development and Planning"
+ ],
+ "lead-service-lines": [
+  "Health",
+  "Environment"
+ ],
+ "market-value-analysis": [
+  "Housing",
+  "Urban Development and Planning"
+ ],
+ "vacancy-composite": [
+  "Housing",
+  "Urban Development and Planning"
+ ],
+ "polling-places": [
+  "Government"
+ ],
+ "election-results-nov-2024": [
+  "Government"
+ ],
+ "tornado-damage-2025": [
+  "Law, Safety, and Justice"
+ ],
+ "flood-controls": [
+  "Environment"
+ ],
+ "neighborhood-organizations": [
+  "Community"
  ]
 }

@@ -1,0 +1,65 @@
+{
+ "collection": "lead-service-lines",
+ "title": "Lead Service Line Inventory",
+ "portal_page": "https://stlcity.maps.arcgis.com/home/item.html?id=80c69343cc2d418fb1796a342a863aac",
+ "department": "Water Division",
+ "source": "https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/STLWD_LSLI__Read_Only_View/FeatureServer",
+ "source_type": "arcgis",
+ "synced": "2026-08-05T16:51:48+00:00",
+ "fetch": {
+  "status": "ok",
+  "parquets": [
+   "staging/extracts/lead-service-lines/utility_side_customer_side/utility_side_customer_side.parquet"
+  ],
+  "layer_url": "https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/STLWD_LSLI__Read_Only_View/FeatureServer/0",
+  "layer_description": null,
+  "fields": [
+   {
+    "name": "address",
+    "alias": "Address",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "utilmaterial",
+    "alias": "Right of Way Material",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "utilsource",
+    "alias": "Right of Way Source",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "utilstatus",
+    "alias": "Right of Way Status",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "custmaterial",
+    "alias": "Building Side Material",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "custsource",
+    "alias": "Building Side Source",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "custstatus",
+    "alias": "Building Side Status",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "OBJECTID",
+    "alias": "OBJECTID",
+    "type": "esriFieldTypeOID"
+   },
+   {
+    "name": "GlobalID",
+    "alias": "GlobalID",
+    "type": "esriFieldTypeGlobalID"
+   }
+  ],
+  "city_style": "staging/extracts/lead-service-lines/styles/city-renderer.json"
+ }
+}

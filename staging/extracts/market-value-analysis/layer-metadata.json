@@ -1,0 +1,1874 @@
+{
+ "currentVersion": 12,
+ "id": 0,
+ "name": "2024 Market Value Analysis",
+ "type": "Feature Layer",
+ "serviceItemId": "e71e3ebca1f345a4b7db134d30c5d9ff",
+ "cacheMaxAge": 30,
+ "displayField": "MVACluster",
+ "description": "The attribute table Information that follows is ordered by the following headings: COLUMN NAME, DATA TYPE, DEFINITION, MEASUREMENT TYPE, SOURCE. Column names are shown in bold. geoid, text, Census 2020 Block Group Code, NA, Census. MVACluster, text, Reinvestment Fund's 2024 MVA of St. Louis, type, Reinvestment Fund. MSP2123_CA, integer, Typical value of residential home sales (median sales price) excluding homes purchased for values below $1,000 (condo adjusted) from 2021 to 2023, median currency, City of St. Louis. MSPVar2123, decimal, Variation of home values between '21-'23 (standard deviation/average value), number City of St. Louis. PHHOO, decimal, Households that reported owning their home as a share of all households, 2018-2022, percent, ACS 2018-2022. CHOO, integer, Count of households that reported owning their homes, number, ACS 2018-2022. CHIH, integer, count of all households, number, ACS 2018-2022. PPerm10k, decimal, Residential parcels with renovation/addition permits between June '22 to June '24 where total permit value exceeded $10,000 (excluding demolitions) as a share of all residential parcels, percent, City of St. Louis. CPerm10k, Count of residential parcels with renovation/addition permits between June '22 - June '24 where total permit value exceeded $10,000 (excluding demolitions), number, City of St. Louis. CResPcl, integer, Count of residential parcels foreclosures, sheriff sales, tax sales and bank-sold properties as a share of all, number, City of St. Louis. PDSale2123, decimal, Residential property transactions '21-'23, percent, City of St. Louis. CDSale2123, integer, Count of distressed residential home sales (foreclosures, sheriff sales, tax sales, and bank-sold residential properties) between 2021-2023, number, City of St. Louis. CSales2123, integer, Count of residential home sales between 2021-2023, number, City of St. Louis. PVacBuild, decimal, Vacant Housing Units as a Share of All Housing Units 2024, percent, City of St. Louis. CVacBuild, integer, Count of vacant housing units, number, City of St. Louis. CHU_All, integer, count of all housing units, number, City of St. Louis. PVResLand, decimal, Vacant Residential Land as a Share of All Residential Land 2024, percent, City of St. Louis.  VacLotAcre, decimal, vacant residential land area (in acres), number, City of St. Louis. PclResAcre, decimal, Residential land area (in acres), number, City of St. Louis. PResArea, decimal, Residential Land Area as a Share of All Land Area, 2024, number, City of St. Louis. PclAcres, decimal, All land area (in acres), number, City of St. Louis. Subsidy, decimal, Households with Subsidy (LIHTC, Public Housing, HCV, Multifamily), percent, National Housing Preservation Database/HUD-POSH/and St Louis Housing Authority. CSubHH, integer, Count of household with a housing subsidy (LIHTC, Public Housing, HCV, Multifamily), number, National Housing Preservation Database/HUD-POSH/and St Louis Housing Authority. CHHRO, integer, count of renter households, number, ACS 2018-2022. CPOP, integer, Count of total population, number, ACS 2018-2022. CPOPWH, integer, Count of non-hispanic white population, number, ACS 2018-2022. CPOPBK, integer, Count of non-hispanic black population, number, ACS 2018-2022. CPOPAS, integer, Count of non-hispanic asian population, number, ACS 2018-2022. CPOPHISP, integer, Count of hispanic population, number, ACS 2018-2022. CPOPOTH, integer, Count of other race population, number, ACS 2018-2022. ",
+ "copyrightText": "Ira Goldstein with The Reinvestment Fund. Ira.Goldstein@reinvestment.com. Trey McCarter, CDA, 314.657.3834",
+ "defaultVisibility": true,
+ "editingInfo": {
+  "lastEditDate": 1744230723309,
+  "schemaLastEditDate": 1744230723309,
+  "dataLastEditDate": 1744230723309
+ },
+ "relationships": [],
+ "isDataVersioned": false,
+ "hasContingentValuesDefinition": false,
+ "supportsAppend": true,
+ "supportsCalculate": true,
+ "supportsASyncCalculate": true,
+ "supportsTruncate": true,
+ "supportsAttachmentsByUploadId": true,
+ "supportsAttachmentsResizing": true,
+ "supportsRollbackOnFailureParameter": true,
+ "supportsStatistics": true,
+ "supportsExceedsLimitStatistics": true,
+ "supportsAdvancedQueries": true,
+ "supportsValidateSql": true,
+ "supportsCoordinatesQuantization": true,
+ "supportsLayerOverrides": true,
+ "supportsTilesAndBasicQueriesMode": true,
+ "supportsFieldDescriptionProperty": true,
+ "supportsQuantizationEditMode": true,
+ "supportsColumnStoreIndex": true,
+ "supportsApplyEditsWithGlobalIds": false,
+ "supportsMultiScaleGeometry": true,
+ "supportsReturningQueryGeometry": true,
+ "enableNullGeometry": false,
+ "hasGeometryProperties": true,
+ "geometryProperties": {
+  "shapeAreaFieldName": "Shape__Area",
+  "shapeLengthFieldName": "Shape__Length",
+  "units": "esriMeters"
+ },
+ "advancedQueryCapabilities": {
+  "supportsPagination": true,
+  "supportsPaginationOnAggregatedQueries": true,
+  "supportsQueryRelatedPagination": true,
+  "supportsQueryWithDistance": true,
+  "supportsOutDistance": true,
+  "supportsReturningQueryExtent": true,
+  "supportsStatistics": true,
+  "supportsOrderBy": true,
+  "supportsDistinct": true,
+  "supportsQueryWithResultType": true,
+  "supportsSqlExpression": true,
+  "supportsTimeRelation": true,
+  "supportsAdvancedQueryRelated": true,
+  "supportsCountDistinct": true,
+  "supportsPercentileStatistics": true,
+  "supportsApproxPercentileStatistics": true,
+  "supportsSpatialAggregationStatistics": true,
+  "supportsTrueCurve": true,
+  "supportedSpatialAggregationStatistics": [
+   "EnvelopeAggregate",
+   "CentroidAggregate",
+   "ConvexHullAggregate"
+  ],
+  "supportsLod": true,
+  "supportsQueryWithLodSR": false,
+  "supportedLodTypes": [
+   "geohash"
+  ],
+  "supportsReturningGeometryCentroid": true,
+  "supportsReturningGeometryEnvelope": true,
+  "supportsReturningGeometryProperties": true,
+  "supportsQueryWithDatumTransformation": true,
+  "supportsCurrentUserQueries": true,
+  "supportsHavingClause": true,
+  "supportsOutFieldSQLExpression": true,
+  "supportsMaxRecordCountFactor": true,
+  "supportsTopFeaturesQuery": true,
+  "supportsDisjointSpatialRel": true,
+  "supportsQueryWithCacheHint": true,
+  "supportedOperationsWithCacheHint": [
+   "query",
+   "queryTopFilter",
+   "queryAnalytics",
+   "queryAttachments",
+   "queryRelated",
+   "queryBins",
+   "queryPivot"
+  ],
+  "supportsQueryAnalytic": true,
+  "supportsQueryPivot": true,
+  "supportsQueryBins": true,
+  "supportsDefaultSR": true,
+  "supportsTranslations": false,
+  "supportsAggIds": true,
+  "supportsQueryWithCollation": true,
+  "supportsISODOW": true,
+  "supportsISOWeek": true,
+  "supportsFullTextSearch": true,
+  "fullTextSearchCapabilities": {
+   "supportsAccentSensitivity": true,
+   "supportsStopWords": true,
+   "supportsSearchOperator": true,
+   "supportsOperator": true
+  }
+ },
+ "advancedQueryAnalyticCapabilities": {
+  "supportsLinearRegression": true,
+  "supportsTrendlineRegression": true,
+  "supportsAsync": true,
+  "supportsPercentileAnalytic": true
+ },
+ "queryBinsCapabilities": {
+  "supportsAsync": true,
+  "supportsAutoIntervalBin": true,
+  "supportsFixedIntervalBin": true,
+  "supportsFixedBoundariesBin": true,
+  "supportsDateBin": true,
+  "supportsClassificationBin": true,
+  "supportsStackBy": true,
+  "supportsSplitBy": true,
+  "supportsFirstDayOfWeek": true,
+  "supportsSnapToData": true,
+  "supportsReturnFullIntervalBin": true,
+  "supportsReturnStackValueRange": true,
+  "supportsNormalization": true,
+  "supportedStatisticTypes": [
+   "COUNT",
+   "SUM",
+   "AVG",
+   "VAR",
+   "STDDEV",
+   "MIN",
+   "MAX",
+   "PERCENTILE_CONT",
+   "PERCENTILE_DISC",
+   "APPROX_PERCENTILE_CONT",
+   "APPROX_PERCENTILE_DISC",
+   "CentroidAggregate",
+   "EnvelopeAggregate",
+   "ConvexHullAggregate"
+  ],
+  "supportedNormalizationTypes": [
+   "boxCox",
+   "field",
+   "inverse",
+   "log",
+   "naturalLog",
+   "percentOfTotal",
+   "squareRoot"
+  ]
+ },
+ "supportedOperationsWithCollation": "query,addField,updateField",
+ "advancedEditingCapabilities": {
+  "supportedSqlFormatsInCalculate": [
+   "standard"
+  ],
+  "supportsAsyncApplyEdits": true,
+  "supportsReturnEditResults": true,
+  "supportsApplyEditsbyUploadID": true,
+  "supportedApplyEditsUploadIDFormats": "JSON,PBF",
+  "supportsTranslation": false,
+  "supportsMaxTranslations": 10
+ },
+ "infoInEstimates": [
+  "extent",
+  "count"
+ ],
+ "useStandardizedQueries": true,
+ "geometryType": "esriGeometryPolygon",
+ "minScale": 0,
+ "maxScale": 0,
+ "extent": {
+  "xmin": -10054451.59599444,
+  "ymin": 4654825.906749509,
+  "xmax": -10037312.693190463,
+  "ymax": 4689433.814696847,
+  "spatialReference": {
+   "wkid": 102100,
+   "latestWkid": 3857
+  }
+ },
+ "spatialReference": {
+  "wkid": 102100,
+  "latestWkid": 3857
+ },
+ "drawingInfo": {
+  "renderer": {
+   "type": "uniqueValue",
+   "field1": "MVACluster",
+   "uniqueValueGroups": [
+    {
+     "heading": "MVA Category",
+     "classes": [
+      {
+       "label": "A",
+       "description": "A",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         114,
+         150,
+         204,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          225,
+          225,
+          225,
+          255
+         ],
+         "width": 0.7
+        }
+       },
+       "values": [
+        [
+         "A"
+        ]
+       ]
+      },
+      {
+       "label": "B",
+       "description": "B",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         175,
+         202,
+         240,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          225,
+          225,
+          225,
+          255
+         ],
+         "width": 0.7
+        }
+       },
+       "values": [
+        [
+         "B"
+        ]
+       ]
+      },
+      {
+       "label": "C",
+       "description": "C",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         156,
+         131,
+         199,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          225,
+          225,
+          225,
+          255
+         ],
+         "width": 0.7
+        }
+       },
+       "values": [
+        [
+         "C"
+        ]
+       ]
+      },
+      {
+       "label": "D",
+       "description": "D",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         192,
+         170,
+         230,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          225,
+          225,
+          225,
+          255
+         ],
+         "width": 0.7
+        }
+       },
+       "values": [
+        [
+         "D"
+        ]
+       ]
+      },
+      {
+       "label": "E",
+       "description": "E",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         121,
+         155,
+         166,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          225,
+          225,
+          225,
+          255
+         ],
+         "width": 0.7
+        }
+       },
+       "values": [
+        [
+         "E"
+        ]
+       ]
+      },
+      {
+       "label": "F",
+       "description": "F",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         184,
+         217,
+         206,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          225,
+          225,
+          225,
+          255
+         ],
+         "width": 0.7
+        }
+       },
+       "values": [
+        [
+         "F"
+        ]
+       ]
+      },
+      {
+       "label": "G",
+       "description": "G",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         235,
+         173,
+         75,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          225,
+          225,
+          225,
+          255
+         ],
+         "width": 0.7
+        }
+       },
+       "values": [
+        [
+         "G"
+        ]
+       ]
+      },
+      {
+       "label": "H",
+       "description": "H",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         255,
+         215,
+         145,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          225,
+          225,
+          225,
+          255
+         ],
+         "width": 0.7
+        }
+       },
+       "values": [
+        [
+         "H"
+        ]
+       ]
+      },
+      {
+       "label": "I",
+       "description": "I",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSSolid",
+        "color": [
+         255,
+         255,
+         201,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          225,
+          225,
+          225,
+          255
+         ],
+         "width": 0.7
+        }
+       },
+       "values": [
+        [
+         "I"
+        ]
+       ]
+      },
+      {
+       "label": "Not Classified",
+       "description": "Not Classified",
+       "symbol": {
+        "type": "esriSFS",
+        "style": "esriSFSBackwardDiagonal",
+        "color": [
+         52,
+         52,
+         52,
+         255
+        ],
+        "outline": {
+         "type": "esriSLS",
+         "style": "esriSLSSolid",
+         "color": [
+          225,
+          225,
+          225,
+          255
+         ],
+         "width": 0.7
+        }
+       },
+       "values": [
+        [
+         "Insufficient Data"
+        ]
+       ]
+      }
+     ]
+    }
+   ],
+   "uniqueValueInfos": [
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       114,
+       150,
+       204,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        225,
+        225,
+        225,
+        255
+       ],
+       "width": 0.7
+      }
+     },
+     "value": "A",
+     "label": "A"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       175,
+       202,
+       240,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        225,
+        225,
+        225,
+        255
+       ],
+       "width": 0.7
+      }
+     },
+     "value": "B",
+     "label": "B"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       156,
+       131,
+       199,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        225,
+        225,
+        225,
+        255
+       ],
+       "width": 0.7
+      }
+     },
+     "value": "C",
+     "label": "C"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       192,
+       170,
+       230,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        225,
+        225,
+        225,
+        255
+       ],
+       "width": 0.7
+      }
+     },
+     "value": "D",
+     "label": "D"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       121,
+       155,
+       166,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        225,
+        225,
+        225,
+        255
+       ],
+       "width": 0.7
+      }
+     },
+     "value": "E",
+     "label": "E"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       184,
+       217,
+       206,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        225,
+        225,
+        225,
+        255
+       ],
+       "width": 0.7
+      }
+     },
+     "value": "F",
+     "label": "F"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       235,
+       173,
+       75,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        225,
+        225,
+        225,
+        255
+       ],
+       "width": 0.7
+      }
+     },
+     "value": "G",
+     "label": "G"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       255,
+       215,
+       145,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        225,
+        225,
+        225,
+        255
+       ],
+       "width": 0.7
+      }
+     },
+     "value": "H",
+     "label": "H"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSSolid",
+      "color": [
+       255,
+       255,
+       201,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        225,
+        225,
+        225,
+        255
+       ],
+       "width": 0.7
+      }
+     },
+     "value": "I",
+     "label": "I"
+    },
+    {
+     "symbol": {
+      "type": "esriSFS",
+      "style": "esriSFSBackwardDiagonal",
+      "color": [
+       52,
+       52,
+       52,
+       255
+      ],
+      "outline": {
+       "type": "esriSLS",
+       "style": "esriSLSSolid",
+       "color": [
+        225,
+        225,
+        225,
+        255
+       ],
+       "width": 0.7
+      }
+     },
+     "value": "Insufficient Data",
+     "label": "Not Classified"
+    }
+   ],
+   "fieldDelimiter": ",",
+   "authoringInfo": {
+    "colorRamp": {
+     "type": "multipart",
+     "colorRamps": [
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        228,
+        252,
+        182,
+        255
+       ],
+       "toColor": [
+        228,
+        252,
+        182,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        250,
+        179,
+        252,
+        255
+       ],
+       "toColor": [
+        250,
+        179,
+        252,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        182,
+        235,
+        252,
+        255
+       ],
+       "toColor": [
+        182,
+        235,
+        252,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        252,
+        191,
+        184,
+        255
+       ],
+       "toColor": [
+        252,
+        191,
+        184,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        179,
+        184,
+        252,
+        255
+       ],
+       "toColor": [
+        179,
+        184,
+        252,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        184,
+        252,
+        226,
+        255
+       ],
+       "toColor": [
+        184,
+        252,
+        226,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        242,
+        215,
+        252,
+        255
+       ],
+       "toColor": [
+        242,
+        215,
+        252,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        252,
+        233,
+        194,
+        255
+       ],
+       "toColor": [
+        252,
+        233,
+        194,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        252,
+        179,
+        206,
+        255
+       ],
+       "toColor": [
+        252,
+        179,
+        206,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        182,
+        252,
+        194,
+        255
+       ],
+       "toColor": [
+        182,
+        252,
+        194,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        252,
+        215,
+        224,
+        255
+       ],
+       "toColor": [
+        252,
+        215,
+        224,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        184,
+        214,
+        252,
+        255
+       ],
+       "toColor": [
+        184,
+        214,
+        252,
+        255
+       ]
+      },
+      {
+       "type": "algorithmic",
+       "algorithm": "esriCIELabAlgorithm",
+       "fromColor": [
+        228,
+        252,
+        212,
+        255
+       ],
+       "toColor": [
+        228,
+        252,
+        212,
+        255
+       ]
+      }
+     ]
+    }
+   }
+  },
+  "scaleSymbols": true,
+  "transparency": 25,
+  "labelingInfo": null
+ },
+ "allowGeometryUpdates": true,
+ "trueCurveSupportMode": "OGC",
+ "supportedCurveTypes": [
+  "esriGeometryCircularArc"
+ ],
+ "supportedTrueCurvePbfFeatureEncodings": [
+  "esriCompressedShapeBuffer",
+  "esriDefault"
+ ],
+ "allowTrueCurvesUpdates": true,
+ "onlyAllowTrueCurveUpdatesByTrueCurveClients": false,
+ "hasAttachments": false,
+ "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+ "hasMetadata": true,
+ "hasM": false,
+ "hasZ": false,
+ "objectIdField": "OBJECTID",
+ "uniqueIdField": {
+  "name": "OBJECTID",
+  "isSystemMaintained": true
+ },
+ "globalIdField": "",
+ "typeIdField": "MVACluster",
+ "collation": {
+  "locale": "neutral",
+  "caseSensitive": false,
+  "accentSensitive": true
+ },
+ "fields": [
+  {
+   "name": "OBJECTID",
+   "type": "esriFieldTypeOID",
+   "alias": "OBJECTID",
+   "sqlType": "sqlTypeOther",
+   "nullable": false,
+   "editable": false,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "geoid",
+   "type": "esriFieldTypeString",
+   "alias": "geoid",
+   "sqlType": "sqlTypeOther",
+   "length": 15,
+   "nullable": true,
+   "editable": true,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "MVACluster",
+   "type": "esriFieldTypeString",
+   "alias": "MVACluster",
+   "sqlType": "sqlTypeOther",
+   "length": 20,
+   "nullable": true,
+   "editable": true,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "MSP2123_CA",
+   "type": "esriFieldTypeInteger",
+   "alias": "MSP2123_CA",
+   "sqlType": "sqlTypeOther",
+   "nullable": true,
+   "editable": true,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "MSPVar2123",
+   "type": "esriFieldTypeSingle",
+   "alias": "MSPVar2123",
+   "sqlType": "sqlTypeOther",
+   "nullable": true,
+   "editable": true,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "PHHOO",
+   "type": "esriFieldTypeSingle",
+   "alias": "PHHOO",
+   "sqlType": "sqlTypeOther",
+   "nullable": true,
+   "editable": true,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "CHHOO",
+   "type": "esriFieldTypeInteger",
+   "alias": "CHHOO",
+   "sqlType": "sqlTypeOther",
+   "nullable": true,
+   "editable": true,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "CHH",
+   "type": "esriFieldTypeInteger",
+   "alias": "CHH",
+   "sqlType": "sqlTypeOther",
+   "nullable": true,
+   "editable": true,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "PPerm10k",
+   "type": "esriFieldTypeSingle",
+   "alias": "PPerm10k",
+   "sqlType": "sqlTypeOther",
+   "nullable": true,
+   "editable": true,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "CPerm10k",
+   "type": "esriFieldTypeInteger",
+   "alias": "CPerm10k",
+   "sqlType": "sqlTypeOther",
+   "nullable": true,
+   "editable": true,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "CResPcl",
+   "type": "esriFieldTypeInteger",
+   "alias": "CResPcl",
+   "sqlType": "sqlTypeOther",
+   "nullable": true,
+   "editable": true,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "PDSale2123",
+   "type": "esriFieldTypeSingle",
+   "alias": "PDSale2123",
+   "sqlType": "sqlTypeOther",
+   "nullable": true,
+   "editable": true,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "CDSale2123",
+   "type": "esriFieldTypeInteger",
+   "alias": "CDSale2123",
+   "sqlType": "sqlTypeOther",
+   "nullable": true,
+   "editable": true,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "CSales2123",
+   "type": "esriFieldTypeInteger",
+   "alias": "CSales2123",
+   "sqlType": "sqlTypeOther",
+   "nullable": true,
+   "editable": true,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "PVacBuild",
+   "type": "esriFieldTypeSingle",
+   "alias": "PVacBuild",
+   "sqlType": "sqlTypeOther",
+   "nullable": true,
+   "editable": true,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "CVacBuild",
+   "type": "esriFieldTypeInteger",
+   "alias": "CVacBuild",
+   "sqlType": "sqlTypeOther",
+   "nullable": true,
+   "editable": true,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "CHU_All",
+   "type": "esriFieldTypeInteger",
+   "alias": "CHU_All",
+   "sqlType": "sqlTypeOther",
+   "nullable": true,
+   "editable": true,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "PVResLand",
+   "type": "esriFieldTypeSingle",
+   "alias": "PVResLand",
+   "sqlType": "sqlTypeOther",
+   "nullable": true,
+   "editable": true,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "VacLotAcre",
+   "type": "esriFieldTypeDouble",
+   "alias": "VacLotAcre",
+   "sqlType": "sqlTypeOther",
+   "nullable": true,
+   "editable": true,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "PclResAcre",
+   "type": "esriFieldTypeDouble",
+   "alias": "PclResAcre",
+   "sqlType": "sqlTypeOther",
+   "nullable": true,
+   "editable": true,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "PResArea",
+   "type": "esriFieldTypeSingle",
+   "alias": "PResArea",
+   "sqlType": "sqlTypeOther",
+   "nullable": true,
+   "editable": true,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "PclAcres",
+   "type": "esriFieldTypeDouble",
+   "alias": "PclAcres",
+   "sqlType": "sqlTypeOther",
+   "nullable": true,
+   "editable": true,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "Subsidy",
+   "type": "esriFieldTypeSingle",
+   "alias": "Subsidy",
+   "sqlType": "sqlTypeOther",
+   "nullable": true,
+   "editable": true,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "CSubHH",
+   "type": "esriFieldTypeDouble",
+   "alias": "CSubHH",
+   "sqlType": "sqlTypeOther",
+   "nullable": true,
+   "editable": true,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "CHHRO",
+   "type": "esriFieldTypeInteger",
+   "alias": "CHHRO",
+   "sqlType": "sqlTypeOther",
+   "nullable": true,
+   "editable": true,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "CPOP",
+   "type": "esriFieldTypeInteger",
+   "alias": "CPOP",
+   "sqlType": "sqlTypeOther",
+   "nullable": true,
+   "editable": true,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "CPOPWH",
+   "type": "esriFieldTypeInteger",
+   "alias": "CPOPWH",
+   "sqlType": "sqlTypeOther",
+   "nullable": true,
+   "editable": true,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "CPOPBK",
+   "type": "esriFieldTypeInteger",
+   "alias": "CPOPBK",
+   "sqlType": "sqlTypeOther",
+   "nullable": true,
+   "editable": true,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "CPOPAS",
+   "type": "esriFieldTypeInteger",
+   "alias": "CPOPAS",
+   "sqlType": "sqlTypeOther",
+   "nullable": true,
+   "editable": true,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "CPOPHISP",
+   "type": "esriFieldTypeInteger",
+   "alias": "CPOPHISP",
+   "sqlType": "sqlTypeOther",
+   "nullable": true,
+   "editable": true,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "CPOPOTH",
+   "type": "esriFieldTypeInteger",
+   "alias": "CPOPOTH",
+   "sqlType": "sqlTypeOther",
+   "nullable": true,
+   "editable": true,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "Shape__Area",
+   "type": "esriFieldTypeDouble",
+   "alias": "Shape__Area",
+   "sqlType": "sqlTypeDouble",
+   "nullable": true,
+   "editable": false,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "Shape__Length",
+   "type": "esriFieldTypeDouble",
+   "alias": "Shape__Length",
+   "sqlType": "sqlTypeDouble",
+   "nullable": true,
+   "editable": false,
+   "domain": null,
+   "defaultValue": null
+  }
+ ],
+ "indexes": [
+  {
+   "name": "PK__T_2024_M__F4B70D85FB5A64BE",
+   "fields": "OBJECTID",
+   "isAscending": true,
+   "isUnique": true,
+   "description": "",
+   "indexType": "Attribute"
+  },
+  {
+   "name": "user_47415.T_2024_MARKET_VALUE_ANALYSIS_2024_MARKET_VALUE_ANALYSIS_Shape_sidx",
+   "fields": "Shape",
+   "isAscending": true,
+   "isUnique": false,
+   "description": "",
+   "indexType": "Spatial"
+  },
+  {
+   "name": "Shape__Area_Index",
+   "fields": "Shape__Area",
+   "isAscending": true,
+   "isUnique": false,
+   "description": "",
+   "indexType": "Attribute"
+  },
+  {
+   "name": "Shape__Length_Index",
+   "fields": "Shape__Length",
+   "isAscending": true,
+   "isUnique": false,
+   "description": "",
+   "indexType": "Attribute"
+  }
+ ],
+ "dateFieldsTimeReference": {
+  "timeZone": "UTC",
+  "timeZoneIANA": "Etc/UTC",
+  "respectsDaylightSaving": false
+ },
+ "preferredTimeReference": null,
+ "types": [
+  {
+   "id": "A",
+   "name": "A",
+   "domains": {},
+   "templates": [
+    {
+     "name": "A",
+     "description": "",
+     "drawingTool": "esriFeatureEditToolPolygon",
+     "prototype": {
+      "attributes": {
+       "CPOPHISP": null,
+       "CPOPOTH": null,
+       "geoid": null,
+       "MVACluster": "A",
+       "MSP2123_CA": null,
+       "MSPVar2123": null,
+       "PHHOO": null,
+       "CHHOO": null,
+       "CHH": null,
+       "PPerm10k": null,
+       "CPerm10k": null,
+       "CResPcl": null,
+       "PDSale2123": null,
+       "CDSale2123": null,
+       "CSales2123": null,
+       "PVacBuild": null,
+       "CVacBuild": null,
+       "CHU_All": null,
+       "PVResLand": null,
+       "VacLotAcre": null,
+       "PclResAcre": null,
+       "PResArea": null,
+       "PclAcres": null,
+       "Subsidy": null,
+       "CSubHH": null,
+       "CHHRO": null,
+       "CPOP": null,
+       "CPOPWH": null,
+       "CPOPBK": null,
+       "CPOPAS": null
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "B",
+   "name": "B",
+   "domains": {},
+   "templates": [
+    {
+     "name": "B",
+     "description": "",
+     "drawingTool": "esriFeatureEditToolPolygon",
+     "prototype": {
+      "attributes": {
+       "CPOPHISP": null,
+       "CPOPOTH": null,
+       "geoid": null,
+       "MVACluster": "B",
+       "MSP2123_CA": null,
+       "MSPVar2123": null,
+       "PHHOO": null,
+       "CHHOO": null,
+       "CHH": null,
+       "PPerm10k": null,
+       "CPerm10k": null,
+       "CResPcl": null,
+       "PDSale2123": null,
+       "CDSale2123": null,
+       "CSales2123": null,
+       "PVacBuild": null,
+       "CVacBuild": null,
+       "CHU_All": null,
+       "PVResLand": null,
+       "VacLotAcre": null,
+       "PclResAcre": null,
+       "PResArea": null,
+       "PclAcres": null,
+       "Subsidy": null,
+       "CSubHH": null,
+       "CHHRO": null,
+       "CPOP": null,
+       "CPOPWH": null,
+       "CPOPBK": null,
+       "CPOPAS": null
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "C",
+   "name": "C",
+   "domains": {},
+   "templates": [
+    {
+     "name": "C",
+     "description": "",
+     "drawingTool": "esriFeatureEditToolPolygon",
+     "prototype": {
+      "attributes": {
+       "CPOPHISP": null,
+       "CPOPOTH": null,
+       "geoid": null,
+       "MVACluster": "C",
+       "MSP2123_CA": null,
+       "MSPVar2123": null,
+       "PHHOO": null,
+       "CHHOO": null,
+       "CHH": null,
+       "PPerm10k": null,
+       "CPerm10k": null,
+       "CResPcl": null,
+       "PDSale2123": null,
+       "CDSale2123": null,
+       "CSales2123": null,
+       "PVacBuild": null,
+       "CVacBuild": null,
+       "CHU_All": null,
+       "PVResLand": null,
+       "VacLotAcre": null,
+       "PclResAcre": null,
+       "PResArea": null,
+       "PclAcres": null,
+       "Subsidy": null,
+       "CSubHH": null,
+       "CHHRO": null,
+       "CPOP": null,
+       "CPOPWH": null,
+       "CPOPBK": null,
+       "CPOPAS": null
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "D",
+   "name": "D",
+   "domains": {},
+   "templates": [
+    {
+     "name": "D",
+     "description": "",
+     "drawingTool": "esriFeatureEditToolPolygon",
+     "prototype": {
+      "attributes": {
+       "CPOPHISP": null,
+       "CPOPOTH": null,
+       "geoid": null,
+       "MVACluster": "D",
+       "MSP2123_CA": null,
+       "MSPVar2123": null,
+       "PHHOO": null,
+       "CHHOO": null,
+       "CHH": null,
+       "PPerm10k": null,
+       "CPerm10k": null,
+       "CResPcl": null,
+       "PDSale2123": null,
+       "CDSale2123": null,
+       "CSales2123": null,
+       "PVacBuild": null,
+       "CVacBuild": null,
+       "CHU_All": null,
+       "PVResLand": null,
+       "VacLotAcre": null,
+       "PclResAcre": null,
+       "PResArea": null,
+       "PclAcres": null,
+       "Subsidy": null,
+       "CSubHH": null,
+       "CHHRO": null,
+       "CPOP": null,
+       "CPOPWH": null,
+       "CPOPBK": null,
+       "CPOPAS": null
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "E",
+   "name": "E",
+   "domains": {},
+   "templates": [
+    {
+     "name": "E",
+     "description": "",
+     "drawingTool": "esriFeatureEditToolPolygon",
+     "prototype": {
+      "attributes": {
+       "CPOPHISP": null,
+       "CPOPOTH": null,
+       "geoid": null,
+       "MVACluster": "E",
+       "MSP2123_CA": null,
+       "MSPVar2123": null,
+       "PHHOO": null,
+       "CHHOO": null,
+       "CHH": null,
+       "PPerm10k": null,
+       "CPerm10k": null,
+       "CResPcl": null,
+       "PDSale2123": null,
+       "CDSale2123": null,
+       "CSales2123": null,
+       "PVacBuild": null,
+       "CVacBuild": null,
+       "CHU_All": null,
+       "PVResLand": null,
+       "VacLotAcre": null,
+       "PclResAcre": null,
+       "PResArea": null,
+       "PclAcres": null,
+       "Subsidy": null,
+       "CSubHH": null,
+       "CHHRO": null,
+       "CPOP": null,
+       "CPOPWH": null,
+       "CPOPBK": null,
+       "CPOPAS": null
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "F",
+   "name": "F",
+   "domains": {},
+   "templates": [
+    {
+     "name": "F",
+     "description": "",
+     "drawingTool": "esriFeatureEditToolPolygon",
+     "prototype": {
+      "attributes": {
+       "CPOPHISP": null,
+       "CPOPOTH": null,
+       "geoid": null,
+       "MVACluster": "F",
+       "MSP2123_CA": null,
+       "MSPVar2123": null,
+       "PHHOO": null,
+       "CHHOO": null,
+       "CHH": null,
+       "PPerm10k": null,
+       "CPerm10k": null,
+       "CResPcl": null,
+       "PDSale2123": null,
+       "CDSale2123": null,
+       "CSales2123": null,
+       "PVacBuild": null,
+       "CVacBuild": null,
+       "CHU_All": null,
+       "PVResLand": null,
+       "VacLotAcre": null,
+       "PclResAcre": null,
+       "PResArea": null,
+       "PclAcres": null,
+       "Subsidy": null,
+       "CSubHH": null,
+       "CHHRO": null,
+       "CPOP": null,
+       "CPOPWH": null,
+       "CPOPBK": null,
+       "CPOPAS": null
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "G",
+   "name": "G",
+   "domains": {},
+   "templates": [
+    {
+     "name": "G",
+     "description": "",
+     "drawingTool": "esriFeatureEditToolPolygon",
+     "prototype": {
+      "attributes": {
+       "CPOPHISP": null,
+       "CPOPOTH": null,
+       "geoid": null,
+       "MVACluster": "G",
+       "MSP2123_CA": null,
+       "MSPVar2123": null,
+       "PHHOO": null,
+       "CHHOO": null,
+       "CHH": null,
+       "PPerm10k": null,
+       "CPerm10k": null,
+       "CResPcl": null,
+       "PDSale2123": null,
+       "CDSale2123": null,
+       "CSales2123": null,
+       "PVacBuild": null,
+       "CVacBuild": null,
+       "CHU_All": null,
+       "PVResLand": null,
+       "VacLotAcre": null,
+       "PclResAcre": null,
+       "PResArea": null,
+       "PclAcres": null,
+       "Subsidy": null,
+       "CSubHH": null,
+       "CHHRO": null,
+       "CPOP": null,
+       "CPOPWH": null,
+       "CPOPBK": null,
+       "CPOPAS": null
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "H",
+   "name": "H",
+   "domains": {},
+   "templates": [
+    {
+     "name": "H",
+     "description": "",
+     "drawingTool": "esriFeatureEditToolPolygon",
+     "prototype": {
+      "attributes": {
+       "CPOPHISP": null,
+       "CPOPOTH": null,
+       "geoid": null,
+       "MVACluster": "H",
+       "MSP2123_CA": null,
+       "MSPVar2123": null,
+       "PHHOO": null,
+       "CHHOO": null,
+       "CHH": null,
+       "PPerm10k": null,
+       "CPerm10k": null,
+       "CResPcl": null,
+       "PDSale2123": null,
+       "CDSale2123": null,
+       "CSales2123": null,
+       "PVacBuild": null,
+       "CVacBuild": null,
+       "CHU_All": null,
+       "PVResLand": null,
+       "VacLotAcre": null,
+       "PclResAcre": null,
+       "PResArea": null,
+       "PclAcres": null,
+       "Subsidy": null,
+       "CSubHH": null,
+       "CHHRO": null,
+       "CPOP": null,
+       "CPOPWH": null,
+       "CPOPBK": null,
+       "CPOPAS": null
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "I",
+   "name": "I",
+   "domains": {},
+   "templates": [
+    {
+     "name": "I",
+     "description": "",
+     "drawingTool": "esriFeatureEditToolPolygon",
+     "prototype": {
+      "attributes": {
+       "CPOPHISP": null,
+       "CPOPOTH": null,
+       "geoid": null,
+       "MVACluster": "I",
+       "MSP2123_CA": null,
+       "MSPVar2123": null,
+       "PHHOO": null,
+       "CHHOO": null,
+       "CHH": null,
+       "PPerm10k": null,
+       "CPerm10k": null,
+       "CResPcl": null,
+       "PDSale2123": null,
+       "CDSale2123": null,
+       "CSales2123": null,
+       "PVacBuild": null,
+       "CVacBuild": null,
+       "CHU_All": null,
+       "PVResLand": null,
+       "VacLotAcre": null,
+       "PclResAcre": null,
+       "PResArea": null,
+       "PclAcres": null,
+       "Subsidy": null,
+       "CSubHH": null,
+       "CHHRO": null,
+       "CPOP": null,
+       "CPOPWH": null,
+       "CPOPBK": null,
+       "CPOPAS": null
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "Insufficient Data",
+   "name": "Not Classified",
+   "domains": {},
+   "templates": [
+    {
+     "name": "Insufficient Data",
+     "description": "",
+     "drawingTool": "esriFeatureEditToolPolygon",
+     "prototype": {
+      "attributes": {
+       "CPOPHISP": null,
+       "CPOPOTH": null,
+       "geoid": null,
+       "MVACluster": "Insufficient Data",
+       "MSP2123_CA": null,
+       "MSPVar2123": null,
+       "PHHOO": null,
+       "CHHOO": null,
+       "CHH": null,
+       "PPerm10k": null,
+       "CPerm10k": null,
+       "CResPcl": null,
+       "PDSale2123": null,
+       "CDSale2123": null,
+       "CSales2123": null,
+       "PVacBuild": null,
+       "CVacBuild": null,
+       "CHU_All": null,
+       "PVResLand": null,
+       "VacLotAcre": null,
+       "PclResAcre": null,
+       "PResArea": null,
+       "PclAcres": null,
+       "Subsidy": null,
+       "CSubHH": null,
+       "CHHRO": null,
+       "CPOP": null,
+       "CPOPWH": null,
+       "CPOPBK": null,
+       "CPOPAS": null
+      }
+     }
+    }
+   ]
+  }
+ ],
+ "templates": [],
+ "supportedQueryFormats": "JSON, geoJSON, PBF",
+ "supportedAppendFormats": "sqlite,geoPackage,shapefile,filegdb,featureCollection,geojson,csv,excel,jsonl,featureService,pbf",
+ "supportedAppendSourceFilterFormats": "sqlite,geoPackage,shapefile,filegdb,featureService",
+ "supportedExportFormats": "csv,shapefile,sqlite,geoPackage,filegdb,featureCollection,geojson,kml,excel,parquet",
+ "supportedConvertFileFormats": "JSON,PBF,Parquet",
+ "supportedConvertContentFormats": "LayerEditCollection,FeatureCollection",
+ "supportedSpatialRelationships": [
+  "esriSpatialRelIntersects",
+  "esriSpatialRelContains",
+  "esriSpatialRelCrosses",
+  "esriSpatialRelEnvelopeIntersects",
+  "esriSpatialRelIndexIntersects",
+  "esriSpatialRelOverlaps",
+  "esriSpatialRelTouches",
+  "esriSpatialRelWithin",
+  "esriSpatialRelDisjoint",
+  "esriSpatialRelRelation"
+ ],
+ "guidFormat": "",
+ "supportsContingentValues": true,
+ "supportsEditingContingentValues": true,
+ "supportedContingentValuesFormats": "JSON, PBF",
+ "supportsFieldGroups": true,
+ "supportedSyncDataOptions": 260,
+ "hasStaticData": false,
+ "maxRecordCount": 2000,
+ "standardMaxRecordCount": 2000,
+ "maxIdsCount": 1000000,
+ "standardMaxRecordCountNoGeometry": 32000,
+ "tileMaxRecordCount": 4000,
+ "maxRecordCountFactor": 1,
+ "capabilities": "Query"
+}

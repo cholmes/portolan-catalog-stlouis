@@ -1,0 +1,37 @@
+{
+  "version": 8,
+  "name": "Port Authority District",
+  "metadata": {
+    "description": "The Port Authority District boundary along the Mississippi riverfront."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../port-authority-district.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "port-authority-district",
+      "paint": {
+        "fill-color": "#4a9d9c",
+        "fill-opacity": 0.4,
+        "fill-outline-color": "#2d6a68"
+      }
+    },
+    {
+      "id": "line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "port-authority-district",
+      "paint": {
+        "line-color": "#2d6a68",
+        "line-width": 2.0,
+        "line-opacity": 1.0
+      }
+    }
+  ]
+}

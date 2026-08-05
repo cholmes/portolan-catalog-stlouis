@@ -1,0 +1,71 @@
+{
+ "collection": "flood-controls",
+ "title": "Flood Controls",
+ "portal_page": "https://stlcity.maps.arcgis.com/home/item.html?id=4a08499ad4054caca42215e4c51aac0e",
+ "department": "Board of Public Service",
+ "source": "https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/Flood_Controls_WFL1/FeatureServer",
+ "source_type": "arcgis",
+ "synced": "2026-08-05T16:51:48+00:00",
+ "fetch": {
+  "status": "ok",
+  "parquets": [
+   "staging/extracts/flood-controls/stlouis_gis_floodwall/stlouis_gis_floodwall.parquet",
+   "staging/extracts/flood-controls/streets_dbo_flood_control/streets_dbo_flood_control.parquet"
+  ],
+  "layer_url": "https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/Flood_Controls_WFL1/FeatureServer/0",
+  "layer_description": null,
+  "fields": [
+   {
+    "name": "OBJECTID",
+    "alias": "OBJECTID",
+    "type": "esriFieldTypeOID"
+   },
+   {
+    "name": "LOCATION",
+    "alias": "LOCATION",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "REACH",
+    "alias": "REACH",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "TYPE",
+    "alias": "TYPE",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "CLOSING_SEQUENCE",
+    "alias": "CLOSING_SEQUENCE",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "FLOOD_STAGE",
+    "alias": "FLOOD_STAGE",
+    "type": "esriFieldTypeSmallInteger"
+   },
+   {
+    "name": "OBSERVED_STAGE",
+    "alias": "OBSERVED_STAGE",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "NOTES",
+    "alias": "NOTES",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "CONTROL",
+    "alias": "CONTROL",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "STATE",
+    "alias": "STATE",
+    "type": "esriFieldTypeString"
+   }
+  ],
+  "city_style": "staging/extracts/flood-controls/styles/city-renderer.json"
+ }
+}

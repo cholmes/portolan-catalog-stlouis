@@ -21,4 +21,4 @@ Full schema: `table:columns` in collection.json.
 
 ## Provenance
 
-Mirror of [Qualified Opportunity Zones](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=59) from the City of St. Louis open data portal; source: https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/Opportunity_Zones/FeatureServer. No explicit license is published — see the portal page. Synced 2026-08-05T04:46:13+00:00.
+Mirror of [Qualified Opportunity Zones](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=59) from the City of St. Louis open data portal; source: https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/Opportunity_Zones/FeatureServer. No explicit license is published — see the portal page. Synced 2026-08-05T17:00:27+00:00.

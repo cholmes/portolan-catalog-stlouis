@@ -181,7 +181,18 @@
   ],
   "portolan:total_size_bytes": 268904224,
   "portolan:asset_count": 8,
-  "updated": "2026-08-05T04:46:13+00:00",
+  "updated": "2026-08-05T17:00:27+00:00",
+  "themes": [
+    {
+      "scheme": "https://www.stlouis-mo.gov/data/topics/",
+      "concepts": [
+        {
+          "id": "government",
+          "title": "Government"
+        }
+      ]
+    }
+  ],
   "title": "CSB Service Requests (311)",
   "extent": {
     "spatial": {
@@ -204,6 +215,15 @@
     }
   },
   "license": "other",
+  "keywords": [
+    "asset-parcel",
+    "asset-street maintenance",
+    "department",
+    "intersection",
+    "neighborhood",
+    "property address",
+    "ward"
+  ],
   "providers": [
     {
       "name": "City of St. Louis \u2014 Neighborhood Stabilization / CSB",
@@ -301,30 +321,10 @@
       "href": "./README.md",
       "type": "text/markdown",
       "file:size": 3375,
-      "file:checksum": "12209fbed1311513d5b2a69071c5588bbb6767e3fcccce7dfeaefc894ef9f5aec05f",
+      "file:checksum": "12202a7a664f9705a5d9d227564a7fed5d6dcfdfd4bf1732e260764f8e61d54a9ae6",
       "roles": [
         "documentation"
       ]
     }
-  },
-  "themes": [
-    {
-      "scheme": "https://www.stlouis-mo.gov/data/topics/",
-      "concepts": [
-        {
-          "id": "government",
-          "title": "Government"
-        }
-      ]
-    }
-  ],
-  "keywords": [
-    "asset-parcel",
-    "asset-street maintenance",
-    "department",
-    "intersection",
-    "neighborhood",
-    "property address",
-    "ward"
-  ]
+  }
 }

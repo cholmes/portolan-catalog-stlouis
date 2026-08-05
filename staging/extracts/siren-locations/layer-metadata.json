@@ -1,0 +1,492 @@
+{
+ "currentVersion": 11.2,
+ "cimVersion": "3.2.0",
+ "id": 0,
+ "name": "Outdoor Warning Siren Locations",
+ "type": "Feature Layer",
+ "description": "",
+ "geometryType": "esriGeometryPoint",
+ "sourceSpatialReference": {
+  "wkid": 102696,
+  "latestWkid": 102696,
+  "xyTolerance": 0.003280833333333333,
+  "zTolerance": 0.001,
+  "mTolerance": 0.001,
+  "falseX": -17627100,
+  "falseY": -45827300,
+  "xyUnits": 3048.0060960121928,
+  "falseZ": -100000,
+  "zUnits": 10000,
+  "falseM": -100000,
+  "mUnits": 10000
+ },
+ "copyrightText": "",
+ "parentLayer": null,
+ "subLayers": [],
+ "minScale": 500000,
+ "maxScale": 1800,
+ "referenceScale": 0.0,
+ "drawingInfo": {
+  "renderer": {
+   "type": "simple",
+   "symbol": {
+    "type": "esriPMS",
+    "url": "8615583348b85e5c6cc50ce83431a983",
+    "imageData": "iVBORw0KGgoAAAANSUhEUgAAADQAAAAvCAYAAACsaemzAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAEbklEQVRogd1Y3WoUSRg9lZQIEQQvHEhwr6pDkHjXPoDJ9URYWFyfYAK7+giLCfsGIkryBCqCsNnr6AM4d/EipPtOM9IBF4QVhBprOdVd2erO9KRnukNMH5hMZ6an6jv1ne+vJVoGiZZBomWQaBkkWgaJlkGiZZBoGSR+MCilegLo8doA63Ec9y8kIaVUKITYgDFd95kQYg3AxSJEIjNAz9ArxuDW8jf8eu8L/nh0HcYYemrjwhCivGiwAeb5//17X/DwwT/Ye3/Zfi+EmMg7UxFaWlpa4LvWen5SfZfJa3XlKx7+/tl6h0iSOfsujDk8E0IkobXuMliHWod2MwCBUgzcAU+SmxshBtS8MeZwFNkckUxe9MjqnX9z9x0dpWaZdL1mCdEIrfWOyGTR6QzRua7td5SG/dyYrrEW2L+lZG1MGHMsrz83j0bumSSzKSHTsIdIBoAlU5QFsXhT2fetZ5+sETzZ3TdzpWRFRoRB769ThIshTJjhTiWUycOS2Xqa936SyYIe8yVD0v49NM6RXV7+dkJeo+DWngZyXNwMte7S4CIZ/xTHnTSluXonlWdVkIyTnGiyDmVJoPRE3aYunpqCJzfK9FEQBP0oinZqExJCLFD3lMkouExEDzYJd1D0/B7JGfOXUup21RJRSogZRniGl51kGeFp4fYjodWVr3j85FoaywDldyrGRZ89EWYtP9DPWnLH63aGdl8Scqm+FiG6OFCqv/f+ckhvFIO/SlKYBm7dlXzshlV/PzY/GmBbAFs//3IDr199+L81OaP48dd26HSG1mvMuvv7+4e1CMVxvL2oVMhOmKSoaRZFP3CbhEvZJMG1d99ecXv1q5AhTq1gB3G8HgTBgCmU8eQ6AYLX67/N2ziiEUwQvG6K6IuXV9MLITar/qZSSY6iiFlmw02TBlhwvZ1P0Ic7ZUd2VGIpwo9LHtRuunYzdahMggC2sx7vneuWXWtDg1yrw9duNgYQ/L+sGfXvKRxSfxLvTEyokAGt8dYLXnvDzxhvnjEh5fr85VUrSTanZfBrngC2Z6TcrBo7tQilO4q/2UnzNH0jvfgJM6nsKKVYpLc4VhNlpI49I8Tdgwlk1gghO+MAePP2ygkDmQ1pXBAEayRFqSqlUIXUtHNQbULf0xrVyzWTGbzuwc5TvCiSoif9bOhGjezeqUb7WoS4qVJqkCSz88VOgrWKMZM9M9goq2t+sXbglIsakHV+PAPs0LgiIT+OihWedW0xHc9zpOo86WmMkJMdC2BZHHGuYqr3vxtF6nioqxE/tQlJKQdDrfNDWQY2lySUTZ05Ql4HwpmryyLqBslpnvQ0RohSYkdOabHvolEMbhJh9jvtxKMoWguUepcks6GNufQR2FTpurEnp4JGACFlx1ehFeob1qsxiOL4Nluqn27o3oePlzbjKDq/GCJYzYda93JEUhL2tKsYyOwXxydleS6EKDvO/PaBe/owsRKJs4JsYpGsEK7jB4BEyyDRMki0DBItg0TLIM/bgKbxH90zli3AZS7uAAAAAElFTkSuQmCC",
+    "contentType": "image/png",
+    "width": 39,
+    "height": 35,
+    "angle": 0,
+    "xoffset": -0.018058648699541782,
+    "yoffset": 0.002490163605386707
+   }
+  },
+  "scaleSymbols": true,
+  "transparency": 0,
+  "labelingInfo": [
+   {
+    "labelExpressionInfo": {
+     "expression": "$feature.Siren",
+     "title": "Custom"
+    },
+    "labelPlacement": "esriServerPointLabelPlacementAboveRight",
+    "deconflictionStrategy": "static",
+    "offsetDistance": 0,
+    "stackLabel": true,
+    "stackAlignment": "dynamic",
+    "removeDuplicates": "none",
+    "stackRowLength": 24,
+    "useCodedValues": true,
+    "maxScale": 0,
+    "minScale": 50000,
+    "name": "Class 1",
+    "priority": -1,
+    "symbol": {
+     "type": "esriTS",
+     "color": [
+      0,
+      0,
+      0,
+      255
+     ],
+     "backgroundColor": [
+      255,
+      255,
+      0,
+      255
+     ],
+     "borderLineColor": [
+      0,
+      0,
+      0,
+      255
+     ],
+     "borderLineSize": 1,
+     "verticalAlignment": "bottom",
+     "horizontalAlignment": "left",
+     "rightToLeft": false,
+     "angle": 0,
+     "xoffset": 3,
+     "yoffset": 0,
+     "kerning": true,
+     "haloColor": null,
+     "haloSize": null,
+     "font": {
+      "family": "Arial Rounded MT Bold",
+      "size": 16,
+      "style": "normal",
+      "weight": "normal",
+      "decoration": "none"
+     }
+    }
+   }
+  ]
+ },
+ "defaultVisibility": true,
+ "extent": {
+  "xmin": -10053879.7829764,
+  "ymin": 4656351.753377378,
+  "xmax": -10039135.44508771,
+  "ymax": 4688088.02204801,
+  "spatialReference": {
+   "wkid": 102100,
+   "latestWkid": 3857,
+   "xyTolerance": 0.001,
+   "zTolerance": 0.001,
+   "mTolerance": 0.001,
+   "falseX": -20037700,
+   "falseY": -30241100,
+   "xyUnits": 10000,
+   "falseZ": -100000,
+   "zUnits": 10000,
+   "falseM": -100000,
+   "mUnits": 10000
+  }
+ },
+ "hasAttachments": false,
+ "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+ "displayField": "SIREN_LOCATION_ADDRESS",
+ "typeIdField": null,
+ "subtypeFieldName": null,
+ "subtypeField": null,
+ "defaultSubtypeCode": null,
+ "fields": [
+  {
+   "name": "OBJECTID",
+   "type": "esriFieldTypeOID",
+   "alias": "ObjectID",
+   "domain": null
+  },
+  {
+   "name": "Shape",
+   "type": "esriFieldTypeGeometry",
+   "alias": "Shape",
+   "domain": null
+  },
+  {
+   "name": "Siren",
+   "type": "esriFieldTypeSmallInteger",
+   "alias": "Siren Number",
+   "domain": null
+  },
+  {
+   "name": "SIREN_LOCATION_ADDRESS",
+   "type": "esriFieldTypeString",
+   "alias": "SIREN LOCATION/ADDRESS",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "Property_Comments",
+   "type": "esriFieldTypeString",
+   "alias": "Property Comments",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "PROPERTY_OWNER",
+   "type": "esriFieldTypeString",
+   "alias": "Property Owner",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "FACILITY",
+   "type": "esriFieldTypeString",
+   "alias": "Facility",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "Solar_Panels_Condition",
+   "type": "esriFieldTypeString",
+   "alias": "Solar Panels Condition",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "Batteries_Condition",
+   "type": "esriFieldTypeString",
+   "alias": "Batteries Condition",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "SolarandBatteryNotes",
+   "type": "esriFieldTypeString",
+   "alias": "Solar and Battery Notes",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "TYPE",
+   "type": "esriFieldTypeString",
+   "alias": "Siren Type",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "Date_Last_Tested",
+   "type": "esriFieldTypeDate",
+   "alias": "Date Last Tested",
+   "length": 8,
+   "precision": 1,
+   "domain": null
+  },
+  {
+   "name": "Working",
+   "type": "esriFieldTypeString",
+   "alias": "Working",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "Numberofcells",
+   "type": "esriFieldTypeDouble",
+   "alias": "Number of cells",
+   "domain": null
+  },
+  {
+   "name": "Avg_Ambient",
+   "type": "esriFieldTypeDouble",
+   "alias": "Average Ambient",
+   "domain": null
+  },
+  {
+   "name": "Anyunusualsoundeventsduringtest",
+   "type": "esriFieldTypeString",
+   "alias": "Unusal Sound Events During Testing",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "Birthmarkvisible",
+   "type": "esriFieldTypeString",
+   "alias": "Birthmark Visible",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "PoleMount",
+   "type": "esriFieldTypeString",
+   "alias": "Pole Mount",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "PoleHeight",
+   "type": "esriFieldTypeDouble",
+   "alias": "Pole Height",
+   "domain": null
+  },
+  {
+   "name": "Solar",
+   "type": "esriFieldTypeString",
+   "alias": "Solar",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "Any_nearby_encroachments_or_cle",
+   "type": "esriFieldTypeString",
+   "alias": "Nearby Encroachments or Overhead/Vertical Clearance Issues",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "MinAmbient",
+   "type": "esriFieldTypeDouble",
+   "alias": "Minimum Ambient",
+   "domain": null
+  },
+  {
+   "name": "MaxAmbient",
+   "type": "esriFieldTypeDouble",
+   "alias": "Maximum Ambient",
+   "domain": null
+  },
+  {
+   "name": "PoleConditionNotes",
+   "type": "esriFieldTypeString",
+   "alias": "Pole Condition Notes",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "OtherNotes",
+   "type": "esriFieldTypeString",
+   "alias": "Other Notes",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "PoleLean",
+   "type": "esriFieldTypeString",
+   "alias": "Pole Lean",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "Polemountedin",
+   "type": "esriFieldTypeString",
+   "alias": "Pole mounted In",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "Isthepoledirectlyadjacenttotraf",
+   "type": "esriFieldTypeString",
+   "alias": "Pole Directly Adjacent to Driving Traffic Within 20 feet",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "GeneralSurroundings",
+   "type": "esriFieldTypeString",
+   "alias": "General Surroundings",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "Isthepolepubliclyaccessibleorbe",
+   "type": "esriFieldTypeString",
+   "alias": "Pole Publicly Accessible",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "Location_Description",
+   "type": "esriFieldTypeString",
+   "alias": "Location Description",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "Z",
+   "type": "esriFieldTypeString",
+   "alias": "Z",
+   "length": 255,
+   "domain": null
+  },
+  {
+   "name": "Xfield",
+   "type": "esriFieldTypeDouble",
+   "alias": "X",
+   "domain": null
+  },
+  {
+   "name": "Yfield",
+   "type": "esriFieldTypeDouble",
+   "alias": "Y",
+   "domain": null
+  },
+  {
+   "name": "GlobalID",
+   "type": "esriFieldTypeGlobalID",
+   "alias": "GlobalID",
+   "length": 38,
+   "domain": null
+  },
+  {
+   "name": "CreationDate",
+   "type": "esriFieldTypeDate",
+   "alias": "CreationDate",
+   "length": 8,
+   "precision": 1,
+   "domain": null
+  },
+  {
+   "name": "Creator",
+   "type": "esriFieldTypeString",
+   "alias": "Creator",
+   "length": 128,
+   "domain": null
+  },
+  {
+   "name": "EditDate",
+   "type": "esriFieldTypeDate",
+   "alias": "EditDate",
+   "length": 8,
+   "precision": 1,
+   "domain": null
+  },
+  {
+   "name": "Editor",
+   "type": "esriFieldTypeString",
+   "alias": "Editor",
+   "length": 128,
+   "domain": null
+  }
+ ],
+ "geometryField": {
+  "name": "Shape",
+  "type": "esriFieldTypeGeometry",
+  "alias": "Shape"
+ },
+ "indexes": [
+  {
+   "name": "FDO_OBJECTID",
+   "fields": "OBJECTID",
+   "isAscending": true,
+   "isUnique": true,
+   "description": ""
+  },
+  {
+   "name": "FDO_Shape",
+   "fields": "Shape",
+   "isAscending": true,
+   "isUnique": false,
+   "description": ""
+  },
+  {
+   "name": "FDO_GlobalID",
+   "fields": "GlobalID",
+   "isAscending": true,
+   "isUnique": false,
+   "description": ""
+  }
+ ],
+ "subtypes": [],
+ "relationships": [],
+ "canModifyLayer": true,
+ "canScaleSymbols": false,
+ "hasLabels": true,
+ "capabilities": "Map,Query,Data",
+ "maxRecordCount": 2000,
+ "supportsStatistics": true,
+ "supportsExceedsLimitStatistics": true,
+ "supportsAdvancedQueries": true,
+ "supportedQueryFormats": "JSON, geoJSON, PBF",
+ "isDataVersioned": false,
+ "ownershipBasedAccessControlForFeatures": {
+  "allowOthersToQuery": true
+ },
+ "useStandardizedQueries": true,
+ "supportedSpatialRelationships": [
+  "esriSpatialRelIntersects",
+  "esriSpatialRelContains",
+  "esriSpatialRelCrosses",
+  "esriSpatialRelEnvelopeIntersects",
+  "esriSpatialRelIndexIntersects",
+  "esriSpatialRelOverlaps",
+  "esriSpatialRelTouches",
+  "esriSpatialRelWithin",
+  "esriSpatialRelRelation"
+ ],
+ "advancedQueryCapabilities": {
+  "useStandardizedQueries": true,
+  "supportsStatistics": true,
+  "supportsPercentileStatistics": true,
+  "supportsHavingClause": true,
+  "supportsOrderBy": true,
+  "supportsDistinct": true,
+  "supportsCountDistinct": true,
+  "supportsAdvancedQueryRelated": true,
+  "supportsQueryRelatedPagination": true,
+  "supportsPagination": true,
+  "supportsLod": false,
+  "supportsQueryWithLodSR": false,
+  "supportsTrueCurve": true,
+  "supportsQueryWithDatumTransformation": true,
+  "supportsReturningQueryExtent": true,
+  "supportsQueryWithDistance": true,
+  "supportsSqlExpression": true,
+  "supportsTimeRelation": true,
+  "supportsSqlFormat": false,
+  "supportsQueryAnalytic": false,
+  "supportsCurrentUserQueries": true
+ },
+ "supportsDatumTransformation": true,
+ "dateFieldsTimeReference": null,
+ "preferredTimeReference": null,
+ "datesInUnknownTimezone": false,
+ "hasMetadata": true,
+ "isDataArchived": false,
+ "archivingInfo": {
+  "supportsQueryWithHistoricMoment": false,
+  "startArchivingMoment": -1
+ },
+ "supportsCoordinatesQuantization": true,
+ "supportsDynamicLegends": true,
+ "serviceItemId": "c861efe794b149498955b98eb0e6d942"
+}

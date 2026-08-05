@@ -1,0 +1,97 @@
+{
+  "version": 8,
+  "name": "MVA cluster",
+  "metadata": {
+    "description": "The 2024 Market Value Analysis housing-market clusters, A (strongest markets, dark green) through I (most distressed, dark red), by census block group."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../market-value-analysis.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "market-value-analysis-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "market-value-analysis",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "MVACluster"
+          ],
+          "A",
+          "#1a6b1a",
+          "B",
+          "#2e8b2e",
+          "C",
+          "#7fb356",
+          "D",
+          "#c9c93e",
+          "E",
+          "#e8c46a",
+          "F",
+          "#e89d07",
+          "G",
+          "#d0752e",
+          "H",
+          "#c0392b",
+          "I",
+          "#8b1a1a",
+          "#9aa3a8"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "market-value-analysis",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "MVACluster"
+          ],
+          "A",
+          "#1a6b1a",
+          "B",
+          "#2e8b2e",
+          "C",
+          "#7fb356",
+          "D",
+          "#c9c93e",
+          "E",
+          "#e8c46a",
+          "F",
+          "#e89d07",
+          "G",
+          "#d0752e",
+          "H",
+          "#c0392b",
+          "I",
+          "#8b1a1a",
+          "#9aa3a8"
+        ],
+        "fill-opacity": 0.72,
+        "fill-outline-color": "#FFFFFF"
+      }
+    },
+    {
+      "id": "line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "market-value-analysis",
+      "paint": {
+        "line-color": "#FFFFFF",
+        "line-width": 0.8,
+        "line-opacity": 1.0
+      }
+    }
+  ]
+}

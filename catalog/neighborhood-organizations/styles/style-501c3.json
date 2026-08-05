@@ -1,0 +1,58 @@
+{
+  "version": 8,
+  "name": "501(c)(3) status",
+  "metadata": {
+    "description": "Organizations with nonprofit status (blue) vs. without (orange)."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../neighborhood-organizations.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "neighborhood-organizations-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "neighborhood-organizations",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "F501c3"
+          ],
+          "Yes",
+          "#1e526b",
+          "No",
+          "#e89d07",
+          "#9aa3a8"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "neighborhood-organizations",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "F501c3"
+          ],
+          "Yes",
+          "#1e526b",
+          "No",
+          "#e89d07",
+          "#9aa3a8"
+        ],
+        "fill-opacity": 0.55,
+        "fill-outline-color": "#FFFFFF"
+      }
+    }
+  ]
+}

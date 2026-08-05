@@ -1,0 +1,70 @@
+{
+  "version": 8,
+  "name": "Citywide voting sites",
+  "metadata": {
+    "description": "Centers where any city voter can vote (blue) against precinct-bound sites (light)."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../polling-places.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "polling-places-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "polling-places",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "cityWideVoting"
+          ],
+          "Yes",
+          "#1e526b",
+          "#dfe6ea"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "circle",
+      "type": "circle",
+      "source": "data",
+      "source-layer": "polling-places",
+      "paint": {
+        "circle-color": [
+          "match",
+          [
+            "get",
+            "cityWideVoting"
+          ],
+          "Yes",
+          "#1e526b",
+          "#dfe6ea"
+        ],
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          10,
+          1.8,
+          13,
+          4.5,
+          16,
+          9.9
+        ],
+        "circle-opacity": 0.85,
+        "circle-stroke-color": "#FFFFFF",
+        "circle-stroke-width": 0.5
+      }
+    }
+  ]
+}

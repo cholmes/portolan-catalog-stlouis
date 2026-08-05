@@ -40,7 +40,43 @@ def fetch_json(url: str):
         return json.load(r)
 
 
+def fetch_arcgis_table(coll_id: str, src: dict) -> dict:
+    """Page an ArcGIS table (no geometry) into staging as JSONL.
+
+    `portolan extract arcgis` only handles spatial layers; election vote
+    totals live in a FeatureServer *table*.
+    """
+    out = STAGING / "extracts" / coll_id
+    if out.exists():
+        shutil.rmtree(out)
+    out.mkdir(parents=True)
+    base = f"{src['service'].rstrip('/')}/{src.get('table_layer', 0)}/query"
+    rows, offset = [], 0
+    while True:
+        url = (f"{base}?where=1%3D1&outFields=*&returnGeometry=false"
+               f"&resultOffset={offset}&resultRecordCount=2000&f=json")
+        data = json.load(urllib.request.urlopen(url, timeout=120))
+        feats = data.get("features", [])
+        rows += [f["attributes"] for f in feats]
+        if not data.get("exceededTransferLimit") and len(feats) < 2000:
+            break
+        offset += len(feats)
+    jl = out / f"{coll_id}.jsonl"
+    with open(jl, "w") as f:
+        for r in rows:
+            f.write(json.dumps(r) + "\n")
+    pq = out / f"{coll_id}.parquet"
+    subprocess.run(["duckdb", "-c",
+                    f"COPY (SELECT * FROM read_json_auto('{jl}')) TO '{pq}' "
+                    "(FORMAT PARQUET, COMPRESSION ZSTD, ROW_GROUP_SIZE 20000)"],
+                   check=True, capture_output=True)
+    return {"status": "ok", "rows": len(rows),
+            "parquets": [str(pq.relative_to(ROOT))]}
+
+
 def fetch_arcgis(coll_id: str, src: dict) -> dict:
+    if src.get("table"):
+        return fetch_arcgis_table(coll_id, src)
     out = STAGING / "extracts" / coll_id
     if out.exists():
         shutil.rmtree(out)

@@ -1,0 +1,14 @@
+title: "Strategic Land Use Plan"
+description: "Strategic land use (SLUP),parcel, and zoning data"
+contact:
+  name: "Chris Holmes"
+  email: "cholmes@9eo.org"
+license: "other"
+license_url: "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=78"
+attribution: "City of St. Louis — Planning and Urban Design"
+source_url: "https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/Strategic_Land_Use_Plan/FeatureServer"
+keywords: [st-louis, missouri, open-data, land, use]
+processing_notes: |
+  Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=78).
+  Source: https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/Strategic_Land_Use_Plan/FeatureServer (ArcGIS REST service),
+  converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.

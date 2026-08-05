@@ -1,0 +1,25 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-05T16:58:04.410914Z",
+      "breaking": false,
+      "assets": {
+        "schools.parquet": {
+          "sha256": "ebe08bc62b68a02b2376b94835a0a0948d5be1583d01af678a667db04204b9d5",
+          "size_bytes": 38061,
+          "href": "schools/schools.parquet",
+          "source_mtime": 1785948929.894492,
+          "mtime": 1785948929.894492,
+          "feature_count": 133,
+          "schema_fingerprint": "0cb9985ee3b620a0"
+        }
+      },
+      "changes": [
+        "schools.parquet"
+      ]
+    }
+  ]
+}

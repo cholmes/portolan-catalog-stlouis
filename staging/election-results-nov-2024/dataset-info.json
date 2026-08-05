@@ -1,0 +1,16 @@
+{
+ "collection": "election-results-nov-2024",
+ "title": "November 2024 Election Results by Precinct",
+ "portal_page": "https://stlcity.maps.arcgis.com/home/item.html?id=6e72fa855cd445f7af37d79615f602d0",
+ "department": "Board of Election Commissioners",
+ "source": "https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/Nov24_Detailed_Vote_Totals_Test/FeatureServer",
+ "source_type": "arcgis",
+ "synced": "2026-08-05T17:00:27+00:00",
+ "fetch": {
+  "status": "ok",
+  "rows": 24030,
+  "parquets": [
+   "staging/extracts/election-results-nov-2024/election-results-nov-2024.parquet"
+  ]
+ }
+}

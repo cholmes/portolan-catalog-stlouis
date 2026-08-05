@@ -132,13 +132,13 @@
       "roles": [
         "data"
       ],
-      "title": "Property sales (Parquet)",
+      "title": "Property Sales (Parquet)",
       "file:size": 2462849,
       "file:checksum": "122088e0e4fe6a9ec288e2fe1fff7fb627f1905d09ee1b1672b8977d6d260a8c5f7d"
     }
   },
   "title": "Property Sales",
-  "updated": "2026-08-05T04:46:13+00:00",
+  "updated": "2026-08-05T17:00:27+00:00",
   "themes": [
     {
       "scheme": "https://www.stlouis-mo.gov/data/topics/",

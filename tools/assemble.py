@@ -73,15 +73,23 @@ def rename_geom(path) -> None:
         if geo.get("primary_column") == "geom":
             geo["primary_column"] = "geometry"
     else:
-        stats = subprocess.run(
-            ["duckdb", "-json", "-c",
-             "INSTALL spatial; LOAD spatial; "
-             "SELECT min(ST_XMin(g)) a, min(ST_YMin(g)) b, "
-             "max(ST_XMax(g)) c, max(ST_YMax(g)) d, "
-             "list(DISTINCT ST_GeometryType(g))::VARCHAR gt "
-             f"FROM (SELECT ST_GeomFromWKB(geometry) g FROM read_parquet('{path}'))"],
-            capture_output=True, text=True)
-        s = _json.loads(stats.stdout)[0]
+        s = None
+        # NB: the file on disk still has the pre-rename column name "geom"
+        for inner in (f"SELECT ST_GeomFromWKB(geom) g FROM read_parquet('{path}')",
+                      f"SELECT geom g FROM read_parquet('{path}')"):
+            stats = subprocess.run(
+                ["duckdb", "-json", "-c",
+                 "INSTALL spatial; LOAD spatial; "
+                 "SELECT min(ST_XMin(g)) a, min(ST_YMin(g)) b, "
+                 "max(ST_XMax(g)) c, max(ST_YMax(g)) d, "
+                 "list(DISTINCT ST_GeometryType(g))::VARCHAR gt "
+                 f"FROM ({inner})"],
+                capture_output=True, text=True)
+            if stats.returncode == 0 and stats.stdout.strip():
+                s = _json.loads(stats.stdout)[0]
+                break
+        if s is None:
+            raise RuntimeError(f"geometry stats failed for {path}: {stats.stderr[-200:]}")
         gtypes = sorted({("Multi" + x.strip().upper().replace("MULTI", "").title()
                           if "MULTI" in x.upper() else x.strip().title())
                          for x in s["gt"].strip("[]").split(",")})
@@ -189,16 +197,21 @@ def assemble(coll_id: str) -> dict:
             capture_output=True, text=True).stdout.strip()
         return {"rows": int(n), "tabular": True, "source_file": str(mdb.relative_to(ROOT))}
 
-    # Bike infrastructure is one dataset served as five layers — merge them
-    # with a source_layer column carrying each layer's title.
-    if coll_id == "bike-infrastructure":
+    # Multi-layer services (bike infrastructure, tornado damage, flood
+    # controls…) become one collection: merge the layers with a source_layer
+    # column carrying each layer's title.
+    n_parts = len([p for p in (STAGING / "extracts" / coll_id).rglob("*.parquet")
+                   if not p.name.endswith(("_filtered.parquet", "_merged.parquet"))
+                   and p.name != "bike_merged.parquet"]) if src_def["type"] == "arcgis" else 0
+    if n_parts > 1:
         parts = sorted(p for p in (STAGING / "extracts" / coll_id).rglob("*.parquet")
-                       if not p.name.endswith(("_filtered.parquet", "_merged.parquet")))
+                       if not p.name.endswith(("_filtered.parquet", "_merged.parquet"))
+                       and p.name != "bike_merged.parquet")
         selects = " UNION ALL BY NAME ".join(
             f"SELECT *, '{p.parent.name.replace('_', ' ').title()}' AS source_layer "
             f"FROM '{p}' WHERE geometry IS NOT NULL AND NOT ST_IsEmpty(geometry)"
             for p in parts)
-        merged = STAGING / "extracts" / coll_id / "bike_merged.parquet"
+        merged = STAGING / "extracts" / coll_id / f"{coll_id.replace(chr(45), chr(95))}_merged.parquet"
         run(["duckdb", "-c",
              f"INSTALL spatial; LOAD spatial; COPY ({selects}) TO '{merged}' "
              "(FORMAT PARQUET, COMPRESSION ZSTD)"])
@@ -240,6 +253,11 @@ def assemble(coll_id: str) -> dict:
         return {"rows": int(n_check), "tabular": False, "source_file": str(src.relative_to(ROOT))}
 
     is_tabular = src.suffix in (".dbf", ".csv")
+    if not is_tabular and src.suffix == ".parquet":
+        # ArcGIS tables arrive as geometry-less parquet
+        import pyarrow.parquet as _pq
+        names = _pq.read_schema(src).names
+        is_tabular = "geometry" not in names and "geom" not in names
 
     # The SLDC "LRA Inventory" service layer carries every city parcel with
     # an LRA yes/no flag; the LRA inventory is the flagged subset — filter
@@ -262,6 +280,12 @@ def assemble(coll_id: str) -> dict:
              "--allow-no-geometry", "--skip-hilbert"])
     else:
         run(["gpio", "convert", "geoparquet", src, out])
+        # gpio's parquet→parquet convert does not re-order rows; guarantee
+        # Hilbert ordering explicitly (spec PTL-DAT-006).
+        if src.suffix == ".parquet":
+            tmp_sorted = out.parent / f".{out.stem}.sorted.parquet"
+            run(["gpio", "sort", "hilbert", out, tmp_sorted])
+            tmp_sorted.replace(out)
         # City shapefiles ship in MO State Plane East; normalize to WGS84
         # like the service extracts. gpio names shapefile geometry "geom" —
         # rename to "geometry" for cross-catalog consistency.

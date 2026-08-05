@@ -1,0 +1,78 @@
+{
+  "version": 8,
+  "name": "Trunk diameter",
+  "metadata": {
+    "description": "DBH steps at 6, 15, and 30 inches \u2014 the park's veteran canopy in dark green."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../forest-park-trees.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "forest-park-trees-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "forest-park-trees",
+      "paint": {
+        "fill-color": [
+          "step",
+          [
+            "get",
+            "DBH"
+          ],
+          "#c8e6c9",
+          6,
+          "#8fce8f",
+          15,
+          "#538400",
+          30,
+          "#2d6a2d"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "circle",
+      "type": "circle",
+      "source": "data",
+      "source-layer": "forest-park-trees",
+      "paint": {
+        "circle-color": [
+          "step",
+          [
+            "get",
+            "DBH"
+          ],
+          "#c8e6c9",
+          6,
+          "#8fce8f",
+          15,
+          "#538400",
+          30,
+          "#2d6a2d"
+        ],
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          10,
+          0.8800000000000001,
+          13,
+          2.2,
+          16,
+          4.840000000000001
+        ],
+        "circle-opacity": 0.85,
+        "circle-stroke-color": "#FFFFFF",
+        "circle-stroke-width": 0.5
+      }
+    }
+  ]
+}

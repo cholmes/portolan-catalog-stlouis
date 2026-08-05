@@ -1,0 +1,25 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-05T16:58:04.765024Z",
+      "breaking": false,
+      "assets": {
+        "neighborhood-organizations.parquet": {
+          "sha256": "5329c100e50864a53a6da8b2bcf381cad8b62b19c52b6f1025dd1fc9b4f3d95d",
+          "size_bytes": 80382,
+          "href": "neighborhood-organizations/neighborhood-organizations.parquet",
+          "source_mtime": 1785948936.10068,
+          "mtime": 1785948936.10068,
+          "feature_count": 103,
+          "schema_fingerprint": "acdceb923608eebf"
+        }
+      },
+      "changes": [
+        "neighborhood-organizations.parquet"
+      ]
+    }
+  ]
+}

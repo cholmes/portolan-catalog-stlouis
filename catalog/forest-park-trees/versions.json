@@ -1,0 +1,25 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-05T16:58:04.440255Z",
+      "breaking": false,
+      "assets": {
+        "forest-park-trees.parquet": {
+          "sha256": "7287763a4586cec26bbd8bce97df45baeea494169d7961654fd145a27a61fd25",
+          "size_bytes": 1450857,
+          "href": "forest-park-trees/forest-park-trees.parquet",
+          "source_mtime": 1785949013.9869547,
+          "mtime": 1785949013.9869547,
+          "feature_count": 15450,
+          "schema_fingerprint": "8de7ce380f834c66"
+        }
+      },
+      "changes": [
+        "forest-park-trees.parquet"
+      ]
+    }
+  ]
+}

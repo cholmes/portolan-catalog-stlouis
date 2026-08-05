@@ -1,0 +1,90 @@
+{
+  "version": 8,
+  "name": "Strategic land use categories",
+  "metadata": {
+    "description": "The Strategic Land Use Plan by its category codes (NPA neighborhood preservation is the bulk; the source publishes codes only)."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../land-use.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "land-use-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "land-use",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "SLUP_LATES"
+          ],
+          "NPA",
+          "#a6c96a",
+          "NCA",
+          "#538400",
+          "NDA",
+          "#3f6600",
+          "IPDA",
+          "#7c5295",
+          "SMUA",
+          "#e89d07",
+          "BIPA",
+          "#e8c46a",
+          "BIDA",
+          "#d0752e",
+          "ROSPDA",
+          "#4a9d9c",
+          "OGPA",
+          "#88b8a3",
+          "SPCA",
+          "#a8d4e8",
+          "#9aa3a8"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "land-use",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "SLUP_LATES"
+          ],
+          "NPA",
+          "#a6c96a",
+          "NCA",
+          "#538400",
+          "NDA",
+          "#3f6600",
+          "IPDA",
+          "#7c5295",
+          "SMUA",
+          "#e89d07",
+          "BIPA",
+          "#e8c46a",
+          "BIDA",
+          "#d0752e",
+          "ROSPDA",
+          "#4a9d9c",
+          "OGPA",
+          "#88b8a3",
+          "SPCA",
+          "#a8d4e8",
+          "#9aa3a8"
+        ],
+        "fill-opacity": 0.72,
+        "fill-outline-color": "#ffffff00"
+      }
+    }
+  ]
+}

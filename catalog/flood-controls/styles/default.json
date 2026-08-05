@@ -1,0 +1,74 @@
+{
+  "version": 8,
+  "name": "Floodwall and closures",
+  "metadata": {
+    "description": "The riverfront floodwall (blue lines) with its 29 closure structures (red points)."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../flood-controls.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "flood-controls-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "flood-controls",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "source_layer"
+          ],
+          "Stlouis Gis Floodwall",
+          "#1e526b",
+          "Streets Dbo Flood Control",
+          "#c03221",
+          "#9aa3a8"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "flood-controls",
+      "paint": {
+        "line-color": "#1e526b",
+        "line-width": 2.5,
+        "line-opacity": 1.0
+      }
+    },
+    {
+      "id": "circle",
+      "type": "circle",
+      "source": "data",
+      "source-layer": "flood-controls",
+      "paint": {
+        "circle-color": "#c03221",
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          10,
+          1.6,
+          13,
+          4,
+          16,
+          8.8
+        ],
+        "circle-opacity": 0.85,
+        "circle-stroke-color": "#FFFFFF",
+        "circle-stroke-width": 0.5
+      }
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "version": 8,
+  "name": "Vacant stock by year built",
+  "metadata": {
+    "description": "Year built of the vacant stock in era steps; 0 or unknown light gray \u2014 most of the vacancy crescent predates 1930."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../vacancy-composite.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "vacancy-composite-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "vacancy-composite",
+      "paint": {
+        "fill-color": [
+          "step",
+          [
+            "get",
+            "YEAR_BUILT"
+          ],
+          "#d9dee1",
+          1,
+          "#4a2d78",
+          1880,
+          "#7c5295",
+          1900,
+          "#b085c9",
+          1930,
+          "#e0a8e0",
+          1960,
+          "#c03221"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "vacancy-composite",
+      "paint": {
+        "fill-color": [
+          "step",
+          [
+            "get",
+            "YEAR_BUILT"
+          ],
+          "#d9dee1",
+          1,
+          "#4a2d78",
+          1880,
+          "#7c5295",
+          1900,
+          "#b085c9",
+          1930,
+          "#e0a8e0",
+          1960,
+          "#c03221"
+        ],
+        "fill-opacity": 0.75,
+        "fill-outline-color": "#FFFFFF"
+      }
+    }
+  ]
+}

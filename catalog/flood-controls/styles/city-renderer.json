@@ -1,0 +1,28 @@
+{
+  "version": 8,
+  "name": "City renderer",
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../flood-controls.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "layer-0",
+      "type": "circle",
+      "source": "data",
+      "source-layer": "flood-controls",
+      "paint": {
+        "circle-color": "#ffaa00",
+        "circle-radius": 7.0,
+        "circle-opacity": 0.8,
+        "circle-stroke-color": "#000000",
+        "circle-stroke-width": 1
+      }
+    }
+  ],
+  "metadata": {
+    "description": "The city's own symbology, extracted from the source ArcGIS renderer."
+  }
+}

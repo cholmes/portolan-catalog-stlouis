@@ -224,5 +224,129 @@
    "gis",
    "streets"
   ]
+ },
+ "forest-park-trees": {
+  "portal_id": "123",
+  "topics": [],
+  "tags": [
+   "forest park",
+   "forestry",
+   "trees"
+  ]
+ },
+ "siren-locations": {
+  "portal_id": "132",
+  "topics": [],
+  "tags": [
+   "sirens",
+   "gis"
+  ]
+ },
+ "schools": {
+  "portal_id": "125",
+  "topics": [],
+  "tags": [
+   "schools",
+   "education"
+  ]
+ },
+ "floodplain": {
+  "portal_id": null,
+  "topics": [],
+  "tags": [
+   "floodplain",
+   "fema"
+  ]
+ },
+ "port-authority-district": {
+  "portal_id": "55",
+  "topics": [],
+  "tags": [
+   "port authority",
+   "sldc"
+  ]
+ },
+ "wards-2010": {
+  "portal_id": "131",
+  "topics": [],
+  "tags": [
+   "wards",
+   "boundaries"
+  ]
+ },
+ "land-use": {
+  "portal_id": "78",
+  "topics": [],
+  "tags": [
+   "slup",
+   "planning",
+   "land use"
+  ]
+ },
+ "lead-service-lines": {
+  "portal_id": null,
+  "topics": [],
+  "tags": [
+   "water",
+   "lead"
+  ]
+ },
+ "market-value-analysis": {
+  "portal_id": null,
+  "topics": [],
+  "tags": [
+   "mva",
+   "market value analysis",
+   "cda",
+   "housing market"
+  ]
+ },
+ "vacancy-composite": {
+  "portal_id": null,
+  "topics": [],
+  "tags": [
+   "vacancy",
+   "sldc"
+  ]
+ },
+ "polling-places": {
+  "portal_id": null,
+  "topics": [],
+  "tags": [
+   "polling centers",
+   "elections"
+  ]
+ },
+ "election-results-nov-2024": {
+  "portal_id": null,
+  "topics": [],
+  "tags": [
+   "elections",
+   "voting",
+   "precincts"
+  ]
+ },
+ "tornado-damage-2025": {
+  "portal_id": null,
+  "topics": [],
+  "tags": [
+   "tornado",
+   "nws",
+   "damage assessment"
+  ]
+ },
+ "flood-controls": {
+  "portal_id": null,
+  "topics": [],
+  "tags": [
+   "floodwall"
+  ]
+ },
+ "neighborhood-organizations": {
+  "portal_id": null,
+  "topics": [],
+  "tags": [
+   "neighborhoods"
+  ]
  }
 }

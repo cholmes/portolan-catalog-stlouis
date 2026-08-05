@@ -1,0 +1,30 @@
+{
+  "version": 8,
+  "name": "Dashed context line",
+  "metadata": {
+    "description": "Dashed outline for overlays."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../port-authority-district.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "port-authority-district",
+      "paint": {
+        "line-color": "#2d6a68",
+        "line-width": 2.0,
+        "line-opacity": 1.0,
+        "line-dasharray": [
+          3,
+          2
+        ]
+      }
+    }
+  ]
+}

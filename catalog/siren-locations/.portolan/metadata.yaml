@@ -1,0 +1,14 @@
+title: "Siren Locations"
+description: "Public emergency siren locations. While these sirens are generally thought of as \"tornado sirens\" they can be used in other circumstances/emergencies."
+contact:
+  name: "Chris Holmes"
+  email: "cholmes@9eo.org"
+license: "other"
+license_url: "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=132"
+attribution: "City of St. Louis — City Emergency Management Agency"
+source_url: "https://maps8.stlouis-mo.gov/arcgis/rest/services/BPS/City_of_St__Louis_Firehouses_and_Outdoor_Warning_Sirens1/MapServer"
+keywords: [st-louis, missouri, open-data, siren, locations]
+processing_notes: |
+  Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=132).
+  Source: https://maps8.stlouis-mo.gov/arcgis/rest/services/BPS/City_of_St__Louis_Firehouses_and_Outdoor_Warning_Sirens1/MapServer (ArcGIS REST service),
+  converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.

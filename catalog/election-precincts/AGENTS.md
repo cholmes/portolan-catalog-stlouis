@@ -25,4 +25,4 @@ The BOE FeatureServers reject paged queries, so this comes from the static shape
 
 ## Provenance
 
-Mirror of [Election Wards & Precincts](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=124) from the City of St. Louis open data portal; source: https://static.stlouis-mo.gov/open-data/BOEC/Precincts_Current.zip. No explicit license is published — see the portal page. Synced 2026-08-05T04:46:13+00:00.
+Mirror of [Election Wards & Precincts](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=124) from the City of St. Louis open data portal; source: https://static.stlouis-mo.gov/open-data/BOEC/Precincts_Current.zip. No explicit license is published — see the portal page. Synced 2026-08-05T17:00:27+00:00.

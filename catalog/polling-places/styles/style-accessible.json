@@ -1,0 +1,74 @@
+{
+  "version": 8,
+  "name": "Accessible entry",
+  "metadata": {
+    "description": "Sites with a marked accessible entrance (green) vs. not (red); unrecorded gray."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../polling-places.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "polling-places-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "polling-places",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "disabledentry"
+          ],
+          "Yes",
+          "#538400",
+          "No",
+          "#c03221",
+          "#9aa3a8"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "circle",
+      "type": "circle",
+      "source": "data",
+      "source-layer": "polling-places",
+      "paint": {
+        "circle-color": [
+          "match",
+          [
+            "get",
+            "disabledentry"
+          ],
+          "Yes",
+          "#538400",
+          "No",
+          "#c03221",
+          "#9aa3a8"
+        ],
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          10,
+          1.8,
+          13,
+          4.5,
+          16,
+          9.9
+        ],
+        "circle-opacity": 0.85,
+        "circle-stroke-color": "#FFFFFF",
+        "circle-stroke-width": 0.5
+      }
+    }
+  ]
+}

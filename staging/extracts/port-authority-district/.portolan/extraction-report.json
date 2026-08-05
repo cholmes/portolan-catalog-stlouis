@@ -1,0 +1,44 @@
+{
+  "extraction_date": "2026-08-05T16:52:24.998628+00:00",
+  "source_url": "https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/Port_Authority_District_Boundary/FeatureServer",
+  "portolan_version": "1.0.0a0",
+  "gpio_version": "1.3.0",
+  "metadata_extracted": {
+    "source_url": "https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/Port_Authority_District_Boundary/FeatureServer",
+    "description": null,
+    "attribution": null,
+    "keywords": [
+      "Port",
+      "Authority",
+      "District",
+      "Boundary"
+    ],
+    "contact_name": null,
+    "processing_notes": null,
+    "known_issues": null,
+    "license_info_raw": null
+  },
+  "layers": [
+    {
+      "id": 0,
+      "name": "Port Authority District Boundary",
+      "status": "success",
+      "warnings": [],
+      "attempts": 1,
+      "features": 1,
+      "size_bytes": 14062,
+      "duration_seconds": 1.1364637920632958,
+      "output_path": "port_authority_district_boundary/port_authority_district_boundary.parquet"
+    }
+  ],
+  "summary": {
+    "total_layers": 1,
+    "succeeded": 1,
+    "failed": 0,
+    "skipped": 0,
+    "empty": 0,
+    "total_features": 1,
+    "total_size_bytes": 14062,
+    "total_duration_seconds": 1.1364637920632958
+  }
+}

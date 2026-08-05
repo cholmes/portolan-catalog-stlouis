@@ -84,7 +84,18 @@
     "styles/style-boundaries",
     "styles/style-tint"
   ],
-  "updated": "2026-08-05T04:46:13+00:00",
+  "updated": "2026-08-05T17:00:27+00:00",
+  "themes": [
+    {
+      "scheme": "https://www.stlouis-mo.gov/data/topics/",
+      "concepts": [
+        {
+          "id": "government",
+          "title": "Government"
+        }
+      ]
+    }
+  ],
   "title": "Election Wards & Precincts",
   "extent": {
     "spatial": {
@@ -107,6 +118,11 @@
     }
   },
   "license": "other",
+  "keywords": [
+    "board of elections",
+    "precincts",
+    "wards"
+  ],
   "providers": [
     {
       "name": "City of St. Louis \u2014 Board of Election Commissioners",
@@ -183,7 +199,7 @@
       "href": "./README.md",
       "type": "text/markdown",
       "file:size": 2269,
-      "file:checksum": "12208b79b1f8cf3004c3316de83e79afcdd05fe4f669d65feda0a303119be8cada08",
+      "file:checksum": "12207b5378a49424ca06d1b346274dc28d6356de0ecc92bb53f10aaf6fb456ef1721",
       "roles": [
         "documentation"
       ]
@@ -197,21 +213,5 @@
         "thumbnail"
       ]
     }
-  },
-  "themes": [
-    {
-      "scheme": "https://www.stlouis-mo.gov/data/topics/",
-      "concepts": [
-        {
-          "id": "government",
-          "title": "Government"
-        }
-      ]
-    }
-  ],
-  "keywords": [
-    "board of elections",
-    "precincts",
-    "wards"
-  ]
+  }
 }

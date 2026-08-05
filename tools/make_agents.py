@@ -166,6 +166,57 @@ NOTES = {
     "police-districts": {"fields": {"DISTNO": "district number 1-6 (string)"}},
     "city-boundary": {"quirks": "One polygon. St. Louis is an independent "
                                 "city — inside no county since 1876."},
+    "lead-service-lines": {
+        "fields": {
+            "address": "service address",
+            "utilstatus": "utility-side status, domain-coded: 0 Unknown, 1 Lead, 2 Non-Lead, 3 Galvanized Requiring Replacement",
+            "custstatus": "customer-side status, same domain",
+            "utilmaterial": "pipe material, domain-coded (109 Lead, 84 Copper, 89 Galvanized, 0 Unknown...)",
+        },
+        "quirks": "EPA-mandated lead service line inventory from the Water "
+                  "Division AGOL org; 112,950 address points, actively "
+                  "maintained. Material/status fields are numeric domain "
+                  "codes — the decode lives in the default styles and in "
+                  "staging/extracts/lead-service-lines/layer-metadata.json.",
+        "joins": "address matches parcel situs addresses (fuzzy).",
+    },
+    "election-results-nov-2024": {
+        "fields": {
+            "F_Precinct": "precinct name",
+            "Contest_Title": "contest",
+            "Choice_Name": "candidate/choice",
+            "Total_Votes": "votes (also Election_Day/Absentee/Provisional splits)",
+            "Turnout_Percentage": "precinct turnout",
+        },
+        "quirks": "24,030 rows = precinct x contest x choice for the "
+                  "November 5, 2024 general election. Tabular — join "
+                  "election-precincts on precinct name for mapping.",
+        "joins": "election-precincts.name relates to F_Precinct (both use "
+                 "'W <ward> P <precinct>' style names; normalize whitespace).",
+    },
+    "vacancy-composite": {
+        "fields": {"STREET_ADD": "address", "PROPERTY_T": "Land or Structure",
+                   "TOLEMI_DEF": "vacancy classification", "PID1": "parcel id"},
+        "quirks": "SLDC/Tolemi BuildingBlocks export (2025-01); 20,694 "
+                  "parcels flagged vacant by at least one indicator.",
+        "joins": "PID1/PID2 relate to parcels.ParcelId.",
+    },
+    "market-value-analysis": {
+        "fields": {"geoid": "census block group GEOID",
+                   "MVACluster": "market cluster A (strongest) - I (weakest)"},
+        "quirks": "Reinvestment Fund 2024 MVA at block-group level; ~30 "
+                  "market indicator columns.",
+    },
+    "wards-2010": {
+        "quirks": "The 28-ward map in force 2011-2022 — the geography that "
+                  "WARD10 columns elsewhere (city-blocks, parcels) reference."},
+    "neighborhood-organizations": {
+        "quirks": "A 2020 snapshot (source: 'as exported 6-20-20'); "
+                  "contacts and activity status age accordingly."},
+    "tornado-damage-2025": {
+        "quirks": "NWS Damage Assessment Toolkit record of the May 16, 2025 "
+                  "EF-3 tornado: one damage-path polygon plus 286 surveyed "
+                  "points (source_layer distinguishes them)."},
 }
 
 

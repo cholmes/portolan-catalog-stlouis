@@ -1,0 +1,36 @@
+{
+  "version": 8,
+  "name": "Categorical Style",
+  "sources": {
+    "data": {
+      "type": "vector"
+    }
+  },
+  "layers": [
+    {
+      "id": "categorical-fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "neighborhood-organizations",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "active"
+          ],
+          "<Null>",
+          "#ead4fc",
+          "No",
+          "#b9fcb3",
+          "Unknown",
+          "#fcd4b3",
+          "Yes",
+          "#c2fcfc",
+          "#cccccc"
+        ],
+        "fill-opacity": 1.0
+      }
+    }
+  ]
+}

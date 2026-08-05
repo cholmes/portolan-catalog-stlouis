@@ -1,0 +1,85 @@
+{
+  "version": 8,
+  "name": "Organizations by activity",
+  "metadata": {
+    "description": "The 103 neighborhood organizations as of the 2020 export: active (green), inactive (red), unknown (gray)."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../neighborhood-organizations.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "neighborhood-organizations-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "neighborhood-organizations",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "active"
+          ],
+          "Yes",
+          "#538400",
+          "No",
+          "#c03221",
+          "Unknown",
+          "#9aa3a8",
+          "#dfe6ea"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "neighborhood-organizations",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "active"
+          ],
+          "Yes",
+          "#538400",
+          "No",
+          "#c03221",
+          "Unknown",
+          "#9aa3a8",
+          "#dfe6ea"
+        ],
+        "fill-opacity": 0.55,
+        "fill-outline-color": "#FFFFFF"
+      }
+    },
+    {
+      "id": "labels",
+      "type": "symbol",
+      "source": "data",
+      "source-layer": "neighborhood-organizations",
+      "minzoom": 12,
+      "layout": {
+        "text-field": [
+          "get",
+          "labelForMap"
+        ],
+        "text-font": [
+          "Noto Sans Regular"
+        ],
+        "text-size": 10,
+        "text-max-width": 9
+      },
+      "paint": {
+        "text-color": "#1A1A1A",
+        "text-halo-color": "#FFFFFF",
+        "text-halo-width": 1.2
+      }
+    }
+  ]
+}

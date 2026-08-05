@@ -108,7 +108,22 @@
     "styles/style-boundaries",
     "styles/style-labeled"
   ],
-  "updated": "2026-08-05T04:46:13+00:00",
+  "updated": "2026-08-05T17:00:27+00:00",
+  "themes": [
+    {
+      "scheme": "https://www.stlouis-mo.gov/data/topics/",
+      "concepts": [
+        {
+          "id": "business-and-industry",
+          "title": "Business and Industry"
+        },
+        {
+          "id": "urban-development-and-planning",
+          "title": "Urban Development and Planning"
+        }
+      ]
+    }
+  ],
   "title": "Qualified Opportunity Zones",
   "extent": {
     "spatial": {
@@ -131,6 +146,15 @@
     }
   },
   "license": "other",
+  "keywords": [
+    "federal",
+    "irs",
+    "opportunity zones",
+    "planning",
+    "sldc",
+    "st. louis development corporation",
+    "treasury"
+  ],
   "providers": [
     {
       "name": "City of St. Louis \u2014 St. Louis Development Corporation",
@@ -224,29 +248,5 @@
         "thumbnail"
       ]
     }
-  },
-  "themes": [
-    {
-      "scheme": "https://www.stlouis-mo.gov/data/topics/",
-      "concepts": [
-        {
-          "id": "business-and-industry",
-          "title": "Business and Industry"
-        },
-        {
-          "id": "urban-development-and-planning",
-          "title": "Urban Development and Planning"
-        }
-      ]
-    }
-  ],
-  "keywords": [
-    "federal",
-    "irs",
-    "opportunity zones",
-    "planning",
-    "sldc",
-    "st. louis development corporation",
-    "treasury"
-  ]
+  }
 }

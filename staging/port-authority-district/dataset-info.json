@@ -1,0 +1,55 @@
+{
+ "collection": "port-authority-district",
+ "title": "Port Authority District",
+ "portal_page": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=55",
+ "department": "St. Louis Development Corporation",
+ "source": "https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/Port_Authority_District_Boundary/FeatureServer",
+ "source_type": "arcgis",
+ "synced": "2026-08-05T16:51:48+00:00",
+ "fetch": {
+  "status": "ok",
+  "parquets": [
+   "staging/extracts/port-authority-district/port_authority_district_boundary/port_authority_district_boundary.parquet"
+  ],
+  "layer_url": "https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/Port_Authority_District_Boundary/FeatureServer/0",
+  "layer_description": null,
+  "fields": [
+   {
+    "name": "OBJECTID",
+    "alias": "OBJECTID",
+    "type": "esriFieldTypeOID"
+   },
+   {
+    "name": "DateApproved",
+    "alias": "DateApproved",
+    "type": "esriFieldTypeDate"
+   },
+   {
+    "name": "Ordinance",
+    "alias": "Ordinance",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "Acres",
+    "alias": "Acres",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Guid",
+    "alias": "Guid",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "Shape__Area",
+    "alias": "Shape.STArea()",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Shape__Length",
+    "alias": "Shape.STLength()",
+    "type": "esriFieldTypeDouble"
+   }
+  ],
+  "city_style": "staging/extracts/port-authority-district/styles/city-renderer.json"
+ }
+}

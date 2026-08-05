@@ -162,7 +162,26 @@
     "styles/default",
     "styles/city-renderer"
   ],
-  "updated": "2026-08-05T04:46:13+00:00",
+  "updated": "2026-08-05T17:00:27+00:00",
+  "themes": [
+    {
+      "scheme": "https://www.stlouis-mo.gov/data/topics/",
+      "concepts": [
+        {
+          "id": "community",
+          "title": "Community"
+        },
+        {
+          "id": "leisure-and-culture",
+          "title": "Leisure and Culture"
+        },
+        {
+          "id": "transportation-infrastructure-and-utilities",
+          "title": "Transportation, Infrastructure, and Utilities"
+        }
+      ]
+    }
+  ],
   "title": "City Trees (Planting Sites)",
   "extent": {
     "spatial": {
@@ -300,24 +319,5 @@
         "thumbnail"
       ]
     }
-  },
-  "themes": [
-    {
-      "scheme": "https://www.stlouis-mo.gov/data/topics/",
-      "concepts": [
-        {
-          "id": "community",
-          "title": "Community"
-        },
-        {
-          "id": "leisure-and-culture",
-          "title": "Leisure and Culture"
-        },
-        {
-          "id": "transportation-infrastructure-and-utilities",
-          "title": "Transportation, Infrastructure, and Utilities"
-        }
-      ]
-    }
-  ]
+  }
 }

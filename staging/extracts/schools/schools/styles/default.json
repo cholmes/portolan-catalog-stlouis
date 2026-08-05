@@ -1,0 +1,47 @@
+{
+  "version": 8,
+  "name": "Categorical Style",
+  "sources": {
+    "data": {
+      "type": "vector"
+    }
+  },
+  "layers": [
+    {
+      "id": "categorical-circle",
+      "type": "circle",
+      "source": "data",
+      "source-layer": "schools",
+      "paint": {
+        "circle-color": [
+          "match",
+          [
+            "get",
+            "USER_School_System"
+          ],
+          "Charter",
+          "#808080",
+          "Independent",
+          "#808080",
+          "Parochial",
+          "#808080",
+          "Public",
+          "#808080",
+          "Public - Alternative",
+          "#808080",
+          "Public - College & Career Readiness",
+          "#808080",
+          "Public - ESOL",
+          "#808080",
+          "Public - Early Childood Center",
+          "#808080",
+          "Public - Special Education",
+          "#808080",
+          "#cccccc"
+        ],
+        "circle-radius": 5,
+        "circle-opacity": 1.0
+      }
+    }
+  ]
+}

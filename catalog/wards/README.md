@@ -306,12 +306,12 @@ print(gdf.head())
 
 ## Source
 
-[https://maps8.stlouis-mo.gov/arcgis/rest/services/Hosted/City_of_St__Louis_Ward_Boundaries/FeatureServer](https://maps8.stlouis-mo.gov/arcgis/rest/services/Hosted/City_of_St__Louis_Ward_Boundaries/FeatureServer)
+[https://static.stlouis-mo.gov/open-data/planning/wards/wards_2020.zip](https://static.stlouis-mo.gov/open-data/planning/wards/wards_2020.zip)
 
 ## Processing Notes
 
 Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=131).
-Source: https://maps8.stlouis-mo.gov/arcgis/rest/services/Hosted/City_of_St__Louis_Ward_Boundaries/FeatureServer (ArcGIS REST service),
+Source: https://static.stlouis-mo.gov/open-data/planning/wards/wards_2020.zip (portal download),
 converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.
 
 

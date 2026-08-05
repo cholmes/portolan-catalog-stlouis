@@ -1,0 +1,25 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-05T16:58:04.467590Z",
+      "breaking": false,
+      "assets": {
+        "port-authority-district.parquet": {
+          "sha256": "c315317bf7468bde37a740843d22808e53c33e3e7ac4ba0e73247cb5e975d4a2",
+          "size_bytes": 16890,
+          "href": "port-authority-district/port-authority-district.parquet",
+          "source_mtime": 1785948930.761615,
+          "mtime": 1785948930.761615,
+          "feature_count": 1,
+          "schema_fingerprint": "3ee7906dc9435d5c"
+        }
+      },
+      "changes": [
+        "port-authority-district.parquet"
+      ]
+    }
+  ]
+}

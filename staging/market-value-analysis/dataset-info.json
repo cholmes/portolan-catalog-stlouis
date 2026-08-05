@@ -1,0 +1,185 @@
+{
+ "collection": "market-value-analysis",
+ "title": "2024 Market Value Analysis",
+ "portal_page": "https://stlcity.maps.arcgis.com/home/item.html?id=e71e3ebca1f345a4b7db134d30c5d9ff",
+ "department": "Community Development Administration",
+ "source": "https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/2024_Market_Value_Analysis/FeatureServer",
+ "source_type": "arcgis",
+ "synced": "2026-08-05T16:51:48+00:00",
+ "fetch": {
+  "status": "ok",
+  "parquets": [
+   "staging/extracts/market-value-analysis/2024_market_value_analysis/2024_market_value_analysis.parquet"
+  ],
+  "layer_url": "https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/2024_Market_Value_Analysis/FeatureServer/0",
+  "layer_description": "The attribute table Information that follows is ordered by the following headings: COLUMN NAME, DATA TYPE, DEFINITION, MEASUREMENT TYPE, SOURCE. Column names are shown in bold. geoid, text, Census 2020 Block Group Code, NA, Census. MVACluster, text, Reinvestment Fund's 2024 MVA of St. Louis, type, Reinvestment Fund. MSP2123_CA, integer, Typical value of residential home sales (median sales price) excluding homes purchased for values below $1,000 (condo adjusted) from 2021 to 2023, median currency, City of St. Louis. MSPVar2123, decimal, Variation of home values between '21-'23 (standard deviation/average value), number City of St. Louis. PHHOO, decimal, Households that reported owning their home as a share of all households, 2018-2022, percent, ACS 2018-2022. CHOO, integer, Count of households that reported owning their homes, number, ACS 2018-2022. CHIH, integer, count of all households, number, ACS 2018-2022. PPerm10k, decimal, Residential parcels with renovation/addition permits between June '22 to June '24 where total permit value exceeded $10,000 (excluding demolitions) as a share of all residential parcels, percent, City of St. Louis. CPerm10k, Count of residential parcels with renovation/addition permits between June '22 - June '24 where total permit value exceeded $10,000 (excluding demolitions), number, City of St. Louis. CResPcl, integer, Count of residential parcels foreclosures, sheriff sales, tax sales and bank-sold properties as a share of all, number, City of St. Louis. PDSale2123, decimal, Residential property transactions '21-'23, percent, City of St. Louis. CDSale2123, integer, Count of distressed residential home sales (foreclosures, sheriff sales, tax sales, and bank-sold residential properties) between 2021-2023, number, City of St. Louis. CSales2123, integer, Count of residential home sales between 2021-2023, number, City of St. Louis. PVacBuild, decimal, Vacant Housing Units as a Share of All Housing Units 2024, percent, City of St. Louis. CVacBuild, integer, Count of vacant housing units, number, City of St. Louis. CHU_All, integer, count of all housing units, number, City of St. Louis. PVResLand, decimal, Vacant Residential Land as a Share of All Residential Land 2024, percent, City of St. Louis.  VacLotAcre, decimal, vacant residential land area (in acres), number, City of St. Louis. PclResAcre, decimal, Residential land area (in acres), number, City of St. Louis. PResArea, decimal, Residential Land Area as a Share of All Land Area, 2024, number, City of St. Louis. PclAcres, decimal, All land area (in acres), number, City of St. Louis. Subsidy, decimal, Households with Subsidy (LIHTC, Public Housing, HCV, Multifamily), percent, National Housing Preservation Database/HUD-POSH/and St Louis Housing Authority. CSubHH, integer, Count of household with a housing subsidy (LIHTC, Public Housing, HCV, Multifamily), number, National Housing Preservation Database/HUD-POSH/and St Louis Housing Authority. CHHRO, integer, count of renter households, number, ACS 2018-2022. CPOP, integer, Count of total population, number, ACS 2018-2022. CPOPWH, integer, Count of non-hispanic white population, number, ACS 2018-2022. CPOPBK, integer, Count of non-hispanic black population, number, ACS 2018-2022. CPOPAS, integer, Count of non-hispanic asian population, number, ACS 2018-2022. CPOPHISP, integer, Count of hispanic population, number, ACS 2018-2022. CPOPOTH, integer, Count of other race population, number, ACS 2018-2022. ",
+  "fields": [
+   {
+    "name": "OBJECTID",
+    "alias": "OBJECTID",
+    "type": "esriFieldTypeOID"
+   },
+   {
+    "name": "geoid",
+    "alias": "geoid",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "MVACluster",
+    "alias": "MVACluster",
+    "type": "esriFieldTypeString"
+   },
+   {
+    "name": "MSP2123_CA",
+    "alias": "MSP2123_CA",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "MSPVar2123",
+    "alias": "MSPVar2123",
+    "type": "esriFieldTypeSingle"
+   },
+   {
+    "name": "PHHOO",
+    "alias": "PHHOO",
+    "type": "esriFieldTypeSingle"
+   },
+   {
+    "name": "CHHOO",
+    "alias": "CHHOO",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "CHH",
+    "alias": "CHH",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "PPerm10k",
+    "alias": "PPerm10k",
+    "type": "esriFieldTypeSingle"
+   },
+   {
+    "name": "CPerm10k",
+    "alias": "CPerm10k",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "CResPcl",
+    "alias": "CResPcl",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "PDSale2123",
+    "alias": "PDSale2123",
+    "type": "esriFieldTypeSingle"
+   },
+   {
+    "name": "CDSale2123",
+    "alias": "CDSale2123",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "CSales2123",
+    "alias": "CSales2123",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "PVacBuild",
+    "alias": "PVacBuild",
+    "type": "esriFieldTypeSingle"
+   },
+   {
+    "name": "CVacBuild",
+    "alias": "CVacBuild",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "CHU_All",
+    "alias": "CHU_All",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "PVResLand",
+    "alias": "PVResLand",
+    "type": "esriFieldTypeSingle"
+   },
+   {
+    "name": "VacLotAcre",
+    "alias": "VacLotAcre",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "PclResAcre",
+    "alias": "PclResAcre",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "PResArea",
+    "alias": "PResArea",
+    "type": "esriFieldTypeSingle"
+   },
+   {
+    "name": "PclAcres",
+    "alias": "PclAcres",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Subsidy",
+    "alias": "Subsidy",
+    "type": "esriFieldTypeSingle"
+   },
+   {
+    "name": "CSubHH",
+    "alias": "CSubHH",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "CHHRO",
+    "alias": "CHHRO",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "CPOP",
+    "alias": "CPOP",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "CPOPWH",
+    "alias": "CPOPWH",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "CPOPBK",
+    "alias": "CPOPBK",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "CPOPAS",
+    "alias": "CPOPAS",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "CPOPHISP",
+    "alias": "CPOPHISP",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "CPOPOTH",
+    "alias": "CPOPOTH",
+    "type": "esriFieldTypeInteger"
+   },
+   {
+    "name": "Shape__Area",
+    "alias": "Shape__Area",
+    "type": "esriFieldTypeDouble"
+   },
+   {
+    "name": "Shape__Length",
+    "alias": "Shape__Length",
+    "type": "esriFieldTypeDouble"
+   }
+  ],
+  "city_style": "staging/extracts/market-value-analysis/styles/city-renderer.json"
+ }
+}

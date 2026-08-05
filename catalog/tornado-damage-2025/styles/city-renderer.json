@@ -1,0 +1,26 @@
+{
+  "version": 8,
+  "name": "City renderer",
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../tornado-damage-2025.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "layer-0",
+      "type": "line",
+      "source": "data",
+      "source-layer": "tornado-damage-2025",
+      "paint": {
+        "line-color": "#ff0000",
+        "line-width": 200,
+        "line-opacity": 0.050980392156862744
+      }
+    }
+  ],
+  "metadata": {
+    "description": "The city's own symbology, extracted from the source ArcGIS renderer."
+  }
+}

@@ -96,18 +96,25 @@ def ensure_link(links: list, rel: str, href: str, type_: str, title: str | None 
     links.append(l)
 
 
-def build_property_sales() -> None:
-    coll_dir = CATALOG / "property-sales"
-    pq = coll_dir / "property-sales.parquet"
+TABULAR = ["property-sales", "election-results-nov-2024"]
+
+
+def build_tabular(cid: str) -> None:
+    coll_dir = CATALOG / cid
+    pq = coll_dir / f"{cid}.parquet"
     cols = duck(f"SELECT column_name n, column_type t FROM (DESCRIBE SELECT * FROM '{pq}')")
-    dates = duck(f"SELECT min(strptime(SaleDate, '%m/%d/%y %H:%M:%S'))::VARCHAR a, "
-                 f"max(strptime(SaleDate, '%m/%d/%y %H:%M:%S'))::VARCHAR b FROM '{pq}' "
-                 f"WHERE SaleDate IS NOT NULL")
+    dates = None
+    if cid == "property-sales":
+        dates = duck(f"SELECT min(strptime(SaleDate, '%m/%d/%y %H:%M:%S'))::VARCHAR a, "
+                     f"max(strptime(SaleDate, '%m/%d/%y %H:%M:%S'))::VARCHAR b FROM '{pq}' "
+                     f"WHERE SaleDate IS NOT NULL")
+    elif cid == "election-results-nov-2024":
+        dates = [{"a": "2024-11-05 00:00:00", "b": "2024-11-05 00:00:00"}]
     n = duck(f"SELECT count(*) c FROM '{pq}'")[0]["c"]
     city_bbox = [-90.320522, 38.531907, -90.166409, 38.774362]
     coll = {
         "type": "Collection",
-        "id": "property-sales",
+        "id": cid,
         "stac_version": "1.1.0",
         "stac_extensions": [TABLE_EXT],
         "description": "placeholder",  # filled by common pass below
@@ -128,11 +135,11 @@ def build_property_sales() -> None:
             {"rel": "agents", "href": "./AGENTS.md", "type": "text/markdown"},
         ],
         "assets": {
-            "property-sales": {
-                "href": "./property-sales.parquet",
+            cid: {
+                "href": f"./{cid}.parquet",
                 "type": PARQUET_TYPE,
                 "roles": ["data"],
-                "title": "Property sales (Parquet)",
+                "title": f"{SOURCES[cid]['title']} (Parquet)",
             }
         },
     }
@@ -142,8 +149,7 @@ def build_property_sales() -> None:
         coll["extent"]["temporal"]["interval"] = [
             [a.replace(" ", "T") + "Z", b.replace(" ", "T") + "Z"]]
     coll_dir.joinpath("collection.json").write_text(json.dumps(coll, indent=2) + "\n")
-    # register as child of root (common pass ensures link fields)
-    print("✓ property-sales collection.json authored")
+    print(f"✓ {cid} collection.json authored (tabular)")
 
 
 def finalize_collection(coll_id: str) -> None:
@@ -188,7 +194,7 @@ def finalize_collection(coll_id: str) -> None:
     # Recompute the spatial extent from the parquet itself — the CLI's
     # tracked extent can go stale when files are rewritten out from under it.
     pq = coll_dir / f"{coll_id}.parquet"
-    if pq.exists() and coll_id != "property-sales":
+    if pq.exists() and coll_id not in TABULAR:
         bb = duck(
             "INSTALL spatial; LOAD spatial; "
             f"SELECT min(ST_XMin(geometry)) a, min(ST_YMin(geometry)) b, "
@@ -214,6 +220,9 @@ def finalize_collection(coll_id: str) -> None:
     if src["type"] == "arcgis":
         ensure_link(links, "via", src["service"], "text/html",
                     "Source ArcGIS service")
+    if has_pmtiles and not any(l["rel"] == "pmtiles" for l in links):
+        links.append({"rel": "pmtiles", "href": f"./{coll_id}.pmtiles",
+                      "type": "application/vnd.pmtiles"})
     for l in links:
         if l["rel"] == "pmtiles":
             l["pmtiles:layers"] = [coll_id]
@@ -225,6 +234,11 @@ def finalize_collection(coll_id: str) -> None:
 
     # Assets: media types, titles, default style role, size+checksum
     assets = coll.get("assets", {})
+    if has_pmtiles and not any(
+            a.get("href", "").endswith(".pmtiles") for a in assets.values()):
+        assets[f"{coll_id}-tiles"] = {
+            "href": f"./{coll_id}.pmtiles", "type": "application/vnd.pmtiles",
+            "roles": ["visual"], "title": f"{src['title']} (PMTiles)"}
     if (coll_dir / "thumbnail.png").exists() and "thumbnail" not in assets:
         assets["thumbnail"] = {
             "href": "./thumbnail.png", "type": "image/png",
@@ -309,7 +323,8 @@ def finalize_root() -> None:
 
 
 def main() -> None:
-    build_property_sales()
+    for cid in TABULAR:
+        build_tabular(cid)
     for coll_id in SOURCES:
         if (CATALOG / coll_id / "collection.json").exists():
             finalize_collection(coll_id)

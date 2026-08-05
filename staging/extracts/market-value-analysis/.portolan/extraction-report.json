@@ -1,0 +1,39 @@
+{
+  "extraction_date": "2026-08-05T16:53:41.817925+00:00",
+  "source_url": "https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/2024_Market_Value_Analysis/FeatureServer",
+  "portolan_version": "1.0.0a0",
+  "gpio_version": "1.3.0",
+  "metadata_extracted": {
+    "source_url": "https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/2024_Market_Value_Analysis/FeatureServer",
+    "description": "<DIV STYLE=\"text-align:Left;\"><DIV><DIV><P><SPAN>The attribute table Information that follows is ordered by the following headings: COLUMN NAME, DATA TYPE, DEFINITION, MEASUREMENT TYPE, SOURCE. </span><SPAN STYLE=\"font-weight:bold;\">Column names are shown in bold. geoid</span><SPAN>, text, Census 2020 Block Group Code, NA, Census. </span><SPAN STYLE=\"font-weight:bold;\">MVACluster</span><SPAN>, text, Reinvestment Fund's 2024 MVA of St. Louis, type, Reinvestment Fund. </span><SPAN STYLE=\"font-weight:bold;\">MSP2123_CA</span><SPAN>, integer, Typical value of residential home sales (median sales price) excluding homes purchased for values below $1,000 (condo adjusted) from 2021 to 2023, median currency, City of St. Louis. </span><SPAN STYLE=\"font-weight:bold;\">MSPVar2123</span><SPAN>, decimal, Variation of home values between '21-'23 (standard deviation/average value), number City of St. Louis. </span><SPAN STYLE=\"font-weight:bold;\">PHHOO</span><SPAN>, decimal, Households that reported owning their home as a share of all households, 2018-2022, percent, ACS 2018-2022. </span><SPAN STYLE=\"font-weight:bold;\">CHOO</span><SPAN>, integer, Count of households that reported owning their homes, number, ACS 2018-2022. </span><SPAN STYLE=\"font-weight:bold;\">CHIH</span><SPAN>, integer, count of all households, number, ACS 2018-2022. </span><SPAN STYLE=\"font-weight:bold;\">PPerm10k</span><SPAN>, decimal, Residential parcels with renovation/addition permits between June '22 to June '24 where total permit value exceeded $10,000 (excluding demolitions) as a share of all residential parcels, percent, City of St. Louis. </span><SPAN STYLE=\"font-weight:bold;\">CPerm10k</span><SPAN>, Count of residential parcels with renovation/addition permits between June '22 - June '24 where total permit value exceeded $10,000 (excluding demolitions), number, City of St. Louis. </span><SPAN STYLE=\"font-weight:bold;\">CResPcl</span><SPAN>, integer, Count of residential parcels foreclosures, sheriff sales, tax sales and bank-sold properties as a share of all, number, City of St. Louis. </span><SPAN STYLE=\"font-weight:bold;\">PDSale2123</span><SPAN>, decimal, Residential property transactions '21-'23, percent, City of St. Louis. </span><SPAN STYLE=\"font-weight:bold;\">CDSale2123</span><SPAN>, integer, Count of distressed residential home sales (foreclosures, sheriff sales, tax sales, and bank-sold residential properties) between 2021-2023, number, City of St. Louis. </span><SPAN STYLE=\"font-weight:bold;\">CSales2123</span><SPAN>, integer, Count of residential home sales between 2021-2023, number, City of St. Louis. </span><SPAN STYLE=\"font-weight:bold;\">PVacBuild</span><SPAN>, decimal, </span><SPAN>Vacant Housing Units as a Share of All Housing Units 2024, percent, City of St. Louis. </span><SPAN STYLE=\"font-weight:bold;\">CVacBuild</span><SPAN>, integer, Count of vacant housing units, number, City of St. Louis. </span><SPAN STYLE=\"font-weight:bold;\">CHU_All</span><SPAN>, integer, count of all housing units, number, City of St. Louis. </span><SPAN STYLE=\"font-weight:bold;\">PVResLand</span><SPAN>, decimal, Vacant Residential Land as a Share of All Residential Land 2024, percent, City of St. Louis.  </span><SPAN STYLE=\"font-weight:bold;\">VacLotAcre</span><SPAN>, decimal, vacant residential land area (in acres), number, City of St. Louis. </span><SPAN STYLE=\"font-weight:bold;\">PclResAcre</span><SPAN>, decimal, </span><SPAN><SPAN>Residential land area (in acres), number, City of St. Louis. </span></span><SPAN STYLE=\"font-weight:bold;\">PResArea</span><SPAN>, decimal, Residential Land Area as a Share of All Land Area, 2024, number, City of St. Louis. </span><SPAN STYLE=\"font-weight:bold;\">PclAcres</span><SPAN>, decimal, All land area (in acres), number, City of St. Louis. </span><SPAN STYLE=\"font-weight:bold;\">Subsidy</span><SPAN>, decimal, Households with Subsidy (LIHTC, Public Housing, HCV, Multifamily), percent, </span><SPAN>National Housing Preservation Database/HUD-POSH/and St Louis Housing Authority. </span><SPAN STYLE=\"font-weight:bold;\">CSubHH</span><SPAN>, integer, Count of household with a housing subsidy (LIHTC, Public Housing, HCV, Multifamily), number, </span><SPAN>National Housing Preservation Database/HUD-POSH/and St Louis Housing Authority. </span><SPAN STYLE=\"font-weight:bold;\">CHHRO</span><SPAN>, integer, count of renter households, number, </span><SPAN>ACS 2018-2022. </span><SPAN STYLE=\"font-weight:bold;\">CPOP</span><SPAN>, integer, Count of total population, number, ACS 2018-2022. </span><SPAN STYLE=\"font-weight:bold;\">CPOPWH</span><SPAN>, integer, </span><SPAN>Count of non-hispanic white population, number, ACS 2018-2022. </span><SPAN STYLE=\"font-weight:bold;\">CPOPBK, </span><SPAN>integer, </span><SPAN><SPAN>Count of non-hispanic black population, number, ACS 2018-2022. </span></span><SPAN STYLE=\"font-weight:bold;\">CPOPAS</span><SPAN>, integer, Count of non-hispanic asian population, number, ACS 2018-2022. </span><SPAN STYLE=\"font-weight:bold;\">CPOPHISP</span><SPAN>, integer, Count of hispanic population, number, ACS </span><SPAN>2018-2022. </span><SPAN STYLE=\"font-weight:bold;\">CPOPOTH, </span><SPAN>integer, Count of other race population, number, ACS 2018-2022. </span></p></div></div></div>",
+    "attribution": "Ira Goldstein with The Reinvestment Fund. Ira.Goldstein@reinvestment.com. Trey McCarter, CDA, 314.657.3834",
+    "keywords": null,
+    "contact_name": null,
+    "processing_notes": "The Market Value Analysis (MVA) is an in-depth study and mapping of a community's housing market.  It reveals the mosaic of market conditions in St. Louis and  offers insight into the variation in market strengths and weaknesses within and between traditional  neighborhood boundaries. Understanding different market types allows stakeholders to align  investment or intervention strategies to market conditions. The MVA typically uses local and  administrative data to represent market conditions and includes field validation and input from local  experts. \nThe MVA uses a technique known as cluster analysis to form distinct clusters, or markets, with common  characteristics. These characteristics are measured by data indicators including sale price, permitting,  vacancy. Each market cluster is identified by a letter of the  alphabet and a color. The St. Louis MVA was conducted at the block group level, and although block  groups in the same cluster (e.g., the C market cluster) are not all geographically close to one another,  their conditions are similar. At the same time, conditions in each market are different from conditions in  every other market (i.e., C market block groups are distinct from D market block groups, and so on).",
+    "known_issues": null,
+    "license_info_raw": null
+  },
+  "layers": [
+    {
+      "id": 0,
+      "name": "2024 Market Value Analysis",
+      "status": "success",
+      "warnings": [],
+      "attempts": 1,
+      "features": 314,
+      "size_bytes": 240978,
+      "duration_seconds": 1.8912274588365108,
+      "output_path": "2024_market_value_analysis/2024_market_value_analysis.parquet"
+    }
+  ],
+  "summary": {
+    "total_layers": 1,
+    "succeeded": 1,
+    "failed": 0,
+    "skipped": 0,
+    "empty": 0,
+    "total_features": 314,
+    "total_size_bytes": 240978,
+    "total_duration_seconds": 1.8912274588365108
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-05T16:58:04.593780Z",
+      "breaking": false,
+      "assets": {
+        "polling-places.parquet": {
+          "sha256": "db38dfc9644b153035dc581019acadba779907a939e4f2f8e3182375bc7f2ac0",
+          "size_bytes": 21526,
+          "href": "polling-places/polling-places.parquet",
+          "source_mtime": 1785948934.4390662,
+          "mtime": 1785948934.4390662,
+          "feature_count": 152,
+          "schema_fingerprint": "b51f111842ddb13a"
+        }
+      },
+      "changes": [
+        "polling-places.parquet"
+      ]
+    }
+  ]
+}

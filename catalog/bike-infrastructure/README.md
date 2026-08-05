@@ -1,11 +1,8 @@
-# City of St. Louis Open Data (Cloud-Native Mirror)
+# Bike Infrastructure
 
-Cloud-native mirror of datasets from the
-[City of St. Louis open data portal](https://www.stlouis-mo.gov/data/):
-GeoParquet, PMTiles, and STAC metadata for the city's most-used geospatial
-and parcel-joinable datasets. Not an official city service.
+Bicycle infrastructure from the city's Biking Infrastructure Map service: existing bike facilities by type, the Brickline Greenway and Hodiamont Trail, park paths, multi-use paths, and planned and funded major bike facility projects.
 
-![st-louis](https://img.shields.io/badge/st--louis-blue) ![missouri](https://img.shields.io/badge/missouri-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![city-government](https://img.shields.io/badge/city--government-blue) ![parcels](https://img.shields.io/badge/parcels-blue) ![boundaries](https://img.shields.io/badge/boundaries-blue) ![cloud-native](https://img.shields.io/badge/cloud--native-blue) ![geoparquet](https://img.shields.io/badge/geoparquet-blue) ![stac](https://img.shields.io/badge/stac-blue) ![pmtiles](https://img.shields.io/badge/pmtiles-blue)
+![st-louis](https://img.shields.io/badge/st--louis-blue) ![missouri](https://img.shields.io/badge/missouri-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![bike](https://img.shields.io/badge/bike-blue) ![infrastructure](https://img.shields.io/badge/infrastructure-blue)
 
 ## Spatial Coverage
 
@@ -104,24 +101,22 @@ print(gdf.head())
 
 ## Source
 
-[https://www.stlouis-mo.gov/data/](https://www.stlouis-mo.gov/data/)
+[https://maps8.stlouis-mo.gov/arcgis/rest/services/PDA/Biking_Infrastructure_Map/MapServer](https://maps8.stlouis-mo.gov/arcgis/rest/services/PDA/Biking_Infrastructure_Map/MapServer)
 
 ## Processing Notes
 
-Mirrored from the City of St. Louis open data portal and the city's public
-ArcGIS REST services (maps6/maps8/maps9.stlouis-mo.gov). Source formats
-(ArcGIS layers, Shapefile, GeoJSON, CSV, DBF) converted to cloud-native
-GeoParquet and PMTiles. The city publishes no explicit data license;
-see each dataset's page on the portal for its terms and context.
+Mirrored from the City of St. Louis open data portal (https://maps8.stlouis-mo.gov/arcgis/rest/services/PDA/Biking_Infrastructure_Map/MapServer).
+Source: https://maps8.stlouis-mo.gov/arcgis/rest/services/PDA/Biking_Infrastructure_Map/MapServer (ArcGIS REST service),
+converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.
 
 
 ## Attribution
 
-City of St. Louis
+City of St. Louis — Planning and Urban Design
 
 ## License
 
-[other](https://www.stlouis-mo.gov/data/)
+[other](https://maps8.stlouis-mo.gov/arcgis/rest/services/PDA/Biking_Infrastructure_Map/MapServer)
 
 ## Contact
 

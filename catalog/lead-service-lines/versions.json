@@ -1,0 +1,25 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-05T16:58:04.840609Z",
+      "breaking": false,
+      "assets": {
+        "lead-service-lines.parquet": {
+          "sha256": "ac80f73d395703b95e59c29667c7c319d68e963c746c23de64919408b1e8511b",
+          "size_bytes": 8781788,
+          "href": "lead-service-lines/lead-service-lines.parquet",
+          "source_mtime": 1785948932.9591591,
+          "mtime": 1785948932.9591591,
+          "feature_count": 112950,
+          "schema_fingerprint": "1d392dbca2ff7676"
+        }
+      },
+      "changes": [
+        "lead-service-lines.parquet"
+      ]
+    }
+  ]
+}

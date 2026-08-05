@@ -1,0 +1,82 @@
+{
+  "version": 8,
+  "name": "Utility-side service line status",
+  "metadata": {
+    "description": "Every water service line by the utility-side status from the Water Division's EPA lead inventory: Lead red, Galvanized-requiring-replacement orange, Non-Lead green, Unknown gray. Codes follow the service's own domain (1 Lead, 2 Non-Lead, 3 Galvanized, 0 Unknown)."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../lead-service-lines.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "lead-service-lines-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "lead-service-lines",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "utilstatus"
+          ],
+          1,
+          "#c03221",
+          3,
+          "#e89d07",
+          2,
+          "#538400",
+          0,
+          "#9aa3a8",
+          "#dfe6ea"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "circle",
+      "type": "circle",
+      "source": "data",
+      "source-layer": "lead-service-lines",
+      "paint": {
+        "circle-color": [
+          "match",
+          [
+            "get",
+            "utilstatus"
+          ],
+          1,
+          "#c03221",
+          3,
+          "#e89d07",
+          2,
+          "#538400",
+          0,
+          "#9aa3a8",
+          "#dfe6ea"
+        ],
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          10,
+          0.8800000000000001,
+          13,
+          2.2,
+          16,
+          4.840000000000001
+        ],
+        "circle-opacity": 0.85,
+        "circle-stroke-color": "#FFFFFF",
+        "circle-stroke-width": 0.5
+      }
+    }
+  ]
+}
