@@ -31,12 +31,6 @@
       "title": "Dataset page on the City of St. Louis open data portal"
     },
     {
-      "rel": "via",
-      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=124",
-      "type": "text/html",
-      "title": "Source dataset on stlouis-mo.gov"
-    },
-    {
       "rel": "describedby",
       "href": "./README.md",
       "type": "text/markdown"
@@ -46,6 +40,12 @@
       "href": "../catalog.json",
       "type": "application/json",
       "title": "Government"
+    },
+    {
+      "rel": "via",
+      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=124",
+      "type": "text/html",
+      "title": "Dataset page on the City of St. Louis open data portal"
     }
   ],
   "stac_extensions": [
@@ -206,15 +206,6 @@
         "style"
       ]
     },
-    "documentation": {
-      "href": "./README.md",
-      "type": "text/markdown",
-      "file:size": 2577,
-      "file:checksum": "1220b3fcce6dbffe62cb55003a000dc20feddbda6b973dd0779f42cb4c73b33d848a",
-      "roles": [
-        "documentation"
-      ]
-    },
     "thumbnail": {
       "href": "./thumbnail.png",
       "type": "image/png",
@@ -223,6 +214,17 @@
       "roles": [
         "thumbnail"
       ]
+    },
+    "source": {
+      "href": "https://static.stlouis-mo.gov/open-data/BOEC/Precincts_Current.zip",
+      "type": "application/zip",
+      "title": "Current election precincts (zipped Shapefile)",
+      "roles": [
+        "source"
+      ],
+      "file:size": 292503,
+      "file:checksum": "12205b751cd8c63a0bed18907949bfc0fe0b91f6dba66a2731cb1a9f4babed3e46a6",
+      "description": "The file this collection was built from. Served upstream by static.stlouis-mo.gov, not by this mirror; size and checksum are of the bytes it served at the sync time in `updated`."
     }
   }
 }

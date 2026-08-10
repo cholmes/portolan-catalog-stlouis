@@ -40,6 +40,7 @@ Permits issued by the Street Department to allow for blocking of the right of wa
 | ./styles/default.json | 1.5 KB | 122092630884... |
 | ./styles/style-boundaries.json | 476 B | 12202116ed8a... |
 | ./styles/style-solid.json | 513 B | 1220d965101a... |
+| https://www.stlouis-mo.gov/data/upload/data-files/streets/street-permits.csv | 12.4 MB | 122086a38b60... |
 
 ## Quick Start
 
@@ -61,9 +62,17 @@ print(gdf.head())
 
 ## Processing Notes
 
-Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=17).
-Source: https://www.stlouis-mo.gov/data/upload/data-files/streets/street-permits.csv (portal download),
-converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.
+Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=17). Nothing was added to the data and no features were dropped except where noted below.
+
+Downloaded from the city's portal: https://www.stlouis-mo.gov/data/upload/data-files/streets/street-permits.csv (CSV).
+
+The CSV arrives in Windows-1252 and was normalized to UTF-8.
+
+Converted to Parquet with gpio (zstd), keeping the source's own columns. The city publishes this without geometry, so it stays that way here.
+
+The map layer is a derived product: the PMTiles were built by actually running the documented join against the `neighborhoods` collection on neighborhood name, so the data can be mapped without anyone having to run the join first. The Parquet is unjoined. The exact query is in AGENTS.md.
+
+The city's own file(s) are published as `source` assets on this collection, linked directly to stlouis-mo.gov — this mirror never becomes the only way to reach the original.
 
 
 ## Attribution

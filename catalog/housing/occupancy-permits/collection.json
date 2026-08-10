@@ -335,7 +335,7 @@
       "rel": "via",
       "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=6",
       "type": "text/html",
-      "title": "Source dataset on stlouis-mo.gov"
+      "title": "Dataset page on the City of St. Louis open data portal"
     },
     {
       "rel": "pmtiles",
@@ -410,6 +410,17 @@
       "description": "Every joined parcel in one color, for overlays.",
       "file:size": 532,
       "file:checksum": "12203d9a9eb33b1a0ddac985d586e2c8ec5c3e1325a094cf27ca39c11ea89fe56283"
+    },
+    "source": {
+      "href": "https://www.stlouis-mo.gov/data/upload/data-files/occupancy-permits.zip",
+      "type": "application/zip",
+      "title": "Occupancy permits (zipped CSV)",
+      "roles": [
+        "source"
+      ],
+      "file:size": 10408850,
+      "file:checksum": "12203522888dc6898c6f9e21799ec36bc3c145d5a304a81d5d442a0985b52e5048a0",
+      "description": "The file this collection was built from. Served upstream by www.stlouis-mo.gov, not by this mirror; size and checksum are of the bytes it served at the sync time in `updated`."
     }
   },
   "title": "Occupancy Permits",

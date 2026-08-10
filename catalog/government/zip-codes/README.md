@@ -41,11 +41,11 @@ ZIP code areas from the city's boundaries map service. Mirrored from [the city's
 | ./zip-codes.parquet | 28.4 KB | 1220939b241d... |
 | ./zip-codes.pmtiles | 127.3 KB | 1220b947413b... |
 | ./styles/city-renderer.json | 741 B | 12203fe270bd... |
-| ./styles/default.json | 1.2 KB | 12200f6191d5... |
+| ./styles/default.json | 1.3 KB | 1220cbf4bc51... |
 | ./styles/style-boundaries.json | 459 B | 1220dc4a979f... |
-| ./styles/style-subtle.json | 1003 B | 1220721f29f4... |
-| ./thumbnail.png | 292.6 KB | 1220dd6253f6... |
-| ./styles/style-mosaic.json | 1.8 KB | 1220741b7ebf... |
+| ./styles/style-subtle.json | 1.1 KB | 1220695b255f... |
+| ./thumbnail.png | 333.2 KB | 12208c2fe76e... |
+| ./styles/style-mosaic.json | 1.9 KB | 1220eaae8bdb... |
 
 ## Quick Start
 
@@ -67,9 +67,16 @@ print(gdf.head())
 
 ## Processing Notes
 
-Mirrored from the City of St. Louis open data portal (https://maps8.stlouis-mo.gov/arcgis/rest/services/STLOUIS/BOUNDARIES/MapServer).
-Source: https://maps8.stlouis-mo.gov/arcgis/rest/services/STLOUIS/BOUNDARIES/MapServer (ArcGIS REST service),
-converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.
+Mirrored from the City of St. Louis open data portal (https://maps8.stlouis-mo.gov/arcgis/rest/services/STLOUIS/BOUNDARIES/MapServer). Nothing was added to the data and no features were dropped except where noted below.
+
+Extracted from the city's own ArcGIS REST service with the Portolan CLI:
+
+    portolan extract arcgis \
+      https://maps8.stlouis-mo.gov/arcgis/rest/services/STLOUIS/BOUNDARIES/MapServer --layers "Zip Codes" --raw
+
+That pages the service's `/query` endpoint for every feature, so this is the whole layer rather than the display-capped sample a browser request returns, and it carries across the service's field aliases. The service's own ESRI renderer was captured at the same time and is republished here as `styles/city-renderer.json`, so the map can be drawn in the city's own symbology.
+
+Converted to GeoParquet with gpio — zstd compression, Hilbert row order, and a covering bbox column with row-group statistics, so a spatial filter can skip most of the file over the network — and tiled to PMTiles with tippecanoe.
 
 
 ## Attribution

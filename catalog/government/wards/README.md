@@ -285,10 +285,11 @@ Boundaries of City of St. Louis wards Mirrored from [the city's open data portal
 | ./wards.parquet | 161.9 KB | 1220489c01b0... |
 | ./wards.pmtiles | 483.0 KB | 1220c1ec8fb0... |
 | ./styles/city-renderer.json | 725 B | 122012cb82b8... |
-| ./styles/default.json | 2.7 KB | 122072c5f341... |
+| ./styles/default.json | 2.8 KB | 12208fa26bfc... |
 | ./styles/style-boundaries.json | 452 B | 12207f5d8a7a... |
 | ./styles/style-subtle.json | 709 B | 122039df8a1c... |
-| ./thumbnail.png | 307.9 KB | 12202c444291... |
+| ./thumbnail.png | 326.7 KB | 12205e421b44... |
+| https://static.stlouis-mo.gov/open-data/planning/wards/wards_2020.zip | 78.0 KB | 1220d5ef9b56... |
 
 ## Quick Start
 
@@ -310,9 +311,15 @@ print(gdf.head())
 
 ## Processing Notes
 
-Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=131).
-Source: https://static.stlouis-mo.gov/open-data/planning/wards/wards_2020.zip (portal download),
-converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.
+Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=131). Nothing was added to the data and no features were dropped except where noted below.
+
+Downloaded from the city's portal: https://static.stlouis-mo.gov/open-data/planning/wards/wards_2020.zip (zipped Shapefile).
+
+The city's Hosted ward FeatureServer carries only 10 of the 14 wards, so this collection is built from the portal's shapefile download, which has all 14.
+
+Converted to GeoParquet with gpio — zstd compression, Hilbert row order, and a covering bbox column with row-group statistics, so a spatial filter can skip most of the file over the network — and tiled to PMTiles with tippecanoe.
+
+The city's own file(s) are published as `source` assets on this collection, linked directly to stlouis-mo.gov — this mirror never becomes the only way to reach the original.
 
 
 ## Attribution

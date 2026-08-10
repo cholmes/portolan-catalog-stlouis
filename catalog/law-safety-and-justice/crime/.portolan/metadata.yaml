@@ -9,9 +9,15 @@ attribution: "City of St. Louis — Metropolitan Police Department"
 source_url: "https://www.slmpd.org/crime_stats.shtml"
 keywords: [st-louis, missouri, open-data, crime]
 processing_notes: |
-  Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=69).
-  Source: https://www.slmpd.org/crime_stats.shtml (portal download),
-  converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.
+  Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=69). Nothing was added to the data and no features were dropped except where noted below.
+
+  SLMPD does not publish a single file or a service — it posts one CSV per month on https://www.slmpd.org/crime_stats.shtml, and the portal's dataset page just points there. The index is read and every CSV it links is downloaded, so the mirror carries whatever months were published at sync time.
+
+  The monthly files arrive in mixed encodings, so each was normalized to UTF-8 before they were merged into one table.
+
+  Converted to GeoParquet with gpio — zstd compression, Hilbert row order, and a covering bbox column with row-group statistics, so a spatial filter can skip most of the file over the network — and tiled to PMTiles with tippecanoe.
+
+  The city's own file(s) are published as `source` assets on this collection, linked directly to stlouis-mo.gov — this mirror never becomes the only way to reach the original.
 examples:
   - engine: duckdb
     description: "Count rows by NIBRSCategory, straight off the published file"

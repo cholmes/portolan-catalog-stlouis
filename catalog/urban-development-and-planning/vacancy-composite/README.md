@@ -99,9 +99,16 @@ print(gdf.head())
 
 ## Processing Notes
 
-Mirrored from the City of St. Louis open data portal (https://stlcity.maps.arcgis.com/home/item.html?id=98a6f429617546be9d9b467c5ad1dafc).
-Source: https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/SLDC_SLDC_Tol_Def_Vac_NP/FeatureServer (ArcGIS REST service),
-converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.
+Mirrored from the City of St. Louis open data portal (https://stlcity.maps.arcgis.com/home/item.html?id=98a6f429617546be9d9b467c5ad1dafc). Nothing was added to the data and no features were dropped except where noted below.
+
+Extracted from the city's own ArcGIS REST service with the Portolan CLI:
+
+    portolan extract arcgis \
+      https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/SLDC_SLDC_Tol_Def_Vac_NP/FeatureServer --raw
+
+That pages the service's `/query` endpoint for every feature, so this is the whole layer rather than the display-capped sample a browser request returns, and it carries across the service's field aliases. The service's own ESRI renderer was captured at the same time and is republished here as `styles/city-renderer.json`, so the map can be drawn in the city's own symbology.
+
+Converted to GeoParquet with gpio — zstd compression, Hilbert row order, and a covering bbox column with row-group statistics, so a spatial filter can skip most of the file over the network — and tiled to PMTiles with tippecanoe.
 
 
 ## Attribution

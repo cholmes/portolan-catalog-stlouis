@@ -28,18 +28,6 @@
       "title": "Dataset page on the City of St. Louis open data portal"
     },
     {
-      "rel": "via",
-      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=123",
-      "type": "text/html",
-      "title": "Source dataset on stlouis-mo.gov"
-    },
-    {
-      "rel": "via",
-      "href": "https://maps8.stlouis-mo.gov/arcgis/rest/services/FORESTRY/FOREST_PARK_TREES/FeatureServer",
-      "type": "text/html",
-      "title": "Source ArcGIS service"
-    },
-    {
       "rel": "pmtiles",
       "href": "./forest-park-trees.pmtiles",
       "type": "application/vnd.pmtiles",
@@ -52,6 +40,18 @@
       "href": "../catalog.json",
       "type": "application/json",
       "title": "Environment"
+    },
+    {
+      "rel": "via",
+      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=123",
+      "type": "text/html",
+      "title": "Dataset page on the City of St. Louis open data portal"
+    },
+    {
+      "rel": "via",
+      "href": "https://maps8.stlouis-mo.gov/arcgis/rest/services/FORESTRY/FOREST_PARK_TREES/FeatureServer",
+      "type": "text/html",
+      "title": "Source ArcGIS service"
     }
   ],
   "stac_extensions": [

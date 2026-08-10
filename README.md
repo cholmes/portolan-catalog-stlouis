@@ -53,11 +53,12 @@ Run from the repo root, in order:
 | Step | Command | What it does |
 |---|---|---|
 | 1 | `python3 tools/fetch.py` | ArcGIS extracts (`portolan extract arcgis --raw`, incl. city renderer styles + field metadata) and static downloads into `staging/` |
+| 1b | `python3 tools/fetch_source_meta.py` | Size + sha2-256 of the city's own source files → `sources/source_checksums.json` (bytes streamed and discarded) |
 | 2 | `python3 tools/assemble.py` | Normalize everything to spec GeoParquet (zstd, covering bbox, Hilbert order) at `catalog/<id>/<id>.parquet` |
 | 3 | `portolan add . --pmtiles --datetime <sync>` (in `catalog/`) | STAC collections + PMTiles |
 | 4 | `python3 tools/write_metadata.py` | `.portolan/metadata.yaml` from portal text (verbatim descriptions) |
 | 5 | `python3 tools/make_styles.py` | 63 MapLibre styles with legends (see the file's docstring for the legend mechanism) |
-| 6 | `python3 tools/finalize_stac.py` | Providers, license links, default-style roles, checksums, tabular collection |
+| 6 | `python3 tools/finalize_stac.py` | Providers, license/via links, default-style roles, checksums, `source` assets pointing upstream, tabular collection |
 | 7 | `portolan readme` (in `catalog/`) | Generated READMEs + AGENTS.md |
 | 8 | `bash tools/make_thumbnails.sh` | chiitiler renders of each default style |
 | 9 | `python3 tests/run_all.py` | Gates |

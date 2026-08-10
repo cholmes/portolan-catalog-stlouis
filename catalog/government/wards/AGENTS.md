@@ -2,7 +2,7 @@
 
 Boundaries of City of St. Louis wards
 
-10 rows; geometry: Polygon (WGS84 lon/lat unless noted).
+14 rows; geometry: Polygon (WGS84 lon/lat unless noted).
 
 ## Access
 

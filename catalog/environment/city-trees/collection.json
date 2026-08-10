@@ -25,18 +25,6 @@
       "title": "Dataset page on the City of St. Louis open data portal"
     },
     {
-      "rel": "via",
-      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=121",
-      "type": "text/html",
-      "title": "Source dataset on stlouis-mo.gov"
-    },
-    {
-      "rel": "via",
-      "href": "https://maps9.stlouis-mo.gov/arcgis/rest/services/FORESTRY/FORESTRY_TREES/MapServer",
-      "type": "text/html",
-      "title": "Source ArcGIS service"
-    },
-    {
       "rel": "describedby",
       "href": "./README.md",
       "type": "text/markdown"
@@ -51,6 +39,18 @@
       "href": "../catalog.json",
       "type": "application/json",
       "title": "Environment"
+    },
+    {
+      "rel": "via",
+      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=121",
+      "type": "text/html",
+      "title": "Dataset page on the City of St. Louis open data portal"
+    },
+    {
+      "rel": "via",
+      "href": "https://maps9.stlouis-mo.gov/arcgis/rest/services/FORESTRY/FORESTRY_TREES/MapServer",
+      "type": "text/html",
+      "title": "Source ArcGIS service"
     }
   ],
   "stac_extensions": [
@@ -327,6 +327,28 @@
       "roles": [
         "thumbnail"
       ]
+    },
+    "source-geojson": {
+      "href": "https://static.stlouis-mo.gov/open-data/FORESTRY/CITY_TREES.geojson",
+      "type": "application/geo+json",
+      "title": "City trees (GeoJSON)",
+      "roles": [
+        "source"
+      ],
+      "file:size": 76271338,
+      "file:checksum": "12208b86199940ac6ba4ab2bf2316d5269e444965da1553ddf2aa5f5eda87ac57e08",
+      "description": "The city's own alternate distribution of this layer. Served upstream by static.stlouis-mo.gov, not by this mirror; size and checksum are of the bytes it served at the sync time in `updated`."
+    },
+    "source-shapefile": {
+      "href": "https://static.stlouis-mo.gov/open-data/FORESTRY/CITY_TREES.zip",
+      "type": "application/zip",
+      "title": "City trees (zipped Shapefile)",
+      "roles": [
+        "source"
+      ],
+      "file:size": 13155282,
+      "file:checksum": "1220c43fcd431b29abc542dbe31b10b30c5e9714f9585157263ffb6d997c6f6cc816",
+      "description": "The city's own alternate distribution of this layer. Served upstream by static.stlouis-mo.gov, not by this mirror; size and checksum are of the bytes it served at the sync time in `updated`."
     }
   },
   "keywords": [

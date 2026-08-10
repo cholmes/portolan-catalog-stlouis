@@ -28,11 +28,11 @@ Wards & current election precincts for the City of St. Louis. Mirrored from [the
 |------|------|----------|
 | ./election-precincts.parquet | 269.5 KB | 1220998feacc... |
 | ./election-precincts.pmtiles | 370.3 KB | 1220d635020f... |
-| ./styles/default.json | 3.2 KB | 12201a21287c... |
+| ./styles/default.json | 3.3 KB | 1220426ddd5c... |
 | ./styles/style-boundaries.json | 482 B | 122014e02715... |
 | ./styles/style-tint.json | 510 B | 122016607d55... |
-| ./README.md | 2.5 KB | 1220eca8134d... |
 | ./thumbnail.png | 328.4 KB | 12203c318c7f... |
+| https://static.stlouis-mo.gov/open-data/BOEC/Precincts_Current.zip | 285.6 KB | 12205b751cd8... |
 
 ## Quick Start
 
@@ -54,9 +54,13 @@ print(gdf.head())
 
 ## Processing Notes
 
-Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=124).
-Source: https://static.stlouis-mo.gov/open-data/BOEC/Precincts_Current.zip (portal download),
-converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.
+Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=124). Nothing was added to the data and no features were dropped except where noted below.
+
+Downloaded from the city's portal: https://static.stlouis-mo.gov/open-data/BOEC/Precincts_Current.zip (zipped Shapefile).
+
+Converted to GeoParquet with gpio — zstd compression, Hilbert row order, and a covering bbox column with row-group statistics, so a spatial filter can skip most of the file over the network — and tiled to PMTiles with tippecanoe.
+
+The city's own file(s) are published as `source` assets on this collection, linked directly to stlouis-mo.gov — this mirror never becomes the only way to reach the original.
 
 
 ## Attribution

@@ -57,7 +57,7 @@ The Citizens' Service Bureau (CSB) is the customer service department for the Ci
 | ./styles/style-channel.json | 1.7 KB | 12201e1515b0... |
 | ./styles/style-open.json | 1.5 KB | 1220181d4924... |
 | ./thumbnail.png | 369.3 KB | 1220dca6c185... |
-| ./README.md | 5.8 KB | 12202b864328... |
+| https://www.stlouis-mo.gov/data/upload/data-files/csb.zip | 120.1 MB | 1220668c671d... |
 
 ## Quick Start
 
@@ -79,9 +79,15 @@ print(gdf.head())
 
 ## Processing Notes
 
-Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5).
-Source: https://www.stlouis-mo.gov/data/upload/data-files/csb.zip (portal download),
-converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.
+Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=5). Nothing was added to the data and no features were dropped except where noted below.
+
+Downloaded from the city's portal: https://www.stlouis-mo.gov/data/upload/data-files/csb.zip (zipped CSVs, one per year).
+
+The yearly CSVs arrive in mixed UTF-8 and Windows-1252 and were normalized to UTF-8. Coordinates come as Web Mercator `SRX`/`SRY` columns and were reprojected to EPSG:4326; points falling outside the city were set to null rather than dropped, and the roughly 18,000 requests with no coordinates at all are kept as null-geometry rows so the counts still match the city's.
+
+Converted to GeoParquet with gpio — zstd compression, Hilbert row order, and a covering bbox column with row-group statistics, so a spatial filter can skip most of the file over the network — and tiled to PMTiles with tippecanoe.
+
+The city's own file(s) are published as `source` assets on this collection, linked directly to stlouis-mo.gov — this mirror never becomes the only way to reach the original.
 
 
 ## Attribution

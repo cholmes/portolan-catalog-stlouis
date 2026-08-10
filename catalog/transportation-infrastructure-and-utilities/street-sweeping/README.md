@@ -43,7 +43,7 @@ Street sweeping area schedules from the Streets Division. Mirrored from [the cit
 | ./styles/city-renderer.json | 1.8 KB | 12208d749788... |
 | ./styles/default.json | 1.6 KB | 1220336ae297... |
 | ./styles/style-boundaries.json | 472 B | 1220b4d41bac... |
-| ./styles/style-labeled.json | 981 B | 1220a48516e5... |
+| ./styles/style-labeled.json | 1.0 KB | 1220eeca29ca... |
 | ./thumbnail.png | 371.6 KB | 12207f7535d4... |
 
 ## Quick Start
@@ -66,9 +66,16 @@ print(gdf.head())
 
 ## Processing Notes
 
-Mirrored from the City of St. Louis open data portal (https://maps8.stlouis-mo.gov/arcgis/rest/services/STREETS/Street_Sweeping/MapServer).
-Source: https://maps8.stlouis-mo.gov/arcgis/rest/services/STREETS/Street_Sweeping/MapServer (ArcGIS REST service),
-converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.
+Mirrored from the City of St. Louis open data portal (https://maps8.stlouis-mo.gov/arcgis/rest/services/STREETS/Street_Sweeping/MapServer). Nothing was added to the data and no features were dropped except where noted below.
+
+Extracted from the city's own ArcGIS REST service with the Portolan CLI:
+
+    portolan extract arcgis \
+      https://maps8.stlouis-mo.gov/arcgis/rest/services/STREETS/Street_Sweeping/MapServer --layers "Street Sweeping Area Schedule" --raw
+
+That pages the service's `/query` endpoint for every feature, so this is the whole layer rather than the display-capped sample a browser request returns, and it carries across the service's field aliases. The service's own ESRI renderer was captured at the same time and is republished here as `styles/city-renderer.json`, so the map can be drawn in the city's own symbology.
+
+Converted to GeoParquet with gpio — zstd compression, Hilbert row order, and a covering bbox column with row-group statistics, so a spatial filter can skip most of the file over the network — and tiled to PMTiles with tippecanoe.
 
 
 ## Attribution

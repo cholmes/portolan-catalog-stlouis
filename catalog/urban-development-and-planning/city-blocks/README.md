@@ -66,13 +66,14 @@ Information about city blocks. A city block, residential block, urban block, or 
 | ./city-blocks.parquet | 6.9 MB | 122047a49613... |
 | ./city-blocks.pmtiles | 2.3 MB | 122036a2ad24... |
 | ./styles/city-renderer.json | 533 B | 1220d9fd7162... |
-| ./styles/default.json | 1.3 KB | 1220c54ea2ec... |
+| ./styles/default.json | 1.4 KB | 1220b391f63b... |
 | ./styles/style-block-number.json | 1.4 KB | 12205bcd2c5f... |
 | ./styles/style-tint.json | 511 B | 1220bb0e5e3f... |
 | ./thumbnail.png | 401.3 KB | 12202499d034... |
-| ./styles/style-by-census-tract.json | 2.0 KB | 12202fb3f078... |
-| ./styles/style-by-precinct.json | 1.8 KB | 1220332fb290... |
-| ./styles/style-by-ward.json | 1.8 KB | 1220125e2c13... |
+| ./styles/style-by-census-tract.json | 2.1 KB | 1220f78c4c11... |
+| ./styles/style-by-precinct.json | 1.9 KB | 1220f90efd1b... |
+| ./styles/style-by-ward.json | 1.9 KB | 12209819ca16... |
+| https://www.stlouis-mo.gov/data/upload/data-files/blocks_shape.zip | 6.1 MB | 122078f48b9a... |
 
 ## Quick Start
 
@@ -94,9 +95,18 @@ print(gdf.head())
 
 ## Processing Notes
 
-Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=12).
-Source: https://maps8.stlouis-mo.gov/arcgis/rest/services/STLOUIS/BOUNDARIES/MapServer (ArcGIS REST service),
-converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.
+Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=12). Nothing was added to the data and no features were dropped except where noted below.
+
+Extracted from the city's own ArcGIS REST service with the Portolan CLI:
+
+    portolan extract arcgis \
+      https://maps8.stlouis-mo.gov/arcgis/rest/services/STLOUIS/BOUNDARIES/MapServer --layers "City Blocks" --raw
+
+That pages the service's `/query` endpoint for every feature, so this is the whole layer rather than the display-capped sample a browser request returns, and it carries across the service's field aliases. The service's own ESRI renderer was captured at the same time and is republished here as `styles/city-renderer.json`, so the map can be drawn in the city's own symbology.
+
+Converted to GeoParquet with gpio — zstd compression, Hilbert row order, and a covering bbox column with row-group statistics, so a spatial filter can skip most of the file over the network — and tiled to PMTiles with tippecanoe.
+
+The city's own file(s) are published as `source` assets on this collection, linked directly to stlouis-mo.gov — this mirror never becomes the only way to reach the original.
 
 
 ## Attribution

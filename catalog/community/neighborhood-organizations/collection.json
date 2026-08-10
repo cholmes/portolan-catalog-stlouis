@@ -25,19 +25,7 @@
       "rel": "license",
       "href": "https://stlcity.maps.arcgis.com/home/item.html?id=ac198aeb9592458b8591c7258e719ad1",
       "type": "text/html",
-      "title": "Dataset page on the City of St. Louis open data portal"
-    },
-    {
-      "rel": "via",
-      "href": "https://stlcity.maps.arcgis.com/home/item.html?id=ac198aeb9592458b8591c7258e719ad1",
-      "type": "text/html",
-      "title": "Source dataset on stlouis-mo.gov"
-    },
-    {
-      "rel": "via",
-      "href": "https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/Neighborhood_Organizations/FeatureServer",
-      "type": "text/html",
-      "title": "Source ArcGIS service"
+      "title": "Dataset page in the city's ArcGIS Online organization"
     },
     {
       "rel": "pmtiles",
@@ -52,6 +40,18 @@
       "href": "../catalog.json",
       "type": "application/json",
       "title": "Community"
+    },
+    {
+      "rel": "via",
+      "href": "https://stlcity.maps.arcgis.com/home/item.html?id=ac198aeb9592458b8591c7258e719ad1",
+      "type": "text/html",
+      "title": "Dataset page in the city's ArcGIS Online organization"
+    },
+    {
+      "rel": "via",
+      "href": "https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/Neighborhood_Organizations/FeatureServer",
+      "type": "text/html",
+      "title": "Source ArcGIS service"
     }
   ],
   "stac_extensions": [

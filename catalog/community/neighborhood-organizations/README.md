@@ -56,7 +56,7 @@ Neighborhood Organizations as exported 6-20-20 Mirrored from [the city's open da
 | ./neighborhood-organizations.parquet | 78.5 KB | 12205329c100... |
 | ./neighborhood-organizations.pmtiles | 613.3 KB | 1220674faaca... |
 | ./styles/city-renderer.json | 795 B | 122050211d8f... |
-| ./styles/default.json | 1.8 KB | 12200bac4c01... |
+| ./styles/default.json | 1.8 KB | 122033c74bb2... |
 | ./styles/style-501c3.json | 1.1 KB | 1220abdfafe4... |
 | ./styles/style-boundaries.json | 498 B | 12208659ddec... |
 | ./thumbnail.png | 387.8 KB | 12205fee4d44... |
@@ -81,9 +81,16 @@ print(gdf.head())
 
 ## Processing Notes
 
-Mirrored from the City of St. Louis open data portal (https://stlcity.maps.arcgis.com/home/item.html?id=ac198aeb9592458b8591c7258e719ad1).
-Source: https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/Neighborhood_Organizations/FeatureServer (ArcGIS REST service),
-converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.
+Mirrored from the City of St. Louis open data portal (https://stlcity.maps.arcgis.com/home/item.html?id=ac198aeb9592458b8591c7258e719ad1). Nothing was added to the data and no features were dropped except where noted below.
+
+Extracted from the city's own ArcGIS REST service with the Portolan CLI:
+
+    portolan extract arcgis \
+      https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/Neighborhood_Organizations/FeatureServer --raw
+
+That pages the service's `/query` endpoint for every feature, so this is the whole layer rather than the display-capped sample a browser request returns, and it carries across the service's field aliases. The service's own ESRI renderer was captured at the same time and is republished here as `styles/city-renderer.json`, so the map can be drawn in the city's own symbology.
+
+Converted to GeoParquet with gpio — zstd compression, Hilbert row order, and a covering bbox column with row-group statistics, so a spatial filter can skip most of the file over the network — and tiled to PMTiles with tippecanoe.
 
 
 ## Attribution

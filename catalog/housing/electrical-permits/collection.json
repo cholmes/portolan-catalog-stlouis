@@ -283,7 +283,7 @@
       "rel": "via",
       "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=51",
       "type": "text/html",
-      "title": "Source dataset on stlouis-mo.gov"
+      "title": "Dataset page on the City of St. Louis open data portal"
     },
     {
       "rel": "pmtiles",
@@ -358,6 +358,17 @@
       "description": "Every joined parcel in one color, for overlays.",
       "file:size": 534,
       "file:checksum": "12204cb9eef2a2e5bff748557e438fcb8715808860473cb4637bc4af609b9be33dd4"
+    },
+    "source": {
+      "href": "https://www.stlouis-mo.gov/data/upload/data-files/electrical-permits.zip",
+      "type": "application/zip",
+      "title": "Electrical permits (zipped CSV)",
+      "roles": [
+        "source"
+      ],
+      "file:size": 22666999,
+      "file:checksum": "122099c361c3a6a627a33486e288cf780da1b25f6a29a7557521f69e587044b3ed23",
+      "description": "The file this collection was built from. Served upstream by www.stlouis-mo.gov, not by this mirror; size and checksum are of the bytes it served at the sync time in `updated`."
     }
   },
   "title": "Electrical Permits",

@@ -25,18 +25,6 @@
       "title": "Dataset page on the City of St. Louis open data portal"
     },
     {
-      "rel": "via",
-      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=67",
-      "type": "text/html",
-      "title": "Source dataset on stlouis-mo.gov"
-    },
-    {
-      "rel": "via",
-      "href": "https://maps8.stlouis-mo.gov/arcgis/rest/services/STLOUIS/BOUNDARIES/MapServer",
-      "type": "text/html",
-      "title": "Source ArcGIS service"
-    },
-    {
       "rel": "describedby",
       "href": "./README.md",
       "type": "text/markdown"
@@ -51,6 +39,18 @@
       "href": "../catalog.json",
       "type": "application/json",
       "title": "Urban Development and Planning"
+    },
+    {
+      "rel": "via",
+      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=67",
+      "type": "text/html",
+      "title": "Dataset page on the City of St. Louis open data portal"
+    },
+    {
+      "rel": "via",
+      "href": "https://maps8.stlouis-mo.gov/arcgis/rest/services/STLOUIS/BOUNDARIES/MapServer",
+      "type": "text/html",
+      "title": "Source ArcGIS service"
     }
   ],
   "stac_extensions": [
@@ -244,6 +244,17 @@
       "roles": [
         "thumbnail"
       ]
+    },
+    "source-shapefile": {
+      "href": "https://www.stlouis-mo.gov/data/upload/data-files/stl_boundary.zip",
+      "type": "application/zip",
+      "title": "City boundary (zipped Shapefile)",
+      "roles": [
+        "source"
+      ],
+      "file:size": 5251,
+      "file:checksum": "122042a054ef3a77ce5ea948b857ad2d7c7787a775863e22a1d4abefdc4fc308b91c",
+      "description": "The city's own alternate distribution of this layer. Served upstream by www.stlouis-mo.gov, not by this mirror; size and checksum are of the bytes it served at the sync time in `updated`."
     }
   }
 }

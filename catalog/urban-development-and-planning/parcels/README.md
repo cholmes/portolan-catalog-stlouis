@@ -172,6 +172,8 @@ Current and historic parcel data Mirrored from [the city's open data portal](htt
 | ./styles/style-year-built.json | 1.3 KB | 122071ceff97... |
 | ./thumbnail.png | 378.5 KB | 1220875a6b28... |
 | ./styles/style-zoning.json | 1.9 KB | 1220d402120c... |
+| https://static.stlouis-mo.gov/open-data/ASSESSOR/PARCELS.zip | 37.2 MB | 12208764dc57... |
+| https://static.stlouis-mo.gov/open-data/PLANNING/parcels/parcels-basic-info.csv | 14.5 MB | 1220f577044b... |
 
 ## Quick Start
 
@@ -193,9 +195,18 @@ print(gdf.head())
 
 ## Processing Notes
 
-Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=82).
-Source: https://maps8.stlouis-mo.gov/arcgis/rest/services/PDA/PARCELS_PUBLIC/MapServer (ArcGIS REST service),
-converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.
+Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=82). Nothing was added to the data and no features were dropped except where noted below.
+
+Extracted from the city's own ArcGIS REST service with the Portolan CLI:
+
+    portolan extract arcgis \
+      https://maps8.stlouis-mo.gov/arcgis/rest/services/PDA/PARCELS_PUBLIC/MapServer --raw
+
+That pages the service's `/query` endpoint for every feature, so this is the whole layer rather than the display-capped sample a browser request returns, and it carries across the service's field aliases. The service's own ESRI renderer was captured at the same time and is republished here as `styles/city-renderer.json`, so the map can be drawn in the city's own symbology.
+
+Converted to GeoParquet with gpio — zstd compression, Hilbert row order, and a covering bbox column with row-group statistics, so a spatial filter can skip most of the file over the network — and tiled to PMTiles with tippecanoe.
+
+The city's own file(s) are published as `source` assets on this collection, linked directly to stlouis-mo.gov — this mirror never becomes the only way to reach the original.
 
 
 ## Attribution

@@ -275,7 +275,7 @@
       "rel": "via",
       "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=53",
       "type": "text/html",
-      "title": "Source dataset on stlouis-mo.gov"
+      "title": "Dataset page on the City of St. Louis open data portal"
     },
     {
       "rel": "pmtiles",
@@ -350,6 +350,17 @@
       "description": "Every joined parcel in one color, for overlays.",
       "file:size": 530,
       "file:checksum": "12201fc335712f3b9e79cdc1d64d78f57b03ab52c8330e53524af1b0961f17e98d64"
+    },
+    "source": {
+      "href": "https://www.stlouis-mo.gov/data/upload/data-files/plumbing-permits.zip",
+      "type": "application/zip",
+      "title": "Plumbing permits (zipped CSV)",
+      "roles": [
+        "source"
+      ],
+      "file:size": 15917112,
+      "file:checksum": "1220aecb49fe14865b52028ba81deaeea95f09c51bad2421d8096558fe928335673d",
+      "description": "The file this collection was built from. Served upstream by www.stlouis-mo.gov, not by this mirror; size and checksum are of the bytes it served at the sync time in `updated`."
     }
   },
   "title": "Plumbing Permits",

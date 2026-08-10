@@ -422,6 +422,233 @@ SOURCES = {
 
 
 # ---------------------------------------------------------------------------
+# The city's own files, published as `source`-role assets on each collection.
+#
+# formats.md: "A mirror SHOULD also include the original data as an asset when
+# it is directly downloadable (not just an API)." So a Shapefile zip, GeoJSON
+# or CSV the city serves gets an asset pointing straight at stlouis-mo.gov —
+# the mirror never becomes the only way to reach the original. An ArcGIS
+# service is an API, not a download, so it stays a `rel: via` link instead;
+# pinning size and checksum to a live query endpoint would rot on the next
+# upstream edit.
+#
+# `primary: True` marks the file this collection was actually built from
+# (cross-checked against SOURCES by tests/test_catalog.py). The rest are the
+# city's alternate distributions of the same layer, listed because a consumer
+# may want the Shapefile's exact field widths or the CSV's raw text.
+#
+# Only files that are genuinely THIS layer are listed. The portal bundles
+# unrelated downloads on shared dataset pages — par.zip and codes.zip (lookup
+# tables) on the zoning page, LRA_OFFERS.csv on the LRA page, CADDrawings.zip
+# on the blocks page — and those belong to other datasets or to no collection
+# here, so listing them as this collection's source would be a lie. Two
+# candidates were dropped because the city no longer serves them:
+# STLSBDs.geojson (404) and STL-Police-Districts-2014-2.zip (0-byte HTML).
+# ---------------------------------------------------------------------------
+
+SF_STATIC = "https://static.stlouis-mo.gov/open-data"
+SF_FILES = "https://www.stlouis-mo.gov/data/upload/data-files"
+
+SOURCE_FILES = {
+    "parcels": [
+        {"key": "source-shapefile", "url": f"{SF_STATIC}/ASSESSOR/PARCELS.zip",
+         "title": "Parcels — the Assessor's zipped Shapefile"},
+        {"key": "source-csv", "url": f"{SF_STATIC}/PLANNING/parcels/parcels-basic-info.csv",
+         "title": "Parcels — basic info as CSV",
+         "description": "One row per parcel with the headline attributes, no geometry."},
+    ],
+    "parcels-history": [
+        {"key": "source-1997-2000", "primary": True,
+         "url": f"{SF_FILES}/stl_parcels_1997-2000.zip",
+         "title": "Historical parcels 1997–2000 (zipped Shapefiles)"},
+        {"key": "source-2001-2005", "primary": True,
+         "url": f"{SF_FILES}/stl_parcels_2001-2005.zip",
+         "title": "Historical parcels 2001–2005 (zipped Shapefiles)"},
+        {"key": "source-2006-2010", "primary": True,
+         "url": f"{SF_FILES}/stl_parcels_2006-2010.zip",
+         "title": "Historical parcels 2006–2010 (zipped Shapefiles)"},
+        {"key": "source-2011-2015", "primary": True,
+         "url": f"{SF_FILES}/stl_parcels_2011-2015.zip",
+         "title": "Historical parcels 2011–2015 (zipped Shapefiles)"},
+        {"key": "source-2016-2020", "primary": True,
+         "url": f"{SF_FILES}/stl_parcels_2016-2020.zip",
+         "title": "Historical parcels 2016–2020 (zipped Shapefiles)"},
+        {"key": "source-csv-2017-2025", "url": f"{SF_STATIC}/assessor/Parcels-CSV-2017-2025.zip",
+         "title": "Parcel attributes 2017–2025 (zipped CSVs)",
+         "description": "The later, CSV-only continuation of the series; not "
+                        "merged into this collection, which stops at 2020."},
+    ],
+    "neighborhoods": [
+        {"key": "source-shapefile", "url": f"{SF_STATIC}/planning/neighborhoods/neighborhoods.zip",
+         "title": "Neighborhood boundaries (zipped Shapefile)"},
+    ],
+    "city-boundary": [
+        {"key": "source-shapefile", "url": f"{SF_FILES}/stl_boundary.zip",
+         "title": "City boundary (zipped Shapefile)"},
+    ],
+    "city-blocks": [
+        {"key": "source-shapefile", "url": f"{SF_FILES}/blocks_shape.zip",
+         "title": "City blocks (zipped Shapefile)"},
+    ],
+    "streets": [
+        {"key": "source-shapefile", "url": f"{SF_FILES}/streets.zip",
+         "title": "City streets (zipped Shapefile)"},
+    ],
+    "parks": [
+        {"key": "source-shapefile", "url": f"{SF_FILES}/parks.zip",
+         "title": "City parks (zipped Shapefile)"},
+    ],
+    "zoning": [
+        {"key": "source-shapefile", "url": f"{SF_FILES}/zoning.zip",
+         "title": "Zoning districts (zipped Shapefile)"},
+    ],
+    "land-use": [
+        {"key": "source-shapefile", "url": f"{SF_FILES}/SLUPShapefiles2019.zip",
+         "title": "Strategic Land Use Plan 2019 (zipped Shapefiles)",
+         "description": "The 2019 SLUP shapefiles. The collection itself "
+                        "mirrors the 2025 plan from the live service."},
+    ],
+    "historic-districts": [
+        {"key": "source-shapefile", "url": f"{SF_FILES}/historic_dist.zip",
+         "title": "Historic districts (zipped Shapefile)"},
+    ],
+    "city-trees": [
+        {"key": "source-geojson", "url": f"{SF_STATIC}/FORESTRY/CITY_TREES.geojson",
+         "title": "City trees (GeoJSON)"},
+        {"key": "source-shapefile", "url": f"{SF_STATIC}/FORESTRY/CITY_TREES.zip",
+         "title": "City trees (zipped Shapefile)"},
+    ],
+    "tif-districts": [
+        {"key": "source-geojson", "url": f"{SF_STATIC}/SLDC/INCENTIVES/TIF/STLTIFs.geojson",
+         "title": "TIF districts (GeoJSON)"},
+        {"key": "source-shapefile", "url": f"{SF_STATIC}/SLDC/INCENTIVES/TIF/STLTIFs_Shapefile.zip",
+         "title": "TIF districts (zipped Shapefile)"},
+        {"key": "source-csv", "url": f"{SF_STATIC}/SLDC/INCENTIVES/TIF/STLTIFs.csv",
+         "title": "TIF districts (CSV, no geometry)"},
+    ],
+    "opportunity-zones": [
+        {"key": "source-geojson", "url": f"{SF_FILES}/OpportunityZones.geojson",
+         "title": "Opportunity zones (GeoJSON)"},
+        {"key": "source-shapefile", "url": f"{SF_FILES}/OpportunityZones.zip",
+         "title": "Opportunity zones (zipped Shapefile)"},
+    ],
+    "lra-property": [
+        {"key": "source-csv", "url": f"{SF_STATIC}/SLDC/REAL-ESTATE/LRA_INVENTORY.csv",
+         "title": "LRA inventory (CSV, no geometry)"},
+        {"key": "source-csv-available", "url": f"{SF_STATIC}/SLDC/REAL-ESTATE/LRA_INVENTORY_AVAILABLE.csv",
+         "title": "LRA inventory — available properties only (CSV, no geometry)"},
+    ],
+    "community-improvement-districts": [
+        {"key": "source", "primary": True,
+         "url": f"{SF_STATIC}/SLDC/TAXING-DISTRICTS/CID/STLCIDs.geojson",
+         "title": "Community improvement districts (GeoJSON)"},
+        {"key": "source-shapefile", "url": f"{SF_STATIC}/SLDC/TAXING-DISTRICTS/CID/STLCIDs_Shapefile.zip",
+         "title": "Community improvement districts (zipped Shapefile)"},
+    ],
+    "special-business-districts": [
+        {"key": "source", "primary": True,
+         "url": f"{SF_STATIC}/SLDC/TAXING-DISTRICTS/SBD/STLSBDs_Shapefile.zip",
+         "title": "Special business districts (zipped Shapefile)"},
+    ],
+    "tax-abated-parcels": [
+        {"key": "source", "primary": True,
+         "url": f"{SF_STATIC}/SLDC/TAX-ABATEMENT/taxabatedparcels.geojson",
+         "title": "Tax-abated parcels (GeoJSON)"},
+        {"key": "source-shapefile", "url": f"{SF_STATIC}/SLDC/TAX-ABATEMENT/taxabatedparcels.zip",
+         "title": "Tax-abated parcels (zipped Shapefile)"},
+    ],
+    "wards": [
+        {"key": "source", "primary": True,
+         "url": f"{SF_STATIC}/planning/wards/wards_2020.zip",
+         "title": "Ward boundaries 2020 (zipped Shapefile)"},
+    ],
+    "wards-2010": [
+        {"key": "source", "primary": True,
+         "url": f"{SF_STATIC}/planning/wards/wards_2010.zip",
+         "title": "Ward boundaries 2010 (zipped Shapefile)"},
+    ],
+    "election-precincts": [
+        {"key": "source", "primary": True,
+         "url": f"{SF_STATIC}/BOEC/Precincts_Current.zip",
+         "title": "Current election precincts (zipped Shapefile)"},
+    ],
+    "csb-311-requests": [
+        {"key": "source", "primary": True, "url": f"{SF_FILES}/csb.zip",
+         "title": "Citizens' Service Bureau requests (zipped CSVs, one per year)"},
+    ],
+    "property-taxes": [
+        {"key": "source", "primary": True, "url": f"{SF_FILES}/prcl.zip",
+         "title": "Property taxes (zipped Microsoft Access database)"},
+    ],
+    "property-sales": [
+        {"key": "source", "primary": True, "url": f"{SF_FILES}/prclsale.zip",
+         "title": "Property sales (zipped Microsoft Access database)"},
+    ],
+    "electrical-permits": [
+        {"key": "source", "primary": True, "url": f"{SF_FILES}/electrical-permits.zip",
+         "title": "Electrical permits (zipped CSV)"},
+    ],
+    "mechanical-permits": [
+        {"key": "source", "primary": True, "url": f"{SF_FILES}/mechanical-permits.zip",
+         "title": "Mechanical permits (zipped CSV)"},
+    ],
+    "plumbing-permits": [
+        {"key": "source", "primary": True, "url": f"{SF_FILES}/plumbing-permits.zip",
+         "title": "Plumbing permits (zipped CSV)"},
+    ],
+    "occupancy-permits": [
+        {"key": "source", "primary": True, "url": f"{SF_FILES}/occupancy-permits.zip",
+         "title": "Occupancy permits (zipped CSV)"},
+    ],
+    "street-permits": [
+        {"key": "source", "primary": True, "url": f"{SF_FILES}/streets/street-permits.csv",
+         "title": "Street permits (CSV)"},
+    ],
+    "animal-bites": [
+        {"key": "source", "primary": True,
+         "url": f"{SF_STATIC}/HEALTH/ANIMAL-CONTROL/ANIMAL_BITES.csv",
+         "title": "Animal bites (CSV)"},
+    ],
+    # Crime is the one collection whose source file list is not fixed: SLMPD
+    # posts a new monthly CSV on crime_stats.shtml and the mirror picks up
+    # whatever is there at sync time. tools/fetch_source_meta.py scrapes the
+    # index and writes the month-by-month entries into the checksum sidecar.
+    "crime": "scrape",
+}
+
+# Extension → media type for the source assets above.
+SOURCE_MEDIA_TYPES = {
+    ".zip": "application/zip",
+    ".geojson": "application/geo+json",
+    ".json": "application/json",
+    ".csv": "text/csv",
+}
+
+
+def source_media_type(url: str) -> str:
+    for ext, mt in SOURCE_MEDIA_TYPES.items():
+        if url.lower().split("?")[0].endswith(ext):
+            return mt
+    return "application/octet-stream"
+
+
+def source_files(cid: str) -> list:
+    """The city's downloadable originals for a collection, primary first.
+
+    Returns [] for the collections that only exist as a live ArcGIS service —
+    those get a `rel: via` link instead, since an API is not a download.
+    """
+    entries = SOURCE_FILES.get(cid)
+    if not entries or entries == "scrape":
+        return []
+    out = [dict(e) for e in entries]
+    for e in out:
+        e.setdefault("primary", False)
+        e["type"] = source_media_type(e["url"])
+    return sorted(out, key=lambda e: not e["primary"])
+
+
+# ---------------------------------------------------------------------------
 # Department sub-catalogs (wave 4). Collection ids become POSIX paths
 # ("assessor/parcels") per the Portolan nested-catalogs-flat-collections rule.
 # ---------------------------------------------------------------------------

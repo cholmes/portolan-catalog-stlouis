@@ -9,9 +9,16 @@ attribution: "City of St. Louis — Community Development Administration"
 source_url: "https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/2024_Market_Value_Analysis/FeatureServer"
 keywords: [st-louis, missouri, open-data, market, value, analysis]
 processing_notes: |
-  Mirrored from the City of St. Louis open data portal (https://stlcity.maps.arcgis.com/home/item.html?id=e71e3ebca1f345a4b7db134d30c5d9ff).
-  Source: https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/2024_Market_Value_Analysis/FeatureServer (ArcGIS REST service),
-  converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.
+  Mirrored from the City of St. Louis open data portal (https://stlcity.maps.arcgis.com/home/item.html?id=e71e3ebca1f345a4b7db134d30c5d9ff). Nothing was added to the data and no features were dropped except where noted below.
+
+  Extracted from the city's own ArcGIS REST service with the Portolan CLI:
+
+      portolan extract arcgis \
+        https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/2024_Market_Value_Analysis/FeatureServer --raw
+
+  That pages the service's `/query` endpoint for every feature, so this is the whole layer rather than the display-capped sample a browser request returns, and it carries across the service's field aliases. The service's own ESRI renderer was captured at the same time and is republished here as `styles/city-renderer.json`, so the map can be drawn in the city's own symbology.
+
+  Converted to GeoParquet with gpio — zstd compression, Hilbert row order, and a covering bbox column with row-group statistics, so a spatial filter can skip most of the file over the network — and tiled to PMTiles with tippecanoe.
 examples:
   - engine: duckdb
     description: "Count rows by MVACluster, straight off the published file"

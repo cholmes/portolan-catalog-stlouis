@@ -25,18 +25,6 @@
       "title": "Dataset page on the City of St. Louis open data portal"
     },
     {
-      "rel": "via",
-      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=30",
-      "type": "text/html",
-      "title": "Source dataset on stlouis-mo.gov"
-    },
-    {
-      "rel": "via",
-      "href": "https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/SLDC_Real_Estate/FeatureServer",
-      "type": "text/html",
-      "title": "Source ArcGIS service"
-    },
-    {
       "rel": "describedby",
       "href": "./README.md",
       "type": "text/markdown"
@@ -51,6 +39,18 @@
       "href": "../catalog.json",
       "type": "application/json",
       "title": "Housing"
+    },
+    {
+      "rel": "via",
+      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=30",
+      "type": "text/html",
+      "title": "Dataset page on the City of St. Louis open data portal"
+    },
+    {
+      "rel": "via",
+      "href": "https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/SLDC_Real_Estate/FeatureServer",
+      "type": "text/html",
+      "title": "Source ArcGIS service"
     }
   ],
   "stac_extensions": [
@@ -509,6 +509,28 @@
       "roles": [
         "thumbnail"
       ]
+    },
+    "source-csv": {
+      "href": "https://static.stlouis-mo.gov/open-data/SLDC/REAL-ESTATE/LRA_INVENTORY.csv",
+      "type": "text/csv",
+      "title": "LRA inventory (CSV, no geometry)",
+      "roles": [
+        "source"
+      ],
+      "file:size": 2903535,
+      "file:checksum": "1220d7b16705c950f6026ed34026cd4ac3c97c873177910be9c8027d41c793953430",
+      "description": "The city's own alternate distribution of this layer. Served upstream by static.stlouis-mo.gov, not by this mirror; size and checksum are of the bytes it served at the sync time in `updated`."
+    },
+    "source-csv-available": {
+      "href": "https://static.stlouis-mo.gov/open-data/SLDC/REAL-ESTATE/LRA_INVENTORY_AVAILABLE.csv",
+      "type": "text/csv",
+      "title": "LRA inventory \u2014 available properties only (CSV, no geometry)",
+      "roles": [
+        "source"
+      ],
+      "file:size": 1798356,
+      "file:checksum": "1220486039ebe45431d2c877da3f4bf9f3bc21d0da3c20b690005dc84b2650e5d746",
+      "description": "The city's own alternate distribution of this layer. Served upstream by static.stlouis-mo.gov, not by this mirror; size and checksum are of the bytes it served at the sync time in `updated`."
     }
   }
 }

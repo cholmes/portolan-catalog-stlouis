@@ -12,7 +12,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from sources import SOURCES, coll_rel, linkify
+from sources import SOURCES, SOURCE_FILES, coll_rel, linkify, source_files
 
 ROOT = Path(__file__).resolve().parent.parent
 CATALOG = ROOT / "catalog"
@@ -42,8 +42,19 @@ processing_notes: |
   Mirrored from the City of St. Louis open data portal and the city's public
   ArcGIS REST services (maps6/maps8/maps9.stlouis-mo.gov). Source formats
   (ArcGIS layers, Shapefile, GeoJSON, CSV, DBF) converted to cloud-native
-  GeoParquet and PMTiles. The city publishes no explicit data license;
-  see each dataset's page on the portal for its terms and context.
+  GeoParquet and PMTiles.
+
+  Every collection says where its data came from and what was done to it, in
+  its own processing notes. Where the city serves a downloadable file, that
+  file is published as a `source` asset pointing straight at stlouis-mo.gov,
+  with the size and checksum of the bytes it served at sync time — so the
+  original stays one click away and this mirror never becomes the only route
+  to it. Where the origin is a live ArcGIS service there is no file to link,
+  so it is recorded as a `via` link and the extraction command is written out
+  in the collection's notes.
+
+  The city publishes no explicit data license; see each dataset's page on the
+  portal for its terms and context.
 examples:
   - engine: duckdb
     description: "LRA-owned vacant lots per neighborhood, joining two collections remotely"
@@ -115,6 +126,141 @@ def example_block(coll_id: str) -> str:
     return "\n".join(lines)
 
 
+# What actually happened to each dataset between the city's server and the
+# published Parquet, beyond the common convert-and-tile. Anything that
+# changed row counts, column values or coordinates has to be stated, or the
+# mirror quietly misrepresents the city's data.
+PROCESSING_EXTRA = {
+    "parcels-history": "The five era archives were unpacked and concatenated "
+        "into one collection with an added `era` column, so a parcel can be "
+        "followed across the 1997-2020 series in a single query.",
+    "crime": "The monthly files arrive in mixed encodings, so each was "
+        "normalized to UTF-8 before they were merged into one table.",
+    "csb-311-requests": "The yearly CSVs arrive in mixed UTF-8 and "
+        "Windows-1252 and were normalized to UTF-8. Coordinates come as Web "
+        "Mercator `SRX`/`SRY` columns and were reprojected to EPSG:4326; "
+        "points falling outside the city were set to null rather than "
+        "dropped, and the roughly 18,000 requests with no coordinates at all "
+        "are kept as null-geometry rows so the counts still match the city's.",
+    "property-taxes": "The Access database was unpacked and its `Prcl` table "
+        "exported with `mdb-export` before conversion.",
+    "property-sales": "The Access database was unpacked and its `PrclSale` "
+        "table exported with `mdb-export`, then left-joined to the database's "
+        "own `CdSaleType` lookup table so each sale carries a readable "
+        "`SaleTypeDescr` instead of a bare code.",
+    "street-permits": "The CSV arrives in Windows-1252 and was normalized to "
+        "UTF-8.",
+    "lra-property": "The SLDC service carries every parcel in the city, not "
+        "just the LRA's; this collection is the `LRA = 'YES'` subset.",
+    "lead-service-lines": "The service returns coded domain values; the "
+        "material and status codes were decoded to their labels using the "
+        "service's own domain definitions, alongside the raw codes.",
+    "animal-bites": "The city geocodes these to addresses; a handful land "
+        "well outside the city, so points were clipped to the city boundary "
+        "with a small buffer.",
+    "bike-infrastructure": "The service splits the network across five "
+        "layers; all five were extracted and merged, with a `source_layer` "
+        "column recording which one each feature came from.",
+    "election-results-nov-2024": "This is a FeatureServer table rather than a "
+        "map layer, so it was paged through `/query` with "
+        "`returnGeometry=false` and written straight to Parquet.",
+    "land-use": "This mirrors the 2025 Strategic Land Use Plan from the live "
+        "service. The 2019 shapefile edition the portal still offers is "
+        "linked as a source asset but is not what this collection contains.",
+    "wards": "The city's Hosted ward FeatureServer carries only 10 of the 14 "
+        "wards, so this collection is built from the portal's shapefile "
+        "download, which has all 14.",
+}
+
+# Collections whose Parquet has no geometry of its own, and whose map layer is
+# therefore built by running the documented join against a geometry
+# collection (tools/make_joined_pmtiles.py).
+JOIN_NOTE = {
+    "property-taxes": ("parcels", "parcel id"),
+    "property-sales": ("parcels", "parcel id"),
+    "electrical-permits": ("parcels", "parcel handle"),
+    "mechanical-permits": ("parcels", "parcel handle"),
+    "plumbing-permits": ("parcels", "parcel handle"),
+    "occupancy-permits": ("parcels", "parcel handle"),
+    "street-permits": ("neighborhoods", "neighborhood name"),
+    "election-results-nov-2024": ("election-precincts", "ward and precinct"),
+}
+
+
+def format_phrase(coll_id: str) -> str:
+    """"zipped Shapefile", "GeoJSON", ... — from the source file's own title."""
+    for e in source_files(coll_id):
+        if e["primary"] and "(" in e["title"]:
+            return e["title"].rsplit("(", 1)[1].rstrip(")")
+    return "portal download"
+
+
+def processing_notes(coll_id: str) -> str:
+    src = SOURCES[coll_id]
+    origin = src.get("service") or src.get("url")
+    paras = [
+        f"Mirrored from the City of St. Louis open data portal "
+        f"({src['portal_page']}). Nothing was added to the data and no "
+        f"features were dropped except where noted below."
+    ]
+    if src["type"] == "arcgis":
+        layers = f' --layers "{src["layers"]}"' if src.get("layers") else ""
+        paras.append(
+            "Extracted from the city's own ArcGIS REST service with the "
+            "Portolan CLI:\n\n"
+            f"    portolan extract arcgis \\\n      {origin}{layers} --raw\n\n"
+            "That pages the service's `/query` endpoint for every feature, so "
+            "this is the whole layer rather than the display-capped sample a "
+            "browser request returns, and it carries across the service's "
+            "field aliases. The service's own ESRI renderer was captured at "
+            "the same time and is republished here as "
+            "`styles/city-renderer.json`, so the map can be drawn in the "
+            "city's own symbology.")
+    elif src.get("crime_scrape"):
+        paras.append(
+            f"SLMPD does not publish a single file or a service — it posts "
+            f"one CSV per month on {origin}, and the portal's dataset page "
+            f"just points there. The index is read and every CSV it links is "
+            f"downloaded, so the mirror carries whatever months were "
+            f"published at sync time.")
+    else:
+        paras.append(
+            f"Downloaded from the city's portal: {origin} "
+            f"({format_phrase(coll_id)}).")
+    if coll_id in PROCESSING_EXTRA:
+        paras.append(PROCESSING_EXTRA[coll_id])
+    paras.append(
+        "Converted to GeoParquet with gpio — zstd compression, Hilbert row "
+        "order, and a covering bbox column with row-group statistics, so a "
+        "spatial filter can skip most of the file over the network — and "
+        "tiled to PMTiles with tippecanoe."
+        if coll_id not in JOIN_NOTE else
+        "Converted to Parquet with gpio (zstd), keeping the source's own "
+        "columns. The city publishes this without geometry, so it stays that "
+        "way here.")
+    if coll_id in JOIN_NOTE:
+        other, key = JOIN_NOTE[coll_id]
+        paras.append(
+            f"The map layer is a derived product: the PMTiles were built by "
+            f"actually running the documented join against the `{other}` "
+            f"collection on {key}, so the data can be mapped without anyone "
+            f"having to run the join first. The Parquet is unjoined. The "
+            f"exact query is in AGENTS.md.")
+    if SOURCE_FILES.get(coll_id):
+        paras.append(
+            "The city's own file(s) are published as `source` assets on this "
+            "collection, linked directly to stlouis-mo.gov — this mirror "
+            "never becomes the only way to reach the original.")
+    return "\n\n".join(paras)
+
+
+def indent_block(key: str, text: str) -> str:
+    lines = [f"{key}: |"]
+    for para in text.split("\n"):
+        lines.append(f"  {para}" if para else "")
+    return "\n".join(lines)
+
+
 def collection_yaml(coll_id: str) -> str:
     src = SOURCES[coll_id]
     desc = DESCRIPTIONS.get(coll_id, {}).get("description", "")
@@ -133,13 +279,7 @@ def collection_yaml(coll_id: str) -> str:
         f"attribution: {yq('City of St. Louis — ' + dept)}",
         f"source_url: {yq(src.get('service') or src.get('url'))}",
         f"keywords: [{', '.join(dict.fromkeys(kw))}]",
-        "processing_notes: |",
-        f"  Mirrored from the City of St. Louis open data portal"
-        f" ({src['portal_page']}).",
-        f"  Source: {src.get('service') or src.get('url')}"
-        f" ({'ArcGIS REST service' if src['type'] == 'arcgis' else 'portal download'}),",
-        "  converted to GeoParquet (zstd, spatially ordered, covering bbox)"
-        " and PMTiles.",
+        indent_block("processing_notes", processing_notes(coll_id)),
         example_block(coll_id),
     ]
     return "\n".join(l for l in lines if l) + "\n"

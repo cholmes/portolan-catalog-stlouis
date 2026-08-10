@@ -167,6 +167,8 @@ Parcels within the City of Saint Louis that have obtained and activated an abate
 | ./styles/style-expiring.json | 1.1 KB | 1220b7b8a843... |
 | ./styles/style-solid.json | 548 B | 12204ac43989... |
 | ./thumbnail.png | 369.5 KB | 12200794c846... |
+| https://static.stlouis-mo.gov/open-data/SLDC/TAX-ABATEMENT/taxabatedparcels.geojson | 4.2 MB | 1220c9e8b959... |
+| https://static.stlouis-mo.gov/open-data/SLDC/TAX-ABATEMENT/taxabatedparcels.zip | 564.3 KB | 1220240920ac... |
 
 ## Quick Start
 
@@ -188,9 +190,13 @@ print(gdf.head())
 
 ## Processing Notes
 
-Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=61).
-Source: https://static.stlouis-mo.gov/open-data/SLDC/TAX-ABATEMENT/taxabatedparcels.geojson (portal download),
-converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.
+Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=61). Nothing was added to the data and no features were dropped except where noted below.
+
+Downloaded from the city's portal: https://static.stlouis-mo.gov/open-data/SLDC/TAX-ABATEMENT/taxabatedparcels.geojson (GeoJSON).
+
+Converted to GeoParquet with gpio — zstd compression, Hilbert row order, and a covering bbox column with row-group statistics, so a spatial filter can skip most of the file over the network — and tiled to PMTiles with tippecanoe.
+
+The city's own file(s) are published as `source` assets on this collection, linked directly to stlouis-mo.gov — this mirror never becomes the only way to reach the original.
 
 
 ## Attribution

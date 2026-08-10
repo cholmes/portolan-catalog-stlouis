@@ -25,18 +25,6 @@
       "title": "Dataset page on the City of St. Louis open data portal"
     },
     {
-      "rel": "via",
-      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=131",
-      "type": "text/html",
-      "title": "Source dataset on stlouis-mo.gov"
-    },
-    {
-      "rel": "via",
-      "href": "https://maps8.stlouis-mo.gov/arcgis/rest/services/Hosted/City_of_St__Louis_Ward_Boundaries/FeatureServer",
-      "type": "text/html",
-      "title": "Source ArcGIS service"
-    },
-    {
       "rel": "describedby",
       "href": "./README.md",
       "type": "text/markdown"
@@ -51,6 +39,12 @@
       "href": "../catalog.json",
       "type": "application/json",
       "title": "Government"
+    },
+    {
+      "rel": "via",
+      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=131",
+      "type": "text/html",
+      "title": "Dataset page on the City of St. Louis open data portal"
     }
   ],
   "stac_extensions": [
@@ -61,8 +55,8 @@
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
   ],
   "geoparquet:geometry_type": "Polygon",
-  "geoparquet:feature_count": 10,
-  "table:row_count": 10,
+  "geoparquet:feature_count": 14,
+  "table:row_count": 14,
   "table:primary_geometry": "geometry",
   "table:columns": [
     {
@@ -1249,6 +1243,17 @@
       "roles": [
         "thumbnail"
       ]
+    },
+    "source": {
+      "href": "https://static.stlouis-mo.gov/open-data/planning/wards/wards_2020.zip",
+      "type": "application/zip",
+      "title": "Ward boundaries 2020 (zipped Shapefile)",
+      "roles": [
+        "source"
+      ],
+      "file:size": 79830,
+      "file:checksum": "1220d5ef9b5625aa42b1159cc1a4f9fca6ceb54d0f04dda70b3ad51c36d8b1e1478e",
+      "description": "The file this collection was built from. Served upstream by static.stlouis-mo.gov, not by this mirror; size and checksum are of the bytes it served at the sync time in `updated`."
     }
   },
   "keywords": [

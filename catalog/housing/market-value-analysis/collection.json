@@ -25,19 +25,7 @@
       "rel": "license",
       "href": "https://stlcity.maps.arcgis.com/home/item.html?id=e71e3ebca1f345a4b7db134d30c5d9ff",
       "type": "text/html",
-      "title": "Dataset page on the City of St. Louis open data portal"
-    },
-    {
-      "rel": "via",
-      "href": "https://stlcity.maps.arcgis.com/home/item.html?id=e71e3ebca1f345a4b7db134d30c5d9ff",
-      "type": "text/html",
-      "title": "Source dataset on stlouis-mo.gov"
-    },
-    {
-      "rel": "via",
-      "href": "https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/2024_Market_Value_Analysis/FeatureServer",
-      "type": "text/html",
-      "title": "Source ArcGIS service"
+      "title": "Dataset page in the city's ArcGIS Online organization"
     },
     {
       "rel": "pmtiles",
@@ -52,6 +40,18 @@
       "href": "../catalog.json",
       "type": "application/json",
       "title": "Housing"
+    },
+    {
+      "rel": "via",
+      "href": "https://stlcity.maps.arcgis.com/home/item.html?id=e71e3ebca1f345a4b7db134d30c5d9ff",
+      "type": "text/html",
+      "title": "Dataset page in the city's ArcGIS Online organization"
+    },
+    {
+      "rel": "via",
+      "href": "https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/2024_Market_Value_Analysis/FeatureServer",
+      "type": "text/html",
+      "title": "Source ArcGIS service"
     }
   ],
   "stac_extensions": [

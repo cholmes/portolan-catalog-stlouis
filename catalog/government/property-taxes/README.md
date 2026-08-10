@@ -215,6 +215,7 @@ Property tax records by parcel Mirrored from [the city's open data portal](https
 | ./styles/default.json | 1.3 KB | 1220b7f6be0a... |
 | ./styles/style-land-value.json | 1.3 KB | 122019ca0a76... |
 | ./styles/style-solid.json | 506 B | 1220fa3a2804... |
+| https://www.stlouis-mo.gov/data/upload/data-files/prcl.zip | 107.5 MB | 12202249855b... |
 
 ## Quick Start
 
@@ -236,9 +237,17 @@ print(gdf.head())
 
 ## Processing Notes
 
-Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=3).
-Source: https://www.stlouis-mo.gov/data/upload/data-files/prcl.zip (portal download),
-converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.
+Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=3). Nothing was added to the data and no features were dropped except where noted below.
+
+Downloaded from the city's portal: https://www.stlouis-mo.gov/data/upload/data-files/prcl.zip (zipped Microsoft Access database).
+
+The Access database was unpacked and its `Prcl` table exported with `mdb-export` before conversion.
+
+Converted to Parquet with gpio (zstd), keeping the source's own columns. The city publishes this without geometry, so it stays that way here.
+
+The map layer is a derived product: the PMTiles were built by actually running the documented join against the `parcels` collection on parcel id, so the data can be mapped without anyone having to run the join first. The Parquet is unjoined. The exact query is in AGENTS.md.
+
+The city's own file(s) are published as `source` assets on this collection, linked directly to stlouis-mo.gov — this mirror never becomes the only way to reach the original.
 
 
 ## Attribution

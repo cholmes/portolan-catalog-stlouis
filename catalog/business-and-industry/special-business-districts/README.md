@@ -52,9 +52,9 @@ Special business districts (SBDs) within the City of Saint Louis. SBDs are estab
 | ./special-business-districts.pmtiles | 65.2 KB | 1220783186ae... |
 | ./styles/default.json | 1.1 KB | 1220a8916942... |
 | ./styles/style-boundaries.json | 498 B | 12203828e01c... |
-| ./styles/style-labeled.json | 1008 B | 1220cd21824e... |
-| ./README.md | 3.3 KB | 1220c9e44321... |
+| ./styles/style-labeled.json | 1.1 KB | 1220cdcc43d1... |
 | ./thumbnail.png | 368.8 KB | 122091599d3f... |
+| https://static.stlouis-mo.gov/open-data/SLDC/TAXING-DISTRICTS/SBD/STLSBDs_Shapefile.zip | 26.2 KB | 1220436fc168... |
 
 ## Quick Start
 
@@ -76,9 +76,13 @@ print(gdf.head())
 
 ## Processing Notes
 
-Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=62).
-Source: https://static.stlouis-mo.gov/open-data/SLDC/TAXING-DISTRICTS/SBD/STLSBDs_Shapefile.zip (portal download),
-converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.
+Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=62). Nothing was added to the data and no features were dropped except where noted below.
+
+Downloaded from the city's portal: https://static.stlouis-mo.gov/open-data/SLDC/TAXING-DISTRICTS/SBD/STLSBDs_Shapefile.zip (zipped Shapefile).
+
+Converted to GeoParquet with gpio — zstd compression, Hilbert row order, and a covering bbox column with row-group statistics, so a spatial filter can skip most of the file over the network — and tiled to PMTiles with tippecanoe.
+
+The city's own file(s) are published as `source` assets on this collection, linked directly to stlouis-mo.gov — this mirror never becomes the only way to reach the original.
 
 
 ## Attribution

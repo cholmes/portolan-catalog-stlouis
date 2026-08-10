@@ -53,6 +53,7 @@ Strategic land use (SLUP),parcel, and zoning data Mirrored from [the city's open
 | ./styles/style-amendments.json | 1.2 KB | 1220021c03a0... |
 | ./styles/style-boundaries.json | 462 B | 122028fc3221... |
 | ./thumbnail.png | 389.1 KB | 12207f5aad9c... |
+| https://www.stlouis-mo.gov/data/upload/data-files/SLUPShapefiles2019.zip | 4.4 MB | 1220aea74851... |
 
 ## Quick Start
 
@@ -74,9 +75,20 @@ print(gdf.head())
 
 ## Processing Notes
 
-Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=78).
-Source: https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/Strategic_Land_Use_Plan/FeatureServer (ArcGIS REST service),
-converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.
+Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=78). Nothing was added to the data and no features were dropped except where noted below.
+
+Extracted from the city's own ArcGIS REST service with the Portolan CLI:
+
+    portolan extract arcgis \
+      https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/Strategic_Land_Use_Plan/FeatureServer --raw
+
+That pages the service's `/query` endpoint for every feature, so this is the whole layer rather than the display-capped sample a browser request returns, and it carries across the service's field aliases. The service's own ESRI renderer was captured at the same time and is republished here as `styles/city-renderer.json`, so the map can be drawn in the city's own symbology.
+
+This mirrors the 2025 Strategic Land Use Plan from the live service. The 2019 shapefile edition the portal still offers is linked as a source asset but is not what this collection contains.
+
+Converted to GeoParquet with gpio — zstd compression, Hilbert row order, and a covering bbox column with row-group statistics, so a spatial filter can skip most of the file over the network — and tiled to PMTiles with tippecanoe.
+
+The city's own file(s) are published as `source` assets on this collection, linked directly to stlouis-mo.gov — this mirror never becomes the only way to reach the original.
 
 
 ## Attribution

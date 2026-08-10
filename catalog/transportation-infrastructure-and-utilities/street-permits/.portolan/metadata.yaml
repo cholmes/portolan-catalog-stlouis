@@ -9,9 +9,17 @@ attribution: "City of St. Louis — Streets - Street Division"
 source_url: "https://www.stlouis-mo.gov/data/upload/data-files/streets/street-permits.csv"
 keywords: [st-louis, missouri, open-data, street, permits]
 processing_notes: |
-  Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=17).
-  Source: https://www.stlouis-mo.gov/data/upload/data-files/streets/street-permits.csv (portal download),
-  converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.
+  Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=17). Nothing was added to the data and no features were dropped except where noted below.
+
+  Downloaded from the city's portal: https://www.stlouis-mo.gov/data/upload/data-files/streets/street-permits.csv (CSV).
+
+  The CSV arrives in Windows-1252 and was normalized to UTF-8.
+
+  Converted to Parquet with gpio (zstd), keeping the source's own columns. The city publishes this without geometry, so it stays that way here.
+
+  The map layer is a derived product: the PMTiles were built by actually running the documented join against the `neighborhoods` collection on neighborhood name, so the data can be mapped without anyone having to run the join first. The Parquet is unjoined. The exact query is in AGENTS.md.
+
+  The city's own file(s) are published as `source` assets on this collection, linked directly to stlouis-mo.gov — this mirror never becomes the only way to reach the original.
 examples:
   - engine: duckdb
     description: "Count rows by TYPE, straight off the published file"

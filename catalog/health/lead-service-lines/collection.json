@@ -25,19 +25,7 @@
       "rel": "license",
       "href": "https://stlcity.maps.arcgis.com/home/item.html?id=80c69343cc2d418fb1796a342a863aac",
       "type": "text/html",
-      "title": "Dataset page on the City of St. Louis open data portal"
-    },
-    {
-      "rel": "via",
-      "href": "https://stlcity.maps.arcgis.com/home/item.html?id=80c69343cc2d418fb1796a342a863aac",
-      "type": "text/html",
-      "title": "Source dataset on stlouis-mo.gov"
-    },
-    {
-      "rel": "via",
-      "href": "https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/STLWD_LSLI__Read_Only_View/FeatureServer",
-      "type": "text/html",
-      "title": "Source ArcGIS service"
+      "title": "Dataset page in the city's ArcGIS Online organization"
     },
     {
       "rel": "pmtiles",
@@ -52,6 +40,18 @@
       "href": "../catalog.json",
       "type": "application/json",
       "title": "Health"
+    },
+    {
+      "rel": "via",
+      "href": "https://stlcity.maps.arcgis.com/home/item.html?id=80c69343cc2d418fb1796a342a863aac",
+      "type": "text/html",
+      "title": "Dataset page in the city's ArcGIS Online organization"
+    },
+    {
+      "rel": "via",
+      "href": "https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/STLWD_LSLI__Read_Only_View/FeatureServer",
+      "type": "text/html",
+      "title": "Source ArcGIS service"
     }
   ],
   "stac_extensions": [

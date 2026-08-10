@@ -131,7 +131,7 @@
       "rel": "via",
       "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=31",
       "type": "text/html",
-      "title": "Source dataset on stlouis-mo.gov"
+      "title": "Dataset page on the City of St. Louis open data portal"
     },
     {
       "rel": "pmtiles",
@@ -217,6 +217,17 @@
       "description": "Sales stepped by decade, 2020s in red.",
       "file:size": 1237,
       "file:checksum": "1220cdf948972743d64bea79c3b5b6e77aeb486d8edd4af81ccbe4b978465e482787"
+    },
+    "source": {
+      "href": "https://www.stlouis-mo.gov/data/upload/data-files/prclsale.zip",
+      "type": "application/zip",
+      "title": "Property sales (zipped Microsoft Access database)",
+      "roles": [
+        "source"
+      ],
+      "file:size": 6708413,
+      "file:checksum": "1220e171db3259dd4fb29b8737302fc395def2579f49f169483a08296e00900cd202",
+      "description": "The file this collection was built from. Served upstream by www.stlouis-mo.gov, not by this mirror; size and checksum are of the bytes it served at the sync time in `updated`."
     }
   },
   "title": "Property Sales",

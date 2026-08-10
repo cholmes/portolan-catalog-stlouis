@@ -296,7 +296,7 @@
       "rel": "via",
       "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=52",
       "type": "text/html",
-      "title": "Source dataset on stlouis-mo.gov"
+      "title": "Dataset page on the City of St. Louis open data portal"
     },
     {
       "rel": "pmtiles",
@@ -371,6 +371,17 @@
       "description": "Every joined parcel in one color, for overlays.",
       "file:size": 534,
       "file:checksum": "12204341e887ccd94e2f2ff1cd4ff0c43377f8f6aafdbbf609d9866a8c989082060a"
+    },
+    "source": {
+      "href": "https://www.stlouis-mo.gov/data/upload/data-files/mechanical-permits.zip",
+      "type": "application/zip",
+      "title": "Mechanical permits (zipped CSV)",
+      "roles": [
+        "source"
+      ],
+      "file:size": 6601816,
+      "file:checksum": "1220953fd7d3c77a8196995f0eace6e88d3aeccad36f33f5237e6a73a8d2a756b474",
+      "description": "The file this collection was built from. Served upstream by www.stlouis-mo.gov, not by this mirror; size and checksum are of the bytes it served at the sync time in `updated`."
     }
   },
   "title": "Mechanical Permits",

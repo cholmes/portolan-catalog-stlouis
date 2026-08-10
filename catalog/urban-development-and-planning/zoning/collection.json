@@ -25,18 +25,6 @@
       "title": "Dataset page on the City of St. Louis open data portal"
     },
     {
-      "rel": "via",
-      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=78",
-      "type": "text/html",
-      "title": "Source dataset on stlouis-mo.gov"
-    },
-    {
-      "rel": "via",
-      "href": "https://maps9.stlouis-mo.gov/arcgis/rest/services/PDA/Zoning/MapServer",
-      "type": "text/html",
-      "title": "Source ArcGIS service"
-    },
-    {
       "rel": "describedby",
       "href": "./README.md",
       "type": "text/markdown"
@@ -51,6 +39,18 @@
       "href": "../catalog.json",
       "type": "application/json",
       "title": "Urban Development and Planning"
+    },
+    {
+      "rel": "via",
+      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=78",
+      "type": "text/html",
+      "title": "Dataset page on the City of St. Louis open data portal"
+    },
+    {
+      "rel": "via",
+      "href": "https://maps9.stlouis-mo.gov/arcgis/rest/services/PDA/Zoning/MapServer",
+      "type": "text/html",
+      "title": "Source ArcGIS service"
     }
   ],
   "stac_extensions": [
@@ -241,6 +241,17 @@
       "roles": [
         "thumbnail"
       ]
+    },
+    "source-shapefile": {
+      "href": "https://www.stlouis-mo.gov/data/upload/data-files/zoning.zip",
+      "type": "application/zip",
+      "title": "Zoning districts (zipped Shapefile)",
+      "roles": [
+        "source"
+      ],
+      "file:size": 11265845,
+      "file:checksum": "1220d9fb6429ed752ac1d29f29e61894f43e86543133299d2d7126417a8a8400260d",
+      "description": "The city's own alternate distribution of this layer. Served upstream by www.stlouis-mo.gov, not by this mirror; size and checksum are of the bytes it served at the sync time in `updated`."
     }
   },
   "keywords": [

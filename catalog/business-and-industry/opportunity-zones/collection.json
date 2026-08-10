@@ -25,18 +25,6 @@
       "title": "Dataset page on the City of St. Louis open data portal"
     },
     {
-      "rel": "via",
-      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=59",
-      "type": "text/html",
-      "title": "Source dataset on stlouis-mo.gov"
-    },
-    {
-      "rel": "via",
-      "href": "https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/Opportunity_Zones/FeatureServer",
-      "type": "text/html",
-      "title": "Source ArcGIS service"
-    },
-    {
       "rel": "describedby",
       "href": "./README.md",
       "type": "text/markdown"
@@ -51,6 +39,18 @@
       "href": "../catalog.json",
       "type": "application/json",
       "title": "Business and Industry"
+    },
+    {
+      "rel": "via",
+      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=59",
+      "type": "text/html",
+      "title": "Dataset page on the City of St. Louis open data portal"
+    },
+    {
+      "rel": "via",
+      "href": "https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/Opportunity_Zones/FeatureServer",
+      "type": "text/html",
+      "title": "Source ArcGIS service"
     }
   ],
   "stac_extensions": [
@@ -257,6 +257,28 @@
       "roles": [
         "thumbnail"
       ]
+    },
+    "source-geojson": {
+      "href": "https://www.stlouis-mo.gov/data/upload/data-files/OpportunityZones.geojson",
+      "type": "application/geo+json",
+      "title": "Opportunity zones (GeoJSON)",
+      "roles": [
+        "source"
+      ],
+      "file:size": 166174,
+      "file:checksum": "12206575e7435b2b2dd89a59e54bfa5e4c5efea0d222769d6fe01196be1a4bb89591",
+      "description": "The city's own alternate distribution of this layer. Served upstream by www.stlouis-mo.gov, not by this mirror; size and checksum are of the bytes it served at the sync time in `updated`."
+    },
+    "source-shapefile": {
+      "href": "https://www.stlouis-mo.gov/data/upload/data-files/OpportunityZones.zip",
+      "type": "application/zip",
+      "title": "Opportunity zones (zipped Shapefile)",
+      "roles": [
+        "source"
+      ],
+      "file:size": 58107,
+      "file:checksum": "12201f1be0eced87386112f72c6f847a69d926992aa85ccae603252b5626b84fc023",
+      "description": "The city's own alternate distribution of this layer. Served upstream by www.stlouis-mo.gov, not by this mirror; size and checksum are of the bytes it served at the sync time in `updated`."
     }
   }
 }

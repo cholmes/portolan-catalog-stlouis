@@ -25,18 +25,6 @@
       "title": "Dataset page on the City of St. Louis open data portal"
     },
     {
-      "rel": "via",
-      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=82",
-      "type": "text/html",
-      "title": "Source dataset on stlouis-mo.gov"
-    },
-    {
-      "rel": "via",
-      "href": "https://maps8.stlouis-mo.gov/arcgis/rest/services/PDA/PARCELS_PUBLIC/MapServer",
-      "type": "text/html",
-      "title": "Source ArcGIS service"
-    },
-    {
       "rel": "describedby",
       "href": "./README.md",
       "type": "text/markdown"
@@ -51,6 +39,18 @@
       "href": "../catalog.json",
       "type": "application/json",
       "title": "Urban Development and Planning"
+    },
+    {
+      "rel": "via",
+      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=82",
+      "type": "text/html",
+      "title": "Dataset page on the City of St. Louis open data portal"
+    },
+    {
+      "rel": "via",
+      "href": "https://maps8.stlouis-mo.gov/arcgis/rest/services/PDA/PARCELS_PUBLIC/MapServer",
+      "type": "text/html",
+      "title": "Source ArcGIS service"
     }
   ],
   "stac_extensions": [
@@ -862,6 +862,28 @@
       "description": "Each parcel colored by its zoning letter from the assessor record, using the city's official district names (A Single-Family through L Jefferson Memorial).",
       "file:size": 1896,
       "file:checksum": "1220d402120cd37c7fde87c873a1b2c87284857ab06217f82240dd264076624b1d8c"
+    },
+    "source-shapefile": {
+      "href": "https://static.stlouis-mo.gov/open-data/ASSESSOR/PARCELS.zip",
+      "type": "application/zip",
+      "title": "Parcels \u2014 the Assessor's zipped Shapefile",
+      "roles": [
+        "source"
+      ],
+      "file:size": 38974839,
+      "file:checksum": "12208764dc57ea51b4867fdd940af292080bb00218cd4382833f66f74faf39e93d12",
+      "description": "The city's own alternate distribution of this layer. Served upstream by static.stlouis-mo.gov, not by this mirror; size and checksum are of the bytes it served at the sync time in `updated`."
+    },
+    "source-csv": {
+      "href": "https://static.stlouis-mo.gov/open-data/PLANNING/parcels/parcels-basic-info.csv",
+      "type": "text/csv",
+      "title": "Parcels \u2014 basic info as CSV",
+      "roles": [
+        "source"
+      ],
+      "file:size": 15196852,
+      "file:checksum": "1220f577044b671bdbc04030d76735ab119636fd86cdfed7ebf5fb116344bfa0ca2b",
+      "description": "One row per parcel with the headline attributes, no geometry. The city's own alternate distribution of this layer. Served upstream by static.stlouis-mo.gov, not by this mirror; size and checksum are of the bytes it served at the sync time in `updated`."
     }
   }
 }

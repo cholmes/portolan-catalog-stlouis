@@ -34,18 +34,18 @@
       "title": "Dataset page on the City of St. Louis open data portal"
     },
     {
-      "rel": "via",
-      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=82",
-      "type": "text/html",
-      "title": "Source dataset on stlouis-mo.gov"
-    },
-    {
       "rel": "pmtiles",
       "href": "./parcels-history.pmtiles",
       "type": "application/vnd.pmtiles",
       "pmtiles:layers": [
         "parcels-history"
       ]
+    },
+    {
+      "rel": "via",
+      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=82",
+      "type": "text/html",
+      "title": "Dataset page on the City of St. Louis open data portal"
     }
   ],
   "stac_extensions": [
@@ -536,6 +536,72 @@
       "description": "Each 1997 parcel filled by its zoning letter \u2014 compare with the current parcels collection's zoning view to see three decades of rezoning.",
       "file:size": 2174,
       "file:checksum": "122034b4142c75246d0e6a06ef066f51f1a8b67dd36b40dbb55cb16443bc11ef1da9"
+    },
+    "source-1997-2000": {
+      "href": "https://www.stlouis-mo.gov/data/upload/data-files/stl_parcels_1997-2000.zip",
+      "type": "application/zip",
+      "title": "Historical parcels 1997\u20132000 (zipped Shapefiles)",
+      "roles": [
+        "source"
+      ],
+      "file:size": 94809214,
+      "file:checksum": "122077ed89fa07f2b0f3ed8c19dd62469ac6f9f8aaa37efa38bf00ec98639247b2c4",
+      "description": "The file this collection was built from. Served upstream by www.stlouis-mo.gov, not by this mirror; size and checksum are of the bytes it served at the sync time in `updated`."
+    },
+    "source-2001-2005": {
+      "href": "https://www.stlouis-mo.gov/data/upload/data-files/stl_parcels_2001-2005.zip",
+      "type": "application/zip",
+      "title": "Historical parcels 2001\u20132005 (zipped Shapefiles)",
+      "roles": [
+        "source"
+      ],
+      "file:size": 120326328,
+      "file:checksum": "122099d283df1b7458505f6c87485f8b86a371297c43199029490d5f9ea06d6b0653",
+      "description": "The file this collection was built from. Served upstream by www.stlouis-mo.gov, not by this mirror; size and checksum are of the bytes it served at the sync time in `updated`."
+    },
+    "source-2006-2010": {
+      "href": "https://www.stlouis-mo.gov/data/upload/data-files/stl_parcels_2006-2010.zip",
+      "type": "application/zip",
+      "title": "Historical parcels 2006\u20132010 (zipped Shapefiles)",
+      "roles": [
+        "source"
+      ],
+      "file:size": 120276545,
+      "file:checksum": "1220d4d45521c4073e63e9ccaa294899481d735f5f15153771d7e040d8e4105dd39c",
+      "description": "The file this collection was built from. Served upstream by www.stlouis-mo.gov, not by this mirror; size and checksum are of the bytes it served at the sync time in `updated`."
+    },
+    "source-2011-2015": {
+      "href": "https://www.stlouis-mo.gov/data/upload/data-files/stl_parcels_2011-2015.zip",
+      "type": "application/zip",
+      "title": "Historical parcels 2011\u20132015 (zipped Shapefiles)",
+      "roles": [
+        "source"
+      ],
+      "file:size": 126829173,
+      "file:checksum": "1220cff039903b1506869374a55d0913b75ad62d3a4a7b901dcf2b344369512bbbb0",
+      "description": "The file this collection was built from. Served upstream by www.stlouis-mo.gov, not by this mirror; size and checksum are of the bytes it served at the sync time in `updated`."
+    },
+    "source-2016-2020": {
+      "href": "https://www.stlouis-mo.gov/data/upload/data-files/stl_parcels_2016-2020.zip",
+      "type": "application/zip",
+      "title": "Historical parcels 2016\u20132020 (zipped Shapefiles)",
+      "roles": [
+        "source"
+      ],
+      "file:size": 54584255,
+      "file:checksum": "12204fd896e9d4275332b011d1a4937fa4ec6f27fb2330c8c928fb4e05eb5d449f38",
+      "description": "The file this collection was built from. Served upstream by www.stlouis-mo.gov, not by this mirror; size and checksum are of the bytes it served at the sync time in `updated`."
+    },
+    "source-csv-2017-2025": {
+      "href": "https://static.stlouis-mo.gov/open-data/assessor/Parcels-CSV-2017-2025.zip",
+      "type": "application/zip",
+      "title": "Parcel attributes 2017\u20132025 (zipped CSVs)",
+      "roles": [
+        "source"
+      ],
+      "file:size": 87630456,
+      "file:checksum": "1220f58dd5fa42892c5a8ea41f08606ac976b58c1b365c78d367949144cb75087077",
+      "description": "The later, CSV-only continuation of the series; not merged into this collection, which stops at 2020. The city's own alternate distribution of this layer. Served upstream by static.stlouis-mo.gov, not by this mirror; size and checksum are of the bytes it served at the sync time in `updated`."
     }
   },
   "updated": "2026-08-05T19:58:51+00:00",

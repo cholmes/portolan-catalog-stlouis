@@ -82,6 +82,7 @@ Mechanical permit information by property type, year, neighborhood, ward, and pr
 | ./styles/default.json | 1.4 KB | 12203a6a7a0f... |
 | ./styles/style-recent.json | 1.0 KB | 122042891edb... |
 | ./styles/style-solid.json | 534 B | 12204341e887... |
+| https://www.stlouis-mo.gov/data/upload/data-files/mechanical-permits.zip | 6.3 MB | 1220953fd7d3... |
 
 ## Quick Start
 
@@ -103,9 +104,15 @@ print(gdf.head())
 
 ## Processing Notes
 
-Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=52).
-Source: https://www.stlouis-mo.gov/data/upload/data-files/mechanical-permits.zip (portal download),
-converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.
+Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=52). Nothing was added to the data and no features were dropped except where noted below.
+
+Downloaded from the city's portal: https://www.stlouis-mo.gov/data/upload/data-files/mechanical-permits.zip (zipped CSV).
+
+Converted to Parquet with gpio (zstd), keeping the source's own columns. The city publishes this without geometry, so it stays that way here.
+
+The map layer is a derived product: the PMTiles were built by actually running the documented join against the `parcels` collection on parcel handle, so the data can be mapped without anyone having to run the join first. The Parquet is unjoined. The exact query is in AGENTS.md.
+
+The city's own file(s) are published as `source` assets on this collection, linked directly to stlouis-mo.gov — this mirror never becomes the only way to reach the original.
 
 
 ## Attribution

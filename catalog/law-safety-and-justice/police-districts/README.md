@@ -33,10 +33,10 @@ GIS data for police district boundaries Mirrored from [the city's open data port
 | ./police-districts.parquet | 29.0 KB | 122070bc4bc5... |
 | ./police-districts.pmtiles | 43.6 KB | 1220031cf64f... |
 | ./styles/city-renderer.json | 769 B | 12203a97278b... |
-| ./styles/default.json | 2.1 KB | 1220c6914f04... |
+| ./styles/default.json | 2.2 KB | 12206fc6deef... |
 | ./styles/style-boundaries.json | 478 B | 1220aacc4a9f... |
 | ./styles/style-subtle.json | 734 B | 122004969b96... |
-| ./thumbnail.png | 286.7 KB | 1220d67fb304... |
+| ./thumbnail.png | 288.8 KB | 12201f9a71bd... |
 
 ## Quick Start
 
@@ -58,9 +58,16 @@ print(gdf.head())
 
 ## Processing Notes
 
-Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=83).
-Source: https://maps8.stlouis-mo.gov/arcgis/rest/services/STLOUIS/POLICE_DISTRICT/FeatureServer (ArcGIS REST service),
-converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.
+Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=83). Nothing was added to the data and no features were dropped except where noted below.
+
+Extracted from the city's own ArcGIS REST service with the Portolan CLI:
+
+    portolan extract arcgis \
+      https://maps8.stlouis-mo.gov/arcgis/rest/services/STLOUIS/POLICE_DISTRICT/FeatureServer --raw
+
+That pages the service's `/query` endpoint for every feature, so this is the whole layer rather than the display-capped sample a browser request returns, and it carries across the service's field aliases. The service's own ESRI renderer was captured at the same time and is republished here as `styles/city-renderer.json`, so the map can be drawn in the city's own symbology.
+
+Converted to GeoParquet with gpio — zstd compression, Hilbert row order, and a covering bbox column with row-group statistics, so a spatial filter can skip most of the file over the network — and tiled to PMTiles with tippecanoe.
 
 
 ## Attribution

@@ -31,13 +31,7 @@
       "rel": "license",
       "href": "https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/Tax_Sales/FeatureServer",
       "type": "text/html",
-      "title": "Dataset page on the City of St. Louis open data portal"
-    },
-    {
-      "rel": "via",
-      "href": "https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/Tax_Sales/FeatureServer",
-      "type": "text/html",
-      "title": "Source ArcGIS service"
+      "title": "Source ArcGIS service \u2014 this layer has no portal dataset page"
     },
     {
       "rel": "pmtiles",
@@ -46,6 +40,12 @@
       "pmtiles:layers": [
         "tax-sales"
       ]
+    },
+    {
+      "rel": "via",
+      "href": "https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/Tax_Sales/FeatureServer",
+      "type": "text/html",
+      "title": "Source ArcGIS service \u2014 this layer has no portal dataset page"
     }
   ],
   "stac_extensions": [

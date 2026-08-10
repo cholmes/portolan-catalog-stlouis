@@ -25,12 +25,6 @@
       "title": "Dataset page on the City of St. Louis open data portal"
     },
     {
-      "rel": "via",
-      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=58",
-      "type": "text/html",
-      "title": "Source dataset on stlouis-mo.gov"
-    },
-    {
       "rel": "describedby",
       "href": "./README.md",
       "type": "text/markdown"
@@ -45,6 +39,12 @@
       "href": "../catalog.json",
       "type": "application/json",
       "title": "Business and Industry"
+    },
+    {
+      "rel": "via",
+      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=58",
+      "type": "text/html",
+      "title": "Dataset page on the City of St. Louis open data portal"
     }
   ],
   "stac_extensions": [
@@ -300,6 +300,28 @@
       "roles": [
         "thumbnail"
       ]
+    },
+    "source": {
+      "href": "https://static.stlouis-mo.gov/open-data/SLDC/TAXING-DISTRICTS/CID/STLCIDs.geojson",
+      "type": "application/geo+json",
+      "title": "Community improvement districts (GeoJSON)",
+      "roles": [
+        "source"
+      ],
+      "file:size": 223953,
+      "file:checksum": "1220f9836fabaee1ca8c31a1e3bf914fc8e1d6980a86717b3343dbd904c68ac430a7",
+      "description": "The file this collection was built from. Served upstream by static.stlouis-mo.gov, not by this mirror; size and checksum are of the bytes it served at the sync time in `updated`."
+    },
+    "source-shapefile": {
+      "href": "https://static.stlouis-mo.gov/open-data/SLDC/TAXING-DISTRICTS/CID/STLCIDs_Shapefile.zip",
+      "type": "application/zip",
+      "title": "Community improvement districts (zipped Shapefile)",
+      "roles": [
+        "source"
+      ],
+      "file:size": 69167,
+      "file:checksum": "12209f4eb7de3135b20e9edcfff5ae418001218fd30660883e5e339c9f6afeba0976",
+      "description": "The city's own alternate distribution of this layer. Served upstream by static.stlouis-mo.gov, not by this mirror; size and checksum are of the bytes it served at the sync time in `updated`."
     }
   }
 }

@@ -17,6 +17,15 @@ lives in `catalog/` and is synced 1:1 to
 3. **`tools/sources.py` is the source of truth** for what each collection
    is and where it comes from. Change sources there, then re-run
    fetch → assemble → add → finalize.
+   `SOURCE_FILES` in the same file lists the city's own downloadable
+   originals per collection; they become `source`-role assets whose hrefs
+   point at stlouis-mo.gov, not at this mirror. Only list files that really
+   are that layer — the portal bundles unrelated downloads on shared dataset
+   pages. A live ArcGIS service is an API, not a download, so it gets a
+   `rel: via` link instead; pinning a checksum to a query endpoint would
+   rot on the next upstream edit. After changing `SOURCE_FILES`, re-run
+   `tools/fetch_source_meta.py` — remote assets carry the size and digest of
+   the bytes the city actually served, never a guess.
 4. **Spec target**: Portolan v0.1.0 plus PR #97 (one style asset per
    collection carries `roles: ["style","default"]`) and PR #124
    (collection-level `table:columns`/`table:row_count`/`table:primary_geometry`).
@@ -39,6 +48,17 @@ lives in `catalog/` and is synced 1:1 to
   MDB's own CdSaleType lookup joined in as `SaleTypeDescr`.
 - Parcel join key: `HANDLE` / `ParcelId` on parcels; `AsrParcelId` on
   property-sales.
+- `static.stlouis-mo.gov` and `www.stlouis-mo.gov` drop TLS handshakes under
+  sustained load — the same URL 200s one minute and fails to connect the
+  next, and it stays unhappy for a while after a big pull. Not a block on any
+  particular path. `tools/fetch_source_meta.py --retries N` rides it out.
+- A dropped connection reads as a clean EOF, so a truncated download hashes
+  fine and lies. `hash_url` checks the byte count against `Content-Length`;
+  rashid's PTL-DAT-001/002 catch anything that slips past.
+- `catalog/health/animal-bites`: 6,359 rows but only 217 non-null geometries.
+  The city-boundary clip in `assemble.py` nulls ~96% of the geocoded points —
+  either the clip is wrong or the source coordinates are not what we assume.
+  Unresolved; it predates the source-asset work.
 
 ## Environment
 

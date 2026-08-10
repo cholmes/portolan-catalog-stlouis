@@ -54,6 +54,8 @@ All mapped planting sites within the city for tree plantings managed by the Fore
 | ./styles/style-size.json | 1.5 KB | 1220448e4357... |
 | ./styles/style-species.json | 2.0 KB | 1220b8a56073... |
 | ./thumbnail.png | 386.0 KB | 12203e30b419... |
+| https://static.stlouis-mo.gov/open-data/FORESTRY/CITY_TREES.geojson | 72.7 MB | 12208b861999... |
+| https://static.stlouis-mo.gov/open-data/FORESTRY/CITY_TREES.zip | 12.5 MB | 1220c43fcd43... |
 
 ## Quick Start
 
@@ -75,9 +77,18 @@ print(gdf.head())
 
 ## Processing Notes
 
-Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=121).
-Source: https://maps9.stlouis-mo.gov/arcgis/rest/services/FORESTRY/FORESTRY_TREES/MapServer (ArcGIS REST service),
-converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.
+Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=121). Nothing was added to the data and no features were dropped except where noted below.
+
+Extracted from the city's own ArcGIS REST service with the Portolan CLI:
+
+    portolan extract arcgis \
+      https://maps9.stlouis-mo.gov/arcgis/rest/services/FORESTRY/FORESTRY_TREES/MapServer --layers "CITY_TREES_ALL_SITES" --raw
+
+That pages the service's `/query` endpoint for every feature, so this is the whole layer rather than the display-capped sample a browser request returns, and it carries across the service's field aliases. The service's own ESRI renderer was captured at the same time and is republished here as `styles/city-renderer.json`, so the map can be drawn in the city's own symbology.
+
+Converted to GeoParquet with gpio — zstd compression, Hilbert row order, and a covering bbox column with row-group statistics, so a spatial filter can skip most of the file over the network — and tiled to PMTiles with tippecanoe.
+
+The city's own file(s) are published as `source` assets on this collection, linked directly to stlouis-mo.gov — this mirror never becomes the only way to reach the original.
 
 
 ## Attribution

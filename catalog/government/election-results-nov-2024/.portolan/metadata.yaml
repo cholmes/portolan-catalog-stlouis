@@ -9,9 +9,20 @@ attribution: "City of St. Louis — Board of Election Commissioners"
 source_url: "https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/Nov24_Detailed_Vote_Totals_Test/FeatureServer"
 keywords: [st-louis, missouri, open-data, election, results, nov, 2024]
 processing_notes: |
-  Mirrored from the City of St. Louis open data portal (https://stlcity.maps.arcgis.com/home/item.html?id=6e72fa855cd445f7af37d79615f602d0).
-  Source: https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/Nov24_Detailed_Vote_Totals_Test/FeatureServer (ArcGIS REST service),
-  converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.
+  Mirrored from the City of St. Louis open data portal (https://stlcity.maps.arcgis.com/home/item.html?id=6e72fa855cd445f7af37d79615f602d0). Nothing was added to the data and no features were dropped except where noted below.
+
+  Extracted from the city's own ArcGIS REST service with the Portolan CLI:
+
+      portolan extract arcgis \
+        https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/Nov24_Detailed_Vote_Totals_Test/FeatureServer --raw
+
+  That pages the service's `/query` endpoint for every feature, so this is the whole layer rather than the display-capped sample a browser request returns, and it carries across the service's field aliases. The service's own ESRI renderer was captured at the same time and is republished here as `styles/city-renderer.json`, so the map can be drawn in the city's own symbology.
+
+  This is a FeatureServer table rather than a map layer, so it was paged through `/query` with `returnGeometry=false` and written straight to Parquet.
+
+  Converted to Parquet with gpio (zstd), keeping the source's own columns. The city publishes this without geometry, so it stays that way here.
+
+  The map layer is a derived product: the PMTiles were built by actually running the documented join against the `election-precincts` collection on ward and precinct, so the data can be mapped without anyone having to run the join first. The Parquet is unjoined. The exact query is in AGENTS.md.
 examples:
   - engine: duckdb
     description: "Count rows by Contest_Title, straight off the published file"

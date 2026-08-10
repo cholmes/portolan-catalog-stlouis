@@ -22,8 +22,19 @@ processing_notes: |
   Mirrored from the City of St. Louis open data portal and the city's public
   ArcGIS REST services (maps6/maps8/maps9.stlouis-mo.gov). Source formats
   (ArcGIS layers, Shapefile, GeoJSON, CSV, DBF) converted to cloud-native
-  GeoParquet and PMTiles. The city publishes no explicit data license;
-  see each dataset's page on the portal for its terms and context.
+  GeoParquet and PMTiles.
+
+  Every collection says where its data came from and what was done to it, in
+  its own processing notes. Where the city serves a downloadable file, that
+  file is published as a `source` asset pointing straight at stlouis-mo.gov,
+  with the size and checksum of the bytes it served at sync time — so the
+  original stays one click away and this mirror never becomes the only route
+  to it. Where the origin is a live ArcGIS service there is no file to link,
+  so it is recorded as a `via` link and the extraction command is written out
+  in the collection's notes.
+
+  The city publishes no explicit data license; see each dataset's page on the
+  portal for its terms and context.
 examples:
   - engine: duckdb
     description: "LRA-owned vacant lots per neighborhood, joining two collections remotely"

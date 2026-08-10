@@ -76,6 +76,18 @@ def check_collection(coll_dir: Path):
         err(f"{cid}: missing license link")
     if "table:columns" not in coll:
         err(f"{cid}: missing collection-level table:columns")
+    # A row count that outlives its file is worse than none: it is the number
+    # every README, AGENTS.md and catalog total is computed from.
+    pq = coll_dir / f"{cid.split('/')[-1]}.parquet"
+    if pq.exists() and not LIGHT:
+        import duckdb
+        n = duckdb.sql(f"SELECT count(*) FROM '{pq}'").fetchone()[0]
+        if coll.get("table:row_count") != n:
+            err(f"{cid}: table:row_count {coll.get('table:row_count')} "
+                f"!= {n} rows in the parquet")
+        fc = coll.get("geoparquet:feature_count")
+        if fc is not None and fc != n:
+            err(f"{cid}: geoparquet:feature_count {fc} != {n} rows")
 
     for l in coll["links"]:
         if l["rel"] == "pmtiles" and not l.get("pmtiles:layers"):
@@ -90,6 +102,20 @@ def check_collection(coll_dir: Path):
     # Assets
     defaults = []
     for key, a in coll.get("assets", {}).items():
+        if a["href"].startswith("http"):
+            # A `source` asset points at the city's own copy on a server we
+            # do not control, so there is no local file to compare against.
+            # What we can insist on is that it is fetchable over https and
+            # that it carries the size and digest of the bytes it served —
+            # an unpinned remote asset is an unverifiable claim.
+            if not a["href"].startswith("https://"):
+                err(f"{cid}: asset {key} remote href is not https")
+            if "source" not in a.get("roles", []):
+                err(f"{cid}: remote asset {key} must carry the source role")
+            for field in ("file:size", "file:checksum"):
+                if field not in a:
+                    err(f"{cid}: remote asset {key} missing {field}")
+            continue
         p = (coll_dir / a["href"]).resolve()
         if not p.exists():
             if not LIGHT:
@@ -152,7 +178,45 @@ def check_collection(coll_dir: Path):
                 err(f"{cid}/{sf.name}: data-driven style lacks legend fill layer")
 
 
+def check_source_manifest() -> None:
+    """SOURCE_FILES must not drift from the sources it claims to mirror.
+
+    The primary entries duplicate SOURCES' `url`/`urls` so each file can carry
+    its own title, and a duplicate that stops matching would advertise the
+    wrong origin — the one thing a source asset exists to get right.
+    """
+    import sys
+    sys.path.insert(0, str(ROOT / "tools"))
+    from sources import SOURCES, SOURCE_FILES, source_files
+
+    for cid, src in SOURCES.items():
+        # parcels-history carries both: `urls` is the real set, `url` is its
+        # first element, kept as the single-source display value.
+        expected = set()
+        if src.get("urls"):
+            expected = set(src["urls"])
+        elif src.get("url") and not src.get("crime_scrape"):
+            expected = {src["url"]}
+        listed = {e["url"] for e in source_files(cid) if e["primary"]}
+        if expected != listed:
+            err(f"{cid}: SOURCE_FILES primaries {sorted(listed)} "
+                f"!= SOURCES {sorted(expected)}")
+        if expected and not listed and SOURCE_FILES.get(cid) != "scrape":
+            err(f"{cid}: downloadable source is not published as an asset")
+
+    sc = ROOT / "sources" / "source_checksums.json"
+    if not sc.exists():
+        err("sources/source_checksums.json missing "
+            "(run tools/fetch_source_meta.py)")
+        return
+    have = json.loads(sc.read_text())["collections"]
+    for cid in SOURCE_FILES:
+        if not have.get(cid):
+            err(f"{cid}: no source checksums recorded")
+
+
 def main() -> int:
+    check_source_manifest()
     cat = json.loads((CATALOG / "catalog.json").read_text())
     if any(l["rel"] == "self" for l in cat["links"]):
         err("catalog: has self link")

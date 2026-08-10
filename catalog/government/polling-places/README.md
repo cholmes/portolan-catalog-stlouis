@@ -43,7 +43,7 @@ Polling Centers Mirrored from [the city's open data portal](https://stlcity.maps
 | ./polling-places.parquet | 21.0 KB | 1220db38dfc9... |
 | ./polling-places.pmtiles | 49.4 KB | 1220de18d675... |
 | ./styles/city-renderer.json | 532 B | 12204d13d332... |
-| ./styles/default.json | 1.2 KB | 122072a2977c... |
+| ./styles/default.json | 1.3 KB | 122038b36713... |
 | ./styles/style-accessible.json | 1.4 KB | 12209bc43f28... |
 | ./styles/style-citywide.json | 1.3 KB | 1220cab25d7b... |
 | ./thumbnail.png | 359.8 KB | 1220a532e3f4... |
@@ -68,9 +68,16 @@ print(gdf.head())
 
 ## Processing Notes
 
-Mirrored from the City of St. Louis open data portal (https://stlcity.maps.arcgis.com/home/item.html?id=87bc5cf8db58428295792e690397ed75).
-Source: https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/Polling_Centers_WFL1/FeatureServer (ArcGIS REST service),
-converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.
+Mirrored from the City of St. Louis open data portal (https://stlcity.maps.arcgis.com/home/item.html?id=87bc5cf8db58428295792e690397ed75). Nothing was added to the data and no features were dropped except where noted below.
+
+Extracted from the city's own ArcGIS REST service with the Portolan CLI:
+
+    portolan extract arcgis \
+      https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/Polling_Centers_WFL1/FeatureServer --raw
+
+That pages the service's `/query` endpoint for every feature, so this is the whole layer rather than the display-capped sample a browser request returns, and it carries across the service's field aliases. The service's own ESRI renderer was captured at the same time and is republished here as `styles/city-renderer.json`, so the map can be drawn in the city's own symbology.
+
+Converted to GeoParquet with gpio — zstd compression, Hilbert row order, and a covering bbox column with row-group statistics, so a spatial filter can skip most of the file over the network — and tiled to PMTiles with tippecanoe.
 
 
 ## Attribution

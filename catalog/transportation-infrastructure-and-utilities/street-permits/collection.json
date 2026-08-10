@@ -115,7 +115,7 @@
       "rel": "via",
       "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=17",
       "type": "text/html",
-      "title": "Source dataset on stlouis-mo.gov"
+      "title": "Dataset page on the City of St. Louis open data portal"
     },
     {
       "rel": "pmtiles",
@@ -190,6 +190,17 @@
       "description": "Neighborhoods with any street permit.",
       "file:size": 513,
       "file:checksum": "1220d965101a4b26514bedfd5827076298e6d8a17df4c240d395c467f7fe4ceaf681"
+    },
+    "source": {
+      "href": "https://www.stlouis-mo.gov/data/upload/data-files/streets/street-permits.csv",
+      "type": "text/csv",
+      "title": "Street permits (CSV)",
+      "roles": [
+        "source"
+      ],
+      "file:size": 12985446,
+      "file:checksum": "122086a38b60145fe44c71cd02cfdf743f29e21149809710863f2b14810bdae12810",
+      "description": "The file this collection was built from. Served upstream by www.stlouis-mo.gov, not by this mirror; size and checksum are of the bytes it served at the sync time in `updated`."
     }
   },
   "title": "Street Permits",

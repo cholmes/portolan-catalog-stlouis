@@ -56,6 +56,12 @@ DESCRIPTIONS = json.loads((ROOT / "docs" / "portal-descriptions.json").read_text
 _cn = ROOT / "docs" / "column-notes.json"
 COLUMN_NOTES = json.loads(_cn.read_text()) if _cn.exists() else {}
 
+# The city's own files, with the size and checksum of the bytes it served at
+# sync time (tools/fetch_source_meta.py). Absent on a fresh clone that has not
+# run that script yet, in which case collections simply get no source assets.
+_sc = ROOT / "sources" / "source_checksums.json"
+SOURCE_CHECKSUMS = json.loads(_sc.read_text())["collections"] if _sc.exists() else {}
+
 # Arrow → table-extension-ish type names already handled by CLI; for the
 # hand-authored tabular collection we map duckdb types.
 DUCK_TO_TABLE = {
@@ -83,6 +89,49 @@ def stamp_asset(coll_dir: Path, href: str, asset: dict) -> None:
     if p.exists():
         asset["file:size"] = p.stat().st_size
         asset["file:checksum"] = multihash(p)
+
+
+def portal_link_title(url: str) -> str:
+    """Name the page honestly — a third of these are not dataset.cfm pages."""
+    if "dataset.cfm" in url:
+        return "Dataset page on the City of St. Louis open data portal"
+    if "maps.arcgis.com" in url:
+        return "Dataset page in the city's ArcGIS Online organization"
+    return "Source ArcGIS service — this layer has no portal dataset page"
+
+
+def source_assets(coll_id: str) -> dict:
+    """The city's own files as `source`-role assets, pointing upstream.
+
+    `source` and not `data`: core.md scopes `data` to the cloud-native
+    primary, and a client filtering on it should land on the GeoParquet, not
+    on a zipped Shapefile. The role also tells rashid these bytes live on a
+    server this catalog does not control, so the cloud-native format and
+    range-request checks do not apply to them.
+    """
+    out = {}
+    for e in SOURCE_CHECKSUMS.get(coll_id, []):
+        a = {
+            "href": e["url"],
+            "type": e["type"],
+            "title": e["title"],
+            "roles": ["source"],
+            "file:size": e["size"],
+            "file:checksum": e["checksum"],
+        }
+        note = e.get("description")
+        origin = ("The file this collection was built from."
+                  if e.get("primary") else
+                  "The city's own alternate distribution of this layer.")
+        # Not everything the city publishes sits on a city domain — the crime
+        # files are SLMPD's own, on slmpd.org.
+        host = e["url"].split("/")[2]
+        a["description"] = (
+            f"{note + ' ' if note else ''}{origin} Served upstream by "
+            f"{host}, not by this mirror; size and checksum are of the bytes "
+            f"it served at the sync time in `updated`.")
+        out[e["key"]] = a
+    return out
 
 
 def ensure_link(links: list, rel: str, href: str, type_: str, title: str | None = None, **extra) -> None:
@@ -232,6 +281,19 @@ def finalize_collection(coll_id: str) -> None:
         if bb and bb[0].get("a") is not None:
             coll.setdefault("extent", {}).setdefault("spatial", {})["bbox"] = [
                 [bb[0]["a"], bb[0]["b"], bb[0]["c"], bb[0]["d"]]]
+    # Same reason as the extent above: the count the CLI tracked can outlive
+    # the file. Wards said 10 long after the source moved off the Hosted
+    # FeatureServer (10 of 14 wards) to the portal shapefile that has all 14.
+    if pq.exists():
+        rc = duck(f"SELECT count(*) AS n FROM '{pq}'")
+        if rc:
+            coll["table:row_count"] = rc[0]["n"]
+            # Counts every row in the GeoParquet, including the ones kept
+            # deliberately with null geometry (311 has ~18k requests the city
+            # never geocoded), so it tracks the row count rather than the
+            # number of non-null geometries.
+            if "geoparquet:feature_count" in coll:
+                coll["geoparquet:feature_count"] = rc[0]["n"]
     coll["providers"] = [
         {"name": f"City of St. Louis — {src['department']}",
          "roles": ["producer", "licensor"],
@@ -239,16 +301,26 @@ def finalize_collection(coll_id: str) -> None:
         HOST,
     ]
 
-    links = [l for l in coll.get("links", []) if l["rel"] != "self"]
+    # `via` is rebuilt from scratch rather than topped up: when a collection
+    # switches source (wards moved off the Hosted FeatureServer, which only
+    # carried 10 of 14 wards, to the portal shapefile), a merely-additive
+    # ensure_link would leave the abandoned service linked as the origin.
+    links = [l for l in coll.get("links", [])
+             if l["rel"] not in ("self", "via")]
     ensure_link(links, "describedby", "./README.md", "text/markdown")
     ensure_link(links, "agents", "./AGENTS.md", "text/markdown")
     ensure_link(links, "license", src["portal_page"], "text/html",
-                "Dataset page on the City of St. Louis open data portal")
+                portal_link_title(src["portal_page"]))
     ensure_link(links, "via", src["portal_page"], "text/html",
-                "Source dataset on stlouis-mo.gov")
-    if src["type"] == "arcgis":
+                portal_link_title(src["portal_page"]))
+    if src["type"] == "arcgis" and src["service"] != src["portal_page"]:
         ensure_link(links, "via", src["service"], "text/html",
                     "Source ArcGIS service")
+    if src.get("crime_scrape"):
+        # The real origin is SLMPD's own index, not the portal page that
+        # points at it; without this the published record names neither.
+        ensure_link(links, "via", src["url"], "text/html",
+                    "SLMPD crime statistics — the monthly NIBRS CSV index")
     if has_pmtiles and not any(l["rel"] == "pmtiles" for l in links):
         links.append({"rel": "pmtiles", "href": f"./{coll_id}.pmtiles",
                       "type": "application/vnd.pmtiles"})
@@ -311,11 +383,22 @@ def finalize_collection(coll_id: str) -> None:
                 roles.discard("default")
             a["roles"] = sorted(roles)
         stamp_asset(coll_dir, href, a)
+    # A README asset would list its own checksum in its own Files table, so
+    # it goes stale the moment `portolan readme` runs — and it duplicated the
+    # `describedby` link, which is how the spec exposes the README anyway.
+    # Only 3 of the 51 ever had one; now none do.
+    assets.pop("documentation", None)
+    # Rebuilt, not merged, so a file the city stops serving stops being
+    # advertised here (STLSBDs.geojson went 404 between syncs).
+    assets = {k: v for k, v in assets.items() if not k.startswith("source")}
+    src_assets = source_assets(coll_id)
+    assets.update(src_assets)
     coll["assets"] = assets
 
     f.write_text(json.dumps(coll, indent=2) + "\n")
     n_styles = len(style_files)
     print(f"✓ {coll_id}: {n_styles} style assets, "
+          f"{len(src_assets)} source files, "
           f"{'pmtiles' if has_pmtiles else 'tabular'}")
 
 

@@ -116,6 +116,12 @@ Current and historic parcel data Mirrored from [the city's open data portal](htt
 | ./styles/style-2020.json | 1.0 KB | 1220cdd8fb56... |
 | ./thumbnail.png | 598.8 KB | 12205e8080d7... |
 | ./styles/style-zoning-1997.json | 2.1 KB | 122034b4142c... |
+| https://www.stlouis-mo.gov/data/upload/data-files/stl_parcels_1997-2000.zip | 90.4 MB | 122077ed89fa... |
+| https://www.stlouis-mo.gov/data/upload/data-files/stl_parcels_2001-2005.zip | 114.8 MB | 122099d283df... |
+| https://www.stlouis-mo.gov/data/upload/data-files/stl_parcels_2006-2010.zip | 114.7 MB | 1220d4d45521... |
+| https://www.stlouis-mo.gov/data/upload/data-files/stl_parcels_2011-2015.zip | 121.0 MB | 1220cff03990... |
+| https://www.stlouis-mo.gov/data/upload/data-files/stl_parcels_2016-2020.zip | 52.1 MB | 12204fd896e9... |
+| https://static.stlouis-mo.gov/open-data/assessor/Parcels-CSV-2017-2025.zip | 83.6 MB | 1220f58dd5fa... |
 
 ## Quick Start
 
@@ -137,9 +143,15 @@ print(gdf.head())
 
 ## Processing Notes
 
-Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=82).
-Source: https://www.stlouis-mo.gov/data/upload/data-files/stl_parcels_1997-2000.zip (portal download),
-converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.
+Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=82). Nothing was added to the data and no features were dropped except where noted below.
+
+Downloaded from the city's portal: https://www.stlouis-mo.gov/data/upload/data-files/stl_parcels_1997-2000.zip (zipped Shapefiles).
+
+The five era archives were unpacked and concatenated into one collection with an added `era` column, so a parcel can be followed across the 1997-2020 series in a single query.
+
+Converted to GeoParquet with gpio — zstd compression, Hilbert row order, and a covering bbox column with row-group statistics, so a spatial filter can skip most of the file over the network — and tiled to PMTiles with tippecanoe.
+
+The city's own file(s) are published as `source` assets on this collection, linked directly to stlouis-mo.gov — this mirror never becomes the only way to reach the original.
 
 
 ## Attribution

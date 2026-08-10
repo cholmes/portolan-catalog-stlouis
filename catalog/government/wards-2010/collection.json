@@ -28,12 +28,6 @@
       "title": "Dataset page on the City of St. Louis open data portal"
     },
     {
-      "rel": "via",
-      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=131",
-      "type": "text/html",
-      "title": "Source dataset on stlouis-mo.gov"
-    },
-    {
       "rel": "pmtiles",
       "href": "./wards-2010.pmtiles",
       "type": "application/vnd.pmtiles",
@@ -46,6 +40,12 @@
       "href": "../catalog.json",
       "type": "application/json",
       "title": "Government"
+    },
+    {
+      "rel": "via",
+      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=131",
+      "type": "text/html",
+      "title": "Dataset page on the City of St. Louis open data portal"
     }
   ],
   "stac_extensions": [
@@ -216,6 +216,17 @@
       "roles": [
         "thumbnail"
       ]
+    },
+    "source": {
+      "href": "https://static.stlouis-mo.gov/open-data/planning/wards/wards_2010.zip",
+      "type": "application/zip",
+      "title": "Ward boundaries 2010 (zipped Shapefile)",
+      "roles": [
+        "source"
+      ],
+      "file:size": 169322,
+      "file:checksum": "122079f1b82326d52ef7ceb765d95500b1642e53bd791cce4f721cdc14ad3f54c67c",
+      "description": "The file this collection was built from. Served upstream by static.stlouis-mo.gov, not by this mirror; size and checksum are of the bytes it served at the sync time in `updated`."
     }
   }
 }

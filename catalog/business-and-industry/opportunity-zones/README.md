@@ -36,8 +36,10 @@ Qualified Opportunity Zones (QOZs) within the City of Saint Louis. Qualified Opp
 | ./styles/city-renderer.json | 545 B | 12200176b48e... |
 | ./styles/default.json | 775 B | 12208ac754b0... |
 | ./styles/style-boundaries.json | 476 B | 122031c4a4d9... |
-| ./styles/style-labeled.json | 1002 B | 1220d4cd0cc3... |
+| ./styles/style-labeled.json | 1.1 KB | 122087df6f51... |
 | ./thumbnail.png | 388.8 KB | 12208fc5f731... |
+| https://www.stlouis-mo.gov/data/upload/data-files/OpportunityZones.geojson | 162.3 KB | 12206575e743... |
+| https://www.stlouis-mo.gov/data/upload/data-files/OpportunityZones.zip | 56.7 KB | 12201f1be0ec... |
 
 ## Quick Start
 
@@ -59,9 +61,18 @@ print(gdf.head())
 
 ## Processing Notes
 
-Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=59).
-Source: https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/Opportunity_Zones/FeatureServer (ArcGIS REST service),
-converted to GeoParquet (zstd, spatially ordered, covering bbox) and PMTiles.
+Mirrored from the City of St. Louis open data portal (https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=59). Nothing was added to the data and no features were dropped except where noted below.
+
+Extracted from the city's own ArcGIS REST service with the Portolan CLI:
+
+    portolan extract arcgis \
+      https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/Opportunity_Zones/FeatureServer --layers "Opportunity Zones" --raw
+
+That pages the service's `/query` endpoint for every feature, so this is the whole layer rather than the display-capped sample a browser request returns, and it carries across the service's field aliases. The service's own ESRI renderer was captured at the same time and is republished here as `styles/city-renderer.json`, so the map can be drawn in the city's own symbology.
+
+Converted to GeoParquet with gpio — zstd compression, Hilbert row order, and a covering bbox column with row-group statistics, so a spatial filter can skip most of the file over the network — and tiled to PMTiles with tippecanoe.
+
+The city's own file(s) are published as `source` assets on this collection, linked directly to stlouis-mo.gov — this mirror never becomes the only way to reach the original.
 
 
 ## Attribution
