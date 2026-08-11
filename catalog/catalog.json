@@ -33,6 +33,12 @@
       "type": "text/markdown"
     },
     {
+      "rel": "icon",
+      "href": "./_assets/fleur-de-lis.svg",
+      "type": "image/svg+xml",
+      "title": "City of St. Louis"
+    },
+    {
       "rel": "child",
       "href": "./urban-development-and-planning/catalog.json",
       "type": "application/json",

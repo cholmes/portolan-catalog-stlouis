@@ -418,6 +418,10 @@ def finalize_root() -> None:
                 "City of St. Louis open data portal")
     ensure_link(links, "via", "https://www.stlouis-mo.gov/data/", "text/html",
                 "City of St. Louis open data portal")
+    # Catalog logo per portolan-spec#136: the city's own fleur-de-lis, the
+    # same SVG the data browser uses for its wordmark and favicon.
+    ensure_link(links, "icon", "./_assets/fleur-de-lis.svg", "image/svg+xml",
+                "City of St. Louis")
     # children are the department catalogs
     links = [l for l in links if l["rel"] != "child"]
     for g in GROUPS:
