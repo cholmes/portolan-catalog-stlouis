@@ -77,7 +77,7 @@ Plumbing permit information by property type, year, neighborhood, ward, and proj
 | ./styles/default.json | 1.4 KB | 1220adef5ed4... |
 | ./styles/style-recent.json | 1.0 KB | 12209c52c3ac... |
 | ./styles/style-solid.json | 530 B | 12201fc33571... |
-| https://www.stlouis-mo.gov/data/upload/data-files/plumbing-permits.zip | 15.2 MB | 1220aecb49fe... |
+| https://www.stlouis-mo.gov/data/upload/data-files/plumbing-permits.zip | 15.2 MB | 122020348181... |
 
 ## Quick Start
 

@@ -43,7 +43,7 @@ Dataset describes real estate sale prices for recent property sales in the city.
 | ./styles/style-price-per-sqft.json | 1.5 KB | 12201bc2360a... |
 | ./styles/style-solid.json | 507 B | 122052fe2aab... |
 | ./styles/style-year.json | 1.2 KB | 1220cdf94897... |
-| https://www.stlouis-mo.gov/data/upload/data-files/prclsale.zip | 6.4 MB | 1220e171db32... |
+| https://www.stlouis-mo.gov/data/upload/data-files/prclsale.zip | 6.4 MB | 1220ef374b13... |
 
 ## Quick Start
 

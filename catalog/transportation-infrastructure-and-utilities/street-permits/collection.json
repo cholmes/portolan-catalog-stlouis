@@ -112,18 +112,18 @@
       "title": "Dataset page on the City of St. Louis open data portal"
     },
     {
+      "rel": "via",
+      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=17",
+      "type": "text/html",
+      "title": "Dataset page on the City of St. Louis open data portal"
+    },
+    {
       "rel": "pmtiles",
       "href": "./street-permits.pmtiles",
       "type": "application/vnd.pmtiles",
       "pmtiles:layers": [
         "street-permits"
       ]
-    },
-    {
-      "rel": "via",
-      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=17",
-      "type": "text/html",
-      "title": "Dataset page on the City of St. Louis open data portal"
     }
   ],
   "assets": {

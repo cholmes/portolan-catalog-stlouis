@@ -36,9 +36,9 @@ Unlike everything else in this catalog, this is **not** City of St. Louis data: 
 | File | Size | Checksum |
 |------|------|----------|
 | ./overture-addresses.parquet | 7.0 MB | 1220cd113806... |
-| ./overture-addresses.pmtiles | 1.7 MB | 1220ffdb0c48... |
-| ./styles/default.json | 990 B | 12205e647e07... |
-| ./styles/style-postcode.json | 2.2 KB | 12205232b851... |
+| https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/addresses.pmtiles | 22.8 GB | - |
+| ./styles/default.json | 931 B | 122028ca0a91... |
+| ./styles/style-postcode.json | 2.2 KB | 12209f2b8ca8... |
 | ./thumbnail.png | 236.2 KB | 12202fee1d05... |
 
 ## Quick Start

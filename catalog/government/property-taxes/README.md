@@ -215,7 +215,7 @@ Property tax records by parcel Mirrored from [the city's open data portal](https
 | ./styles/default.json | 1.3 KB | 1220b7f6be0a... |
 | ./styles/style-land-value.json | 1.3 KB | 122019ca0a76... |
 | ./styles/style-solid.json | 506 B | 1220fa3a2804... |
-| https://www.stlouis-mo.gov/data/upload/data-files/prcl.zip | 107.5 MB | 12202249855b... |
+| https://www.stlouis-mo.gov/data/upload/data-files/prcl.zip | 107.5 MB | 122066e381ba... |
 
 ## Quick Start
 

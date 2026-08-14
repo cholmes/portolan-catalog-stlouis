@@ -77,7 +77,7 @@ Data on commercial, industrial, and residential electrical permits in the City o
 | ./styles/default.json | 1.4 KB | 122065ccc8c8... |
 | ./styles/style-recent.json | 1.0 KB | 122064658524... |
 | ./styles/style-solid.json | 534 B | 12204cb9eef2... |
-| https://www.stlouis-mo.gov/data/upload/data-files/electrical-permits.zip | 21.6 MB | 122099c361c3... |
+| https://www.stlouis-mo.gov/data/upload/data-files/electrical-permits.zip | 21.6 MB | 1220c5debafd... |
 
 ## Quick Start
 

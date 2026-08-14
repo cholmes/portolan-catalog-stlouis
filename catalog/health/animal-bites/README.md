@@ -45,7 +45,7 @@ Animal bite reports made to the City of Saint Louis Department of Health and its
 | ./styles/style-animal.json | 1.7 KB | 12200fa9e6b8... |
 | ./styles/style-plain.json | 729 B | 1220cc96eb4b... |
 | ./thumbnail.png | 360.7 KB | 1220621e77cb... |
-| https://static.stlouis-mo.gov/open-data/HEALTH/ANIMAL-CONTROL/ANIMAL_BITES.csv | 1.2 MB | 1220abac05e0... |
+| https://static.stlouis-mo.gov/open-data/HEALTH/ANIMAL-CONTROL/ANIMAL_BITES.csv | 1.2 MB | 1220dcf026dc... |
 
 ## Quick Start
 

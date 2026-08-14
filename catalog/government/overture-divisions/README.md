@@ -52,8 +52,9 @@ Unlike everything else in this catalog, this is **not** City of St. Louis data: 
 |------|------|----------|
 | ./overture-divisions.parquet | 162.0 KB | 1220451a1345... |
 | https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/divisions.pmtiles | 18.2 GB | - |
-| ./styles/default.json | 2.6 KB | 1220326f6e1f... |
+| ./styles/default.json | 2.9 KB | 12203dfc74dc... |
 | ./styles/style-neighborhoods.json | 2.5 KB | 1220fcde50ef... |
+| ./thumbnail.png | 365.2 KB | 1220a78a968a... |
 
 ## Quick Start
 

@@ -37,7 +37,7 @@ Strategic land use (SLUP),parcel, and zoning data Mirrored from [the city's open
 | ./styles/style-boundaries.json | 513 B | 1220aa7e721c... |
 | ./styles/style-broad-use.json | 1.9 KB | 1220abe91217... |
 | ./thumbnail.png | 306.9 KB | 1220cae9c9d6... |
-| https://www.stlouis-mo.gov/data/upload/data-files/zoning.zip | 10.7 MB | 1220d9fb6429... |
+| https://www.stlouis-mo.gov/data/upload/data-files/zoning.zip | 10.7 MB | 1220d0781e93... |
 
 ## Quick Start
 

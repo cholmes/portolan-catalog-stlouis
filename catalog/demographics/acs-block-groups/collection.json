@@ -587,6 +587,16 @@
       "description": "Share of workers commuting by public transportation, white to dark green. Compare with the no-vehicle style: where car-free households outnumber transit commuters, service is failing its dependents.",
       "file:size": 1720,
       "file:checksum": "1220dfb079bc4671eb7575c9f36c56aefb44417a27a1055a71405acaf755087da97f"
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ],
+      "title": "ACS Demographics \u2014 Block Groups rendered with the default style",
+      "file:size": 341574,
+      "file:checksum": "12205bb63df955ab08f5dc0f7e68eac995159f15831c7ee82b08179d44316412acf0"
     }
   },
   "portolan:styles": [

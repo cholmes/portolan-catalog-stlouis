@@ -73,7 +73,7 @@ Information about city blocks. A city block, residential block, urban block, or 
 | ./styles/style-by-census-tract.json | 2.1 KB | 1220f78c4c11... |
 | ./styles/style-by-precinct.json | 1.9 KB | 1220f90efd1b... |
 | ./styles/style-by-ward.json | 1.9 KB | 12209819ca16... |
-| https://www.stlouis-mo.gov/data/upload/data-files/blocks_shape.zip | 6.1 MB | 122078f48b9a... |
+| https://www.stlouis-mo.gov/data/upload/data-files/blocks_shape.zip | 6.1 MB | 12207a000a5a... |
 
 ## Quick Start
 

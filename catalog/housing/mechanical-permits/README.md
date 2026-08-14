@@ -82,7 +82,7 @@ Mechanical permit information by property type, year, neighborhood, ward, and pr
 | ./styles/default.json | 1.4 KB | 12203a6a7a0f... |
 | ./styles/style-recent.json | 1.0 KB | 122042891edb... |
 | ./styles/style-solid.json | 534 B | 12204341e887... |
-| https://www.stlouis-mo.gov/data/upload/data-files/mechanical-permits.zip | 6.3 MB | 1220953fd7d3... |
+| https://www.stlouis-mo.gov/data/upload/data-files/mechanical-permits.zip | 6.3 MB | 122006a4b2d2... |
 
 ## Quick Start
 

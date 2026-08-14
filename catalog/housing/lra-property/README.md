@@ -96,8 +96,8 @@ Land Reutilization Authority data and search. Mirrored from [the city's open dat
 | ./styles/style-source.json | 1.6 KB | 12201a65e0c5... |
 | ./styles/style-usage.json | 1.6 KB | 1220b6d23480... |
 | ./thumbnail.png | 368.0 KB | 12202bfba8bd... |
-| https://static.stlouis-mo.gov/open-data/SLDC/REAL-ESTATE/LRA_INVENTORY.csv | 2.8 MB | 1220d7b16705... |
-| https://static.stlouis-mo.gov/open-data/SLDC/REAL-ESTATE/LRA_INVENTORY_AVAILABLE.csv | 1.7 MB | 1220486039eb... |
+| https://static.stlouis-mo.gov/open-data/SLDC/REAL-ESTATE/LRA_INVENTORY.csv | 2.8 MB | 1220b44528d7... |
+| https://static.stlouis-mo.gov/open-data/SLDC/REAL-ESTATE/LRA_INVENTORY_AVAILABLE.csv | 1.7 MB | 12204ded3997... |
 
 ## Quick Start
 

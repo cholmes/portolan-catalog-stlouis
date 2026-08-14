@@ -181,6 +181,16 @@
       "description": "The 1930s Home Owners' Loan Corporation security grades in the original map's own colors: A \"Best\" (green), B \"Still Desirable\" (blue), C \"Definitely Declining\" (yellow), D \"Hazardous\" (red) \u2014 the redlined areas. One ungraded polygon renders gray.",
       "file:size": 2307,
       "file:checksum": "12205bf0fbe828c9c25f4737c8b77bac611adbdbf32fc1a6609ce2be8d21305861ab"
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ],
+      "title": "HOLC Redlining Grades (1930s) rendered with the default style",
+      "file:size": 502883,
+      "file:checksum": "1220bf8bfd50868daa13f016656c688626704961749e07359164988b440e9f622c35"
     }
   },
   "portolan:styles": [

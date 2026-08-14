@@ -57,7 +57,7 @@ The Citizens' Service Bureau (CSB) is the customer service department for the Ci
 | ./styles/style-channel.json | 1.7 KB | 12201e1515b0... |
 | ./styles/style-open.json | 1.5 KB | 1220181d4924... |
 | ./thumbnail.png | 369.3 KB | 1220dca6c185... |
-| https://www.stlouis-mo.gov/data/upload/data-files/csb.zip | 120.1 MB | 1220668c671d... |
+| https://www.stlouis-mo.gov/data/upload/data-files/csb.zip | 120.4 MB | 1220dd704169... |
 
 ## Quick Start
 

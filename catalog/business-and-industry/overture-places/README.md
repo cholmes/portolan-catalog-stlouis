@@ -44,6 +44,7 @@ Unlike everything else in this catalog, this is **not** City of St. Louis data: 
 | https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/places.pmtiles | 18.0 GB | - |
 | ./styles/default.json | 3.1 KB | 1220f48c03fd... |
 | ./styles/style-confidence.json | 1.6 KB | 12206b968f68... |
+| ./thumbnail.png | 475.5 KB | 122040a97510... |
 
 ## Quick Start
 

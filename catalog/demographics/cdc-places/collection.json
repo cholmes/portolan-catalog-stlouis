@@ -752,6 +752,16 @@
       "description": "Share of adults with current asthma (CDC PLACES modeled estimate). The citywide band is narrow, so the breaks are tight \u2014 pair with vacancy and demolition layers for the housing-condition story.",
       "file:size": 1651,
       "file:checksum": "12204d3da7a343310324cbd0549e0d5cff87a04e244b8eb4ffd12a38372b2167e0db"
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ],
+      "title": "CDC PLACES Health Measures rendered with the default style",
+      "file:size": 325029,
+      "file:checksum": "1220f79b7db1f60e040402f82a97d42d0203c39427b0f707270dd893fc6effd2ef3c"
     }
   },
   "portolan:styles": [

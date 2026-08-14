@@ -173,7 +173,7 @@ Current and historic parcel data Mirrored from [the city's open data portal](htt
 | ./thumbnail.png | 378.5 KB | 1220875a6b28... |
 | ./styles/style-zoning.json | 1.9 KB | 1220d402120c... |
 | https://static.stlouis-mo.gov/open-data/ASSESSOR/PARCELS.zip | 37.2 MB | 12208764dc57... |
-| https://static.stlouis-mo.gov/open-data/PLANNING/parcels/parcels-basic-info.csv | 14.5 MB | 1220f577044b... |
+| https://static.stlouis-mo.gov/open-data/PLANNING/parcels/parcels-basic-info.csv | 14.5 MB | 122070546fdf... |
 
 ## Quick Start
 

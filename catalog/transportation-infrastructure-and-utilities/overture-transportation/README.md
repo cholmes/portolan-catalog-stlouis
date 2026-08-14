@@ -50,6 +50,7 @@ Unlike everything else in this catalog, this is **not** City of St. Louis data: 
 | ./styles/default.json | 3.1 KB | 1220c4e55069... |
 | ./styles/style-network.json | 1.2 KB | 12205149fb8d... |
 | ./styles/style-topology.json | 1.2 KB | 12206538e9c1... |
+| ./thumbnail.png | 447.0 KB | 1220a4fb9705... |
 
 ## Quick Start
 

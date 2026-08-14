@@ -91,7 +91,7 @@ Commercial, industrial, and occupancy building permits in the City of St. Louis 
 | ./styles/default.json | 1.4 KB | 1220b3aab725... |
 | ./styles/style-recent.json | 1.0 KB | 1220d657de5c... |
 | ./styles/style-solid.json | 532 B | 12203d9a9eb3... |
-| https://www.stlouis-mo.gov/data/upload/data-files/occupancy-permits.zip | 9.9 MB | 12203522888d... |
+| https://www.stlouis-mo.gov/data/upload/data-files/occupancy-permits.zip | 9.9 MB | 1220f794d240... |
 
 ## Quick Start
 

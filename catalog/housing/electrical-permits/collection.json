@@ -280,18 +280,18 @@
       "title": "Dataset page on the City of St. Louis open data portal"
     },
     {
+      "rel": "via",
+      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=51",
+      "type": "text/html",
+      "title": "Dataset page on the City of St. Louis open data portal"
+    },
+    {
       "rel": "pmtiles",
       "href": "./electrical-permits.pmtiles",
       "type": "application/vnd.pmtiles",
       "pmtiles:layers": [
         "electrical-permits"
       ]
-    },
-    {
-      "rel": "via",
-      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=51",
-      "type": "text/html",
-      "title": "Dataset page on the City of St. Louis open data portal"
     }
   ],
   "assets": {

@@ -212,6 +212,16 @@
       "description": "Jobs located in the block group divided by employed residents living in it: purple block groups are bedroom areas, orange ones are job centers with few resident workers. Crime and service rates computed per residential population overstate risk in orange areas \u2014 their daytime population is far larger than their census count.",
       "file:size": 2363,
       "file:checksum": "1220c79df5de398205f25e515a1539efacb5f1b69051813aed15c55134a3c9527dd5"
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ],
+      "title": "LODES Jobs rendered with the default style",
+      "file:size": 341576,
+      "file:checksum": "1220091152edf8400db5324bc37cd5f0357f5354de1ddb3e77cc718bd67382ec3b93"
     }
   },
   "portolan:styles": [

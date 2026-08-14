@@ -267,6 +267,16 @@
       "description": "Share of the civilian noninstitutionalized population with a disability, light to dark blue.",
       "file:size": 1596,
       "file:checksum": "1220884c08e020c9512fe5ba43f7f04d9462cd6cf942759b541a58cb9fa37b8ad0b5"
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ],
+      "title": "ACS Demographics \u2014 Tracts rendered with the default style",
+      "file:size": 329179,
+      "file:checksum": "1220dea51917e5bb808c095452f3b0ec458d7e0b3661087082cf703b824ac04675da"
     }
   },
   "portolan:styles": [
