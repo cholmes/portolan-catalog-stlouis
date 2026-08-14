@@ -512,9 +512,11 @@ def finalize_overture(coll_id: str, coll_dir, f, coll: dict, src: dict) -> None:
                 "Overture attribution and licensing")
     ensure_link(links, "via", src["docs"], "text/html",
                 f"Overture {src['theme']} theme guide")
+    # rashid's PTL-PRO-001 requires text/html on every via link, even when
+    # the target is a parquet prefix rather than a page.
     ensure_link(links, "via",
                 f"{OVERTURE_S3}/theme={src['theme']}/",
-                "application/x-parquet",
+                "text/html",
                 f"Overture release {OVERTURE_RELEASE} GeoParquet "
                 f"(theme={src['theme']}) on S3")
     links.append({"rel": "pmtiles", "href": tiles_url,
@@ -732,9 +734,9 @@ def finalize_census(coll_id: str, coll_dir, f, coll: dict, src: dict) -> None:
     from write_metadata import census_source_url
     data_url = census_source_url(src["dataset"])
     if data_url != src["docs"]:
-        ensure_link(links, "via", data_url,
-                    "application/x-parquet" if data_url.endswith(".parquet")
-                    else "text/html",
+        # text/html even for a parquet target: rashid's PTL-PRO-001 requires
+        # it on every via link.
+        ensure_link(links, "via", data_url, "text/html",
                     f"{prog_title} source data")
     if has_pmtiles and not any(l["rel"] == "pmtiles" for l in links):
         links.append({"rel": "pmtiles", "href": f"./{coll_id}.pmtiles",
@@ -842,13 +844,22 @@ def finalize_root() -> None:
 
 
 def finalize_group(group: str) -> None:
+    from sources import GROUP_CAPTIONS
     f = CATALOG / group / "catalog.json"
     if not f.exists():
         return
     cat = json.loads(f.read_text())
     cat["stac_extensions"] = sorted(set(cat.get("stac_extensions", [])) | {PORTOLAN_SCHEMA})
     cat["updated"] = SYNC
+    # A group catalog created bare by `portolan add` arrives with no title
+    # and a "Catalog: <slug>" description; fill both from sources.py so a
+    # new group (demographics) matches the established ones.
+    cat["title"] = GROUP_TITLES[group]
+    if not cat.get("description") or cat["description"].startswith("Catalog:"):
+        cat["description"] = GROUP_CAPTIONS[group]
     links = [l for l in cat["links"] if l["rel"] not in ("child", "self")]
+    ensure_link(links, "describedby", "./README.md", "text/markdown")
+    ensure_link(links, "agents", "./AGENTS.md", "text/markdown")
     for cid in GROUPS[group]:
         if (CATALOG / group / cid / "collection.json").exists():
             links.append({"rel": "child", "href": f"./{cid}/collection.json",

@@ -50,7 +50,7 @@
     {
       "rel": "via",
       "href": "https://data.source.coop/cboettig/mappinginequality/mappinginequality.parquet",
-      "type": "application/x-parquet",
+      "type": "text/html",
       "title": "Mapping Inequality source data"
     }
   ],

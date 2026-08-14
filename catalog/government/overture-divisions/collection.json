@@ -42,7 +42,7 @@
     {
       "rel": "via",
       "href": "s3://overturemaps-us-west-2/release/2026-07-22.0/theme=divisions/",
-      "type": "application/x-parquet",
+      "type": "text/html",
       "title": "Overture release 2026-07-22.0 GeoParquet (theme=divisions) on S3"
     },
     {
