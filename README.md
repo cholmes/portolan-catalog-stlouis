@@ -20,7 +20,9 @@ Not an official city service.
   (buildings, transportation, places, addresses, divisions, and the base
   theme) — **not city data**, included to demonstrate blending other
   St. Louis-relevant open data into the catalog. Their map tiles reference
-  Overture's own release-pinned global PMTiles rather than files built here.
+  Overture's own release-pinned global PMTiles rather than files built here
+  (except `overture-addresses`, tiled locally — Overture's global address
+  tiles have no St. Louis coverage).
 - Every geo collection ships 2–5 MapLibre styles with legends — including
   the city's own ArcGIS renderer where the source was a live service, and
   Overture-Explorer-derived palettes for the Overture layers

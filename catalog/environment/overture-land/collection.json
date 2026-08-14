@@ -172,9 +172,9 @@
         "style"
       ],
       "title": "Land by subtype",
-      "description": "Physical land surfaces from OSM natural tags \u2014 forest, shrub, grass, sand, rock, wetland as polygons, and 61,000 individual trees as green points.",
-      "file:size": 2957,
-      "file:checksum": "122098e9b3f14892f43b826904d89495135d079b30fa1f9c21b831a43bbc8cf91374"
+      "description": "Physical land surfaces from OSM natural tags \u2014 forest, shrub, grass, sand, rock, wetland as polygons, and 61,000 individual trees as green points. The trees live at z13+ in the tiles \u2014 zoom in to see them.",
+      "file:size": 3227,
+      "file:checksum": "1220273a4a3cac352d8f1c4e018e0795ec6f8606ab21708bda82596c72a2bf35233a"
     },
     "styles/style-trees": {
       "href": "./styles/style-trees.json",
@@ -194,8 +194,8 @@
         "thumbnail"
       ],
       "title": "Overture Land rendered with the default style",
-      "file:size": 315772,
-      "file:checksum": "1220ce82e04d91b1522b5eeff59749e70af801f107993909680d77cb3fe2ffca4a69"
+      "file:size": 431926,
+      "file:checksum": "122080a3f79365bbdad3ecb328f2698c7330e64e0161f0b8732dbc5eb8aafabf7c4c"
     }
   },
   "updated": "2026-08-14T11:21:05+00:00",

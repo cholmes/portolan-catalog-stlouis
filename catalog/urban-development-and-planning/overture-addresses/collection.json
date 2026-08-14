@@ -2,7 +2,7 @@
   "type": "Collection",
   "id": "urban-development-and-planning/overture-addresses",
   "stac_version": "1.1.0",
-  "description": "Address points from the Overture addresses theme (currently in Alpha). An address represents a physical place through a series of attributes \u2014 street number, street name, unit, address levels, postal code, and/or country \u2014 together with a point geometry giving the approximate location most commonly associated with it. The theme aggregates open government address datasets, each carrying its own permissive open license, recorded per feature in the `sources` column. Useful for geocoding, validation, and conflation with buildings and places.\n\nUnlike everything else in this catalog, this is **not** City of St. Louis data: it comes from the [Overture Maps Foundation](https://overturemaps.org/), a collaborative project building open, interoperable map data for the world. This collection is a St. Louis extract of that global dataset \u2014 everything inside the city's bounding box, which also takes in the Illinois shore of the Mississippi (East St. Louis, Cahokia Heights) \u2014 included here to demonstrate how a city's open-data catalog can blend in other St. Louis-relevant open data alongside the city's own. The GeoParquet was extracted from Overture release 2026-07-22.0; the map tiles reference Overture's own global PMTiles for the same release, the tiles behind [explore.overturemaps.org](https://explore.overturemaps.org/).",
+  "description": "Address points from the Overture addresses theme (currently in Alpha). An address represents a physical place through a series of attributes \u2014 street number, street name, unit, address levels, postal code, and/or country \u2014 together with a point geometry giving the approximate location most commonly associated with it. The theme aggregates open government address datasets, each carrying its own permissive open license, recorded per feature in the `sources` column. Useful for geocoding, validation, and conflation with buildings and places.\n\nUnlike everything else in this catalog, this is **not** City of St. Louis data: it comes from the [Overture Maps Foundation](https://overturemaps.org/), a collaborative project building open, interoperable map data for the world. This collection is a St. Louis extract of that global dataset \u2014 everything inside the city's bounding box, which also takes in the Illinois shore of the Mississippi (East St. Louis, Cahokia Heights) \u2014 included here to demonstrate how a city's open-data catalog can blend in other St. Louis-relevant open data alongside the city's own. The GeoParquet was extracted from Overture release 2026-07-22.0. **Coverage caveat:** the theme's aggregated government datasets do not yet include the City of St. Louis itself \u2014 the ~99,000 points here are the St. Louis County and Illinois fringe that falls inside the bounding box (Wellston, Ferguson, Jennings, Cahokia, and neighbors), with almost nothing between the city limits. Uniquely among the Overture collections here, the map tiles are built locally from this extract: Overture's own global address tiles are just as empty for St. Louis, and only exist at z14.",
   "links": [
     {
       "rel": "root",
@@ -47,10 +47,10 @@
     },
     {
       "rel": "pmtiles",
-      "href": "https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/addresses.pmtiles",
+      "href": "./overture-addresses.pmtiles",
       "type": "application/vnd.pmtiles",
       "pmtiles:layers": [
-        "address"
+        "overture-addresses"
       ]
     }
   ],
@@ -151,14 +151,15 @@
       "title": "Overture Addresses (GeoParquet)"
     },
     "overture-addresses-tiles": {
-      "href": "https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/addresses.pmtiles",
+      "href": "./overture-addresses.pmtiles",
       "type": "application/vnd.pmtiles",
       "roles": [
         "visual"
       ],
-      "title": "Overture addresses theme (PMTiles, global)",
-      "description": "Overture's own release-pinned global vector tiles for the addresses theme, served from the Overture Maps Foundation's public bucket \u2014 not from this mirror, and not clipped to St. Louis. The styles select this collection's layers (address) from them.",
-      "file:size": 24443095354
+      "title": "Overture Addresses (PMTiles)",
+      "description": "Vector tiles built from this collection's own clipped GeoParquet \u2014 Overture's global addresses tileset has no St. Louis coverage, so this mirror tiles the theme locally.",
+      "file:size": 1747627,
+      "file:checksum": "1220ffdb0c489244ed8e21fbebbba68c09ae2b012e8b5f242d40b447c4f6ba52bb74"
     },
     "styles/default": {
       "href": "./styles/default.json",
@@ -168,9 +169,9 @@
         "style"
       ],
       "title": "Address points",
-      "description": "Every address point in the box, in the catalog blue. The tiles carry addresses only at z14 \u2014 zoom to street level to see them.",
-      "file:size": 931,
-      "file:checksum": "122028ca0a9119d1b02ff55005acba52df452833c62b830be0990bef26d431c2ac64"
+      "description": "Every address point in the box, in the catalog blue. Overture has no address data for the city proper yet, so the points ring it \u2014 the county and Illinois fringe. Thinned at overview zooms, complete from z14.",
+      "file:size": 990,
+      "file:checksum": "12205e647e079790d664bde6e874f5ed310090b189563f8158afc533ec226f1bb5af"
     },
     "styles/style-postcode": {
       "href": "./styles/style-postcode.json",
@@ -180,8 +181,8 @@
       ],
       "title": "Postcode mosaic",
       "description": "Repeating colors keyed on ZIP code, so postal boundaries emerge from the address points themselves. Colors are arbitrary.",
-      "file:size": 2235,
-      "file:checksum": "12209f2b8ca8932997b27ae6802933f46dc64293dc15ed654c5b6304410cd983fefc"
+      "file:size": 2223,
+      "file:checksum": "12205232b85108e1c9e582faba05786399f8b93f21a118ca9c69cd70041d72fea526"
     },
     "thumbnail": {
       "href": "./thumbnail.png",
@@ -190,8 +191,8 @@
         "thumbnail"
       ],
       "title": "Overture Addresses rendered with the default style",
-      "file:size": 241865,
-      "file:checksum": "12202fee1d05414cf084259006ec042b6c3d08be9de007d60e020d6a7acba8bf38f6"
+      "file:size": 332756,
+      "file:checksum": "1220eba27dfaf6416e1b376b55365cb3a9ac8d5a100fd9fd9f6b6ab44267257b65de"
     }
   },
   "updated": "2026-08-14T11:21:05+00:00",

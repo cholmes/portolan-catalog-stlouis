@@ -76,7 +76,19 @@ TILING = {
         "maxzoom": 15, "cap": 800_000,
         "columns": ["HANDLE", "SITEADDR", "AbatementStartYear",
                     "AbatementEndYear", "WARD", "NBRHD"]},
+    "overture-addresses": {
+        "maxzoom": 14, "cap": 800_000,
+        "columns": ["number", "street", "unit", "postcode", "postal_city",
+                    "country"]},
 }
+
+# Overture collections ride Overture's own release-pinned global theme tiles
+# and get no local tiles — with one exception: addresses. Overture's global
+# addresses tileset only exists at z14 and its data has no City of St. Louis
+# coverage at all — the extract's ~99k points are the county/Illinois fringe
+# inside the bbox — so what points there are get tiled here from the clipped
+# parquet at all zooms, like any city collection.
+OVERTURE_LOCAL = {"overture-addresses"}
 
 
 def make(coll_id: str) -> None:
@@ -130,6 +142,9 @@ def main() -> int:
             continue
         if coll_id == "property-sales":  # tabular, no tiles
             continue
+        if (SOURCES[coll_id].get("type") == "overture"
+                and coll_id not in OVERTURE_LOCAL):
+            continue  # remote theme tiles; see OVERTURE_LOCAL
         try:
             make(coll_id)
         except Exception as e:  # noqa: BLE001

@@ -2,13 +2,14 @@
 
 ![st-louis](https://img.shields.io/badge/st--louis-blue) ![missouri](https://img.shields.io/badge/missouri-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![city-government](https://img.shields.io/badge/city--government-blue) ![parcels](https://img.shields.io/badge/parcels-blue) ![boundaries](https://img.shields.io/badge/boundaries-blue) ![cloud-native](https://img.shields.io/badge/cloud--native-blue) ![geoparquet](https://img.shields.io/badge/geoparquet-blue) ![stac](https://img.shields.io/badge/stac-blue) ![pmtiles](https://img.shields.io/badge/pmtiles-blue)
 
-Cloud-native mirror of 51 datasets from the
+Cloud-native mirror of 61 datasets — about 7.3 million rows as GeoParquet
+and PMTiles with STAC metadata, organized into 11 topic catalogs. 51 come
+from the
 [City of St. Louis open data portal](https://www.stlouis-mo.gov/data/),
 the city's public ArcGIS servers, and its
-[ArcGIS Online organization](https://stlcity.maps.arcgis.com/): about 6.6
-million features as GeoParquet and PMTiles with STAC metadata, organized
-into 11 topic catalogs. Alongside the city's own data, 10 collections
-tagged `overture` carry St. Louis extracts of the
+[ArcGIS Online organization](https://stlcity.maps.arcgis.com/); alongside
+the city's own data, 10 collections tagged `overture` carry St. Louis
+extracts of the
 [Overture Maps Foundation](https://overturemaps.org/) global datasets —
 buildings, transportation, places, addresses, and more — demonstrating how
 a city catalog can blend in other locally relevant open data. Explore it

@@ -385,7 +385,8 @@ def collection_agents(coll_id: str) -> str:
     out += ["", "## Access", "", "```sql",
             "INSTALL httpfs; LOAD httpfs;  -- DuckDB",
             f"SELECT * FROM '{url}' LIMIT 5;", "```", ""]
-    if geom and src["type"] == "overture":
+    local_pm = CATALOG / coll_rel(coll_id) / f"{coll_id}.pmtiles"
+    if geom and src["type"] == "overture" and not local_pm.exists():
         from sources import OVERTURE_TILES
         out += [f"PMTiles for maps: Overture's own global theme tiles at "
                 f"`{OVERTURE_TILES}/{src['theme']}.pmtiles` "
@@ -484,7 +485,9 @@ AGENTS.md with fields, quirks, and joins.
 - The 10 `overture-*` collections are NOT city data: they are St. Louis
   bbox extracts of Overture Maps Foundation global datasets (keyword
   `overture`), included to show the catalog blending in outside data. Their
-  PMTiles are Overture's own global theme tiles, not files in this catalog.
+  PMTiles are Overture's own global theme tiles, not files in this catalog
+  (except `overture-addresses`, tiled locally — the global addresses
+  tileset has no St. Louis coverage).
 - The catalog is a mirror, not an official city service. `updated` on each
   object is the sync time.
 """

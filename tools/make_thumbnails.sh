@@ -79,8 +79,13 @@ DETAIL = {
     "tif-districts": (-90.220, 38.655, 0.035),
     "overture-buildings": (-90.1935, 38.6280, 0.0075),
     "overture-places": (-90.1990, 38.6320, 0.0060),
-    "overture-addresses": (-90.2530, 38.6110, 0.0045),
+    # Overture has no address data for the city proper — the points are the
+    # county/Illinois fringe inside the bbox, densest around Wellston.
+    "overture-addresses": (-90.2980, 38.6620, 0.0045),
     "overture-transportation": (-90.2200, 38.6350, 0.0330),
+    # Forest Park: the tree points and forest polygons only exist at z13+,
+    # so the city-wide frame showed nothing but landmass.
+    "overture-land": (-90.2845, 38.6370, 0.0120),
 }
 FILL = {"historic-districts", "opportunity-zones",
         "lra-property", "tax-abated-parcels", "community-improvement-districts",
@@ -96,7 +101,7 @@ FILL = {"historic-districts", "opportunity-zones",
         "zip-codes", "parking-meters", "street-sweeping",
         "business-licenses", "tax-sales",
         "overture-transportation", "overture-infrastructure",
-        "overture-land", "overture-land-use", "overture-water"}
+        "overture-land-use", "overture-water"}
 
 cat = pathlib.Path(os.environ["CATALOG_DIR"])
 for cj in sorted(cat.glob("*/*/collection.json")):
@@ -147,6 +152,14 @@ style = json.load(open(os.environ['STYLE']))
 pm = os.environ.get('PMTILES_PATH', '')
 if pm:
     data = {'type': 'vector', 'tiles': ['pmtiles://%s/{z}/{x}/{y}' % pm]}
+    # Declare the archive's real maxzoom or close-ups beyond it request
+    # tiles that do not exist instead of overzooming (bit addresses, z14).
+    try:
+        from pmtiles.reader import MmapSource, Reader
+        with open(pm, 'rb') as fh:
+            data['maxzoom'] = Reader(MmapSource(fh)).header()['max_zoom']
+    except Exception:
+        pass
 else:
     # Remote Overture archive: keep its URL, but as a tiles template with an
     # explicit maxzoom so overzoomed close-ups still fetch the deepest tiles.

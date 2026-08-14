@@ -2,20 +2,20 @@
   "version": 8,
   "name": "Address points",
   "metadata": {
-    "description": "Every address point in the box, in the catalog blue. The tiles carry addresses only at z14 \u2014 zoom to street level to see them."
+    "description": "Every address point in the box, in the catalog blue. Overture has no address data for the city proper yet, so the points ring it \u2014 the county and Illinois fringe. Thinned at overview zooms, complete from z14."
   },
   "sources": {
     "data": {
       "type": "vector",
-      "url": "pmtiles://https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/addresses.pmtiles"
+      "url": "pmtiles://../overture-addresses.pmtiles"
     }
   },
   "layers": [
     {
-      "id": "address-circle",
+      "id": "overture-addresses-circle",
       "type": "circle",
       "source": "data",
-      "source-layer": "address",
+      "source-layer": "overture-addresses",
       "paint": {
         "circle-color": "#1e526b",
         "circle-radius": [
@@ -26,6 +26,8 @@
           [
             "zoom"
           ],
+          10,
+          1,
           13,
           1.5,
           17,

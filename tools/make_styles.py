@@ -1661,8 +1661,13 @@ from sources import OVERTURE_TILES, SOURCES as _ALL_SOURCES
 
 
 def ostyle(coll_id, name, description, layers, legend=None, legend_layer=None,
-           no_legend=False):
-    """Like style(), but sourced from Overture's remote theme pmtiles."""
+           no_legend=False, local=False):
+    """Like style(), but sourced from Overture's remote theme pmtiles.
+
+    local=True instead sources the collection's own clipped tiles (see
+    OVERTURE_LOCAL in make_pmtiles.py — addresses, whose global tileset has
+    no St. Louis coverage); layers then target source-layer == coll_id.
+    """
     theme = _ALL_SOURCES[coll_id]["theme"]
     if legend is not None:
         layers = [{
@@ -1675,13 +1680,13 @@ def ostyle(coll_id, name, description, layers, legend=None, legend_layer=None,
     meta = {"description": description}
     if no_legend:
         meta["legend"] = "none"
+    src_url = (f"pmtiles://../{coll_id}.pmtiles" if local
+               else f"pmtiles://{OVERTURE_TILES}/{theme}.pmtiles")
     obj = {
         "version": 8,
         "name": name,
         "metadata": meta,
-        "sources": {"data": {
-            "type": "vector",
-            "url": f"pmtiles://{OVERTURE_TILES}/{theme}.pmtiles"}},
+        "sources": {"data": {"type": "vector", "url": src_url}},
         "layers": layers,
     }
     if any(l["type"] == "symbol" for l in layers):
@@ -1849,22 +1854,27 @@ emit("overture-places", "style-confidence", ostyle(
                                    13, 2.5, 16, 5], stroke="#FFFFFF")],
     legend=PLACE_CONF, legend_layer="place"))
 
-# overture-addresses — 99k address points, z14 tiles only
+# overture-addresses — 99k address points. The one Overture collection on
+# LOCAL tiles: the global addresses tileset has no St. Louis coverage, so
+# these styles read the clipped z0-14 archive built by make_pmtiles.py.
 emit("overture-addresses", "default", ostyle(
     "overture-addresses", "Address points",
-    "Every address point in the box, in the catalog blue. The tiles carry "
-    "addresses only at z14 — zoom to street level to see them.",
-    [ocircle("address", BLUE, ["interpolate", ["linear"], ["zoom"],
-                               13, 1.5, 17, 4], stroke="#FFFFFF")]),
+    "Every address point in the box, in the catalog blue. Overture has no "
+    "address data for the city proper yet, so the points ring it — the "
+    "county and Illinois fringe. Thinned at overview zooms, complete "
+    "from z14.",
+    [ocircle("overture-addresses", BLUE,
+             ["interpolate", ["linear"], ["zoom"], 10, 1, 13, 1.5, 17, 4],
+             stroke="#FFFFFF")], local=True),
     default=True)
 emit("overture-addresses", "style-postcode", ostyle(
     "overture-addresses", "Postcode mosaic",
     "Repeating colors keyed on ZIP code, so postal boundaries emerge from "
     "the address points themselves. Colors are arbitrary.",
-    [ocircle("address", repeat_fill(["to-number", ["get", "postcode"]]),
-             ["interpolate", ["linear"], ["zoom"], 13, 1.5, 17, 4])],
+    [ocircle("overture-addresses", repeat_fill(["to-number", ["get", "postcode"]]),
+             ["interpolate", ["linear"], ["zoom"], 10, 1, 13, 1.5, 17, 4])],
     legend=repeat_fill(["to-number", ["get", "postcode"]]),
-    legend_layer="address", no_legend=True))
+    legend_layer="overture-addresses", no_legend=True, local=True))
 
 # overture-divisions — 283 features across three types. The country and
 # region areas are bbox clips of the full US/Missouri/Illinois polygons —
@@ -1947,15 +1957,19 @@ LAND_SUBTYPE = match("subtype", {
     "grass": "#95c68f", "sand": "#e0d59f", "rock": "#b6b1a8",
     "wetland": "#8fc6c0", "physical": "#c9c25e", "land": LIGHT}, GRAY)
 
+# Below z13 Overture's land layer is mostly the bare landmass polygon with
+# no subtype at all; unfiltered, the match fallback painted the whole map a
+# flat grey wash. Draw only classed features.
 emit("overture-land", "default", ostyle(
     "overture-land", "Land by subtype",
     "Physical land surfaces from OSM natural tags — forest, shrub, grass, "
     "sand, rock, wetland as polygons, and 61,000 individual trees as green "
-    "points.",
-    [ofill("land", LAND_SUBTYPE, 0.6, "#FFFFFF", filt=ONLY_POLY),
+    "points. The trees live at z13+ in the tiles — zoom in to see them.",
+    [ofill("land", LAND_SUBTYPE, 0.6, "#FFFFFF",
+           filt=["all", ONLY_POLY, ["has", "subtype"]]),
      ocircle("land", LAND_SUBTYPE,
              ["interpolate", ["linear"], ["zoom"], 10, 1, 14, 2.5, 16, 4],
-             filt=ONLY_POINT)],
+             filt=["all", ONLY_POINT, ["has", "subtype"]])],
     legend=LAND_SUBTYPE, legend_layer="land"), default=True)
 emit("overture-land", "style-trees", ostyle(
     "overture-land", "Trees",

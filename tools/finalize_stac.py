@@ -488,7 +488,17 @@ def finalize_overture(coll_id: str, coll_dir, f, coll: dict, src: dict) -> None:
         HOST,
     ]
 
-    tiles_url = f"{OVERTURE_TILES}/{src['theme']}.pmtiles"
+    # Addresses is the one Overture collection with locally built tiles —
+    # the global addresses tileset has no St. Louis coverage (see
+    # OVERTURE_LOCAL in make_pmtiles.py). Local archive present ⇒ local
+    # link/asset, exactly like a city collection.
+    local_pm = coll_dir / f"{coll_id}.pmtiles"
+    if local_pm.exists():
+        tiles_url = f"./{coll_id}.pmtiles"
+        pm_layers = [coll_id]
+    else:
+        tiles_url = f"{OVERTURE_TILES}/{src['theme']}.pmtiles"
+        pm_layers = list(src["types"])
     links = [l for l in coll.get("links", [])
              if l["rel"] not in ("self", "via", "pmtiles")]
     ensure_link(links, "describedby", "./README.md", "text/markdown")
@@ -504,7 +514,7 @@ def finalize_overture(coll_id: str, coll_dir, f, coll: dict, src: dict) -> None:
                 f"(theme={src['theme']}) on S3")
     links.append({"rel": "pmtiles", "href": tiles_url,
                   "type": "application/vnd.pmtiles",
-                  "pmtiles:layers": list(src["types"])})
+                  "pmtiles:layers": pm_layers})
     for l in links:
         if l["rel"] == "root":
             l["href"] = "../../catalog.json"
@@ -517,21 +527,35 @@ def finalize_overture(coll_id: str, coll_dir, f, coll: dict, src: dict) -> None:
     coll["links"] = links
 
     assets = coll.get("assets", {})
-    tiles = {
-        "href": tiles_url,
-        "type": "application/vnd.pmtiles",
-        "roles": ["visual"],
-        "title": f"Overture {src['theme']} theme (PMTiles, global)",
-        "description": (
-            "Overture's own release-pinned global vector tiles for the "
-            f"{src['theme']} theme, served from the Overture Maps "
-            "Foundation's public bucket — not from this mirror, and not "
-            "clipped to St. Louis. The styles select this collection's "
-            f"layers ({', '.join(src['types'])}) from them."),
-    }
-    size = overture_tile_size(src["theme"])
-    if size:
-        tiles["file:size"] = size
+    if local_pm.exists():
+        tiles = {
+            "href": tiles_url,
+            "type": "application/vnd.pmtiles",
+            "roles": ["visual"],
+            "title": f"{src['title']} (PMTiles)",
+            "description": (
+                "Vector tiles built from this collection's own clipped "
+                "GeoParquet — Overture's global addresses tileset has no "
+                "St. Louis coverage, so this mirror tiles the theme "
+                "locally."),
+        }
+        stamp_asset(coll_dir, tiles_url, tiles)
+    else:
+        tiles = {
+            "href": tiles_url,
+            "type": "application/vnd.pmtiles",
+            "roles": ["visual"],
+            "title": f"Overture {src['theme']} theme (PMTiles, global)",
+            "description": (
+                "Overture's own release-pinned global vector tiles for the "
+                f"{src['theme']} theme, served from the Overture Maps "
+                "Foundation's public bucket — not from this mirror, and not "
+                "clipped to St. Louis. The styles select this collection's "
+                f"layers ({', '.join(src['types'])}) from them."),
+        }
+        size = overture_tile_size(src["theme"])
+        if size:
+            tiles["file:size"] = size
     assets[f"{coll_id}-tiles"] = tiles
     if (coll_dir / "thumbnail.png").exists() and "thumbnail" not in assets:
         assets["thumbnail"] = {
@@ -571,7 +595,8 @@ def finalize_overture(coll_id: str, coll_dir, f, coll: dict, src: dict) -> None:
     coll["assets"] = assets
 
     f.write_text(json.dumps(coll, indent=2) + "\n")
-    print(f"✓ {coll_id}: {len(style_files)} style assets, remote Overture "
+    origin = "local" if local_pm.exists() else "remote Overture"
+    print(f"✓ {coll_id}: {len(style_files)} style assets, {origin} "
           f"pmtiles ({src['theme']})")
 
 

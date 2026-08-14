@@ -185,17 +185,26 @@ def check_collection(coll_dir: Path):
             err(f"{cid}/{sf.name}: not version 8")
         src = s.get("sources", {}).get("data", {})
         if ov:
-            # Overture styles read the remote theme tiles; their layers name
-            # the Overture types (plus the inert legend layer, which targets
-            # one of them).
+            # Overture styles read the remote theme tiles and their layers
+            # name the Overture types — except collections tiled locally
+            # (OVERTURE_LOCAL in make_pmtiles.py: the global addresses
+            # tileset has no St. Louis coverage), which follow the city
+            # collections' local form. The style's own URL says which.
             from sources import OVERTURE_TILES
+            local_url = f"pmtiles://../{cid}.pmtiles"
             want_url = f"pmtiles://{OVERTURE_TILES}/{ov['theme']}.pmtiles"
-            if src.get("type") == "vector" and src.get("url") != want_url:
-                err(f"{cid}/{sf.name}: bad pmtiles url {src.get('url')}")
-            for layer in s.get("layers", []):
-                if layer.get("source-layer") not in ov["types"]:
-                    err(f"{cid}/{sf.name}: layer {layer.get('id')} "
-                        f"source-layer not in {ov['types']}")
+            if src.get("url") == local_url:
+                for layer in s.get("layers", []):
+                    if layer.get("source-layer") != cid:
+                        err(f"{cid}/{sf.name}: layer {layer.get('id')} "
+                            f"source-layer != {cid}")
+            else:
+                if src.get("type") == "vector" and src.get("url") != want_url:
+                    err(f"{cid}/{sf.name}: bad pmtiles url {src.get('url')}")
+                for layer in s.get("layers", []):
+                    if layer.get("source-layer") not in ov["types"]:
+                        err(f"{cid}/{sf.name}: layer {layer.get('id')} "
+                            f"source-layer not in {ov['types']}")
         else:
             if src.get("type") == "vector" and src.get("url") != f"pmtiles://../{cid}.pmtiles":
                 err(f"{cid}/{sf.name}: bad pmtiles url {src.get('url')}")

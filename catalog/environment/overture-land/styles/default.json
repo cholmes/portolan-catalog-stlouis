@@ -2,7 +2,7 @@
   "version": 8,
   "name": "Land by subtype",
   "metadata": {
-    "description": "Physical land surfaces from OSM natural tags \u2014 forest, shrub, grass, sand, rock, wetland as polygons, and 61,000 individual trees as green points."
+    "description": "Physical land surfaces from OSM natural tags \u2014 forest, shrub, grass, sand, rock, wetland as polygons, and 61,000 individual trees as green points. The trees live at z13+ in the tiles \u2014 zoom in to see them."
   },
   "sources": {
     "data": {
@@ -82,11 +82,18 @@
         "fill-outline-color": "#FFFFFF"
       },
       "filter": [
-        "==",
+        "all",
         [
-          "geometry-type"
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Polygon"
         ],
-        "Polygon"
+        [
+          "has",
+          "subtype"
+        ]
       ]
     },
     {
@@ -139,11 +146,18 @@
         "circle-opacity": 0.85
       },
       "filter": [
-        "==",
+        "all",
         [
-          "geometry-type"
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Point"
         ],
-        "Point"
+        [
+          "has",
+          "subtype"
+        ]
       ]
     }
   ]

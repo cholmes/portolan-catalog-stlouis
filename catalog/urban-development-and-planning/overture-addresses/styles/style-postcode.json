@@ -8,7 +8,7 @@
   "sources": {
     "data": {
       "type": "vector",
-      "url": "pmtiles://https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/addresses.pmtiles"
+      "url": "pmtiles://../overture-addresses.pmtiles"
     }
   },
   "layers": [
@@ -16,7 +16,7 @@
       "id": "overture-addresses-legend",
       "type": "fill",
       "source": "data",
-      "source-layer": "address",
+      "source-layer": "overture-addresses",
       "paint": {
         "fill-color": [
           "match",
@@ -57,10 +57,10 @@
       }
     },
     {
-      "id": "address-circle",
+      "id": "overture-addresses-circle",
       "type": "circle",
       "source": "data",
-      "source-layer": "address",
+      "source-layer": "overture-addresses",
       "paint": {
         "circle-color": [
           "match",
@@ -105,6 +105,8 @@
           [
             "zoom"
           ],
+          10,
+          1,
           13,
           1.5,
           17,
