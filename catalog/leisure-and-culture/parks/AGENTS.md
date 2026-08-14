@@ -29,4 +29,4 @@ Full schema: `table:columns` in collection.json.
 
 ## Provenance
 
-Mirror of [City Parks](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=46) from the City of St. Louis; source: https://maps9.stlouis-mo.gov/arcgis/rest/services/PARKS/Reservable_Park_Amenities/FeatureServer. No explicit license is published — see the source page. Synced 2026-08-05T19:58:51+00:00.
+Mirror of [City Parks](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=46) from the City of St. Louis; source: https://maps9.stlouis-mo.gov/arcgis/rest/services/PARKS/Reservable_Park_Amenities/FeatureServer. No explicit license is published — see the source page. Synced 2026-08-14T11:21:05+00:00.

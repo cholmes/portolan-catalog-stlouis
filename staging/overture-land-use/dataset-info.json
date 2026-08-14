@@ -1,0 +1,16 @@
+{
+ "collection": "overture-land-use",
+ "title": "Overture Land Use",
+ "portal_page": "https://docs.overturemaps.org/guides/base/",
+ "department": "Overture Maps Foundation",
+ "source": "s3://overturemaps-us-west-2/release/2026-07-22.0/theme=base",
+ "source_type": "overture",
+ "synced": "2026-08-14T11:21:05+00:00",
+ "fetch": {
+  "status": "ok",
+  "rows": 22067,
+  "parquets": [
+   "staging/extracts/overture-land-use/overture-land-use.parquet"
+  ]
+ }
+}

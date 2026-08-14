@@ -59,7 +59,19 @@
       "href": "./bike-infrastructure/collection.json",
       "type": "application/json",
       "title": "Bike Infrastructure"
+    },
+    {
+      "rel": "child",
+      "href": "./overture-transportation/collection.json",
+      "type": "application/json",
+      "title": "Overture Transportation"
+    },
+    {
+      "rel": "child",
+      "href": "./overture-infrastructure/collection.json",
+      "type": "application/json",
+      "title": "Overture Infrastructure"
     }
   ],
-  "updated": "2026-08-05T19:58:51+00:00"
+  "updated": "2026-08-14T11:21:05+00:00"
 }

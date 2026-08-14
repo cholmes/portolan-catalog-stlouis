@@ -1,7 +1,7 @@
 # City of St. Louis Open Data — Cloud-Native Mirror
 
 **[🗺️ Open the St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/)** — map
-preview, legends, schema, and direct downloads for all twenty collections ·
+preview, legends, schema, and direct downloads for all 61 collections ·
 [Browse on Source Cooperative](https://source.coop/tge-labs/st-louis-open-data-mirror)
 
 A cloud-native mirror of the most-used datasets from the
@@ -12,10 +12,18 @@ following the [Portolan spec](https://github.com/portolan-sdi/portolan-spec).
 Not an official city service.
 
 - Catalog root: `https://data.source.coop/tge-labs/st-louis-open-data-mirror/catalog.json`
-- Twenty collections: 18 geospatial + 2 parcel-joinable tabular
-  (property sales, plus 1.48M geocoded 311 requests)
-- Every geo collection ships 3–5 MapLibre styles with legends — including
-  the city's own ArcGIS renderer where the source was a live service
+- 61 collections in 11 topic catalogs: 51 city datasets (geospatial +
+  parcel-joinable tabular, including 1.48M geocoded 311 requests) plus 10
+  `overture-*` collections
+- The `overture-*` collections are St. Louis-bbox extracts of the
+  [Overture Maps Foundation](https://overturemaps.org/) global datasets
+  (buildings, transportation, places, addresses, divisions, and the base
+  theme) — **not city data**, included to demonstrate blending other
+  St. Louis-relevant open data into the catalog. Their map tiles reference
+  Overture's own release-pinned global PMTiles rather than files built here.
+- Every geo collection ships 2–5 MapLibre styles with legends — including
+  the city's own ArcGIS renderer where the source was a live service, and
+  Overture-Explorer-derived palettes for the Overture layers
 - Roadmap to mirror *everything* geo and parcel-joinable:
   [docs/full-ingestion-plan.md](docs/full-ingestion-plan.md)
 
@@ -52,7 +60,7 @@ Run from the repo root, in order:
 
 | Step | Command | What it does |
 |---|---|---|
-| 1 | `python3 tools/fetch.py` | ArcGIS extracts (`portolan extract arcgis --raw`, incl. city renderer styles + field metadata) and static downloads into `staging/` |
+| 1 | `python3 tools/fetch.py` | ArcGIS extracts (`portolan extract arcgis --raw`, incl. city renderer styles + field metadata), static downloads, and Overture DuckDB bbox extracts (`tools/fetch_overture.py`) into `staging/` |
 | 1b | `python3 tools/fetch_source_meta.py` | Size + sha2-256 of the city's own source files → `sources/source_checksums.json` (bytes streamed and discarded) |
 | 2 | `python3 tools/assemble.py` | Normalize everything to spec GeoParquet (zstd, covering bbox, Hilbert order) at `catalog/<id>/<id>.parquet` |
 | 3 | `portolan add . --pmtiles --datetime <sync>` (in `catalog/`) | STAC collections + PMTiles |

@@ -60,4 +60,4 @@ gpio convert shapefile election-results-nov-2024-geo.parquet election-results-no
 
 ## Provenance
 
-Mirror of [November 2024 Election Results by Precinct](https://stlcity.maps.arcgis.com/home/item.html?id=6e72fa855cd445f7af37d79615f602d0) from the City of St. Louis; source: https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/Nov24_Detailed_Vote_Totals_Test/FeatureServer. No explicit license is published — see the source page. Synced 2026-08-05T19:58:51+00:00.
+Mirror of [November 2024 Election Results by Precinct](https://stlcity.maps.arcgis.com/home/item.html?id=6e72fa855cd445f7af37d79615f602d0) from the City of St. Louis; source: https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/Nov24_Detailed_Vote_Totals_Test/FeatureServer. No explicit license is published — see the source page. Synced 2026-08-14T11:21:05+00:00.

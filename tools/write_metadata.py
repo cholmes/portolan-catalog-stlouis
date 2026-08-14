@@ -17,6 +17,10 @@ from sources import SOURCES, SOURCE_FILES, coll_rel, linkify, source_files
 ROOT = Path(__file__).resolve().parent.parent
 CATALOG = ROOT / "catalog"
 DESCRIPTIONS = json.loads((ROOT / "docs" / "portal-descriptions.json").read_text())
+# Overture collections get their own description file — wording drawn from
+# Overture's documentation plus the not-city-data demonstration paragraph.
+DESCRIPTIONS.update(json.loads(
+    (ROOT / "docs" / "overture-descriptions.json").read_text()))
 
 CONTACT = 'contact:\n  name: "Chris Holmes"\n  email: "cholmes@9eo.org"\n'
 
@@ -28,7 +32,12 @@ description: |
   the city's public ArcGIS servers, and its
   [ArcGIS Online organization](https://stlcity.maps.arcgis.com/): about 6.6
   million features as GeoParquet and PMTiles with STAC metadata, organized
-  into 13 department catalogs. Explore it in the
+  into 11 topic catalogs. Alongside the city's own data, 10 collections
+  tagged `overture` carry St. Louis extracts of the
+  [Overture Maps Foundation](https://overturemaps.org/) global datasets —
+  buildings, transportation, places, addresses, and more — demonstrating how
+  a city catalog can blend in other locally relevant open data. Explore it
+  in the
   [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/),
   [browse the files on Source Cooperative](https://source.coop/tge-labs/st-louis-open-data-mirror),
   or query any file directly with DuckDB — no download needed. Not an
@@ -103,6 +112,11 @@ EXAMPLE_COL = {
     "parcels-history": "era", "tornado-damage-2025": "efscale",
     "polling-places": "Early_Voting_Available",
     "business-licenses": None, "tax-sales": None,
+    "overture-buildings": "subtype", "overture-transportation": "class",
+    "overture-places": "basic_category", "overture-addresses": "postcode",
+    "overture-divisions": "subtype", "overture-infrastructure": "subtype",
+    "overture-land": "subtype", "overture-land-cover": "subtype",
+    "overture-land-use": "subtype", "overture-water": "subtype",
 }
 
 
@@ -195,8 +209,49 @@ def format_phrase(coll_id: str) -> str:
     return "portal download"
 
 
+def overture_processing_notes(coll_id: str) -> str:
+    from sources import OVERTURE_RELEASE, OVERTURE_S3
+    src = SOURCES[coll_id]
+    types = src["types"]
+    globs = "\n".join(
+        f"      {OVERTURE_S3}/theme={src['theme']}/type={t}/*.parquet"
+        for t in types)
+    paras = [
+        f"Extracted from Overture Maps release {OVERTURE_RELEASE} with "
+        f"DuckDB, reading the release's GeoParquet straight from Overture's "
+        f"public S3 bucket:\n\n{globs}\n\nThe extract keeps every feature "
+        f"that intersects the city-boundary collection's bbox "
+        f"(-90.3205, 38.5320, -90.1663, 38.7743) — a rectangle, so the "
+        f"Illinois shore of the Mississippi is included. Geometries that "
+        f"cross the edge of the box are clipped to it (otherwise a feature "
+        f"whose bounding box merely touches St. Louis arrives whole — the "
+        f"full United States polygon, in the divisions theme's case). No "
+        f"other filtering, and no columns were altered; Overture's own "
+        f"`bbox` covering column was dropped and rebuilt during conversion."]
+    if len(types) > 1:
+        paras.append(
+            f"The theme's {len(types)} feature types "
+            f"({', '.join(types)}) are merged into one collection with an "
+            f"`overture_type` column recording which type each feature is.")
+    paras.append(
+        "Converted to GeoParquet with gpio — zstd compression, Hilbert row "
+        "order, and a covering bbox column with row-group statistics, so a "
+        "spatial filter can skip most of the file over the network.")
+    paras.append(
+        "The PMTiles are not built by this mirror: the tiles asset points at "
+        "Overture's own release-pinned global tiles for the "
+        f"`{src['theme']}` theme — the tiles behind explore.overturemaps.org "
+        "— served from Overture's public bucket. The styles here select just "
+        "this collection's layers from them. The tiles cover the whole "
+        "world, so zooming out shows global data even though the Parquet in "
+        "this collection is only the St. Louis extract.")
+    return "\n\n".join(paras)
+
+
 def processing_notes(coll_id: str) -> str:
     src = SOURCES[coll_id]
+    if src["type"] == "overture":
+        return overture_processing_notes(coll_id)
     origin = src.get("service") or src.get("url")
     paras = [
         f"Mirrored from the City of St. Louis open data portal "
@@ -261,8 +316,36 @@ def indent_block(key: str, text: str) -> str:
     return "\n".join(lines)
 
 
+OVERTURE_ATTRIBUTION_URL = "https://docs.overturemaps.org/attribution/"
+
+
+def overture_yaml(coll_id: str) -> str:
+    from sources import OVERTURE_S3, coll_rel
+    src = SOURCES[coll_id]
+    desc = DESCRIPTIONS[coll_id]["description"]
+    linked = (f"{desc} Explore it in the [St. Louis data browser]"
+              f"({BROWSER}/#/{coll_rel(coll_id)}/collection.json).")
+    kw = ["overture", "overture-maps", src["theme"], "st-louis",
+          "open-data"] + [t.replace("_", "-") for t in src["types"]]
+    lines = [
+        f"title: {yq(src['title'])}",
+        f"description: {yq(linked)}",
+        CONTACT.rstrip(),
+        f"license: {yq(src['license'])}",
+        f"license_url: {yq(OVERTURE_ATTRIBUTION_URL)}",
+        'attribution: "Overture Maps Foundation"',
+        f"source_url: {yq(OVERTURE_S3 + '/theme=' + src['theme'])}",
+        f"keywords: [{', '.join(dict.fromkeys(kw))}]",
+        indent_block("processing_notes", processing_notes(coll_id)),
+        example_block(coll_id),
+    ]
+    return "\n".join(l for l in lines if l) + "\n"
+
+
 def collection_yaml(coll_id: str) -> str:
     src = SOURCES[coll_id]
+    if src["type"] == "overture":
+        return overture_yaml(coll_id)
     desc = DESCRIPTIONS.get(coll_id, {}).get("description", "")
     dept = src["department"]
     kw = ["st-louis", "missouri", "open-data"] + coll_id.split("-")

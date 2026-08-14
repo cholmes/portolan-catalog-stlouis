@@ -1,6 +1,6 @@
 # AGENTS.md — Government
 
-Department sub-catalog with 8 collections. Access pattern for each:
+Department sub-catalog with 9 collections. Access pattern for each:
 
 ```sql
 INSTALL httpfs; LOAD httpfs;  -- DuckDB
@@ -20,6 +20,8 @@ SELECT * FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/gover
 SELECT * FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/government/zip-codes/zip-codes.parquet' LIMIT 5;
 -- Property Taxes
 SELECT * FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/government/property-taxes/property-taxes.parquet' LIMIT 5;
+-- Overture Divisions
+SELECT * FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/government/overture-divisions/overture-divisions.parquet' LIMIT 5;
 ```
 
 Each collection has its own AGENTS.md with fields, quirks, and joins. Root catalog: `https://data.source.coop/tge-labs/st-louis-open-data-mirror/catalog.json`.

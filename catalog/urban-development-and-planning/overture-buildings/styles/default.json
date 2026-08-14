@@ -1,0 +1,127 @@
+{
+  "version": 8,
+  "name": "Building heights",
+  "metadata": {
+    "description": "Every footprint stepped by measured height in meters \u2014 light blue low-rise through dark blue mid-rise, with the 60m+ downtown towers in red. About nine in ten St. Louis buildings carry a height; the rest read as gray. Building parts draw on top with the same ramp."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/buildings.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "overture-buildings-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "building",
+      "paint": {
+        "fill-color": [
+          "step",
+          [
+            "to-number",
+            [
+              "get",
+              "height"
+            ]
+          ],
+          "#e3e0da",
+          1,
+          "#c6dbe8",
+          5,
+          "#8fbdd6",
+          7,
+          "#5591b5",
+          12,
+          "#2d6a8e",
+          25,
+          "#174054",
+          60,
+          "#c03221"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "building-fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "building",
+      "paint": {
+        "fill-color": [
+          "step",
+          [
+            "to-number",
+            [
+              "get",
+              "height"
+            ]
+          ],
+          "#e3e0da",
+          1,
+          "#c6dbe8",
+          5,
+          "#8fbdd6",
+          7,
+          "#5591b5",
+          12,
+          "#2d6a8e",
+          25,
+          "#174054",
+          60,
+          "#c03221"
+        ],
+        "fill-opacity": 0.85,
+        "fill-outline-color": "#FFFFFF"
+      },
+      "filter": [
+        "==",
+        [
+          "geometry-type"
+        ],
+        "Polygon"
+      ]
+    },
+    {
+      "id": "building_part-fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "building_part",
+      "paint": {
+        "fill-color": [
+          "step",
+          [
+            "to-number",
+            [
+              "get",
+              "height"
+            ]
+          ],
+          "#e3e0da",
+          1,
+          "#c6dbe8",
+          5,
+          "#8fbdd6",
+          7,
+          "#5591b5",
+          12,
+          "#2d6a8e",
+          25,
+          "#174054",
+          60,
+          "#c03221"
+        ],
+        "fill-opacity": 0.85,
+        "fill-outline-color": "#FFFFFF"
+      },
+      "filter": [
+        "==",
+        [
+          "geometry-type"
+        ],
+        "Polygon"
+      ]
+    }
+  ]
+}

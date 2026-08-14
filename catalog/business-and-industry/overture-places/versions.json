@@ -1,0 +1,25 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-14T11:21:24.012506Z",
+      "breaking": false,
+      "assets": {
+        "overture-places.parquet": {
+          "sha256": "1d35c925a503544409b4560d4d6aba23bccb5861c644c355f2264cb108157f68",
+          "size_bytes": 4821097,
+          "href": "business-and-industry/overture-places/overture-places.parquet",
+          "source_mtime": 1786706395.2158525,
+          "mtime": 1786706395.2158525,
+          "feature_count": 20968,
+          "schema_fingerprint": "70c6ef2ece1b5f97"
+        }
+      },
+      "changes": [
+        "overture-places.parquet"
+      ]
+    }
+  ]
+}

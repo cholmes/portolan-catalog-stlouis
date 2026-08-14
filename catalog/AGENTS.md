@@ -1,7 +1,7 @@
 # AGENTS.md — City of St. Louis Open Data (Cloud-Native Mirror)
 
-51 collections mirrored from the [City of St. Louis open data
-portal](https://www.stlouis-mo.gov/data/) as GeoParquet and PMTiles. Everything is
+61 collections mirrored from the [City of St. Louis open data
+portal](https://www.stlouis-mo.gov/data/) as GeoParquet, 51 of them also as PMTiles. Everything is
 range-readable over HTTPS — no download needed.
 
 ## Access pattern
@@ -30,5 +30,9 @@ AGENTS.md with fields, quirks, and joins.
 - Access-style booleans appear as 0/-1 (e.g. `parcels.VacantLot`: -1 = vacant).
 - No explicit data license is published by the city; each collection's
   `rel: license` link points at its portal page.
+- The 10 `overture-*` collections are NOT city data: they are St. Louis
+  bbox extracts of Overture Maps Foundation global datasets (keyword
+  `overture`), included to show the catalog blending in outside data. Their
+  PMTiles are Overture's own global theme tiles, not files in this catalog.
 - The catalog is a mirror, not an official city service. `updated` on each
   object is the sync time.

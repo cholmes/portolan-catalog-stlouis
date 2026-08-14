@@ -1,0 +1,105 @@
+{
+  "version": 8,
+  "name": "Building use",
+  "metadata": {
+    "description": "Footprints colored by Overture's building subtype where one is known \u2014 residential blues, commercial red, education orange. Most St. Louis buildings have no recorded subtype and stay light gray."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/buildings.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "overture-buildings-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "building",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "subtype"
+          ],
+          "residential",
+          "#7fb3d0",
+          "commercial",
+          "#c03221",
+          "industrial",
+          "#585f63",
+          "education",
+          "#e89d07",
+          "religious",
+          "#7c5295",
+          "civic",
+          "#4a9d9c",
+          "medical",
+          "#d98d8d",
+          "entertainment",
+          "#d093b5",
+          "transportation",
+          "#b5651d",
+          "service",
+          "#b0a377",
+          "outbuilding",
+          "#c9b970",
+          "agricultural",
+          "#6b7f2a",
+          "#dfe6ea"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "building-fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "building",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "subtype"
+          ],
+          "residential",
+          "#7fb3d0",
+          "commercial",
+          "#c03221",
+          "industrial",
+          "#585f63",
+          "education",
+          "#e89d07",
+          "religious",
+          "#7c5295",
+          "civic",
+          "#4a9d9c",
+          "medical",
+          "#d98d8d",
+          "entertainment",
+          "#d093b5",
+          "transportation",
+          "#b5651d",
+          "service",
+          "#b0a377",
+          "outbuilding",
+          "#c9b970",
+          "agricultural",
+          "#6b7f2a",
+          "#dfe6ea"
+        ],
+        "fill-opacity": 0.8,
+        "fill-outline-color": "#FFFFFF"
+      },
+      "filter": [
+        "==",
+        [
+          "geometry-type"
+        ],
+        "Polygon"
+      ]
+    }
+  ]
+}

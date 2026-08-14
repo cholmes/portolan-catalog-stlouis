@@ -10,6 +10,8 @@ Assistance, Incentives, Licenses, Regulations, Bids
 
 ### [business-and-industry/opportunity-zones](business-and-industry/business-and-industry/opportunity-zones/)
 
+### [business-and-industry/overture-places](business-and-industry/business-and-industry/overture-places/)
+
 ### [business-and-industry/special-business-districts](business-and-industry/business-and-industry/special-business-districts/)
 
 ### [business-and-industry/tax-abated-parcels](business-and-industry/business-and-industry/tax-abated-parcels/)
@@ -22,7 +24,11 @@ Assistance, Incentives, Licenses, Regulations, Bids
 
 **Spatial Extent**
 
-- West: -90.3180, South: 38.5319, East: -90.1664, North: 38.7744
+- West: -90.3205, South: 38.5319, East: -90.1663, North: 38.7744
+
+**Temporal Extent**
+
+- 2026-07-22 to 2026-07-22
 
 ---
 

@@ -1,0 +1,310 @@
+{
+  "type": "Collection",
+  "id": "urban-development-and-planning/overture-buildings",
+  "stac_version": "1.1.0",
+  "description": "Building footprints and building parts from the Overture Maps buildings theme, which describes human-made structures with roofs or interior spaces that are permanently or semi-permanently in one place. Overture's goal is to provide the world's most comprehensive set of building structures compiled from the best available open data sources. Where known, buildings carry height, number of floors, and facade and roof attributes, supporting 2D and 3D visualization, data enrichment via GERS IDs, and spatial analysis. Both feature types are merged here, with an `overture_type` column telling buildings from building parts.\n\nUnlike everything else in this catalog, this is **not** City of St. Louis data: it comes from the [Overture Maps Foundation](https://overturemaps.org/), a collaborative project building open, interoperable map data for the world. This collection is a St. Louis extract of that global dataset \u2014 everything inside the city's bounding box, which also takes in the Illinois shore of the Mississippi (East St. Louis, Cahokia Heights) \u2014 included here to demonstrate how a city's open-data catalog can blend in other St. Louis-relevant open data alongside the city's own. The GeoParquet was extracted from Overture release 2026-07-22.0; the map tiles reference Overture's own global PMTiles for the same release, the tiles behind [explore.overturemaps.org](https://explore.overturemaps.org/).",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Urban Development and Planning"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown",
+      "title": "Agent/LLM usage guide"
+    },
+    {
+      "rel": "describedby",
+      "href": "./README.md",
+      "type": "text/markdown"
+    },
+    {
+      "rel": "license",
+      "href": "https://docs.overturemaps.org/attribution/",
+      "type": "text/html",
+      "title": "Overture attribution and licensing"
+    },
+    {
+      "rel": "via",
+      "href": "https://docs.overturemaps.org/guides/buildings/",
+      "type": "text/html",
+      "title": "Overture buildings theme guide"
+    },
+    {
+      "rel": "via",
+      "href": "s3://overturemaps-us-west-2/release/2026-07-22.0/theme=buildings/",
+      "type": "application/x-parquet",
+      "title": "Overture release 2026-07-22.0 GeoParquet (theme=buildings) on S3"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/buildings.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "pmtiles:layers": [
+        "building",
+        "building_part"
+      ]
+    }
+  ],
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
+  ],
+  "geoparquet:geometry_type": "MultiPolygon",
+  "geoparquet:feature_count": 194132,
+  "table:row_count": 194132,
+  "table:primary_geometry": "geometry",
+  "table:columns": [
+    {
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "name": "names",
+      "type": "struct<primary: string, common: map<string, string ('common')>, rules: list<element: struct<variant: string, language: string, perspectives: struct<mode: string, countries: list<element: string>>, value: string, between: list<element: double>, side: string>>>"
+    },
+    {
+      "name": "sources",
+      "type": "list<element: struct<property: string, dataset: string, license: string, record_id: string, update_time: string, confidence: double, between: list<element: double>>>"
+    },
+    {
+      "name": "level",
+      "type": "int32"
+    },
+    {
+      "name": "height",
+      "type": "double"
+    },
+    {
+      "name": "min_height",
+      "type": "double"
+    },
+    {
+      "name": "is_underground",
+      "type": "bool"
+    },
+    {
+      "name": "num_floors",
+      "type": "int32"
+    },
+    {
+      "name": "num_floors_underground",
+      "type": "int32"
+    },
+    {
+      "name": "min_floor",
+      "type": "int32"
+    },
+    {
+      "name": "subtype",
+      "type": "string"
+    },
+    {
+      "name": "class",
+      "type": "string"
+    },
+    {
+      "name": "facade_color",
+      "type": "string"
+    },
+    {
+      "name": "facade_material",
+      "type": "string"
+    },
+    {
+      "name": "roof_material",
+      "type": "string"
+    },
+    {
+      "name": "roof_shape",
+      "type": "string"
+    },
+    {
+      "name": "roof_direction",
+      "type": "double"
+    },
+    {
+      "name": "roof_orientation",
+      "type": "string"
+    },
+    {
+      "name": "roof_color",
+      "type": "string"
+    },
+    {
+      "name": "roof_height",
+      "type": "double"
+    },
+    {
+      "name": "has_parts",
+      "type": "bool"
+    },
+    {
+      "name": "version",
+      "type": "int32"
+    },
+    {
+      "name": "overture_type",
+      "type": "string"
+    },
+    {
+      "name": "geometry",
+      "type": "binary"
+    },
+    {
+      "name": "building_id",
+      "type": "string"
+    },
+    {
+      "name": "bbox",
+      "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>"
+    }
+  ],
+  "portolan:total_size_bytes": 27246275,
+  "portolan:asset_count": 1,
+  "title": "Overture Buildings",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -90.32051856117901,
+          38.53199630293254,
+          -90.16630892212817,
+          38.77434671879855
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2026-07-22T00:00:00Z",
+          "2026-07-22T00:00:00Z"
+        ]
+      ]
+    }
+  },
+  "license": "ODbL-1.0",
+  "assets": {
+    "overture-buildings": {
+      "href": "./overture-buildings.parquet",
+      "type": "application/vnd.apache.parquet",
+      "file:size": 27246275,
+      "file:checksum": "12204eb40c6d4f94476761a1ad5286e5dada46fe6e893e6d53601c38c9227454419e",
+      "roles": [
+        "data"
+      ],
+      "title": "Overture Buildings (GeoParquet)"
+    },
+    "overture-buildings-tiles": {
+      "href": "https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/buildings.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "roles": [
+        "visual"
+      ],
+      "title": "Overture buildings theme (PMTiles, global)",
+      "description": "Overture's own release-pinned global vector tiles for the buildings theme, served from the Overture Maps Foundation's public bucket \u2014 not from this mirror, and not clipped to St. Louis. The styles select this collection's layers (building, building_part) from them.",
+      "file:size": 179413355586
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "default",
+        "style"
+      ],
+      "title": "Building heights",
+      "description": "Every footprint stepped by measured height in meters \u2014 light blue low-rise through dark blue mid-rise, with the 60m+ downtown towers in red. About nine in ten St. Louis buildings carry a height; the rest read as gray. Building parts draw on top with the same ramp.",
+      "file:size": 2617,
+      "file:checksum": "12201668641d0ee76f3150c4aeb955f232f221f52c2ace0a3acb0e96e7b6ee6adf39"
+    },
+    "styles/style-explorer": {
+      "href": "./styles/style-explorer.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "style"
+      ],
+      "title": "Explorer footprints",
+      "description": "The quiet warm-gray building fill of Overture's own Explorer site \u2014 footprints as basemap texture.",
+      "file:size": 1332,
+      "file:checksum": "1220d426966549f7b08e9e6b2c03d09d40334995fb084793da464feb2fb2d4a1e847"
+    },
+    "styles/style-subtype": {
+      "href": "./styles/style-subtype.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "style"
+      ],
+      "title": "Building use",
+      "description": "Footprints colored by Overture's building subtype where one is known \u2014 residential blues, commercial red, education orange. Most St. Louis buildings have no recorded subtype and stay light gray.",
+      "file:size": 2359,
+      "file:checksum": "1220798fa302fc71187aaf5d5c163dde1e6eb80eb978d2054557dd8a1f063b065da9"
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ],
+      "title": "Overture Buildings rendered with the default style",
+      "file:size": 411023,
+      "file:checksum": "1220248a700118b581d301bc8a5890701fc447116892ba8c0ea690c4a8e522852037"
+    }
+  },
+  "updated": "2026-08-14T11:21:05+00:00",
+  "themes": [
+    {
+      "scheme": "https://www.stlouis-mo.gov/data/topics/",
+      "concepts": [
+        {
+          "id": "urban-development-and-planning",
+          "title": "Urban Development and Planning"
+        }
+      ]
+    },
+    {
+      "scheme": "https://docs.overturemaps.org/guides/",
+      "concepts": [
+        {
+          "id": "buildings",
+          "title": "Overture buildings theme"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "overture",
+    "Overture Maps Foundation",
+    "buildings",
+    "building",
+    "building part"
+  ],
+  "providers": [
+    {
+      "name": "Overture Maps Foundation",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://overturemaps.org/"
+    },
+    {
+      "name": "TGE Labs",
+      "roles": [
+        "host"
+      ],
+      "url": "https://github.com/cholmes/portolan-catalog-stlouis"
+    }
+  ]
+}

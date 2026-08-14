@@ -22,6 +22,8 @@ BASE = "https://data.source.coop/tge-labs/st-louis-open-data-mirror"
 BROWSE = "https://source.coop/tge-labs/st-louis-open-data-mirror"
 BROWSER = "https://cholmes.github.io/stlouis-data-browser"
 DESCRIPTIONS = json.loads((ROOT / "docs" / "portal-descriptions.json").read_text())
+DESCRIPTIONS.update(json.loads(
+    (ROOT / "docs" / "overture-descriptions.json").read_text()))
 
 # fields: worth-knowing columns; quirks: caveats found in profiling;
 # joins: cross-collection recipes; example: an extra worked query.
@@ -222,6 +224,105 @@ NOTES = {
                   "points (source_layer distinguishes them)."},
 }
 
+# Overture collections share most quirks; per-collection extras below.
+_OVERTURE_COMMON = (
+    "Overture Maps Foundation data, not the city's — see the description. "
+    "`id` is a GERS id (stable across Overture releases); `sources` records "
+    "the upstream dataset per feature; struct/list columns (names, sources) "
+    "are nested Parquet — DuckDB reads them natively. Geometries crossing "
+    "the bbox edge are clipped to it.")
+NOTES.update({
+    "overture-buildings": {
+        "fields": {
+            "height": "measured height in meters — present on ~89% of "
+                      "St. Louis footprints (median 4.4 m)",
+            "num_floors": "floor count where known",
+            "subtype": "building use (residential, commercial…) — mostly "
+                       "null here",
+            "overture_type": "building or building_part",
+            "has_parts": "true when building_part rows carry the detail",
+        },
+        "quirks": _OVERTURE_COMMON,
+        "joins": "Spatial join to parcels for assessor attributes; "
+                 "overture-addresses points fall inside most footprints.",
+    },
+    "overture-transportation": {
+        "fields": {
+            "overture_type": "segment (roads/rail, lines) or connector "
+                             "(intersections, points)",
+            "class": "road class (motorway…footway) or rail gauge",
+            "connectors": "list of connector GERS ids along each segment — "
+                          "the routing graph",
+            "speed_limits": "nested speed rules, possibly time-scoped",
+        },
+        "quirks": _OVERTURE_COMMON + " Connectors carry almost no "
+                  "attributes; the graph meaning lives on segments.",
+        "joins": "segment.connectors[] = connector.id rebuilds the graph.",
+    },
+    "overture-places": {
+        "fields": {
+            "basic_category": "flat category (restaurant, bar…)",
+            "confidence": "0-1 — Overture's certainty the place exists",
+            "operating_status": "open / closed markers",
+        },
+        "quirks": _OVERTURE_COMMON + " Compare against the city's "
+                  "business-licenses collection for ground truth.",
+    },
+    "overture-addresses": {
+        "fields": {"number": "street number", "street": "street name",
+                   "postcode": "ZIP", "unit": "unit where present"},
+        "quirks": _OVERTURE_COMMON,
+        "joins": "Spatial join to parcels or overture-buildings; "
+                 "fuzzy-match street+number against city permit tables.",
+    },
+    "overture-divisions": {
+        "fields": {
+            "overture_type": "division (label point) / division_area "
+                             "(polygon) / division_boundary (line)",
+            "subtype": "country, region, county, locality, neighborhood, "
+                       "microhood",
+            "population": "on division points where known",
+        },
+        "quirks": _OVERTURE_COMMON + " The country and region areas are "
+                  "bbox clips of the full US/Missouri/Illinois polygons.",
+        "joins": "Compare neighborhood areas with the city's neighborhoods "
+                 "collection (spatial join).",
+    },
+    "overture-infrastructure": {
+        "fields": {"subtype": "transportation, barrier, transit, power…",
+                   "class": "finer class within the subtype"},
+        "quirks": _OVERTURE_COMMON,
+    },
+    "overture-land": {
+        "fields": {"subtype": "tree, forest, shrub, grass, sand, rock, "
+                              "wetland", "class": "finer class"},
+        "quirks": _OVERTURE_COMMON + " 61k of the 64k features are "
+                  "individual tree points from OSM.",
+        "joins": "Compare tree points with city-trees and "
+                 "forest-park-trees (Forestry's inventories).",
+    },
+    "overture-land-cover": {
+        "fields": {"subtype": "forest, shrub, grass, crop, wetland, "
+                              "barren, urban"},
+        "quirks": _OVERTURE_COMMON + " Derived from ESA WorldCover 10m "
+                  "rasters, so polygons are pixel-edged.",
+    },
+    "overture-land-use": {
+        "fields": {"subtype": "park, managed, residential, golf…",
+                   "class": "the underlying OSM landuse value"},
+        "quirks": _OVERTURE_COMMON,
+        "joins": "Contrast with the city's own land-use (Strategic Land "
+                 "Use Plan) and zoning collections.",
+    },
+    "overture-water": {
+        "fields": {"subtype": "river, lake, pond, stream, canal, "
+                              "human_made (pools)…",
+                   "is_intermittent": "seasonal water",
+                   "is_salt": "salt water"},
+        "quirks": _OVERTURE_COMMON,
+    },
+})
+
 
 # Documented joins for the tabular collections whose PMTiles are
 # join-materialized (kept in sync with tools/make_joined_pmtiles.py JOINS).
@@ -284,7 +385,15 @@ def collection_agents(coll_id: str) -> str:
     out += ["", "## Access", "", "```sql",
             "INSTALL httpfs; LOAD httpfs;  -- DuckDB",
             f"SELECT * FROM '{url}' LIMIT 5;", "```", ""]
-    if geom:
+    if geom and src["type"] == "overture":
+        from sources import OVERTURE_TILES
+        out += [f"PMTiles for maps: Overture's own global theme tiles at "
+                f"`{OVERTURE_TILES}/{src['theme']}.pmtiles` "
+                f"(layers {', '.join('`' + t + '`' for t in src['types'])}), "
+                f"styled by `styles/*.json` — `styles/default.json` is the "
+                "default. Not clipped to St. Louis: only the Parquet is the "
+                "extract.", ""]
+    elif geom:
         out += [f"PMTiles for maps: `{BASE}/{coll_rel(coll_id)}/{coll_id}.pmtiles` "
                 f"(layer `{coll_id}`), styled by `styles/*.json` — "
                 "`styles/default.json` is the default.", ""]
@@ -302,6 +411,23 @@ def collection_agents(coll_id: str) -> str:
     if notes.get("example"):
         out += ["## Example", "", "```sql", notes["example"], "```", ""]
     rel = coll_rel(coll_id)
+    if src["type"] == "overture":
+        from sources import OVERTURE_RELEASE, OVERTURE_S3
+        out += ["## Links", "",
+                f"- [View on the data browser]({BROWSER}/#/{rel}/collection.json) "
+                "— map, styles, legends, downloads",
+                f"- [Browse on Source Cooperative]({BROWSE}/{rel}/) — rendered "
+                "README and file listing",
+                f"- [Overture {src['theme']} theme guide]({src['docs']})",
+                "", "## Provenance", "",
+                f"St. Louis-bbox extract of the [Overture Maps Foundation]"
+                f"(https://overturemaps.org/) {src['theme']} theme, release "
+                f"{OVERTURE_RELEASE} "
+                f"(`{OVERTURE_S3}/theme={src['theme']}/`) — **not** City of "
+                f"St. Louis data. License: {src['license']} (see "
+                "[Overture attribution](https://docs.overturemaps.org/attribution/)). "
+                f"Synced {coll.get('updated', '')}.", ""]
+        return "\n".join(out)
     out += ["## Links", "",
             f"- [View on the data browser]({BROWSER}/#/{rel}/collection.json) "
             "— map, styles, legends, downloads",
@@ -355,6 +481,10 @@ AGENTS.md with fields, quirks, and joins.
 - Access-style booleans appear as 0/-1 (e.g. `parcels.VacantLot`: -1 = vacant).
 - No explicit data license is published by the city; each collection's
   `rel: license` link points at its portal page.
+- The 10 `overture-*` collections are NOT city data: they are St. Louis
+  bbox extracts of Overture Maps Foundation global datasets (keyword
+  `overture`), included to show the catalog blending in outside data. Their
+  PMTiles are Overture's own global theme tiles, not files in this catalog.
 - The catalog is a mirror, not an official city service. `updated` on each
   object is the sync time.
 """

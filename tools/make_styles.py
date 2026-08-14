@@ -1644,5 +1644,394 @@ emit("tax-sales", "style-boundaries", style(
     "tax-sales", "Parcel outlines",
     "Outlines only.", [line("tax-sales", RED, 1.0)]))
 
+# --------------------------------------------------------------------------
+# Overture collections — styled against Overture's own remote theme PMTiles.
+#
+# These sources are NOT local tiles: each style points at the release-pinned
+# global theme file on Overture's public bucket, and its layers select the
+# collection's own source-layers (the Overture type names) from it. Palettes
+# take their cues from explore.overturemaps.org (via
+# cholmes/overture-pmtiles-styles) with the same inert-legend-layer mechanism
+# as everything else in this catalog. Note the tiles' own zoom windows:
+# places and addresses only exist at z14, connectors at z13-14 — those styles
+# show nothing until the map is zoomed well in.
+# --------------------------------------------------------------------------
+
+from sources import OVERTURE_TILES, SOURCES as _ALL_SOURCES
+
+
+def ostyle(coll_id, name, description, layers, legend=None, legend_layer=None,
+           no_legend=False):
+    """Like style(), but sourced from Overture's remote theme pmtiles."""
+    theme = _ALL_SOURCES[coll_id]["theme"]
+    if legend is not None:
+        layers = [{
+            "id": f"{coll_id}-legend",
+            "type": "fill",
+            "source": "data",
+            "source-layer": legend_layer or layers[0].get("source-layer"),
+            "paint": {"fill-color": legend, "fill-opacity": 0},
+        }] + layers
+    meta = {"description": description}
+    if no_legend:
+        meta["legend"] = "none"
+    obj = {
+        "version": 8,
+        "name": name,
+        "metadata": meta,
+        "sources": {"data": {
+            "type": "vector",
+            "url": f"pmtiles://{OVERTURE_TILES}/{theme}.pmtiles"}},
+        "layers": layers,
+    }
+    if any(l["type"] == "symbol" for l in layers):
+        obj["glyphs"] = GLYPHS
+    return obj
+
+
+def ofill(sl, color, opacity=0.55, outline=INK, lid=None, filt=None):
+    l = {"id": lid or f"{sl}-fill", "type": "fill", "source": "data",
+         "source-layer": sl,
+         "paint": {"fill-color": color, "fill-opacity": opacity,
+                   "fill-outline-color": outline}}
+    if filt is not None:
+        l["filter"] = filt
+    return l
+
+
+def oline(sl, color, width=1.5, lid=None, dash=None, opacity=1.0, filt=None):
+    paint = {"line-color": color, "line-width": width, "line-opacity": opacity}
+    if dash:
+        paint["line-dasharray"] = dash
+    l = {"id": lid or f"{sl}-line", "type": "line", "source": "data",
+         "source-layer": sl, "paint": paint}
+    if filt is not None:
+        l["filter"] = filt
+    return l
+
+
+def ocircle(sl, color, radius=3, lid=None, opacity=0.85, stroke=None,
+            filt=None, minzoom=None):
+    paint = {"circle-color": color, "circle-radius": radius,
+             "circle-opacity": opacity}
+    if stroke:
+        paint["circle-stroke-color"] = stroke
+        paint["circle-stroke-width"] = 0.5
+    l = {"id": lid or f"{sl}-circle", "type": "circle", "source": "data",
+         "source-layer": sl, "paint": paint}
+    if filt is not None:
+        l["filter"] = filt
+    if minzoom is not None:
+        l["minzoom"] = minzoom
+    return l
+
+
+def olabel(sl, prop="@name", size=11, minzoom=10, lid=None, filt=None):
+    l = {"id": lid or f"{sl}-labels", "type": "symbol", "source": "data",
+         "source-layer": sl, "minzoom": minzoom,
+         "layout": {"text-field": ["get", prop],
+                    "text-font": ["Noto Sans Regular"],
+                    "text-size": size, "text-max-width": 9},
+         "paint": {"text-color": INK, "text-halo-color": "#FFFFFF",
+                   "text-halo-width": 1.2}}
+    if filt is not None:
+        l["filter"] = filt
+    return l
+
+
+ONLY_POLY = ["==", ["geometry-type"], "Polygon"]
+ONLY_LINE = ["==", ["geometry-type"], "LineString"]
+ONLY_POINT = ["==", ["geometry-type"], "Point"]
+
+# overture-buildings — 194k footprints; 89% carry a measured height
+BLDG_HEIGHT = ["step", ["to-number", ["get", "height"]],
+               "#e3e0da",  # no height recorded (to-number(null) = 0)
+               1, "#c6dbe8", 5, "#8fbdd6", 7, "#5591b5",
+               12, "#2d6a8e", 25, "#174054", 60, RED]
+BLDG_SUBTYPE = match("subtype", {
+    "residential": "#7fb3d0", "commercial": RED, "industrial": "#585f63",
+    "education": ORANGE, "religious": "#7c5295", "civic": "#4a9d9c",
+    "medical": "#d98d8d", "entertainment": "#d093b5",
+    "transportation": "#b5651d", "service": "#b0a377",
+    "outbuilding": "#c9b970", "agricultural": "#6b7f2a"}, LIGHT)
+
+emit("overture-buildings", "default", ostyle(
+    "overture-buildings", "Building heights",
+    "Every footprint stepped by measured height in meters — light blue "
+    "low-rise through dark blue mid-rise, with the 60m+ downtown towers in "
+    "red. About nine in ten St. Louis buildings carry a height; the rest "
+    "read as gray. Building parts draw on top with the same ramp.",
+    [ofill("building", BLDG_HEIGHT, 0.85, "#FFFFFF", filt=ONLY_POLY),
+     ofill("building_part", BLDG_HEIGHT, 0.85, "#FFFFFF", filt=ONLY_POLY)],
+    legend=BLDG_HEIGHT, legend_layer="building"), default=True)
+emit("overture-buildings", "style-explorer", ostyle(
+    "overture-buildings", "Explorer footprints",
+    "The quiet warm-gray building fill of Overture's own Explorer site — "
+    "footprints as basemap texture.",
+    [ofill("building", "hsl(31, 35%, 93%)", 1.0, "hsl(31, 35%, 89%)",
+           filt=["all", ONLY_POLY, ["!=", ["get", "has_parts"], True]]),
+     ofill("building_part", "hsl(31, 35%, 91%)", 1.0, "hsl(31, 35%, 87%)",
+           filt=ONLY_POLY)]))
+emit("overture-buildings", "style-subtype", ostyle(
+    "overture-buildings", "Building use",
+    "Footprints colored by Overture's building subtype where one is known — "
+    "residential blues, commercial red, education orange. Most St. Louis "
+    "buildings have no recorded subtype and stay light gray.",
+    [ofill("building", BLDG_SUBTYPE, 0.8, "#FFFFFF", filt=ONLY_POLY)],
+    legend=BLDG_SUBTYPE, legend_layer="building"))
+
+# overture-transportation — 72k segments + 112k connectors
+ROAD_CLASS = match("class", {
+    "motorway": RED, "trunk": "#d95f38", "primary": ORANGE,
+    "secondary": "#d4b13f", "tertiary": "#b8b83c",
+    "residential": "#9aa3a8", "living_street": "#9aa3a8",
+    "unclassified": "#b7bec2", "unknown": "#c2c9cd", "service": "#c9cfd3",
+    "footway": "#538400", "path": "#6b7f2a", "steps": "#538400",
+    "pedestrian": "#538400", "cycleway": "#0f5d0f", "track": "#b5651d",
+    "standard_gauge": "#7c5295", "light_rail": "#8b3a62", "tram": "#c98bab"},
+    GRAY)
+ROAD_WIDTH = ["match", ["get", "class"],
+              "motorway", 3.2, "trunk", 2.8, "primary", 2.4,
+              "secondary", 2.0, "tertiary", 1.8,
+              "standard_gauge", 1.2, "light_rail", 1.4, 1.0]
+NETWORK = match("subtype", {"road": BLUE, "rail": "#7c5295",
+                            "water": "#4a9d9c"}, GRAY)
+
+emit("overture-transportation", "default", ostyle(
+    "overture-transportation", "Road and rail classes",
+    "Every segment colored by Overture's class — motorways red through the "
+    "arterial oranges and yellows, residential streets gray, foot and cycle "
+    "ways green, rail purple — the full routable network on both sides of "
+    "the river.",
+    [oline("segment", ROAD_CLASS, ROAD_WIDTH)],
+    legend=ROAD_CLASS, legend_layer="segment"), default=True)
+emit("overture-transportation", "style-network", ostyle(
+    "overture-transportation", "Network by mode",
+    "The three Overture subtypes: roads blue, rail purple, waterways teal.",
+    [oline("segment", NETWORK, 1.6)],
+    legend=NETWORK, legend_layer="segment"))
+emit("overture-transportation", "style-topology", ostyle(
+    "overture-transportation", "Segments and connectors",
+    "The routing graph itself: segments in light gray with every connector "
+    "(intersection) as a red point. Connectors only tile at z13+ — zoom in.",
+    [oline("segment", GRAY, 1.2, opacity=0.7),
+     ocircle("connector", RED, ["interpolate", ["linear"], ["zoom"],
+                                13, 1.5, 16, 3.5], stroke="#FFFFFF")]))
+
+# overture-places — 21k POIs, z14 tiles only
+PLACE_CAT = match("basic_category", {
+    "restaurant": RED, "casual_eatery": "#d95f38", "bar": "#8b3a62",
+    "food_and_beverage_store": "#b5651d",
+    "christian_place_of_worship": "#7c5295",
+    "personal_or_beauty_service": "#d093b5", "home_service": "#b0a377",
+    "social_or_community_service": "#4a9d9c",
+    "financial_service": "#2874a6", "bank_or_credit_union": "#2874a6",
+    "professional_service": "#585f63", "automotive_service": "#9aa3a8",
+    "historic_site": ORANGE, "park": GREEN,
+    "fashion_and_apparel_store": "#c98bab", "gas_station": "#6b7f2a",
+    "real_estate_service": "#7fb3d0"}, LIGHTBLUE)
+PLACE_CONF = ["step", ["to-number", ["get", "confidence"]],
+              "#c9d2d6", 0.5, "#a8d4e8", 0.75, "#5591b5", 0.9, DARK]
+
+emit("overture-places", "default", ostyle(
+    "overture-places", "Places by category",
+    "Every place colored by its Overture category — restaurants and bars in "
+    "reds, churches purple, services in blues and teals, historic sites "
+    "orange. Places tile only at z14: zoom into a neighborhood to see them.",
+    [ocircle("place", PLACE_CAT, ["interpolate", ["linear"], ["zoom"],
+                                  13, 2.5, 16, 5], stroke="#FFFFFF")],
+    legend=PLACE_CAT, legend_layer="place"), default=True)
+emit("overture-places", "style-confidence", ostyle(
+    "overture-places", "Confidence",
+    "Overture's confidence that each place exists and is current, stepped "
+    "from pale gray (below 0.5) to dark blue (0.9 and up).",
+    [ocircle("place", PLACE_CONF, ["interpolate", ["linear"], ["zoom"],
+                                   13, 2.5, 16, 5], stroke="#FFFFFF")],
+    legend=PLACE_CONF, legend_layer="place"))
+
+# overture-addresses — 99k address points, z14 tiles only
+emit("overture-addresses", "default", ostyle(
+    "overture-addresses", "Address points",
+    "Every address point in the box, in the catalog blue. The tiles carry "
+    "addresses only at z14 — zoom to street level to see them.",
+    [ocircle("address", BLUE, ["interpolate", ["linear"], ["zoom"],
+                               13, 1.5, 17, 4], stroke="#FFFFFF")]),
+    default=True)
+emit("overture-addresses", "style-postcode", ostyle(
+    "overture-addresses", "Postcode mosaic",
+    "Repeating colors keyed on ZIP code, so postal boundaries emerge from "
+    "the address points themselves. Colors are arbitrary.",
+    [ocircle("address", repeat_fill(["to-number", ["get", "postcode"]]),
+             ["interpolate", ["linear"], ["zoom"], 13, 1.5, 17, 4])],
+    no_legend=True))
+
+# overture-divisions — 283 features across three types. The country and
+# region areas are bbox clips of the full US/Missouri/Illinois polygons —
+# drawing them stacks two washes of color over the whole frame, so the
+# default fills county-and-below only.
+DIV_SUBTYPE = match("subtype", {
+    "county": ORANGE, "locality": "#7fb3d0", "neighborhood": "#95c68f",
+    "microhood": "#c98bab"}, GRAY)
+DIV_LOCAL = ["match", ["get", "subtype"],
+             ["county", "locality", "neighborhood", "microhood"],
+             True, False]
+
+emit("overture-divisions", "default", ostyle(
+    "overture-divisions", "Divisions by subtype",
+    "Division areas colored by their place in the hierarchy — counties "
+    "orange, cities and municipalities blue, neighborhoods green — with "
+    "shared boundaries drawn dark and each division's label point named. "
+    "The country and region areas (bbox clips of the whole US, Missouri, "
+    "and Illinois polygons) are in the data but not drawn here.",
+    [ofill("division_area", DIV_SUBTYPE, 0.45, "#FFFFFF",
+           filt=["all", ONLY_POLY, DIV_LOCAL]),
+     oline("division_boundary", DARK, 1.6),
+     olabel("division", minzoom=9)],
+    legend=DIV_SUBTYPE, legend_layer="division_area"), default=True)
+emit("overture-divisions", "style-neighborhoods", ostyle(
+    "overture-divisions", "Overture neighborhoods",
+    "Just the neighborhood-level divisions, in repeating colors with labels "
+    "— Overture's own neighborhood set for both sides of the river, to hold "
+    "against the city's official neighborhood boundaries. Colors are "
+    "arbitrary.",
+    [ofill("division_area",
+           repeat_fill(["length", ["get", "@name"]]), 0.55, "#FFFFFF",
+           filt=["all", ONLY_POLY,
+                 ["match", ["get", "subtype"],
+                  ["neighborhood", "microhood"], True, False]]),
+     olabel("division", minzoom=11,
+            filt=["match", ["get", "subtype"],
+                  ["neighborhood", "microhood"], True, False])],
+    no_legend=True))
+
+# overture-infrastructure — 76k features, mixed geometry
+INFRA_SUBTYPE = match("subtype", {
+    "transportation": "#9aa3a8", "barrier": "#b0a377", "transit": BLUE,
+    "pedestrian": GREEN, "waste_management": "#b5651d", "power": ORANGE,
+    "emergency": RED, "bridge": "#585f63", "utility": "#7c5295",
+    "water": "#4a9d9c", "tower": "#8b3a62", "communication": "#d093b5",
+    "pier": "#a99bd0", "airport": "#2874a6"}, GRAY)
+GRID = match("subtype", {"power": ORANGE, "communication": "#d093b5",
+                         "tower": "#8b3a62", "utility": "#7c5295"}, LIGHT)
+
+emit("overture-infrastructure", "default", ostyle(
+    "overture-infrastructure", "Infrastructure by subtype",
+    "Everything Overture files under infrastructure, colored by subtype: "
+    "transportation gray, barriers tan, transit blue, power orange, "
+    "emergency red — polygons, lines, and points all drawn.",
+    [ofill("infrastructure", INFRA_SUBTYPE, 0.5, "#FFFFFF", filt=ONLY_POLY),
+     oline("infrastructure", INFRA_SUBTYPE, 1.4, filt=ONLY_LINE),
+     ocircle("infrastructure", INFRA_SUBTYPE,
+             ["interpolate", ["linear"], ["zoom"], 11, 1.5, 15, 3.5],
+             filt=ONLY_POINT)],
+    legend=INFRA_SUBTYPE, legend_layer="infrastructure"), default=True)
+emit("overture-infrastructure", "style-grid", ostyle(
+    "overture-infrastructure", "The grid",
+    "Power lines orange, utilities purple, towers and communication pink — "
+    "the energy and communication network over everything else in light "
+    "gray.",
+    [oline("infrastructure", GRID, ["match", ["get", "subtype"],
+                                    "power", 2.2, "utility", 2.0, 1.0],
+           filt=ONLY_LINE),
+     ocircle("infrastructure", GRID, 2.5,
+             filt=["all", ONLY_POINT,
+                   ["match", ["get", "subtype"],
+                    ["power", "communication", "tower", "utility"],
+                    True, False]])],
+    legend=GRID, legend_layer="infrastructure"))
+
+# overture-land — 64k features, 61k of them individual trees
+LAND_SUBTYPE = match("subtype", {
+    "tree": GREEN, "forest": "#7fb356", "shrub": "#adc487",
+    "grass": "#95c68f", "sand": "#e0d59f", "rock": "#b6b1a8",
+    "wetland": "#8fc6c0", "physical": "#c9c25e", "land": LIGHT}, GRAY)
+
+emit("overture-land", "default", ostyle(
+    "overture-land", "Land by subtype",
+    "Physical land surfaces from OSM natural tags — forest, shrub, grass, "
+    "sand, rock, wetland as polygons, and 61,000 individual trees as green "
+    "points.",
+    [ofill("land", LAND_SUBTYPE, 0.6, "#FFFFFF", filt=ONLY_POLY),
+     ocircle("land", LAND_SUBTYPE,
+             ["interpolate", ["linear"], ["zoom"], 10, 1, 14, 2.5, 16, 4],
+             filt=ONLY_POINT)],
+    legend=LAND_SUBTYPE, legend_layer="land"), default=True)
+emit("overture-land", "style-trees", ostyle(
+    "overture-land", "Trees",
+    "Only the trees — every individually mapped tree in the box as a green "
+    "point, OSM's answer to the city's Forestry inventory.",
+    [ocircle("land", GREEN,
+             ["interpolate", ["linear"], ["zoom"], 10, 1, 14, 2.5, 16, 4],
+             filt=["all", ONLY_POINT, ["==", ["get", "subtype"], "tree"]])]))
+
+# overture-land-cover — 922 WorldCover polygons; Explorer's own palette
+COVER = match("subtype", {
+    "forest": "hsl(122, 52%, 76%)", "shrub": "hsl(78, 58%, 80%)",
+    "grass": "hsl(95, 60%, 79%)", "crop": "hsl(62, 62%, 81%)",
+    "wetland": "hsl(178, 56%, 80%)", "barren": "hsl(48, 52%, 87%)",
+    "urban": "hsl(13, 18%, 85%)"}, LIGHT)
+
+emit("overture-land-cover", "default", ostyle(
+    "overture-land-cover", "Land cover",
+    "ESA WorldCover surface classes in the Explorer site's own palette — "
+    "forest, shrub, grass, crop, wetland, barren, and built-up. Drawn at "
+    "full opacity here (the Explorer fades land cover out above z11; a data "
+    "collection should not hide its data).",
+    [ofill("land_cover", COVER, 0.8, "#FFFFFF")],
+    legend=COVER, legend_layer="land_cover"), default=True)
+
+# overture-land-use — 22k polygons
+LANDUSE = match("subtype", {
+    "park": "#538400", "protected": "#0f5d0f", "recreation": "#7fb356",
+    "golf": "#95c68f", "managed": "#b8c9a0", "horticulture": "#adc487",
+    "cemetery": "#88b8a3", "agriculture": "#d6c977",
+    "developed": "#d0c4b0", "residential": "#e0b394",
+    "pedestrian": "#c9b970", "religious": "#c98bab", "education": ORANGE,
+    "medical": "#d98d8d", "entertainment": "#d093b5",
+    "transportation": "#9aa3a8", "military": "#585f63",
+    "construction": "#b5651d", "landfill": "#8b6f47",
+    "resource_extraction": "#8b3a62"}, LIGHT)
+GREENSPACE = match("subtype", {
+    "park": "#538400", "protected": "#0f5d0f", "recreation": "#7fb356",
+    "golf": "#95c68f", "cemetery": "#88b8a3"}, LIGHT)
+
+emit("overture-land-use", "default", ostyle(
+    "overture-land-use", "Land use by subtype",
+    "OSM landuse translated to Overture subtypes — parks and protected land "
+    "in greens, residential warm tan, education orange, industrial and "
+    "transportation grays.",
+    [ofill("land_use", LANDUSE, 0.65, "#FFFFFF")],
+    legend=LANDUSE, legend_layer="land_use"), default=True)
+emit("overture-land-use", "style-greenspace", ostyle(
+    "overture-land-use", "Green space",
+    "Parks, protected areas, recreation grounds, golf courses, and "
+    "cemeteries in greens; every other use fades to pale gray.",
+    [ofill("land_use", GREENSPACE, 0.65, "#FFFFFF")],
+    legend=GREENSPACE, legend_layer="land_use"))
+
+# overture-water — 1,145 features: the Mississippi, park lakes, 374 pools
+WATER_SUBTYPE = match("subtype", {
+    "river": "#1e6f9c", "lake": "#2874a6", "reservoir": "#8fbdd6",
+    "pond": "#7fb3d0", "stream": "#5591b5", "canal": "#4a9d9c",
+    "water": "#a8d4e8", "human_made": "#c9a0d6", "physical": "#8fc6c0",
+    "spring": "#95d0c8"}, LIGHTBLUE)
+
+emit("overture-water", "default", ostyle(
+    "overture-water", "Water by subtype",
+    "The Mississippi in deep blue, park lakes and ponds lighter, streams and "
+    "canals teal — and the city's 374 swimming pools in purple. Lines "
+    "(streams, drains) draw as lines, everything else as polygons.",
+    [ofill("water", WATER_SUBTYPE, 0.75, "#FFFFFF", filt=ONLY_POLY),
+     oline("water", WATER_SUBTYPE, 1.4, filt=ONLY_LINE),
+     olabel("water", minzoom=11)],
+    legend=WATER_SUBTYPE, legend_layer="water"), default=True)
+emit("overture-water", "style-explorer", ostyle(
+    "overture-water", "Explorer water",
+    "One flat Explorer blue for every water feature — the basemap look.",
+    [ofill("water", "hsl(200, 98%, 83%)", 1.0, "hsla(0, 0%, 0%, 0)",
+           filt=ONLY_POLY),
+     oline("water", "hsl(200, 98%, 83%)", 1.2, filt=ONLY_LINE)]))
+
+
 if __name__ == "__main__":
     main()

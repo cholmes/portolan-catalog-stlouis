@@ -43,4 +43,4 @@ gpio convert shapefile electrical-permits-geo.parquet electrical-permits.shp
 
 ## Provenance
 
-Mirror of [Electrical Permits](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=51) from the City of St. Louis; source: https://www.stlouis-mo.gov/data/upload/data-files/electrical-permits.zip. No explicit license is published — see the source page. Synced 2026-08-05T19:58:51+00:00.
+Mirror of [Electrical Permits](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=51) from the City of St. Louis; source: https://www.stlouis-mo.gov/data/upload/data-files/electrical-permits.zip. No explicit license is published — see the source page. Synced 2026-08-14T11:21:05+00:00.

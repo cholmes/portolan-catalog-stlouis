@@ -23,4 +23,4 @@ Full schema: `table:columns` in collection.json.
 
 ## Provenance
 
-Mirror of [Port Authority District](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=55) from the City of St. Louis; source: https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/Port_Authority_District_Boundary/FeatureServer. No explicit license is published — see the source page. Synced 2026-08-05T19:58:51+00:00.
+Mirror of [Port Authority District](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=55) from the City of St. Louis; source: https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/Port_Authority_District_Boundary/FeatureServer. No explicit license is published — see the source page. Synced 2026-08-14T11:21:05+00:00.

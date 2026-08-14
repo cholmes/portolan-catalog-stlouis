@@ -1,0 +1,40 @@
+{
+  "version": 8,
+  "name": "Address points",
+  "metadata": {
+    "description": "Every address point in the box, in the catalog blue. The tiles carry addresses only at z14 \u2014 zoom to street level to see them."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/addresses.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "address-circle",
+      "type": "circle",
+      "source": "data",
+      "source-layer": "address",
+      "paint": {
+        "circle-color": "#1e526b",
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          13,
+          1.5,
+          17,
+          4
+        ],
+        "circle-opacity": 0.85,
+        "circle-stroke-color": "#FFFFFF",
+        "circle-stroke-width": 0.5
+      }
+    }
+  ]
+}

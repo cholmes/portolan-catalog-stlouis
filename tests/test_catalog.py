@@ -48,10 +48,20 @@ def style_fields(node, out: set) -> set:
     return out
 
 
+def overture_source(cid: str) -> dict | None:
+    """The sources.py entry when cid is an Overture collection, else None."""
+    import sys
+    sys.path.insert(0, str(ROOT / "tools"))
+    from sources import SOURCES
+    src = SOURCES.get(cid)
+    return src if src and src["type"] == "overture" else None
+
+
 def check_collection(coll_dir: Path):
     cid = coll_dir.name  # leaf id: tile layers and style refs use this
     path_id = f"{coll_dir.parent.name}/{cid}"
     coll = json.loads((coll_dir / "collection.json").read_text())
+    ov = overture_source(cid)
 
     if coll.get("id") != path_id:
         err(f"{cid}: id is {coll.get('id')!r}, expected {path_id!r}")
@@ -61,8 +71,12 @@ def check_collection(coll_dir: Path):
         err(f"{cid}: missing portolan schema pin")
     if not coll.get("title") or coll.get("description", "").startswith("Collection:"):
         err(f"{cid}: placeholder title/description")
-    if coll.get("license") != "other":
-        err(f"{cid}: license is {coll.get('license')!r}, expected 'other'")
+    # City data carries no explicit license ("other"); Overture themes carry
+    # their own (ODbL, or "other" where a theme mixes permissive licenses).
+    expected_license = ov["license"] if ov else "other"
+    if coll.get("license") != expected_license:
+        err(f"{cid}: license is {coll.get('license')!r}, "
+            f"expected {expected_license!r}")
     provs = coll.get("providers", [])
     if not provs or "host" not in provs[-1].get("roles", []):
         err(f"{cid}: providers must end with host")
@@ -103,13 +117,24 @@ def check_collection(coll_dir: Path):
     defaults = []
     for key, a in coll.get("assets", {}).items():
         if a["href"].startswith("http"):
+            if not a["href"].startswith("https://"):
+                err(f"{cid}: asset {key} remote href is not https")
+            # Overture collections reference Overture's own release-pinned
+            # global theme tiles as their visual asset: size is recorded but
+            # a checksum of a 19-195 GB file this catalog neither serves nor
+            # re-hashes would be an unverifiable claim in the other
+            # direction, so none is required.
+            if ov and a["href"].endswith(".pmtiles"):
+                if "visual" not in a.get("roles", []):
+                    err(f"{cid}: remote tiles asset {key} must be visual")
+                if "file:size" not in a:
+                    err(f"{cid}: remote tiles asset {key} missing file:size")
+                continue
             # A `source` asset points at the city's own copy on a server we
             # do not control, so there is no local file to compare against.
             # What we can insist on is that it is fetchable over https and
             # that it carries the size and digest of the bytes it served —
             # an unpinned remote asset is an unverifiable claim.
-            if not a["href"].startswith("https://"):
-                err(f"{cid}: asset {key} remote href is not https")
             if "source" not in a.get("roles", []):
                 err(f"{cid}: remote asset {key} must carry the source role")
             for field in ("file:size", "file:checksum"):
@@ -159,11 +184,24 @@ def check_collection(coll_dir: Path):
         if s.get("version") != 8:
             err(f"{cid}/{sf.name}: not version 8")
         src = s.get("sources", {}).get("data", {})
-        if src.get("type") == "vector" and src.get("url") != f"pmtiles://../{cid}.pmtiles":
-            err(f"{cid}/{sf.name}: bad pmtiles url {src.get('url')}")
-        for layer in s.get("layers", []):
-            if layer.get("source-layer") != cid:
-                err(f"{cid}/{sf.name}: layer {layer.get('id')} source-layer != {cid}")
+        if ov:
+            # Overture styles read the remote theme tiles; their layers name
+            # the Overture types (plus the inert legend layer, which targets
+            # one of them).
+            from sources import OVERTURE_TILES
+            want_url = f"pmtiles://{OVERTURE_TILES}/{ov['theme']}.pmtiles"
+            if src.get("type") == "vector" and src.get("url") != want_url:
+                err(f"{cid}/{sf.name}: bad pmtiles url {src.get('url')}")
+            for layer in s.get("layers", []):
+                if layer.get("source-layer") not in ov["types"]:
+                    err(f"{cid}/{sf.name}: layer {layer.get('id')} "
+                        f"source-layer not in {ov['types']}")
+        else:
+            if src.get("type") == "vector" and src.get("url") != f"pmtiles://../{cid}.pmtiles":
+                err(f"{cid}/{sf.name}: bad pmtiles url {src.get('url')}")
+            for layer in s.get("layers", []):
+                if layer.get("source-layer") != cid:
+                    err(f"{cid}/{sf.name}: layer {layer.get('id')} source-layer != {cid}")
         # any data-driven color must be visible to the legend extractor:
         # first fill layer's fill-color is a match/step expression
         def is_expr(v):
@@ -243,8 +281,8 @@ def main() -> int:
             if coll_dir.is_dir() and (coll_dir / "collection.json").exists():
                 n_colls += 1
                 check_collection(coll_dir)
-    if n_colls != 51:
-        err(f"expected 51 collections across groups, got {n_colls}")
+    if n_colls != 61:
+        err(f"expected 61 collections across groups, got {n_colls}")
 
     if errors:
         print(f"FAIL ({len(errors)}):")

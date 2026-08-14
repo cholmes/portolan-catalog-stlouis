@@ -1,0 +1,30 @@
+title: "Overture Infrastructure"
+description: "Infrastructure features from the Overture base theme: real-world infrastructure entities such as bridges, airports, runways, aerialways, communication towers, power lines, and transit features like bus stops, platforms, and stations. All features are pulled from OpenStreetMap and converted to the Overture schema, classified by `subtype` and `class`.
+
+Unlike everything else in this catalog, this is **not** City of St. Louis data: it comes from the [Overture Maps Foundation](https://overturemaps.org/), a collaborative project building open, interoperable map data for the world. This collection is a St. Louis extract of that global dataset — everything inside the city's bounding box, which also takes in the Illinois shore of the Mississippi (East St. Louis, Cahokia Heights) — included here to demonstrate how a city's open-data catalog can blend in other St. Louis-relevant open data alongside the city's own. The GeoParquet was extracted from Overture release 2026-07-22.0; the map tiles reference Overture's own global PMTiles for the same release, the tiles behind [explore.overturemaps.org](https://explore.overturemaps.org/). Explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/transportation-infrastructure-and-utilities/overture-infrastructure/collection.json)."
+contact:
+  name: "Chris Holmes"
+  email: "cholmes@9eo.org"
+license: "ODbL-1.0"
+license_url: "https://docs.overturemaps.org/attribution/"
+attribution: "Overture Maps Foundation"
+source_url: "s3://overturemaps-us-west-2/release/2026-07-22.0/theme=base"
+keywords: [overture, overture-maps, base, st-louis, open-data, infrastructure]
+processing_notes: |
+  Extracted from Overture Maps release 2026-07-22.0 with DuckDB, reading the release's GeoParquet straight from Overture's public S3 bucket:
+
+        s3://overturemaps-us-west-2/release/2026-07-22.0/theme=base/type=infrastructure/*.parquet
+
+  The extract keeps every feature that intersects the city-boundary collection's bbox (-90.3205, 38.5320, -90.1663, 38.7743) — a rectangle, so the Illinois shore of the Mississippi is included. Geometries that cross the edge of the box are clipped to it (otherwise a feature whose bounding box merely touches St. Louis arrives whole — the full United States polygon, in the divisions theme's case). No other filtering, and no columns were altered; Overture's own `bbox` covering column was dropped and rebuilt during conversion.
+
+  Converted to GeoParquet with gpio — zstd compression, Hilbert row order, and a covering bbox column with row-group statistics, so a spatial filter can skip most of the file over the network.
+
+  The PMTiles are not built by this mirror: the tiles asset points at Overture's own release-pinned global tiles for the `base` theme — the tiles behind explore.overturemaps.org — served from Overture's public bucket. The styles here select just this collection's layers from them. The tiles cover the whole world, so zooming out shows global data even though the Parquet in this collection is only the St. Louis extract.
+examples:
+  - engine: duckdb
+    description: "Count rows by subtype, straight off the published file"
+    code: |
+      INSTALL httpfs; LOAD httpfs;
+      SELECT subtype, count(*) AS n
+      FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/transportation-infrastructure-and-utilities/overture-infrastructure/overture-infrastructure.parquet'
+      GROUP BY 1 ORDER BY 2 DESC LIMIT 10;

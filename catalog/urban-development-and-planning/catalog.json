@@ -95,7 +95,25 @@
       "href": "./city-boundary/collection.json",
       "type": "application/json",
       "title": "City Boundary"
+    },
+    {
+      "rel": "child",
+      "href": "./overture-buildings/collection.json",
+      "type": "application/json",
+      "title": "Overture Buildings"
+    },
+    {
+      "rel": "child",
+      "href": "./overture-addresses/collection.json",
+      "type": "application/json",
+      "title": "Overture Addresses"
+    },
+    {
+      "rel": "child",
+      "href": "./overture-land-use/collection.json",
+      "type": "application/json",
+      "title": "Overture Land Use"
     }
   ],
-  "updated": "2026-08-05T19:58:51+00:00"
+  "updated": "2026-08-14T11:21:05+00:00"
 }

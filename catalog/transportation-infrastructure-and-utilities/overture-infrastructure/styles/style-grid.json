@@ -1,0 +1,135 @@
+{
+  "version": 8,
+  "name": "The grid",
+  "metadata": {
+    "description": "Power lines orange, utilities purple, towers and communication pink \u2014 the energy and communication network over everything else in light gray."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/base.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "overture-infrastructure-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "infrastructure",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "subtype"
+          ],
+          "power",
+          "#e89d07",
+          "communication",
+          "#d093b5",
+          "tower",
+          "#8b3a62",
+          "utility",
+          "#7c5295",
+          "#dfe6ea"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "infrastructure-line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "infrastructure",
+      "paint": {
+        "line-color": [
+          "match",
+          [
+            "get",
+            "subtype"
+          ],
+          "power",
+          "#e89d07",
+          "communication",
+          "#d093b5",
+          "tower",
+          "#8b3a62",
+          "utility",
+          "#7c5295",
+          "#dfe6ea"
+        ],
+        "line-width": [
+          "match",
+          [
+            "get",
+            "subtype"
+          ],
+          "power",
+          2.2,
+          "utility",
+          2.0,
+          1.0
+        ],
+        "line-opacity": 1.0
+      },
+      "filter": [
+        "==",
+        [
+          "geometry-type"
+        ],
+        "LineString"
+      ]
+    },
+    {
+      "id": "infrastructure-circle",
+      "type": "circle",
+      "source": "data",
+      "source-layer": "infrastructure",
+      "paint": {
+        "circle-color": [
+          "match",
+          [
+            "get",
+            "subtype"
+          ],
+          "power",
+          "#e89d07",
+          "communication",
+          "#d093b5",
+          "tower",
+          "#8b3a62",
+          "utility",
+          "#7c5295",
+          "#dfe6ea"
+        ],
+        "circle-radius": 2.5,
+        "circle-opacity": 0.85
+      },
+      "filter": [
+        "all",
+        [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Point"
+        ],
+        [
+          "match",
+          [
+            "get",
+            "subtype"
+          ],
+          [
+            "power",
+            "communication",
+            "tower",
+            "utility"
+          ],
+          true,
+          false
+        ]
+      ]
+    }
+  ]
+}

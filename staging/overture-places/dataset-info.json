@@ -1,0 +1,16 @@
+{
+ "collection": "overture-places",
+ "title": "Overture Places",
+ "portal_page": "https://docs.overturemaps.org/guides/places/",
+ "department": "Overture Maps Foundation",
+ "source": "s3://overturemaps-us-west-2/release/2026-07-22.0/theme=places",
+ "source_type": "overture",
+ "synced": "2026-08-14T11:21:05+00:00",
+ "fetch": {
+  "status": "ok",
+  "rows": 20968,
+  "parquets": [
+   "staging/extracts/overture-places/overture-places.parquet"
+  ]
+ }
+}

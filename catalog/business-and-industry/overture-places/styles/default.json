@@ -1,0 +1,132 @@
+{
+  "version": 8,
+  "name": "Places by category",
+  "metadata": {
+    "description": "Every place colored by its Overture category \u2014 restaurants and bars in reds, churches purple, services in blues and teals, historic sites orange. Places tile only at z14: zoom into a neighborhood to see them."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/places.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "overture-places-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "place",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "basic_category"
+          ],
+          "restaurant",
+          "#c03221",
+          "casual_eatery",
+          "#d95f38",
+          "bar",
+          "#8b3a62",
+          "food_and_beverage_store",
+          "#b5651d",
+          "christian_place_of_worship",
+          "#7c5295",
+          "personal_or_beauty_service",
+          "#d093b5",
+          "home_service",
+          "#b0a377",
+          "social_or_community_service",
+          "#4a9d9c",
+          "financial_service",
+          "#2874a6",
+          "bank_or_credit_union",
+          "#2874a6",
+          "professional_service",
+          "#585f63",
+          "automotive_service",
+          "#9aa3a8",
+          "historic_site",
+          "#e89d07",
+          "park",
+          "#538400",
+          "fashion_and_apparel_store",
+          "#c98bab",
+          "gas_station",
+          "#6b7f2a",
+          "real_estate_service",
+          "#7fb3d0",
+          "#a8d4e8"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "place-circle",
+      "type": "circle",
+      "source": "data",
+      "source-layer": "place",
+      "paint": {
+        "circle-color": [
+          "match",
+          [
+            "get",
+            "basic_category"
+          ],
+          "restaurant",
+          "#c03221",
+          "casual_eatery",
+          "#d95f38",
+          "bar",
+          "#8b3a62",
+          "food_and_beverage_store",
+          "#b5651d",
+          "christian_place_of_worship",
+          "#7c5295",
+          "personal_or_beauty_service",
+          "#d093b5",
+          "home_service",
+          "#b0a377",
+          "social_or_community_service",
+          "#4a9d9c",
+          "financial_service",
+          "#2874a6",
+          "bank_or_credit_union",
+          "#2874a6",
+          "professional_service",
+          "#585f63",
+          "automotive_service",
+          "#9aa3a8",
+          "historic_site",
+          "#e89d07",
+          "park",
+          "#538400",
+          "fashion_and_apparel_store",
+          "#c98bab",
+          "gas_station",
+          "#6b7f2a",
+          "real_estate_service",
+          "#7fb3d0",
+          "#a8d4e8"
+        ],
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          13,
+          2.5,
+          16,
+          5
+        ],
+        "circle-opacity": 0.85,
+        "circle-stroke-color": "#FFFFFF",
+        "circle-stroke-width": 0.5
+      }
+    }
+  ]
+}

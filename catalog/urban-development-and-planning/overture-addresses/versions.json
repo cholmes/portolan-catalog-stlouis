@@ -1,0 +1,25 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-14T11:21:23.988209Z",
+      "breaking": false,
+      "assets": {
+        "overture-addresses.parquet": {
+          "sha256": "cd113806a4f54ecec5f8f4f4f19dc3fdfd3fbf9f110631c54a0b963b185bdba2",
+          "size_bytes": 7293315,
+          "href": "urban-development-and-planning/overture-addresses/overture-addresses.parquet",
+          "source_mtime": 1786706391.1700325,
+          "mtime": 1786706391.1700325,
+          "feature_count": 99070,
+          "schema_fingerprint": "03e35cb1a727087c"
+        }
+      },
+      "changes": [
+        "overture-addresses.parquet"
+      ]
+    }
+  ]
+}

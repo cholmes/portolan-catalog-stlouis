@@ -1,0 +1,25 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-14T11:21:24.007374Z",
+      "breaking": false,
+      "assets": {
+        "overture-infrastructure.parquet": {
+          "sha256": "e3b509c9da995725365927854cca1b39dfc4f6a63af9ac3c07b033df9bd3c54a",
+          "size_bytes": 8021883,
+          "href": "transportation-infrastructure-and-utilities/overture-infrastructure/overture-infrastructure.parquet",
+          "source_mtime": 1786706396.9643183,
+          "mtime": 1786706396.9643183,
+          "feature_count": 75678,
+          "schema_fingerprint": "70acf61148a25058"
+        }
+      },
+      "changes": [
+        "overture-infrastructure.parquet"
+      ]
+    }
+  ]
+}

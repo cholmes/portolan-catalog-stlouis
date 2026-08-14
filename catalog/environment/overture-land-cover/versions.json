@@ -1,0 +1,25 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-14T11:21:24.028561Z",
+      "breaking": false,
+      "assets": {
+        "overture-land-cover.parquet": {
+          "sha256": "2b8961d703e1a8651c2f6d3f4333eb576c4fb104343b88dc7a9f3adbeda834c5",
+          "size_bytes": 659483,
+          "href": "environment/overture-land-cover/overture-land-cover.parquet",
+          "source_mtime": 1786706398.5375142,
+          "mtime": 1786706398.5375142,
+          "feature_count": 921,
+          "schema_fingerprint": "a18f721dd67c33dc"
+        }
+      },
+      "changes": [
+        "overture-land-cover.parquet"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+# Overture Addresses
+
+Address points from the Overture addresses theme (currently in Alpha). An address represents a physical place through a series of attributes — street number, street name, unit, address levels, postal code, and/or country — together with a point geometry giving the approximate location most commonly associated with it. The theme aggregates open government address datasets, each carrying its own permissive open license, recorded per feature in the `sources` column. Useful for geocoding, validation, and conflation with buildings and places.
+Unlike everything else in this catalog, this is **not** City of St. Louis data: it comes from the [Overture Maps Foundation](https://overturemaps.org/), a collaborative project building open, interoperable map data for the world. This collection is a St. Louis extract of that global dataset — everything inside the city's bounding box, which also takes in the Illinois shore of the Mississippi (East St. Louis, Cahokia Heights) — included here to demonstrate how a city's open-data catalog can blend in other St. Louis-relevant open data alongside the city's own. The GeoParquet was extracted from Overture release 2026-07-22.0; the map tiles reference Overture's own global PMTiles for the same release, the tiles behind [explore.overturemaps.org](https://explore.overturemaps.org/). Explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/urban-development-and-planning/overture-addresses/collection.json).
+
+![overture](https://img.shields.io/badge/overture-blue) ![overture-maps](https://img.shields.io/badge/overture--maps-blue) ![addresses](https://img.shields.io/badge/addresses-blue) ![st-louis](https://img.shields.io/badge/st--louis-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![address](https://img.shields.io/badge/address-blue)
+
+## Spatial Coverage
+
+- **Bounding Box**: [-90.3205182695672, 38.53199954005468, -90.16631356713408, 38.774346652337805]
+
+## Temporal Coverage
+
+- **Start**: 2026-07-22T00:00:00Z
+- **End**: 2026-07-22T00:00:00Z
+
+## Schema
+
+| Column | Type | Description |
+|--------|------|-------------|
+| id | string |  |
+| street | string |  |
+| number | string |  |
+| unit | string |  |
+| postcode | string |  |
+| postal_city | string |  |
+| address_levels | list<element: struct<value: string>> |  |
+| country | string |  |
+| sources | list<element: struct<property: string, dataset: string, license: string, record_id: string, update_time: string, confidence: double, between: list<element: double>>> |  |
+| version | int32 |  |
+| geometry | binary |  |
+| bbox | struct<xmin: double, ymin: double, xmax: double, ymax: double> |  |
+
+## Files
+
+| File | Size | Checksum |
+|------|------|----------|
+| ./overture-addresses.parquet | 7.0 MB | 1220cd113806... |
+| https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/addresses.pmtiles | 22.8 GB | - |
+| ./styles/default.json | 931 B | 122028ca0a91... |
+| ./styles/style-postcode.json | 1.4 KB | 12201438ea7a... |
+
+## Quick Start
+
+```python
+import geopandas as gpd
+
+gdf = gpd.read_parquet("./overture-addresses.parquet")
+print(gdf.head())
+```
+
+## STAC Metadata
+
+- **root**: `../../catalog.json`
+- **parent**: `../catalog.json`
+
+## Source
+
+[s3://overturemaps-us-west-2/release/2026-07-22.0/theme=addresses](s3://overturemaps-us-west-2/release/2026-07-22.0/theme=addresses)
+
+## Processing Notes
+
+Extracted from Overture Maps release 2026-07-22.0 with DuckDB, reading the release's GeoParquet straight from Overture's public S3 bucket:
+
+      s3://overturemaps-us-west-2/release/2026-07-22.0/theme=addresses/type=address/*.parquet
+
+The extract keeps every feature that intersects the city-boundary collection's bbox (-90.3205, 38.5320, -90.1663, 38.7743) — a rectangle, so the Illinois shore of the Mississippi is included. Geometries that cross the edge of the box are clipped to it (otherwise a feature whose bounding box merely touches St. Louis arrives whole — the full United States polygon, in the divisions theme's case). No other filtering, and no columns were altered; Overture's own `bbox` covering column was dropped and rebuilt during conversion.
+
+Converted to GeoParquet with gpio — zstd compression, Hilbert row order, and a covering bbox column with row-group statistics, so a spatial filter can skip most of the file over the network.
+
+The PMTiles are not built by this mirror: the tiles asset points at Overture's own release-pinned global tiles for the `addresses` theme — the tiles behind explore.overturemaps.org — served from Overture's public bucket. The styles here select just this collection's layers from them. The tiles cover the whole world, so zooming out shows global data even though the Parquet in this collection is only the St. Louis extract.
+
+
+## Attribution
+
+Overture Maps Foundation
+
+## License
+
+[other](https://docs.overturemaps.org/attribution/)
+
+## Contact
+
+Chris Holmes <cholmes@9eo.org>
+
+---
+
+*Generated by [Portolan](https://github.com/portolan-sdi/portolan-cli) from STAC metadata and .portolan/metadata.yaml*

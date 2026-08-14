@@ -1,0 +1,62 @@
+{
+  "version": 8,
+  "name": "Network by mode",
+  "metadata": {
+    "description": "The three Overture subtypes: roads blue, rail purple, waterways teal."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/transportation.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "overture-transportation-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "segment",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "subtype"
+          ],
+          "road",
+          "#1e526b",
+          "rail",
+          "#7c5295",
+          "water",
+          "#4a9d9c",
+          "#9aa3a8"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "segment-line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "segment",
+      "paint": {
+        "line-color": [
+          "match",
+          [
+            "get",
+            "subtype"
+          ],
+          "road",
+          "#1e526b",
+          "rail",
+          "#7c5295",
+          "water",
+          "#4a9d9c",
+          "#9aa3a8"
+        ],
+        "line-width": 1.6,
+        "line-opacity": 1.0
+      }
+    }
+  ]
+}

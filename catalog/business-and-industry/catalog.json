@@ -71,7 +71,13 @@
       "href": "./community-improvement-districts/collection.json",
       "type": "application/json",
       "title": "Community Improvement Districts (CIDs)"
+    },
+    {
+      "rel": "child",
+      "href": "./overture-places/collection.json",
+      "type": "application/json",
+      "title": "Overture Places"
     }
   ],
-  "updated": "2026-08-05T19:58:51+00:00"
+  "updated": "2026-08-14T11:21:05+00:00"
 }

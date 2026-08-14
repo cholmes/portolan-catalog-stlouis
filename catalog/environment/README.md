@@ -12,11 +12,21 @@ Waste, Recycling, Sustainability, Hazardous Materials
 
 ### [environment/forest-park-trees](environment/environment/forest-park-trees/)
 
+### [environment/overture-land](environment/environment/overture-land/)
+
+### [environment/overture-land-cover](environment/environment/overture-land-cover/)
+
+### [environment/overture-water](environment/environment/overture-water/)
+
 ## Coverage
 
 **Spatial Extent**
 
-- West: -90.3201, South: 38.5319, East: -90.1664, North: 38.7744
+- West: -90.3205, South: 38.5319, East: -90.1663, North: 38.7744
+
+**Temporal Extent**
+
+- 2026-07-22 to 2026-07-22
 
 ---
 

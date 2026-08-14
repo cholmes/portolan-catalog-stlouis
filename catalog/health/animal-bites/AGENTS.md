@@ -23,4 +23,4 @@ Full schema: `table:columns` in collection.json.
 
 ## Provenance
 
-Mirror of [Animal Bites](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=130) from the City of St. Louis; source: https://static.stlouis-mo.gov/open-data/HEALTH/ANIMAL-CONTROL/ANIMAL_BITES.csv. No explicit license is published — see the source page. Synced 2026-08-05T19:58:51+00:00.
+Mirror of [Animal Bites](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=130) from the City of St. Louis; source: https://static.stlouis-mo.gov/open-data/HEALTH/ANIMAL-CONTROL/ANIMAL_BITES.csv. No explicit license is published — see the source page. Synced 2026-08-14T11:21:05+00:00.

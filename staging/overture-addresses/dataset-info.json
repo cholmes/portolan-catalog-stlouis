@@ -1,0 +1,16 @@
+{
+ "collection": "overture-addresses",
+ "title": "Overture Addresses",
+ "portal_page": "https://docs.overturemaps.org/guides/addresses/",
+ "department": "Overture Maps Foundation",
+ "source": "s3://overturemaps-us-west-2/release/2026-07-22.0/theme=addresses",
+ "source_type": "overture",
+ "synced": "2026-08-14T11:21:05+00:00",
+ "fetch": {
+  "status": "ok",
+  "rows": 99070,
+  "parquets": [
+   "staging/extracts/overture-addresses/overture-addresses.parquet"
+  ]
+ }
+}

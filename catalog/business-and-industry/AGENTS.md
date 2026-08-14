@@ -1,6 +1,6 @@
 # AGENTS.md — Business and Industry
 
-Department sub-catalog with 7 collections. Access pattern for each:
+Department sub-catalog with 8 collections. Access pattern for each:
 
 ```sql
 INSTALL httpfs; LOAD httpfs;  -- DuckDB
@@ -18,6 +18,8 @@ SELECT * FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/busin
 SELECT * FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/business-and-industry/tax-sales/tax-sales.parquet' LIMIT 5;
 -- Community Improvement Districts (CIDs)
 SELECT * FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/business-and-industry/community-improvement-districts/community-improvement-districts.parquet' LIMIT 5;
+-- Overture Places
+SELECT * FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/business-and-industry/overture-places/overture-places.parquet' LIMIT 5;
 ```
 
 Each collection has its own AGENTS.md with fields, quirks, and joins. Root catalog: `https://data.source.coop/tge-labs/st-louis-open-data-mirror/catalog.json`.

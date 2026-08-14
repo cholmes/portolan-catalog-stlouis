@@ -27,4 +27,4 @@ One polygon. St. Louis is an independent city — inside no county since 1876.
 
 ## Provenance
 
-Mirror of [City Boundary](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=67) from the City of St. Louis; source: https://maps8.stlouis-mo.gov/arcgis/rest/services/STLOUIS/BOUNDARIES/MapServer. No explicit license is published — see the source page. Synced 2026-08-05T19:58:51+00:00.
+Mirror of [City Boundary](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=67) from the City of St. Louis; source: https://maps8.stlouis-mo.gov/arcgis/rest/services/STLOUIS/BOUNDARIES/MapServer. No explicit license is published — see the source page. Synced 2026-08-14T11:21:05+00:00.

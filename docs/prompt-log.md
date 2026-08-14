@@ -277,6 +277,24 @@ A few conventions:
 
 > can you make me a doc of all the prompts I've used in this project?
 
+## Overture
+
+*Bringing in the first non-city data: ten Overture Maps collections.*
+
+**44. Aug 14, 11:53 local**
+
+> Ok, a new set of tasks for this catalog. Though first see if you can extract any memory from ~/repos/stlouis as that's what directed much of this. Two main things, first is incorporate Overture data - extract out the same st. louis bounds of all the overture layers, with pmtiles and parquets for them. [...] For the pmtiles lets start by just referencing the existing overture pmtiles and see how that works [...] Propose a plan to me of which catalogs to put each layer under - I think I lean that way (and can make a new catalog if need be), but then have an 'overture' tag and make it very clear the data is from overture — like in this description say that it's from Overture Maps Foundation, and link to overture. You can make its description longer than the others, explaining that the data isn't from st. louis, but is a demonstrating of pulling in other st. louis relevant data. Do be sure to make some good styles for the data. Can reuse styles from OvertureMaps/explore-site [...] I also have some conversions of the styles up at cholmes/overture-pmtiles-styles
+
+*(with a screenshot of a Ward Boundaries collection card, showing the description pattern to follow; census data named as the second task, deferred)*
+
+**45. Aug 14, ~12:15 local**
+
+> Oh, first update our portolan skills - how do I do an update? They're at https://github.com/portolan-sdi/portolan-skills
+
+**46. Aug 14, ~12:30 local**
+
+> Can you put buildings and building parts in one collection? And same with transportation connectors and roads? And the divisions in one is good. And do add interesting styles if theres cool things to highlight in the data, like building height. And yeah, keeping Illinois shore is fine.
+
 ---
 
 ## What the shape of this log shows

@@ -1,0 +1,51 @@
+{
+  "version": 8,
+  "name": "Explorer water",
+  "metadata": {
+    "description": "One flat Explorer blue for every water feature \u2014 the basemap look."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/base.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "water-fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "water",
+      "paint": {
+        "fill-color": "hsl(200, 98%, 83%)",
+        "fill-opacity": 1.0,
+        "fill-outline-color": "hsla(0, 0%, 0%, 0)"
+      },
+      "filter": [
+        "==",
+        [
+          "geometry-type"
+        ],
+        "Polygon"
+      ]
+    },
+    {
+      "id": "water-line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "water",
+      "paint": {
+        "line-color": "hsl(200, 98%, 83%)",
+        "line-width": 1.2,
+        "line-opacity": 1.0
+      },
+      "filter": [
+        "==",
+        [
+          "geometry-type"
+        ],
+        "LineString"
+      ]
+    }
+  ]
+}

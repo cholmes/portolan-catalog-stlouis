@@ -1,0 +1,147 @@
+{
+  "version": 8,
+  "name": "Road and rail classes",
+  "metadata": {
+    "description": "Every segment colored by Overture's class \u2014 motorways red through the arterial oranges and yellows, residential streets gray, foot and cycle ways green, rail purple \u2014 the full routable network on both sides of the river."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/transportation.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "overture-transportation-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "segment",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "class"
+          ],
+          "motorway",
+          "#c03221",
+          "trunk",
+          "#d95f38",
+          "primary",
+          "#e89d07",
+          "secondary",
+          "#d4b13f",
+          "tertiary",
+          "#b8b83c",
+          "residential",
+          "#9aa3a8",
+          "living_street",
+          "#9aa3a8",
+          "unclassified",
+          "#b7bec2",
+          "unknown",
+          "#c2c9cd",
+          "service",
+          "#c9cfd3",
+          "footway",
+          "#538400",
+          "path",
+          "#6b7f2a",
+          "steps",
+          "#538400",
+          "pedestrian",
+          "#538400",
+          "cycleway",
+          "#0f5d0f",
+          "track",
+          "#b5651d",
+          "standard_gauge",
+          "#7c5295",
+          "light_rail",
+          "#8b3a62",
+          "tram",
+          "#c98bab",
+          "#9aa3a8"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "segment-line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "segment",
+      "paint": {
+        "line-color": [
+          "match",
+          [
+            "get",
+            "class"
+          ],
+          "motorway",
+          "#c03221",
+          "trunk",
+          "#d95f38",
+          "primary",
+          "#e89d07",
+          "secondary",
+          "#d4b13f",
+          "tertiary",
+          "#b8b83c",
+          "residential",
+          "#9aa3a8",
+          "living_street",
+          "#9aa3a8",
+          "unclassified",
+          "#b7bec2",
+          "unknown",
+          "#c2c9cd",
+          "service",
+          "#c9cfd3",
+          "footway",
+          "#538400",
+          "path",
+          "#6b7f2a",
+          "steps",
+          "#538400",
+          "pedestrian",
+          "#538400",
+          "cycleway",
+          "#0f5d0f",
+          "track",
+          "#b5651d",
+          "standard_gauge",
+          "#7c5295",
+          "light_rail",
+          "#8b3a62",
+          "tram",
+          "#c98bab",
+          "#9aa3a8"
+        ],
+        "line-width": [
+          "match",
+          [
+            "get",
+            "class"
+          ],
+          "motorway",
+          3.2,
+          "trunk",
+          2.8,
+          "primary",
+          2.4,
+          "secondary",
+          2.0,
+          "tertiary",
+          1.8,
+          "standard_gauge",
+          1.2,
+          "light_rail",
+          1.4,
+          1.0
+        ],
+        "line-opacity": 1.0
+      }
+    }
+  ]
+}

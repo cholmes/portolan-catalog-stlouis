@@ -7,7 +7,12 @@ Cloud-native mirror of 51 datasets from the
 the city's public ArcGIS servers, and its
 [ArcGIS Online organization](https://stlcity.maps.arcgis.com/): about 6.6
 million features as GeoParquet and PMTiles with STAC metadata, organized
-into 13 department catalogs. Explore it in the
+into 11 topic catalogs. Alongside the city's own data, 10 collections
+tagged `overture` carry St. Louis extracts of the
+[Overture Maps Foundation](https://overturemaps.org/) global datasets —
+buildings, transportation, places, addresses, and more — demonstrating how
+a city catalog can blend in other locally relevant open data. Explore it
+in the
 [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/),
 [browse the files on Source Cooperative](https://source.coop/tge-labs/st-louis-open-data-mirror),
 or query any file directly with DuckDB — no download needed. Not an

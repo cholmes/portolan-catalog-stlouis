@@ -1,0 +1,70 @@
+{
+  "version": 8,
+  "name": "Green space",
+  "metadata": {
+    "description": "Parks, protected areas, recreation grounds, golf courses, and cemeteries in greens; every other use fades to pale gray."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/base.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "overture-land-use-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "land_use",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "subtype"
+          ],
+          "park",
+          "#538400",
+          "protected",
+          "#0f5d0f",
+          "recreation",
+          "#7fb356",
+          "golf",
+          "#95c68f",
+          "cemetery",
+          "#88b8a3",
+          "#dfe6ea"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "land_use-fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "land_use",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "subtype"
+          ],
+          "park",
+          "#538400",
+          "protected",
+          "#0f5d0f",
+          "recreation",
+          "#7fb356",
+          "golf",
+          "#95c68f",
+          "cemetery",
+          "#88b8a3",
+          "#dfe6ea"
+        ],
+        "fill-opacity": 0.65,
+        "fill-outline-color": "#FFFFFF"
+      }
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "version": 8,
+  "name": "Explorer footprints",
+  "metadata": {
+    "description": "The quiet warm-gray building fill of Overture's own Explorer site \u2014 footprints as basemap texture."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/buildings.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "building-fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "building",
+      "paint": {
+        "fill-color": "hsl(31, 35%, 93%)",
+        "fill-opacity": 1.0,
+        "fill-outline-color": "hsl(31, 35%, 89%)"
+      },
+      "filter": [
+        "all",
+        [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Polygon"
+        ],
+        [
+          "!=",
+          [
+            "get",
+            "has_parts"
+          ],
+          true
+        ]
+      ]
+    },
+    {
+      "id": "building_part-fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "building_part",
+      "paint": {
+        "fill-color": "hsl(31, 35%, 91%)",
+        "fill-opacity": 1.0,
+        "fill-outline-color": "hsl(31, 35%, 87%)"
+      },
+      "filter": [
+        "==",
+        [
+          "geometry-type"
+        ],
+        "Polygon"
+      ]
+    }
+  ]
+}

@@ -53,6 +53,8 @@ def slugify(s: str) -> str:
     return "".join(c if c.isalnum() else "-" for c in s.lower()).strip("-").replace("--", "-")
 
 DESCRIPTIONS = json.loads((ROOT / "docs" / "portal-descriptions.json").read_text())
+DESCRIPTIONS.update(json.loads(
+    (ROOT / "docs" / "overture-descriptions.json").read_text()))
 _cn = ROOT / "docs" / "column-notes.json"
 COLUMN_NOTES = json.loads(_cn.read_text()) if _cn.exists() else {}
 
@@ -214,11 +216,33 @@ def build_tabular(cid: str) -> None:
     print(f"✓ {cid} collection.json authored (tabular)")
 
 
+OVERTURE_ATTRIBUTION = "https://docs.overturemaps.org/attribution/"
+_ov_tile_sizes: dict = {}
+
+
+def overture_tile_size(theme: str) -> int | None:
+    """Content-Length of Overture's remote theme pmtiles (cached per theme)."""
+    from sources import OVERTURE_TILES
+    if theme not in _ov_tile_sizes:
+        import urllib.request
+        req = urllib.request.Request(f"{OVERTURE_TILES}/{theme}.pmtiles",
+                                     method="HEAD")
+        try:
+            with urllib.request.urlopen(req, timeout=60) as r:
+                _ov_tile_sizes[theme] = int(r.headers["Content-Length"])
+        except Exception:  # noqa: BLE001 — size is nice-to-have
+            _ov_tile_sizes[theme] = None
+    return _ov_tile_sizes[theme]
+
+
 def finalize_collection(coll_id: str) -> None:
     coll_dir = CATALOG / coll_rel(coll_id)
     f = coll_dir / "collection.json"
     coll = json.loads(f.read_text())
     src = SOURCES[coll_id]
+    if src["type"] == "overture":
+        finalize_overture(coll_id, coll_dir, f, coll, src)
+        return
     meta_desc = linkify(DESCRIPTIONS.get(coll_id, {}).get("description") or "")
 
     coll["id"] = coll_rel(coll_id)
@@ -400,6 +424,155 @@ def finalize_collection(coll_id: str) -> None:
     print(f"✓ {coll_id}: {n_styles} style assets, "
           f"{len(src_assets)} source files, "
           f"{'pmtiles' if has_pmtiles else 'tabular'}")
+
+
+def finalize_overture(coll_id: str, coll_dir, f, coll: dict, src: dict) -> None:
+    """Overture collections: Overture provider/license, remote theme PMTiles.
+
+    The tiles asset points at Overture's own release-pinned global tiles —
+    nothing tiled locally — so it gets the S3-reported size but no checksum
+    (the files run 19-195 GB; a checksum of bytes this catalog neither
+    serves nor could re-hash would be theater).
+    """
+    from sources import OVERTURE_RELEASE, OVERTURE_S3, OVERTURE_TILES
+    coll["id"] = coll_rel(coll_id)
+    coll["title"] = src["title"]
+    coll["description"] = DESCRIPTIONS[coll_id]["description"]
+
+    ext = set(coll.get("stac_extensions", []))
+    ext.update({PORTOLAN_SCHEMA, FILE_EXT, TABLE_EXT, THEMES_EXT, WML_EXT})
+    coll["stac_extensions"] = sorted(ext)
+
+    coll["license"] = src["license"]
+    coll["updated"] = SYNC
+    # The data is a snapshot of one Overture release; its date is the
+    # collection's temporal extent.
+    rel_date = OVERTURE_RELEASE.split(".")[0]
+    coll.setdefault("extent", {})["temporal"] = {
+        "interval": [[f"{rel_date}T00:00:00Z", f"{rel_date}T00:00:00Z"]]}
+
+    # Topic theme = the catalog this collection lives in (our assignment —
+    # these are not portal datasets), plus the Overture theme as its own
+    # scheme so "everything from Overture's base theme" is answerable.
+    group_title = GROUP_TITLES[GROUP_OF[coll_id]]
+    coll["themes"] = [
+        {"scheme": TOPIC_SCHEME,
+         "concepts": [{"id": slugify(group_title), "title": group_title}]},
+        {"scheme": "https://docs.overturemaps.org/guides/",
+         "concepts": [{"id": src["theme"],
+                       "title": f"Overture {src['theme']} theme"}]},
+    ]
+    coll["keywords"] = ["overture", "Overture Maps Foundation", src["theme"]] + [
+        t.replace("_", " ") for t in src["types"]]
+
+    pq = coll_dir / f"{coll_id}.parquet"
+    if pq.exists():
+        bb = duck(
+            "INSTALL spatial; LOAD spatial; "
+            f"SELECT min(ST_XMin(geometry)) a, min(ST_YMin(geometry)) b, "
+            f"max(ST_XMax(geometry)) c, max(ST_YMax(geometry)) d "
+            f"FROM '{pq}' WHERE geometry IS NOT NULL")
+        if bb and bb[0].get("a") is not None:
+            coll.setdefault("extent", {}).setdefault("spatial", {})["bbox"] = [
+                [bb[0]["a"], bb[0]["b"], bb[0]["c"], bb[0]["d"]]]
+        rc = duck(f"SELECT count(*) AS n FROM '{pq}'")
+        if rc:
+            coll["table:row_count"] = rc[0]["n"]
+            if "geoparquet:feature_count" in coll:
+                coll["geoparquet:feature_count"] = rc[0]["n"]
+
+    coll["providers"] = [
+        {"name": "Overture Maps Foundation",
+         "roles": ["producer", "licensor"],
+         "url": "https://overturemaps.org/"},
+        HOST,
+    ]
+
+    tiles_url = f"{OVERTURE_TILES}/{src['theme']}.pmtiles"
+    links = [l for l in coll.get("links", [])
+             if l["rel"] not in ("self", "via", "pmtiles")]
+    ensure_link(links, "describedby", "./README.md", "text/markdown")
+    ensure_link(links, "agents", "./AGENTS.md", "text/markdown")
+    ensure_link(links, "license", OVERTURE_ATTRIBUTION, "text/html",
+                "Overture attribution and licensing")
+    ensure_link(links, "via", src["docs"], "text/html",
+                f"Overture {src['theme']} theme guide")
+    ensure_link(links, "via",
+                f"{OVERTURE_S3}/theme={src['theme']}/",
+                "application/x-parquet",
+                f"Overture release {OVERTURE_RELEASE} GeoParquet "
+                f"(theme={src['theme']}) on S3")
+    links.append({"rel": "pmtiles", "href": tiles_url,
+                  "type": "application/vnd.pmtiles",
+                  "pmtiles:layers": list(src["types"])})
+    for l in links:
+        if l["rel"] == "root":
+            l["href"] = "../../catalog.json"
+            l.setdefault("type", "application/json")
+            l["title"] = "City of St. Louis Open Data (Cloud-Native Mirror)"
+        if l["rel"] == "parent":
+            l["href"] = "../catalog.json"
+            l.setdefault("type", "application/json")
+            l["title"] = GROUP_TITLES[GROUP_OF[coll_id]]
+    coll["links"] = links
+
+    assets = coll.get("assets", {})
+    tiles = {
+        "href": tiles_url,
+        "type": "application/vnd.pmtiles",
+        "roles": ["visual"],
+        "title": f"Overture {src['theme']} theme (PMTiles, global)",
+        "description": (
+            "Overture's own release-pinned global vector tiles for the "
+            f"{src['theme']} theme, served from the Overture Maps "
+            "Foundation's public bucket — not from this mirror, and not "
+            "clipped to St. Louis. The styles select this collection's "
+            f"layers ({', '.join(src['types'])}) from them."),
+    }
+    size = overture_tile_size(src["theme"])
+    if size:
+        tiles["file:size"] = size
+    assets[f"{coll_id}-tiles"] = tiles
+    if (coll_dir / "thumbnail.png").exists() and "thumbnail" not in assets:
+        assets["thumbnail"] = {
+            "href": "./thumbnail.png", "type": "image/png",
+            "roles": ["thumbnail"],
+            "title": f"{src['title']} rendered with the default style",
+        }
+    styles_dir = coll_dir / "styles"
+    style_files = sorted(styles_dir.glob("*.json")) if styles_dir.exists() else []
+    for sf in style_files:
+        key = f"styles/{sf.stem}"
+        if key not in assets:
+            assets[key] = {"href": f"./styles/{sf.name}",
+                           "type": "application/vnd.mapbox.style+json",
+                           "roles": ["style"]}
+    for key, a in assets.items():
+        href = a.get("href", "")
+        if href.endswith(".parquet"):
+            a["type"] = PARQUET_TYPE
+            a.setdefault("title", f"{src['title']} (GeoParquet)")
+            a.setdefault("roles", ["data"])
+        elif href.endswith(".json") and "styles/" in href:
+            sf = coll_dir / href.lstrip("./")
+            if sf.exists():
+                style_obj = json.loads(sf.read_text())
+                a["title"] = style_obj.get("name", sf.stem)
+                desc = (style_obj.get("metadata") or {}).get("description")
+                if desc:
+                    a["description"] = desc
+            roles = set(a.get("roles", [])) | {"style"}
+            if href.endswith("/default.json"):
+                roles.add("default")
+            else:
+                roles.discard("default")
+            a["roles"] = sorted(roles)
+        stamp_asset(coll_dir, href, a)
+    coll["assets"] = assets
+
+    f.write_text(json.dumps(coll, indent=2) + "\n")
+    print(f"✓ {coll_id}: {len(style_files)} style assets, remote Overture "
+          f"pmtiles ({src['theme']})")
 
 
 def finalize_root() -> None:

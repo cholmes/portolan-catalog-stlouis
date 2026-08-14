@@ -1,0 +1,25 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-14T11:21:23.991988Z",
+      "breaking": false,
+      "assets": {
+        "overture-land-use.parquet": {
+          "sha256": "6a8e7a994d91d05504373be9c790b0daae2ba1516d0e06357943d8c6fef6380e",
+          "size_bytes": 6216139,
+          "href": "urban-development-and-planning/overture-land-use/overture-land-use.parquet",
+          "source_mtime": 1786706399.4224548,
+          "mtime": 1786706399.4224548,
+          "feature_count": 22067,
+          "schema_fingerprint": "582c096afd0b780b"
+        }
+      },
+      "changes": [
+        "overture-land-use.parquet"
+      ]
+    }
+  ]
+}

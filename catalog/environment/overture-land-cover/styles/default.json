@@ -1,0 +1,78 @@
+{
+  "version": 8,
+  "name": "Land cover",
+  "metadata": {
+    "description": "ESA WorldCover surface classes in the Explorer site's own palette \u2014 forest, shrub, grass, crop, wetland, barren, and built-up. Drawn at full opacity here (the Explorer fades land cover out above z11; a data collection should not hide its data)."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/base.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "overture-land-cover-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "land_cover",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "subtype"
+          ],
+          "forest",
+          "hsl(122, 52%, 76%)",
+          "shrub",
+          "hsl(78, 58%, 80%)",
+          "grass",
+          "hsl(95, 60%, 79%)",
+          "crop",
+          "hsl(62, 62%, 81%)",
+          "wetland",
+          "hsl(178, 56%, 80%)",
+          "barren",
+          "hsl(48, 52%, 87%)",
+          "urban",
+          "hsl(13, 18%, 85%)",
+          "#dfe6ea"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "land_cover-fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "land_cover",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "subtype"
+          ],
+          "forest",
+          "hsl(122, 52%, 76%)",
+          "shrub",
+          "hsl(78, 58%, 80%)",
+          "grass",
+          "hsl(95, 60%, 79%)",
+          "crop",
+          "hsl(62, 62%, 81%)",
+          "wetland",
+          "hsl(178, 56%, 80%)",
+          "barren",
+          "hsl(48, 52%, 87%)",
+          "urban",
+          "hsl(13, 18%, 85%)",
+          "#dfe6ea"
+        ],
+        "fill-opacity": 0.8,
+        "fill-outline-color": "#FFFFFF"
+      }
+    }
+  ]
+}

@@ -38,4 +38,4 @@ parcels via Handle = HANDLE.
 
 ## Provenance
 
-Mirror of [LRA Property](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=30) from the City of St. Louis; source: https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/SLDC_Real_Estate/FeatureServer. No explicit license is published — see the source page. Synced 2026-08-05T19:58:51+00:00.
+Mirror of [LRA Property](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=30) from the City of St. Louis; source: https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/SLDC_Real_Estate/FeatureServer. No explicit license is published — see the source page. Synced 2026-08-14T11:21:05+00:00.

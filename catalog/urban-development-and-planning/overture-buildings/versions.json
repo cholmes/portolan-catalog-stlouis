@@ -1,0 +1,25 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-14T11:21:23.982959Z",
+      "breaking": false,
+      "assets": {
+        "overture-buildings.parquet": {
+          "sha256": "4eb40c6d4f94476761a1ad5286e5dada46fe6e893e6d53601c38c9227454419e",
+          "size_bytes": 27246275,
+          "href": "urban-development-and-planning/overture-buildings/overture-buildings.parquet",
+          "source_mtime": 1786706390.1824713,
+          "mtime": 1786706390.1824713,
+          "feature_count": 194132,
+          "schema_fingerprint": "6d8ba2c47038cc78"
+        }
+      },
+      "changes": [
+        "overture-buildings.parquet"
+      ]
+    }
+  ]
+}

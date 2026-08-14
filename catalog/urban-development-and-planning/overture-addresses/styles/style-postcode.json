@@ -1,0 +1,73 @@
+{
+  "version": 8,
+  "name": "Postcode mosaic",
+  "metadata": {
+    "description": "Repeating colors keyed on ZIP code, so postal boundaries emerge from the address points themselves. Colors are arbitrary.",
+    "legend": "none"
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/addresses.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "address-circle",
+      "type": "circle",
+      "source": "data",
+      "source-layer": "address",
+      "paint": {
+        "circle-color": [
+          "match",
+          [
+            "%",
+            [
+              "to-number",
+              [
+                "get",
+                "postcode"
+              ]
+            ],
+            10
+          ],
+          0,
+          "#7fb3d0",
+          1,
+          "#e2a76f",
+          2,
+          "#95c68f",
+          3,
+          "#d98d8d",
+          4,
+          "#a99bd0",
+          5,
+          "#c9b970",
+          6,
+          "#8fc6c0",
+          7,
+          "#d093b5",
+          8,
+          "#b0a377",
+          9,
+          "#9cb0e0",
+          "#9aa3a8"
+        ],
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          13,
+          1.5,
+          17,
+          4
+        ],
+        "circle-opacity": 0.85
+      }
+    }
+  ]
+}

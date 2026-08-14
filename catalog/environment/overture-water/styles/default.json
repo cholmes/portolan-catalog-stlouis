@@ -1,0 +1,166 @@
+{
+  "version": 8,
+  "name": "Water by subtype",
+  "metadata": {
+    "description": "The Mississippi in deep blue, park lakes and ponds lighter, streams and canals teal \u2014 and the city's 374 swimming pools in purple. Lines (streams, drains) draw as lines, everything else as polygons."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/base.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "overture-water-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "water",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "subtype"
+          ],
+          "river",
+          "#1e6f9c",
+          "lake",
+          "#2874a6",
+          "reservoir",
+          "#8fbdd6",
+          "pond",
+          "#7fb3d0",
+          "stream",
+          "#5591b5",
+          "canal",
+          "#4a9d9c",
+          "water",
+          "#a8d4e8",
+          "human_made",
+          "#c9a0d6",
+          "physical",
+          "#8fc6c0",
+          "spring",
+          "#95d0c8",
+          "#a8d4e8"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "water-fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "water",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "subtype"
+          ],
+          "river",
+          "#1e6f9c",
+          "lake",
+          "#2874a6",
+          "reservoir",
+          "#8fbdd6",
+          "pond",
+          "#7fb3d0",
+          "stream",
+          "#5591b5",
+          "canal",
+          "#4a9d9c",
+          "water",
+          "#a8d4e8",
+          "human_made",
+          "#c9a0d6",
+          "physical",
+          "#8fc6c0",
+          "spring",
+          "#95d0c8",
+          "#a8d4e8"
+        ],
+        "fill-opacity": 0.75,
+        "fill-outline-color": "#FFFFFF"
+      },
+      "filter": [
+        "==",
+        [
+          "geometry-type"
+        ],
+        "Polygon"
+      ]
+    },
+    {
+      "id": "water-line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "water",
+      "paint": {
+        "line-color": [
+          "match",
+          [
+            "get",
+            "subtype"
+          ],
+          "river",
+          "#1e6f9c",
+          "lake",
+          "#2874a6",
+          "reservoir",
+          "#8fbdd6",
+          "pond",
+          "#7fb3d0",
+          "stream",
+          "#5591b5",
+          "canal",
+          "#4a9d9c",
+          "water",
+          "#a8d4e8",
+          "human_made",
+          "#c9a0d6",
+          "physical",
+          "#8fc6c0",
+          "spring",
+          "#95d0c8",
+          "#a8d4e8"
+        ],
+        "line-width": 1.4,
+        "line-opacity": 1.0
+      },
+      "filter": [
+        "==",
+        [
+          "geometry-type"
+        ],
+        "LineString"
+      ]
+    },
+    {
+      "id": "water-labels",
+      "type": "symbol",
+      "source": "data",
+      "source-layer": "water",
+      "minzoom": 11,
+      "layout": {
+        "text-field": [
+          "get",
+          "@name"
+        ],
+        "text-font": [
+          "Noto Sans Regular"
+        ],
+        "text-size": 11,
+        "text-max-width": 9
+      },
+      "paint": {
+        "text-color": "#1A1A1A",
+        "text-halo-color": "#FFFFFF",
+        "text-halo-width": 1.2
+      }
+    }
+  ],
+  "glyphs": "https://tiles.basemaps.cartocdn.com/fonts/{fontstack}/{range}.pbf"
+}

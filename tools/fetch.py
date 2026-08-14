@@ -192,7 +192,13 @@ def main() -> int:
         if only and coll_id not in only:
             continue
         try:
-            result = fetch_arcgis(coll_id, src) if src["type"] == "arcgis" else fetch_static(coll_id, src)
+            if src["type"] == "arcgis":
+                result = fetch_arcgis(coll_id, src)
+            elif src["type"] == "overture":
+                from fetch_overture import fetch_overture
+                result = fetch_overture(coll_id, src)
+            else:
+                result = fetch_static(coll_id, src)
         except Exception as e:  # noqa: BLE001
             result = {"status": "failed", "error": str(e)[:300]}
         d = STAGING / coll_id
@@ -200,9 +206,10 @@ def main() -> int:
         (d / "dataset-info.json").write_text(json.dumps({
             "collection": coll_id,
             "title": src["title"],
-            "portal_page": src["portal_page"],
-            "department": src["department"],
-            "source": src.get("service") or src.get("url"),
+            "portal_page": src.get("portal_page") or src.get("docs"),
+            "department": src.get("department", "Overture Maps Foundation"),
+            "source": src.get("service") or src.get("url")
+                      or src.get("theme") and f"Overture theme={src['theme']}",
             "source_type": src["type"],
             "synced": synced,
             "fetch": result,

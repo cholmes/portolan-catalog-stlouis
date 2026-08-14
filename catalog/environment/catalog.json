@@ -53,7 +53,25 @@
       "href": "./forest-park-trees/collection.json",
       "type": "application/json",
       "title": "Forest Park Trees"
+    },
+    {
+      "rel": "child",
+      "href": "./overture-land/collection.json",
+      "type": "application/json",
+      "title": "Overture Land"
+    },
+    {
+      "rel": "child",
+      "href": "./overture-land-cover/collection.json",
+      "type": "application/json",
+      "title": "Overture Land Cover"
+    },
+    {
+      "rel": "child",
+      "href": "./overture-water/collection.json",
+      "type": "application/json",
+      "title": "Overture Water"
     }
   ],
-  "updated": "2026-08-05T19:58:51+00:00"
+  "updated": "2026-08-14T11:21:05+00:00"
 }

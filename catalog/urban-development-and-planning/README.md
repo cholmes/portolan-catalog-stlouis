@@ -5,7 +5,7 @@ Land Acquisition, Planning, Preservation, Zoning
 ## Collections
 
 <details>
-<summary>📁 11 collections (click to expand)</summary>
+<summary>📁 14 collections (click to expand)</summary>
 
 ### [urban-development-and-planning/city-blocks](urban-development-and-planning/urban-development-and-planning/city-blocks/)
 
@@ -18,6 +18,12 @@ Land Acquisition, Planning, Preservation, Zoning
 ### [urban-development-and-planning/land-use](urban-development-and-planning/urban-development-and-planning/land-use/)
 
 ### [urban-development-and-planning/neighborhoods](urban-development-and-planning/urban-development-and-planning/neighborhoods/)
+
+### [urban-development-and-planning/overture-addresses](urban-development-and-planning/urban-development-and-planning/overture-addresses/)
+
+### [urban-development-and-planning/overture-buildings](urban-development-and-planning/urban-development-and-planning/overture-buildings/)
+
+### [urban-development-and-planning/overture-land-use](urban-development-and-planning/urban-development-and-planning/overture-land-use/)
 
 ### [urban-development-and-planning/parcels](urban-development-and-planning/urban-development-and-planning/parcels/)
 
@@ -36,6 +42,10 @@ Land Acquisition, Planning, Preservation, Zoning
 **Spatial Extent**
 
 - West: -90.3206, South: 38.5319, East: -90.1663, North: 38.7744
+
+**Temporal Extent**
+
+- 2026-07-22 to 2026-07-22
 
 ---
 

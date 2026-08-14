@@ -266,7 +266,67 @@
       "updated": "2026-08-05T20:04:58.359918+00:00",
       "asset_count": 1,
       "total_size_bytes": 148440237
+    },
+    "urban-development-and-planning/overture-buildings": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-14T11:21:23.983843+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 27246275
+    },
+    "urban-development-and-planning/overture-addresses": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-14T11:21:23.988495+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 7293315
+    },
+    "urban-development-and-planning/overture-land-use": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-14T11:21:23.992387+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 6216139
+    },
+    "transportation-infrastructure-and-utilities/overture-transportation": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-14T11:21:24.002479+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 21813999
+    },
+    "transportation-infrastructure-and-utilities/overture-infrastructure": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-14T11:21:24.007762+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 8021883
+    },
+    "business-and-industry/overture-places": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-14T11:21:24.012925+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 4821097
+    },
+    "government/overture-divisions": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-14T11:21:24.019514+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 165885
+    },
+    "environment/overture-land": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-14T11:21:24.025071+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 5870517
+    },
+    "environment/overture-land-cover": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-14T11:21:24.028854+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 659483
+    },
+    "environment/overture-water": {
+      "current_version": "1.0.0",
+      "updated": "2026-08-14T11:21:24.033302+00:00",
+      "asset_count": 1,
+      "total_size_bytes": 480195
     }
   },
-  "updated": "2026-08-05T20:04:58.359918+00:00"
+  "updated": "2026-08-14T11:21:24.033302+00:00"
 }

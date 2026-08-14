@@ -33,6 +33,17 @@ lives in `catalog/` and is synced 1:1 to
    `fill-color` (`match`/`step`). Data-driven styles must lead with an
    inert `fill-opacity: 0` legend layer — `tools/make_styles.py` does this;
    keep it that way.
+6. **Overture collections are not city data.** The 10 `overture-*`
+   collections are St. Louis-bbox extracts of Overture Maps Foundation
+   releases (`OVERTURE_SOURCES` in `tools/sources.py`, extracted by
+   `tools/fetch_overture.py`; geometries clipped to the box). Their PMTiles
+   are Overture's own release-pinned global theme tiles referenced by URL —
+   never build local tiles for them, and never hash the remote archives
+   (19–195 GB). Bumping `OVERTURE_RELEASE` means re-running
+   fetch_overture → assemble → finalize so parquet, tile URLs, and styles
+   move in lockstep. Descriptions live in `docs/overture-descriptions.json`
+   (wording from Overture's docs — same never-invent rule) and every
+   description says plainly that the data is Overture's, not the city's.
 
 ## Data quirks discovered during the build
 

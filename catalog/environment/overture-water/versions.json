@@ -1,0 +1,25 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-14T11:21:24.032828Z",
+      "breaking": false,
+      "assets": {
+        "overture-water.parquet": {
+          "sha256": "f5d58e154e631d7acac257d162ad400ec1a6be22fc92d649d634afc863cb7b8a",
+          "size_bytes": 480195,
+          "href": "environment/overture-water/overture-water.parquet",
+          "source_mtime": 1786706400.0038214,
+          "mtime": 1786706400.0038214,
+          "feature_count": 1144,
+          "schema_fingerprint": "5209362ae732a951"
+        }
+      },
+      "changes": [
+        "overture-water.parquet"
+      ]
+    }
+  ]
+}

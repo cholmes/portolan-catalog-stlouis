@@ -1,0 +1,121 @@
+{
+  "version": 8,
+  "name": "Overture neighborhoods",
+  "metadata": {
+    "description": "Just the neighborhood-level divisions, in repeating colors with labels \u2014 Overture's own neighborhood set for both sides of the river, to hold against the city's official neighborhood boundaries. Colors are arbitrary.",
+    "legend": "none"
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/divisions.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "division_area-fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "division_area",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "%",
+            [
+              "length",
+              [
+                "get",
+                "@name"
+              ]
+            ],
+            10
+          ],
+          0,
+          "#7fb3d0",
+          1,
+          "#e2a76f",
+          2,
+          "#95c68f",
+          3,
+          "#d98d8d",
+          4,
+          "#a99bd0",
+          5,
+          "#c9b970",
+          6,
+          "#8fc6c0",
+          7,
+          "#d093b5",
+          8,
+          "#b0a377",
+          9,
+          "#9cb0e0",
+          "#9aa3a8"
+        ],
+        "fill-opacity": 0.55,
+        "fill-outline-color": "#FFFFFF"
+      },
+      "filter": [
+        "all",
+        [
+          "==",
+          [
+            "geometry-type"
+          ],
+          "Polygon"
+        ],
+        [
+          "match",
+          [
+            "get",
+            "subtype"
+          ],
+          [
+            "neighborhood",
+            "microhood"
+          ],
+          true,
+          false
+        ]
+      ]
+    },
+    {
+      "id": "division-labels",
+      "type": "symbol",
+      "source": "data",
+      "source-layer": "division",
+      "minzoom": 11,
+      "layout": {
+        "text-field": [
+          "get",
+          "@name"
+        ],
+        "text-font": [
+          "Noto Sans Regular"
+        ],
+        "text-size": 11,
+        "text-max-width": 9
+      },
+      "paint": {
+        "text-color": "#1A1A1A",
+        "text-halo-color": "#FFFFFF",
+        "text-halo-width": 1.2
+      },
+      "filter": [
+        "match",
+        [
+          "get",
+          "subtype"
+        ],
+        [
+          "neighborhood",
+          "microhood"
+        ],
+        true,
+        false
+      ]
+    }
+  ],
+  "glyphs": "https://tiles.basemaps.cartocdn.com/fonts/{fontstack}/{range}.pbf"
+}

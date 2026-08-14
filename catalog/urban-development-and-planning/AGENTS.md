@@ -1,6 +1,6 @@
 # AGENTS.md — Urban Development and Planning
 
-Department sub-catalog with 11 collections. Access pattern for each:
+Department sub-catalog with 14 collections. Access pattern for each:
 
 ```sql
 INSTALL httpfs; LOAD httpfs;  -- DuckDB
@@ -26,6 +26,12 @@ SELECT * FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/urban
 SELECT * FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/urban-development-and-planning/vacancy-composite/vacancy-composite.parquet' LIMIT 5;
 -- City Boundary
 SELECT * FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/urban-development-and-planning/city-boundary/city-boundary.parquet' LIMIT 5;
+-- Overture Buildings
+SELECT * FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/urban-development-and-planning/overture-buildings/overture-buildings.parquet' LIMIT 5;
+-- Overture Addresses
+SELECT * FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/urban-development-and-planning/overture-addresses/overture-addresses.parquet' LIMIT 5;
+-- Overture Land Use
+SELECT * FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/urban-development-and-planning/overture-land-use/overture-land-use.parquet' LIMIT 5;
 ```
 
 Each collection has its own AGENTS.md with fields, quirks, and joins. Root catalog: `https://data.source.coop/tge-labs/st-louis-open-data-mirror/catalog.json`.

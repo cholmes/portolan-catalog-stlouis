@@ -405,7 +405,10 @@ def assemble(coll_id: str) -> dict:
         return {"rows": int(n), "tabular": False,
                 "source_file": f"{len(parts)} layers merged"}
 
-    if src_def["type"] == "arcgis":
+    # Overture extracts arrive as one staged parquet per collection
+    # (tools/fetch_overture.py) and take the same parquet→gpio path as
+    # single-layer ArcGIS extracts: convert, Hilbert sort, restore stats.
+    if src_def["type"] in ("arcgis", "overture"):
         src = find_extract_parquet(coll_id)
     else:
         src = static_source_file(coll_id)

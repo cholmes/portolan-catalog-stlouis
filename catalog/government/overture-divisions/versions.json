@@ -1,0 +1,25 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-14T11:21:24.019102Z",
+      "breaking": false,
+      "assets": {
+        "overture-divisions.parquet": {
+          "sha256": "451a1345ffaf8490db546774be893f2a7520dec06415293433d369902a2353f1",
+          "size_bytes": 165885,
+          "href": "government/overture-divisions/overture-divisions.parquet",
+          "source_mtime": 1786706395.7572615,
+          "mtime": 1786706395.7572615,
+          "feature_count": 283,
+          "schema_fingerprint": "e428fbb6ff0101ad"
+        }
+      },
+      "changes": [
+        "overture-divisions.parquet"
+      ]
+    }
+  ]
+}

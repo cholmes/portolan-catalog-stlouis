@@ -70,11 +70,17 @@ def landscape(cx, cy, half_lat):
     return cx - half_lon, cy - half_lat, cx + half_lon, cy + half_lat
 
 # collection -> (center_lon, center_lat, half_lat_degrees)
+# The Overture places and addresses tiles only exist at z14, and buildings
+# only read well close up, so those get downtown/neighborhood close-ups.
 DETAIL = {
     "city-blocks": (-90.195, 38.630, 0.011),
     "parcels": (-90.2525, 38.6115, 0.0055),
     "streets": (-90.230, 38.640, 0.016),
     "tif-districts": (-90.220, 38.655, 0.035),
+    "overture-buildings": (-90.1935, 38.6280, 0.0075),
+    "overture-places": (-90.1990, 38.6320, 0.0060),
+    "overture-addresses": (-90.2530, 38.6110, 0.0045),
+    "overture-transportation": (-90.2200, 38.6350, 0.0330),
 }
 FILL = {"historic-districts", "opportunity-zones",
         "lra-property", "tax-abated-parcels", "community-improvement-districts",
@@ -88,7 +94,9 @@ FILL = {"historic-districts", "opportunity-zones",
         "occupancy-permits", "street-permits", "election-results-nov-2024",
         "animal-bites", "parcels-history", "crime", "historic-landmarks",
         "zip-codes", "parking-meters", "street-sweeping",
-        "business-licenses", "tax-sales"}
+        "business-licenses", "tax-sales",
+        "overture-transportation", "overture-infrastructure",
+        "overture-land", "overture-land-use", "overture-water"}
 
 cat = pathlib.Path(os.environ["CATALOG_DIR"])
 for cj in sorted(cat.glob("*/*/collection.json")):
@@ -120,19 +128,37 @@ while IFS='|' read -r CID BBOX; do
     DIR="$(find "$CATALOG_DIR" -maxdepth 2 -type d -name "$CID" | head -1)"
     PM="$DIR/$CID.pmtiles"
     STYLE="$DIR/styles/default.json"
-    [ -f "$PM" ] && [ -f "$STYLE" ] || { echo "skip $CID (missing pmtiles or style)"; continue; }
-
-    PMTILES_PATH="$(cd "$DIR" && pwd)/$CID.pmtiles"
+    [ -f "$STYLE" ] || { echo "skip $CID (missing style)"; continue; }
+    # Overture collections have no local tiles; their style already points at
+    # the remote theme archive, which chiitiler can also read.
+    if [ -f "$PM" ]; then
+        PMTILES_PATH="$(cd "$DIR" && pwd)/$CID.pmtiles"
+    elif grep -q 'pmtiles://http' "$STYLE"; then
+        PMTILES_PATH=""
+    else
+        echo "skip $CID (missing pmtiles)"; continue
+    fi
     RENDER="$DIR/.render-style.json"
 
     PMTILES_PATH="$PMTILES_PATH" BASEMAP_URL="$BASEMAP_URL" \
     STYLE="$STYLE" RENDER="$RENDER" python3 - <<'PYSTYLE'
 import json, os
 style = json.load(open(os.environ['STYLE']))
+pm = os.environ.get('PMTILES_PATH', '')
+if pm:
+    data = {'type': 'vector', 'tiles': ['pmtiles://%s/{z}/{x}/{y}' % pm]}
+else:
+    # Remote Overture archive: keep its URL, but as a tiles template with an
+    # explicit maxzoom so overzoomed close-ups still fetch the deepest tiles.
+    url = style['sources']['data']['url'][len('pmtiles://'):]
+    data = {'type': 'vector', 'tiles': ['pmtiles://%s/{z}/{x}/{y}' % url]}
+    theme = url.rsplit('/', 1)[-1].split('.')[0]
+    data['maxzoom'] = {'addresses': 14, 'base': 13, 'buildings': 14,
+                      'divisions': 12, 'places': 14,
+                      'transportation': 14}.get(theme, 14)
 style['sources'] = {
     'basemap': {'type': 'raster', 'tiles': [os.environ['BASEMAP_URL']], 'tileSize': 256},
-    'data': {'type': 'vector',
-             'tiles': ['pmtiles://%s/{z}/{x}/{y}' % os.environ['PMTILES_PATH']]},
+    'data': data,
 }
 style['layers'] = [{'id': 'basemap', 'type': 'raster', 'source': 'basemap'}] + style.get('layers', [])
 # Labels need a glyph source. Styles that name one keep their text; for any

@@ -1,0 +1,241 @@
+{
+  "type": "Collection",
+  "id": "urban-development-and-planning/overture-addresses",
+  "stac_version": "1.1.0",
+  "description": "Address points from the Overture addresses theme (currently in Alpha). An address represents a physical place through a series of attributes \u2014 street number, street name, unit, address levels, postal code, and/or country \u2014 together with a point geometry giving the approximate location most commonly associated with it. The theme aggregates open government address datasets, each carrying its own permissive open license, recorded per feature in the `sources` column. Useful for geocoding, validation, and conflation with buildings and places.\n\nUnlike everything else in this catalog, this is **not** City of St. Louis data: it comes from the [Overture Maps Foundation](https://overturemaps.org/), a collaborative project building open, interoperable map data for the world. This collection is a St. Louis extract of that global dataset \u2014 everything inside the city's bounding box, which also takes in the Illinois shore of the Mississippi (East St. Louis, Cahokia Heights) \u2014 included here to demonstrate how a city's open-data catalog can blend in other St. Louis-relevant open data alongside the city's own. The GeoParquet was extracted from Overture release 2026-07-22.0; the map tiles reference Overture's own global PMTiles for the same release, the tiles behind [explore.overturemaps.org](https://explore.overturemaps.org/).",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Urban Development and Planning"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown",
+      "title": "Agent/LLM usage guide"
+    },
+    {
+      "rel": "describedby",
+      "href": "./README.md",
+      "type": "text/markdown"
+    },
+    {
+      "rel": "license",
+      "href": "https://docs.overturemaps.org/attribution/",
+      "type": "text/html",
+      "title": "Overture attribution and licensing"
+    },
+    {
+      "rel": "via",
+      "href": "https://docs.overturemaps.org/guides/addresses/",
+      "type": "text/html",
+      "title": "Overture addresses theme guide"
+    },
+    {
+      "rel": "via",
+      "href": "s3://overturemaps-us-west-2/release/2026-07-22.0/theme=addresses/",
+      "type": "application/x-parquet",
+      "title": "Overture release 2026-07-22.0 GeoParquet (theme=addresses) on S3"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/addresses.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "pmtiles:layers": [
+        "address"
+      ]
+    }
+  ],
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
+  ],
+  "geoparquet:geometry_type": "Point",
+  "geoparquet:feature_count": 99070,
+  "table:row_count": 99070,
+  "table:primary_geometry": "geometry",
+  "table:columns": [
+    {
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "name": "street",
+      "type": "string"
+    },
+    {
+      "name": "number",
+      "type": "string"
+    },
+    {
+      "name": "unit",
+      "type": "string"
+    },
+    {
+      "name": "postcode",
+      "type": "string"
+    },
+    {
+      "name": "postal_city",
+      "type": "string"
+    },
+    {
+      "name": "address_levels",
+      "type": "list<element: struct<value: string>>"
+    },
+    {
+      "name": "country",
+      "type": "string"
+    },
+    {
+      "name": "sources",
+      "type": "list<element: struct<property: string, dataset: string, license: string, record_id: string, update_time: string, confidence: double, between: list<element: double>>>"
+    },
+    {
+      "name": "version",
+      "type": "int32"
+    },
+    {
+      "name": "geometry",
+      "type": "binary"
+    },
+    {
+      "name": "bbox",
+      "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>"
+    }
+  ],
+  "portolan:total_size_bytes": 7293315,
+  "portolan:asset_count": 1,
+  "title": "Overture Addresses",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -90.3205182695672,
+          38.53199954005468,
+          -90.16631356713408,
+          38.774346652337805
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2026-07-22T00:00:00Z",
+          "2026-07-22T00:00:00Z"
+        ]
+      ]
+    }
+  },
+  "license": "other",
+  "assets": {
+    "overture-addresses": {
+      "href": "./overture-addresses.parquet",
+      "type": "application/vnd.apache.parquet",
+      "file:size": 7293315,
+      "file:checksum": "1220cd113806a4f54ecec5f8f4f4f19dc3fdfd3fbf9f110631c54a0b963b185bdba2",
+      "roles": [
+        "data"
+      ],
+      "title": "Overture Addresses (GeoParquet)"
+    },
+    "overture-addresses-tiles": {
+      "href": "https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/addresses.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "roles": [
+        "visual"
+      ],
+      "title": "Overture addresses theme (PMTiles, global)",
+      "description": "Overture's own release-pinned global vector tiles for the addresses theme, served from the Overture Maps Foundation's public bucket \u2014 not from this mirror, and not clipped to St. Louis. The styles select this collection's layers (address) from them.",
+      "file:size": 24443095354
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "default",
+        "style"
+      ],
+      "title": "Address points",
+      "description": "Every address point in the box, in the catalog blue. The tiles carry addresses only at z14 \u2014 zoom to street level to see them.",
+      "file:size": 931,
+      "file:checksum": "122028ca0a9119d1b02ff55005acba52df452833c62b830be0990bef26d431c2ac64"
+    },
+    "styles/style-postcode": {
+      "href": "./styles/style-postcode.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "style"
+      ],
+      "title": "Postcode mosaic",
+      "description": "Repeating colors keyed on ZIP code, so postal boundaries emerge from the address points themselves. Colors are arbitrary.",
+      "file:size": 1442,
+      "file:checksum": "12201438ea7aa1f788439706f0d22bfff6426a7bcc696b9c0074874fc0f605ddcc5f"
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ],
+      "title": "Overture Addresses rendered with the default style",
+      "file:size": 241865,
+      "file:checksum": "12202fee1d05414cf084259006ec042b6c3d08be9de007d60e020d6a7acba8bf38f6"
+    }
+  },
+  "updated": "2026-08-14T11:21:05+00:00",
+  "themes": [
+    {
+      "scheme": "https://www.stlouis-mo.gov/data/topics/",
+      "concepts": [
+        {
+          "id": "urban-development-and-planning",
+          "title": "Urban Development and Planning"
+        }
+      ]
+    },
+    {
+      "scheme": "https://docs.overturemaps.org/guides/",
+      "concepts": [
+        {
+          "id": "addresses",
+          "title": "Overture addresses theme"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "overture",
+    "Overture Maps Foundation",
+    "addresses",
+    "address"
+  ],
+  "providers": [
+    {
+      "name": "Overture Maps Foundation",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://overturemaps.org/"
+    },
+    {
+      "name": "TGE Labs",
+      "roles": [
+        "host"
+      ],
+      "url": "https://github.com/cholmes/portolan-catalog-stlouis"
+    }
+  ]
+}

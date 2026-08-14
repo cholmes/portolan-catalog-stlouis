@@ -1,0 +1,16 @@
+{
+ "collection": "overture-transportation",
+ "title": "Overture Transportation",
+ "portal_page": "https://docs.overturemaps.org/guides/transportation/",
+ "department": "Overture Maps Foundation",
+ "source": "s3://overturemaps-us-west-2/release/2026-07-22.0/theme=transportation",
+ "source_type": "overture",
+ "synced": "2026-08-14T11:21:05+00:00",
+ "fetch": {
+  "status": "ok",
+  "rows": 184137,
+  "parquets": [
+   "staging/extracts/overture-transportation/overture-transportation.parquet"
+  ]
+ }
+}

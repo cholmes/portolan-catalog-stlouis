@@ -1,0 +1,261 @@
+{
+  "type": "Collection",
+  "id": "business-and-industry/overture-places",
+  "stac_version": "1.1.0",
+  "description": "Point representations of real-world entities from the Overture places theme: schools, businesses, hospitals, religious organizations, landmarks, and much more. Overture defines a place as a concrete, physically identifiable, stationary destination in a publicly observable space. The theme is published under the CDLA Permissive 2.0 and Apache 2.0 licenses, contains no OpenStreetMap data, and carries none of the share-alike obligations of the ODbL. Each place has a category from Overture's taxonomy and a confidence score for how certain Overture is that the place exists and is current.\n\nUnlike everything else in this catalog, this is **not** City of St. Louis data: it comes from the [Overture Maps Foundation](https://overturemaps.org/), a collaborative project building open, interoperable map data for the world. This collection is a St. Louis extract of that global dataset \u2014 everything inside the city's bounding box, which also takes in the Illinois shore of the Mississippi (East St. Louis, Cahokia Heights) \u2014 included here to demonstrate how a city's open-data catalog can blend in other St. Louis-relevant open data alongside the city's own. The GeoParquet was extracted from Overture release 2026-07-22.0; the map tiles reference Overture's own global PMTiles for the same release, the tiles behind [explore.overturemaps.org](https://explore.overturemaps.org/).",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Business and Industry"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown",
+      "title": "Agent/LLM usage guide"
+    },
+    {
+      "rel": "describedby",
+      "href": "./README.md",
+      "type": "text/markdown"
+    },
+    {
+      "rel": "license",
+      "href": "https://docs.overturemaps.org/attribution/",
+      "type": "text/html",
+      "title": "Overture attribution and licensing"
+    },
+    {
+      "rel": "via",
+      "href": "https://docs.overturemaps.org/guides/places/",
+      "type": "text/html",
+      "title": "Overture places theme guide"
+    },
+    {
+      "rel": "via",
+      "href": "s3://overturemaps-us-west-2/release/2026-07-22.0/theme=places/",
+      "type": "application/x-parquet",
+      "title": "Overture release 2026-07-22.0 GeoParquet (theme=places) on S3"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/places.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "pmtiles:layers": [
+        "place"
+      ]
+    }
+  ],
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
+  ],
+  "geoparquet:geometry_type": "Point",
+  "geoparquet:feature_count": 20968,
+  "table:row_count": 20968,
+  "table:primary_geometry": "geometry",
+  "table:columns": [
+    {
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "name": "categories",
+      "type": "struct<primary: string, alternate: list<element: string>>"
+    },
+    {
+      "name": "confidence",
+      "type": "double"
+    },
+    {
+      "name": "websites",
+      "type": "list<element: string>"
+    },
+    {
+      "name": "emails",
+      "type": "list<element: string>"
+    },
+    {
+      "name": "socials",
+      "type": "list<element: string>"
+    },
+    {
+      "name": "phones",
+      "type": "list<element: string>"
+    },
+    {
+      "name": "brand",
+      "type": "struct<wikidata: string, names: struct<primary: string, common: map<string, string ('common')>, rules: list<element: struct<variant: string, language: string, perspectives: struct<mode: string, countries: list<element: string>>, value: string, between: list<element: double>, side: string>>>>"
+    },
+    {
+      "name": "addresses",
+      "type": "list<element: struct<freeform: string, locality: string, postcode: string, region: string, country: string>>"
+    },
+    {
+      "name": "names",
+      "type": "struct<primary: string, common: map<string, string ('common')>, rules: list<element: struct<variant: string, language: string, perspectives: struct<mode: string, countries: list<element: string>>, value: string, between: list<element: double>, side: string>>>"
+    },
+    {
+      "name": "sources",
+      "type": "list<element: struct<property: string, dataset: string, license: string, record_id: string, update_time: string, confidence: double, between: list<element: double>>>"
+    },
+    {
+      "name": "operating_status",
+      "type": "string"
+    },
+    {
+      "name": "basic_category",
+      "type": "string"
+    },
+    {
+      "name": "taxonomy",
+      "type": "struct<primary: string, hierarchy: list<element: string>, alternates: list<element: string>>"
+    },
+    {
+      "name": "version",
+      "type": "int32"
+    },
+    {
+      "name": "geometry",
+      "type": "binary"
+    },
+    {
+      "name": "bbox",
+      "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>"
+    }
+  ],
+  "portolan:total_size_bytes": 4821097,
+  "portolan:asset_count": 1,
+  "title": "Overture Places",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -90.32051595,
+          38.532093,
+          -90.16632,
+          38.77434060906825
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2026-07-22T00:00:00Z",
+          "2026-07-22T00:00:00Z"
+        ]
+      ]
+    }
+  },
+  "license": "other",
+  "assets": {
+    "overture-places": {
+      "href": "./overture-places.parquet",
+      "type": "application/vnd.apache.parquet",
+      "file:size": 4821097,
+      "file:checksum": "12201d35c925a503544409b4560d4d6aba23bccb5861c644c355f2264cb108157f68",
+      "roles": [
+        "data"
+      ],
+      "title": "Overture Places (GeoParquet)"
+    },
+    "overture-places-tiles": {
+      "href": "https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/places.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "roles": [
+        "visual"
+      ],
+      "title": "Overture places theme (PMTiles, global)",
+      "description": "Overture's own release-pinned global vector tiles for the places theme, served from the Overture Maps Foundation's public bucket \u2014 not from this mirror, and not clipped to St. Louis. The styles select this collection's layers (place) from them.",
+      "file:size": 19299391163
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "default",
+        "style"
+      ],
+      "title": "Places by category",
+      "description": "Every place colored by its Overture category \u2014 restaurants and bars in reds, churches purple, services in blues and teals, historic sites orange. Places tile only at z14: zoom into a neighborhood to see them.",
+      "file:size": 3214,
+      "file:checksum": "1220f48c03fdfe3aa19bdc16f276d57d00dd417ef72347de804b1e6805b934f10a74"
+    },
+    "styles/style-confidence": {
+      "href": "./styles/style-confidence.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "style"
+      ],
+      "title": "Confidence",
+      "description": "Overture's confidence that each place exists and is current, stepped from pale gray (below 0.5) to dark blue (0.9 and up).",
+      "file:size": 1673,
+      "file:checksum": "12206b968f68ade74070b4c3461e5a0e8a07aa66d3b110c8f223b3f39bf20b81b427"
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ],
+      "title": "Overture Places rendered with the default style",
+      "file:size": 486879,
+      "file:checksum": "122040a9751059c226b1988abea8765437d282df32b4dfd9bae388bd71a0380cbeeb"
+    }
+  },
+  "updated": "2026-08-14T11:21:05+00:00",
+  "themes": [
+    {
+      "scheme": "https://www.stlouis-mo.gov/data/topics/",
+      "concepts": [
+        {
+          "id": "business-and-industry",
+          "title": "Business and Industry"
+        }
+      ]
+    },
+    {
+      "scheme": "https://docs.overturemaps.org/guides/",
+      "concepts": [
+        {
+          "id": "places",
+          "title": "Overture places theme"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "overture",
+    "Overture Maps Foundation",
+    "places",
+    "place"
+  ],
+  "providers": [
+    {
+      "name": "Overture Maps Foundation",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://overturemaps.org/"
+    },
+    {
+      "name": "TGE Labs",
+      "roles": [
+        "host"
+      ],
+      "url": "https://github.com/cholmes/portolan-catalog-stlouis"
+    }
+  ]
+}

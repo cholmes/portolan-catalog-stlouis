@@ -1,0 +1,130 @@
+{
+  "version": 8,
+  "name": "Land use by subtype",
+  "metadata": {
+    "description": "OSM landuse translated to Overture subtypes \u2014 parks and protected land in greens, residential warm tan, education orange, industrial and transportation grays."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/base.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "overture-land-use-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "land_use",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "subtype"
+          ],
+          "park",
+          "#538400",
+          "protected",
+          "#0f5d0f",
+          "recreation",
+          "#7fb356",
+          "golf",
+          "#95c68f",
+          "managed",
+          "#b8c9a0",
+          "horticulture",
+          "#adc487",
+          "cemetery",
+          "#88b8a3",
+          "agriculture",
+          "#d6c977",
+          "developed",
+          "#d0c4b0",
+          "residential",
+          "#e0b394",
+          "pedestrian",
+          "#c9b970",
+          "religious",
+          "#c98bab",
+          "education",
+          "#e89d07",
+          "medical",
+          "#d98d8d",
+          "entertainment",
+          "#d093b5",
+          "transportation",
+          "#9aa3a8",
+          "military",
+          "#585f63",
+          "construction",
+          "#b5651d",
+          "landfill",
+          "#8b6f47",
+          "resource_extraction",
+          "#8b3a62",
+          "#dfe6ea"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "land_use-fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "land_use",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "subtype"
+          ],
+          "park",
+          "#538400",
+          "protected",
+          "#0f5d0f",
+          "recreation",
+          "#7fb356",
+          "golf",
+          "#95c68f",
+          "managed",
+          "#b8c9a0",
+          "horticulture",
+          "#adc487",
+          "cemetery",
+          "#88b8a3",
+          "agriculture",
+          "#d6c977",
+          "developed",
+          "#d0c4b0",
+          "residential",
+          "#e0b394",
+          "pedestrian",
+          "#c9b970",
+          "religious",
+          "#c98bab",
+          "education",
+          "#e89d07",
+          "medical",
+          "#d98d8d",
+          "entertainment",
+          "#d093b5",
+          "transportation",
+          "#9aa3a8",
+          "military",
+          "#585f63",
+          "construction",
+          "#b5651d",
+          "landfill",
+          "#8b6f47",
+          "resource_extraction",
+          "#8b3a62",
+          "#dfe6ea"
+        ],
+        "fill-opacity": 0.65,
+        "fill-outline-color": "#FFFFFF"
+      }
+    }
+  ]
+}

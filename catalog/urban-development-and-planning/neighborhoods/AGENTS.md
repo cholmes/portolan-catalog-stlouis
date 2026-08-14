@@ -32,4 +32,4 @@ parcels.NBRHD, csb-311-requests.NEIGHBORHOOD, and city-blocks.NBRHD all carry NH
 
 ## Provenance
 
-Mirror of [Neighborhood Boundaries](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=85) from the City of St. Louis; source: https://maps6.stlouis-mo.gov/arcgis/rest/services/PublicDataStore/NEIGHBORHOOD_BOUNDARIES/FeatureServer. No explicit license is published — see the source page. Synced 2026-08-05T19:58:51+00:00.
+Mirror of [Neighborhood Boundaries](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=85) from the City of St. Louis; source: https://maps6.stlouis-mo.gov/arcgis/rest/services/PublicDataStore/NEIGHBORHOOD_BOUNDARIES/FeatureServer. No explicit license is published — see the source page. Synced 2026-08-14T11:21:05+00:00.

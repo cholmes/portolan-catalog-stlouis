@@ -1,0 +1,305 @@
+{
+  "type": "Collection",
+  "id": "government/overture-divisions",
+  "stac_version": "1.1.0",
+  "description": "Point, line, and polygon representations of human settlements from the Overture divisions theme: recognized areas for governance, culture, or organization, from countries and regions down to counties, cities, and neighborhoods. Three feature types are merged here with an `overture_type` column: `division` (label points with population and hierarchy), `division_area` (the land or maritime polygon belonging to a division), and `division_boundary` (shared borders between divisions). For the St. Louis box that means the city itself, surrounding counties and municipalities on both sides of the river, and Overture's neighborhood set.\n\nUnlike everything else in this catalog, this is **not** City of St. Louis data: it comes from the [Overture Maps Foundation](https://overturemaps.org/), a collaborative project building open, interoperable map data for the world. This collection is a St. Louis extract of that global dataset \u2014 everything inside the city's bounding box, which also takes in the Illinois shore of the Mississippi (East St. Louis, Cahokia Heights) \u2014 included here to demonstrate how a city's open-data catalog can blend in other St. Louis-relevant open data alongside the city's own. The GeoParquet was extracted from Overture release 2026-07-22.0; the map tiles reference Overture's own global PMTiles for the same release, the tiles behind [explore.overturemaps.org](https://explore.overturemaps.org/).",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "City of St. Louis Open Data (Cloud-Native Mirror)"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Government"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown",
+      "title": "Agent/LLM usage guide"
+    },
+    {
+      "rel": "describedby",
+      "href": "./README.md",
+      "type": "text/markdown"
+    },
+    {
+      "rel": "license",
+      "href": "https://docs.overturemaps.org/attribution/",
+      "type": "text/html",
+      "title": "Overture attribution and licensing"
+    },
+    {
+      "rel": "via",
+      "href": "https://docs.overturemaps.org/guides/divisions/",
+      "type": "text/html",
+      "title": "Overture divisions theme guide"
+    },
+    {
+      "rel": "via",
+      "href": "s3://overturemaps-us-west-2/release/2026-07-22.0/theme=divisions/",
+      "type": "application/x-parquet",
+      "title": "Overture release 2026-07-22.0 GeoParquet (theme=divisions) on S3"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/divisions.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "pmtiles:layers": [
+        "division",
+        "division_area",
+        "division_boundary"
+      ]
+    }
+  ],
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
+  ],
+  "geoparquet:geometry_type": "LineString",
+  "geoparquet:feature_count": 283,
+  "table:row_count": 283,
+  "table:primary_geometry": "geometry",
+  "table:columns": [
+    {
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "name": "country",
+      "type": "string"
+    },
+    {
+      "name": "sources",
+      "type": "list<element: struct<property: string, dataset: string, license: string, record_id: string, update_time: string, confidence: double, between: list<element: double>>>"
+    },
+    {
+      "name": "subtype",
+      "type": "string"
+    },
+    {
+      "name": "admin_level",
+      "type": "int32"
+    },
+    {
+      "name": "class",
+      "type": "string"
+    },
+    {
+      "name": "names",
+      "type": "struct<primary: string, common: map<string, string ('common')>, rules: list<element: struct<variant: string, language: string, perspectives: struct<mode: string, countries: list<element: string>>, value: string, between: list<element: double>, side: string>>>"
+    },
+    {
+      "name": "wikidata",
+      "type": "string"
+    },
+    {
+      "name": "perspectives",
+      "type": "struct<mode: string, countries: list<element: string>>"
+    },
+    {
+      "name": "local_type",
+      "type": "map<string, string ('local_type')>"
+    },
+    {
+      "name": "region",
+      "type": "string"
+    },
+    {
+      "name": "hierarchies",
+      "type": "list<element: list<element: struct<division_id: string, subtype: string, name: string>>>"
+    },
+    {
+      "name": "parent_division_id",
+      "type": "string"
+    },
+    {
+      "name": "norms",
+      "type": "struct<driving_side: string>"
+    },
+    {
+      "name": "population",
+      "type": "int32"
+    },
+    {
+      "name": "capital_division_ids",
+      "type": "list<element: string>"
+    },
+    {
+      "name": "capital_of_divisions",
+      "type": "list<element: struct<division_id: string, subtype: string>>"
+    },
+    {
+      "name": "cartography",
+      "type": "struct<prominence: int32, min_zoom: int32, max_zoom: int32, sort_key: int32>"
+    },
+    {
+      "name": "version",
+      "type": "int32"
+    },
+    {
+      "name": "overture_type",
+      "type": "string"
+    },
+    {
+      "name": "geometry",
+      "type": "binary"
+    },
+    {
+      "name": "is_land",
+      "type": "bool"
+    },
+    {
+      "name": "is_territorial",
+      "type": "bool"
+    },
+    {
+      "name": "division_id",
+      "type": "string"
+    },
+    {
+      "name": "division_ids",
+      "type": "list<element: string>"
+    },
+    {
+      "name": "is_disputed",
+      "type": "bool"
+    },
+    {
+      "name": "bbox",
+      "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>"
+    }
+  ],
+  "portolan:total_size_bytes": 165885,
+  "portolan:asset_count": 1,
+  "title": "Overture Divisions",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -90.32051856117901,
+          38.53199630293254,
+          -90.16630892212817,
+          38.77434671879855
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2026-07-22T00:00:00Z",
+          "2026-07-22T00:00:00Z"
+        ]
+      ]
+    }
+  },
+  "license": "ODbL-1.0",
+  "assets": {
+    "overture-divisions": {
+      "href": "./overture-divisions.parquet",
+      "type": "application/vnd.apache.parquet",
+      "file:size": 165885,
+      "file:checksum": "1220451a1345ffaf8490db546774be893f2a7520dec06415293433d369902a2353f1",
+      "roles": [
+        "data"
+      ],
+      "title": "Overture Divisions (GeoParquet)"
+    },
+    "overture-divisions-tiles": {
+      "href": "https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/divisions.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "roles": [
+        "visual"
+      ],
+      "title": "Overture divisions theme (PMTiles, global)",
+      "description": "Overture's own release-pinned global vector tiles for the divisions theme, served from the Overture Maps Foundation's public bucket \u2014 not from this mirror, and not clipped to St. Louis. The styles select this collection's layers (division, division_area, division_boundary) from them.",
+      "file:size": 19534917087
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "default",
+        "style"
+      ],
+      "title": "Divisions by subtype",
+      "description": "Division areas colored by their place in the hierarchy \u2014 counties orange, cities and municipalities blue, neighborhoods green \u2014 with shared boundaries drawn dark and each division's label point named. The country and region areas (bbox clips of the whole US, Missouri, and Illinois polygons) are in the data but not drawn here.",
+      "file:size": 2922,
+      "file:checksum": "12203dfc74dcd33145ea39bb3de87333d83bcc03efcac321555721731ec6641062a5"
+    },
+    "styles/style-neighborhoods": {
+      "href": "./styles/style-neighborhoods.json",
+      "type": "application/vnd.mapbox.style+json",
+      "roles": [
+        "style"
+      ],
+      "title": "Overture neighborhoods",
+      "description": "Just the neighborhood-level divisions, in repeating colors with labels \u2014 Overture's own neighborhood set for both sides of the river, to hold against the city's official neighborhood boundaries. Colors are arbitrary.",
+      "file:size": 2514,
+      "file:checksum": "1220fcde50ef9c6198dcbee8e3dd1982b7b51d89ac3a0a33646c7fb7bb61dd702208"
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ],
+      "title": "Overture Divisions rendered with the default style",
+      "file:size": 373920,
+      "file:checksum": "1220a78a968a2713b4548f87f1347386a8bc98a7269be8bf027b0212b14ad27b996a"
+    }
+  },
+  "updated": "2026-08-14T11:21:05+00:00",
+  "themes": [
+    {
+      "scheme": "https://www.stlouis-mo.gov/data/topics/",
+      "concepts": [
+        {
+          "id": "government",
+          "title": "Government"
+        }
+      ]
+    },
+    {
+      "scheme": "https://docs.overturemaps.org/guides/",
+      "concepts": [
+        {
+          "id": "divisions",
+          "title": "Overture divisions theme"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    "overture",
+    "Overture Maps Foundation",
+    "divisions",
+    "division",
+    "division area",
+    "division boundary"
+  ],
+  "providers": [
+    {
+      "name": "Overture Maps Foundation",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://overturemaps.org/"
+    },
+    {
+      "name": "TGE Labs",
+      "roles": [
+        "host"
+      ],
+      "url": "https://github.com/cholmes/portolan-catalog-stlouis"
+    }
+  ]
+}

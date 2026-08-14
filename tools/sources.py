@@ -422,6 +422,121 @@ SOURCES = {
 
 
 # ---------------------------------------------------------------------------
+# Overture Maps collections — NOT City of St. Louis data.
+#
+# St. Louis extracts of the Overture Maps Foundation's global open datasets
+# (https://overturemaps.org), included to demonstrate blending other
+# St. Louis-relevant open data into the catalog. GeoParquet is extracted from
+# Overture's release bucket over the same bbox as the city-boundary
+# collection; PMTiles are NOT built here — each collection references
+# Overture's own release-pinned global theme tiles, so the visual layer stays
+# byte-identical to what explore.overturemaps.org serves.
+#
+# `types` lists the theme's type= partitions merged into the collection (a
+# multi-type merge carries an `overture_type` column, like the multi-layer
+# ArcGIS merges carry `source_layer`). `docs` is the Overture schema guide
+# for the theme — the closest thing to a portal page, used for rel: via and
+# license links. Licenses are per-theme, from
+# https://docs.overturemaps.org/attribution/.
+# ---------------------------------------------------------------------------
+
+OVERTURE_RELEASE = "2026-07-22.0"
+OVERTURE_S3 = f"s3://overturemaps-us-west-2/release/{OVERTURE_RELEASE}"
+OVERTURE_TILES = ("https://overturemaps-extras-us-west-2.s3.us-west-2"
+                  f".amazonaws.com/tiles/{OVERTURE_RELEASE}")
+
+OVERTURE_SOURCES = {
+    "overture-buildings": {
+        "title": "Overture Buildings",
+        "type": "overture",
+        "theme": "buildings",
+        "types": ["building", "building_part"],
+        "docs": "https://docs.overturemaps.org/guides/buildings/",
+        "license": "ODbL-1.0",
+    },
+    "overture-addresses": {
+        "title": "Overture Addresses",
+        "type": "overture",
+        "theme": "addresses",
+        "types": ["address"],
+        "docs": "https://docs.overturemaps.org/guides/addresses/",
+        # The addresses theme aggregates open government address datasets;
+        # each source keeps its own open license, recorded per feature in
+        # the `sources` column.
+        "license": "other",
+    },
+    "overture-transportation": {
+        "title": "Overture Transportation",
+        "type": "overture",
+        "theme": "transportation",
+        "types": ["segment", "connector"],
+        "docs": "https://docs.overturemaps.org/guides/transportation/",
+        "license": "ODbL-1.0",
+    },
+    "overture-places": {
+        "title": "Overture Places",
+        "type": "overture",
+        "theme": "places",
+        "types": ["place"],
+        "docs": "https://docs.overturemaps.org/guides/places/",
+        # Mixed permissive sources (CDLA-Permissive-2.0, Apache-2.0, CC0);
+        # no single SPDX id covers the theme.
+        "license": "other",
+    },
+    "overture-divisions": {
+        "title": "Overture Divisions",
+        "type": "overture",
+        "theme": "divisions",
+        "types": ["division", "division_area", "division_boundary"],
+        "docs": "https://docs.overturemaps.org/guides/divisions/",
+        "license": "ODbL-1.0",
+    },
+    "overture-infrastructure": {
+        "title": "Overture Infrastructure",
+        "type": "overture",
+        "theme": "base",
+        "types": ["infrastructure"],
+        "docs": "https://docs.overturemaps.org/guides/base/",
+        "license": "ODbL-1.0",
+    },
+    "overture-land": {
+        "title": "Overture Land",
+        "type": "overture",
+        "theme": "base",
+        "types": ["land"],
+        "docs": "https://docs.overturemaps.org/guides/base/",
+        "license": "ODbL-1.0",
+    },
+    "overture-land-cover": {
+        "title": "Overture Land Cover",
+        "type": "overture",
+        "theme": "base",
+        "types": ["land_cover"],
+        "docs": "https://docs.overturemaps.org/guides/base/",
+        "license": "ODbL-1.0",
+    },
+    "overture-land-use": {
+        "title": "Overture Land Use",
+        "type": "overture",
+        "theme": "base",
+        "types": ["land_use"],
+        "docs": "https://docs.overturemaps.org/guides/base/",
+        "license": "ODbL-1.0",
+    },
+    "overture-water": {
+        "title": "Overture Water",
+        "type": "overture",
+        "theme": "base",
+        "types": ["water"],
+        "docs": "https://docs.overturemaps.org/guides/base/",
+        "license": "ODbL-1.0",
+    },
+}
+
+SOURCES.update(OVERTURE_SOURCES)
+
+
+# ---------------------------------------------------------------------------
 # The city's own files, published as `source`-role assets on each collection.
 #
 # formats.md: "A mirror SHOULD also include the original data as an asset when
@@ -657,11 +772,12 @@ GROUPS = {
     "urban-development-and-planning": [
         "parcels", "parcels-history", "city-blocks", "zoning", "land-use",
         "neighborhoods", "historic-districts", "historic-landmarks",
-        "port-authority-district", "vacancy-composite", "city-boundary"],
+        "port-authority-district", "vacancy-composite", "city-boundary",
+        "overture-buildings", "overture-addresses", "overture-land-use"],
     "government": [
         "wards", "wards-2010", "election-precincts", "polling-places",
         "election-results-nov-2024", "csb-311-requests", "zip-codes",
-        "property-taxes"],
+        "property-taxes", "overture-divisions"],
     "housing": [
         "lra-property", "property-sales", "market-value-analysis",
         "electrical-permits", "mechanical-permits", "plumbing-permits",
@@ -669,15 +785,17 @@ GROUPS = {
     "business-and-industry": [
         "tif-districts", "opportunity-zones", "special-business-districts",
         "tax-abated-parcels", "business-licenses", "tax-sales",
-        "community-improvement-districts"],
+        "community-improvement-districts", "overture-places"],
     "transportation-infrastructure-and-utilities": [
         "streets", "street-permits", "parking-meters", "street-sweeping",
-        "bike-infrastructure"],
+        "bike-infrastructure", "overture-transportation",
+        "overture-infrastructure"],
     "law-safety-and-justice": [
         "police-districts", "crime", "siren-locations",
         "tornado-damage-2025"],
     "environment": [
-        "floodplain", "flood-controls", "city-trees", "forest-park-trees"],
+        "floodplain", "flood-controls", "city-trees", "forest-park-trees",
+        "overture-land", "overture-land-cover", "overture-water"],
     "leisure-and-culture": ["parks"],
     "health": ["animal-bites", "lead-service-lines"],
     "community": ["neighborhood-organizations"],
