@@ -1,0 +1,51 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.1",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-14T12:32:47.142752Z",
+      "breaking": false,
+      "assets": {
+        "acs-block-groups.parquet": {
+          "sha256": "552647b0a6e8bb8b3ea271255542b0745a1d8b68564203d1f944a92afe5edf71",
+          "size_bytes": 159469,
+          "href": "demographics/acs-block-groups/acs-block-groups.parquet",
+          "source_mtime": 1786710719.9305785,
+          "mtime": 1786710719.9305785,
+          "feature_count": 314,
+          "schema_fingerprint": "2d7fbf6d4311d505"
+        }
+      },
+      "changes": [
+        "acs-block-groups.parquet"
+      ]
+    },
+    {
+      "version": "1.0.1",
+      "created": "2026-08-14T12:32:48.311170Z",
+      "breaking": false,
+      "assets": {
+        "acs-block-groups.parquet": {
+          "sha256": "552647b0a6e8bb8b3ea271255542b0745a1d8b68564203d1f944a92afe5edf71",
+          "size_bytes": 159469,
+          "href": "demographics/acs-block-groups/acs-block-groups.parquet",
+          "source_mtime": 1786710719.9305785,
+          "mtime": 1786710719.9305785,
+          "feature_count": 314,
+          "schema_fingerprint": "2d7fbf6d4311d505"
+        },
+        "acs-block-groups.pmtiles": {
+          "sha256": "b910a998e9bf4fa43fdbbe6fc008a5e84bcaaabd0db5c7d4794ecd1db1f32e50",
+          "size_bytes": 560670,
+          "href": "demographics/acs-block-groups/acs-block-groups.pmtiles",
+          "mtime": 1786710768.2989235
+        }
+      },
+      "changes": [
+        "acs-block-groups.pmtiles"
+      ],
+      "message": "Generated PMTiles: acs-block-groups.pmtiles"
+    }
+  ]
+}

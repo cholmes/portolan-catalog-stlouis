@@ -43,4 +43,4 @@ gpio convert shapefile mechanical-permits-geo.parquet mechanical-permits.shp
 
 ## Provenance
 
-Mirror of [Mechanical Permits](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=52) from the City of St. Louis; source: https://www.stlouis-mo.gov/data/upload/data-files/mechanical-permits.zip. No explicit license is published — see the source page. Synced 2026-08-14T11:21:05+00:00.
+Mirror of [Mechanical Permits](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=52) from the City of St. Louis; source: https://www.stlouis-mo.gov/data/upload/data-files/mechanical-permits.zip. No explicit license is published — see the source page. Synced 2026-08-14T12:21:16+00:00.

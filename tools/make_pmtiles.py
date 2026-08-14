@@ -80,6 +80,13 @@ TILING = {
         "maxzoom": 14, "cap": 800_000,
         "columns": ["number", "street", "unit", "postcode", "postal_city",
                     "country"]},
+    # Census family: a few hundred polygons each, so every attribute fits in
+    # every tile; z12 keeps block-group boundaries crisp at neighborhood zoom.
+    "acs-block-groups": {"maxzoom": 12, "cap": 800_000, "columns": None},
+    "acs-tracts": {"maxzoom": 12, "cap": 800_000, "columns": None},
+    "lodes-jobs": {"maxzoom": 12, "cap": 800_000, "columns": None},
+    "holc-redlining": {"maxzoom": 12, "cap": 800_000, "columns": None},
+    "cdc-places": {"maxzoom": 12, "cap": 800_000, "columns": None},
 }
 
 # Overture collections ride Overture's own release-pinned global theme tiles
@@ -93,6 +100,7 @@ OVERTURE_LOCAL = {"overture-addresses"}
 
 def make(coll_id: str) -> None:
     cfg = {**DEFAULTS, **TILING.get(coll_id, {})}
+    attribution = SOURCES[coll_id].get("attribution", "City of St. Louis")
     pq = CATALOG / coll_rel(coll_id) / f"{coll_id}.parquet"
     out = CATALOG / coll_rel(coll_id) / f"{coll_id}.pmtiles"
     # tippecanoe picks its output format from the extension, so the temp
@@ -104,7 +112,7 @@ def make(coll_id: str) -> None:
               f"--maximum-tile-bytes={cfg['cap']}",
               "--drop-densest-as-needed",
               "--no-simplification-of-shared-nodes",
-              "--attribution=City of St. Louis"]
+              f"--attribution={attribution}"]
     for col in cfg["columns"] or []:
         tc_cmd += ["-y", col]
     src_pq = pq
@@ -140,7 +148,13 @@ def main() -> int:
     for coll_id in SOURCES:
         if only and coll_id not in only:
             continue
-        if coll_id == "property-sales":  # tabular, no tiles
+        if coll_id in ("property-sales", "lodes-commutes"):  # tabular, no tiles
+            continue
+        # Overture collections use Overture's own remote theme tiles
+        # (AGENTS.md rule 6) — no local tiles, except the OVERTURE_LOCAL
+        # set (addresses: the global tileset has no St. Louis coverage).
+        if (SOURCES[coll_id]["type"] == "overture"
+                and coll_id not in OVERTURE_LOCAL):
             continue
         if (SOURCES[coll_id].get("type") == "overture"
                 and coll_id not in OVERTURE_LOCAL):

@@ -1,0 +1,22 @@
+title: "CDC PLACES Health Measures"
+description: "Forty model-based health measures for all 104 census tracts in the City of St. Louis, from the CDC's PLACES project. CDC describes PLACES as providing \"health and health-related data using small area estimation for counties, incorporated and census designated places, census tracts, and ZIP Code Tabulation Areas (ZCTAs) across the United States,\" with \"model-based estimates based on data from the Behavioral Risk Factor Surveillance System (BRFSS), Census decennial population counts and annual county population estimates, and the American Community Survey (ACS) 5-year estimates.\" Measures span health outcomes (asthma, diabetes, obesity, depression), prevention (checkups, screenings, insurance), health risk behaviors (smoking, binge drinking), disabilities, and health-related social needs (food insecurity, housing insecurity, transportation barriers, utility shut-off risk). Each measure is a crude-prevalence percentage of adults with 95% confidence limits in `*_lo`/`*_hi` columns; column descriptions carry each measure's full name and data year (2022 or 2023 depending on the measure, per the PLACES 2025 release).
+
+These are **modeled estimates, not direct survey measurements of St. Louis residents** — CDC's small-area models combine national survey responses with local population characteristics, so tract values are best used for ranking and pattern-finding, not as precise local measurements. Unlike the city's own datasets in this catalog, this is **not** City of St. Louis data: it is published by the Centers for Disease Control and Prevention, extracted for St. Louis city (FIPS 29510) from the PLACES tract-level release and joined to the Census Bureau's 2024 cartographic boundary geometries. Explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/demographics/cdc-places/collection.json)."
+contact:
+  name: "Chris Holmes"
+  email: "cholmes@9eo.org"
+license: "other"
+license_url: "https://www.cdc.gov/other/agencymaterials.html"
+attribution: "Centers for Disease Control and Prevention"
+source_url: "https://data.cdc.gov/resource/cwsq-ngmh"
+keywords: [cdc, places, health, small-area-estimates, tracts, st-louis, open-data]
+processing_notes: |
+  Fetched from the CDC PLACES census-tract release via the Socrata API (https://data.cdc.gov/resource/cwsq-ngmh, dataset cwsq-ngmh) filtered to county FIPS 29510, then pivoted from one-row-per-measure to one-row-per-tract with a value, lower and upper 95% confidence limit column per measure. All rows are crude prevalence (the only value type CDC publishes at tract level; the fetch asserts this). Joined to the 2024 cartographic boundary tracts on GEOID.
+
+  Converted to GeoParquet with gpio and tiled to PMTiles with tippecanoe.
+examples:
+  - engine: duckdb
+    description: "Preview the first rows, straight off the published file"
+    code: |
+      INSTALL httpfs; LOAD httpfs;
+      SELECT * FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/demographics/cdc-places/cdc-places.parquet' LIMIT 5;

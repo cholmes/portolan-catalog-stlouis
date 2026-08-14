@@ -1,0 +1,81 @@
+{
+  "version": 8,
+  "name": "Jobs by workplace",
+  "metadata": {
+    "description": "Where St. Louis works: total jobs located in each block group, light to dark blue. Downtown, the central corridor and the hospital campuses carry most of the city's employment."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../lodes-jobs.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "lodes-jobs-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "lodes-jobs",
+      "paint": {
+        "fill-color": [
+          "step",
+          [
+            "get",
+            "jobs_total"
+          ],
+          "#f1eef6",
+          100,
+          "#bdc9e1",
+          500,
+          "#74a9cf",
+          2000,
+          "#2b8cbe",
+          8000,
+          "#045a8d"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "lodes-jobs",
+      "paint": {
+        "fill-color": [
+          "step",
+          [
+            "get",
+            "jobs_total"
+          ],
+          "#f1eef6",
+          100,
+          "#bdc9e1",
+          500,
+          "#74a9cf",
+          2000,
+          "#2b8cbe",
+          8000,
+          "#045a8d"
+        ],
+        "fill-opacity": 0.75,
+        "fill-outline-color": "#666666"
+      },
+      "filter": [
+        "has",
+        "jobs_total"
+      ]
+    },
+    {
+      "id": "line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "lodes-jobs",
+      "paint": {
+        "line-color": "#666666",
+        "line-width": 0.3,
+        "line-opacity": 1.0
+      }
+    }
+  ]
+}

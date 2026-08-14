@@ -323,6 +323,134 @@ NOTES.update({
     },
 })
 
+# Census-family collections share the MOE/GEOID quirks; extras per dataset.
+_CENSUS_COMMON = (
+    "Federal or third-party data, not the city's — see the description. "
+    "GEOID join keys: a block group id is 12 digits, its tract is the "
+    "first 11 (`left(geoid, 11)`), and everything in the city starts "
+    "`29510`. ACS estimates carry `*_moe` margins of error at the 90% "
+    "confidence level — at block-group scale the margin often rivals the "
+    "estimate, so treat any `*_cv` above 0.30 as unreliable and aggregate "
+    "before concluding. Suppressed estimates are NULL (never zero): "
+    "exclude them, don't count them. Medians cannot be summed or averaged "
+    "into larger areas.")
+NOTES.update({
+    "acs-block-groups": {
+        "fields": {
+            "geoid": "12-digit block group GEOID — the family's join key",
+            "tract": "11-digit tract GEOID, joins acs-tracts and cdc-places",
+            "median_hh_income": "with _moe and _cv companions (B19013)",
+            "pct_hh_no_vehicle": "zero-vehicle households, % (B25044)",
+            "pct_people_of_color": "100 − pct_white_nh (B03002)",
+            "pct_below_poverty": "income-to-poverty ratio < 1.00 (C17002)",
+            "pct_rent_burdened": "renters paying 30%+ of income (B25070)",
+            "pct_no_internet": "households with no internet (B28002)",
+        },
+        "quirks": _CENSUS_COMMON + " 53 of 314 block groups have NULL "
+                  "median income (too few sample households). Block groups "
+                  "with large group quarters (dorms, prisons) distort "
+                  "household rates — check acs-tracts.group_quarters_pop.",
+        "joins": "Spatially join city points (crime, 311, permits via "
+                 "parcels) with ST_Within(pt, geometry), then GROUP BY "
+                 "geoid. `tract` joins acs-tracts and cdc-places without "
+                 "geometry. lodes-jobs and lodes-commutes share `geoid`.",
+        "example": (
+            "-- Income quintile vs. car-free households: the equity gradient\n"
+            "SELECT income_q, round(avg(pct_hh_no_vehicle), 1) AS pct_no_car\n"
+            "FROM (\n"
+            "  SELECT ntile(5) OVER (ORDER BY median_hh_income) AS income_q,\n"
+            "         pct_hh_no_vehicle\n"
+            "  FROM read_parquet('acs-block-groups.parquet')\n"
+            "  WHERE median_hh_income IS NOT NULL)\n"
+            "GROUP BY income_q ORDER BY income_q;"),
+    },
+    "acs-tracts": {
+        "fields": {
+            "geoid": "11-digit tract GEOID",
+            "pct_uninsured": "no health insurance coverage (B27001)",
+            "pct_with_disability": "civilian noninstitutionalized (B18101)",
+            "group_quarters_pop": "institutional population flag (B26001)",
+            "median_hh_income_black": "race-iterated income (B19013B) — "
+                                      "tract is the finest level it exists",
+        },
+        "quirks": _CENSUS_COMMON + " This collection exists because these "
+                  "tables have no block-group release. Race-iterated "
+                  "medians are noisy even at tract level — check the _cv.",
+        "joins": "acs-block-groups.tract = geoid; cdc-places.geoid = geoid.",
+    },
+    "lodes-jobs": {
+        "fields": {
+            "geoid": "12-digit block group GEOID",
+            "jobs_total": "jobs located here (workplace side, WAC C000)",
+            "workers_resident": "employed residents (residence side, RAC)",
+            "jobs_earn_low": "≤ $1,250/month; _mid, _high for the rest",
+        },
+        "quirks": _CENSUS_COMMON + " Administrative counts, not survey "
+                  "estimates — no MOEs. Zero-filled: every block group is "
+                  "present. jobs_total ≫ workers_resident marks a job "
+                  "center whose daytime population dwarfs its census count.",
+        "joins": "geoid = acs-block-groups.geoid — divide anything by "
+                 "residents + jobs for ambient-population rates.",
+    },
+    "lodes-commutes": {
+        "fields": {
+            "home_geoid": "where the workers live (12-digit BG)",
+            "work_geoid": "where their jobs are (12-digit BG)",
+            "jobs": "workers with this home→work pair (S000)",
+            "home_in_city": "with work_in_city, splits inbound/outbound/"
+                            "internal flows",
+        },
+        "quirks": _CENSUS_COMMON + " Tabular — join a geoid to "
+                  "acs-block-groups for geometry. Includes out-of-state "
+                  "residents working in Missouri (Illinois commuters), but "
+                  "NOT St. Louis residents working out of state, per the "
+                  "LODES file structure.",
+        "joins": "home_geoid / work_geoid = acs-block-groups.geoid = "
+                 "lodes-jobs.geoid.",
+        "example": (
+            "-- Where do low-earnings workers employed downtown live?\n"
+            "SELECT home_geoid, sum(jobs_earn_low) AS low_wage_workers\n"
+            "FROM read_parquet('lodes-commutes.parquet')\n"
+            "WHERE work_geoid LIKE '295101256%'  -- downtown tracts\n"
+            "GROUP BY 1 ORDER BY 2 DESC LIMIT 10;"),
+    },
+    "holc-redlining": {
+        "fields": {
+            "grade": "A best / B still desirable / C declining / D "
+                     "hazardous (redlined); one polygon is ungraded NULL",
+            "label": "area id from the original map sheet (e.g. D4)",
+            "fill": "the 1930s map's own hex color for the grade",
+        },
+        "quirks": "Mapping Inequality (University of Richmond) data, not "
+                  "the city's — 1930s HOLC survey polygons, CC BY-NC-SA "
+                  "4.0 (non-commercial; the one collection here with a "
+                  "restrictive license). Boundaries were hand-drawn on "
+                  "1930s street maps: expect slivers against modern "
+                  "geographies.",
+        "joins": "Spatial: ST_Within(ST_Centroid(bg.geometry), holc"
+                 ".geometry) assigns each modern block group its 1930s "
+                 "grade for persistence analysis.",
+    },
+    "cdc-places": {
+        "fields": {
+            "geoid": "11-digit tract GEOID",
+            "foodinsecu": "food insecurity, % of adults (with _lo/_hi "
+                          "95% confidence limits)",
+            "lacktrpt": "lacked reliable transportation, % of adults",
+            "casthma": "current asthma, % of adults",
+            "access2": "no health insurance 18-64 — cross-check "
+                       "acs-tracts.pct_uninsured",
+        },
+        "quirks": "CDC model-based small-area estimates, not direct "
+                  "measurements of St. Louis residents: use for ranking "
+                  "tracts and pattern-finding, not as precise local "
+                  "values. Every measure has _lo/_hi 95% confidence "
+                  "limits. Measure data years mix 2022 and 2023 (see "
+                  "column descriptions).",
+        "joins": "geoid = acs-tracts.geoid = acs-block-groups.tract.",
+    },
+})
+
 
 # Documented joins for the tabular collections whose PMTiles are
 # join-materialized (kept in sync with tools/make_joined_pmtiles.py JOINS).
@@ -429,6 +557,21 @@ def collection_agents(coll_id: str) -> str:
                 "[Overture attribution](https://docs.overturemaps.org/attribution/)). "
                 f"Synced {coll.get('updated', '')}.", ""]
         return "\n".join(out)
+    if src["type"] == "census":
+        from write_metadata import census_source_url
+        out += ["## Links", "",
+                f"- [View on the data browser]({BROWSER}/#/{rel}/collection.json) "
+                "— map, styles, legends, downloads",
+                f"- [Browse on Source Cooperative]({BROWSE}/{rel}/) — rendered "
+                "README and file listing",
+                f"- [{src['attribution']} documentation]({src['docs']})",
+                "", "## Provenance", "",
+                f"Published by {src['attribution']} — **not** City of "
+                f"St. Louis data; St. Louis extract by this mirror. Source: "
+                f"{census_source_url(src['dataset'])}. License: "
+                f"{src['license']} ({src['license_url']}). "
+                f"Synced {coll.get('updated', '')}.", ""]
+        return "\n".join(out)
     out += ["## Links", "",
             f"- [View on the data browser]({BROWSER}/#/{rel}/collection.json) "
             "— map, styles, legends, downloads",
@@ -488,8 +631,211 @@ AGENTS.md with fields, quirks, and joins.
   PMTiles are Overture's own global theme tiles, not files in this catalog
   (except `overture-addresses`, tiled locally — the global addresses
   tileset has no St. Louis coverage).
+- The 6 `demographics/` collections are NOT city data either: ACS 2020-2024
+  (with margins of error — read a block group's `*_cv` before trusting it),
+  LODES 2023 jobs, 1930s HOLC redlining grades (CC BY-NC-SA — the one
+  non-commercial license here), and CDC PLACES modeled health estimates.
+  GEOIDs join them to each other; spatial joins tie them to everything
+  else. The demographics group AGENTS.md has worked cross-dataset queries.
 - The catalog is a mirror, not an official city service. `updated` on each
   object is the sync time.
+"""
+
+
+# Worked cross-dataset queries for the demographics group AGENTS.md. Every
+# query below was run against the built catalog and the result lines are the
+# actual output — if a sync changes them materially, re-run and update.
+DEMOGRAPHICS_ANALYSIS = f"""## Cross-dataset analysis
+
+The point of this group: census context turns the city's own data into
+answers about equity. Every query below runs as-is in DuckDB and was
+validated against the published files. Two ground rules first:
+
+- **Distances**: geometry is WGS84 lon/lat. DuckDB's `ST_Distance_Sphere`
+  reads coordinates in the wrong axis order for these files (it treated a
+  longitude step as latitude in testing), so for meters, transform to UTM
+  15N first: `ST_Transform(geom, 'EPSG:4326', 'EPSG:26915', always_xy :=
+  true)` — then `ST_Distance`/`ST_DWithin` are in meters.
+- **Reliability**: ACS block-group estimates are noisy. Check `*_cv`
+  (over 0.30 = unreliable) before leaning on any single block group;
+  quintile/grade aggregates like the ones below are the safe pattern.
+
+### 1. Is the LRA land bank racially and economically concentrated?
+
+```sql
+INSTALL spatial; LOAD spatial; INSTALL httpfs; LOAD httpfs;
+WITH lra AS (
+  SELECT ST_Centroid(geometry) AS pt
+  FROM '{BASE}/housing/lra-property/lra-property.parquet'
+  WHERE geometry IS NOT NULL),
+bg AS (
+  SELECT geoid, geometry, population, pct_black, median_hh_income,
+         ntile(5) OVER (ORDER BY median_hh_income) AS income_q
+  FROM '{BASE}/demographics/acs-block-groups/acs-block-groups.parquet'
+  WHERE median_hh_income IS NOT NULL AND population > 0),
+counts AS (
+  SELECT bg.geoid, any_value(bg.income_q) AS income_q,
+         any_value(bg.pct_black) AS pct_black,
+         any_value(bg.population) AS population, count(lra.pt) AS n
+  FROM bg LEFT JOIN lra ON ST_Within(lra.pt, bg.geometry)
+  GROUP BY bg.geoid)
+SELECT income_q AS income_quintile,
+       round(avg(pct_black), 1) AS avg_pct_black,
+       sum(n) AS lra_parcels,
+       round(1000.0 * sum(n) / sum(population), 1) AS lra_per_1000_residents
+FROM counts GROUP BY 1 ORDER BY 1;
+-- 2026-08 sync: quintile 1 (avg 75.6% Black) holds 117.1 LRA parcels per
+-- 1,000 residents; quintile 5 (15.6% Black) holds 1.1 — a 100x gradient.
+```
+
+### 2. Does 311 response time track income?
+
+```sql
+INSTALL spatial; LOAD spatial; INSTALL httpfs; LOAD httpfs;
+WITH bg AS (
+  SELECT geoid, geometry, median_hh_income,
+         ntile(5) OVER (ORDER BY median_hh_income) AS income_q
+  FROM '{BASE}/demographics/acs-block-groups/acs-block-groups.parquet'
+  WHERE median_hh_income IS NOT NULL),
+req AS (
+  SELECT geometry,
+         date_diff('day', DATETIMEINIT, DATETIMECLOSED) AS days_to_close
+  FROM '{BASE}/government/csb-311-requests/csb-311-requests.parquet'
+  WHERE geometry IS NOT NULL AND DATETIMECLOSED IS NOT NULL
+    AND DATETIMEINIT >= TIMESTAMP '2023-01-01'
+    AND "GROUP" = 'Trash/Debris/Green Waste')
+SELECT bg.income_q, count(*) AS requests,
+       round(median(req.days_to_close), 1) AS median_days,
+       round(avg(req.days_to_close), 1) AS avg_days
+FROM req JOIN bg ON ST_Within(req.geometry, bg.geometry)
+GROUP BY 1 ORDER BY 1;
+-- 2026-08 sync: the median is 3 days in every quintile — but the mean runs
+-- 17.2 days (poorest) to 10.6 (richest). Typical service is equal; the
+-- long tail of unresolved cases concentrates in poor block groups. Always
+-- control for request category: the mix differs by neighborhood.
+```
+
+### 3. Where do building permits go?
+
+```sql
+INSTALL spatial; LOAD spatial; INSTALL httpfs; LOAD httpfs;
+WITH bg AS (
+  SELECT geoid, geometry, housing_units, median_hh_income,
+         ntile(5) OVER (ORDER BY median_hh_income) AS income_q
+  FROM '{BASE}/demographics/acs-block-groups/acs-block-groups.parquet'
+  WHERE median_hh_income IS NOT NULL AND housing_units > 0),
+located AS (
+  SELECT ST_Centroid(par.geometry) AS pt,
+         try_cast(pm.ESTPROJECTCOST AS DOUBLE) AS cost
+  FROM '{BASE}/housing/electrical-permits/electrical-permits.parquet' pm
+  JOIN '{BASE}/urban-development-and-planning/parcels/parcels.parquet' par
+    ON pm.HANDLE = par.HANDLE
+  WHERE try_cast(pm.APPDATE AS TIMESTAMP) >= TIMESTAMP '2020-01-01'
+    AND try_cast(pm.ESTPROJECTCOST AS DOUBLE) > 0
+    AND par.geometry IS NOT NULL),
+per_bg AS (
+  SELECT bg.geoid, any_value(bg.income_q) AS income_q,
+         any_value(bg.housing_units) AS housing_units,
+         count(l.pt) AS permits, coalesce(sum(l.cost), 0) AS invested
+  FROM bg LEFT JOIN located l ON ST_Within(l.pt, bg.geometry)
+  GROUP BY bg.geoid)
+SELECT income_q, sum(permits) AS permits,
+       round(sum(invested) / 1e6, 1) AS total_millions,
+       round(sum(invested) / sum(housing_units)) AS dollars_per_unit
+FROM per_bg GROUP BY 1 ORDER BY 1;
+-- 2026-08 sync: 6,170 electrical permits since 2020 in the poorest
+-- quintile vs 16,431 in the fourth. Dollar totals are lumpier — one
+-- hospital project outweighs a neighborhood — so read counts, not dollars,
+-- as the disinvestment signal. Same pattern works for plumbing-permits,
+-- mechanical-permits, occupancy-permits.
+```
+
+### 4. How far are car-free households from food stores?
+
+```sql
+INSTALL spatial; LOAD spatial; INSTALL httpfs; LOAD httpfs;
+WITH stores AS (
+  SELECT ST_Transform(geometry, 'EPSG:4326', 'EPSG:26915',
+                      always_xy := true) AS g
+  FROM '{BASE}/business-and-industry/overture-places/overture-places.parquet'
+  WHERE basic_category = 'food_and_beverage_store'),
+bg AS (
+  SELECT geoid, households, pct_hh_no_vehicle,
+         ST_Transform(ST_Centroid(geometry), 'EPSG:4326', 'EPSG:26915',
+                      always_xy := true) AS c
+  FROM '{BASE}/demographics/acs-block-groups/acs-block-groups.parquet'
+  WHERE households > 0 AND pct_hh_no_vehicle IS NOT NULL),
+nearest AS (
+  SELECT bg.geoid, any_value(bg.pct_hh_no_vehicle) AS no_veh,
+         min(ST_Distance(bg.c, s.g)) AS dist_m
+  FROM bg CROSS JOIN stores s GROUP BY bg.geoid)
+SELECT CASE WHEN no_veh >= 20 THEN '20%+ car-free' ELSE 'under 20%' END
+         AS bucket,
+       count(*) AS bgs,
+       round(median(dist_m)) AS median_m_to_food_store,
+       round(100.0 * count(*) FILTER (WHERE dist_m <= 400) / count(*), 1)
+         AS pct_within_400m
+FROM nearest GROUP BY 1 ORDER BY 1;
+-- 2026-08 sync: car-free-heavy block groups sit slightly CLOSER to food
+-- stores (median 339 m vs 379 m) — car-freeness tracks density. Caveat:
+-- Overture's category lumps corner stores with supermarkets, so this
+-- measures proximity to any food retail, not to a full grocery.
+```
+
+### 5. Do the 1930s redlining grades still predict outcomes?
+
+```sql
+INSTALL spatial; LOAD spatial; INSTALL httpfs; LOAD httpfs;
+SELECT h.grade,
+       count(*) AS block_groups,
+       round(avg(bg.median_hh_income)) AS avg_median_income,
+       round(avg(bg.median_home_value)) AS avg_home_value,
+       round(avg(bg.pct_vacant_units), 1) AS avg_pct_vacant
+FROM '{BASE}/demographics/acs-block-groups/acs-block-groups.parquet' bg
+JOIN '{BASE}/demographics/holc-redlining/holc-redlining.parquet' h
+  ON ST_Within(ST_Centroid(bg.geometry), h.geometry)
+WHERE h.grade IS NOT NULL
+GROUP BY 1 ORDER BY 1;
+-- 2026-08 sync: A-graded areas average $81,467 median income today,
+-- D-graded $54,155 — nine decades after the maps were drawn. ACS vacancy
+-- runs 7.7% (A) to 21.7% (C). D's home values are pulled up by
+-- now-gentrified downtown-adjacent areas — worth its own follow-up query.
+```
+
+### 6. Crime rates without the daytime-population lie
+
+```sql
+INSTALL spatial; LOAD spatial; INSTALL httpfs; LOAD httpfs;
+WITH cr AS (
+  SELECT geometry
+  FROM '{BASE}/law-safety-and-justice/crime/crime.parquet'
+  WHERE geometry IS NOT NULL AND CrimeAgainst = 'Person'),
+bg AS (
+  SELECT a.geoid, a.geometry, a.population, j.jobs_total
+  FROM '{BASE}/demographics/acs-block-groups/acs-block-groups.parquet' a
+  JOIN '{BASE}/demographics/lodes-jobs/lodes-jobs.parquet' j USING (geoid)),
+counts AS (
+  SELECT bg.geoid, any_value(bg.population) AS pop,
+         any_value(bg.jobs_total) AS jobs, count(cr.geometry) AS crimes
+  FROM bg LEFT JOIN cr ON ST_Within(cr.geometry, bg.geometry)
+  GROUP BY bg.geoid)
+SELECT geoid, crimes, pop, jobs,
+       round(1000.0 * crimes / nullif(pop, 0)) AS per_1000_residents,
+       round(1000.0 * crimes / (pop + jobs)) AS per_1000_ambient
+FROM counts
+ORDER BY per_1000_residents DESC NULLS LAST LIMIT 8;
+-- 2026-08 sync: block group 295101270002 (341 residents, 2,759 jobs)
+-- drops from 1,261 crimes per 1,000 residents to 139 per 1,000 ambient
+-- population — a 9x correction. Per-capita crime maps overstate job
+-- centers; LODES is the fix.
+```
+
+Other angles these collections support: 311 reporting rate vs
+`pct_no_internet` (digital-divide bias in complaint data), commute-flow
+maps from `lodes-commutes` joined to block-group geometry, CDC PLACES
+`lacktrpt`/`foodinsecu` against transit and vacancy layers, and
+`acs-tracts.pct_uninsured` against `cdc-places.access2` (survey vs model
+on the same question).
 """
 
 
@@ -506,6 +852,8 @@ def group_agents(group: str) -> str:
               "Each collection has its own AGENTS.md with fields, quirks, "
               "and joins. Root catalog: "
               f"`{BASE}/catalog.json`.", ""]
+    if group == "demographics":
+        lines += [DEMOGRAPHICS_ANALYSIS]
     return "\n".join(lines)
 
 

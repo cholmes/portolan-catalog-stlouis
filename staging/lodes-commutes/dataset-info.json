@@ -1,0 +1,16 @@
+{
+ "collection": "lodes-commutes",
+ "title": "LODES Commute Flows",
+ "portal_page": "https://lehd.ces.census.gov/data/",
+ "department": "U.S. Census Bureau",
+ "source": "census dataset=lodes-od",
+ "source_type": "census",
+ "synced": "2026-08-14T12:21:16+00:00",
+ "fetch": {
+  "status": "ok",
+  "rows": 149566,
+  "parquets": [
+   "/Users/cholmes/repos/portolan-catalog-stlouis-census/staging/extracts/lodes-commutes/lodes-commutes.parquet"
+  ]
+ }
+}

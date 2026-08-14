@@ -1,0 +1,16 @@
+{
+ "collection": "acs-tracts",
+ "title": "ACS Demographics \u2014 Tracts",
+ "portal_page": "https://www.census.gov/programs-surveys/acs.html",
+ "department": "U.S. Census Bureau",
+ "source": "census dataset=acs-tract",
+ "source_type": "census",
+ "synced": "2026-08-14T12:21:16+00:00",
+ "fetch": {
+  "status": "ok",
+  "rows": 104,
+  "parquets": [
+   "/Users/cholmes/repos/portolan-catalog-stlouis-census/staging/extracts/acs-tracts/acs-tracts.parquet"
+  ]
+ }
+}

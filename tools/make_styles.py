@@ -2048,5 +2048,185 @@ emit("overture-water", "style-explorer", ostyle(
      oline("water", "hsl(200, 98%, 83%)", 1.2, filt=ONLY_LINE)]))
 
 
+# ==========================================================================
+# Census family — choropleths over the demographics group. Class breaks are
+# round numbers chosen against the actual St. Louis distributions (see each
+# style's comment), because step-legend labels come from the break numbers.
+# Every visible fill filters on ["has", <field>]: without it MapLibre feeds
+# null into `step` and paints the base color, so a suppressed block group
+# would masquerade as the lowest class instead of dropping out.
+# ==========================================================================
+
+def choro(coll_id, col, color_expr, opacity=0.75):
+    """A census choropleth fill: null-safe filter, thin gray boundaries."""
+    lyr = fill(coll_id, color_expr, opacity, "#666666")
+    lyr["filter"] = ["has", col]
+    return lyr
+
+
+def cstyle(coll_id, name, description, col, expr, opacity=0.75):
+    """One-variable choropleth: legend expression = the fill expression."""
+    return style(coll_id, name, description,
+                 [choro(coll_id, col, expr, opacity),
+                  line(coll_id, "#666666", 0.3)],
+                 legend=expr)
+
+
+# acs-block-groups — median income deciles run $28k / $61k / $103k
+INCOME = step("median_hh_income", "#eef3f6",
+              [30000, "#c6dbe8", 45000, "#8fbdd6", 60000, "#5591b5",
+               80000, "#2d6a8e", 110000, DARK])
+_income_default = cstyle(
+    "acs-block-groups", "Median household income",
+    "Median household income per block group, light to dark blue — the "
+    "city's north–south income divide in one layer. Block groups whose "
+    "estimate is too noisy to trust (coefficient of variation over 0.30) "
+    "render faded; the income is real but the margin of error swamps it.",
+    "median_hh_income", INCOME)
+# The reliability fade: CV > 0.30 drops the fill to a wash. Only the visible
+# fill layer — the legend reads fill-color, and `case` is fine in opacity.
+_income_default["layers"][1]["paint"]["fill-opacity"] = [
+    "case",
+    [">", ["coalesce", ["get", "median_hh_income_cv"], 0], 0.3],
+    0.3, 0.8]
+emit("acs-block-groups", "default", _income_default, default=True)
+
+# Zero-vehicle households: median 16%, p90 44% — the TriMet YlOrRd ramp
+NO_CAR = step("pct_hh_no_vehicle", "#FFFFB2",
+              [5, "#FECC5C", 10, "#FD8D3C", 20, "#F03B20", 35, "#BD0026"])
+emit("acs-block-groups", "no-vehicle", cstyle(
+    "acs-block-groups", "Households without a vehicle",
+    "Share of households with no vehicle available, yellow to dark red. "
+    "Pair with transit and grocery locations: these are the residents for "
+    "whom walkable service coverage is not optional.",
+    "pct_hh_no_vehicle", NO_CAR))
+
+# Poverty: median 17%, p90 49%
+POVERTY = step("pct_below_poverty", "#fef0d9",
+               [10, "#fdcc8a", 20, "#fc8d59", 35, "#e34a33", 50, "#b30000"])
+emit("acs-block-groups", "poverty", cstyle(
+    "acs-block-groups", "Population below poverty",
+    "Share of residents below the federal poverty line, cream to dark red.",
+    "pct_below_poverty", POVERTY))
+
+# People of color: median 58% citywide, strongly bimodal north/south
+POC = step("pct_people_of_color", "#f7f4f9",
+           [20, "#d4b9da", 40, "#c994c7", 60, "#df65b0", 80, "#980043"])
+emit("acs-block-groups", "race", cstyle(
+    "acs-block-groups", "People of color",
+    "Share of residents who are not White-alone non-Hispanic. St. Louis's "
+    "Delmar Divide appears without drawing a single extra line.",
+    "pct_people_of_color", POC))
+
+# Rent burden: median 42% of renter households, p90 81%
+RENT_BURDEN = step("pct_rent_burdened", "#edf8fb",
+                   [25, "#b3cde3", 40, "#8c96c6", 55, "#8856a7",
+                    70, "#810f7c"])
+emit("acs-block-groups", "rent-burden", cstyle(
+    "acs-block-groups", "Rent-burdened households",
+    "Share of renter households paying 30%+ of income on rent, light blue "
+    "to purple. The city median block group is already above 40%.",
+    "pct_rent_burdened", RENT_BURDEN))
+
+# Transit commuting: median 2.3%, p90 22%
+TRANSIT = step("pct_commute_transit", "#f7fcf5",
+               [2, "#c7e9c0", 5, "#74c476", 10, "#31a354", 20, "#006d2c"])
+emit("acs-block-groups", "transit-commute", cstyle(
+    "acs-block-groups", "Commuting by transit",
+    "Share of workers commuting by public transportation, white to dark "
+    "green. Compare with the no-vehicle style: where car-free households "
+    "outnumber transit commuters, service is failing its dependents.",
+    "pct_commute_transit", TRANSIT))
+
+# No internet: median 6.5%, p90 28%
+NO_NET = step("pct_no_internet", "#ffffcc",
+              [5, "#a1dab4", 10, "#41b6c4", 20, "#2c7fb8", 30, "#253494"])
+emit("acs-block-groups", "internet", cstyle(
+    "acs-block-groups", "Households without internet",
+    "Share of households with no internet access, yellow to dark blue — "
+    "the digital divide, block group by block group.",
+    "pct_no_internet", NO_NET))
+
+# acs-tracts — uninsured: median 8.5%, p90 17%
+UNINSURED = step("pct_uninsured", "#fff7ec",
+                 [5, "#fdd49e", 10, "#fc8d59", 15, "#d7301f", 20, "#7f0000"])
+emit("acs-tracts", "default", cstyle(
+    "acs-tracts", "Uninsured population",
+    "Share of the civilian noninstitutionalized population with no health "
+    "insurance coverage — one of the indicators the Census Bureau only "
+    "publishes at tract level.",
+    "pct_uninsured", UNINSURED), default=True)
+
+# Disability: median 17%, p90 29%
+DISABILITY = step("pct_with_disability", "#f1eef6",
+                  [10, "#bdc9e1", 15, "#74a9cf", 20, "#2b8cbe",
+                   30, "#045a8d"])
+emit("acs-tracts", "disability", cstyle(
+    "acs-tracts", "Population with a disability",
+    "Share of the civilian noninstitutionalized population with a "
+    "disability, light to dark blue.",
+    "pct_with_disability", DISABILITY))
+
+# lodes-jobs — median block group holds 122 jobs, downtown peaks at 22,009
+JOBS = step("jobs_total", "#f1eef6",
+            [100, "#bdc9e1", 500, "#74a9cf", 2000, "#2b8cbe",
+             8000, "#045a8d"])
+emit("lodes-jobs", "default", cstyle(
+    "lodes-jobs", "Jobs by workplace",
+    "Where St. Louis works: total jobs located in each block group, light "
+    "to dark blue. Downtown, the central corridor and the hospital "
+    "campuses carry most of the city's employment.",
+    "jobs_total", JOBS), default=True)
+
+# Jobs-to-residents balance, diverging: purple = bedroom, orange = job center
+BALANCE = ["step",
+           ["/", ["+", ["get", "jobs_total"], 1],
+                 ["+", ["get", "workers_resident"], 1]],
+           "#5e3c99", 0.5, "#b2abd2", 0.8, "#f7f7f7", 1.25, "#fdb863",
+           3, "#e66101"]
+emit("lodes-jobs", "balance", cstyle(
+    "lodes-jobs", "Jobs vs. resident workers",
+    "Jobs located in the block group divided by employed residents living "
+    "in it: purple block groups are bedroom areas, orange ones are job "
+    "centers with few resident workers. Crime and service rates computed "
+    "per residential population overstate risk in orange areas — their "
+    "daytime population is far larger than their census count.",
+    "jobs_total", BALANCE))
+
+# holc-redlining — the 1930s map's own colors, from the data's `fill` column
+HOLC_GRADE = match("grade", {
+    "A": "#76a865", "B": "#7cb5bd", "C": "#ffff00", "D": "#d9838d"})
+emit("holc-redlining", "default", style(
+    "holc-redlining", "HOLC grade (1930s)",
+    "The 1930s Home Owners' Loan Corporation security grades in the "
+    "original map's own colors: A \"Best\" (green), B \"Still Desirable\" "
+    "(blue), C \"Definitely Declining\" (yellow), D \"Hazardous\" (red) — "
+    "the redlined areas. One ungraded polygon renders gray.",
+    [choro("holc-redlining", "grade", HOLC_GRADE, 0.6),
+     line("holc-redlining", "#444444", 0.8),
+     label("holc-redlining", "label", minzoom=12)],
+    legend=HOLC_GRADE), default=True)
+
+# cdc-places — food insecurity: median 25% of adults, p90 45%
+FOOD = step("foodinsecu", "#fef0d9",
+            [15, "#fdcc8a", 25, "#fc8d59", 35, "#e34a33", 45, "#b30000"])
+emit("cdc-places", "default", cstyle(
+    "cdc-places", "Food insecurity",
+    "Share of adults reporting food insecurity in the past 12 months — a "
+    "CDC PLACES model-based estimate, so read it as a ranking of need, "
+    "not a per-tract measurement.",
+    "foodinsecu", FOOD), default=True)
+
+# Asthma runs a narrow band (median 12.1%, p90 14.4%) — tight breaks
+ASTHMA = step("casthma", "#f7fbff",
+              [10, "#c6dbef", 12, "#6baed6", 14, "#2171b5", 16, "#08306b"])
+emit("cdc-places", "asthma", cstyle(
+    "cdc-places", "Adult asthma",
+    "Share of adults with current asthma (CDC PLACES modeled estimate). "
+    "The citywide band is narrow, so the breaks are tight — pair with "
+    "vacancy and demolition layers for the housing-condition story.",
+    "casthma", ASTHMA))
+
+
 if __name__ == "__main__":
     main()

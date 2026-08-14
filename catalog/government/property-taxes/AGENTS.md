@@ -43,4 +43,4 @@ gpio convert shapefile property-taxes-geo.parquet property-taxes.shp
 
 ## Provenance
 
-Mirror of [Property Taxes](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=3) from the City of St. Louis; source: https://www.stlouis-mo.gov/data/upload/data-files/prcl.zip. No explicit license is published — see the source page. Synced 2026-08-14T11:21:05+00:00.
+Mirror of [Property Taxes](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=3) from the City of St. Louis; source: https://www.stlouis-mo.gov/data/upload/data-files/prcl.zip. No explicit license is published — see the source page. Synced 2026-08-14T12:21:16+00:00.

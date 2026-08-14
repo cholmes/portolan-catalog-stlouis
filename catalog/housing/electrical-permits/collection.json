@@ -280,18 +280,18 @@
       "title": "Dataset page on the City of St. Louis open data portal"
     },
     {
-      "rel": "via",
-      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=51",
-      "type": "text/html",
-      "title": "Dataset page on the City of St. Louis open data portal"
-    },
-    {
       "rel": "pmtiles",
       "href": "./electrical-permits.pmtiles",
       "type": "application/vnd.pmtiles",
       "pmtiles:layers": [
         "electrical-permits"
       ]
+    },
+    {
+      "rel": "via",
+      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=51",
+      "type": "text/html",
+      "title": "Dataset page on the City of St. Louis open data portal"
     }
   ],
   "assets": {
@@ -366,13 +366,13 @@
       "roles": [
         "source"
       ],
-      "file:size": 22666999,
-      "file:checksum": "122099c361c3a6a627a33486e288cf780da1b25f6a29a7557521f69e587044b3ed23",
+      "file:size": 22667522,
+      "file:checksum": "1220c5debafdb054126547fa541bbba4c6c6133757b4d0a76bc46e5749b42e7ad7aa",
       "description": "The file this collection was built from. Served upstream by www.stlouis-mo.gov, not by this mirror; size and checksum are of the bytes it served at the sync time in `updated`."
     }
   },
   "title": "Electrical Permits",
-  "updated": "2026-08-14T11:21:05+00:00",
+  "updated": "2026-08-14T12:21:16+00:00",
   "themes": [
     {
       "scheme": "https://www.stlouis-mo.gov/data/topics/",

@@ -1,0 +1,16 @@
+{
+ "collection": "cdc-places",
+ "title": "CDC PLACES Health Measures",
+ "portal_page": "https://www.cdc.gov/places/",
+ "department": "Centers for Disease Control and Prevention",
+ "source": "census dataset=places",
+ "source_type": "census",
+ "synced": "2026-08-14T12:21:16+00:00",
+ "fetch": {
+  "status": "ok",
+  "rows": 104,
+  "parquets": [
+   "/Users/cholmes/repos/portolan-catalog-stlouis-census/staging/extracts/cdc-places/cdc-places.parquet"
+  ]
+ }
+}

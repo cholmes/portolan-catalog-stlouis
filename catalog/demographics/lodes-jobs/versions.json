@@ -1,0 +1,51 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.1",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-14T12:32:52.511581Z",
+      "breaking": false,
+      "assets": {
+        "lodes-jobs.parquet": {
+          "sha256": "d44aae0c729e126c61de0430a4af47532c730d9a2bf73417ec5483f264a4c728",
+          "size_bytes": 49705,
+          "href": "demographics/lodes-jobs/lodes-jobs.parquet",
+          "source_mtime": 1786710726.0757904,
+          "mtime": 1786710726.0757904,
+          "feature_count": 314,
+          "schema_fingerprint": "8d06b2c4ce9b216d"
+        }
+      },
+      "changes": [
+        "lodes-jobs.parquet"
+      ]
+    },
+    {
+      "version": "1.0.1",
+      "created": "2026-08-14T12:32:53.650835Z",
+      "breaking": false,
+      "assets": {
+        "lodes-jobs.parquet": {
+          "sha256": "d44aae0c729e126c61de0430a4af47532c730d9a2bf73417ec5483f264a4c728",
+          "size_bytes": 49705,
+          "href": "demographics/lodes-jobs/lodes-jobs.parquet",
+          "source_mtime": 1786710726.0757904,
+          "mtime": 1786710726.0757904,
+          "feature_count": 314,
+          "schema_fingerprint": "8d06b2c4ce9b216d"
+        },
+        "lodes-jobs.pmtiles": {
+          "sha256": "e25f272aabb8881e95887486bc69edeba1915a25a749b5e4fcad20afc0ea49a2",
+          "size_bytes": 92406,
+          "href": "demographics/lodes-jobs/lodes-jobs.pmtiles",
+          "mtime": 1786710773.6436276
+        }
+      },
+      "changes": [
+        "lodes-jobs.pmtiles"
+      ],
+      "message": "Generated PMTiles: lodes-jobs.pmtiles"
+    }
+  ]
+}

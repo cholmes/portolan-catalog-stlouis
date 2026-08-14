@@ -1,0 +1,26 @@
+title: "ACS Demographics — Tracts"
+description: "Indicators the U.S. Census Bureau publishes only at census-tract level — health insurance coverage, disability, nativity, group-quarters population, and race-iterated income and poverty — for all 104 census tracts in the City of St. Louis, from the American Community Survey (ACS) 2020–2024 5-year estimates. The Census Bureau describes the ACS as \"an ongoing survey that provides vital information on a yearly basis about our nation and its people.\" The companion `acs-block-groups` collection carries the finer-grained indicators; this collection exists because tables like B27001 (health insurance), B18101 (disability), B05002 (nativity), B26001 (group quarters) and the race-iterated B19013B/B17020B have no block-group release. Population and median household income are repeated here as more statistically stable tract-level variants. Every estimate ships with its 90%-confidence margin of error (`*_moe`) and headline rates with a coefficient of variation (`*_cv`); jam values are nulls; each column's description names its ACS table.
+
+Unlike the city's own datasets in this catalog, this is **not** City of St. Louis data: it is federal survey data published by the U.S. Census Bureau, extracted for St. Louis city (FIPS 29510) from the ACS table-based Summary File and joined to the Bureau's 2024 cartographic boundary geometries (1:500,000 scale, clipped to the Mississippi shoreline). Explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/demographics/acs-tracts/collection.json)."
+contact:
+  name: "Chris Holmes"
+  email: "cholmes@9eo.org"
+license: "other"
+license_url: "https://www.census.gov/topics/research/research-transparency-public-access/open-data.html"
+attribution: "U.S. Census Bureau"
+source_url: "https://www2.census.gov/programs-surveys/acs/summary_file/2024/table-based-SF/data/5YRData/"
+keywords: [census, acs, demographics, health-insurance, disability, tracts, st-louis, open-data]
+processing_notes: |
+  Built from the ACS 2020–2024 5-year table-based Summary File (https://www2.census.gov/programs-surveys/acs/summary_file/2024/table-based-SF/data/5YRData/): each national table file is one row per geography with estimate and margin of error side by side, and St. Louis city's rows are the ones whose GEO_ID starts with the city's FIPS code. No API key is involved — the Data API now requires one, the summary file does not.
+
+  ACS jam values (sentinels like -666666666 for a median that cannot be computed) were converted to nulls. Derived percentages propagate margins of error using the Census Bureau's own formulas from the ACS Accuracy of the Data documentation: sums add in quadrature, proportions use the subset formula with the ratio formula as fallback. Headline columns carry a coefficient of variation (moe / 1.645 / estimate). Every table line number used is checked against the release's own table-shells file at fetch time, so a vintage bump that moves a line fails loudly instead of publishing a mislabeled column.
+
+  Geometries are the Census Bureau's 2024 cartographic boundary tracts (1:500,000), reprojected to EPSG:4326 with ogr2ogr, filtered to county 510, and joined on GEOID. TIGER/Line was deliberately not used: it extends tracts into the Mississippi river channel, the cartographic files clip to the shoreline.
+
+  Converted to GeoParquet with gpio — zstd compression, Hilbert row order, and a covering bbox column with row-group statistics — and tiled to PMTiles with tippecanoe.
+examples:
+  - engine: duckdb
+    description: "Preview the first rows, straight off the published file"
+    code: |
+      INSTALL httpfs; LOAD httpfs;
+      SELECT * FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/demographics/acs-tracts/acs-tracts.parquet' LIMIT 5;

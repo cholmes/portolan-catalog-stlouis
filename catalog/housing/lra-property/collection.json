@@ -347,7 +347,7 @@
     "styles/default",
     "styles/city-renderer"
   ],
-  "updated": "2026-08-14T11:21:05+00:00",
+  "updated": "2026-08-14T12:21:16+00:00",
   "themes": [
     {
       "scheme": "https://www.stlouis-mo.gov/data/topics/",
@@ -517,8 +517,8 @@
       "roles": [
         "source"
       ],
-      "file:size": 2903535,
-      "file:checksum": "1220d7b16705c950f6026ed34026cd4ac3c97c873177910be9c8027d41c793953430",
+      "file:size": 2902511,
+      "file:checksum": "1220b44528d7dec983c28009029eb1008c24bf7d0fd85a9f77b14760135bff045e62",
       "description": "The city's own alternate distribution of this layer. Served upstream by static.stlouis-mo.gov, not by this mirror; size and checksum are of the bytes it served at the sync time in `updated`."
     },
     "source-csv-available": {
@@ -528,8 +528,8 @@
       "roles": [
         "source"
       ],
-      "file:size": 1798356,
-      "file:checksum": "1220486039ebe45431d2c877da3f4bf9f3bc21d0da3c20b690005dc84b2650e5d746",
+      "file:size": 1794391,
+      "file:checksum": "12204ded3997d0c36b2b2a4570b13bff23b5346e8f758402904b87c37556f802634a",
       "description": "The city's own alternate distribution of this layer. Served upstream by static.stlouis-mo.gov, not by this mirror; size and checksum are of the bytes it served at the sync time in `updated`."
     }
   }

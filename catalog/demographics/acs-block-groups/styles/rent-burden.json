@@ -1,0 +1,81 @@
+{
+  "version": 8,
+  "name": "Rent-burdened households",
+  "metadata": {
+    "description": "Share of renter households paying 30%+ of income on rent, light blue to purple. The city median block group is already above 40%."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../acs-block-groups.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "acs-block-groups-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "acs-block-groups",
+      "paint": {
+        "fill-color": [
+          "step",
+          [
+            "get",
+            "pct_rent_burdened"
+          ],
+          "#edf8fb",
+          25,
+          "#b3cde3",
+          40,
+          "#8c96c6",
+          55,
+          "#8856a7",
+          70,
+          "#810f7c"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "acs-block-groups",
+      "paint": {
+        "fill-color": [
+          "step",
+          [
+            "get",
+            "pct_rent_burdened"
+          ],
+          "#edf8fb",
+          25,
+          "#b3cde3",
+          40,
+          "#8c96c6",
+          55,
+          "#8856a7",
+          70,
+          "#810f7c"
+        ],
+        "fill-opacity": 0.75,
+        "fill-outline-color": "#666666"
+      },
+      "filter": [
+        "has",
+        "pct_rent_burdened"
+      ]
+    },
+    {
+      "id": "line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "acs-block-groups",
+      "paint": {
+        "line-color": "#666666",
+        "line-width": 0.3,
+        "line-opacity": 1.0
+      }
+    }
+  ]
+}

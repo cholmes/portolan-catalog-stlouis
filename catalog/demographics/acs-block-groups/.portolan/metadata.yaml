@@ -1,0 +1,26 @@
+title: "ACS Demographics — Block Groups"
+description: "Curated demographic, economic, housing and transportation indicators for all 314 census block groups in the City of St. Louis, from the U.S. Census Bureau's American Community Survey (ACS) 2020–2024 5-year estimates. The Census Bureau describes the ACS as \"an ongoing survey that provides vital information on a yearly basis about our nation and its people\" and \"the premier source of detailed information about the nation's people and housing.\" Every indicator ships with its margin of error (`*_moe` — the Census Bureau publishes ACS margins at the 90% confidence level), and the headline medians and rates also carry a coefficient of variation (`*_cv`) so small-area noise can be flagged instead of mapped as if certain: at block-group scale margins are often large (one St. Louis block group's median household income is $76,466 ± $20,097). Derived percentages propagate error with the Census Bureau's own formulas from the ACS Accuracy of the Data documentation; ACS jam values for suppressed estimates are nulls here, never numbers; medians are published as-is and cannot be aggregated to larger areas. Each column's description names the exact ACS table it comes from.
+
+Unlike the city's own datasets in this catalog, this is **not** City of St. Louis data: it is federal survey data published by the U.S. Census Bureau, extracted for St. Louis city (FIPS 29510) from the ACS table-based Summary File and joined to the Bureau's 2024 cartographic boundary geometries (1:500,000 scale, clipped to the Mississippi shoreline — TIGER/Line extends block groups into the river channel). It is included to show how a city catalog can blend federal demographic context alongside the city's own data. Explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/demographics/acs-block-groups/collection.json)."
+contact:
+  name: "Chris Holmes"
+  email: "cholmes@9eo.org"
+license: "other"
+license_url: "https://www.census.gov/topics/research/research-transparency-public-access/open-data.html"
+attribution: "U.S. Census Bureau"
+source_url: "https://www2.census.gov/programs-surveys/acs/summary_file/2024/table-based-SF/data/5YRData/"
+keywords: [census, acs, demographics, income, poverty, equity, block-groups, st-louis, open-data]
+processing_notes: |
+  Built from the ACS 2020–2024 5-year table-based Summary File (https://www2.census.gov/programs-surveys/acs/summary_file/2024/table-based-SF/data/5YRData/): each national table file is one row per geography with estimate and margin of error side by side, and St. Louis city's rows are the ones whose GEO_ID starts with the city's FIPS code. No API key is involved — the Data API now requires one, the summary file does not.
+
+  ACS jam values (sentinels like -666666666 for a median that cannot be computed) were converted to nulls. Derived percentages propagate margins of error using the Census Bureau's own formulas from the ACS Accuracy of the Data documentation: sums add in quadrature, proportions use the subset formula with the ratio formula as fallback. Headline columns carry a coefficient of variation (moe / 1.645 / estimate). Every table line number used is checked against the release's own table-shells file at fetch time, so a vintage bump that moves a line fails loudly instead of publishing a mislabeled column.
+
+  Geometries are the Census Bureau's 2024 cartographic boundary block groups (1:500,000), reprojected to EPSG:4326 with ogr2ogr, filtered to county 510, and joined on GEOID. TIGER/Line was deliberately not used: it extends block groups into the Mississippi river channel, the cartographic files clip to the shoreline.
+
+  Converted to GeoParquet with gpio — zstd compression, Hilbert row order, and a covering bbox column with row-group statistics — and tiled to PMTiles with tippecanoe.
+examples:
+  - engine: duckdb
+    description: "Preview the first rows, straight off the published file"
+    code: |
+      INSTALL httpfs; LOAD httpfs;
+      SELECT * FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/demographics/acs-block-groups/acs-block-groups.parquet' LIMIT 5;

@@ -240,7 +240,7 @@
     "styles/default",
     "styles/city-renderer"
   ],
-  "updated": "2026-08-14T11:21:05+00:00",
+  "updated": "2026-08-14T12:21:16+00:00",
   "themes": [
     {
       "scheme": "https://www.stlouis-mo.gov/data/topics/",
@@ -420,8 +420,8 @@
       "roles": [
         "source"
       ],
-      "file:size": 6390326,
-      "file:checksum": "122078f48b9a9bf83a164865f6da999cdf996b2b229a81b7da41c65ee9cdab3397b1",
+      "file:size": 6389728,
+      "file:checksum": "12207a000a5a910369da5ba8fa30577adeda7436563daf3949b915e4761336a8b407",
       "description": "The city's own alternate distribution of this layer. Served upstream by www.stlouis-mo.gov, not by this mirror; size and checksum are of the bytes it served at the sync time in `updated`."
     }
   }

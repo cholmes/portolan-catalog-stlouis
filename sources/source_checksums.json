@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-06T04:00:40+00:00",
+  "generated": "2026-08-14T12:45:50+00:00",
   "note": "Size and sha2-256 multihash of the City of St. Louis source files each collection mirrors, as served at the time above. Written by tools/fetch_source_meta.py; consumed by tools/finalize_stac.py to emit `source`-role assets.",
   "collections": {
     "wards": [
@@ -70,8 +70,8 @@
         "description": "One row per parcel with the headline attributes, no geometry.",
         "primary": false,
         "type": "text/csv",
-        "size": 15196852,
-        "checksum": "1220f577044b671bdbc04030d76735ab119636fd86cdfed7ebf5fb116344bfa0ca2b"
+        "size": 15194544,
+        "checksum": "122070546fdf698b9daf5c348d667e82ae800d3888cfa4ebb5c7486b71403035658b"
       }
     ],
     "parcels-history": [
@@ -149,8 +149,8 @@
         "title": "City blocks (zipped Shapefile)",
         "primary": false,
         "type": "application/zip",
-        "size": 6390326,
-        "checksum": "122078f48b9a9bf83a164865f6da999cdf996b2b229a81b7da41c65ee9cdab3397b1"
+        "size": 6389728,
+        "checksum": "12207a000a5a910369da5ba8fa30577adeda7436563daf3949b915e4761336a8b407"
       }
     ],
     "streets": [
@@ -182,8 +182,8 @@
         "title": "Zoning districts (zipped Shapefile)",
         "primary": false,
         "type": "application/zip",
-        "size": 11265845,
-        "checksum": "1220d9fb6429ed752ac1d29f29e61894f43e86543133299d2d7126417a8a8400260d"
+        "size": 11264726,
+        "checksum": "1220d0781e9300a366da799ea15097306c5254a0b0711c1d4a4a799b8e9cc99ba929"
       }
     ],
     "land-use": [
@@ -256,8 +256,8 @@
         "title": "LRA inventory (CSV, no geometry)",
         "primary": false,
         "type": "text/csv",
-        "size": 2903535,
-        "checksum": "1220d7b16705c950f6026ed34026cd4ac3c97c873177910be9c8027d41c793953430"
+        "size": 2902511,
+        "checksum": "1220b44528d7dec983c28009029eb1008c24bf7d0fd85a9f77b14760135bff045e62"
       },
       {
         "key": "source-csv-available",
@@ -265,8 +265,8 @@
         "title": "LRA inventory \u2014 available properties only (CSV, no geometry)",
         "primary": false,
         "type": "text/csv",
-        "size": 1798356,
-        "checksum": "1220486039ebe45431d2c877da3f4bf9f3bc21d0da3c20b690005dc84b2650e5d746"
+        "size": 1794391,
+        "checksum": "12204ded3997d0c36b2b2a4570b13bff23b5346e8f758402904b87c37556f802634a"
       }
     ],
     "community-improvement-districts": [
@@ -349,8 +349,8 @@
         "url": "https://www.stlouis-mo.gov/data/upload/data-files/csb.zip",
         "title": "Citizens' Service Bureau requests (zipped CSVs, one per year)",
         "type": "application/zip",
-        "size": 125893311,
-        "checksum": "1220668c671d2bf6390061d7ff775cf14953b56f92fa94bb73f6d97aac1f17f88757"
+        "size": 126232594,
+        "checksum": "1220dd704169448c3894eb3e7054c4dbe73baaaa4187d4b5a3bf83ade9d5bb1a202e"
       }
     ],
     "property-taxes": [
@@ -360,8 +360,8 @@
         "url": "https://www.stlouis-mo.gov/data/upload/data-files/prcl.zip",
         "title": "Property taxes (zipped Microsoft Access database)",
         "type": "application/zip",
-        "size": 112708216,
-        "checksum": "12202249855ba912b7f6849b263b4a1ce28b838c7196185fd4a1eded99c188ab74a6"
+        "size": 112687940,
+        "checksum": "122066e381ba97b4f8ab59f496a45e8e2c32f437c5d3f59ce75341397b76f410a684"
       }
     ],
     "property-sales": [
@@ -371,8 +371,8 @@
         "url": "https://www.stlouis-mo.gov/data/upload/data-files/prclsale.zip",
         "title": "Property sales (zipped Microsoft Access database)",
         "type": "application/zip",
-        "size": 6708413,
-        "checksum": "1220e171db3259dd4fb29b8737302fc395def2579f49f169483a08296e00900cd202"
+        "size": 6716955,
+        "checksum": "1220ef374b13fb6fa4a0bec92a63845232575fed227b7edec24e68875d8b428d2389"
       }
     ],
     "electrical-permits": [
@@ -382,8 +382,8 @@
         "url": "https://www.stlouis-mo.gov/data/upload/data-files/electrical-permits.zip",
         "title": "Electrical permits (zipped CSV)",
         "type": "application/zip",
-        "size": 22666999,
-        "checksum": "122099c361c3a6a627a33486e288cf780da1b25f6a29a7557521f69e587044b3ed23"
+        "size": 22667522,
+        "checksum": "1220c5debafdb054126547fa541bbba4c6c6133757b4d0a76bc46e5749b42e7ad7aa"
       }
     ],
     "mechanical-permits": [
@@ -393,8 +393,8 @@
         "url": "https://www.stlouis-mo.gov/data/upload/data-files/mechanical-permits.zip",
         "title": "Mechanical permits (zipped CSV)",
         "type": "application/zip",
-        "size": 6601816,
-        "checksum": "1220953fd7d3c77a8196995f0eace6e88d3aeccad36f33f5237e6a73a8d2a756b474"
+        "size": 6604354,
+        "checksum": "122006a4b2d27372b41efb8153c98824da773ae2037231cab4bd5a42dc54950ec048"
       }
     ],
     "plumbing-permits": [
@@ -404,8 +404,8 @@
         "url": "https://www.stlouis-mo.gov/data/upload/data-files/plumbing-permits.zip",
         "title": "Plumbing permits (zipped CSV)",
         "type": "application/zip",
-        "size": 15917112,
-        "checksum": "1220aecb49fe14865b52028ba81deaeea95f09c51bad2421d8096558fe928335673d"
+        "size": 15921141,
+        "checksum": "122020348181d27c7c35f1d8b587cb7c274ba6cccfc9e255f605e5ed6c84e28e6513"
       }
     ],
     "occupancy-permits": [
@@ -415,8 +415,8 @@
         "url": "https://www.stlouis-mo.gov/data/upload/data-files/occupancy-permits.zip",
         "title": "Occupancy permits (zipped CSV)",
         "type": "application/zip",
-        "size": 10408850,
-        "checksum": "12203522888dc6898c6f9e21799ec36bc3c145d5a304a81d5d442a0985b52e5048a0"
+        "size": 10410808,
+        "checksum": "1220f794d240c46ae1270620fc56bdeba6b758d87e40bc6f25356f9f7ed0ede32532"
       }
     ],
     "street-permits": [
@@ -437,8 +437,8 @@
         "url": "https://static.stlouis-mo.gov/open-data/HEALTH/ANIMAL-CONTROL/ANIMAL_BITES.csv",
         "title": "Animal bites (CSV)",
         "type": "text/csv",
-        "size": 1206410,
-        "checksum": "1220abac05e0150be962b04342f5615c0a0e13c44295624773ec5e9141a946fca678"
+        "size": 1208664,
+        "checksum": "1220dcf026dc31355174a737b8ef3c6bfc4d2016e5b79d1c12b6dd7a4500dcf4e50a"
       }
     ],
     "crime": [

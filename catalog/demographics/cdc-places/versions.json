@@ -1,0 +1,51 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.1",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-14T12:33:01.378647Z",
+      "breaking": false,
+      "assets": {
+        "cdc-places.parquet": {
+          "sha256": "37c3cad48e856eda6c43fe6cd7670777ec4ba84f49c98f1e9bf3b441d0164e65",
+          "size_bytes": 101749,
+          "href": "demographics/cdc-places/cdc-places.parquet",
+          "source_mtime": 1786710730.9659305,
+          "mtime": 1786710730.9659305,
+          "feature_count": 104,
+          "schema_fingerprint": "4ab62b3dc23be234"
+        }
+      },
+      "changes": [
+        "cdc-places.parquet"
+      ]
+    },
+    {
+      "version": "1.0.1",
+      "created": "2026-08-14T12:33:02.058972Z",
+      "breaking": false,
+      "assets": {
+        "cdc-places.parquet": {
+          "sha256": "37c3cad48e856eda6c43fe6cd7670777ec4ba84f49c98f1e9bf3b441d0164e65",
+          "size_bytes": 101749,
+          "href": "demographics/cdc-places/cdc-places.parquet",
+          "source_mtime": 1786710730.9659305,
+          "mtime": 1786710730.9659305,
+          "feature_count": 104,
+          "schema_fingerprint": "4ab62b3dc23be234"
+        },
+        "cdc-places.pmtiles": {
+          "sha256": "e57da6d0e00d7b6f559487a1cff5f5f290e52b1d834af63efd1cf072a6906bb6",
+          "size_bytes": 281363,
+          "href": "demographics/cdc-places/cdc-places.pmtiles",
+          "mtime": 1786710782.0504982
+        }
+      },
+      "changes": [
+        "cdc-places.pmtiles"
+      ],
+      "message": "Generated PMTiles: cdc-places.pmtiles"
+    }
+  ]
+}

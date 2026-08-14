@@ -140,7 +140,7 @@
   ],
   "portolan:total_size_bytes": 260192,
   "portolan:asset_count": 1,
-  "updated": "2026-08-14T11:21:05+00:00",
+  "updated": "2026-08-14T12:21:16+00:00",
   "themes": [
     {
       "scheme": "https://www.stlouis-mo.gov/data/topics/",
@@ -276,8 +276,8 @@
       "roles": [
         "source"
       ],
-      "file:size": 1206410,
-      "file:checksum": "1220abac05e0150be962b04342f5615c0a0e13c44295624773ec5e9141a946fca678",
+      "file:size": 1208664,
+      "file:checksum": "1220dcf026dc31355174a737b8ef3c6bfc4d2016e5b79d1c12b6dd7a4500dcf4e50a",
       "description": "The file this collection was built from. Served upstream by static.stlouis-mo.gov, not by this mirror; size and checksum are of the bytes it served at the sync time in `updated`."
     }
   },

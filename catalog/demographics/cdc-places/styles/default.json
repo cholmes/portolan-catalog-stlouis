@@ -1,0 +1,81 @@
+{
+  "version": 8,
+  "name": "Food insecurity",
+  "metadata": {
+    "description": "Share of adults reporting food insecurity in the past 12 months \u2014 a CDC PLACES model-based estimate, so read it as a ranking of need, not a per-tract measurement."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../cdc-places.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "cdc-places-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "cdc-places",
+      "paint": {
+        "fill-color": [
+          "step",
+          [
+            "get",
+            "foodinsecu"
+          ],
+          "#fef0d9",
+          15,
+          "#fdcc8a",
+          25,
+          "#fc8d59",
+          35,
+          "#e34a33",
+          45,
+          "#b30000"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "cdc-places",
+      "paint": {
+        "fill-color": [
+          "step",
+          [
+            "get",
+            "foodinsecu"
+          ],
+          "#fef0d9",
+          15,
+          "#fdcc8a",
+          25,
+          "#fc8d59",
+          35,
+          "#e34a33",
+          45,
+          "#b30000"
+        ],
+        "fill-opacity": 0.75,
+        "fill-outline-color": "#666666"
+      },
+      "filter": [
+        "has",
+        "foodinsecu"
+      ]
+    },
+    {
+      "id": "line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "cdc-places",
+      "paint": {
+        "line-color": "#666666",
+        "line-width": 0.3,
+        "line-opacity": 1.0
+      }
+    }
+  ]
+}

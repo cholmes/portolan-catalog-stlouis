@@ -1,0 +1,24 @@
+title: "HOLC Redlining Grades (1930s)"
+description: "The 1930s Home Owners' Loan Corporation (HOLC) \"residential security\" grades for St. Louis, from the University of Richmond's Mapping Inequality project, which says of the source maps: \"These maps, created in the 1930s, were used to grade the 'security' of real estate investments, leading to the practice known as redlining.\" Each polygon carries its grade — A (\"Best\"), B (\"Still Desirable\"), C (\"Definitely Declining\"), D (\"Hazardous\") — along with the neighborhood label from the original map sheet and the map's own fill color. Areas graded D were systematically denied mortgage capital, and the D-grade footprint remains one of the strongest predictors of present-day disinvestment; joining these 127 polygons against this catalog's parcel, vacancy, LRA land-bank and ACS income data shows that persistence directly.
+
+Unlike the city's own datasets in this catalog, this is **not** City of St. Louis data: it is historical scholarship published by Mapping Inequality (Digital Scholarship Lab, University of Richmond), extracted for St. Louis from the project's national dataset as mirrored on Source Cooperative, and licensed CC BY-NC-SA 4.0 — the one collection in this catalog with a non-commercial license. Citation: Robert K. Nelson, LaDale Winling, et al., \"Mapping Inequality,\" American Panorama, https://dsl.richmond.edu/panorama/redlining/. Explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/demographics/holc-redlining/collection.json)."
+contact:
+  name: "Chris Holmes"
+  email: "cholmes@9eo.org"
+license: "CC-BY-NC-SA-4.0"
+license_url: "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+attribution: "Mapping Inequality, Digital Scholarship Lab, University of Richmond"
+source_url: "https://data.source.coop/cboettig/mappinginequality/mappinginequality.parquet"
+keywords: [redlining, holc, mapping-inequality, history, equity, st-louis, open-data]
+processing_notes: |
+  Extracted with DuckDB from the Mapping Inequality GeoParquet mirrored on Source Cooperative (https://data.source.coop/cboettig/mappinginequality/mappinginequality.parquet), keeping the polygons where city = 'St. Louis' and state = 'MO' and the source's own columns (grade, category, label, land-use flags, original map fill color).
+
+  Converted to GeoParquet with gpio and tiled to PMTiles with tippecanoe.
+examples:
+  - engine: duckdb
+    description: "Count rows by grade, straight off the published file"
+    code: |
+      INSTALL httpfs; LOAD httpfs;
+      SELECT grade, count(*) AS n
+      FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/demographics/holc-redlining/holc-redlining.parquet'
+      GROUP BY 1 ORDER BY 2 DESC LIMIT 10;

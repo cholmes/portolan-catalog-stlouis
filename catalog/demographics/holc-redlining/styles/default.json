@@ -1,0 +1,105 @@
+{
+  "version": 8,
+  "name": "HOLC grade (1930s)",
+  "metadata": {
+    "description": "The 1930s Home Owners' Loan Corporation security grades in the original map's own colors: A \"Best\" (green), B \"Still Desirable\" (blue), C \"Definitely Declining\" (yellow), D \"Hazardous\" (red) \u2014 the redlined areas. One ungraded polygon renders gray."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../holc-redlining.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "holc-redlining-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "holc-redlining",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "grade"
+          ],
+          "A",
+          "#76a865",
+          "B",
+          "#7cb5bd",
+          "C",
+          "#ffff00",
+          "D",
+          "#d9838d",
+          "#9aa3a8"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "holc-redlining",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "grade"
+          ],
+          "A",
+          "#76a865",
+          "B",
+          "#7cb5bd",
+          "C",
+          "#ffff00",
+          "D",
+          "#d9838d",
+          "#9aa3a8"
+        ],
+        "fill-opacity": 0.6,
+        "fill-outline-color": "#666666"
+      },
+      "filter": [
+        "has",
+        "grade"
+      ]
+    },
+    {
+      "id": "line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "holc-redlining",
+      "paint": {
+        "line-color": "#444444",
+        "line-width": 0.8,
+        "line-opacity": 1.0
+      }
+    },
+    {
+      "id": "labels",
+      "type": "symbol",
+      "source": "data",
+      "source-layer": "holc-redlining",
+      "minzoom": 12,
+      "layout": {
+        "text-field": [
+          "get",
+          "label"
+        ],
+        "text-font": [
+          "Noto Sans Regular"
+        ],
+        "text-size": 11,
+        "text-max-width": 9
+      },
+      "paint": {
+        "text-color": "#1A1A1A",
+        "text-halo-color": "#FFFFFF",
+        "text-halo-width": 1.2
+      }
+    }
+  ],
+  "glyphs": "https://tiles.basemaps.cartocdn.com/fonts/{fontstack}/{range}.pbf"
+}

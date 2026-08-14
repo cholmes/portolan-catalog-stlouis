@@ -1,0 +1,16 @@
+{
+ "collection": "holc-redlining",
+ "title": "HOLC Redlining Grades (1930s)",
+ "portal_page": "https://dsl.richmond.edu/panorama/redlining/",
+ "department": "Mapping Inequality, Digital Scholarship Lab, University of Richmond",
+ "source": "census dataset=holc",
+ "source_type": "census",
+ "synced": "2026-08-14T12:21:16+00:00",
+ "fetch": {
+  "status": "ok",
+  "rows": 127,
+  "parquets": [
+   "/Users/cholmes/repos/portolan-catalog-stlouis-census/staging/extracts/holc-redlining/holc-redlining.parquet"
+  ]
+ }
+}

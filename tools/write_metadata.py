@@ -21,6 +21,10 @@ DESCRIPTIONS = json.loads((ROOT / "docs" / "portal-descriptions.json").read_text
 # Overture's documentation plus the not-city-data demonstration paragraph.
 DESCRIPTIONS.update(json.loads(
     (ROOT / "docs" / "overture-descriptions.json").read_text()))
+# Census-family descriptions — wording drawn from the Census Bureau, LEHD,
+# CDC and Mapping Inequality's own documentation, same never-invent rule.
+DESCRIPTIONS.update(json.loads(
+    (ROOT / "docs" / "census-descriptions.json").read_text()))
 
 CONTACT = 'contact:\n  name: "Chris Holmes"\n  email: "cholmes@9eo.org"\n'
 
@@ -32,12 +36,15 @@ description: |
   the city's public ArcGIS servers, and its
   [ArcGIS Online organization](https://stlcity.maps.arcgis.com/): about 6.6
   million features as GeoParquet and PMTiles with STAC metadata, organized
-  into 11 topic catalogs. Alongside the city's own data, 10 collections
+  into 12 topic catalogs. Alongside the city's own data, 10 collections
   tagged `overture` carry St. Louis extracts of the
   [Overture Maps Foundation](https://overturemaps.org/) global datasets —
-  buildings, transportation, places, addresses, and more — demonstrating how
-  a city catalog can blend in other locally relevant open data. Explore it
-  in the
+  buildings, transportation, places, addresses, and more — and a
+  `demographics` catalog carries six federal and third-party collections
+  (American Community Survey 2020–2024 with margins of error, LODES jobs
+  and commute flows, 1930s HOLC redlining grades, CDC PLACES health
+  estimates), demonstrating how a city catalog can blend in other locally
+  relevant open data. Explore it in the
   [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/),
   [browse the files on Source Cooperative](https://source.coop/tge-labs/st-louis-open-data-mirror),
   or query any file directly with DuckDB — no download needed. Not an
@@ -117,6 +124,9 @@ EXAMPLE_COL = {
     "overture-divisions": "subtype", "overture-infrastructure": "subtype",
     "overture-land": "subtype", "overture-land-cover": "subtype",
     "overture-land-use": "subtype", "overture-water": "subtype",
+    "acs-block-groups": None, "acs-tracts": None, "lodes-jobs": None,
+    "lodes-commutes": "work_in_city", "holc-redlining": "grade",
+    "cdc-places": None,
 }
 
 
@@ -248,10 +258,90 @@ def overture_processing_notes(coll_id: str) -> str:
     return "\n\n".join(paras)
 
 
+def census_processing_notes(coll_id: str) -> str:
+    from sources import ACS_SF, HOLC_PARQUET, LODES_BASE, LODES_YEAR, PLACES_API
+    src = SOURCES[coll_id]
+    dataset = src["dataset"]
+    if dataset in ("acs-bg", "acs-tract"):
+        level = ("block group" if dataset == "acs-bg" else "tract")
+        return (
+            f"Built from the ACS 2020–2024 5-year table-based Summary File "
+            f"({ACS_SF}/data/5YRData/): each national table file is one row "
+            f"per geography with estimate and margin of error side by side, "
+            f"and St. Louis city's rows are the ones whose GEO_ID starts "
+            f"with the city's FIPS code. No API key is involved — the Data "
+            f"API now requires one, the summary file does not.\n\n"
+            f"ACS jam values (sentinels like -666666666 for a median that "
+            f"cannot be computed) were converted to nulls. Derived "
+            f"percentages propagate margins of error using the Census "
+            f"Bureau's own formulas from the ACS Accuracy of the Data "
+            f"documentation: sums add in quadrature, proportions use the "
+            f"subset formula with the ratio formula as fallback. Headline "
+            f"columns carry a coefficient of variation (moe / 1.645 / "
+            f"estimate). Every table line number used is checked against "
+            f"the release's own table-shells file at fetch time, so a "
+            f"vintage bump that moves a line fails loudly instead of "
+            f"publishing a mislabeled column.\n\n"
+            f"Geometries are the Census Bureau's 2024 cartographic boundary "
+            f"{level}s (1:500,000), reprojected to EPSG:4326 with ogr2ogr, "
+            f"filtered to county 510, and joined on GEOID. TIGER/Line was "
+            f"deliberately not used: it extends {level}s into the "
+            f"Mississippi river channel, the cartographic files clip to the "
+            f"shoreline.\n\n"
+            f"Converted to GeoParquet with gpio — zstd compression, Hilbert "
+            f"row order, and a covering bbox column with row-group "
+            f"statistics — and tiled to PMTiles with tippecanoe.")
+    if dataset == "lodes-jobs":
+        return (
+            f"Built from LODES 8 Workplace Area Characteristics and "
+            f"Residence Area Characteristics for Missouri, {LODES_YEAR} "
+            f"({LODES_BASE}/wac/, {LODES_BASE}/rac/, segment S000, job type "
+            f"JT00 — all jobs). Block-level counts were aggregated to block "
+            f"groups by GEOID prefix (a block's block group is the first 12 "
+            f"characters of its 15-character geocode) and joined to the "
+            f"2024 cartographic boundary block groups. LODES omits blocks "
+            f"with zero jobs, so absent means zero — every one of the "
+            f"city's 314 block groups is present, zero-filled where LODES "
+            f"has no rows.\n\nConverted to GeoParquet with gpio and tiled "
+            f"to PMTiles with tippecanoe.")
+    if dataset == "lodes-od":
+        return (
+            f"Built from the LODES 8 Origin-Destination files for Missouri, "
+            f"{LODES_YEAR} ({LODES_BASE}/od/, main + auxiliary, job type "
+            f"JT00). The main file covers workers who live and work in "
+            f"Missouri; the auxiliary file adds workers living out of state "
+            f"with jobs in Missouri, so Illinois-to-St.-Louis commutes are "
+            f"included. Kept every block-to-block flow with either end in "
+            f"St. Louis city and aggregated to block-group pairs by GEOID "
+            f"prefix. St. Louis residents working outside Missouri are not "
+            f"covered, per the LODES file structure.\n\nThis collection is "
+            f"tabular (no geometry): join home_geoid or work_geoid to "
+            f"acs-block-groups to map it.")
+    if dataset == "holc":
+        return (
+            f"Extracted with DuckDB from the Mapping Inequality GeoParquet "
+            f"mirrored on Source Cooperative ({HOLC_PARQUET}), keeping the "
+            f"polygons where city = 'St. Louis' and state = 'MO' and the "
+            f"source's own columns (grade, category, label, land-use flags, "
+            f"original map fill color).\n\nConverted to GeoParquet with "
+            f"gpio and tiled to PMTiles with tippecanoe.")
+    return (
+        f"Fetched from the CDC PLACES census-tract release via the Socrata "
+        f"API ({PLACES_API}, dataset cwsq-ngmh) filtered to county FIPS "
+        f"29510, then pivoted from one-row-per-measure to one-row-per-tract "
+        f"with a value, lower and upper 95% confidence limit column per "
+        f"measure. All rows are crude prevalence (the only value type CDC "
+        f"publishes at tract level; the fetch asserts this). Joined to the "
+        f"2024 cartographic boundary tracts on GEOID.\n\nConverted to "
+        f"GeoParquet with gpio and tiled to PMTiles with tippecanoe.")
+
+
 def processing_notes(coll_id: str) -> str:
     src = SOURCES[coll_id]
     if src["type"] == "overture":
         return overture_processing_notes(coll_id)
+    if src["type"] == "census":
+        return census_processing_notes(coll_id)
     origin = src.get("service") or src.get("url")
     paras = [
         f"Mirrored from the City of St. Louis open data portal "
@@ -342,10 +432,61 @@ def overture_yaml(coll_id: str) -> str:
     return "\n".join(l for l in lines if l) + "\n"
 
 
+CENSUS_KEYWORDS = {
+    "acs-block-groups": ["census", "acs", "demographics", "income",
+                         "poverty", "equity", "block-groups"],
+    "acs-tracts": ["census", "acs", "demographics", "health-insurance",
+                   "disability", "tracts"],
+    "lodes-jobs": ["census", "lehd", "lodes", "jobs", "employment",
+                   "block-groups"],
+    "lodes-commutes": ["census", "lehd", "lodes", "commutes",
+                       "origin-destination"],
+    "holc-redlining": ["redlining", "holc", "mapping-inequality", "history",
+                       "equity"],
+    "cdc-places": ["cdc", "places", "health", "small-area-estimates",
+                   "tracts"],
+}
+
+def census_source_url(dataset: str) -> str:
+    from sources import ACS_SF, HOLC_PARQUET, LODES_BASE, PLACES_API
+    return {
+        "acs-bg": ACS_SF + "/data/5YRData/",
+        "acs-tract": ACS_SF + "/data/5YRData/",
+        "lodes-jobs": LODES_BASE,
+        "lodes-od": LODES_BASE,
+        "holc": HOLC_PARQUET,
+        "places": PLACES_API,
+    }[dataset]
+
+
+def census_yaml(coll_id: str) -> str:
+    from sources import coll_rel
+    src = SOURCES[coll_id]
+    desc = DESCRIPTIONS[coll_id]["description"]
+    linked = (f"{desc} Explore it in the [St. Louis data browser]"
+              f"({BROWSER}/#/{coll_rel(coll_id)}/collection.json).")
+    kw = CENSUS_KEYWORDS[coll_id] + ["st-louis", "open-data"]
+    lines = [
+        f"title: {yq(src['title'])}",
+        f"description: {yq(linked)}",
+        CONTACT.rstrip(),
+        f"license: {yq(src['license'])}",
+        f"license_url: {yq(src['license_url'])}",
+        f"attribution: {yq(src['attribution'])}",
+        f"source_url: {yq(census_source_url(src['dataset']))}",
+        f"keywords: [{', '.join(dict.fromkeys(kw))}]",
+        indent_block("processing_notes", processing_notes(coll_id)),
+        example_block(coll_id),
+    ]
+    return "\n".join(l for l in lines if l) + "\n"
+
+
 def collection_yaml(coll_id: str) -> str:
     src = SOURCES[coll_id]
     if src["type"] == "overture":
         return overture_yaml(coll_id)
+    if src["type"] == "census":
+        return census_yaml(coll_id)
     desc = DESCRIPTIONS.get(coll_id, {}).get("description", "")
     dept = src["department"]
     kw = ["st-louis", "missouri", "open-data"] + coll_id.split("-")

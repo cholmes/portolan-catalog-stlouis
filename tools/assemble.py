@@ -405,10 +405,12 @@ def assemble(coll_id: str) -> dict:
         return {"rows": int(n), "tabular": False,
                 "source_file": f"{len(parts)} layers merged"}
 
-    # Overture extracts arrive as one staged parquet per collection
-    # (tools/fetch_overture.py) and take the same parquet→gpio path as
-    # single-layer ArcGIS extracts: convert, Hilbert sort, restore stats.
-    if src_def["type"] in ("arcgis", "overture"):
+    # Overture and census extracts arrive as one staged parquet per
+    # collection (tools/fetch_overture.py, tools/fetch_census.py) and take
+    # the same parquet→gpio path as single-layer ArcGIS extracts: convert,
+    # Hilbert sort, restore stats. A geometry-less parquet (lodes-commutes)
+    # is picked up by the tabular sniff below.
+    if src_def["type"] in ("arcgis", "overture", "census"):
         src = find_extract_parquet(coll_id)
     else:
         src = static_source_file(coll_id)

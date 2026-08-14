@@ -23,4 +23,4 @@ Full schema: `table:columns` in collection.json.
 
 ## Provenance
 
-Mirror of [Flood Controls](https://stlcity.maps.arcgis.com/home/item.html?id=4a08499ad4054caca42215e4c51aac0e) from the City of St. Louis; source: https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/Flood_Controls_WFL1/FeatureServer. No explicit license is published — see the source page. Synced 2026-08-14T11:21:05+00:00.
+Mirror of [Flood Controls](https://stlcity.maps.arcgis.com/home/item.html?id=4a08499ad4054caca42215e4c51aac0e) from the City of St. Louis; source: https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/Flood_Controls_WFL1/FeatureServer. No explicit license is published — see the source page. Synced 2026-08-14T12:21:16+00:00.

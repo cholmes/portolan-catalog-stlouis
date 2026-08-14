@@ -1,0 +1,51 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.1",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-08-14T12:32:49.683334Z",
+      "breaking": false,
+      "assets": {
+        "acs-tracts.parquet": {
+          "sha256": "744e3dfd2491b627e3cbb9c87b2034192d641c96077580e806cb3cc98c906901",
+          "size_bytes": 43811,
+          "href": "demographics/acs-tracts/acs-tracts.parquet",
+          "source_mtime": 1786710723.2407966,
+          "mtime": 1786710723.2407966,
+          "feature_count": 104,
+          "schema_fingerprint": "aebec01c238b21fc"
+        }
+      },
+      "changes": [
+        "acs-tracts.parquet"
+      ]
+    },
+    {
+      "version": "1.0.1",
+      "created": "2026-08-14T12:32:50.389652Z",
+      "breaking": false,
+      "assets": {
+        "acs-tracts.parquet": {
+          "sha256": "744e3dfd2491b627e3cbb9c87b2034192d641c96077580e806cb3cc98c906901",
+          "size_bytes": 43811,
+          "href": "demographics/acs-tracts/acs-tracts.parquet",
+          "source_mtime": 1786710723.2407966,
+          "mtime": 1786710723.2407966,
+          "feature_count": 104,
+          "schema_fingerprint": "aebec01c238b21fc"
+        },
+        "acs-tracts.pmtiles": {
+          "sha256": "61101e5e198f302aeba54369c1a8401a881c35aa0fdf4ccddeeb6b3d91ca81cc",
+          "size_bytes": 113487,
+          "href": "demographics/acs-tracts/acs-tracts.pmtiles",
+          "mtime": 1786710770.3772743
+        }
+      },
+      "changes": [
+        "acs-tracts.pmtiles"
+      ],
+      "message": "Generated PMTiles: acs-tracts.pmtiles"
+    }
+  ]
+}

@@ -690,7 +690,7 @@
     "styles/default",
     "styles/city-renderer"
   ],
-  "updated": "2026-08-14T11:21:05+00:00",
+  "updated": "2026-08-14T12:21:16+00:00",
   "themes": [
     {
       "scheme": "https://www.stlouis-mo.gov/data/topics/",
@@ -881,8 +881,8 @@
       "roles": [
         "source"
       ],
-      "file:size": 15196852,
-      "file:checksum": "1220f577044b671bdbc04030d76735ab119636fd86cdfed7ebf5fb116344bfa0ca2b",
+      "file:size": 15194544,
+      "file:checksum": "122070546fdf698b9daf5c348d667e82ae800d3888cfa4ebb5c7486b71403035658b",
       "description": "One row per parcel with the headline attributes, no geometry. The city's own alternate distribution of this layer. Served upstream by static.stlouis-mo.gov, not by this mirror; size and checksum are of the bytes it served at the sync time in `updated`."
     }
   }

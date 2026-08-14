@@ -55,6 +55,8 @@ def slugify(s: str) -> str:
 DESCRIPTIONS = json.loads((ROOT / "docs" / "portal-descriptions.json").read_text())
 DESCRIPTIONS.update(json.loads(
     (ROOT / "docs" / "overture-descriptions.json").read_text()))
+DESCRIPTIONS.update(json.loads(
+    (ROOT / "docs" / "census-descriptions.json").read_text()))
 _cn = ROOT / "docs" / "column-notes.json"
 COLUMN_NOTES = json.loads(_cn.read_text()) if _cn.exists() else {}
 
@@ -242,6 +244,9 @@ def finalize_collection(coll_id: str) -> None:
     src = SOURCES[coll_id]
     if src["type"] == "overture":
         finalize_overture(coll_id, coll_dir, f, coll, src)
+        return
+    if src["type"] == "census":
+        finalize_census(coll_id, coll_dir, f, coll, src)
         return
     meta_desc = linkify(DESCRIPTIONS.get(coll_id, {}).get("description") or "")
 
@@ -598,6 +603,204 @@ def finalize_overture(coll_id: str, coll_dir, f, coll: dict, src: dict) -> None:
     origin = "local" if local_pm.exists() else "remote Overture"
     print(f"✓ {coll_id}: {len(style_files)} style assets, {origin} "
           f"pmtiles ({src['theme']})")
+
+
+# Per-dataset facts for the census family. Temporal extents are the data's
+# own reference periods: ACS 5-year estimates describe 2020-2024, LODES the
+# 2023 job year, PLACES models BRFSS 2022-2023 responses, and the HOLC maps
+# were created in the 1930s.
+CENSUS_META = {
+    "acs-bg": {
+        "provider": ("U.S. Census Bureau",
+                     "https://www.census.gov/programs-surveys/acs.html"),
+        "interval": ["2020-01-01T00:00:00Z", "2024-12-31T23:59:59Z"],
+        "program": ("acs", "American Community Survey"),
+        "keywords": ["census", "ACS", "American Community Survey",
+                     "demographics", "income", "poverty", "equity"],
+    },
+    "acs-tract": {
+        "provider": ("U.S. Census Bureau",
+                     "https://www.census.gov/programs-surveys/acs.html"),
+        "interval": ["2020-01-01T00:00:00Z", "2024-12-31T23:59:59Z"],
+        "program": ("acs", "American Community Survey"),
+        "keywords": ["census", "ACS", "American Community Survey",
+                     "health insurance", "disability", "demographics"],
+    },
+    "lodes-jobs": {
+        "provider": ("U.S. Census Bureau — Longitudinal Employer-Household "
+                     "Dynamics", "https://lehd.ces.census.gov/"),
+        "interval": ["2023-01-01T00:00:00Z", "2023-12-31T23:59:59Z"],
+        "program": ("lodes", "LEHD Origin-Destination Employment Statistics"),
+        "keywords": ["census", "LEHD", "LODES", "jobs", "employment"],
+    },
+    "lodes-od": {
+        "provider": ("U.S. Census Bureau — Longitudinal Employer-Household "
+                     "Dynamics", "https://lehd.ces.census.gov/"),
+        "interval": ["2023-01-01T00:00:00Z", "2023-12-31T23:59:59Z"],
+        "program": ("lodes", "LEHD Origin-Destination Employment Statistics"),
+        "keywords": ["census", "LEHD", "LODES", "commutes",
+                     "origin-destination"],
+    },
+    "holc": {
+        "provider": ("Mapping Inequality, Digital Scholarship Lab, "
+                     "University of Richmond",
+                     "https://dsl.richmond.edu/panorama/redlining/"),
+        "interval": ["1930-01-01T00:00:00Z", "1939-12-31T23:59:59Z"],
+        "program": ("mapping-inequality", "Mapping Inequality"),
+        "keywords": ["redlining", "HOLC", "Mapping Inequality", "history",
+                     "equity"],
+    },
+    "places": {
+        "provider": ("Centers for Disease Control and Prevention",
+                     "https://www.cdc.gov/places/"),
+        "interval": ["2022-01-01T00:00:00Z", "2023-12-31T23:59:59Z"],
+        "program": ("places", "CDC PLACES"),
+        "keywords": ["CDC", "PLACES", "health", "small-area estimation"],
+    },
+}
+
+
+def finalize_census(coll_id: str, coll_dir, f, coll: dict, src: dict) -> None:
+    """Census-family collections: federal/third-party provider and license,
+    local PMTiles like city collections (except the tabular commute flows),
+    reference-period temporal extents, column notes into table:columns.
+    """
+    meta = CENSUS_META[src["dataset"]]
+    coll["id"] = coll_rel(coll_id)
+    coll["title"] = src["title"]
+    coll["description"] = DESCRIPTIONS[coll_id]["description"]
+
+    has_pmtiles = (coll_dir / f"{coll_id}.pmtiles").exists()
+    ext = set(coll.get("stac_extensions", []))
+    ext.update({PORTOLAN_SCHEMA, FILE_EXT, TABLE_EXT, THEMES_EXT})
+    if has_pmtiles:
+        ext.add(WML_EXT)
+    coll["stac_extensions"] = sorted(ext)
+
+    coll["license"] = src["license"]
+    coll["updated"] = SYNC
+    coll.setdefault("extent", {})["temporal"] = {
+        "interval": [list(meta["interval"])]}
+
+    group_title = GROUP_TITLES[GROUP_OF[coll_id]]
+    prog_id, prog_title = meta["program"]
+    coll["themes"] = [
+        {"scheme": TOPIC_SCHEME,
+         "concepts": [{"id": slugify(group_title), "title": group_title}]},
+        {"scheme": src["docs"],
+         "concepts": [{"id": prog_id, "title": prog_title}]},
+    ]
+    coll["keywords"] = meta["keywords"]
+
+    notes = COLUMN_NOTES.get(coll_id, {})
+    if notes and coll.get("table:columns"):
+        for col in coll["table:columns"]:
+            if col["name"] in notes:
+                col["description"] = linkify(notes[col["name"]])
+
+    pq = coll_dir / f"{coll_id}.parquet"
+    if pq.exists() and coll_id not in TABULAR:
+        bb = duck(
+            "INSTALL spatial; LOAD spatial; "
+            f"SELECT min(ST_XMin(geometry)) a, min(ST_YMin(geometry)) b, "
+            f"max(ST_XMax(geometry)) c, max(ST_YMax(geometry)) d "
+            f"FROM '{pq}' WHERE geometry IS NOT NULL")
+        if bb and bb[0].get("a") is not None:
+            coll.setdefault("extent", {}).setdefault("spatial", {})["bbox"] = [
+                [bb[0]["a"], bb[0]["b"], bb[0]["c"], bb[0]["d"]]]
+    if pq.exists():
+        rc = duck(f"SELECT count(*) AS n FROM '{pq}'")
+        if rc:
+            coll["table:row_count"] = rc[0]["n"]
+            if "geoparquet:feature_count" in coll:
+                coll["geoparquet:feature_count"] = rc[0]["n"]
+
+    name, url = meta["provider"]
+    coll["providers"] = [
+        {"name": name, "roles": ["producer", "licensor"], "url": url},
+        HOST,
+    ]
+
+    links = [l for l in coll.get("links", [])
+             if l["rel"] not in ("self", "via")]
+    ensure_link(links, "describedby", "./README.md", "text/markdown")
+    ensure_link(links, "agents", "./AGENTS.md", "text/markdown")
+    ensure_link(links, "license", src["license_url"], "text/html",
+                f"{name} — data license and terms")
+    ensure_link(links, "via", src["docs"], "text/html",
+                f"{prog_title} documentation")
+    from write_metadata import census_source_url
+    data_url = census_source_url(src["dataset"])
+    if data_url != src["docs"]:
+        ensure_link(links, "via", data_url,
+                    "application/x-parquet" if data_url.endswith(".parquet")
+                    else "text/html",
+                    f"{prog_title} source data")
+    if has_pmtiles and not any(l["rel"] == "pmtiles" for l in links):
+        links.append({"rel": "pmtiles", "href": f"./{coll_id}.pmtiles",
+                      "type": "application/vnd.pmtiles"})
+    for l in links:
+        if l["rel"] == "pmtiles":
+            l["pmtiles:layers"] = [coll_id]
+            l.setdefault("type", "application/vnd.pmtiles")
+        if l["rel"] == "root":
+            l["href"] = "../../catalog.json"
+            l.setdefault("type", "application/json")
+            l["title"] = "City of St. Louis Open Data (Cloud-Native Mirror)"
+        if l["rel"] == "parent":
+            l["href"] = "../catalog.json"
+            l.setdefault("type", "application/json")
+            l["title"] = group_title
+    coll["links"] = links
+
+    assets = coll.get("assets", {})
+    if has_pmtiles and not any(
+            a.get("href", "").endswith(".pmtiles") for a in assets.values()):
+        assets[f"{coll_id}-tiles"] = {
+            "href": f"./{coll_id}.pmtiles", "type": "application/vnd.pmtiles",
+            "roles": ["visual"], "title": f"{src['title']} (PMTiles)"}
+    if (coll_dir / "thumbnail.png").exists() and "thumbnail" not in assets:
+        assets["thumbnail"] = {
+            "href": "./thumbnail.png", "type": "image/png",
+            "roles": ["thumbnail"],
+            "title": f"{src['title']} rendered with the default style",
+        }
+    styles_dir = coll_dir / "styles"
+    style_files = sorted(styles_dir.glob("*.json")) if styles_dir.exists() else []
+    for sf in style_files:
+        key = f"styles/{sf.stem}"
+        if key not in assets:
+            assets[key] = {"href": f"./styles/{sf.name}",
+                           "type": "application/vnd.mapbox.style+json",
+                           "roles": ["style"]}
+    for key, a in assets.items():
+        href = a.get("href", "")
+        if href.endswith(".parquet"):
+            a["type"] = PARQUET_TYPE
+            a.setdefault("title", f"{src['title']} (GeoParquet)")
+            a.setdefault("roles", ["data"])
+        elif href.endswith(".pmtiles"):
+            a.setdefault("title", f"{src['title']} (PMTiles)")
+        elif href.endswith(".json") and "styles/" in href:
+            sf = coll_dir / href.lstrip("./")
+            if sf.exists():
+                style_obj = json.loads(sf.read_text())
+                a["title"] = style_obj.get("name", sf.stem)
+                desc = (style_obj.get("metadata") or {}).get("description")
+                if desc:
+                    a["description"] = desc
+            roles = set(a.get("roles", [])) | {"style"}
+            if href.endswith("/default.json"):
+                roles.add("default")
+            else:
+                roles.discard("default")
+            a["roles"] = sorted(roles)
+        stamp_asset(coll_dir, href, a)
+    coll["assets"] = assets
+
+    f.write_text(json.dumps(coll, indent=2) + "\n")
+    print(f"✓ {coll_id}: {len(style_files)} style assets, "
+          f"{'local pmtiles' if has_pmtiles else 'tabular'} (census)")
 
 
 def finalize_root() -> None:

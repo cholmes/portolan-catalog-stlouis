@@ -860,18 +860,18 @@
       "title": "Dataset page on the City of St. Louis open data portal"
     },
     {
-      "rel": "via",
-      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=3",
-      "type": "text/html",
-      "title": "Dataset page on the City of St. Louis open data portal"
-    },
-    {
       "rel": "pmtiles",
       "href": "./property-taxes.pmtiles",
       "type": "application/vnd.pmtiles",
       "pmtiles:layers": [
         "property-taxes"
       ]
+    },
+    {
+      "rel": "via",
+      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=3",
+      "type": "text/html",
+      "title": "Dataset page on the City of St. Louis open data portal"
     }
   ],
   "assets": {
@@ -946,13 +946,13 @@
       "roles": [
         "source"
       ],
-      "file:size": 112708216,
-      "file:checksum": "12202249855ba912b7f6849b263b4a1ce28b838c7196185fd4a1eded99c188ab74a6",
+      "file:size": 112687940,
+      "file:checksum": "122066e381ba97b4f8ab59f496a45e8e2c32f437c5d3f59ce75341397b76f410a684",
       "description": "The file this collection was built from. Served upstream by www.stlouis-mo.gov, not by this mirror; size and checksum are of the bytes it served at the sync time in `updated`."
     }
   },
   "title": "Property Taxes",
-  "updated": "2026-08-14T11:21:05+00:00",
+  "updated": "2026-08-14T12:21:16+00:00",
   "themes": [
     {
       "scheme": "https://www.stlouis-mo.gov/data/topics/",

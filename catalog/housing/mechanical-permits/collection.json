@@ -293,18 +293,18 @@
       "title": "Dataset page on the City of St. Louis open data portal"
     },
     {
-      "rel": "via",
-      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=52",
-      "type": "text/html",
-      "title": "Dataset page on the City of St. Louis open data portal"
-    },
-    {
       "rel": "pmtiles",
       "href": "./mechanical-permits.pmtiles",
       "type": "application/vnd.pmtiles",
       "pmtiles:layers": [
         "mechanical-permits"
       ]
+    },
+    {
+      "rel": "via",
+      "href": "https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=52",
+      "type": "text/html",
+      "title": "Dataset page on the City of St. Louis open data portal"
     }
   ],
   "assets": {
@@ -379,13 +379,13 @@
       "roles": [
         "source"
       ],
-      "file:size": 6601816,
-      "file:checksum": "1220953fd7d3c77a8196995f0eace6e88d3aeccad36f33f5237e6a73a8d2a756b474",
+      "file:size": 6604354,
+      "file:checksum": "122006a4b2d27372b41efb8153c98824da773ae2037231cab4bd5a42dc54950ec048",
       "description": "The file this collection was built from. Served upstream by www.stlouis-mo.gov, not by this mirror; size and checksum are of the bytes it served at the sync time in `updated`."
     }
   },
   "title": "Mechanical Permits",
-  "updated": "2026-08-14T11:21:05+00:00",
+  "updated": "2026-08-14T12:21:16+00:00",
   "themes": [
     {
       "scheme": "https://www.stlouis-mo.gov/data/topics/",

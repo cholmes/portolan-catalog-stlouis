@@ -604,7 +604,7 @@
       "description": "The later, CSV-only continuation of the series; not merged into this collection, which stops at 2020. The city's own alternate distribution of this layer. Served upstream by static.stlouis-mo.gov, not by this mirror; size and checksum are of the bytes it served at the sync time in `updated`."
     }
   },
-  "updated": "2026-08-14T11:21:05+00:00",
+  "updated": "2026-08-14T12:21:16+00:00",
   "themes": [
     {
       "scheme": "https://www.stlouis-mo.gov/data/topics/",

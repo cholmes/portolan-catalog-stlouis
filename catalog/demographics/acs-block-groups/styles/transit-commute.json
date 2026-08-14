@@ -1,0 +1,81 @@
+{
+  "version": 8,
+  "name": "Commuting by transit",
+  "metadata": {
+    "description": "Share of workers commuting by public transportation, white to dark green. Compare with the no-vehicle style: where car-free households outnumber transit commuters, service is failing its dependents."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../acs-block-groups.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "acs-block-groups-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "acs-block-groups",
+      "paint": {
+        "fill-color": [
+          "step",
+          [
+            "get",
+            "pct_commute_transit"
+          ],
+          "#f7fcf5",
+          2,
+          "#c7e9c0",
+          5,
+          "#74c476",
+          10,
+          "#31a354",
+          20,
+          "#006d2c"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "acs-block-groups",
+      "paint": {
+        "fill-color": [
+          "step",
+          [
+            "get",
+            "pct_commute_transit"
+          ],
+          "#f7fcf5",
+          2,
+          "#c7e9c0",
+          5,
+          "#74c476",
+          10,
+          "#31a354",
+          20,
+          "#006d2c"
+        ],
+        "fill-opacity": 0.75,
+        "fill-outline-color": "#666666"
+      },
+      "filter": [
+        "has",
+        "pct_commute_transit"
+      ]
+    },
+    {
+      "id": "line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "acs-block-groups",
+      "paint": {
+        "line-color": "#666666",
+        "line-width": 0.3,
+        "line-opacity": 1.0
+      }
+    }
+  ]
+}

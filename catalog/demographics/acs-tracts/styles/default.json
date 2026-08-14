@@ -1,0 +1,81 @@
+{
+  "version": 8,
+  "name": "Uninsured population",
+  "metadata": {
+    "description": "Share of the civilian noninstitutionalized population with no health insurance coverage \u2014 one of the indicators the Census Bureau only publishes at tract level."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../acs-tracts.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "acs-tracts-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "acs-tracts",
+      "paint": {
+        "fill-color": [
+          "step",
+          [
+            "get",
+            "pct_uninsured"
+          ],
+          "#fff7ec",
+          5,
+          "#fdd49e",
+          10,
+          "#fc8d59",
+          15,
+          "#d7301f",
+          20,
+          "#7f0000"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "acs-tracts",
+      "paint": {
+        "fill-color": [
+          "step",
+          [
+            "get",
+            "pct_uninsured"
+          ],
+          "#fff7ec",
+          5,
+          "#fdd49e",
+          10,
+          "#fc8d59",
+          15,
+          "#d7301f",
+          20,
+          "#7f0000"
+        ],
+        "fill-opacity": 0.75,
+        "fill-outline-color": "#666666"
+      },
+      "filter": [
+        "has",
+        "pct_uninsured"
+      ]
+    },
+    {
+      "id": "line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "acs-tracts",
+      "paint": {
+        "line-color": "#666666",
+        "line-width": 0.3,
+        "line-opacity": 1.0
+      }
+    }
+  ]
+}

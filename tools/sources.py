@@ -537,6 +537,103 @@ SOURCES.update(OVERTURE_SOURCES)
 
 
 # ---------------------------------------------------------------------------
+# Census & demographics (wave 6) — federal and third-party data, not the
+# city's. Six collections in the `demographics` group:
+#
+#   acs-block-groups / acs-tracts — American Community Survey 2020–2024
+#     5-year estimates, pulled from the table-based Summary File (no API key;
+#     the Data API now requires one). Every estimate ships with its margin of
+#     error (90% confidence level, per Census publication practice) and the
+#     headline medians/rates with a coefficient of variation.
+#   lodes-jobs / lodes-commutes — LEHD LODES 8 (2023): block-level jobs
+#     aggregated to block groups, plus home→work flows.
+#   holc-redlining — 1930s HOLC security grades for St. Louis, from the
+#     University of Richmond's Mapping Inequality project (via the
+#     cboettig/mappinginequality GeoParquet on Source Cooperative).
+#   cdc-places — CDC PLACES model-based health estimates per tract.
+#
+# Geometries come from the 2024 cartographic boundary files (GENZ2024), not
+# TIGER/Line: TIGER extends block groups into the Mississippi channel, the
+# 500k CB files clip to the shoreline. 2024 vintage matches ACS 2020–2024.
+# Bumping ACS_RELEASE or LODES_YEAR means re-running
+# fetch_census → assemble → finalize so data, metadata and styles move in
+# lockstep.
+# ---------------------------------------------------------------------------
+
+ACS_RELEASE = "2024"  # ACS 5-year vintage: 2020–2024 estimates
+ACS_SF = ("https://www2.census.gov/programs-surveys/acs/summary_file/"
+          f"{ACS_RELEASE}/table-based-SF")
+CB_SHP = "https://www2.census.gov/geo/tiger/GENZ2024/shp"
+LODES_YEAR = "2023"
+LODES_BASE = "https://lehd.ces.census.gov/data/lodes/LODES8/mo"
+PLACES_API = "https://data.cdc.gov/resource/cwsq-ngmh"
+HOLC_PARQUET = ("https://data.source.coop/cboettig/mappinginequality/"
+                "mappinginequality.parquet")
+CENSUS_LICENSE_URL = ("https://www.census.gov/topics/research/"
+                      "research-transparency-public-access/open-data.html")
+
+CENSUS_SOURCES = {
+    "acs-block-groups": {
+        "title": "ACS Demographics — Block Groups",
+        "type": "census",
+        "dataset": "acs-bg",
+        "docs": "https://www.census.gov/programs-surveys/acs.html",
+        "attribution": "U.S. Census Bureau",
+        "license": "other",
+        "license_url": CENSUS_LICENSE_URL,
+    },
+    "acs-tracts": {
+        "title": "ACS Demographics — Tracts",
+        "type": "census",
+        "dataset": "acs-tract",
+        "docs": "https://www.census.gov/programs-surveys/acs.html",
+        "attribution": "U.S. Census Bureau",
+        "license": "other",
+        "license_url": CENSUS_LICENSE_URL,
+    },
+    "lodes-jobs": {
+        "title": "LODES Jobs",
+        "type": "census",
+        "dataset": "lodes-jobs",
+        "docs": "https://lehd.ces.census.gov/data/",
+        "attribution": "U.S. Census Bureau",
+        "license": "other",
+        "license_url": CENSUS_LICENSE_URL,
+    },
+    "lodes-commutes": {
+        "title": "LODES Commute Flows",
+        "type": "census",
+        "dataset": "lodes-od",
+        "docs": "https://lehd.ces.census.gov/data/",
+        "attribution": "U.S. Census Bureau",
+        "license": "other",
+        "license_url": CENSUS_LICENSE_URL,
+    },
+    "holc-redlining": {
+        "title": "HOLC Redlining Grades (1930s)",
+        "type": "census",
+        "dataset": "holc",
+        "docs": "https://dsl.richmond.edu/panorama/redlining/",
+        "attribution": "Mapping Inequality, Digital Scholarship Lab, "
+                       "University of Richmond",
+        "license": "CC-BY-NC-SA-4.0",
+        "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    },
+    "cdc-places": {
+        "title": "CDC PLACES Health Measures",
+        "type": "census",
+        "dataset": "places",
+        "docs": "https://www.cdc.gov/places/",
+        "attribution": "Centers for Disease Control and Prevention",
+        "license": "other",
+        "license_url": "https://www.cdc.gov/other/agencymaterials.html",
+    },
+}
+
+SOURCES.update(CENSUS_SOURCES)
+
+
+# ---------------------------------------------------------------------------
 # The city's own files, published as `source`-role assets on each collection.
 #
 # formats.md: "A mirror SHOULD also include the original data as an asset when
@@ -800,6 +897,12 @@ GROUPS = {
     "health": ["animal-bites", "lead-service-lines"],
     "community": ["neighborhood-organizations"],
     "education-and-training": ["schools"],
+    # Not a portal topic: the census family (federal and third-party
+    # demographic data) gets its own sub-catalog rather than being spread
+    # across the city's topics — the "not city data" boundary stays visible.
+    "demographics": [
+        "acs-block-groups", "acs-tracts", "lodes-jobs", "lodes-commutes",
+        "holc-redlining", "cdc-places"],
 }
 
 # The portal's own topic names and captions (from stlouis-mo.gov/data)
@@ -816,6 +919,7 @@ GROUP_TITLES = {
     "health": "Health",
     "community": "Community",
     "education-and-training": "Education and Training",
+    "demographics": "Demographics",
 }
 
 GROUP_CAPTIONS = {
@@ -831,6 +935,8 @@ GROUP_CAPTIONS = {
     "health": "Immunizations, Nutrition, Animal Control, Preventative Care",
     "community": "Neighborhoods, Marriage, Birth, Immigration, Support",
     "education-and-training": "Adult, Schools, Special and Higher Education, Homeschooling",
+    "demographics": "Census, Income, Age, Equity, Jobs, Health — federal and "
+                    "third-party data, not the city's",
 }
 
 GROUP_OF = {cid: g for g, cids in GROUPS.items() for cid in cids}

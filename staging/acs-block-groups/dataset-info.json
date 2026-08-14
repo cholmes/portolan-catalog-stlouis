@@ -1,0 +1,16 @@
+{
+ "collection": "acs-block-groups",
+ "title": "ACS Demographics \u2014 Block Groups",
+ "portal_page": "https://www.census.gov/programs-surveys/acs.html",
+ "department": "U.S. Census Bureau",
+ "source": "census dataset=acs-bg",
+ "source_type": "census",
+ "synced": "2026-08-14T12:21:16+00:00",
+ "fetch": {
+  "status": "ok",
+  "rows": 314,
+  "parquets": [
+   "/Users/cholmes/repos/portolan-catalog-stlouis-census/staging/extracts/acs-block-groups/acs-block-groups.parquet"
+  ]
+ }
+}

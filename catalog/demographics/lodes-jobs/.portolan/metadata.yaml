@@ -1,0 +1,22 @@
+title: "LODES Jobs"
+description: "Jobs by workplace and employed residents by home location for every census block group in the City of St. Louis, from the U.S. Census Bureau's LEHD Origin-Destination Employment Statistics (LODES) version 8, data year 2023. LODES is the block-level jobs data behind the Bureau's OnTheMap tool; \"Version 8 of LODES was enumerated by 2020 census blocks.\" Workplace Area Characteristics (jobs located in the block group, `jobs_*`) and Residence Area Characteristics (employed people living in the block group, `workers_resident*`) are aggregated here from census blocks to block groups — a block's block group is the first 12 characters of its 15-character geocode — with breakdowns by earnings band and selected NAICS sectors. LEHD notes that \"the data released by LEHD are based on tabulated and modeled administrative data, which are subject to error\"; these are administrative tabulations, not survey estimates, so no margins of error apply.
+
+Unlike the city's own datasets in this catalog, this is **not** City of St. Louis data: it is federal administrative data published by the U.S. Census Bureau's Longitudinal Employer-Household Dynamics program, extracted for St. Louis city (FIPS 29510) and joined to the Bureau's 2024 cartographic boundary geometries. Pair it with `acs-block-groups` to compare daytime (working) and residential population, or with `lodes-commutes` for the underlying home→work flows. Explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/demographics/lodes-jobs/collection.json)."
+contact:
+  name: "Chris Holmes"
+  email: "cholmes@9eo.org"
+license: "other"
+license_url: "https://www.census.gov/topics/research/research-transparency-public-access/open-data.html"
+attribution: "U.S. Census Bureau"
+source_url: "https://lehd.ces.census.gov/data/lodes/LODES8/mo"
+keywords: [census, lehd, lodes, jobs, employment, block-groups, st-louis, open-data]
+processing_notes: |
+  Built from LODES 8 Workplace Area Characteristics and Residence Area Characteristics for Missouri, 2023 (https://lehd.ces.census.gov/data/lodes/LODES8/mo/wac/, https://lehd.ces.census.gov/data/lodes/LODES8/mo/rac/, segment S000, job type JT00 — all jobs). Block-level counts were aggregated to block groups by GEOID prefix (a block's block group is the first 12 characters of its 15-character geocode) and joined to the 2024 cartographic boundary block groups. LODES omits blocks with zero jobs, so absent means zero — every one of the city's 314 block groups is present, zero-filled where LODES has no rows.
+
+  Converted to GeoParquet with gpio and tiled to PMTiles with tippecanoe.
+examples:
+  - engine: duckdb
+    description: "Preview the first rows, straight off the published file"
+    code: |
+      INSTALL httpfs; LOAD httpfs;
+      SELECT * FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/demographics/lodes-jobs/lodes-jobs.parquet' LIMIT 5;

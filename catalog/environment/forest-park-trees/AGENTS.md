@@ -23,4 +23,4 @@ Full schema: `table:columns` in collection.json.
 
 ## Provenance
 
-Mirror of [Forest Park Trees](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=123) from the City of St. Louis; source: https://maps8.stlouis-mo.gov/arcgis/rest/services/FORESTRY/FOREST_PARK_TREES/FeatureServer. No explicit license is published — see the source page. Synced 2026-08-14T11:21:05+00:00.
+Mirror of [Forest Park Trees](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=123) from the City of St. Louis; source: https://maps8.stlouis-mo.gov/arcgis/rest/services/FORESTRY/FOREST_PARK_TREES/FeatureServer. No explicit license is published — see the source page. Synced 2026-08-14T12:21:16+00:00.

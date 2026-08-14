@@ -197,6 +197,9 @@ def main() -> int:
             elif src["type"] == "overture":
                 from fetch_overture import fetch_overture
                 result = fetch_overture(coll_id, src)
+            elif src["type"] == "census":
+                from fetch_census import fetch_census
+                result = fetch_census(coll_id, src)
             else:
                 result = fetch_static(coll_id, src)
         except Exception as e:  # noqa: BLE001
@@ -207,9 +210,11 @@ def main() -> int:
             "collection": coll_id,
             "title": src["title"],
             "portal_page": src.get("portal_page") or src.get("docs"),
-            "department": src.get("department", "Overture Maps Foundation"),
+            "department": src.get("department") or src.get("attribution")
+                          or "Overture Maps Foundation",
             "source": src.get("service") or src.get("url")
-                      or src.get("theme") and f"Overture theme={src['theme']}",
+                      or src.get("theme") and f"Overture theme={src['theme']}"
+                      or src.get("dataset") and f"census dataset={src['dataset']}",
             "source_type": src["type"],
             "synced": synced,
             "fetch": result,

@@ -4,6 +4,9 @@ catalog/**/*.pmtiles
 
 # Downloaded source data
 staging/*/data/
+# National census downloads (ACS .dat, LODES gz, CB zips) — a 1.4 GB cache
+# that tools/fetch_census.py re-downloads on demand
+staging/census-cache/
 
 # Secrets
 .env

@@ -23,4 +23,4 @@ Full schema: `table:columns` in collection.json.
 
 ## Provenance
 
-Mirror of [Tax Sales](https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/Tax_Sales/FeatureServer) from the City of St. Louis; source: https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/Tax_Sales/FeatureServer. No explicit license is published — see the source page. Synced 2026-08-14T11:21:05+00:00.
+Mirror of [Tax Sales](https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/Tax_Sales/FeatureServer) from the City of St. Louis; source: https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/Tax_Sales/FeatureServer. No explicit license is published — see the source page. Synced 2026-08-14T12:21:16+00:00.

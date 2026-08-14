@@ -1,0 +1,81 @@
+{
+  "version": 8,
+  "name": "Households without internet",
+  "metadata": {
+    "description": "Share of households with no internet access, yellow to dark blue \u2014 the digital divide, block group by block group."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../acs-block-groups.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "acs-block-groups-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "acs-block-groups",
+      "paint": {
+        "fill-color": [
+          "step",
+          [
+            "get",
+            "pct_no_internet"
+          ],
+          "#ffffcc",
+          5,
+          "#a1dab4",
+          10,
+          "#41b6c4",
+          20,
+          "#2c7fb8",
+          30,
+          "#253494"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "acs-block-groups",
+      "paint": {
+        "fill-color": [
+          "step",
+          [
+            "get",
+            "pct_no_internet"
+          ],
+          "#ffffcc",
+          5,
+          "#a1dab4",
+          10,
+          "#41b6c4",
+          20,
+          "#2c7fb8",
+          30,
+          "#253494"
+        ],
+        "fill-opacity": 0.75,
+        "fill-outline-color": "#666666"
+      },
+      "filter": [
+        "has",
+        "pct_no_internet"
+      ]
+    },
+    {
+      "id": "line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "acs-block-groups",
+      "paint": {
+        "line-color": "#666666",
+        "line-width": 0.3,
+        "line-opacity": 1.0
+      }
+    }
+  ]
+}

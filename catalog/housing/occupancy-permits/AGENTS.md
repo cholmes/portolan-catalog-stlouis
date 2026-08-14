@@ -43,4 +43,4 @@ gpio convert shapefile occupancy-permits-geo.parquet occupancy-permits.shp
 
 ## Provenance
 
-Mirror of [Occupancy Permits](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=6) from the City of St. Louis; source: https://www.stlouis-mo.gov/data/upload/data-files/occupancy-permits.zip. No explicit license is published — see the source page. Synced 2026-08-14T11:21:05+00:00.
+Mirror of [Occupancy Permits](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=6) from the City of St. Louis; source: https://www.stlouis-mo.gov/data/upload/data-files/occupancy-permits.zip. No explicit license is published — see the source page. Synced 2026-08-14T12:21:16+00:00.

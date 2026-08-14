@@ -57,11 +57,21 @@ def overture_source(cid: str) -> dict | None:
     return src if src and src["type"] == "overture" else None
 
 
+def census_source(cid: str) -> dict | None:
+    """The sources.py entry when cid is a census-family collection."""
+    import sys
+    sys.path.insert(0, str(ROOT / "tools"))
+    from sources import SOURCES
+    src = SOURCES.get(cid)
+    return src if src and src["type"] == "census" else None
+
+
 def check_collection(coll_dir: Path):
     cid = coll_dir.name  # leaf id: tile layers and style refs use this
     path_id = f"{coll_dir.parent.name}/{cid}"
     coll = json.loads((coll_dir / "collection.json").read_text())
     ov = overture_source(cid)
+    cen = census_source(cid)
 
     if coll.get("id") != path_id:
         err(f"{cid}: id is {coll.get('id')!r}, expected {path_id!r}")
@@ -71,9 +81,10 @@ def check_collection(coll_dir: Path):
         err(f"{cid}: missing portolan schema pin")
     if not coll.get("title") or coll.get("description", "").startswith("Collection:"):
         err(f"{cid}: placeholder title/description")
-    # City data carries no explicit license ("other"); Overture themes carry
-    # their own (ODbL, or "other" where a theme mixes permissive licenses).
-    expected_license = ov["license"] if ov else "other"
+    # City data carries no explicit license ("other"); Overture themes and
+    # census-family collections carry their own ("other" for US-government
+    # public-domain works, CC-BY-NC-SA-4.0 for Mapping Inequality).
+    expected_license = (ov or cen)["license"] if (ov or cen) else "other"
     if coll.get("license") != expected_license:
         err(f"{cid}: license is {coll.get('license')!r}, "
             f"expected {expected_license!r}")
@@ -275,8 +286,8 @@ def main() -> int:
             err(f"catalog: child {l['href']} missing title")
         if not (CATALOG / l["href"]).resolve().exists():
             err(f"catalog: child {l['href']} does not resolve")
-    if len(children) != 11:
-        err(f"catalog: expected 11 topic children, got {len(children)}")
+    if len(children) != 12:
+        err(f"catalog: expected 12 topic children, got {len(children)}")
 
     n_colls = 0
     for group_dir in sorted(CATALOG.iterdir()):
@@ -290,8 +301,8 @@ def main() -> int:
             if coll_dir.is_dir() and (coll_dir / "collection.json").exists():
                 n_colls += 1
                 check_collection(coll_dir)
-    if n_colls != 61:
-        err(f"expected 61 collections across groups, got {n_colls}")
+    if n_colls != 67:
+        err(f"expected 67 collections across groups, got {n_colls}")
 
     if errors:
         print(f"FAIL ({len(errors)}):")

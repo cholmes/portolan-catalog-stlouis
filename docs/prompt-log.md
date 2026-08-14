@@ -297,6 +297,33 @@ A few conventions:
 
 ---
 
+## Census & demographics
+
+*The second non-city family: ACS, LODES, HOLC redlining, CDC PLACES — built
+on a `census-family` branch in a worktree while Overture wrapped up.*
+
+**47. Aug 14, ~13:30 local**
+
+> Can we make a plan for bringing in census data into this catalog? I'd like to be able to answer analysis questions about income, age, equity, car ownership, etc. - I think it makes sense to pull in the data that has the finest analysis. See ~/geodata/demo-data-trimet/acs-block-groups for an example, and ~/geodata/demo-data-trimet/tools may have some info on how the data gets pulled. Please analysis what's available from census and other sources to answer interesting questions, and then propose what to pull and how to format it. We want a copy of the data that's local to this portolan catalog to show off interesting analysis, with some good styles and queries in agents.md to show off the power. So spend some time researching and thinking about what powerful things can be shown from census data, particular combined with other sources.
+
+*(scoping answers during planning: the full companion suite — ACS block
+groups + tracts, LODES jobs and commutes, HOLC redlining, CDC PLACES —
+curated columns with margins of error, in a new Demographics sub-catalog)*
+
+**48. Aug 14, ~14:05 local**
+
+> can you do this all in a work tree? So overture can finish up.
+
+**49. Aug 14, ~14:08 local**
+
+> I'm committing the overture stuff now, so do bring it over - wait until that's committed.
+
+**50. Aug 14, ~14:40 local**
+
+> can you start the checksums in a background agent? That's always a long pole in publishing, and I'd like to try to get this otu soon. At least if you have part of the data built, or references
+
+---
+
 ## What the shape of this log shows
 
 Almost nothing here is a specification. The opening prompt sets the goal and the

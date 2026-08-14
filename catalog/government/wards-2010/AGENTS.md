@@ -27,4 +27,4 @@ The 28-ward map in force 2011-2022 — the geography that WARD10 columns elsewhe
 
 ## Provenance
 
-Mirror of [Ward Boundaries (2010)](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=131) from the City of St. Louis; source: https://static.stlouis-mo.gov/open-data/planning/wards/wards_2010.zip. No explicit license is published — see the source page. Synced 2026-08-14T11:21:05+00:00.
+Mirror of [Ward Boundaries (2010)](https://www.stlouis-mo.gov/data/datasets/dataset.cfm?id=131) from the City of St. Louis; source: https://static.stlouis-mo.gov/open-data/planning/wards/wards_2010.zip. No explicit license is published — see the source page. Synced 2026-08-14T12:21:16+00:00.

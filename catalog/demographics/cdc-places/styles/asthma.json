@@ -1,0 +1,81 @@
+{
+  "version": 8,
+  "name": "Adult asthma",
+  "metadata": {
+    "description": "Share of adults with current asthma (CDC PLACES modeled estimate). The citywide band is narrow, so the breaks are tight \u2014 pair with vacancy and demolition layers for the housing-condition story."
+  },
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../cdc-places.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "cdc-places-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "cdc-places",
+      "paint": {
+        "fill-color": [
+          "step",
+          [
+            "get",
+            "casthma"
+          ],
+          "#f7fbff",
+          10,
+          "#c6dbef",
+          12,
+          "#6baed6",
+          14,
+          "#2171b5",
+          16,
+          "#08306b"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "cdc-places",
+      "paint": {
+        "fill-color": [
+          "step",
+          [
+            "get",
+            "casthma"
+          ],
+          "#f7fbff",
+          10,
+          "#c6dbef",
+          12,
+          "#6baed6",
+          14,
+          "#2171b5",
+          16,
+          "#08306b"
+        ],
+        "fill-opacity": 0.75,
+        "fill-outline-color": "#666666"
+      },
+      "filter": [
+        "has",
+        "casthma"
+      ]
+    },
+    {
+      "id": "line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "cdc-places",
+      "paint": {
+        "line-color": "#666666",
+        "line-width": 0.3,
+        "line-opacity": 1.0
+      }
+    }
+  ]
+}

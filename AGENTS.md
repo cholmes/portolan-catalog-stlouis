@@ -51,6 +51,27 @@ lives in `catalog/` and is synced 1:1 to
    move in lockstep. Descriptions live in `docs/overture-descriptions.json`
    (wording from Overture's docs — same never-invent rule) and every
    description says plainly that the data is Overture's, not the city's.
+7. **Census-family collections are not city data either.** The 6
+   `demographics/` collections (`CENSUS_SOURCES` in `tools/sources.py`,
+   fetched by `tools/fetch_census.py`) are federal/third-party: ACS
+   2020–2024 5-year (block groups + tracts), LODES 2023, HOLC redlining
+   (Mapping Inequality, CC BY-NC-SA — the one non-commercial license
+   here), CDC PLACES. Unlike Overture they build **local** PMTiles like
+   city collections. Non-negotiables: every ACS estimate ships with its
+   `*_moe` (90% confidence level) and headline columns a `*_cv`; jam
+   values become NULL, never numbers; medians are never aggregated;
+   derived rates propagate MOE with the Census Bureau's formulas, not
+   naive division. ACS comes from the table-based Summary File (no API
+   key — the Data API now requires one); fetch_census pins every table
+   line number against the release's own table-shells file, so a vintage
+   bump that moves a line fails loudly. Bumping `ACS_RELEASE` /
+   `LODES_YEAR` / geometry vintage means re-running
+   fetch_census → assemble → make_pmtiles → finalize in lockstep, and the
+   CB geometry vintage must match the ACS vintage (GENZ2024 for 2020–2024;
+   cartographic boundaries, not TIGER — TIGER extends block groups into
+   the Mississippi). Descriptions live in `docs/census-descriptions.json`
+   (wording from the agencies' own docs — same never-invent rule); column
+   glosses carry their ACS table id in `docs/column-notes.json`.
 
 ## Data quirks discovered during the build
 
@@ -77,6 +98,24 @@ lives in `catalog/` and is synced 1:1 to
   The city-boundary clip in `assemble.py` nulls ~96% of the geocoded points —
   either the clip is wrong or the source coordinates are not what we assume.
   Unresolved; it predates the source-asset work.
+- DuckDB spatial's `ST_Distance_Sphere` read these files' lon/lat in the
+  wrong axis order in testing (a longitude step measured as latitude). For
+  meters, `ST_Transform(geom, 'EPSG:4326', 'EPSG:26915', always_xy :=
+  true)` first, then `ST_Distance`/`ST_DWithin` — the demographics
+  AGENTS.md documents this for consumers too.
+- Race-iterated ACS tables (B-tables with A–I suffixes) are inconsistently
+  published at block-group level: B25003B yes, but B19013B/B17020B/B01001B
+  are tract-only. Test empirically (grep the summary-file .dat for
+  `^1500000US`) before assuming.
+- `portolan add <dir>/ --pmtiles` on a geometry-less parquet drops a stray
+  `versions.json` at the catalog root instead of tracking the collection
+  (the CLI can't track tabular parquet); lodes-commutes is hand-authored by
+  `finalize_stac.build_tabular` like property-sales, and the stray dir was
+  deleted.
+- `portolan add --pmtiles` builds z0–z8 tiles; the census choropleths need
+  z12 for crisp block-group edges, so `tools/make_pmtiles.py` re-tiles
+  them (it also skips Overture — rule 6 — and carries per-family
+  `--attribution`).
 
 ## Environment
 
