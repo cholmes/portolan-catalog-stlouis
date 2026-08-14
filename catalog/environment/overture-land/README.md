@@ -38,9 +38,9 @@ Unlike everything else in this catalog, this is **not** City of St. Louis data: 
 |------|------|----------|
 | ./overture-land.parquet | 5.6 MB | 12206b1dcfca... |
 | https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/base.pmtiles | 181.9 GB | - |
-| ./styles/default.json | 2.9 KB | 122098e9b3f1... |
+| ./styles/default.json | 3.2 KB | 1220273a4a3c... |
 | ./styles/style-trees.json | 1.1 KB | 1220ec93dc2b... |
-| ./thumbnail.png | 308.4 KB | 1220ce82e04d... |
+| ./thumbnail.png | 421.8 KB | 122080a3f793... |
 
 ## Quick Start
 

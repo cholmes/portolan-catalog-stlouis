@@ -151,6 +151,7 @@ These are **modeled estimates, not direct survey measurements of St. Louis resid
 | ./cdc-places.pmtiles | 473.3 KB | 1220405aa15d... |
 | ./styles/default.json | 1.6 KB | 12200db3f5a1... |
 | ./styles/asthma.json | 1.6 KB | 12204d3da7a3... |
+| ./thumbnail.png | 317.4 KB | 1220f79b7db1... |
 
 ## Quick Start
 

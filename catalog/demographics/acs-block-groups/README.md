@@ -112,6 +112,7 @@ Unlike the city's own datasets in this catalog, this is **not** City of St. Loui
 | ./styles/race.json | 1.6 KB | 1220ea01a469... |
 | ./styles/rent-burden.json | 1.6 KB | 12200707b5f8... |
 | ./styles/transit-commute.json | 1.7 KB | 1220dfb079bc... |
+| ./thumbnail.png | 333.6 KB | 12205bb63df9... |
 
 ## Quick Start
 

@@ -38,6 +38,7 @@ Unlike the city's own datasets in this catalog, this is **not** City of St. Loui
 | ./holc-redlining.parquet | 40.5 KB | 12206b4d44de... |
 | ./holc-redlining.pmtiles | 85.6 KB | 122037c96fbf... |
 | ./styles/default.json | 2.3 KB | 12205bf0fbe8... |
+| ./thumbnail.png | 491.1 KB | 1220bf8bfd50... |
 
 ## Quick Start
 

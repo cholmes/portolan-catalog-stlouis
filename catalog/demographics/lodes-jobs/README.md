@@ -43,6 +43,7 @@ Unlike the city's own datasets in this catalog, this is **not** City of St. Loui
 | ./lodes-jobs.pmtiles | 182.1 KB | 122015712857... |
 | ./styles/default.json | 1.6 KB | 1220f7462951... |
 | ./styles/balance.json | 2.3 KB | 1220c79df5de... |
+| ./thumbnail.png | 333.6 KB | 1220091152ed... |
 
 ## Quick Start
 

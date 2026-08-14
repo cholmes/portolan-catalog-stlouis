@@ -54,6 +54,7 @@ Unlike the city's own datasets in this catalog, this is **not** City of St. Loui
 | ./acs-tracts.pmtiles | 195.8 KB | 12201944945d... |
 | ./styles/default.json | 1.6 KB | 12208f66a1ff... |
 | ./styles/disability.json | 1.6 KB | 1220884c08e0... |
+| ./thumbnail.png | 321.5 KB | 1220dea51917... |
 
 ## Quick Start
 

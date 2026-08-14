@@ -1,7 +1,7 @@
 # Overture Addresses
 
 Address points from the Overture addresses theme (currently in Alpha). An address represents a physical place through a series of attributes — street number, street name, unit, address levels, postal code, and/or country — together with a point geometry giving the approximate location most commonly associated with it. The theme aggregates open government address datasets, each carrying its own permissive open license, recorded per feature in the `sources` column. Useful for geocoding, validation, and conflation with buildings and places.
-Unlike everything else in this catalog, this is **not** City of St. Louis data: it comes from the [Overture Maps Foundation](https://overturemaps.org/), a collaborative project building open, interoperable map data for the world. This collection is a St. Louis extract of that global dataset — everything inside the city's bounding box, which also takes in the Illinois shore of the Mississippi (East St. Louis, Cahokia Heights) — included here to demonstrate how a city's open-data catalog can blend in other St. Louis-relevant open data alongside the city's own. The GeoParquet was extracted from Overture release 2026-07-22.0; the map tiles reference Overture's own global PMTiles for the same release, the tiles behind [explore.overturemaps.org](https://explore.overturemaps.org/). Explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/urban-development-and-planning/overture-addresses/collection.json).
+Unlike everything else in this catalog, this is **not** City of St. Louis data: it comes from the [Overture Maps Foundation](https://overturemaps.org/), a collaborative project building open, interoperable map data for the world. This collection is a St. Louis extract of that global dataset — everything inside the city's bounding box, which also takes in the Illinois shore of the Mississippi (East St. Louis, Cahokia Heights) — included here to demonstrate how a city's open-data catalog can blend in other St. Louis-relevant open data alongside the city's own. The GeoParquet was extracted from Overture release 2026-07-22.0. **Coverage caveat:** the theme's aggregated government datasets do not yet include the City of St. Louis itself — the ~99,000 points here are the St. Louis County and Illinois fringe that falls inside the bounding box (Wellston, Ferguson, Jennings, Cahokia, and neighbors), with almost nothing between the city limits. Uniquely among the Overture collections here, the map tiles are built locally from this extract: Overture's own global address tiles are just as empty for St. Louis, and only exist at z14. Explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/urban-development-and-planning/overture-addresses/collection.json).
 
 ![overture](https://img.shields.io/badge/overture-blue) ![overture-maps](https://img.shields.io/badge/overture--maps-blue) ![addresses](https://img.shields.io/badge/addresses-blue) ![st-louis](https://img.shields.io/badge/st--louis-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![address](https://img.shields.io/badge/address-blue)
 
@@ -36,10 +36,10 @@ Unlike everything else in this catalog, this is **not** City of St. Louis data: 
 | File | Size | Checksum |
 |------|------|----------|
 | ./overture-addresses.parquet | 7.0 MB | 1220cd113806... |
-| https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/addresses.pmtiles | 22.8 GB | - |
-| ./styles/default.json | 931 B | 122028ca0a91... |
-| ./styles/style-postcode.json | 2.2 KB | 12209f2b8ca8... |
-| ./thumbnail.png | 236.2 KB | 12202fee1d05... |
+| ./overture-addresses.pmtiles | 1.7 MB | 1220ffdb0c48... |
+| ./styles/default.json | 990 B | 12205e647e07... |
+| ./styles/style-postcode.json | 2.2 KB | 12205232b851... |
+| ./thumbnail.png | 325.0 KB | 1220eba27dfa... |
 
 ## Quick Start
 
