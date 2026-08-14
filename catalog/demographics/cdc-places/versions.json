@@ -1,6 +1,6 @@
 {
   "spec_version": "1.0.0",
-  "current_version": "1.0.1",
+  "current_version": "1.0.2",
   "versions": [
     {
       "version": "1.0.0",
@@ -46,6 +46,45 @@
         "cdc-places.pmtiles"
       ],
       "message": "Generated PMTiles: cdc-places.pmtiles"
+    },
+    {
+      "version": "1.0.2",
+      "created": "2026-08-14T17:33:29.226473Z",
+      "breaking": false,
+      "assets": {
+        "cdc-places.parquet": {
+          "sha256": "37c3cad48e856eda6c43fe6cd7670777ec4ba84f49c98f1e9bf3b441d0164e65",
+          "size_bytes": 101749,
+          "href": "demographics/cdc-places/cdc-places.parquet",
+          "source_mtime": 1786710730.9659305,
+          "mtime": 1786710730.9659305,
+          "feature_count": 104,
+          "schema_fingerprint": "4ab62b3dc23be234"
+        },
+        "cdc-places.pmtiles": {
+          "sha256": "405aa15d04b239693039a49ffa84556060b4a704de74d9ded5477a6acb575d69",
+          "size_bytes": 484632,
+          "href": "demographics/cdc-places/cdc-places.pmtiles",
+          "mtime": 1786710872.5691195
+        },
+        "README.md": {
+          "sha256": "ca145b63482743cf9253a6705dcad8184b6d596c3a4c09baae306fe8ae4d6a8d",
+          "size_bytes": 15484,
+          "href": "demographics/cdc-places/README.md",
+          "mtime": 1786728531.3187387
+        },
+        "thumbnail.png": {
+          "sha256": "f79b7db1f60e040402f82a97d42d0203c39427b0f707270dd893fc6effd2ef3c",
+          "size_bytes": 325029,
+          "href": "demographics/cdc-places/thumbnail.png",
+          "mtime": 1786728435.268287
+        }
+      },
+      "changes": [
+        "README.md",
+        "thumbnail.png",
+        "cdc-places.pmtiles"
+      ]
     }
   ]
 }

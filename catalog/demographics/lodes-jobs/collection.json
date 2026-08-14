@@ -57,6 +57,7 @@
   "stac_extensions": [
     "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
@@ -145,85 +146,8 @@
       "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>"
     }
   ],
-  "portolan:total_size_bytes": 49705,
-  "portolan:asset_count": 1,
-  "title": "LODES Jobs",
-  "extent": {
-    "spatial": {
-      "bbox": [
-        [
-          -90.32051589533225,
-          38.532001591520135,
-          -90.16671561256314,
-          38.77428387126793
-        ]
-      ]
-    },
-    "temporal": {
-      "interval": [
-        [
-          "2023-01-01T00:00:00Z",
-          "2023-12-31T23:59:59Z"
-        ]
-      ]
-    }
-  },
-  "license": "other",
-  "assets": {
-    "lodes-jobs": {
-      "href": "./lodes-jobs.parquet",
-      "type": "application/vnd.apache.parquet",
-      "file:size": 49705,
-      "file:checksum": "1220d44aae0c729e126c61de0430a4af47532c730d9a2bf73417ec5483f264a4c728",
-      "roles": [
-        "data"
-      ],
-      "title": "LODES Jobs (GeoParquet)"
-    },
-    "lodes-jobs-tiles": {
-      "href": "./lodes-jobs.pmtiles",
-      "type": "application/vnd.pmtiles",
-      "title": "lodes-jobs (vector tiles)",
-      "roles": [
-        "visual"
-      ],
-      "file:size": 186465,
-      "file:checksum": "122015712857e0e419cc3857e3898f78828785c13bb8803112a0ec88fa41bcd12158"
-    },
-    "styles/default": {
-      "href": "./styles/default.json",
-      "type": "application/vnd.mapbox.style+json",
-      "title": "Jobs by workplace",
-      "roles": [
-        "default",
-        "style"
-      ],
-      "description": "Where St. Louis works: total jobs located in each block group, light to dark blue. Downtown, the central corridor and the hospital campuses carry most of the city's employment.",
-      "file:size": 1654,
-      "file:checksum": "1220f7462951e633e144d8905ee79e613cb81ad94ef09c51965707271d1750497877"
-    },
-    "styles/balance": {
-      "href": "./styles/balance.json",
-      "type": "application/vnd.mapbox.style+json",
-      "roles": [
-        "style"
-      ],
-      "title": "Jobs vs. resident workers",
-      "description": "Jobs located in the block group divided by employed residents living in it: purple block groups are bedroom areas, orange ones are job centers with few resident workers. Crime and service rates computed per residential population overstate risk in orange areas \u2014 their daytime population is far larger than their census count.",
-      "file:size": 2363,
-      "file:checksum": "1220c79df5de398205f25e515a1539efacb5f1b69051813aed15c55134a3c9527dd5"
-    },
-    "thumbnail": {
-      "href": "./thumbnail.png",
-      "type": "image/png",
-      "roles": [
-        "thumbnail"
-      ],
-      "title": "LODES Jobs rendered with the default style",
-      "file:size": 341576,
-      "file:checksum": "1220091152edf8400db5324bc37cd5f0357f5354de1ddb3e77cc718bd67382ec3b93"
-    }
-  },
+  "portolan:total_size_bytes": 587222,
+  "portolan:asset_count": 6,
   "portolan:styles": [
     "styles/default"
   ],
@@ -248,6 +172,40 @@
       ]
     }
   ],
+  "proj:epsg": 3857,
+  "pmtiles:min_zoom": 0,
+  "pmtiles:max_zoom": 12,
+  "pmtiles:tile_type": "mvt",
+  "pmtiles:center": [
+    -90.2197265,
+    38.6511901,
+    12
+  ],
+  "pmtiles:layers": [
+    "lodes-jobs"
+  ],
+  "title": "LODES Jobs",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -90.32051589533225,
+          38.532001591520135,
+          -90.16671561256314,
+          38.77428387126793
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2023-01-01T00:00:00Z",
+          "2023-12-31T23:59:59Z"
+        ]
+      ]
+    }
+  },
+  "license": "other",
   "keywords": [
     "census",
     "LEHD",
@@ -271,5 +229,60 @@
       ],
       "url": "https://github.com/cholmes/portolan-catalog-stlouis"
     }
-  ]
+  ],
+  "assets": {
+    "lodes-jobs": {
+      "href": "./lodes-jobs.parquet",
+      "type": "application/vnd.apache.parquet",
+      "title": "LODES Jobs (GeoParquet)",
+      "file:size": 49705,
+      "file:checksum": "1220d44aae0c729e126c61de0430a4af47532c730d9a2bf73417ec5483f264a4c728",
+      "roles": [
+        "data"
+      ]
+    },
+    "lodes-jobs-tiles": {
+      "href": "./lodes-jobs.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "lodes-jobs (vector tiles)",
+      "file:size": 186465,
+      "file:checksum": "122015712857e0e419cc3857e3898f78828785c13bb8803112a0ec88fa41bcd12158",
+      "roles": [
+        "data"
+      ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Jobs by workplace",
+      "description": "Where St. Louis works: total jobs located in each block group, light to dark blue. Downtown, the central corridor and the hospital campuses carry most of the city's employment.",
+      "file:size": 1654,
+      "file:checksum": "1220f7462951e633e144d8905ee79e613cb81ad94ef09c51965707271d1750497877",
+      "roles": [
+        "default",
+        "style"
+      ]
+    },
+    "styles/balance": {
+      "href": "./styles/balance.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Jobs vs. resident workers",
+      "description": "Jobs located in the block group divided by employed residents living in it: purple block groups are bedroom areas, orange ones are job centers with few resident workers. Crime and service rates computed per residential population overstate risk in orange areas \u2014 their daytime population is far larger than their census count.",
+      "file:size": 2363,
+      "file:checksum": "1220c79df5de398205f25e515a1539efacb5f1b69051813aed15c55134a3c9527dd5",
+      "roles": [
+        "style"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "title": "LODES Jobs rendered with the default style",
+      "file:size": 341576,
+      "file:checksum": "1220091152edf8400db5324bc37cd5f0357f5354de1ddb3e77cc718bd67382ec3b93",
+      "roles": [
+        "thumbnail"
+      ]
+    }
+  }
 }

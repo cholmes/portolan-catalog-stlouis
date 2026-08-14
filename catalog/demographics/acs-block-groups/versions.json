@@ -1,6 +1,6 @@
 {
   "spec_version": "1.0.0",
-  "current_version": "1.0.1",
+  "current_version": "1.0.2",
   "versions": [
     {
       "version": "1.0.0",
@@ -46,6 +46,45 @@
         "acs-block-groups.pmtiles"
       ],
       "message": "Generated PMTiles: acs-block-groups.pmtiles"
+    },
+    {
+      "version": "1.0.2",
+      "created": "2026-08-14T17:33:24.128579Z",
+      "breaking": false,
+      "assets": {
+        "acs-block-groups.parquet": {
+          "sha256": "552647b0a6e8bb8b3ea271255542b0745a1d8b68564203d1f944a92afe5edf71",
+          "size_bytes": 159469,
+          "href": "demographics/acs-block-groups/acs-block-groups.parquet",
+          "source_mtime": 1786710719.9305785,
+          "mtime": 1786710719.9305785,
+          "feature_count": 314,
+          "schema_fingerprint": "2d7fbf6d4311d505"
+        },
+        "acs-block-groups.pmtiles": {
+          "sha256": "edc02983ea998f8671376e56415dd73eb441ca0e1a6ca0d3497d5ec8b4075afd",
+          "size_bytes": 1040256,
+          "href": "demographics/acs-block-groups/acs-block-groups.pmtiles",
+          "mtime": 1786710868.2412941
+        },
+        "README.md": {
+          "sha256": "cbd121340377fe4050d9005c52ad783b83360866f9e8bcb655d736ca8a54e16c",
+          "size_bytes": 16726,
+          "href": "demographics/acs-block-groups/README.md",
+          "mtime": 1786728531.3119717
+        },
+        "thumbnail.png": {
+          "sha256": "5bb63df955ab08f5dc0f7e68eac995159f15831c7ee82b08179d44316412acf0",
+          "size_bytes": 341574,
+          "href": "demographics/acs-block-groups/thumbnail.png",
+          "mtime": 1786728435.2622538
+        }
+      },
+      "changes": [
+        "README.md",
+        "thumbnail.png",
+        "acs-block-groups.pmtiles"
+      ]
     }
   ]
 }

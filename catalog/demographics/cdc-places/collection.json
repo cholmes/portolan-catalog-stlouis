@@ -57,6 +57,7 @@
   "stac_extensions": [
     "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
@@ -685,85 +686,8 @@
       "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>"
     }
   ],
-  "portolan:total_size_bytes": 101749,
-  "portolan:asset_count": 1,
-  "title": "CDC PLACES Health Measures",
-  "extent": {
-    "spatial": {
-      "bbox": [
-        [
-          -90.32051589533225,
-          38.532001591520135,
-          -90.16671561256314,
-          38.77428387126793
-        ]
-      ]
-    },
-    "temporal": {
-      "interval": [
-        [
-          "2022-01-01T00:00:00Z",
-          "2023-12-31T23:59:59Z"
-        ]
-      ]
-    }
-  },
-  "license": "other",
-  "assets": {
-    "cdc-places": {
-      "href": "./cdc-places.parquet",
-      "type": "application/vnd.apache.parquet",
-      "file:size": 101749,
-      "file:checksum": "122037c3cad48e856eda6c43fe6cd7670777ec4ba84f49c98f1e9bf3b441d0164e65",
-      "roles": [
-        "data"
-      ],
-      "title": "CDC PLACES Health Measures (GeoParquet)"
-    },
-    "cdc-places-tiles": {
-      "href": "./cdc-places.pmtiles",
-      "type": "application/vnd.pmtiles",
-      "title": "cdc-places (vector tiles)",
-      "roles": [
-        "visual"
-      ],
-      "file:size": 484632,
-      "file:checksum": "1220405aa15d04b239693039a49ffa84556060b4a704de74d9ded5477a6acb575d69"
-    },
-    "styles/default": {
-      "href": "./styles/default.json",
-      "type": "application/vnd.mapbox.style+json",
-      "title": "Food insecurity",
-      "roles": [
-        "default",
-        "style"
-      ],
-      "description": "Share of adults reporting food insecurity in the past 12 months \u2014 a CDC PLACES model-based estimate, so read it as a ranking of need, not a per-tract measurement.",
-      "file:size": 1631,
-      "file:checksum": "12200db3f5a1a0625c48ec2dd758f630908c9a11955110b80714cf82d10e5309b987"
-    },
-    "styles/asthma": {
-      "href": "./styles/asthma.json",
-      "type": "application/vnd.mapbox.style+json",
-      "roles": [
-        "style"
-      ],
-      "title": "Adult asthma",
-      "description": "Share of adults with current asthma (CDC PLACES modeled estimate). The citywide band is narrow, so the breaks are tight \u2014 pair with vacancy and demolition layers for the housing-condition story.",
-      "file:size": 1651,
-      "file:checksum": "12204d3da7a343310324cbd0549e0d5cff87a04e244b8eb4ffd12a38372b2167e0db"
-    },
-    "thumbnail": {
-      "href": "./thumbnail.png",
-      "type": "image/png",
-      "roles": [
-        "thumbnail"
-      ],
-      "title": "CDC PLACES Health Measures rendered with the default style",
-      "file:size": 325029,
-      "file:checksum": "1220f79b7db1f60e040402f82a97d42d0203c39427b0f707270dd893fc6effd2ef3c"
-    }
-  },
+  "portolan:total_size_bytes": 930176,
+  "portolan:asset_count": 6,
   "portolan:styles": [
     "styles/default"
   ],
@@ -788,6 +712,40 @@
       ]
     }
   ],
+  "proj:epsg": 3857,
+  "pmtiles:min_zoom": 0,
+  "pmtiles:max_zoom": 12,
+  "pmtiles:tile_type": "mvt",
+  "pmtiles:center": [
+    -90.2197265,
+    38.6511901,
+    12
+  ],
+  "pmtiles:layers": [
+    "cdc-places"
+  ],
+  "title": "CDC PLACES Health Measures",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -90.32051589533225,
+          38.532001591520135,
+          -90.16671561256314,
+          38.77428387126793
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2022-01-01T00:00:00Z",
+          "2023-12-31T23:59:59Z"
+        ]
+      ]
+    }
+  },
+  "license": "other",
   "keywords": [
     "CDC",
     "PLACES",
@@ -810,5 +768,60 @@
       ],
       "url": "https://github.com/cholmes/portolan-catalog-stlouis"
     }
-  ]
+  ],
+  "assets": {
+    "cdc-places": {
+      "href": "./cdc-places.parquet",
+      "type": "application/vnd.apache.parquet",
+      "title": "CDC PLACES Health Measures (GeoParquet)",
+      "file:size": 101749,
+      "file:checksum": "122037c3cad48e856eda6c43fe6cd7670777ec4ba84f49c98f1e9bf3b441d0164e65",
+      "roles": [
+        "data"
+      ]
+    },
+    "cdc-places-tiles": {
+      "href": "./cdc-places.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "cdc-places (vector tiles)",
+      "file:size": 484632,
+      "file:checksum": "1220405aa15d04b239693039a49ffa84556060b4a704de74d9ded5477a6acb575d69",
+      "roles": [
+        "data"
+      ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Food insecurity",
+      "description": "Share of adults reporting food insecurity in the past 12 months \u2014 a CDC PLACES model-based estimate, so read it as a ranking of need, not a per-tract measurement.",
+      "file:size": 1631,
+      "file:checksum": "12200db3f5a1a0625c48ec2dd758f630908c9a11955110b80714cf82d10e5309b987",
+      "roles": [
+        "default",
+        "style"
+      ]
+    },
+    "styles/asthma": {
+      "href": "./styles/asthma.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Adult asthma",
+      "description": "Share of adults with current asthma (CDC PLACES modeled estimate). The citywide band is narrow, so the breaks are tight \u2014 pair with vacancy and demolition layers for the housing-condition story.",
+      "file:size": 1651,
+      "file:checksum": "12204d3da7a343310324cbd0549e0d5cff87a04e244b8eb4ffd12a38372b2167e0db",
+      "roles": [
+        "style"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "title": "CDC PLACES Health Measures rendered with the default style",
+      "file:size": 325029,
+      "file:checksum": "1220f79b7db1f60e040402f82a97d42d0203c39427b0f707270dd893fc6effd2ef3c",
+      "roles": [
+        "thumbnail"
+      ]
+    }
+  }
 }

@@ -1,6 +1,6 @@
 {
   "spec_version": "1.0.0",
-  "current_version": "1.0.1",
+  "current_version": "1.0.2",
   "versions": [
     {
       "version": "1.0.0",
@@ -46,6 +46,45 @@
         "holc-redlining.pmtiles"
       ],
       "message": "Generated PMTiles: holc-redlining.pmtiles"
+    },
+    {
+      "version": "1.0.2",
+      "created": "2026-08-14T17:33:28.024682Z",
+      "breaking": false,
+      "assets": {
+        "holc-redlining.parquet": {
+          "sha256": "6b4d44de1925d428291e409291a8832c0fac6f06eb12e4fb59bd4d6db5cf7902",
+          "size_bytes": 41496,
+          "href": "demographics/holc-redlining/holc-redlining.parquet",
+          "source_mtime": 1786710729.312072,
+          "mtime": 1786710729.312072,
+          "feature_count": 127,
+          "schema_fingerprint": "6294afae9b905960"
+        },
+        "holc-redlining.pmtiles": {
+          "sha256": "37c96fbf6e1e0785a0f923f4ff7914eb0225e30b409d02cc3d1e13c453673cb0",
+          "size_bytes": 87639,
+          "href": "demographics/holc-redlining/holc-redlining.pmtiles",
+          "mtime": 1786710871.414282
+        },
+        "README.md": {
+          "sha256": "a2c93c39f73154febfc2fa7b7aad0fcd3f82c3ff7962d0aa6f308ed3b1ed2a91",
+          "size_bytes": 4567,
+          "href": "demographics/holc-redlining/README.md",
+          "mtime": 1786728531.321788
+        },
+        "thumbnail.png": {
+          "sha256": "bf8bfd50868daa13f016656c688626704961749e07359164988b440e9f622c35",
+          "size_bytes": 502883,
+          "href": "demographics/holc-redlining/thumbnail.png",
+          "mtime": 1786728435.2717538
+        }
+      },
+      "changes": [
+        "README.md",
+        "thumbnail.png",
+        "holc-redlining.pmtiles"
+      ]
     }
   ]
 }

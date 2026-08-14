@@ -796,6 +796,10 @@ def finalize_census(coll_id: str, coll_dir, f, coll: dict, src: dict) -> None:
                 roles.discard("default")
             a["roles"] = sorted(roles)
         stamp_asset(coll_dir, href, a)
+    # Same reasoning as the city path: a README asset lists its own checksum
+    # in its own Files table, so it goes stale the moment `portolan readme`
+    # runs — the `describedby` link is how the spec exposes the README.
+    assets.pop("documentation", None)
     coll["assets"] = assets
 
     f.write_text(json.dumps(coll, indent=2) + "\n")

@@ -1,6 +1,6 @@
 {
   "spec_version": "1.0.0",
-  "current_version": "1.0.1",
+  "current_version": "1.0.2",
   "versions": [
     {
       "version": "1.0.0",
@@ -46,6 +46,45 @@
         "acs-tracts.pmtiles"
       ],
       "message": "Generated PMTiles: acs-tracts.pmtiles"
+    },
+    {
+      "version": "1.0.2",
+      "created": "2026-08-14T17:33:25.452064Z",
+      "breaking": false,
+      "assets": {
+        "acs-tracts.parquet": {
+          "sha256": "744e3dfd2491b627e3cbb9c87b2034192d641c96077580e806cb3cc98c906901",
+          "size_bytes": 43811,
+          "href": "demographics/acs-tracts/acs-tracts.parquet",
+          "source_mtime": 1786710723.2407966,
+          "mtime": 1786710723.2407966,
+          "feature_count": 104,
+          "schema_fingerprint": "aebec01c238b21fc"
+        },
+        "acs-tracts.pmtiles": {
+          "sha256": "1944945d2d100d2b4de53dcd37a73c7f697fa3d4f1fca6c249fd3a0386a716e4",
+          "size_bytes": 200468,
+          "href": "demographics/acs-tracts/acs-tracts.pmtiles",
+          "mtime": 1786710869.2309237
+        },
+        "README.md": {
+          "sha256": "a6576579f677b625838553059d5c155871951876a634ed061008dbac7d27be65",
+          "size_bytes": 9069,
+          "href": "demographics/acs-tracts/README.md",
+          "mtime": 1786728531.3153489
+        },
+        "thumbnail.png": {
+          "sha256": "dea51917e5bb808c095452f3b0ec458d7e0b3661087082cf703b824ac04675da",
+          "size_bytes": 329179,
+          "href": "demographics/acs-tracts/thumbnail.png",
+          "mtime": 1786728435.2655382
+        }
+      },
+      "changes": [
+        "acs-tracts.pmtiles",
+        "README.md",
+        "thumbnail.png"
+      ]
     }
   ]
 }

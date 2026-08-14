@@ -57,6 +57,7 @@
   "stac_extensions": [
     "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
@@ -200,85 +201,8 @@
       "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>"
     }
   ],
-  "portolan:total_size_bytes": 43811,
-  "portolan:asset_count": 1,
-  "title": "ACS Demographics \u2014 Tracts",
-  "extent": {
-    "spatial": {
-      "bbox": [
-        [
-          -90.32051589533225,
-          38.532001591520135,
-          -90.16671561256314,
-          38.77428387126793
-        ]
-      ]
-    },
-    "temporal": {
-      "interval": [
-        [
-          "2020-01-01T00:00:00Z",
-          "2024-12-31T23:59:59Z"
-        ]
-      ]
-    }
-  },
-  "license": "other",
-  "assets": {
-    "acs-tracts": {
-      "href": "./acs-tracts.parquet",
-      "type": "application/vnd.apache.parquet",
-      "file:size": 43811,
-      "file:checksum": "1220744e3dfd2491b627e3cbb9c87b2034192d641c96077580e806cb3cc98c906901",
-      "roles": [
-        "data"
-      ],
-      "title": "ACS Demographics \u2014 Tracts (GeoParquet)"
-    },
-    "acs-tracts-tiles": {
-      "href": "./acs-tracts.pmtiles",
-      "type": "application/vnd.pmtiles",
-      "title": "acs-tracts (vector tiles)",
-      "roles": [
-        "visual"
-      ],
-      "file:size": 200468,
-      "file:checksum": "12201944945d2d100d2b4de53dcd37a73c7f697fa3d4f1fca6c249fd3a0386a716e4"
-    },
-    "styles/default": {
-      "href": "./styles/default.json",
-      "type": "application/vnd.mapbox.style+json",
-      "title": "Uninsured population",
-      "roles": [
-        "default",
-        "style"
-      ],
-      "description": "Share of the civilian noninstitutionalized population with no health insurance coverage \u2014 one of the indicators the Census Bureau only publishes at tract level.",
-      "file:size": 1641,
-      "file:checksum": "12208f66a1ff7b8388751000890fa7eb5290d5a6dc84601b7715d83721e409749882"
-    },
-    "styles/disability": {
-      "href": "./styles/disability.json",
-      "type": "application/vnd.mapbox.style+json",
-      "roles": [
-        "style"
-      ],
-      "title": "Population with a disability",
-      "description": "Share of the civilian noninstitutionalized population with a disability, light to dark blue.",
-      "file:size": 1596,
-      "file:checksum": "1220884c08e020c9512fe5ba43f7f04d9462cd6cf942759b541a58cb9fa37b8ad0b5"
-    },
-    "thumbnail": {
-      "href": "./thumbnail.png",
-      "type": "image/png",
-      "roles": [
-        "thumbnail"
-      ],
-      "title": "ACS Demographics \u2014 Tracts rendered with the default style",
-      "file:size": 329179,
-      "file:checksum": "1220dea51917e5bb808c095452f3b0ec458d7e0b3661087082cf703b824ac04675da"
-    }
-  },
+  "portolan:total_size_bytes": 585764,
+  "portolan:asset_count": 6,
   "portolan:styles": [
     "styles/default"
   ],
@@ -303,6 +227,40 @@
       ]
     }
   ],
+  "proj:epsg": 3857,
+  "pmtiles:min_zoom": 0,
+  "pmtiles:max_zoom": 12,
+  "pmtiles:tile_type": "mvt",
+  "pmtiles:center": [
+    -90.2197265,
+    38.6511901,
+    12
+  ],
+  "pmtiles:layers": [
+    "acs-tracts"
+  ],
+  "title": "ACS Demographics \u2014 Tracts",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -90.32051589533225,
+          38.532001591520135,
+          -90.16671561256314,
+          38.77428387126793
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2020-01-01T00:00:00Z",
+          "2024-12-31T23:59:59Z"
+        ]
+      ]
+    }
+  },
+  "license": "other",
   "keywords": [
     "census",
     "ACS",
@@ -327,5 +285,60 @@
       ],
       "url": "https://github.com/cholmes/portolan-catalog-stlouis"
     }
-  ]
+  ],
+  "assets": {
+    "acs-tracts": {
+      "href": "./acs-tracts.parquet",
+      "type": "application/vnd.apache.parquet",
+      "title": "ACS Demographics \u2014 Tracts (GeoParquet)",
+      "file:size": 43811,
+      "file:checksum": "1220744e3dfd2491b627e3cbb9c87b2034192d641c96077580e806cb3cc98c906901",
+      "roles": [
+        "data"
+      ]
+    },
+    "acs-tracts-tiles": {
+      "href": "./acs-tracts.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "acs-tracts (vector tiles)",
+      "file:size": 200468,
+      "file:checksum": "12201944945d2d100d2b4de53dcd37a73c7f697fa3d4f1fca6c249fd3a0386a716e4",
+      "roles": [
+        "visual"
+      ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Uninsured population",
+      "description": "Share of the civilian noninstitutionalized population with no health insurance coverage \u2014 one of the indicators the Census Bureau only publishes at tract level.",
+      "file:size": 1641,
+      "file:checksum": "12208f66a1ff7b8388751000890fa7eb5290d5a6dc84601b7715d83721e409749882",
+      "roles": [
+        "default",
+        "style"
+      ]
+    },
+    "styles/disability": {
+      "href": "./styles/disability.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Population with a disability",
+      "description": "Share of the civilian noninstitutionalized population with a disability, light to dark blue.",
+      "file:size": 1596,
+      "file:checksum": "1220884c08e020c9512fe5ba43f7f04d9462cd6cf942759b541a58cb9fa37b8ad0b5",
+      "roles": [
+        "style"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "title": "ACS Demographics \u2014 Tracts rendered with the default style",
+      "file:size": 329179,
+      "file:checksum": "1220dea51917e5bb808c095452f3b0ec458d7e0b3661087082cf703b824ac04675da",
+      "roles": [
+        "thumbnail"
+      ]
+    }
+  }
 }

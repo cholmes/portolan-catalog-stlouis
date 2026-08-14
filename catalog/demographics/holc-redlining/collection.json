@@ -57,6 +57,7 @@
   "stac_extensions": [
     "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
@@ -125,74 +126,8 @@
       "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>"
     }
   ],
-  "portolan:total_size_bytes": 41496,
-  "portolan:asset_count": 1,
-  "title": "HOLC Redlining Grades (1930s)",
-  "extent": {
-    "spatial": {
-      "bbox": [
-        [
-          -90.39063,
-          38.51965,
-          -90.17965,
-          38.75724
-        ]
-      ]
-    },
-    "temporal": {
-      "interval": [
-        [
-          "1930-01-01T00:00:00Z",
-          "1939-12-31T23:59:59Z"
-        ]
-      ]
-    }
-  },
-  "license": "CC-BY-NC-SA-4.0",
-  "assets": {
-    "holc-redlining": {
-      "href": "./holc-redlining.parquet",
-      "type": "application/vnd.apache.parquet",
-      "file:size": 41496,
-      "file:checksum": "12206b4d44de1925d428291e409291a8832c0fac6f06eb12e4fb59bd4d6db5cf7902",
-      "roles": [
-        "data"
-      ],
-      "title": "HOLC Redlining Grades (1930s) (GeoParquet)"
-    },
-    "holc-redlining-tiles": {
-      "href": "./holc-redlining.pmtiles",
-      "type": "application/vnd.pmtiles",
-      "title": "holc-redlining (vector tiles)",
-      "roles": [
-        "visual"
-      ],
-      "file:size": 87639,
-      "file:checksum": "122037c96fbf6e1e0785a0f923f4ff7914eb0225e30b409d02cc3d1e13c453673cb0"
-    },
-    "styles/default": {
-      "href": "./styles/default.json",
-      "type": "application/vnd.mapbox.style+json",
-      "title": "HOLC grade (1930s)",
-      "roles": [
-        "default",
-        "style"
-      ],
-      "description": "The 1930s Home Owners' Loan Corporation security grades in the original map's own colors: A \"Best\" (green), B \"Still Desirable\" (blue), C \"Definitely Declining\" (yellow), D \"Hazardous\" (red) \u2014 the redlined areas. One ungraded polygon renders gray.",
-      "file:size": 2307,
-      "file:checksum": "12205bf0fbe828c9c25f4737c8b77bac611adbdbf32fc1a6609ce2be8d21305861ab"
-    },
-    "thumbnail": {
-      "href": "./thumbnail.png",
-      "type": "image/png",
-      "roles": [
-        "thumbnail"
-      ],
-      "title": "HOLC Redlining Grades (1930s) rendered with the default style",
-      "file:size": 502883,
-      "file:checksum": "1220bf8bfd50868daa13f016656c688626704961749e07359164988b440e9f622c35"
-    }
-  },
+  "portolan:total_size_bytes": 638892,
+  "portolan:asset_count": 5,
   "portolan:styles": [
     "styles/default"
   ],
@@ -217,6 +152,40 @@
       ]
     }
   ],
+  "proj:epsg": 3857,
+  "pmtiles:min_zoom": 0,
+  "pmtiles:max_zoom": 12,
+  "pmtiles:tile_type": "mvt",
+  "pmtiles:center": [
+    -90.3076171,
+    38.6511901,
+    12
+  ],
+  "pmtiles:layers": [
+    "holc-redlining"
+  ],
+  "title": "HOLC Redlining Grades (1930s)",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -90.39063,
+          38.51965,
+          -90.17965,
+          38.75724
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "1930-01-01T00:00:00Z",
+          "1939-12-31T23:59:59Z"
+        ]
+      ]
+    }
+  },
+  "license": "CC-BY-NC-SA-4.0",
   "keywords": [
     "redlining",
     "HOLC",
@@ -240,5 +209,49 @@
       ],
       "url": "https://github.com/cholmes/portolan-catalog-stlouis"
     }
-  ]
+  ],
+  "assets": {
+    "holc-redlining": {
+      "href": "./holc-redlining.parquet",
+      "type": "application/vnd.apache.parquet",
+      "title": "HOLC Redlining Grades (1930s) (GeoParquet)",
+      "file:size": 41496,
+      "file:checksum": "12206b4d44de1925d428291e409291a8832c0fac6f06eb12e4fb59bd4d6db5cf7902",
+      "roles": [
+        "data"
+      ]
+    },
+    "holc-redlining-tiles": {
+      "href": "./holc-redlining.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "holc-redlining (vector tiles)",
+      "file:size": 87639,
+      "file:checksum": "122037c96fbf6e1e0785a0f923f4ff7914eb0225e30b409d02cc3d1e13c453673cb0",
+      "roles": [
+        "data"
+      ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "HOLC grade (1930s)",
+      "description": "The 1930s Home Owners' Loan Corporation security grades in the original map's own colors: A \"Best\" (green), B \"Still Desirable\" (blue), C \"Definitely Declining\" (yellow), D \"Hazardous\" (red) \u2014 the redlined areas. One ungraded polygon renders gray.",
+      "file:size": 2307,
+      "file:checksum": "12205bf0fbe828c9c25f4737c8b77bac611adbdbf32fc1a6609ce2be8d21305861ab",
+      "roles": [
+        "default",
+        "style"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "title": "HOLC Redlining Grades (1930s) rendered with the default style",
+      "file:size": 502883,
+      "file:checksum": "1220bf8bfd50868daa13f016656c688626704961749e07359164988b440e9f622c35",
+      "roles": [
+        "thumbnail"
+      ]
+    }
+  }
 }

@@ -328,35 +328,35 @@
       "total_size_bytes": 480195
     },
     "demographics/acs-block-groups": {
-      "current_version": "1.0.0",
-      "updated": "2026-08-14T12:32:47.143867+00:00",
-      "asset_count": 1,
-      "total_size_bytes": 159469
+      "current_version": "1.0.2",
+      "updated": "2026-08-14T17:33:24.129746+00:00",
+      "asset_count": 4,
+      "total_size_bytes": 1558025
     },
     "demographics/acs-tracts": {
-      "current_version": "1.0.0",
-      "updated": "2026-08-14T12:32:49.683893+00:00",
-      "asset_count": 1,
-      "total_size_bytes": 43811
+      "current_version": "1.0.2",
+      "updated": "2026-08-14T17:33:25.452832+00:00",
+      "asset_count": 4,
+      "total_size_bytes": 582527
     },
     "demographics/lodes-jobs": {
-      "current_version": "1.0.0",
-      "updated": "2026-08-14T12:32:52.512137+00:00",
-      "asset_count": 1,
-      "total_size_bytes": 49705
+      "current_version": "1.0.2",
+      "updated": "2026-08-14T17:33:26.782176+00:00",
+      "asset_count": 4,
+      "total_size_bytes": 583205
     },
     "demographics/holc-redlining": {
-      "current_version": "1.0.0",
-      "updated": "2026-08-14T12:32:58.999642+00:00",
-      "asset_count": 1,
-      "total_size_bytes": 41496
+      "current_version": "1.0.2",
+      "updated": "2026-08-14T17:33:28.025363+00:00",
+      "asset_count": 4,
+      "total_size_bytes": 636585
     },
     "demographics/cdc-places": {
-      "current_version": "1.0.0",
-      "updated": "2026-08-14T12:33:01.382120+00:00",
-      "asset_count": 1,
-      "total_size_bytes": 101749
+      "current_version": "1.0.2",
+      "updated": "2026-08-14T17:33:29.227444+00:00",
+      "asset_count": 4,
+      "total_size_bytes": 926894
     }
   },
-  "updated": "2026-08-14T12:33:01.382120+00:00"
+  "updated": "2026-08-14T17:33:29.227444+00:00"
 }

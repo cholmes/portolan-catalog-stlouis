@@ -57,6 +57,7 @@
   "stac_extensions": [
     "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
@@ -465,140 +466,8 @@
       "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>"
     }
   ],
-  "portolan:total_size_bytes": 159469,
-  "portolan:asset_count": 1,
-  "title": "ACS Demographics \u2014 Block Groups",
-  "extent": {
-    "spatial": {
-      "bbox": [
-        [
-          -90.32051589533225,
-          38.532001591520135,
-          -90.16671561256314,
-          38.77428387126793
-        ]
-      ]
-    },
-    "temporal": {
-      "interval": [
-        [
-          "2020-01-01T00:00:00Z",
-          "2024-12-31T23:59:59Z"
-        ]
-      ]
-    }
-  },
-  "license": "other",
-  "assets": {
-    "acs-block-groups": {
-      "href": "./acs-block-groups.parquet",
-      "type": "application/vnd.apache.parquet",
-      "file:size": 159469,
-      "file:checksum": "1220552647b0a6e8bb8b3ea271255542b0745a1d8b68564203d1f944a92afe5edf71",
-      "roles": [
-        "data"
-      ],
-      "title": "ACS Demographics \u2014 Block Groups (GeoParquet)"
-    },
-    "acs-block-groups-tiles": {
-      "href": "./acs-block-groups.pmtiles",
-      "type": "application/vnd.pmtiles",
-      "title": "acs-block-groups (vector tiles)",
-      "roles": [
-        "visual"
-      ],
-      "file:size": 1040256,
-      "file:checksum": "1220edc02983ea998f8671376e56415dd73eb441ca0e1a6ca0d3497d5ec8b4075afd"
-    },
-    "styles/default": {
-      "href": "./styles/default.json",
-      "type": "application/vnd.mapbox.style+json",
-      "title": "Median household income",
-      "roles": [
-        "default",
-        "style"
-      ],
-      "description": "Median household income per block group, light to dark blue \u2014 the city's north\u2013south income divide in one layer. Block groups whose estimate is too noisy to trust (coefficient of variation over 0.30) render faded; the income is real but the margin of error swamps it.",
-      "file:size": 2176,
-      "file:checksum": "122021da37a15e0dd369a7b3198b005b35f36b15a225f46eab6f4ec44583fde00b71"
-    },
-    "styles/internet": {
-      "href": "./styles/internet.json",
-      "type": "application/vnd.mapbox.style+json",
-      "roles": [
-        "style"
-      ],
-      "title": "Households without internet",
-      "description": "Share of households with no internet access, yellow to dark blue \u2014 the digital divide, block group by block group.",
-      "file:size": 1638,
-      "file:checksum": "12204ee76fc3237c8d97af7ee323ae85638ccf1fd37ee40fda5610fd44e6a69113ee"
-    },
-    "styles/no-vehicle": {
-      "href": "./styles/no-vehicle.json",
-      "type": "application/vnd.mapbox.style+json",
-      "roles": [
-        "style"
-      ],
-      "title": "Households without a vehicle",
-      "description": "Share of households with no vehicle available, yellow to dark red. Pair with transit and grocery locations: these are the residents for whom walkable service coverage is not optional.",
-      "file:size": 1709,
-      "file:checksum": "12201d5a989514b081333a57f85b4c34b85b234cfeed197905e59cb905124cf97dd2"
-    },
-    "styles/poverty": {
-      "href": "./styles/poverty.json",
-      "type": "application/vnd.mapbox.style+json",
-      "roles": [
-        "style"
-      ],
-      "title": "Population below poverty",
-      "description": "Share of residents below the federal poverty line, cream to dark red.",
-      "file:size": 1593,
-      "file:checksum": "1220638e99adf91d5b93c793f1f8e34c6782b67a9505dc34600ccf61c535fc912365"
-    },
-    "styles/race": {
-      "href": "./styles/race.json",
-      "type": "application/vnd.mapbox.style+json",
-      "roles": [
-        "style"
-      ],
-      "title": "People of color",
-      "description": "Share of residents who are not White-alone non-Hispanic. St. Louis's Delmar Divide appears without drawing a single extra line.",
-      "file:size": 1648,
-      "file:checksum": "1220ea01a4696334f546d907621a5df4af4474df435e9a58153808e7eca19c0d077e"
-    },
-    "styles/rent-burden": {
-      "href": "./styles/rent-burden.json",
-      "type": "application/vnd.mapbox.style+json",
-      "roles": [
-        "style"
-      ],
-      "title": "Rent-burdened households",
-      "description": "Share of renter households paying 30%+ of income on rent, light blue to purple. The city median block group is already above 40%.",
-      "file:size": 1653,
-      "file:checksum": "12200707b5f8421957c9026db366a268f87bd6ef93d5b905f09cb5a852d98429923e"
-    },
-    "styles/transit-commute": {
-      "href": "./styles/transit-commute.json",
-      "type": "application/vnd.mapbox.style+json",
-      "roles": [
-        "style"
-      ],
-      "title": "Commuting by transit",
-      "description": "Share of workers commuting by public transportation, white to dark green. Compare with the no-vehicle style: where car-free households outnumber transit commuters, service is failing its dependents.",
-      "file:size": 1720,
-      "file:checksum": "1220dfb079bc4671eb7575c9f36c56aefb44417a27a1055a71405acaf755087da97f"
-    },
-    "thumbnail": {
-      "href": "./thumbnail.png",
-      "type": "image/png",
-      "roles": [
-        "thumbnail"
-      ],
-      "title": "ACS Demographics \u2014 Block Groups rendered with the default style",
-      "file:size": 341574,
-      "file:checksum": "12205bb63df955ab08f5dc0f7e68eac995159f15831c7ee82b08179d44316412acf0"
-    }
-  },
+  "portolan:total_size_bytes": 1570162,
+  "portolan:asset_count": 11,
   "portolan:styles": [
     "styles/default"
   ],
@@ -623,6 +492,40 @@
       ]
     }
   ],
+  "proj:epsg": 3857,
+  "pmtiles:min_zoom": 0,
+  "pmtiles:max_zoom": 12,
+  "pmtiles:tile_type": "mvt",
+  "pmtiles:center": [
+    -90.2197265,
+    38.6511901,
+    12
+  ],
+  "pmtiles:layers": [
+    "acs-block-groups"
+  ],
+  "title": "ACS Demographics \u2014 Block Groups",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -90.32051589533225,
+          38.532001591520135,
+          -90.16671561256314,
+          38.77428387126793
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2020-01-01T00:00:00Z",
+          "2024-12-31T23:59:59Z"
+        ]
+      ]
+    }
+  },
+  "license": "other",
   "keywords": [
     "census",
     "ACS",
@@ -648,5 +551,115 @@
       ],
       "url": "https://github.com/cholmes/portolan-catalog-stlouis"
     }
-  ]
+  ],
+  "assets": {
+    "acs-block-groups": {
+      "href": "./acs-block-groups.parquet",
+      "type": "application/vnd.apache.parquet",
+      "title": "ACS Demographics \u2014 Block Groups (GeoParquet)",
+      "file:size": 159469,
+      "file:checksum": "1220552647b0a6e8bb8b3ea271255542b0745a1d8b68564203d1f944a92afe5edf71",
+      "roles": [
+        "data"
+      ]
+    },
+    "acs-block-groups-tiles": {
+      "href": "./acs-block-groups.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "acs-block-groups (vector tiles)",
+      "file:size": 1040256,
+      "file:checksum": "1220edc02983ea998f8671376e56415dd73eb441ca0e1a6ca0d3497d5ec8b4075afd",
+      "roles": [
+        "data"
+      ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Median household income",
+      "description": "Median household income per block group, light to dark blue \u2014 the city's north\u2013south income divide in one layer. Block groups whose estimate is too noisy to trust (coefficient of variation over 0.30) render faded; the income is real but the margin of error swamps it.",
+      "file:size": 2176,
+      "file:checksum": "122021da37a15e0dd369a7b3198b005b35f36b15a225f46eab6f4ec44583fde00b71",
+      "roles": [
+        "default",
+        "style"
+      ]
+    },
+    "styles/internet": {
+      "href": "./styles/internet.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Households without internet",
+      "description": "Share of households with no internet access, yellow to dark blue \u2014 the digital divide, block group by block group.",
+      "file:size": 1638,
+      "file:checksum": "12204ee76fc3237c8d97af7ee323ae85638ccf1fd37ee40fda5610fd44e6a69113ee",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/no-vehicle": {
+      "href": "./styles/no-vehicle.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Households without a vehicle",
+      "description": "Share of households with no vehicle available, yellow to dark red. Pair with transit and grocery locations: these are the residents for whom walkable service coverage is not optional.",
+      "file:size": 1709,
+      "file:checksum": "12201d5a989514b081333a57f85b4c34b85b234cfeed197905e59cb905124cf97dd2",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/poverty": {
+      "href": "./styles/poverty.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Population below poverty",
+      "description": "Share of residents below the federal poverty line, cream to dark red.",
+      "file:size": 1593,
+      "file:checksum": "1220638e99adf91d5b93c793f1f8e34c6782b67a9505dc34600ccf61c535fc912365",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/race": {
+      "href": "./styles/race.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "People of color",
+      "description": "Share of residents who are not White-alone non-Hispanic. St. Louis's Delmar Divide appears without drawing a single extra line.",
+      "file:size": 1648,
+      "file:checksum": "1220ea01a4696334f546d907621a5df4af4474df435e9a58153808e7eca19c0d077e",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/rent-burden": {
+      "href": "./styles/rent-burden.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Rent-burdened households",
+      "description": "Share of renter households paying 30%+ of income on rent, light blue to purple. The city median block group is already above 40%.",
+      "file:size": 1653,
+      "file:checksum": "12200707b5f8421957c9026db366a268f87bd6ef93d5b905f09cb5a852d98429923e",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/transit-commute": {
+      "href": "./styles/transit-commute.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Commuting by transit",
+      "description": "Share of workers commuting by public transportation, white to dark green. Compare with the no-vehicle style: where car-free households outnumber transit commuters, service is failing its dependents.",
+      "file:size": 1720,
+      "file:checksum": "1220dfb079bc4671eb7575c9f36c56aefb44417a27a1055a71405acaf755087da97f",
+      "roles": [
+        "style"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "title": "ACS Demographics \u2014 Block Groups rendered with the default style",
+      "file:size": 341574,
+      "file:checksum": "12205bb63df955ab08f5dc0f7e68eac995159f15831c7ee82b08179d44316412acf0",
+      "roles": [
+        "thumbnail"
+      ]
+    }
+  }
 }
