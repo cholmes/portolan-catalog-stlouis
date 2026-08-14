@@ -180,8 +180,8 @@
       ],
       "title": "Postcode mosaic",
       "description": "Repeating colors keyed on ZIP code, so postal boundaries emerge from the address points themselves. Colors are arbitrary.",
-      "file:size": 1442,
-      "file:checksum": "12201438ea7aa1f788439706f0d22bfff6426a7bcc696b9c0074874fc0f605ddcc5f"
+      "file:size": 2235,
+      "file:checksum": "12209f2b8ca8932997b27ae6802933f46dc64293dc15ed654c5b6304410cd983fefc"
     },
     "thumbnail": {
       "href": "./thumbnail.png",

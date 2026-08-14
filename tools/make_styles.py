@@ -1863,7 +1863,8 @@ emit("overture-addresses", "style-postcode", ostyle(
     "the address points themselves. Colors are arbitrary.",
     [ocircle("address", repeat_fill(["to-number", ["get", "postcode"]]),
              ["interpolate", ["linear"], ["zoom"], 13, 1.5, 17, 4])],
-    no_legend=True))
+    legend=repeat_fill(["to-number", ["get", "postcode"]]),
+    legend_layer="address", no_legend=True))
 
 # overture-divisions — 283 features across three types. The country and
 # region areas are bbox clips of the full US/Missouri/Illinois polygons —
