@@ -18,32 +18,32 @@ Unlike everything else in this catalog, this is **not** City of St. Louis data: 
 
 | Column | Type | Description |
 |--------|------|-------------|
-| id | string |  |
-| names | struct<primary: string, common: map<string, string ('common')>, rules: list<element: struct<variant: string, language: string, perspectives: struct<mode: string, countries: list<element: string>>, value: string, between: list<element: double>, side: string>>> |  |
-| sources | list<element: struct<property: string, dataset: string, license: string, record_id: string, update_time: string, confidence: double, between: list<element: double>>> |  |
-| level | int32 |  |
-| height | double |  |
-| min_height | double |  |
-| is_underground | bool |  |
-| num_floors | int32 |  |
-| num_floors_underground | int32 |  |
-| min_floor | int32 |  |
-| subtype | string |  |
-| class | string |  |
-| facade_color | string |  |
-| facade_material | string |  |
-| roof_material | string |  |
-| roof_shape | string |  |
-| roof_direction | double |  |
-| roof_orientation | string |  |
-| roof_color | string |  |
-| roof_height | double |  |
-| has_parts | bool |  |
-| version | int32 |  |
-| overture_type | string |  |
-| geometry | binary |  |
-| building_id | string |  |
-| bbox | struct<xmin: double, ymin: double, xmax: double, ymax: double> |  |
+| id | string | Overture feature ID — per the schema, 'a feature ID. This may be an ID associated with the Global Entity Reference System (GERS) if—and-only-if the feature represents an entity that is part of GERS.' GERS IDs are intended to be stable across Overture's monthly releases, which makes this the key for attaching your own data to an Overture feature and for joining to any other GERS-enabled dataset. See [https://docs.overturemaps.org/gers/](https://docs.overturemaps.org/gers/) |
+| names | struct<primary: string, common: map<string, string ('common')>, rules: list<element: struct<variant: string, language: string, perspectives: struct<mode: string, countries: list<element: string>>, value: string, between: list<element: double>, side: string>>> | Names of the feature. `primary` is the most commonly used name; `common` holds translations keyed by IETF BCP-47 language tag; `rules` carries the variants that cannot be expressed as a simple common name (official, alternate, short), each optionally scoped to a `between` range along the geometry or to one `side` of a road. |
+| sources | list<element: struct<property: string, dataset: string, license: string, record_id: string, update_time: string, confidence: double, between: list<element: double>>> | Per-property provenance. An array of source records, each naming the `property` it covers in JSON Pointer notation plus the source `dataset`, its `license` (an SPDX identifier where one is available; null means contact the data provider for terms), the `record_id` used, an `update_time`, and for ML-derived data a `confidence`. Every feature carries a root-level entry that is the default source for any property without a more specific one. |
+| level | int32 | Z-order of the feature, where 0 is visual level — a stacking hint for rendering overlapping features. Not an above-or-below-ground flag: negative values may still be above ground. |
+| height | double | Height of the building or part in meters — the distance from its lowest point to its highest point. |
+| min_height | double | The height of the bottom of the building or part in meters, used when it starts above ground level. |
+| is_underground | bool | Whether the entire building or part is completely below ground. Useful for rendering, which typically omits these or styles them differently because they are not visible above ground. Distinct from `level`, which is a z-ordering hint whose negative values may still be above ground. |
+| num_floors | int32 | Number of above-ground floors of the building or part. |
+| num_floors_underground | int32 | Number of below-ground floors of the building or part. |
+| min_floor | int32 | The 'start' floor of the building or part, indicating that it floats with its bottom-most floor above ground level — usually because it is part of a larger building where other parts do reach the ground, such as a wing bridging over an entry road into a courtyard. Sometimes populated when `min_height` is missing, in which case it can stand in for it. |
+| subtype | string | A broad category of the building type or purpose; where the current use of the building does not match the built purpose, the subtype represents the current use. One of agricultural, civic, commercial, education, entertainment, industrial, medical, military, outbuilding, religious, residential, service, transportation. |
+| class | string | Further delineation of the building's built purpose — the finer of the two classification levels, a long list of values including house, detached, apartments, terrace, garage, shed, retail, office, warehouse, factory, church, school, university, hospital, hotel, stadium, parking and hangar. |
+| facade_color | string | The color of the facade of the building or part, as a name or a hexadecimal color triplet. |
+| facade_material | string | The outer surface material of the building facade: brick, cement_block, clay, concrete, glass, metal, plaster, plastic, stone, timber_framing or wood. |
+| roof_material | string | The outermost material of the roof: concrete, copper, eternit, glass, grass, gravel, metal, plastic, roof_tiles, slate, solar_panels, thatch, tar_paper or wood. |
+| roof_shape | string | The shape of the roof: dome, flat, gabled, gambrel, half_hipped, hipped, mansard, onion, pyramidal, round, saltbox, sawtooth, skillion or spherical. |
+| roof_direction | double | Bearing of the roof ridge line, in degrees from 0 up to 360. |
+| roof_orientation | string | Orientation of the roof shape relative to the footprint shape — `along` or `across`. |
+| roof_color | string | The color of the roof of the building or part, as a name or a hexadecimal color triplet. |
+| roof_height | double | Height of the roof in meters — the distance from the base of the roof to its highest point. |
+| has_parts | bool | Flag indicating whether the building has parts. Where true, the matching part rows in this collection (`overture_type` = 'building_part') carry this building's id in `building_id`. |
+| version | int32 | Version number of the feature, incremented in each Overture release where the geometry or attributes of this feature changed. |
+| overture_type | string | Which of the buildings theme's two feature types this row is — `building` (a whole structure) or `building_part` (a distinct section of one, carrying its own height, materials or roof shape). Not an Overture schema column: this mirror merges the theme's feature types into one collection and records the type here. |
+| geometry | binary | Building geometry as WKB in EPSG:4326: a building's footprint, or its roofprint where the outline was traced from aerial or satellite imagery. A building part's geometry is the polygon of that part. Polygons crossing the edge of the St. Louis bounding box were clipped to it. |
+| building_id | string | On a building part, the id of the building the part belongs to; null on whole-building rows. Join it back to `id` to assemble a building and its parts. |
+| bbox | struct<xmin: double, ymin: double, xmax: double, ymax: double> | Covering bounding box (xmin, ymin, xmax, ymax) for the row's geometry. Not an Overture schema column: Overture's own bbox was dropped and this one rebuilt by gpio during conversion, with row-group statistics, so a spatial filter can skip most of the file over the network. |
 
 ## Files
 

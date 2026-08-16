@@ -18,18 +18,18 @@ Unlike everything else in this catalog, this is **not** City of St. Louis data: 
 
 | Column | Type | Description |
 |--------|------|-------------|
-| id | string |  |
-| street | string |  |
-| number | string |  |
-| unit | string |  |
-| postcode | string |  |
-| postal_city | string |  |
-| address_levels | list<element: struct<value: string>> |  |
-| country | string |  |
-| sources | list<element: struct<property: string, dataset: string, license: string, record_id: string, update_time: string, confidence: double, between: list<element: double>>> |  |
-| version | int32 |  |
-| geometry | binary |  |
-| bbox | struct<xmin: double, ymin: double, xmax: double, ymax: double> |  |
+| id | string | Overture feature ID — per the schema, 'a feature ID. This may be an ID associated with the Global Entity Reference System (GERS) if—and-only-if the feature represents an entity that is part of GERS.' GERS IDs are intended to be stable across Overture's monthly releases, which makes this the key for attaching your own data to an Overture feature and for joining to any other GERS-enabled dataset. See [https://docs.overturemaps.org/gers/](https://docs.overturemaps.org/gers/) |
+| street | string | The street name for this address, which can include the street type or suffix, as in Main Street. Ideally fully spelled out, though many source datasets abbreviate it. |
+| number | string | The house number for this address. Not strictly a number: values such as 74B, 189 1/2 and 208.5 are common as the number part of an address, and they are not part of the `unit`. |
+| unit | string | The suite, unit, apartment or floor number. |
+| postcode | string | The postcode for the address. |
+| postal_city | string | The alternate city name a mailing address needs when it differs from the city that actually contains the address coordinates — for example 716 East County Road, Winchester, Indiana takes 'Ridgeville' as its postal city in the US National Address Database. |
+| address_levels | list<element: struct<value: string>> | The administrative levels present in the address, ordered highest first, with up to 5 entries. How many there are and what they mean is country-dependent: in the United States two are expected, the state and the municipality. A level the data provider did not supply is present as an entry with no `value`. |
+| country | string | ISO 3166-1 alpha-2 country code for the address. |
+| sources | list<element: struct<property: string, dataset: string, license: string, record_id: string, update_time: string, confidence: double, between: list<element: double>>> | Per-property provenance, and the place to look for this collection's licensing: the addresses theme aggregates over 175 independent open datasets, each keeping its own license, so the applicable terms are the `license` recorded here per feature rather than one license for the collection. Each record also names the `property` it covers in JSON Pointer notation, the source `dataset`, the `record_id` used and an `update_time`. |
+| version | int32 | Version number of the feature, incremented in each Overture release where the geometry or attributes of this feature changed. |
+| geometry | binary | The address's location as a WKB Point in EPSG:4326 — the approximate location most commonly associated with the address. |
+| bbox | struct<xmin: double, ymin: double, xmax: double, ymax: double> | Covering bounding box (xmin, ymin, xmax, ymax) for the row's geometry. Not an Overture schema column: Overture's own bbox was dropped and this one rebuilt by gpio during conversion, with row-group statistics, so a spatial filter can skip most of the file over the network. |
 
 ## Files
 

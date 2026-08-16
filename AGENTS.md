@@ -51,6 +51,15 @@ lives in `catalog/` and is synced 1:1 to
    move in lockstep. Descriptions live in `docs/overture-descriptions.json`
    (wording from Overture's docs — same never-invent rule) and every
    description says plainly that the data is Overture's, not the city's.
+   Column glosses live in `docs/overture-column-notes.json`, worded from the
+   Overture schema's own property descriptions
+   (`github.com/OvertureMaps/schema`, `schema/**/*.yaml`) and the theme
+   guides. The themes share most of their schema, so the file has three
+   scopes merged by `finalize_stac.overture_notes()` — `_shared`,
+   `_base_theme`, then per-collection. Every gloss is one line with no pipe
+   characters: they land in the README's markdown schema table. A release
+   that adds a column prints a `no column note for …` warning at finalize
+   rather than shipping a blank Description cell.
 7. **Census-family collections are not city data either.** The 6
    `demographics/` collections (`CENSUS_SOURCES` in `tools/sources.py`,
    fetched by `tools/fetch_census.py`) are federal/third-party: ACS

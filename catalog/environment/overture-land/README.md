@@ -18,19 +18,19 @@ Unlike everything else in this catalog, this is **not** City of St. Louis data: 
 
 | Column | Type | Description |
 |--------|------|-------------|
-| id | string |  |
-| names | struct<primary: string, common: map<string, string ('common')>, rules: list<element: struct<variant: string, language: string, perspectives: struct<mode: string, countries: list<element: string>>, value: string, between: list<element: double>, side: string>>> |  |
-| subtype | string |  |
-| class | string |  |
-| sources | list<element: struct<property: string, dataset: string, license: string, record_id: string, update_time: string, confidence: double, between: list<element: double>>> |  |
-| source_tags | map<string, string ('source_tags')> |  |
-| level | int32 |  |
-| wikidata | string |  |
-| surface | string |  |
-| elevation | int32 |  |
-| version | int32 |  |
-| geometry | binary |  |
-| bbox | struct<xmin: double, ymin: double, xmax: double, ymax: double> |  |
+| id | string | Overture feature ID — per the schema, 'a feature ID. This may be an ID associated with the Global Entity Reference System (GERS) if—and-only-if the feature represents an entity that is part of GERS.' GERS IDs are intended to be stable across Overture's monthly releases, which makes this the key for attaching your own data to an Overture feature and for joining to any other GERS-enabled dataset. See [https://docs.overturemaps.org/gers/](https://docs.overturemaps.org/gers/) |
+| names | struct<primary: string, common: map<string, string ('common')>, rules: list<element: struct<variant: string, language: string, perspectives: struct<mode: string, countries: list<element: string>>, value: string, between: list<element: double>, side: string>>> | Names of the feature. `primary` is the most commonly used name; `common` holds translations keyed by IETF BCP-47 language tag; `rules` carries the variants that cannot be expressed as a simple common name (official, alternate, short), each optionally scoped to a `between` range along the geometry or to one `side` of a road. |
+| subtype | string | Further description of the type of land cover, such as forest, glacier or grass, or of a physical feature, such as a mountain peak. One of crater, desert, forest, glacier, grass, land, physical, reef, rock, sand, shrub, tree, wetland. |
+| class | string | Further classification of the type of land cover, a long list of values including wood, forest, grassland, meadow, heath, scrub, beach, sand, bare_rock, cliff, dune, island, peak, ridge, valley, tree, tree_row and wetland — a translation of the OpenStreetMap `natural` tag. |
+| sources | list<element: struct<property: string, dataset: string, license: string, record_id: string, update_time: string, confidence: double, between: list<element: double>>> | Per-property provenance. An array of source records, each naming the `property` it covers in JSON Pointer notation plus the source `dataset`, its `license` (an SPDX identifier where one is available; null means contact the data provider for terms), the `record_id` used, an `update_time`, and for ML-derived data a `confidence`. Every feature carries a root-level entry that is the default source for any property without a more specific one. |
+| source_tags | map<string, string ('source_tags')> | Attributes from the original OpenStreetMap feature passed straight through as a string-to-string map. The base theme lifts the tags it models into typed columns (`height`, `surface`, `wikidata` and the rest); whatever is left but still relevant stays here. |
+| level | int32 | Z-order of the feature, where 0 is visual level — a stacking hint for rendering overlapping features. Not an above-or-below-ground flag: negative values may still be above ground. |
+| wikidata | string | Wikidata item ID for the feature if available, as found on [https://www.wikidata.org/](https://www.wikidata.org/) — the OpenStreetMap `wikidata` tag lifted to a top-level Overture property. |
+| surface | string | Surface material of the feature, mostly from the OpenStreetMap `surface` tag with some normalization — asphalt, cobblestone, compacted, concrete, dirt, earth, grass, gravel, ground, paved, paving_stones, sand, sett, unpaved, wood and similar values. |
+| elevation | int32 | Elevation above sea level of the feature, in meters, parsed and normalized from the OpenStreetMap `ele` tag. |
+| version | int32 | Version number of the feature, incremented in each Overture release where the geometry or attributes of this feature changed. |
+| geometry | binary | WKB geometry in EPSG:4326: polygons for surfaces such as woods, scrub and sand, and points for individually mapped features — in this extract the points are overwhelmingly single trees, which outnumber the polygons twenty to one. Geometries crossing the edge of the St. Louis bounding box were clipped to it. |
+| bbox | struct<xmin: double, ymin: double, xmax: double, ymax: double> | Covering bounding box (xmin, ymin, xmax, ymax) for the row's geometry. Not an Overture schema column: Overture's own bbox was dropped and this one rebuilt by gpio during conversion, with row-group statistics, so a spatial filter can skip most of the file over the network. |
 
 ## Files
 

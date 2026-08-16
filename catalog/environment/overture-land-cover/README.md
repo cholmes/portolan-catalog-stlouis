@@ -18,13 +18,13 @@ Unlike everything else in this catalog, this is **not** City of St. Louis data: 
 
 | Column | Type | Description |
 |--------|------|-------------|
-| id | string |  |
-| subtype | string |  |
-| cartography | struct<prominence: int32, min_zoom: int32, max_zoom: int32, sort_key: int32> |  |
-| sources | list<element: struct<property: string, dataset: string, license: string, record_id: string, update_time: string, confidence: double, between: list<element: double>>> |  |
-| version | int32 |  |
-| geometry | binary |  |
-| bbox | struct<xmin: double, ymin: double, xmax: double, ymax: double> |  |
+| id | string | Overture feature ID — per the schema, 'a feature ID. This may be an ID associated with the Global Entity Reference System (GERS) if—and-only-if the feature represents an entity that is part of GERS.' GERS IDs are intended to be stable across Overture's monthly releases, which makes this the key for attaching your own data to an Overture feature and for joining to any other GERS-enabled dataset. See [https://docs.overturemaps.org/gers/](https://docs.overturemaps.org/gers/) |
+| subtype | string | Type of surface represented: barren, crop, forest, grass, mangrove, moss, shrub, snow, urban or wetland. This is the only classification column in the theme — land cover has no `class`. Derived from ESA WorldCover, high-resolution optical Earth observation data, so it records the physical thing covering the land, not the human use it is put to (that is overture-land-use). |
+| cartography | struct<prominence: int32, min_zoom: int32, max_zoom: int32, sort_key: int32> | Cartographic hints for map-making: `prominence` is Overture's view of the feature's significance on a 1–100 scale, derived from factors including population, capital status, place tags and type; `min_zoom` and `max_zoom` are the recommended Slippy Map tile zooms; `sort_key` is the recommended draw order, with lower numbers drawn on top. |
+| sources | list<element: struct<property: string, dataset: string, license: string, record_id: string, update_time: string, confidence: double, between: list<element: double>>> | Per-property provenance. An array of source records, each naming the `property` it covers in JSON Pointer notation plus the source `dataset`, its `license` (an SPDX identifier where one is available; null means contact the data provider for terms), the `record_id` used, an `update_time`, and for ML-derived data a `confidence`. Every feature carries a root-level entry that is the default source for any property without a more specific one. |
+| version | int32 | Version number of the feature, incremented in each Overture release where the geometry or attributes of this feature changed. |
+| geometry | binary | WKB polygon in EPSG:4326 covering the area of a single cover class, derived from ESA WorldCover Earth observation data and clipped to the St. Louis bounding box. |
+| bbox | struct<xmin: double, ymin: double, xmax: double, ymax: double> | Covering bounding box (xmin, ymin, xmax, ymax) for the row's geometry. Not an Overture schema column: Overture's own bbox was dropped and this one rebuilt by gpio during conversion, with row-group statistics, so a spatial filter can skip most of the file over the network. |
 
 ## Files
 

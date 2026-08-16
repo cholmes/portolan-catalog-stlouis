@@ -18,23 +18,23 @@ Unlike everything else in this catalog, this is **not** City of St. Louis data: 
 
 | Column | Type | Description |
 |--------|------|-------------|
-| id | string |  |
-| categories | struct<primary: string, alternate: list<element: string>> |  |
-| confidence | double |  |
-| websites | list<element: string> |  |
-| emails | list<element: string> |  |
-| socials | list<element: string> |  |
-| phones | list<element: string> |  |
-| brand | struct<wikidata: string, names: struct<primary: string, common: map<string, string ('common')>, rules: list<element: struct<variant: string, language: string, perspectives: struct<mode: string, countries: list<element: string>>, value: string, between: list<element: double>, side: string>>>> |  |
-| addresses | list<element: struct<freeform: string, locality: string, postcode: string, region: string, country: string>> |  |
-| names | struct<primary: string, common: map<string, string ('common')>, rules: list<element: struct<variant: string, language: string, perspectives: struct<mode: string, countries: list<element: string>>, value: string, between: list<element: double>, side: string>>> |  |
-| sources | list<element: struct<property: string, dataset: string, license: string, record_id: string, update_time: string, confidence: double, between: list<element: double>>> |  |
-| operating_status | string |  |
-| basic_category | string |  |
-| taxonomy | struct<primary: string, hierarchy: list<element: string>, alternates: list<element: string>> |  |
-| version | int32 |  |
-| geometry | binary |  |
-| bbox | struct<xmin: double, ymin: double, xmax: double, ymax: double> |  |
+| id | string | Overture feature ID — per the schema, 'a feature ID. This may be an ID associated with the Global Entity Reference System (GERS) if—and-only-if the feature represents an entity that is part of GERS.' GERS IDs are intended to be stable across Overture's monthly releases, which makes this the key for attaching your own data to an Overture feature and for joining to any other GERS-enabled dataset. See [https://docs.overturemaps.org/gers/](https://docs.overturemaps.org/gers/) |
+| categories | struct<primary: string, alternate: list<element: string>> | The place's categories in Overture's original category taxonomy: `primary` is the main category (it can be empty) and `alternate` lists further categories that also apply, for a place that is, say, both a book store and a coffee shop. Overture is deprecating this property in favour of `taxonomy`; see [https://docs.overturemaps.org/guides/places/](https://docs.overturemaps.org/guides/places/) |
+| confidence | double | Overture's confidence that the place exists and is current, between 0 and 1: 0 means Overture is sure the place no longer exists, 1 that it is sure it does. Null means no confidence information is available. Places marked closed in `operating_status` score 0. |
+| websites | list<element: string> | The websites of the place. |
+| emails | list<element: string> | The email addresses of the place. |
+| socials | list<element: string> | The social media URLs of the place. |
+| phones | list<element: string> | The phone numbers of the place. |
+| brand | struct<wikidata: string, names: struct<primary: string, common: map<string, string ('common')>, rules: list<element: struct<variant: string, language: string, perspectives: struct<mode: string, countries: list<element: string>>, value: string, between: list<element: double>, side: string>>>> | The brand of the place, with the brand's own names and Wikidata id. A location carrying multiple brands is modeled as multiple separate places, each with its own brand. |
+| addresses | list<element: struct<freeform: string, locality: string, postcode: string, region: string, country: string>> | The addresses of the place: `freeform` street address, `locality` (city or neighborhood), `postcode`, `region` as an ISO 3166-2 subdivision code and `country` as an ISO 3166-1 alpha-2 code. |
+| names | struct<primary: string, common: map<string, string ('common')>, rules: list<element: struct<variant: string, language: string, perspectives: struct<mode: string, countries: list<element: string>>, value: string, between: list<element: double>, side: string>>> | Names of the feature. `primary` is the most commonly used name; `common` holds translations keyed by IETF BCP-47 language tag; `rules` carries the variants that cannot be expressed as a simple common name (official, alternate, short), each optionally scoped to a `between` range along the geometry or to one `side` of a road. |
+| sources | list<element: struct<property: string, dataset: string, license: string, record_id: string, update_time: string, confidence: double, between: list<element: double>>> | Per-property provenance. An array of source records, each naming the `property` it covers in JSON Pointer notation plus the source `dataset`, its `license` (an SPDX identifier where one is available; null means contact the data provider for terms), the `record_id` used, an `update_time`, and for ML-derived data a `confidence`. Every feature carries a root-level entry that is the default source for any property without a more specific one. |
+| operating_status | string | Whether the place is open, permanently_closed or temporarily_closed. This is not an indication of opening hours, nor of whether the place happens to be open at the current time of day or day of week. |
+| basic_category | string | The basic level category of the place — a simplified name mapped from `categories.primary`, either one-to-one or many-to-one, and empty when that is empty. Basic level categories come from a cognitive science model used in taxonomy and ontology work: the broadest, most general category name, the one most often found in the middle of a general-to-specific hierarchy. Full list at [https://docs.overturemaps.org/guides/places/](https://docs.overturemaps.org/guides/places/) |
+| taxonomy | struct<primary: string, hierarchy: list<element: string>, alternates: list<element: string>> | The place's category in Overture's current taxonomy: `primary` is the most specific category, `hierarchy` is the full ordered path from most general to most specific, and `alternates` holds additional categories that apply but are not the primary classification. |
+| version | int32 | Version number of the feature, incremented in each Overture release where the geometry or attributes of this feature changed. |
+| geometry | binary | The place's location as a WKB Point in EPSG:4326 — a point representation of a real-world facility, service or amenity, not its footprint. To get the structure a place sits in, join it to overture-buildings spatially — a place and a building are separate entities with separate GERS ids. |
+| bbox | struct<xmin: double, ymin: double, xmax: double, ymax: double> | Covering bounding box (xmin, ymin, xmax, ymax) for the row's geometry. Not an Overture schema column: Overture's own bbox was dropped and this one rebuilt by gpio during conversion, with row-group statistics, so a spatial filter can skip most of the file over the network. |
 
 ## Files
 

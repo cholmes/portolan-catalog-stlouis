@@ -60,6 +60,21 @@ DESCRIPTIONS.update(json.loads(
 _cn = ROOT / "docs" / "column-notes.json"
 COLUMN_NOTES = json.loads(_cn.read_text()) if _cn.exists() else {}
 
+# The Overture themes share most of their schema, so their glosses live in
+# their own file with three scopes — _shared, _base_theme, per-collection —
+# merged by overture_notes() below rather than repeated ten times.
+_ocn = ROOT / "docs" / "overture-column-notes.json"
+OVERTURE_COLUMN_NOTES = json.loads(_ocn.read_text()) if _ocn.exists() else {}
+
+
+def overture_notes(coll_id: str, theme: str) -> dict:
+    """Column glosses for one Overture collection, most specific winning."""
+    notes = dict(OVERTURE_COLUMN_NOTES.get("_shared", {}))
+    if theme == "base":
+        notes.update(OVERTURE_COLUMN_NOTES.get("_base_theme", {}))
+    notes.update(OVERTURE_COLUMN_NOTES.get(coll_id, {}))
+    return notes
+
 # The city's own files, with the size and checksum of the bytes it served at
 # sync time (tools/fetch_source_meta.py). Absent on a fresh clone that has not
 # run that script yet, in which case collections simply get no source assets.
@@ -469,6 +484,20 @@ def finalize_overture(coll_id: str, coll_dir, f, coll: dict, src: dict) -> None:
     ]
     coll["keywords"] = ["overture", "Overture Maps Foundation", src["theme"]] + [
         t.replace("_", " ") for t in src["types"]]
+
+    # Researched column meanings (docs/overture-column-notes.json), wording
+    # from Overture's own schema and theme guides.
+    notes = overture_notes(coll_id, src["theme"])
+    missing = []
+    for col in coll.get("table:columns", []):
+        if col["name"] in notes:
+            col["description"] = linkify(notes[col["name"]])
+        else:
+            missing.append(col["name"])
+    if missing:
+        # A vintage bump that adds a column should say so rather than ship a
+        # blank Description cell in the README.
+        print(f"  ! {coll_id}: no column note for {', '.join(missing)}")
 
     pq = coll_dir / f"{coll_id}.parquet"
     if pq.exists():

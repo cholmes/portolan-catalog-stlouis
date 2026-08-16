@@ -68,51 +68,63 @@
   "table:columns": [
     {
       "name": "id",
-      "type": "string"
+      "type": "string",
+      "description": "Overture feature ID \u2014 per the schema, 'a feature ID. This may be an ID associated with the Global Entity Reference System (GERS) if\u2014and-only-if the feature represents an entity that is part of GERS.' GERS IDs are intended to be stable across Overture's monthly releases, which makes this the key for attaching your own data to an Overture feature and for joining to any other GERS-enabled dataset. See [https://docs.overturemaps.org/gers/](https://docs.overturemaps.org/gers/)"
     },
     {
       "name": "street",
-      "type": "string"
+      "type": "string",
+      "description": "The street name for this address, which can include the street type or suffix, as in Main Street. Ideally fully spelled out, though many source datasets abbreviate it."
     },
     {
       "name": "number",
-      "type": "string"
+      "type": "string",
+      "description": "The house number for this address. Not strictly a number: values such as 74B, 189 1/2 and 208.5 are common as the number part of an address, and they are not part of the `unit`."
     },
     {
       "name": "unit",
-      "type": "string"
+      "type": "string",
+      "description": "The suite, unit, apartment or floor number."
     },
     {
       "name": "postcode",
-      "type": "string"
+      "type": "string",
+      "description": "The postcode for the address."
     },
     {
       "name": "postal_city",
-      "type": "string"
+      "type": "string",
+      "description": "The alternate city name a mailing address needs when it differs from the city that actually contains the address coordinates \u2014 for example 716 East County Road, Winchester, Indiana takes 'Ridgeville' as its postal city in the US National Address Database."
     },
     {
       "name": "address_levels",
-      "type": "list<element: struct<value: string>>"
+      "type": "list<element: struct<value: string>>",
+      "description": "The administrative levels present in the address, ordered highest first, with up to 5 entries. How many there are and what they mean is country-dependent: in the United States two are expected, the state and the municipality. A level the data provider did not supply is present as an entry with no `value`."
     },
     {
       "name": "country",
-      "type": "string"
+      "type": "string",
+      "description": "ISO 3166-1 alpha-2 country code for the address."
     },
     {
       "name": "sources",
-      "type": "list<element: struct<property: string, dataset: string, license: string, record_id: string, update_time: string, confidence: double, between: list<element: double>>>"
+      "type": "list<element: struct<property: string, dataset: string, license: string, record_id: string, update_time: string, confidence: double, between: list<element: double>>>",
+      "description": "Per-property provenance, and the place to look for this collection's licensing: the addresses theme aggregates over 175 independent open datasets, each keeping its own license, so the applicable terms are the `license` recorded here per feature rather than one license for the collection. Each record also names the `property` it covers in JSON Pointer notation, the source `dataset`, the `record_id` used and an `update_time`."
     },
     {
       "name": "version",
-      "type": "int32"
+      "type": "int32",
+      "description": "Version number of the feature, incremented in each Overture release where the geometry or attributes of this feature changed."
     },
     {
       "name": "geometry",
-      "type": "binary"
+      "type": "binary",
+      "description": "The address's location as a WKB Point in EPSG:4326 \u2014 the approximate location most commonly associated with the address."
     },
     {
       "name": "bbox",
-      "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>"
+      "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>",
+      "description": "Covering bounding box (xmin, ymin, xmax, ymax) for the row's geometry. Not an Overture schema column: Overture's own bbox was dropped and this one rebuilt by gpio during conversion, with row-group statistics, so a spatial filter can skip most of the file over the network."
     }
   ],
   "portolan:total_size_bytes": 7293315,

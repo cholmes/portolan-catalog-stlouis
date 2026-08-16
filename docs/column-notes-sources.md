@@ -159,6 +159,37 @@ records: RECORD_NO definition) plus the LRA program context from the city's
 Land Reutilization Authority pages; Proposition NS program context from the
 city's Prop NS pages. Most fields name-based — flagged.
 
+## Overture collections (`overture-column-notes.json`)
+
+The 10 `overture-*` collections are not city data, so their glosses come from
+Overture's own documentation rather than the portal:
+
+- **The Overture schema itself** — the authoritative per-property text, read
+  from <https://github.com/OvertureMaps/schema> (`schema/defs.yaml` for the
+  properties shared by every theme: `id`/GERS, `sources`, `names`, `level`,
+  `version`, `wikidata`, `cartography`; `schema/base/defs.yaml` for
+  `source_tags`, `surface`, `elevation`; then `schema/<theme>/*.yaml` per
+  feature type). Enum members quoted in the glosses are that file's `enum`
+  lists. Read from the repository's `main` branch, which can run ahead of the
+  pinned `OVERTURE_RELEASE` — which is why no gloss states an exact count of
+  enum members, only the shape of the list and representative values.
+- **The theme guides** at <https://docs.overturemaps.org/guides/> (base,
+  places, addresses) and <https://docs.overturemaps.org/gers/> for the
+  framing sentences: land cover derived from ESA WorldCover, land cover
+  versus land use, the places definition and its licensing, the addresses
+  theme aggregating 175-plus independently licensed sources, GERS IDs being
+  stable across releases.
+- **Not in either**: `overture_type`, `building_id` on merged rows, `bbox`,
+  and the clipping note on every `geometry` describe what *this mirror* did
+  during extraction (`tools/fetch_overture.py`, gpio conversion), not
+  Overture's schema, and each gloss says so.
+- Column names were verified against the catalog parquet files, and the
+  claims that are about this extract rather than the schema were checked with
+  DuckDB against the published files: subtype null on every connector row,
+  `region` being US-MO/US-IL, every `building_part` row joining to a building
+  on `building_id`, and the land theme's points being overwhelmingly single
+  trees.
+
 ## What could not be found (summary)
 
 - Official decode tables for: CDALandUse1/2, RedevPhase, CANCELTYPE,

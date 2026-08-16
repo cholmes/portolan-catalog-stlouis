@@ -18,33 +18,33 @@ Unlike everything else in this catalog, this is **not** City of St. Louis data: 
 
 | Column | Type | Description |
 |--------|------|-------------|
-| id | string |  |
-| country | string |  |
-| sources | list<element: struct<property: string, dataset: string, license: string, record_id: string, update_time: string, confidence: double, between: list<element: double>>> |  |
-| subtype | string |  |
-| admin_level | int32 |  |
-| class | string |  |
-| names | struct<primary: string, common: map<string, string ('common')>, rules: list<element: struct<variant: string, language: string, perspectives: struct<mode: string, countries: list<element: string>>, value: string, between: list<element: double>, side: string>>> |  |
-| wikidata | string |  |
-| perspectives | struct<mode: string, countries: list<element: string>> |  |
-| local_type | map<string, string ('local_type')> |  |
-| region | string |  |
-| hierarchies | list<element: list<element: struct<division_id: string, subtype: string, name: string>>> |  |
-| parent_division_id | string |  |
-| norms | struct<driving_side: string> |  |
-| population | int32 |  |
-| capital_division_ids | list<element: string> |  |
-| capital_of_divisions | list<element: struct<division_id: string, subtype: string>> |  |
-| cartography | struct<prominence: int32, min_zoom: int32, max_zoom: int32, sort_key: int32> |  |
-| version | int32 |  |
-| overture_type | string |  |
-| geometry | binary |  |
-| is_land | bool |  |
-| is_territorial | bool |  |
-| division_id | string |  |
-| division_ids | list<element: string> |  |
-| is_disputed | bool |  |
-| bbox | struct<xmin: double, ymin: double, xmax: double, ymax: double> |  |
+| id | string | Overture feature ID — per the schema, 'a feature ID. This may be an ID associated with the Global Entity Reference System (GERS) if—and-only-if the feature represents an entity that is part of GERS.' GERS IDs are intended to be stable across Overture's monthly releases, which makes this the key for attaching your own data to an Overture feature and for joining to any other GERS-enabled dataset. See [https://docs.overturemaps.org/gers/](https://docs.overturemaps.org/gers/) |
+| country | string | ISO 3166-1 alpha-2 country code of the country or country-like entity this division represents or belongs to. Where the entity has no code of its own, it carries the code of the first division found by walking the `parent_division_id` chain toward the root — so New York City is 'US'. |
+| sources | list<element: struct<property: string, dataset: string, license: string, record_id: string, update_time: string, confidence: double, between: list<element: double>>> | Per-property provenance. An array of source records, each naming the `property` it covers in JSON Pointer notation plus the source `dataset`, its `license` (an SPDX identifier where one is available; null means contact the data provider for terms), the `record_id` used, an `update_time`, and for ML-derived data a `confidence`. Every feature carries a root-level entry that is the default source for any property without a more specific one. |
+| subtype | string | Category of the division, from a finite, hierarchical, ordered list similar to a Who's on First placetype: country, dependency, macroregion, region (a state or province — the largest sub-country unit in most countries), macrocounty, county, localadmin, locality (a populated place, which may or may not have its own administrative authority), borough, macrohood, neighborhood, microhood. |
+| admin_level | int32 | This division's position in its country's administrative hierarchy, lower numbers being higher-level units. Typically the number of ancestors in the division's primary hierarchy, so a country is 0 and a region is 1. |
+| class | string | For a division, the settlement size: megacity, city, town, village or hamlet. For a division_area or division_boundary, whether the geometry is `land` (it does not extend beyond the coastline) or `maritime` (it does, in most cases out to the territorial sea). |
+| names | struct<primary: string, common: map<string, string ('common')>, rules: list<element: struct<variant: string, language: string, perspectives: struct<mode: string, countries: list<element: string>>, value: string, between: list<element: double>, side: string>>> | Names of the feature. `primary` is the most commonly used name; `common` holds translations keyed by IETF BCP-47 language tag; `rules` carries the variants that cannot be expressed as a simple common name (official, alternate, short), each optionally scoped to a `between` range along the geometry or to one `side` of a road. |
+| wikidata | string | Wikidata item ID for the feature if available, as found on [https://www.wikidata.org/](https://www.wikidata.org/). |
+| perspectives | struct<mode: string, countries: list<element: string>> | Political perspectives from which this division is considered an accurate representation. Absent means the division is not known to be disputed by anyone. When present, `mode` is accepted_by or disputed_by and `countries` lists the holders — a map drawn for a given country takes the undisputed divisions, adds those it explicitly accepts, then those it does not explicitly dispute. |
+| local_type | map<string, string ('local_type')> | The local name for the `subtype`, optionally localized — Quebec has subtype 'region' but is locally a province; the Swiss top-level subdivision is subtype 'region' but is a canton, kanton, cantone or chantun depending on the language. |
+| region | string | ISO 3166-2 principal subdivision code of the subdivision-like entity this division represents or belongs to, inherited up the parent chain the same way `country` is — 'US-MO' for everything on the Missouri side here, 'US-IL' across the river. |
+| hierarchies | list<element: list<element: struct<division_id: string, subtype: string, name: string>>> | The hierarchies this division participates in, each an ordered array running from a country down to this division, with a division_id, name and subtype at every step. Most divisions participate in exactly one; more than one means the division or an ancestor is claimed by different parents from different political perspectives. The first hierarchy is the default one. |
+| parent_division_id | string | Division id of this division's parent — absent on countries and required on everything else. It is the parent as seen from the default political perspective; `hierarchies` holds the exhaustive list. |
+| norms | struct<driving_side: string> | Local norms and rules within the division that are useful for mapping — currently `driving_side`, the side of the road vehicles drive on. A division without this may inherit it from its nearest ancestor that has it. |
+| population | int32 | Population of the division. |
+| capital_division_ids | list<element: string> | Division ids of this division's capitals — the capital cities, county seats and the like of the division. |
+| capital_of_divisions | list<element: struct<division_id: string, subtype: string>> | The divisions this division is the capital of, each as a division_id with its subtype. |
+| cartography | struct<prominence: int32, min_zoom: int32, max_zoom: int32, sort_key: int32> | Cartographic hints for map-making: `prominence` is Overture's view of the feature's significance on a 1–100 scale, derived from factors including population, capital status, place tags and type; `min_zoom` and `max_zoom` are the recommended Slippy Map tile zooms; `sort_key` is the recommended draw order, with lower numbers drawn on top. |
+| version | int32 | Version number of the feature, incremented in each Overture release where the geometry or attributes of this feature changed. |
+| overture_type | string | Which of the divisions theme's three feature types this row is — `division` (the entity itself, as a label point with population and hierarchy), `division_area` (the land or maritime polygon belonging to a division) or `division_boundary` (a border line shared by two divisions of the same subtype). Not an Overture schema column: this mirror merges the theme's feature types into one collection and records the type here. |
+| geometry | binary | WKB geometry in EPSG:4326, and its type follows `overture_type`: a Point for a division (the approximate location commonly associated with the entity), a Polygon or MultiPolygon for a division_area, a LineString or MultiLineString for a division_boundary. Geometries crossing the edge of the St. Louis bounding box were clipped to it, so the county and state areas here are fragments. |
+| is_land | bool | Whether this geometry is the land-clipped, non-maritime version, meant for map rendering and cartographic display. |
+| is_territorial | bool | Whether this geometry is Overture's best approximation of the entity's maritime boundary, which for a coastal place includes the water area. Meant for data processing and reverse-geocoding rather than display. |
+| division_id | string | On a division_area, the id of the division whose area this polygon is. Join it to the `id` of the matching division row. |
+| division_ids | list<element: string> | On a division_boundary, the ids of the two divisions on either side of the line: the first is the division to the left and the second to the right, as seen by someone standing on the line facing the direction the geometry runs. |
+| is_disputed | bool | On a division_boundary, whether any entity disputes this border; the disputing entities should appear in `perspectives`. Also true where the border between two entities is unclear and the line is a best guess — true with no perspectives is a signal to distrust the line but use it in the absence of anything better. |
+| bbox | struct<xmin: double, ymin: double, xmax: double, ymax: double> | Covering bounding box (xmin, ymin, xmax, ymax) for the row's geometry. Not an Overture schema column: Overture's own bbox was dropped and this one rebuilt by gpio during conversion, with row-group statistics, so a spatial filter can skip most of the file over the network. |
 
 ## Files
 

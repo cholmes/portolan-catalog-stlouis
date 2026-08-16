@@ -69,91 +69,113 @@
   "table:columns": [
     {
       "name": "id",
-      "type": "string"
+      "type": "string",
+      "description": "Overture feature ID \u2014 per the schema, 'a feature ID. This may be an ID associated with the Global Entity Reference System (GERS) if\u2014and-only-if the feature represents an entity that is part of GERS.' GERS IDs are intended to be stable across Overture's monthly releases, which makes this the key for attaching your own data to an Overture feature and for joining to any other GERS-enabled dataset. See [https://docs.overturemaps.org/gers/](https://docs.overturemaps.org/gers/)"
     },
     {
       "name": "names",
-      "type": "struct<primary: string, common: map<string, string ('common')>, rules: list<element: struct<variant: string, language: string, perspectives: struct<mode: string, countries: list<element: string>>, value: string, between: list<element: double>, side: string>>>"
+      "type": "struct<primary: string, common: map<string, string ('common')>, rules: list<element: struct<variant: string, language: string, perspectives: struct<mode: string, countries: list<element: string>>, value: string, between: list<element: double>, side: string>>>",
+      "description": "Names of the feature. `primary` is the most commonly used name; `common` holds translations keyed by IETF BCP-47 language tag; `rules` carries the variants that cannot be expressed as a simple common name (official, alternate, short), each optionally scoped to a `between` range along the geometry or to one `side` of a road."
     },
     {
       "name": "subtype",
-      "type": "string"
+      "type": "string",
+      "description": "Broad category of the transportation segment: road, rail or water. Null on connector rows."
     },
     {
       "name": "class",
-      "type": "string"
+      "type": "string",
+      "description": "For a road segment, the kind of road and its position in the road network hierarchy: motorway, trunk, primary, secondary, tertiary, residential, living_street, unclassified, service, pedestrian, footway, steps, path, track, cycleway, bridleway or unknown. For a rail segment: funicular, light_rail, monorail, narrow_gauge, standard_gauge, subway, tram or unknown."
     },
     {
       "name": "subclass",
-      "type": "string"
+      "type": "string",
+      "description": "Refines the expected usage of the segment; the values must not overlap: link, sidewalk, crosswalk, parking_aisle, driveway, alley or cycle_crossing."
     },
     {
       "name": "subclass_rules",
-      "type": "list<element: struct<value: string, between: list<element: double>>>"
+      "type": "list<element: struct<value: string, between: list<element: double>>>",
+      "description": "Subclass values scoped to part of the segment, for a segment whose usage changes partway along. Each rule pairs a `value` with a `between` pair of linearly-referenced positions \u2014 fractions of the distance from the start of the geometry, so [0.25, 0.5] is the stretch from a quarter to half way along."
     },
     {
       "name": "connectors",
-      "type": "list<element: struct<connector_id: string, at: double>>"
+      "type": "list<element: struct<connector_id: string, at: double>>",
+      "description": "The connectors this segment is physically connected to and their relative location along it. Each connector is a possible routing decision point: a place along the segment where a traveller can transition to other segments sharing the same connector. `connector_id` joins to the connector rows in this collection; `at` is the linearly-referenced position, 0 at the start of the geometry and 1 at the end."
     },
     {
       "name": "road_surface",
-      "type": "list<element: struct<value: string, between: list<element: double>>>"
+      "type": "list<element: struct<value: string, between: list<element: double>>>",
+      "description": "Physical surface of the road \u2014 unknown, paved, unpaved, gravel, dirt, paving_stones or metal \u2014 as an array of rules, each optionally scoped to a `between` range along the segment."
     },
     {
       "name": "road_flags",
-      "type": "list<element: struct<values: list<element: string>, between: list<element: double>>>"
+      "type": "list<element: struct<values: list<element: string>, between: list<element: double>>>",
+      "description": "Boolean attributes of a road segment, which may overlap and describe physical characteristics: is_bridge, is_link, is_tunnel, is_under_construction, is_abandoned, is_covered, is_indoor. Each entry is a set of `values` optionally scoped to a `between` range along the segment."
     },
     {
       "name": "rail_flags",
-      "type": "list<element: struct<values: list<element: string>, between: list<element: double>>>"
+      "type": "list<element: struct<values: list<element: string>, between: list<element: double>>>",
+      "description": "Boolean attributes of a railway segment, which may overlap and describe physical characteristics: is_bridge, is_tunnel, is_under_construction, is_abandoned, is_covered, is_passenger, is_freight, is_disused. Each entry is a set of `values` optionally scoped to a `between` range along the segment."
     },
     {
       "name": "width_rules",
-      "type": "list<element: struct<value: double, between: list<element: double>>>"
+      "type": "list<element: struct<value: double, between: list<element: double>>>",
+      "description": "Edge-to-edge width of the road modeled by this segment, in meters, scoped along the segment. A carriageway segment's width includes any shoulder; a sidewalk segment's is the width of the sidewalk; a segment modelling a combined sidewalk and carriageway measures across both."
     },
     {
       "name": "level_rules",
-      "type": "list<element: struct<value: int32, between: list<element: double>>>"
+      "type": "list<element: struct<value: int32, between: list<element: double>>>",
+      "description": "Z-order (stacking order) of the road segment, as rules rather than a single value so the level can change partway along \u2014 how a road that dips under a bridge midway is modeled. Each rule is a `value` with an optional `between` range."
     },
     {
       "name": "access_restrictions",
-      "type": "list<element: struct<access_type: string, when: struct<during: string, heading: string, using: list<element: string>, recognized: list<element: string>, mode: list<element: string>, vehicle: list<element: struct<dimension: string, comparison: string, value: double, unit: string>>>, between: list<element: double>>>"
+      "type": "list<element: struct<access_type: string, when: struct<during: string, heading: string, using: list<element: string>, recognized: list<element: string>, mode: list<element: string>, vehicle: list<element: struct<dimension: string, comparison: string, value: double, unit: string>>>, between: list<element: double>>>",
+      "description": "Rules governing access to this road segment. Each rule gives an `access_type` (allowed, denied or designated) and, in `when`, the scopes it applies under: travel `mode` (vehicle, motor_vehicle, car, truck, motorcycle, foot, bicycle, bus, hgv, hov, emergency), `heading` along the geometry, purpose of use, the traveller's `recognized` status, `vehicle` dimension tests such as height or weight, and `during`, a time span in the OpenStreetMap opening-hours syntax. This is where 'no trucks over 2 tonnes' and 'buses may travel the wrong way' live."
     },
     {
       "name": "speed_limits",
-      "type": "list<element: struct<min_speed: struct<value: int32, unit: string>, max_speed: struct<value: int32, unit: string>, is_max_speed_variable: bool, when: struct<during: string, heading: string, using: list<element: string>, recognized: list<element: string>, mode: list<element: string>, vehicle: list<element: struct<dimension: string, comparison: string, value: double, unit: string>>>, between: list<element: double>>>"
+      "type": "list<element: struct<min_speed: struct<value: int32, unit: string>, max_speed: struct<value: int32, unit: string>, is_max_speed_variable: bool, when: struct<during: string, heading: string, using: list<element: string>, recognized: list<element: string>, mode: list<element: string>, vehicle: list<element: struct<dimension: string, comparison: string, value: double, unit: string>>>, between: list<element: double>>>",
+      "description": "Rules governing speed on this road segment: `min_speed` and `max_speed`, each a value with a unit, plus `is_max_speed_variable` for a variable speed corridor. The same `when` scoping as access_restrictions lets a limit apply only to certain modes, headings, vehicles or times of day, and `between` scopes it to part of the segment."
     },
     {
       "name": "prohibited_transitions",
-      "type": "list<element: struct<sequence: list<element: struct<connector_id: string, segment_id: string>>, final_heading: string, when: struct<heading: string, during: string, using: list<element: string>, recognized: list<element: string>, mode: list<element: string>, vehicle: list<element: struct<dimension: string, comparison: string, value: double, unit: string>>>, between: list<element: double>>>"
+      "type": "list<element: struct<sequence: list<element: struct<connector_id: string, segment_id: string>>, final_heading: string, when: struct<heading: string, during: string, using: list<element: string>, recognized: list<element: string>, mode: list<element: string>, vehicle: list<element: struct<dimension: string, comparison: string, value: double, unit: string>>>, between: list<element: double>>>",
+      "description": "Turn restrictions: rules preventing a transition from this segment to another. Each rule gives the ordered `sequence` of connector and segment ids that may not be followed, the `final_heading` prohibited on the destination segment, and the `when` scopes (mode, time, heading, vehicle) under which the prohibition applies."
     },
     {
       "name": "routes",
-      "type": "list<element: struct<name: string, network: string, ref: string, symbol: string, wikidata: string, between: list<element: double>>>"
+      "type": "list<element: struct<name: string, network: string, ref: string, symbol: string, wikidata: string, between: list<element: double>>>",
+      "description": "The named or numbered routes this segment belongs to \u2014 for each, the route's full `name`, the `network` (highway system) it belongs to, the `ref` code or number used to reference it, a `symbol` describing its signage, and a `wikidata` id."
     },
     {
       "name": "destinations",
-      "type": "list<element: struct<labels: list<element: struct<value: string, type: string>>, symbols: list<element: string>, from_connector_id: string, to_segment_id: string, to_connector_id: string, when: struct<heading: string>, final_heading: string>>"
+      "type": "list<element: struct<labels: list<element: struct<value: string, type: string>>, symbols: list<element: string>, from_connector_id: string, to_segment_id: string, to_connector_id: string, when: struct<heading: string>, final_heading: string>>",
+      "description": "Where following this segment gets you, described the way the objects are described on signposts or ground writing that a traveller on the segment would actually observe \u2014 so a navigation system can name the signs the driver sees. Each entry has `labels` (a value plus its type: street, country, route_ref or toward_route_ref), sign `symbols`, the connector it applies from, the segment and connector it leads to, and the heading it applies in."
     },
     {
       "name": "sources",
-      "type": "list<element: struct<property: string, dataset: string, license: string, record_id: string, update_time: string, confidence: double, between: list<element: double>>>"
+      "type": "list<element: struct<property: string, dataset: string, license: string, record_id: string, update_time: string, confidence: double, between: list<element: double>>>",
+      "description": "Per-property provenance. An array of source records, each naming the `property` it covers in JSON Pointer notation plus the source `dataset`, its `license` (an SPDX identifier where one is available; null means contact the data provider for terms), the `record_id` used, an `update_time`, and for ML-derived data a `confidence`. Every feature carries a root-level entry that is the default source for any property without a more specific one."
     },
     {
       "name": "version",
-      "type": "int32"
+      "type": "int32",
+      "description": "Version number of the feature, incremented in each Overture release where the geometry or attributes of this feature changed."
     },
     {
       "name": "overture_type",
-      "type": "string"
+      "type": "string",
+      "description": "Which of the transportation theme's two feature types this row is \u2014 `segment` (a path that can be travelled) or `connector` (a point where segments physically connect, i.e. a routing decision point). Connector rows carry only id, geometry, version and sources; every segment attribute is null on them. Not an Overture schema column: this mirror merges the theme's feature types into one collection and records the type here."
     },
     {
       "name": "geometry",
-      "type": "binary"
+      "type": "binary",
+      "description": "Segment geometry is a LineString and connector geometry is a Point, both as WKB in EPSG:4326. Lines crossing the edge of the St. Louis bounding box were clipped to it, which can shorten a segment relative to Overture's."
     },
     {
       "name": "bbox",
-      "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>"
+      "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>",
+      "description": "Covering bounding box (xmin, ymin, xmax, ymax) for the row's geometry. Not an Overture schema column: Overture's own bbox was dropped and this one rebuilt by gpio during conversion, with row-group statistics, so a spatial filter can skip most of the file over the network."
     }
   ],
   "portolan:total_size_bytes": 21813999,
