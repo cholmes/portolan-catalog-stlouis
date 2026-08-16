@@ -1,6 +1,6 @@
-# demographics
+# Demographics
 
-Catalog: demographics
+Census, Income, Age, Equity, Jobs, Health — federal and third-party data, not the city's
 
 ## Collections
 
