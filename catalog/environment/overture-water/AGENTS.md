@@ -1,6 +1,6 @@
 # AGENTS.md — Overture Water
 
-Water features from the Overture base theme: ocean and inland water bodies, sourced from OpenStreetMap by translating its `natural` and `waterway` tags. For St. Louis that is above all the Mississippi River, plus the River des Peres, park lakes, and ponds, classified by `subtype` and `class`.
+Water features from the Overture base theme: ocean and inland water bodies, sourced from OpenStreetMap by translating its `natural` and `waterway` tags. For St. Louis that is above all the Mississippi River, plus the River des Peres, park lakes, and ponds, classified by `subtype` and `class`. Overture documents this data well: the [base theme guide](https://docs.overturemaps.org/guides/base/) covers what the theme models, how Overture builds it, and how to query it, and the schema reference gives every field of its feature type — [`water`](https://docs.overturemaps.org/schema/reference/base/water/).
 
 Unlike everything else in this catalog, this is **not** City of St. Louis data: it comes from the [Overture Maps Foundation](https://overturemaps.org/), a collaborative project building open, interoperable map data for the world. This collection is a St. Louis extract of that global dataset — everything inside the city's bounding box, which also takes in the Illinois shore of the Mississippi (East St. Louis, Cahokia Heights) — included here to demonstrate how a city's open-data catalog can blend in other St. Louis-relevant open data alongside the city's own. The GeoParquet was extracted from Overture release 2026-07-22.0; the map tiles reference Overture's own global PMTiles for the same release, the tiles behind [explore.overturemaps.org](https://explore.overturemaps.org/).
 
@@ -31,7 +31,8 @@ Overture Maps Foundation data, not the city's — see the description. `id` is a
 
 - [View on the data browser](https://cholmes.github.io/stlouis-data-browser/#/environment/overture-water/collection.json) — map, styles, legends, downloads
 - [Browse on Source Cooperative](https://source.coop/tge-labs/st-louis-open-data-mirror/environment/overture-water/) — rendered README and file listing
-- [Overture base theme guide](https://docs.overturemaps.org/guides/base/)
+- [Overture base theme guide](https://docs.overturemaps.org/guides/base/) — what the theme models, how Overture builds it, how to query it
+- [Overture schema reference: water](https://docs.overturemaps.org/schema/reference/base/water/) — every field of the `water` feature type
 
 ## Provenance
 

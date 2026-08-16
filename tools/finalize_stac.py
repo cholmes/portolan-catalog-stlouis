@@ -234,6 +234,17 @@ def build_tabular(cid: str) -> None:
 
 
 OVERTURE_ATTRIBUTION = "https://docs.overturemaps.org/attribution/"
+OVERTURE_SCHEMA_REF = "https://docs.overturemaps.org/schema/reference"
+
+
+def schema_ref(theme: str, feature_type: str) -> str:
+    """Overture's per-feature-type schema reference page.
+
+    Every (theme, type) pair in OVERTURE_SOURCES resolves under this pattern —
+    checked against the docs sitemap, including the base theme, whose types
+    live at base/<type>/ rather than under a theme of their own.
+    """
+    return f"{OVERTURE_SCHEMA_REF}/{theme}/{feature_type}/"
 _ov_tile_sizes: dict = {}
 
 
@@ -539,8 +550,18 @@ def finalize_overture(coll_id: str, coll_dir, f, coll: dict, src: dict) -> None:
     ensure_link(links, "agents", "./AGENTS.md", "text/markdown")
     ensure_link(links, "license", OVERTURE_ATTRIBUTION, "text/html",
                 "Overture attribution and licensing")
-    ensure_link(links, "via", src["docs"], "text/html",
+    # Overture's own docs describe this data, so they are `describedby`, not
+    # `via`. `via` is provenance — where the bytes came from (the S3 release
+    # below) — and typing Overture's excellent theme guide as provenance both
+    # misreads it and buries it. A second describedby beside ./README.md is
+    # legal (rashid's PTL-FIL-003 needs one that resolves to the sibling
+    # README, not the only one).
+    ensure_link(links, "describedby", src["docs"], "text/html",
                 f"Overture {src['theme']} theme guide")
+    for t in src["types"]:
+        ensure_link(links, "describedby", schema_ref(src["theme"], t),
+                    "text/html",
+                    f"Overture schema reference: {t}")
     # rashid's PTL-PRO-001 requires text/html on every via link, even when
     # the target is a parquet prefix rather than a page.
     ensure_link(links, "via",

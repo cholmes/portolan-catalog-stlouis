@@ -547,7 +547,15 @@ def collection_agents(coll_id: str) -> str:
                 "— map, styles, legends, downloads",
                 f"- [Browse on Source Cooperative]({BROWSE}/{rel}/) — rendered "
                 "README and file listing",
-                f"- [Overture {src['theme']} theme guide]({src['docs']})",
+                f"- [Overture {src['theme']} theme guide]({src['docs']}) "
+                "— what the theme models, how Overture builds it, how to "
+                "query it",
+                ] + [
+                f"- [Overture schema reference: {t}]"
+                f"(https://docs.overturemaps.org/schema/reference/"
+                f"{src['theme']}/{t}/) — every field of the `{t}` feature type"
+                for t in src["types"]
+                ] + [
                 "", "## Provenance", "",
                 f"St. Louis-bbox extract of the [Overture Maps Foundation]"
                 f"(https://overturemaps.org/) {src['theme']} theme, release "

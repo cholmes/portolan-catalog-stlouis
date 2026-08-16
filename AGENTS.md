@@ -51,6 +51,12 @@ lives in `catalog/` and is synced 1:1 to
    move in lockstep. Descriptions live in `docs/overture-descriptions.json`
    (wording from Overture's docs — same never-invent rule) and every
    description says plainly that the data is Overture's, not the city's.
+   Overture's own docs are `describedby` links, never `via`: the theme guide
+   and one schema-reference page per feature type (a merged collection links
+   all of them, so buildings reaches `building_part` too). `via` stays
+   provenance — the S3 release prefix. Every reference URL is derived from
+   `theme`/`types` by `finalize_stac.schema_ref()` and was checked against
+   Overture's docs sitemap.
    Column glosses live in `docs/overture-column-notes.json`, worded from the
    Overture schema's own property descriptions
    (`github.com/OvertureMaps/schema`, `schema/**/*.yaml`) and the theme

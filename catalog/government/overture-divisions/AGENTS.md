@@ -1,6 +1,6 @@
 # AGENTS.md — Overture Divisions
 
-Point, line, and polygon representations of human settlements from the Overture divisions theme: recognized areas for governance, culture, or organization, from countries and regions down to counties, cities, and neighborhoods. Three feature types are merged here with an `overture_type` column: `division` (label points with population and hierarchy), `division_area` (the land or maritime polygon belonging to a division), and `division_boundary` (shared borders between divisions). For the St. Louis box that means the city itself, surrounding counties and municipalities on both sides of the river, and Overture's neighborhood set.
+Point, line, and polygon representations of human settlements from the Overture divisions theme: recognized areas for governance, culture, or organization, from countries and regions down to counties, cities, and neighborhoods. Three feature types are merged here with an `overture_type` column: `division` (label points with population and hierarchy), `division_area` (the land or maritime polygon belonging to a division), and `division_boundary` (shared borders between divisions). For the St. Louis box that means the city itself, surrounding counties and municipalities on both sides of the river, and Overture's neighborhood set. Overture documents this data well: the [divisions theme guide](https://docs.overturemaps.org/guides/divisions/) covers what the theme models, how Overture builds it, and how to query it, and the schema reference gives every field of the feature types merged here — [`division`](https://docs.overturemaps.org/schema/reference/divisions/division/), [`division_area`](https://docs.overturemaps.org/schema/reference/divisions/division_area/), [`division_boundary`](https://docs.overturemaps.org/schema/reference/divisions/division_boundary/).
 
 Unlike everything else in this catalog, this is **not** City of St. Louis data: it comes from the [Overture Maps Foundation](https://overturemaps.org/), a collaborative project building open, interoperable map data for the world. This collection is a St. Louis extract of that global dataset — everything inside the city's bounding box, which also takes in the Illinois shore of the Mississippi (East St. Louis, Cahokia Heights) — included here to demonstrate how a city's open-data catalog can blend in other St. Louis-relevant open data alongside the city's own. The GeoParquet was extracted from Overture release 2026-07-22.0; the map tiles reference Overture's own global PMTiles for the same release, the tiles behind [explore.overturemaps.org](https://explore.overturemaps.org/).
 
@@ -35,7 +35,10 @@ Compare neighborhood areas with the city's neighborhoods collection (spatial joi
 
 - [View on the data browser](https://cholmes.github.io/stlouis-data-browser/#/government/overture-divisions/collection.json) — map, styles, legends, downloads
 - [Browse on Source Cooperative](https://source.coop/tge-labs/st-louis-open-data-mirror/government/overture-divisions/) — rendered README and file listing
-- [Overture divisions theme guide](https://docs.overturemaps.org/guides/divisions/)
+- [Overture divisions theme guide](https://docs.overturemaps.org/guides/divisions/) — what the theme models, how Overture builds it, how to query it
+- [Overture schema reference: division](https://docs.overturemaps.org/schema/reference/divisions/division/) — every field of the `division` feature type
+- [Overture schema reference: division_area](https://docs.overturemaps.org/schema/reference/divisions/division_area/) — every field of the `division_area` feature type
+- [Overture schema reference: division_boundary](https://docs.overturemaps.org/schema/reference/divisions/division_boundary/) — every field of the `division_boundary` feature type
 
 ## Provenance
 

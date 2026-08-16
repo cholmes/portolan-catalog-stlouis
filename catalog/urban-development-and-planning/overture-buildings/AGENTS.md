@@ -1,6 +1,6 @@
 # AGENTS.md — Overture Buildings
 
-Building footprints and building parts from the Overture Maps buildings theme, which describes human-made structures with roofs or interior spaces that are permanently or semi-permanently in one place. Overture's goal is to provide the world's most comprehensive set of building structures compiled from the best available open data sources. Where known, buildings carry height, number of floors, and facade and roof attributes, supporting 2D and 3D visualization, data enrichment via GERS IDs, and spatial analysis. Both feature types are merged here, with an `overture_type` column telling buildings from building parts.
+Building footprints and building parts from the Overture Maps buildings theme, which describes human-made structures with roofs or interior spaces that are permanently or semi-permanently in one place. Overture's goal is to provide the world's most comprehensive set of building structures compiled from the best available open data sources. Where known, buildings carry height, number of floors, and facade and roof attributes, supporting 2D and 3D visualization, data enrichment via GERS IDs, and spatial analysis. Both feature types are merged here, with an `overture_type` column telling buildings from building parts. Overture documents this data well: the [buildings theme guide](https://docs.overturemaps.org/guides/buildings/) covers what the theme models, how Overture builds it, and how to query it, and the schema reference gives every field of the feature types merged here — [`building`](https://docs.overturemaps.org/schema/reference/buildings/building/), [`building_part`](https://docs.overturemaps.org/schema/reference/buildings/building_part/).
 
 Unlike everything else in this catalog, this is **not** City of St. Louis data: it comes from the [Overture Maps Foundation](https://overturemaps.org/), a collaborative project building open, interoperable map data for the world. This collection is a St. Louis extract of that global dataset — everything inside the city's bounding box, which also takes in the Illinois shore of the Mississippi (East St. Louis, Cahokia Heights) — included here to demonstrate how a city's open-data catalog can blend in other St. Louis-relevant open data alongside the city's own. The GeoParquet was extracted from Overture release 2026-07-22.0; the map tiles reference Overture's own global PMTiles for the same release, the tiles behind [explore.overturemaps.org](https://explore.overturemaps.org/).
 
@@ -37,7 +37,9 @@ Spatial join to parcels for assessor attributes; overture-addresses points fall 
 
 - [View on the data browser](https://cholmes.github.io/stlouis-data-browser/#/urban-development-and-planning/overture-buildings/collection.json) — map, styles, legends, downloads
 - [Browse on Source Cooperative](https://source.coop/tge-labs/st-louis-open-data-mirror/urban-development-and-planning/overture-buildings/) — rendered README and file listing
-- [Overture buildings theme guide](https://docs.overturemaps.org/guides/buildings/)
+- [Overture buildings theme guide](https://docs.overturemaps.org/guides/buildings/) — what the theme models, how Overture builds it, how to query it
+- [Overture schema reference: building](https://docs.overturemaps.org/schema/reference/buildings/building/) — every field of the `building` feature type
+- [Overture schema reference: building_part](https://docs.overturemaps.org/schema/reference/buildings/building_part/) — every field of the `building_part` feature type
 
 ## Provenance
 

@@ -1,6 +1,6 @@
 # AGENTS.md — Overture Places
 
-Point representations of real-world entities from the Overture places theme: schools, businesses, hospitals, religious organizations, landmarks, and much more. Overture defines a place as a concrete, physically identifiable, stationary destination in a publicly observable space. The theme is published under the CDLA Permissive 2.0 and Apache 2.0 licenses, contains no OpenStreetMap data, and carries none of the share-alike obligations of the ODbL. Each place has a category from Overture's taxonomy and a confidence score for how certain Overture is that the place exists and is current.
+Point representations of real-world entities from the Overture places theme: schools, businesses, hospitals, religious organizations, landmarks, and much more. Overture defines a place as a concrete, physically identifiable, stationary destination in a publicly observable space. The theme is published under the CDLA Permissive 2.0 and Apache 2.0 licenses, contains no OpenStreetMap data, and carries none of the share-alike obligations of the ODbL. Each place has a category from Overture's taxonomy and a confidence score for how certain Overture is that the place exists and is current. Overture documents this data well: the [places theme guide](https://docs.overturemaps.org/guides/places/) covers what the theme models, how Overture builds it, and how to query it, and the schema reference gives every field of its feature type — [`place`](https://docs.overturemaps.org/schema/reference/places/place/).
 
 Unlike everything else in this catalog, this is **not** City of St. Louis data: it comes from the [Overture Maps Foundation](https://overturemaps.org/), a collaborative project building open, interoperable map data for the world. This collection is a St. Louis extract of that global dataset — everything inside the city's bounding box, which also takes in the Illinois shore of the Mississippi (East St. Louis, Cahokia Heights) — included here to demonstrate how a city's open-data catalog can blend in other St. Louis-relevant open data alongside the city's own. The GeoParquet was extracted from Overture release 2026-07-22.0; the map tiles reference Overture's own global PMTiles for the same release, the tiles behind [explore.overturemaps.org](https://explore.overturemaps.org/).
 
@@ -31,7 +31,8 @@ Overture Maps Foundation data, not the city's — see the description. `id` is a
 
 - [View on the data browser](https://cholmes.github.io/stlouis-data-browser/#/business-and-industry/overture-places/collection.json) — map, styles, legends, downloads
 - [Browse on Source Cooperative](https://source.coop/tge-labs/st-louis-open-data-mirror/business-and-industry/overture-places/) — rendered README and file listing
-- [Overture places theme guide](https://docs.overturemaps.org/guides/places/)
+- [Overture places theme guide](https://docs.overturemaps.org/guides/places/) — what the theme models, how Overture builds it, how to query it
+- [Overture schema reference: place](https://docs.overturemaps.org/schema/reference/places/place/) — every field of the `place` feature type
 
 ## Provenance
 
