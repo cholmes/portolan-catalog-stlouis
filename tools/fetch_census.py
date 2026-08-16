@@ -35,7 +35,6 @@ Usage: python3 tools/fetch_census.py [collection-id ...]   (default: all)
 """
 
 import csv
-import io
 import json
 import shutil
 import subprocess
@@ -569,8 +568,6 @@ def fetch_holc(coll_id: str, out_dir: Path) -> int:
 
 
 def fetch_places(coll_id: str, out_dir: Path) -> int:
-    import duckdb
-
     # Socrata paginates; 104 tracts x 40 measures = 4160 rows, one page.
     q = urllib.parse.urlencode({
         "$limit": "10000", "countyfips": STL,
