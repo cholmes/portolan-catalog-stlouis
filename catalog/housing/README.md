@@ -4,19 +4,19 @@ Owning, Renting, Homelessness, Repairs, Financing Programs
 
 ## Collections
 
-### [housing/electrical-permits](housing/housing/electrical-permits/)
+### [housing/electrical-permits](electrical-permits/)
 
-### [housing/lra-property](housing/housing/lra-property/)
+### [housing/lra-property](lra-property/)
 
-### [housing/market-value-analysis](housing/housing/market-value-analysis/)
+### [housing/market-value-analysis](market-value-analysis/)
 
-### [housing/mechanical-permits](housing/housing/mechanical-permits/)
+### [housing/mechanical-permits](mechanical-permits/)
 
-### [housing/occupancy-permits](housing/housing/occupancy-permits/)
+### [housing/occupancy-permits](occupancy-permits/)
 
-### [housing/plumbing-permits](housing/housing/plumbing-permits/)
+### [housing/plumbing-permits](plumbing-permits/)
 
-### [housing/property-sales](housing/housing/property-sales/)
+### [housing/property-sales](property-sales/)
 
 ## Coverage
 

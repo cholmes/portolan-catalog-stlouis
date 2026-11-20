@@ -4,19 +4,19 @@ Airports, Rail, Public Transit, Vehicles, Utilities, Streets
 
 ## Collections
 
-### [transportation-infrastructure-and-utilities/bike-infrastructure](transportation-infrastructure-and-utilities/transportation-infrastructure-and-utilities/bike-infrastructure/)
+### [transportation-infrastructure-and-utilities/bike-infrastructure](bike-infrastructure/)
 
-### [transportation-infrastructure-and-utilities/overture-infrastructure](transportation-infrastructure-and-utilities/transportation-infrastructure-and-utilities/overture-infrastructure/)
+### [transportation-infrastructure-and-utilities/overture-infrastructure](overture-infrastructure/)
 
-### [transportation-infrastructure-and-utilities/overture-transportation](transportation-infrastructure-and-utilities/transportation-infrastructure-and-utilities/overture-transportation/)
+### [transportation-infrastructure-and-utilities/overture-transportation](overture-transportation/)
 
-### [transportation-infrastructure-and-utilities/parking-meters](transportation-infrastructure-and-utilities/transportation-infrastructure-and-utilities/parking-meters/)
+### [transportation-infrastructure-and-utilities/parking-meters](parking-meters/)
 
-### [transportation-infrastructure-and-utilities/street-permits](transportation-infrastructure-and-utilities/transportation-infrastructure-and-utilities/street-permits/)
+### [transportation-infrastructure-and-utilities/street-permits](street-permits/)
 
-### [transportation-infrastructure-and-utilities/street-sweeping](transportation-infrastructure-and-utilities/transportation-infrastructure-and-utilities/street-sweeping/)
+### [transportation-infrastructure-and-utilities/street-sweeping](street-sweeping/)
 
-### [transportation-infrastructure-and-utilities/streets](transportation-infrastructure-and-utilities/transportation-infrastructure-and-utilities/streets/)
+### [transportation-infrastructure-and-utilities/streets](streets/)
 
 ## Coverage
 

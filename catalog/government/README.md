@@ -4,23 +4,23 @@ Departments, Elected Officials, Voting, Services, Records
 
 ## Collections
 
-### [government/csb-311-requests](government/government/csb-311-requests/)
+### [government/csb-311-requests](csb-311-requests/)
 
-### [government/election-precincts](government/government/election-precincts/)
+### [government/election-precincts](election-precincts/)
 
-### [government/election-results-nov-2024](government/government/election-results-nov-2024/)
+### [government/election-results-nov-2024](election-results-nov-2024/)
 
-### [government/overture-divisions](government/government/overture-divisions/)
+### [government/overture-divisions](overture-divisions/)
 
-### [government/polling-places](government/government/polling-places/)
+### [government/polling-places](polling-places/)
 
-### [government/property-taxes](government/government/property-taxes/)
+### [government/property-taxes](property-taxes/)
 
-### [government/wards](government/government/wards/)
+### [government/wards](wards/)
 
-### [government/wards-2010](government/government/wards-2010/)
+### [government/wards-2010](wards-2010/)
 
-### [government/zip-codes](government/government/zip-codes/)
+### [government/zip-codes](zip-codes/)
 
 ## Coverage
 

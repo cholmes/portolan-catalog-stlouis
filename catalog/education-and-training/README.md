@@ -4,7 +4,7 @@ Adult, Schools, Special and Higher Education, Homeschooling
 
 ## Collections
 
-### [education-and-training/schools](education-and-training/education-and-training/schools/)
+### [education-and-training/schools](schools/)
 
 ## Coverage
 

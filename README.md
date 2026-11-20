@@ -81,7 +81,7 @@ Run from the repo root, in order:
 | 4 | `python3 tools/write_metadata.py` | `.portolan/metadata.yaml` from portal text (verbatim descriptions) |
 | 5 | `python3 tools/make_styles.py` | 63 MapLibre styles with legends (see the file's docstring for the legend mechanism) |
 | 6 | `python3 tools/finalize_stac.py` | Providers, license/via links, default-style roles, checksums, `source` assets pointing upstream, tabular collection |
-| 7 | `portolan readme` (in `catalog/`) | Generated READMEs + AGENTS.md |
+| 7 | `portolan readme` (in `catalog/`), then `python3 tools/fix_readme_links.py` | Generated READMEs + AGENTS.md; the fix pass repairs the CLI's doubled group prefix in group README child links |
 | 8 | `bash tools/make_thumbnails.sh` | chiitiler renders of each default style |
 | 9 | `python3 tests/run_all.py` | Gates |
 | 10 | `portolan push` (in `catalog/`) | Publish to Source Cooperative |

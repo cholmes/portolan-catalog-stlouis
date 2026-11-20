@@ -4,9 +4,9 @@ Immunizations, Nutrition, Animal Control, Preventative Care
 
 ## Collections
 
-### [health/animal-bites](health/health/animal-bites/)
+### [health/animal-bites](animal-bites/)
 
-### [health/lead-service-lines](health/health/lead-service-lines/)
+### [health/lead-service-lines](lead-service-lines/)
 
 ## Coverage
 
