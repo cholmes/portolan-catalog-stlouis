@@ -31,8 +31,8 @@ ZIP code areas from the city's boundaries map service. Mirrored from [the city's
 | Shape | binary |  |
 | Shape_Length | double |  |
 | Shape_Area | double |  |
-| geometry | binary |  |
-| bbox | struct<xmin: double, ymin: double, xmax: double, ymax: double> |  |
+| geometry | binary | Feature geometry (WGS84, WKB encoding). |
+| bbox | struct<xmin: double, ymin: double, xmax: double, ymax: double> | Per-row bounding box of the geometry (the GeoParquet covering column). |
 
 ## Files
 

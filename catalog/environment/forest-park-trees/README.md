@@ -61,8 +61,8 @@ Forest Park Trees data Mirrored from [the city's open data portal](https://www.s
 | Multi_Stemmed | int16 |  |
 | Replacement_Eligibility | int16 |  |
 | Native | string |  |
-| geometry | binary |  |
-| bbox | struct<xmin: double, ymin: double, xmax: double, ymax: double> |  |
+| geometry | binary | Feature geometry (WGS84, WKB encoding). |
+| bbox | struct<xmin: double, ymin: double, xmax: double, ymax: double> | Per-row bounding box of the geometry (the GeoParquet covering column). |
 
 ## Files
 

@@ -63,7 +63,7 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json"
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json"
   ],
   "updated": "2026-08-14T12:21:16+00:00",
   "title": "Demographics"

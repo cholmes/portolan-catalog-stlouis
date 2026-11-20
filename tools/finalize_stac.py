@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Finalize STAC metadata to Portolan spec (v0.1.0 + PRs #97/#124).
+"""Finalize STAC metadata to Portolan spec v0.3.0.
 
 Runs after `portolan add`. Patches what the CLI doesn't yet emit:
 - property-sales: hand-authored tabular collection (the CLI can't track
@@ -24,12 +24,13 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from sources import SOURCES, GROUPS, GROUP_TITLES, GROUP_OF, coll_rel, linkify
+from make_joined_pmtiles import JOINS
 
 ROOT = Path(__file__).resolve().parent.parent
 CATALOG = ROOT / "catalog"
 SYNC = (ROOT / "staging" / "synced.txt").read_text().strip()
 
-PORTOLAN_SCHEMA = "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json"
+PORTOLAN_SCHEMA = "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json"
 FILE_EXT = "https://stac-extensions.github.io/file/v2.1.0/schema.json"
 TABLE_EXT = "https://stac-extensions.github.io/table/v1.2.0/schema.json"
 WML_EXT = "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
@@ -96,6 +97,60 @@ def multihash(path: Path) -> str:
         for chunk in iter(lambda: f.read(1 << 20), b""):
             h.update(chunk)
     return "1220" + h.hexdigest()
+
+
+# Glosses for columns the joins compute; everything else reuses the note of
+# the column it carries over (docs/column-notes.json, own or joined collection).
+DERIVED_NOTES = {
+    "PERMIT_YEAR": "Year parsed from the permit's ISSUEDATE.",
+    "SALE_YEAR": "Year parsed from SaleDate.",
+    "PricePerSqFt": ("SalePrice divided by the joined parcel's LANDAREA, "
+                     "rounded to two decimals."),
+    "SaleTypeDescr": ("Sale type name joined from the source MDB's "
+                      "CdSaleType lookup table."),
+    "n_permits": "Count of this table's rows joined to the neighborhood.",
+    "NHD_NAME": "Neighborhood name from the neighborhoods collection.",
+    "name": "Precinct name from the election-precincts collection.",
+    "Pres_Harris": "Sum of Total_Votes over choices naming HARRIS.",
+    "Pres_Trump": "Sum of Total_Votes over choices naming TRUMP.",
+    "Pres_Dem_TwoPartyShare": ("Pres_Harris divided by Pres_Harris plus "
+                               "Pres_Trump."),
+    "bbox": ("Per-row bounding box of the geometry (the GeoParquet "
+             "covering column)."),
+}
+
+# Structural GeoParquet columns, same meaning in every collection.
+GEO_COLUMN_NOTES = {
+    "geometry": "Feature geometry (WGS84, WKB encoding).",
+    "bbox": DERIVED_NOTES["bbox"],
+    "geometry_bbox": DERIVED_NOTES["bbox"],
+}
+
+
+def joined_columns(coll_id: str, joined: Path, right: str) -> list:
+    """table:columns for a joined parquet, glossed from existing notes."""
+    cols = duck(f"SELECT column_name n, column_type t "
+                f"FROM (DESCRIBE SELECT * FROM '{joined}')")
+    out = []
+    for c in cols:
+        col = {"name": c["n"], "type": DUCK_TO_TABLE.get(c["t"], c["t"].lower())}
+        if c["n"] == "geometry":
+            col["description"] = (f"Geometry of the joined {right} feature "
+                                  "(WGS84).")
+        else:
+            note = (COLUMN_NOTES.get(coll_id, {}).get(c["n"])
+                    or COLUMN_NOTES.get(right, {}).get(c["n"])
+                    or DERIVED_NOTES.get(c["n"]))
+            if note:
+                col["description"] = linkify(note)
+        out.append(col)
+    return out
+
+
+def set_portolan_ext(ext: set) -> set:
+    """One Portolan schema URI per object: drop stale versions, pin v0.3.0."""
+    return {e for e in ext
+            if "schemas.portolan-sdi.org/portolan/" not in e} | {PORTOLAN_SCHEMA}
 
 
 def duck(sql: str):
@@ -189,8 +244,24 @@ def build_tabular(cid: str) -> None:
                      f"WHERE SaleDate IS NOT NULL")
     elif cid == "election-results-nov-2024":
         dates = [{"a": "2024-11-05 00:00:00", "b": "2024-11-05 00:00:00"}]
+    elif cid == "property-taxes":
+        # BillYear is 0 where the source leaves it unset — exclude those rows
+        dates = duck(f"SELECT min(BillYear)::VARCHAR || '-01-01 00:00:00' a, "
+                     f"max(BillYear)::VARCHAR || '-12-31 23:59:59' b "
+                     f"FROM '{pq}' WHERE BillYear > 0")
     n = duck(f"SELECT count(*) c FROM '{pq}'")[0]["c"]
+    # The joined GeoParquet defines the collection's real footprint; fall
+    # back to the city bbox when no join exists (rashid PTL-DAT-005).
     city_bbox = [-90.320522, 38.531907, -90.166409, 38.774362]
+    joined = coll_dir / f"{cid}-joined.parquet"
+    if joined.exists():
+        bb = duck(
+            "INSTALL spatial; LOAD spatial; "
+            f"SELECT min(ST_XMin(geometry)) a, min(ST_YMin(geometry)) b, "
+            f"max(ST_XMax(geometry)) c, max(ST_YMax(geometry)) d "
+            f"FROM '{joined}' WHERE geometry IS NOT NULL")
+        if bb and bb[0].get("a") is not None:
+            city_bbox = [bb[0]["a"], bb[0]["b"], bb[0]["c"], bb[0]["d"]]
     coll = {
         "type": "Collection",
         "id": coll_rel(cid),
@@ -283,8 +354,8 @@ def finalize_collection(coll_id: str) -> None:
     elif coll.get("description", "").startswith("Collection:"):
         coll["description"] = src["title"]
 
-    ext = set(coll.get("stac_extensions", []))
-    ext.update({PORTOLAN_SCHEMA, FILE_EXT, TABLE_EXT})
+    ext = set_portolan_ext(set(coll.get("stac_extensions", [])))
+    ext.update({FILE_EXT, TABLE_EXT})
     ext.add(THEMES_EXT)
     has_pmtiles = (coll_dir / f"{coll_id}.pmtiles").exists()
     if has_pmtiles:
@@ -319,10 +390,12 @@ def finalize_collection(coll_id: str) -> None:
 
     # Researched column meanings (docs/column-notes.json) → table:columns
     notes = COLUMN_NOTES.get(coll_id, {})
-    if notes and coll.get("table:columns"):
+    if coll.get("table:columns"):
         for col in coll["table:columns"]:
             if col["name"] in notes:
                 col["description"] = linkify(notes[col["name"]])
+            elif col["name"] in GEO_COLUMN_NOTES:
+                col.setdefault("description", GEO_COLUMN_NOTES[col["name"]])
 
     # Recompute the spatial extent from the parquet itself — the CLI's
     # tracked extent can go stale when files are rewritten out from under it.
@@ -415,14 +488,50 @@ def finalize_collection(coll_id: str) -> None:
             assets[key] = {"href": f"./styles/{sf.name}",
                            "type": "application/vnd.mapbox.style+json",
                            "roles": ["style"]}
+    joined = coll_dir / f"{coll_id}-joined.parquet"
+    if joined.exists():
+        right = JOINS[coll_id]["right"]
+        assets[f"{coll_id}-joined"] = {
+            **assets.get(f"{coll_id}-joined", {}),
+            "href": f"./{coll_id}-joined.parquet",
+            "type": PARQUET_TYPE,
+            "roles": ["data"],
+            "title": f"{src['title']} joined to {right} (GeoParquet)",
+            "description": (
+                f"The documented join of this table with the {right} "
+                "collection's geometries, materialized as spec GeoParquet. "
+                "The PMTiles are built from this file, and AGENTS.md states "
+                "the same join for reproducing it."),
+            # Asset-level table metadata: the joined schema differs from the
+            # collection's own (tabular) columns, and rashid reads geometry
+            # evidence for PORTO-FMT-062 from table:primary_geometry here.
+            "table:primary_geometry": "geometry",
+            "table:row_count": duck(
+                f"SELECT count(*) c FROM '{joined}'")[0]["c"],
+            "table:columns": joined_columns(coll_id, joined, right),
+        }
     for key, a in assets.items():
         href = a.get("href", "")
         if href.endswith(".parquet"):
             a["type"] = PARQUET_TYPE
             a.setdefault("title", f"{src['title']} (GeoParquet)")
             a.setdefault("roles", ["data"])
+            if key == coll_id:
+                a.setdefault("description", (
+                    "Plain Parquet with no geometry column, as the city "
+                    "publishes this data. AGENTS.md states the join that "
+                    "maps it." if coll_id in TABULAR else
+                    "Spec GeoParquet: WGS84, zstd compression, Hilbert row "
+                    "order, bbox covering column with row-group statistics."))
         elif href.endswith(".pmtiles"):
             a.setdefault("title", f"{src['title']} (PMTiles)")
+            # PORTO-FMT-062: tiles are the visual layer, never the data
+            a["roles"] = sorted((set(a.get("roles", [])) - {"data"}) | {"visual"})
+            a.setdefault("description", (
+                "Vector tiles built from the joined GeoParquet in this "
+                "collection, for map display." if coll_id in JOINS else
+                "Vector tiles built from this collection's GeoParquet, "
+                "for map display."))
         elif href.endswith(".json") and "styles/" in href:
             sf = coll_dir / href.lstrip("./")
             if sf.exists():
@@ -437,6 +546,12 @@ def finalize_collection(coll_id: str) -> None:
             else:
                 roles.discard("default")
             a["roles"] = sorted(roles)
+        elif key == "thumbnail":
+            a.setdefault("title",
+                         f"{src['title']} rendered with the default style")
+            a.setdefault("description",
+                         "The default style rendered over the collection's "
+                         "extent, for catalog browsing.")
         stamp_asset(coll_dir, href, a)
     # A README asset would list its own checksum in its own Files table, so
     # it goes stale the moment `portolan readme` runs — and it duplicated the
@@ -470,8 +585,8 @@ def finalize_overture(coll_id: str, coll_dir, f, coll: dict, src: dict) -> None:
     coll["title"] = src["title"]
     coll["description"] = DESCRIPTIONS[coll_id]["description"]
 
-    ext = set(coll.get("stac_extensions", []))
-    ext.update({PORTOLAN_SCHEMA, FILE_EXT, TABLE_EXT, THEMES_EXT, WML_EXT})
+    ext = set_portolan_ext(set(coll.get("stac_extensions", [])))
+    ext.update({FILE_EXT, TABLE_EXT, THEMES_EXT, WML_EXT})
     coll["stac_extensions"] = sorted(ext)
 
     coll["license"] = src["license"]
@@ -613,6 +728,12 @@ def finalize_overture(coll_id: str, coll_dir, f, coll: dict, src: dict) -> None:
         size = overture_tile_size(src["theme"])
         if size:
             tiles["file:size"] = size
+        elif "file:size" in assets.get(f"{coll_id}-tiles", {}):
+            # Overture rotates tiles out of its bucket after about four
+            # releases, so a HEAD of the pinned URL can 404 between syncs.
+            # Keep the size recorded at sync time instead of dropping it;
+            # the real repair is an OVERTURE_RELEASE bump in lockstep.
+            tiles["file:size"] = assets[f"{coll_id}-tiles"]["file:size"]
     assets[f"{coll_id}-tiles"] = tiles
     if (coll_dir / "thumbnail.png").exists() and "thumbnail" not in assets:
         assets["thumbnail"] = {
@@ -634,6 +755,16 @@ def finalize_overture(coll_id: str, coll_dir, f, coll: dict, src: dict) -> None:
             a["type"] = PARQUET_TYPE
             a.setdefault("title", f"{src['title']} (GeoParquet)")
             a.setdefault("roles", ["data"])
+            a.setdefault("description",
+                         "St. Louis bounding-box extract of this Overture "
+                         "theme's release GeoParquet, geometries clipped to "
+                         "the box.")
+        elif key == "thumbnail":
+            a.setdefault("title",
+                         f"{src['title']} rendered with the default style")
+            a.setdefault("description",
+                         "The default style rendered over the collection's "
+                         "extent, for catalog browsing.")
         elif href.endswith(".json") and "styles/" in href:
             sf = coll_dir / href.lstrip("./")
             if sf.exists():
@@ -721,10 +852,13 @@ def finalize_census(coll_id: str, coll_dir, f, coll: dict, src: dict) -> None:
     coll["id"] = coll_rel(coll_id)
     coll["title"] = src["title"]
     coll["description"] = DESCRIPTIONS[coll_id]["description"]
+    # The retile step stamped the tiles' web-mercator CRS at collection level,
+    # where assets inherit it — the parquet is EPSG:4326 (rashid PTL-DAT-005).
+    coll.pop("proj:epsg", None)
 
     has_pmtiles = (coll_dir / f"{coll_id}.pmtiles").exists()
-    ext = set(coll.get("stac_extensions", []))
-    ext.update({PORTOLAN_SCHEMA, FILE_EXT, TABLE_EXT, THEMES_EXT})
+    ext = set_portolan_ext(set(coll.get("stac_extensions", [])))
+    ext.update({FILE_EXT, TABLE_EXT, THEMES_EXT})
     if has_pmtiles:
         ext.add(WML_EXT)
     coll["stac_extensions"] = sorted(ext)
@@ -745,10 +879,12 @@ def finalize_census(coll_id: str, coll_dir, f, coll: dict, src: dict) -> None:
     coll["keywords"] = meta["keywords"]
 
     notes = COLUMN_NOTES.get(coll_id, {})
-    if notes and coll.get("table:columns"):
+    if coll.get("table:columns"):
         for col in coll["table:columns"]:
             if col["name"] in notes:
                 col["description"] = linkify(notes[col["name"]])
+            elif col["name"] in GEO_COLUMN_NOTES:
+                col.setdefault("description", GEO_COLUMN_NOTES[col["name"]])
 
     pq = coll_dir / f"{coll_id}.parquet"
     if pq.exists() and coll_id not in TABULAR:
@@ -831,8 +967,20 @@ def finalize_census(coll_id: str, coll_dir, f, coll: dict, src: dict) -> None:
             a["type"] = PARQUET_TYPE
             a.setdefault("title", f"{src['title']} (GeoParquet)")
             a.setdefault("roles", ["data"])
+            if key == coll_id:
+                a.setdefault("description", (
+                    "Plain Parquet with no geometry column. AGENTS.md "
+                    "states the join that maps it." if coll_id in TABULAR
+                    else
+                    "Spec GeoParquet: WGS84, zstd compression, Hilbert row "
+                    "order, bbox covering column with row-group statistics."))
         elif href.endswith(".pmtiles"):
             a.setdefault("title", f"{src['title']} (PMTiles)")
+            # PORTO-FMT-062: tiles are the visual layer, never the data
+            a["roles"] = sorted((set(a.get("roles", [])) - {"data"}) | {"visual"})
+            a.setdefault("description",
+                         "Vector tiles built from this collection's "
+                         "GeoParquet, for map display.")
         elif href.endswith(".json") and "styles/" in href:
             sf = coll_dir / href.lstrip("./")
             if sf.exists():
@@ -847,6 +995,12 @@ def finalize_census(coll_id: str, coll_dir, f, coll: dict, src: dict) -> None:
             else:
                 roles.discard("default")
             a["roles"] = sorted(roles)
+        elif key == "thumbnail":
+            a.setdefault("title",
+                         f"{src['title']} rendered with the default style")
+            a.setdefault("description",
+                         "The default style rendered over the collection's "
+                         "extent, for catalog browsing.")
         stamp_asset(coll_dir, href, a)
     # Same reasoning as the city path: a README asset lists its own checksum
     # in its own Files table, so it goes stale the moment `portolan readme`
@@ -862,7 +1016,7 @@ def finalize_census(coll_id: str, coll_dir, f, coll: dict, src: dict) -> None:
 def finalize_root() -> None:
     f = CATALOG / "catalog.json"
     cat = json.loads(f.read_text())
-    cat["stac_extensions"] = sorted(set(cat.get("stac_extensions", [])) | {PORTOLAN_SCHEMA})
+    cat["stac_extensions"] = sorted(set_portolan_ext(set(cat.get("stac_extensions", []))))
     cat["updated"] = SYNC
     cat["providers"] = [
         {"name": "City of St. Louis", "roles": ["producer", "licensor"],
@@ -899,7 +1053,7 @@ def finalize_group(group: str) -> None:
     if not f.exists():
         return
     cat = json.loads(f.read_text())
-    cat["stac_extensions"] = sorted(set(cat.get("stac_extensions", [])) | {PORTOLAN_SCHEMA})
+    cat["stac_extensions"] = sorted(set_portolan_ext(set(cat.get("stac_extensions", []))))
     cat["updated"] = SYNC
     # A group catalog created bare by `portolan add` arrives with no title
     # and a "Catalog: <slug>" description; fill both from sources.py so a

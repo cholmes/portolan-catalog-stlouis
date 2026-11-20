@@ -36,8 +36,8 @@ Floodplain areas for the City of St. Louis, from the city's Floodplain map servi
 | Shape | binary |  |
 | Shape_Length | double |  |
 | Shape_Area | double |  |
-| geometry | binary |  |
-| bbox | struct<xmin: double, ymin: double, xmax: double, ymax: double> |  |
+| geometry | binary | Feature geometry (WGS84, WKB encoding). |
+| bbox | struct<xmin: double, ymin: double, xmax: double, ymax: double> | Per-row bounding box of the geometry (the GeoParquet covering column). |
 
 ## Files
 

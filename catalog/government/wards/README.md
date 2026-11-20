@@ -275,8 +275,8 @@ Boundaries of City of St. Louis wards Mirrored from [the city's open data portal
 | f18_ap_oth | int32 |  |
 | SHAPE__Length | double |  |
 | SHAPE__Area | double |  |
-| geometry | binary |  |
-| geometry_bbox | struct<xmin: float not null, ymin: float not null, xmax: float not null, ymax: float not null> |  |
+| geometry | binary | Feature geometry (WGS84, WKB encoding). |
+| geometry_bbox | struct<xmin: float not null, ymin: float not null, xmax: float not null, ymax: float not null> | Per-row bounding box of the geometry (the GeoParquet covering column). |
 
 ## Files
 

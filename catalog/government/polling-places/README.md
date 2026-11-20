@@ -33,8 +33,8 @@ Polling Centers Mirrored from [the city's open data portal](https://stlcity.maps
 | entrydetails | string |  |
 | handle | string |  |
 | status | int16 |  |
-| geometry | binary |  |
-| bbox | struct<xmin: double, ymin: double, xmax: double, ymax: double> |  |
+| geometry | binary | Feature geometry (WGS84, WKB encoding). |
+| bbox | struct<xmin: double, ymin: double, xmax: double, ymax: double> | Per-row bounding box of the geometry (the GeoParquet covering column). |
 
 ## Files
 

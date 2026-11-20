@@ -4,7 +4,7 @@ Arts, Entertainment, Tourism, Cultural Venues, Sports
 
 ## Collections
 
-### [leisure-and-culture/parks](leisure-and-culture/leisure-and-culture/parks/)
+### [leisure-and-culture/parks](parks/)
 
 ## Coverage
 

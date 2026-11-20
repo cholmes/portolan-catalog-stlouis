@@ -55,9 +55,9 @@ gpio convert shapefile property-sales-geo.parquet property-sales.shp
 ```sql
 -- median sale price by neighborhood, 2020s market sales
 SELECT n.NHD_NAME, median(s.SalePrice) mp, count(*) n_sales
-FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/property-sales/property-sales.parquet' s
-JOIN 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/parcels/parcels.parquet' p ON s.AsrParcelId = p.ParcelId
-JOIN 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/neighborhoods/neighborhoods.parquet' n ON p.NBRHD = n.NHD_NUM
+FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/housing/property-sales/property-sales.parquet' s
+JOIN 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/urban-development-and-planning/parcels/parcels.parquet' p ON s.AsrParcelId = p.ParcelId
+JOIN 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/urban-development-and-planning/neighborhoods/neighborhoods.parquet' n ON p.NBRHD = n.NHD_NUM
 WHERE s.SalePrice > 1000 AND strptime(s.SaleDate, '%m/%d/%y %H:%M:%S') >= DATE '2020-01-01'
 GROUP BY 1 ORDER BY 2 DESC LIMIT 15;
 ```

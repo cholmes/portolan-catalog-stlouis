@@ -61,7 +61,7 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
@@ -171,7 +171,8 @@
       "roles": [
         "data"
       ],
-      "title": "Overture Land (GeoParquet)"
+      "title": "Overture Land (GeoParquet)",
+      "description": "St. Louis bounding-box extract of this Overture theme's release GeoParquet, geometries clipped to the box."
     },
     "overture-land-tiles": {
       "href": "https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/base.pmtiles",
@@ -214,7 +215,8 @@
       ],
       "title": "Overture Land rendered with the default style",
       "file:size": 431926,
-      "file:checksum": "122080a3f79365bbdad3ecb328f2698c7330e64e0161f0b8732dbc5eb8aafabf7c4c"
+      "file:checksum": "122080a3f79365bbdad3ecb328f2698c7330e64e0161f0b8732dbc5eb8aafabf7c4c",
+      "description": "The default style rendered over the collection's extent, for catalog browsing."
     }
   },
   "updated": "2026-08-14T12:21:16+00:00",

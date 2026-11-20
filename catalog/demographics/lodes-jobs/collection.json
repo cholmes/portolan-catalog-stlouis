@@ -55,7 +55,7 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json",
     "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
@@ -139,11 +139,13 @@
     },
     {
       "name": "geometry",
-      "type": "binary"
+      "type": "binary",
+      "description": "Feature geometry (WGS84, WKB encoding)."
     },
     {
       "name": "bbox",
-      "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>"
+      "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>",
+      "description": "Per-row bounding box of the geometry (the GeoParquet covering column)."
     }
   ],
   "portolan:total_size_bytes": 587222,
@@ -172,7 +174,6 @@
       ]
     }
   ],
-  "proj:epsg": 3857,
   "pmtiles:min_zoom": 0,
   "pmtiles:max_zoom": 12,
   "pmtiles:tile_type": "mvt",
@@ -239,7 +240,8 @@
       "file:checksum": "1220d44aae0c729e126c61de0430a4af47532c730d9a2bf73417ec5483f264a4c728",
       "roles": [
         "data"
-      ]
+      ],
+      "description": "Spec GeoParquet: WGS84, zstd compression, Hilbert row order, bbox covering column with row-group statistics."
     },
     "lodes-jobs-tiles": {
       "href": "./lodes-jobs.pmtiles",
@@ -248,8 +250,9 @@
       "file:size": 186465,
       "file:checksum": "122015712857e0e419cc3857e3898f78828785c13bb8803112a0ec88fa41bcd12158",
       "roles": [
-        "data"
-      ]
+        "visual"
+      ],
+      "description": "Vector tiles built from this collection's GeoParquet, for map display."
     },
     "styles/default": {
       "href": "./styles/default.json",
@@ -282,7 +285,8 @@
       "file:checksum": "1220091152edf8400db5324bc37cd5f0357f5354de1ddb3e77cc718bd67382ec3b93",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "description": "The default style rendered over the collection's extent, for catalog browsing."
     }
   }
 }

@@ -55,7 +55,7 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
@@ -167,11 +167,13 @@
     },
     {
       "name": "geometry",
-      "type": "binary"
+      "type": "binary",
+      "description": "Feature geometry (WGS84, WKB encoding)."
     },
     {
       "name": "bbox",
-      "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>"
+      "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>",
+      "description": "Per-row bounding box of the geometry (the GeoParquet covering column)."
     }
   ],
   "portolan:total_size_bytes": 5599054,
@@ -251,7 +253,8 @@
       "file:checksum": "1220dfbfaa378923225d5c2d44b4221a929bd343ae65b5aa02b91e9a7b5e739a7003",
       "roles": [
         "data"
-      ]
+      ],
+      "description": "Spec GeoParquet: WGS84, zstd compression, Hilbert row order, bbox covering column with row-group statistics."
     },
     "land-use-tiles": {
       "href": "./land-use.pmtiles",
@@ -261,7 +264,8 @@
       "file:checksum": "1220aef68863c472ba83f2e90d20c037d9e29efeb8ad8c8b1a515b859a8bcf5e1255",
       "roles": [
         "visual"
-      ]
+      ],
+      "description": "Vector tiles built from this collection's GeoParquet, for map display."
     },
     "styles/city-renderer": {
       "href": "./styles/city-renderer.json",
@@ -316,7 +320,8 @@
       "file:checksum": "12207f5aad9c64001ca10508c00cb4f4c1cec1ace904e7abf4b9099d982343c95fd2",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "description": "The default style rendered over the collection's extent, for catalog browsing."
     },
     "source-shapefile": {
       "href": "https://www.stlouis-mo.gov/data/upload/data-files/SLUPShapefiles2019.zip",

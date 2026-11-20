@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parent.parent
 CATALOG = ROOT / "catalog"
 # CI has no parquet/pmtiles (gitignored artifacts): skip file-backed checks
 LIGHT = os.environ.get("CI_LIGHT") == "1"
-PORTOLAN_SCHEMA = "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json"
+PORTOLAN_SCHEMA = "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json"
 
 errors = []
 
@@ -163,6 +163,9 @@ def check_collection(coll_dir: Path):
             err(f"{cid}: asset {key} stale file:size")
         if a["href"].endswith(".parquet") and a.get("type") != "application/vnd.apache.parquet":
             err(f"{cid}: asset {key} wrong parquet media type {a.get('type')}")
+        # PORTO-FMT-062: tiles are the visual layer, never the data
+        if a["href"].endswith(".pmtiles") and "visual" not in a.get("roles", []):
+            err(f"{cid}: pmtiles asset {key} must carry the visual role")
         if "roles" not in a or not a["roles"]:
             err(f"{cid}: asset {key} has no roles")
         if "style" in a.get("roles", []) and "default" in a.get("roles", []):

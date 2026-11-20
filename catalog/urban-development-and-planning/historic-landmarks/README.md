@@ -38,8 +38,8 @@ Historic sites and landmarks from the city's Historic Landmarks map service. Mir
 | CensBlock2 | int32 |  |
 | X_CENTROID | double |  |
 | Y_CENTROID | double |  |
-| geometry | binary |  |
-| bbox | struct<xmin: double, ymin: double, xmax: double, ymax: double> |  |
+| geometry | binary | Feature geometry (WGS84, WKB encoding). |
+| bbox | struct<xmin: double, ymin: double, xmax: double, ymax: double> | Per-row bounding box of the geometry (the GeoParquet covering column). |
 
 ## Files
 

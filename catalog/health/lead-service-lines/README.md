@@ -26,8 +26,8 @@ Lead Service Line Inventory Feature Layer Service Mirrored from [the city's open
 | custstatus | int16 | Lead classification of the building side: 0 Unknown, 1 Lead, 2 Non-Lead, 3 Galvanized Requiring Replacement (ArcGIS domain 'Status'; EPA LCRR inventory categories). |
 | OBJECTID | int64 | ArcGIS feature object ID. |
 | GlobalID | string | ArcGIS global unique identifier for the feature. |
-| geometry | binary |  |
-| bbox | struct<xmin: double, ymin: double, xmax: double, ymax: double> |  |
+| geometry | binary | Feature geometry (WGS84, WKB encoding). |
+| bbox | struct<xmin: double, ymin: double, xmax: double, ymax: double> | Per-row bounding box of the geometry (the GeoParquet covering column). |
 
 ## Files
 

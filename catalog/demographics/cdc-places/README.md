@@ -140,8 +140,8 @@ These are **modeled estimates, not direct survey measurements of St. Louis resid
 | vision | double | Vision disability among adults — model-based crude prevalence, percent of adults (CDC PLACES, BRFSS 2023). |
 | vision_lo | double | Lower 95% confidence limit for vision. |
 | vision_hi | double | Upper 95% confidence limit for vision. |
-| geometry | binary |  |
-| bbox | struct<xmin: double, ymin: double, xmax: double, ymax: double> |  |
+| geometry | binary | Feature geometry (WGS84, WKB encoding). |
+| bbox | struct<xmin: double, ymin: double, xmax: double, ymax: double> | Per-row bounding box of the geometry (the GeoParquet covering column). |
 
 ## Files
 

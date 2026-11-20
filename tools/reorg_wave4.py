@@ -24,7 +24,7 @@ from sources import SOURCES, GROUPS, GROUP_TITLES, GROUP_OF, GROUP_CAPTIONS  # n
 
 ROOT = Path(__file__).resolve().parent.parent
 CATALOG = ROOT / "catalog"
-PORTOLAN_SCHEMA = "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json"
+PORTOLAN_SCHEMA = "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json"
 
 GROUP_DESCRIPTIONS = {g: GROUP_CAPTIONS[g] for g in GROUPS}
 

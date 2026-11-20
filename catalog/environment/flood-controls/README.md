@@ -19,7 +19,7 @@ Floods Controls Mirrored from [the city's open data portal](https://stlcity.maps
 |--------|------|-------------|
 | OBJECTID | int64 |  |
 | Shape__Length | double |  |
-| geometry | binary |  |
+| geometry | binary | Feature geometry (WGS84, WKB encoding). |
 | source_layer | string |  |
 | LOCATION | string |  |
 | REACH | int16 |  |
@@ -30,7 +30,7 @@ Floods Controls Mirrored from [the city's open data portal](https://stlcity.maps
 | NOTES | string |  |
 | CONTROL | string |  |
 | STATE | string |  |
-| bbox | struct<xmin: double, ymin: double, xmax: double, ymax: double> |  |
+| bbox | struct<xmin: double, ymin: double, xmax: double, ymax: double> | Per-row bounding box of the geometry (the GeoParquet covering column). |
 
 ## Files
 

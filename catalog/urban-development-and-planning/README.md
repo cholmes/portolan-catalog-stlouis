@@ -7,33 +7,33 @@ Land Acquisition, Planning, Preservation, Zoning
 <details>
 <summary>📁 14 collections (click to expand)</summary>
 
-### [urban-development-and-planning/city-blocks](urban-development-and-planning/urban-development-and-planning/city-blocks/)
+### [urban-development-and-planning/city-blocks](city-blocks/)
 
-### [urban-development-and-planning/city-boundary](urban-development-and-planning/urban-development-and-planning/city-boundary/)
+### [urban-development-and-planning/city-boundary](city-boundary/)
 
-### [urban-development-and-planning/historic-districts](urban-development-and-planning/urban-development-and-planning/historic-districts/)
+### [urban-development-and-planning/historic-districts](historic-districts/)
 
-### [urban-development-and-planning/historic-landmarks](urban-development-and-planning/urban-development-and-planning/historic-landmarks/)
+### [urban-development-and-planning/historic-landmarks](historic-landmarks/)
 
-### [urban-development-and-planning/land-use](urban-development-and-planning/urban-development-and-planning/land-use/)
+### [urban-development-and-planning/land-use](land-use/)
 
-### [urban-development-and-planning/neighborhoods](urban-development-and-planning/urban-development-and-planning/neighborhoods/)
+### [urban-development-and-planning/neighborhoods](neighborhoods/)
 
-### [urban-development-and-planning/overture-addresses](urban-development-and-planning/urban-development-and-planning/overture-addresses/)
+### [urban-development-and-planning/overture-addresses](overture-addresses/)
 
-### [urban-development-and-planning/overture-buildings](urban-development-and-planning/urban-development-and-planning/overture-buildings/)
+### [urban-development-and-planning/overture-buildings](overture-buildings/)
 
-### [urban-development-and-planning/overture-land-use](urban-development-and-planning/urban-development-and-planning/overture-land-use/)
+### [urban-development-and-planning/overture-land-use](overture-land-use/)
 
-### [urban-development-and-planning/parcels](urban-development-and-planning/urban-development-and-planning/parcels/)
+### [urban-development-and-planning/parcels](parcels/)
 
-### [urban-development-and-planning/parcels-history](urban-development-and-planning/urban-development-and-planning/parcels-history/)
+### [urban-development-and-planning/parcels-history](parcels-history/)
 
-### [urban-development-and-planning/port-authority-district](urban-development-and-planning/urban-development-and-planning/port-authority-district/)
+### [urban-development-and-planning/port-authority-district](port-authority-district/)
 
-### [urban-development-and-planning/vacancy-composite](urban-development-and-planning/urban-development-and-planning/vacancy-composite/)
+### [urban-development-and-planning/vacancy-composite](vacancy-composite/)
 
-### [urban-development-and-planning/zoning](urban-development-and-planning/urban-development-and-planning/zoning/)
+### [urban-development-and-planning/zoning](zoning/)
 
 </details>
 

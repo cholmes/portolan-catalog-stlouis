@@ -4,19 +4,19 @@ Waste, Recycling, Sustainability, Hazardous Materials
 
 ## Collections
 
-### [environment/city-trees](environment/environment/city-trees/)
+### [environment/city-trees](city-trees/)
 
-### [environment/flood-controls](environment/environment/flood-controls/)
+### [environment/flood-controls](flood-controls/)
 
-### [environment/floodplain](environment/environment/floodplain/)
+### [environment/floodplain](floodplain/)
 
-### [environment/forest-park-trees](environment/environment/forest-park-trees/)
+### [environment/forest-park-trees](forest-park-trees/)
 
-### [environment/overture-land](environment/environment/overture-land/)
+### [environment/overture-land](overture-land/)
 
-### [environment/overture-land-cover](environment/environment/overture-land-cover/)
+### [environment/overture-land-cover](overture-land-cover/)
 
-### [environment/overture-water](environment/environment/overture-water/)
+### [environment/overture-water](overture-water/)
 
 ## Coverage
 

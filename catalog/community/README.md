@@ -4,7 +4,7 @@ Neighborhoods, Marriage, Birth, Immigration, Support
 
 ## Collections
 
-### [community/neighborhood-organizations](community/community/neighborhood-organizations/)
+### [community/neighborhood-organizations](neighborhood-organizations/)
 
 ## Coverage
 

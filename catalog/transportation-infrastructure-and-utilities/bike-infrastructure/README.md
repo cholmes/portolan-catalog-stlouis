@@ -23,7 +23,7 @@ Bicycle infrastructure from the city's Biking Infrastructure Map service: existi
 | LeftCityCode | string |  |
 | BikeFacilityType | string |  |
 | GlobalID | string |  |
-| geometry | binary |  |
+| geometry | binary | Feature geometry (WGS84, WKB encoding). |
 | source_layer | string |  |
 | Shape_Leng | double |  |
 | Name | string |  |
@@ -71,7 +71,7 @@ Bicycle infrastructure from the city's Biking Infrastructure Map service: existi
 | EWGfundCAT | string |  |
 | Comments | string |  |
 | BikeFacMap | string |  |
-| bbox | struct<xmin: double, ymin: double, xmax: double, ymax: double> |  |
+| bbox | struct<xmin: double, ymin: double, xmax: double, ymax: double> | Per-row bounding box of the geometry (the GeoParquet covering column). |
 
 ## Files
 

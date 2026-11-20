@@ -6,7 +6,7 @@ Plumbing permit information by property type, year, neighborhood, ward, and proj
 
 ## Spatial Coverage
 
-- **Bounding Box**: [-90.320522, 38.531907, -90.166409, 38.774362]
+- **Bounding Box**: [-90.31978872031806, 38.53410591506517, -90.17909196943955, 38.773972797941646]
 
 ## Temporal Coverage
 
@@ -77,6 +77,7 @@ Plumbing permit information by property type, year, neighborhood, ward, and proj
 | ./styles/default.json | 1.4 KB | 1220adef5ed4... |
 | ./styles/style-recent.json | 1.0 KB | 12209c52c3ac... |
 | ./styles/style-solid.json | 530 B | 12201fc33571... |
+| ./plumbing-permits-joined.parquet | 11.7 MB | 122074d09ade... |
 | https://www.stlouis-mo.gov/data/upload/data-files/plumbing-permits.zip | 15.2 MB | 122020348181... |
 
 ## Quick Start

@@ -4,13 +4,13 @@ Courts, Emergency Services, Police, Fire, Legal Assistance
 
 ## Collections
 
-### [law-safety-and-justice/crime](law-safety-and-justice/law-safety-and-justice/crime/)
+### [law-safety-and-justice/crime](crime/)
 
-### [law-safety-and-justice/police-districts](law-safety-and-justice/law-safety-and-justice/police-districts/)
+### [law-safety-and-justice/police-districts](police-districts/)
 
-### [law-safety-and-justice/siren-locations](law-safety-and-justice/law-safety-and-justice/siren-locations/)
+### [law-safety-and-justice/siren-locations](siren-locations/)
 
-### [law-safety-and-justice/tornado-damage-2025](law-safety-and-justice/law-safety-and-justice/tornado-damage-2025/)
+### [law-safety-and-justice/tornado-damage-2025](tornado-damage-2025/)
 
 ## Coverage
 

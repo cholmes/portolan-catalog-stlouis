@@ -49,7 +49,7 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
@@ -118,11 +118,13 @@
     },
     {
       "name": "geometry",
-      "type": "binary"
+      "type": "binary",
+      "description": "Feature geometry (WGS84, WKB encoding)."
     },
     {
       "name": "bbox",
-      "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>"
+      "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>",
+      "description": "Per-row bounding box of the geometry (the GeoParquet covering column)."
     }
   ],
   "portolan:total_size_bytes": 54921,
@@ -158,7 +160,8 @@
       "roles": [
         "data"
       ],
-      "title": "Street Sweeping Schedule (GeoParquet)"
+      "title": "Street Sweeping Schedule (GeoParquet)",
+      "description": "Spec GeoParquet: WGS84, zstd compression, Hilbert row order, bbox covering column with row-group statistics."
     },
     "street-sweeping-tiles": {
       "href": "./street-sweeping.pmtiles",
@@ -168,7 +171,8 @@
       ],
       "title": "Street Sweeping Schedule (PMTiles)",
       "file:size": 202011,
-      "file:checksum": "12204ffc9a29a7021ac6da52738ec4efc73c103303652d22621a4906b58f1d2d9b97"
+      "file:checksum": "12204ffc9a29a7021ac6da52738ec4efc73c103303652d22621a4906b58f1d2d9b97",
+      "description": "Vector tiles built from this collection's GeoParquet, for map display."
     },
     "styles/city-renderer": {
       "href": "./styles/city-renderer.json",
@@ -223,7 +227,8 @@
       ],
       "title": "Street Sweeping Schedule rendered with the default style",
       "file:size": 380539,
-      "file:checksum": "12207f7535d473a35a75f8ce41dca4bb5dca5a48438437b90a6a0b5bacc7000b4a0c"
+      "file:checksum": "12207f7535d473a35a75f8ce41dca4bb5dca5a48438437b90a6a0b5bacc7000b4a0c",
+      "description": "The default style rendered over the collection's extent, for catalog browsing."
     }
   },
   "updated": "2026-08-14T12:21:16+00:00",

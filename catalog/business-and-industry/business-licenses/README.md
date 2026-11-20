@@ -51,8 +51,8 @@ Business licenses as of October 2025, from SLDC. Mirrored from [the city's open 
 | USER_Business_Phone | string |  |
 | USER_Contact_Name | string |  |
 | USER_Business_E_Mail | string |  |
-| geometry | binary |  |
-| bbox | struct<xmin: double, ymin: double, xmax: double, ymax: double> |  |
+| geometry | binary | Feature geometry (WGS84, WKB encoding). |
+| bbox | struct<xmin: double, ymin: double, xmax: double, ymax: double> | Per-row bounding box of the geometry (the GeoParquet covering column). |
 
 ## Files
 

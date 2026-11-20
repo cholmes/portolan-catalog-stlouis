@@ -49,7 +49,7 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
@@ -78,11 +78,13 @@
     },
     {
       "name": "geometry",
-      "type": "binary"
+      "type": "binary",
+      "description": "Feature geometry (WGS84, WKB encoding)."
     },
     {
       "name": "bbox",
-      "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>"
+      "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>",
+      "description": "Per-row bounding box of the geometry (the GeoParquet covering column)."
     }
   ],
   "portolan:total_size_bytes": 82744,
@@ -161,7 +163,8 @@
       "file:checksum": "1220c30b3b2652c5ec64d0fe9a51f1b749fb74704df4a301531919d20e656c40567b",
       "roles": [
         "data"
-      ]
+      ],
+      "description": "Spec GeoParquet: WGS84, zstd compression, Hilbert row order, bbox covering column with row-group statistics."
     },
     "wards-2010-tiles": {
       "href": "./wards-2010.pmtiles",
@@ -171,7 +174,8 @@
       "file:checksum": "12207512dc9aef79aa20d11a77c7ca5b932ba01ace4c5c1e8e59710c31f38488b93d",
       "roles": [
         "visual"
-      ]
+      ],
+      "description": "Vector tiles built from this collection's GeoParquet, for map display."
     },
     "styles/default": {
       "href": "./styles/default.json",
@@ -215,7 +219,8 @@
       "file:checksum": "12209ab9788805d8afbf3267c7fedd75a3e219c2796cb944e724c56062284c2a71b9",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "description": "The default style rendered over the collection's extent, for catalog browsing."
     },
     "source": {
       "href": "https://static.stlouis-mo.gov/open-data/planning/wards/wards_2010.zip",

@@ -4,17 +4,17 @@ Census, Income, Age, Equity, Jobs, Health — federal and third-party data, not 
 
 ## Collections
 
-### [demographics/acs-block-groups](demographics/demographics/acs-block-groups/)
+### [demographics/acs-block-groups](acs-block-groups/)
 
-### [demographics/acs-tracts](demographics/demographics/acs-tracts/)
+### [demographics/acs-tracts](acs-tracts/)
 
-### [demographics/cdc-places](demographics/demographics/cdc-places/)
+### [demographics/cdc-places](cdc-places/)
 
-### [demographics/holc-redlining](demographics/demographics/holc-redlining/)
+### [demographics/holc-redlining](holc-redlining/)
 
-### [demographics/lodes-commutes](demographics/demographics/lodes-commutes/)
+### [demographics/lodes-commutes](lodes-commutes/)
 
-### [demographics/lodes-jobs](demographics/demographics/lodes-jobs/)
+### [demographics/lodes-jobs](lodes-jobs/)
 
 ## Coverage
 

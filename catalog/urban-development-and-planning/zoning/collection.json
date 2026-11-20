@@ -54,7 +54,7 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
@@ -93,11 +93,13 @@
     },
     {
       "name": "geometry",
-      "type": "binary"
+      "type": "binary",
+      "description": "Feature geometry (WGS84, WKB encoding)."
     },
     {
       "name": "geometry_bbox",
-      "type": "struct<xmin: float not null, ymin: float not null, xmax: float not null, ymax: float not null>"
+      "type": "struct<xmin: float not null, ymin: float not null, xmax: float not null, ymax: float not null>",
+      "description": "Per-row bounding box of the geometry (the GeoParquet covering column)."
     }
   ],
   "portolan:styles": [
@@ -175,7 +177,8 @@
       "file:checksum": "1220c46633ca06ffe944bf978bf25721a1fe37595b49dc6b5b4c8742e4bb7cfb2bd3",
       "roles": [
         "data"
-      ]
+      ],
+      "description": "Spec GeoParquet: WGS84, zstd compression, Hilbert row order, bbox covering column with row-group statistics."
     },
     "zoning-tiles": {
       "href": "./zoning.pmtiles",
@@ -185,7 +188,8 @@
       "file:checksum": "12207500861df5ac8b49857a2c7873feefba11b47a89f753e0f210cbc4ab023e4adb",
       "roles": [
         "visual"
-      ]
+      ],
+      "description": "Vector tiles built from this collection's GeoParquet, for map display."
     },
     "styles/city-renderer": {
       "href": "./styles/city-renderer.json",
@@ -240,7 +244,8 @@
       "file:checksum": "1220cae9c9d6513e1466932de1386932693e0b0259cbf4b801a9476460799571be65",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "description": "The default style rendered over the collection's extent, for catalog browsing."
     },
     "source-shapefile": {
       "href": "https://www.stlouis-mo.gov/data/upload/data-files/zoning.zip",

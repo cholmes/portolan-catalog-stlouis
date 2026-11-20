@@ -4,21 +4,21 @@ Assistance, Incentives, Licenses, Regulations, Bids
 
 ## Collections
 
-### [business-and-industry/business-licenses](business-and-industry/business-and-industry/business-licenses/)
+### [business-and-industry/business-licenses](business-licenses/)
 
-### [business-and-industry/community-improvement-districts](business-and-industry/business-and-industry/community-improvement-districts/)
+### [business-and-industry/community-improvement-districts](community-improvement-districts/)
 
-### [business-and-industry/opportunity-zones](business-and-industry/business-and-industry/opportunity-zones/)
+### [business-and-industry/opportunity-zones](opportunity-zones/)
 
-### [business-and-industry/overture-places](business-and-industry/business-and-industry/overture-places/)
+### [business-and-industry/overture-places](overture-places/)
 
-### [business-and-industry/special-business-districts](business-and-industry/business-and-industry/special-business-districts/)
+### [business-and-industry/special-business-districts](special-business-districts/)
 
-### [business-and-industry/tax-abated-parcels](business-and-industry/business-and-industry/tax-abated-parcels/)
+### [business-and-industry/tax-abated-parcels](tax-abated-parcels/)
 
-### [business-and-industry/tax-sales](business-and-industry/business-and-industry/tax-sales/)
+### [business-and-industry/tax-sales](tax-sales/)
 
-### [business-and-industry/tif-districts](business-and-industry/business-and-industry/tif-districts/)
+### [business-and-industry/tif-districts](tif-districts/)
 
 ## Coverage
 

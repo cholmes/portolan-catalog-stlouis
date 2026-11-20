@@ -91,8 +91,8 @@ Current and historic parcel data Mirrored from [the city's open data portal](htt
 | IMPACTAREA | int32 |  |
 | HSCONSERV | int32 |  |
 | PARCEL10 | string | Ten-digit parcel identifier (CityBlock+Parcel+OwnerCode form; see the legacy BBBBbbPPPO schema); PARCEL9 is the nine-digit CityBlock+Parcel root. |
-| geometry | binary |  |
-| geometry_bbox | struct<xmin: float, ymin: float, xmax: float, ymax: float> |  |
+| geometry | binary | Feature geometry (WGS84, WKB encoding). |
+| geometry_bbox | struct<xmin: float, ymin: float, xmax: float, ymax: float> | Per-row bounding box of the geometry (the GeoParquet covering column). |
 | era | string | Snapshot vintage added by this mirror: which yearly source extract (1997-2015 single years, plus a combined 2016-2020 file) the row came from. |
 | OWNEROCC | string | Owner-occupancy dwelling-type code: 1 Single Family, 2 Two-Family, 4 Three-or-Four Family, 5 Five-plus Family, C Condo, X Other (city PrclCode.mdb CdOwnerOccCode). |
 | VACBLDGYR | int32 | Year the property entered the vacant building registry (name-based). |

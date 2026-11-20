@@ -6,7 +6,7 @@ Commercial, industrial, and occupancy building permits in the City of St. Louis 
 
 ## Spatial Coverage
 
-- **Bounding Box**: [-90.320522, 38.531907, -90.166409, 38.774362]
+- **Bounding Box**: [-90.31985270465584, 38.53498170097803, -90.1783798868637, 38.77005402266487]
 
 ## Temporal Coverage
 
@@ -91,6 +91,7 @@ Commercial, industrial, and occupancy building permits in the City of St. Louis 
 | ./styles/default.json | 1.4 KB | 1220b3aab725... |
 | ./styles/style-recent.json | 1.0 KB | 1220d657de5c... |
 | ./styles/style-solid.json | 532 B | 12203d9a9eb3... |
+| ./occupancy-permits-joined.parquet | 5.4 MB | 12207103c6b5... |
 | https://www.stlouis-mo.gov/data/upload/data-files/occupancy-permits.zip | 9.9 MB | 1220f794d240... |
 
 ## Quick Start

@@ -4,25 +4,25 @@ Owning, Renting, Homelessness, Repairs, Financing Programs
 
 ## Collections
 
-### [housing/electrical-permits](housing/housing/electrical-permits/)
+### [housing/electrical-permits](electrical-permits/)
 
-### [housing/lra-property](housing/housing/lra-property/)
+### [housing/lra-property](lra-property/)
 
-### [housing/market-value-analysis](housing/housing/market-value-analysis/)
+### [housing/market-value-analysis](market-value-analysis/)
 
-### [housing/mechanical-permits](housing/housing/mechanical-permits/)
+### [housing/mechanical-permits](mechanical-permits/)
 
-### [housing/occupancy-permits](housing/housing/occupancy-permits/)
+### [housing/occupancy-permits](occupancy-permits/)
 
-### [housing/plumbing-permits](housing/housing/plumbing-permits/)
+### [housing/plumbing-permits](plumbing-permits/)
 
-### [housing/property-sales](housing/housing/property-sales/)
+### [housing/property-sales](property-sales/)
 
 ## Coverage
 
 **Spatial Extent**
 
-- West: -90.3205, South: 38.5319, East: -90.1664, North: 38.7744
+- West: -90.3205, South: 38.5320, East: -90.1667, North: 38.7743
 
 **Temporal Extent**
 

@@ -43,8 +43,8 @@ Unlike the city's own datasets in this catalog, this is **not** City of St. Loui
 | pct_below_poverty_black | double | Percent of the Black or African American alone population for whom poverty status is determined with income below the poverty level. ACS table B17020B. |
 | pct_below_poverty_black_moe | double | Margin of error for pct_below_poverty_black at the 90% confidence level (the level the Census Bureau publishes for ACS). |
 | pct_below_poverty_black_cv | double | Coefficient of variation for pct_below_poverty_black (moe / 1.645 / estimate): at or below 0.15 is reliable, 0.15–0.30 use with caution, above 0.30 unreliable. |
-| geometry | binary |  |
-| bbox | struct<xmin: double, ymin: double, xmax: double, ymax: double> |  |
+| geometry | binary | Feature geometry (WGS84, WKB encoding). |
+| bbox | struct<xmin: double, ymin: double, xmax: double, ymax: double> | Per-row bounding box of the geometry (the GeoParquet covering column). |
 
 ## Files
 

@@ -6,12 +6,12 @@ Property tax records by parcel Mirrored from [the city's open data portal](https
 
 ## Spatial Coverage
 
-- **Bounding Box**: [-90.320522, 38.531907, -90.166409, 38.774362]
+- **Bounding Box**: [-90.32058220569718, 38.53308187377711, -90.17536578502329, 38.774362902635474]
 
 ## Temporal Coverage
 
-- **Start**: open
-- **End**: ongoing
+- **Start**: 2025-01-01T00:00:00Z
+- **End**: 2025-12-31T23:59:59Z
 
 ## Schema
 
@@ -215,6 +215,7 @@ Property tax records by parcel Mirrored from [the city's open data portal](https
 | ./styles/default.json | 1.3 KB | 1220b7f6be0a... |
 | ./styles/style-land-value.json | 1.3 KB | 122019ca0a76... |
 | ./styles/style-solid.json | 506 B | 1220fa3a2804... |
+| ./property-taxes-joined.parquet | 15.4 MB | 1220991d1a57... |
 | https://www.stlouis-mo.gov/data/upload/data-files/prcl.zip | 107.5 MB | 122066e381ba... |
 
 ## Quick Start

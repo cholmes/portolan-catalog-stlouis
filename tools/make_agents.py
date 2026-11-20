@@ -104,9 +104,9 @@ NOTES = {
         "example": (
             "-- median sale price by neighborhood, 2020s market sales\n"
             f"SELECT n.NHD_NAME, median(s.SalePrice) mp, count(*) n_sales\n"
-            f"FROM '{BASE}/property-sales/property-sales.parquet' s\n"
-            f"JOIN '{BASE}/parcels/parcels.parquet' p ON s.AsrParcelId = p.ParcelId\n"
-            f"JOIN '{BASE}/neighborhoods/neighborhoods.parquet' n ON p.NBRHD = n.NHD_NUM\n"
+            f"FROM '{BASE}/housing/property-sales/property-sales.parquet' s\n"
+            f"JOIN '{BASE}/urban-development-and-planning/parcels/parcels.parquet' p ON s.AsrParcelId = p.ParcelId\n"
+            f"JOIN '{BASE}/urban-development-and-planning/neighborhoods/neighborhoods.parquet' n ON p.NBRHD = n.NHD_NUM\n"
             "WHERE s.SalePrice > 1000 AND strptime(s.SaleDate, '%m/%d/%y %H:%M:%S') >= DATE '2020-01-01'\n"
             "GROUP BY 1 ORDER BY 2 DESC LIMIT 15;"),
     },
@@ -611,7 +611,7 @@ range-readable over HTTPS — no download needed.
 
 ```sql
 INSTALL httpfs; LOAD httpfs; INSTALL spatial; LOAD spatial;  -- DuckDB
-SELECT * FROM '{BASE}/parcels/parcels.parquet' LIMIT 5;
+SELECT * FROM '{BASE}/urban-development-and-planning/parcels/parcels.parquet' LIMIT 5;
 ```
 
 Catalog root: `{BASE}/catalog.json`. Every collection has its own
