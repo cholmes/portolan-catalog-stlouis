@@ -8,7 +8,7 @@ range-readable over HTTPS — no download needed.
 
 ```sql
 INSTALL httpfs; LOAD httpfs; INSTALL spatial; LOAD spatial;  -- DuckDB
-SELECT * FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/parcels/parcels.parquet' LIMIT 5;
+SELECT * FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/urban-development-and-planning/parcels/parcels.parquet' LIMIT 5;
 ```
 
 Catalog root: `https://data.source.coop/tge-labs/st-louis-open-data-mirror/catalog.json`. Every collection has its own

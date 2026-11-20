@@ -48,12 +48,12 @@ Not an official city service.
 INSTALL spatial; LOAD spatial; INSTALL httpfs; LOAD httpfs;
 WITH lots AS (
   SELECT ST_Centroid(geometry) AS pt
-  FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/lra-property/lra-property.parquet'
+  FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/housing/lra-property/lra-property.parquet'
   WHERE Usage ILIKE 'vacant lot'
 )
 SELECT n.NHD_NAME, count(*) AS lra_vacant_lots
 FROM lots
-JOIN 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/neighborhoods/neighborhoods.parquet' n
+JOIN 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/urban-development-and-planning/neighborhoods/neighborhoods.parquet' n
   ON ST_Intersects(lots.pt, n.geometry)
 GROUP BY 1 ORDER BY 2 DESC LIMIT 10;
 ```
