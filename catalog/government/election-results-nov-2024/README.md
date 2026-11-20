@@ -6,7 +6,7 @@ This is the detailed vote extract (dve) from the November 5, 2024, General Munic
 
 ## Spatial Coverage
 
-- **Bounding Box**: [-90.320522, 38.531907, -90.166409, 38.774362]
+- **Bounding Box**: [-90.32051059298894, 38.532024890458636, -90.16636362934655, 38.774375299544545]
 
 ## Temporal Coverage
 
@@ -66,6 +66,7 @@ This is the detailed vote extract (dve) from the November 5, 2024, General Munic
 | ./styles/style-ballots.json | 1.2 KB | 1220a466882d... |
 | ./styles/style-presidential.json | 1.6 KB | 1220a85d668f... |
 | ./styles/style-registered.json | 1.3 KB | 12203cc4b6de... |
+| ./election-results-nov-2024-joined.parquet | 252.3 KB | 12206e09ba6a... |
 
 ## Quick Start
 

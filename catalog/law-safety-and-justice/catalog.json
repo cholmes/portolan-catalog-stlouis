@@ -3,7 +3,7 @@
   "id": "law-safety-and-justice",
   "stac_version": "1.1.0",
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json"
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json"
   ],
   "title": "Law, Safety, and Justice",
   "description": "Courts, Emergency Services, Police, Fire, Legal Assistance",

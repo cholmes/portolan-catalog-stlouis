@@ -55,7 +55,7 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
@@ -176,7 +176,8 @@
     },
     {
       "name": "geometry",
-      "type": "binary"
+      "type": "binary",
+      "description": "Feature geometry (WGS84, WKB encoding)."
     },
     {
       "name": "source_layer",
@@ -240,7 +241,8 @@
     },
     {
       "name": "bbox",
-      "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>"
+      "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>",
+      "description": "Per-row bounding box of the geometry (the GeoParquet covering column)."
     }
   ],
   "portolan:total_size_bytes": 39735,
@@ -320,7 +322,8 @@
       "file:checksum": "1220071dd3877f4173cdb59f4dd5c33a8db5a5b5bec6525fb40a1b8edb348d33d638",
       "roles": [
         "data"
-      ]
+      ],
+      "description": "Spec GeoParquet: WGS84, zstd compression, Hilbert row order, bbox covering column with row-group statistics."
     },
     "tornado-damage-2025-tiles": {
       "href": "./tornado-damage-2025.pmtiles",
@@ -330,7 +333,8 @@
       "file:checksum": "12204e19ae59ed0d0f688592f80b375b032c50659c5726ec0d88a753412880e2910c",
       "roles": [
         "visual"
-      ]
+      ],
+      "description": "Vector tiles built from this collection's GeoParquet, for map display."
     },
     "styles/city-renderer": {
       "href": "./styles/city-renderer.json",
@@ -385,7 +389,8 @@
       "file:checksum": "1220a44d84a24b58047a1fc705e2e1edc2455f486969d7e0d9844889406e35920ea3",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "description": "The default style rendered over the collection's extent, for catalog browsing."
     }
   }
 }

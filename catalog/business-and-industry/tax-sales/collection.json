@@ -49,7 +49,7 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
@@ -122,11 +122,13 @@
     },
     {
       "name": "geometry",
-      "type": "binary"
+      "type": "binary",
+      "description": "Feature geometry (WGS84, WKB encoding)."
     },
     {
       "name": "bbox",
-      "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>"
+      "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>",
+      "description": "Per-row bounding box of the geometry (the GeoParquet covering column)."
     }
   ],
   "portolan:total_size_bytes": 406414,
@@ -162,7 +164,8 @@
       "roles": [
         "data"
       ],
-      "title": "Tax Sales (GeoParquet)"
+      "title": "Tax Sales (GeoParquet)",
+      "description": "Spec GeoParquet: WGS84, zstd compression, Hilbert row order, bbox covering column with row-group statistics."
     },
     "tax-sales-tiles": {
       "href": "./tax-sales.pmtiles",
@@ -172,7 +175,8 @@
       ],
       "title": "Tax Sales (PMTiles)",
       "file:size": 1093329,
-      "file:checksum": "12205e982f66a9e8e1288cb053c1b98603d1c15c865fc0123f1df4c50c34c0b0b0c6"
+      "file:checksum": "12205e982f66a9e8e1288cb053c1b98603d1c15c865fc0123f1df4c50c34c0b0b0c6",
+      "description": "Vector tiles built from this collection's GeoParquet, for map display."
     },
     "styles/city-renderer": {
       "href": "./styles/city-renderer.json",
@@ -227,7 +231,8 @@
       ],
       "title": "Tax Sales rendered with the default style",
       "file:size": 357578,
-      "file:checksum": "1220fcb1d01a3b06b06690171521919480f61dc200a14e4f670dc9008eca276e1a72"
+      "file:checksum": "1220fcb1d01a3b06b06690171521919480f61dc200a14e4f670dc9008eca276e1a72",
+      "description": "The default style rendered over the collection's extent, for catalog browsing."
     }
   },
   "updated": "2026-08-14T12:21:16+00:00",

@@ -24,8 +24,8 @@ This feature represents the District boundary for the St. Louis Port Authority. 
 | Guid | string |  |
 | Shape__Area | double |  |
 | Shape__Length | double |  |
-| geometry | binary |  |
-| bbox | struct<xmin: double, ymin: double, xmax: double, ymax: double> |  |
+| geometry | binary | Feature geometry (WGS84, WKB encoding). |
+| bbox | struct<xmin: double, ymin: double, xmax: double, ymax: double> | Per-row bounding box of the geometry (the GeoParquet covering column). |
 
 ## Files
 

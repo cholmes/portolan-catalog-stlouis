@@ -3,7 +3,7 @@
   "id": "housing/mechanical-permits",
   "stac_version": "1.1.0",
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
@@ -15,10 +15,10 @@
     "spatial": {
       "bbox": [
         [
-          -90.320522,
-          38.531907,
-          -90.166409,
-          38.774362
+          -90.31881187616641,
+          38.53498170097803,
+          -90.18037932345507,
+          38.773096408914235
         ]
       ]
     },
@@ -315,6 +315,7 @@
         "data"
       ],
       "title": "Mechanical Permits (Parquet)",
+      "description": "Plain Parquet with no geometry column, as the city publishes this data. AGENTS.md states the join that maps it.",
       "file:size": 4404820,
       "file:checksum": "1220220e661375542c9fd89d5ed78501634029759372744a2aefb67a1bf4afdee2af"
     },
@@ -325,6 +326,7 @@
         "visual"
       ],
       "title": "Mechanical Permits (PMTiles)",
+      "description": "Vector tiles built from the joined GeoParquet in this collection, for map display.",
       "file:size": 11258290,
       "file:checksum": "1220443a5a77c4a55aab7a5f33a6c85cb09ee6e3a616203a04f3253542833b3aae0e"
     },
@@ -335,6 +337,7 @@
         "thumbnail"
       ],
       "title": "Mechanical Permits rendered with the default style",
+      "description": "The default style rendered over the collection's extent, for catalog browsing.",
       "file:size": 401041,
       "file:checksum": "12201051d41c2e8fb434ac6716c6a99a5392de818db9d2acc2945c979b46666456df"
     },
@@ -371,6 +374,56 @@
       "description": "Every joined parcel in one color, for overlays.",
       "file:size": 534,
       "file:checksum": "12204341e887ccd94e2f2ff1cd4ff0c43377f8f6aafdbbf609d9866a8c989082060a"
+    },
+    "mechanical-permits-joined": {
+      "href": "./mechanical-permits-joined.parquet",
+      "type": "application/vnd.apache.parquet",
+      "roles": [
+        "data"
+      ],
+      "title": "Mechanical Permits joined to parcels (GeoParquet)",
+      "description": "The documented join of this table with the parcels collection's geometries, materialized as spec GeoParquet. The PMTiles are built from this file, and AGENTS.md states the same join for reproducing it.",
+      "table:primary_geometry": "geometry",
+      "table:row_count": 68381,
+      "table:columns": [
+        {
+          "name": "HANDLE",
+          "type": "string",
+          "description": "Citywide parcel handle (join key to parcels)."
+        },
+        {
+          "name": "APPTYPE",
+          "type": "string",
+          "description": "Permit application type code; 'AM' (Mechanical) in this dataset (city 'Permit Application Type' vocabulary)."
+        },
+        {
+          "name": "APPDESCRIPTION",
+          "type": "string",
+          "description": "Free-text description of the permitted work."
+        },
+        {
+          "name": "PERMIT_YEAR",
+          "type": "int32",
+          "description": "Year parsed from the permit's ISSUEDATE."
+        },
+        {
+          "name": "ESTPROJECTCOST",
+          "type": "double",
+          "description": "Estimated project cost in dollars."
+        },
+        {
+          "name": "geometry",
+          "type": "blob",
+          "description": "Geometry of the joined parcels feature (WGS84)."
+        },
+        {
+          "name": "bbox",
+          "type": "struct(xmin double, ymin double, xmax double, ymax double)",
+          "description": "Per-row bounding box of the geometry (the GeoParquet covering column)."
+        }
+      ],
+      "file:size": 5844493,
+      "file:checksum": "12203f925daf6b16d4cc5ee3f02d557371ff94110e82ad23e4bcf992a74edd5b8905"
     },
     "source": {
       "href": "https://www.stlouis-mo.gov/data/upload/data-files/mechanical-permits.zip",

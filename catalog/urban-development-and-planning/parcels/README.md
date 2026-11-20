@@ -155,8 +155,8 @@ Current and historic parcel data Mirrored from [the city's open data portal](htt
 | Parcel | double | Parcel number within the city block, the second component of the CityBlock/Parcel/OwnerCode parcel key. |
 | SHAPE.STArea() | double |  |
 | SHAPE.STLength() | double |  |
-| geometry | binary |  |
-| geometry_bbox | struct<xmin: float not null, ymin: float not null, xmax: float not null, ymax: float not null> |  |
+| geometry | binary | Feature geometry (WGS84, WKB encoding). |
+| geometry_bbox | struct<xmin: float not null, ymin: float not null, xmax: float not null, ymax: float not null> | Per-row bounding box of the geometry (the GeoParquet covering column). |
 
 ## Files
 

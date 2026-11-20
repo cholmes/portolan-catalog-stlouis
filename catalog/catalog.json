@@ -112,7 +112,7 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json"
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json"
   ],
   "portolan:total_size_bytes": 544947894,
   "portolan:asset_count": 89,

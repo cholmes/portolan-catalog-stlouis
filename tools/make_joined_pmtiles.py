@@ -14,7 +14,14 @@ Join modes:
               that repeat across rows (e.g. precinct turnout)
   aggregate — one feature per geometry with a computed row count
 
-Usage: python3 tools/make_joined_pmtiles.py [collection-id ...]
+Each join result is also installed as spec GeoParquet at
+catalog/<rel>/<id>-joined.parquet. PORTO-FMT-062 requires the collection to
+reference the GeoParquet its PMTiles are built from, so the joined file is
+published next to the tiles rather than left in scratch.
+
+Usage: python3 tools/make_joined_pmtiles.py [--no-tiles] [collection-id ...]
+       --no-tiles rebuilds and installs the joined GeoParquet without
+       re-running tippecanoe (tile bytes stay untouched).
 """
 
 import subprocess
@@ -75,7 +82,21 @@ JOINS = {
 }
 
 
-def make(coll_id: str) -> None:
+def install_spec_joined(coll_id: str, joined: Path) -> None:
+    """Normalize the join result to spec GeoParquet inside the collection."""
+    from assemble import restore_stats, run
+    out = CATALOG / coll_rel(coll_id) / f"{coll_id}-joined.parquet"
+    tmp = SCRATCH / f".{coll_id}-joined.spec.parquet"
+    tmp_sorted = SCRATCH / f".{coll_id}-joined.sorted.parquet"
+    run(["gpio", "convert", "geoparquet", str(joined), str(tmp)])
+    run(["gpio", "sort", "hilbert", str(tmp), str(tmp_sorted)])
+    restore_stats(tmp_sorted)
+    tmp_sorted.replace(out)
+    tmp.unlink(missing_ok=True)
+    print(f"  ↳ {out.relative_to(ROOT)}: {out.stat().st_size/1e6:.1f} MB")
+
+
+def make(coll_id: str, tiles: bool = True) -> None:
     spec = JOINS[coll_id]
     left = CATALOG / coll_rel(coll_id) / f"{coll_id}.parquet"
     right = CATALOG / coll_rel(spec["right"]) / f"{spec['right']}.parquet"
@@ -117,6 +138,11 @@ def make(coll_id: str) -> None:
          f"SELECT count(*) FROM '{left}'"],
         capture_output=True, text=True).stdout.strip())
 
+    install_spec_joined(coll_id, joined)
+    if not tiles:
+        print(f"✓ {coll_id}: {n_joined}/{n_left} rows joined (tiles kept)")
+        return
+
     out = CATALOG / coll_rel(coll_id) / f"{coll_id}.pmtiles"
     tmp = CATALOG / coll_rel(coll_id) / f".{coll_id}.tmp.pmtiles"
     gpio = subprocess.Popen(["gpio", "convert", "geojson", str(joined)],
@@ -138,13 +164,15 @@ def make(coll_id: str) -> None:
 
 
 def main() -> int:
-    only = set(sys.argv[1:])
+    args = sys.argv[1:]
+    tiles = "--no-tiles" not in args
+    only = {a for a in args if not a.startswith("--")}
     failed = []
     for coll_id in JOINS:
         if only and coll_id not in only:
             continue
         try:
-            make(coll_id)
+            make(coll_id, tiles=tiles)
         except Exception as e:  # noqa: BLE001
             failed.append(coll_id)
             print(f"✗ {coll_id}: {e}")

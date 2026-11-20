@@ -44,7 +44,7 @@ NWS/NOAA damage assessment data for the May 2025 St. Louis tornado, with Prop NS
 | wfo | string |  |
 | image_full | string |  |
 | Shape__Length | double |  |
-| geometry | binary |  |
+| geometry | binary | Feature geometry (WGS84, WKB encoding). |
 | source_layer | string |  |
 | surveydate | timestamp[us] |  |
 | surveytime | string |  |
@@ -60,7 +60,7 @@ NWS/NOAA damage assessment data for the May 2025 St. Louis tornado, with Prop NS
 | image | string |  |
 | dod | float |  |
 | surveytype | string |  |
-| bbox | struct<xmin: double, ymin: double, xmax: double, ymax: double> |  |
+| bbox | struct<xmin: double, ymin: double, xmax: double, ymax: double> | Per-row bounding box of the geometry (the GeoParquet covering column). |
 
 ## Files
 

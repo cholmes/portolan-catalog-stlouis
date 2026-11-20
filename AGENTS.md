@@ -26,9 +26,13 @@ lives in `catalog/` and is synced 1:1 to
    rot on the next upstream edit. After changing `SOURCE_FILES`, re-run
    `tools/fetch_source_meta.py` — remote assets carry the size and digest of
    the bytes the city actually served, never a guess.
-4. **Spec target**: Portolan v0.1.0 plus PR #97 (one style asset per
-   collection carries `roles: ["style","default"]`) and PR #124
-   (collection-level `table:columns`/`table:row_count`/`table:primary_geometry`).
+4. **Spec target**: Portolan v0.3.0. The schema URI is pinned in
+   `tools/finalize_stac.py` (`PORTOLAN_SCHEMA`) and `tests/test_catalog.py`.
+   PMTiles assets carry `roles: ["visual"]`, never `data` (PORTO-FMT-062),
+   and each join-derived collection publishes its joined GeoParquet as a
+   second `data` asset (`<id>-joined.parquet`, built by
+   `tools/make_joined_pmtiles.py`) so the tiles reference the GeoParquet
+   they are rendered from.
 5. **Legends**: portolan-browser reads only the first `fill` layer's
    `fill-color` (`match`/`step`). Data-driven styles must lead with an
    inert `fill-opacity: 0` legend layer — `tools/make_styles.py` does this;

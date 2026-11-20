@@ -38,8 +38,8 @@ Downloadable NIBRS crime data published by the St. Louis Metropolitan Police Dep
 | FirearmUsed | string | Whether a firearm was used in the offense. |
 | IncidentNature | string | Nature-of-incident text as recorded by SLMPD. |
 | keep | bool | Flag added by this mirror's pipeline: true when the record had valid coordinates falling inside the city boundary (geometry is null when false). |
-| geometry | binary |  |
-| geometry_bbox | struct<xmin: float not null, ymin: float not null, xmax: float not null, ymax: float not null> |  |
+| geometry | binary | Feature geometry (WGS84, WKB encoding). |
+| geometry_bbox | struct<xmin: float not null, ymin: float not null, xmax: float not null, ymax: float not null> | Per-row bounding box of the geometry (the GeoParquet covering column). |
 
 ## Files
 

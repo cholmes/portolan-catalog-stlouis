@@ -22,7 +22,7 @@ Airports, Rail, Public Transit, Vehicles, Utilities, Streets
 
 **Spatial Extent**
 
-- West: -90.3257, South: 38.5319, East: -90.1355, North: 38.7747
+- West: -90.3257, South: 38.5320, East: -90.1355, North: 38.7747
 
 **Temporal Extent**
 

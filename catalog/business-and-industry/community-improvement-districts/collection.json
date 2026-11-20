@@ -48,7 +48,7 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
@@ -161,11 +161,13 @@
     },
     {
       "name": "geometry",
-      "type": "binary"
+      "type": "binary",
+      "description": "Feature geometry (WGS84, WKB encoding)."
     },
     {
       "name": "geometry_bbox",
-      "type": "struct<xmin: float not null, ymin: float not null, xmax: float not null, ymax: float not null>"
+      "type": "struct<xmin: float not null, ymin: float not null, xmax: float not null, ymax: float not null>",
+      "description": "Per-row bounding box of the geometry (the GeoParquet covering column)."
     }
   ],
   "portolan:styles": [
@@ -245,7 +247,8 @@
       "file:checksum": "12209af0cd9b4d368320e608fab6860a138e7e6cff75fc12e3beab4ea8b7890a8d10",
       "roles": [
         "data"
-      ]
+      ],
+      "description": "Spec GeoParquet: WGS84, zstd compression, Hilbert row order, bbox covering column with row-group statistics."
     },
     "community-improvement-districts-tiles": {
       "href": "./community-improvement-districts.pmtiles",
@@ -255,7 +258,8 @@
       "file:checksum": "12208d3421b4ec47a0c8afd1190a0d67283b8b5a565865b8a8b4eccee2b8b0a4341d",
       "roles": [
         "visual"
-      ]
+      ],
+      "description": "Vector tiles built from this collection's GeoParquet, for map display."
     },
     "styles/default": {
       "href": "./styles/default.json",
@@ -299,7 +303,8 @@
       "file:checksum": "1220f739eab182b711e20c8c7066defd82ad7e535ee363d4c99f1c110d256172302c",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "description": "The default style rendered over the collection's extent, for catalog browsing."
     },
     "source": {
       "href": "https://static.stlouis-mo.gov/open-data/SLDC/TAXING-DISTRICTS/CID/STLCIDs.geojson",

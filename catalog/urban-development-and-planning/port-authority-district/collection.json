@@ -55,7 +55,7 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
@@ -96,11 +96,13 @@
     },
     {
       "name": "geometry",
-      "type": "binary"
+      "type": "binary",
+      "description": "Feature geometry (WGS84, WKB encoding)."
     },
     {
       "name": "bbox",
-      "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>"
+      "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>",
+      "description": "Per-row bounding box of the geometry (the GeoParquet covering column)."
     }
   ],
   "portolan:total_size_bytes": 16890,
@@ -183,7 +185,8 @@
       "file:checksum": "1220c315317bf7468bde37a740843d22808e53c33e3e7ac4ba0e73247cb5e975d4a2",
       "roles": [
         "data"
-      ]
+      ],
+      "description": "Spec GeoParquet: WGS84, zstd compression, Hilbert row order, bbox covering column with row-group statistics."
     },
     "port-authority-district-tiles": {
       "href": "./port-authority-district.pmtiles",
@@ -193,7 +196,8 @@
       "file:checksum": "12205ad1cc13d9a8411ed3f6e2e13439a98bde4229b02055309365d734085d46c7a0",
       "roles": [
         "visual"
-      ]
+      ],
+      "description": "Vector tiles built from this collection's GeoParquet, for map display."
     },
     "styles/city-renderer": {
       "href": "./styles/city-renderer.json",
@@ -248,7 +252,8 @@
       "file:checksum": "1220750c35a24caf31d4e26963ba93c074e03b599da7609e662b3eba43b1a38b508b",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "description": "The default style rendered over the collection's extent, for catalog browsing."
     }
   }
 }

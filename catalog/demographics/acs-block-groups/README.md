@@ -96,8 +96,8 @@ Unlike the city's own datasets in this catalog, this is **not** City of St. Loui
 | pct_people_of_color | double | Percent of the population that is not White-alone non-Hispanic (the complement of pct_white_nh). ACS table B03002. |
 | pct_people_of_color_moe | double | Margin of error for pct_people_of_color at the 90% confidence level (a complement carries the same error as pct_white_nh). |
 | tract | string | 11-digit census tract GEOID (the first 11 characters of geoid); joins acs-tracts and cdc-places. |
-| geometry | binary |  |
-| bbox | struct<xmin: double, ymin: double, xmax: double, ymax: double> |  |
+| geometry | binary | Feature geometry (WGS84, WKB encoding). |
+| bbox | struct<xmin: double, ymin: double, xmax: double, ymax: double> | Per-row bounding box of the geometry (the GeoParquet covering column). |
 
 ## Files
 

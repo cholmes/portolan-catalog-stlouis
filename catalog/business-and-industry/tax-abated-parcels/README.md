@@ -154,8 +154,8 @@ Parcels within the City of Saint Louis that have obtained and activated an abate
 | Parcel | int32 |  |
 | Shape.STArea() | double |  |
 | Shape.STLength() | double |  |
-| geometry | binary |  |
-| geometry_bbox | struct<xmin: float not null, ymin: float not null, xmax: float not null, ymax: float not null> |  |
+| geometry | binary | Feature geometry (WGS84, WKB encoding). |
+| geometry_bbox | struct<xmin: float not null, ymin: float not null, xmax: float not null, ymax: float not null> | Per-row bounding box of the geometry (the GeoParquet covering column). |
 
 ## Files
 

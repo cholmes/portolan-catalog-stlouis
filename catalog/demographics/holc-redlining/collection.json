@@ -55,7 +55,7 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json",
     "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
@@ -119,11 +119,13 @@
     },
     {
       "name": "geometry",
-      "type": "binary"
+      "type": "binary",
+      "description": "Feature geometry (WGS84, WKB encoding)."
     },
     {
       "name": "bbox",
-      "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>"
+      "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>",
+      "description": "Per-row bounding box of the geometry (the GeoParquet covering column)."
     }
   ],
   "portolan:total_size_bytes": 638892,
@@ -152,7 +154,6 @@
       ]
     }
   ],
-  "proj:epsg": 3857,
   "pmtiles:min_zoom": 0,
   "pmtiles:max_zoom": 12,
   "pmtiles:tile_type": "mvt",
@@ -219,7 +220,8 @@
       "file:checksum": "12206b4d44de1925d428291e409291a8832c0fac6f06eb12e4fb59bd4d6db5cf7902",
       "roles": [
         "data"
-      ]
+      ],
+      "description": "Spec GeoParquet: WGS84, zstd compression, Hilbert row order, bbox covering column with row-group statistics."
     },
     "holc-redlining-tiles": {
       "href": "./holc-redlining.pmtiles",
@@ -228,8 +230,9 @@
       "file:size": 87639,
       "file:checksum": "122037c96fbf6e1e0785a0f923f4ff7914eb0225e30b409d02cc3d1e13c453673cb0",
       "roles": [
-        "data"
-      ]
+        "visual"
+      ],
+      "description": "Vector tiles built from this collection's GeoParquet, for map display."
     },
     "styles/default": {
       "href": "./styles/default.json",
@@ -251,7 +254,8 @@
       "file:checksum": "1220bf8bfd50868daa13f016656c688626704961749e07359164988b440e9f622c35",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "description": "The default style rendered over the collection's extent, for catalog browsing."
     }
   }
 }

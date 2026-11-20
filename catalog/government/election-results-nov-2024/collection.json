@@ -3,7 +3,7 @@
   "id": "government/election-results-nov-2024",
   "stac_version": "1.1.0",
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
@@ -15,10 +15,10 @@
     "spatial": {
       "bbox": [
         [
-          -90.320522,
-          38.531907,
-          -90.166409,
-          38.774362
+          -90.32051059298894,
+          38.532024890458636,
+          -90.16636362934655,
+          38.774375299544545
         ]
       ]
     },
@@ -254,6 +254,7 @@
         "data"
       ],
       "title": "November 2024 Election Results by Precinct (Parquet)",
+      "description": "Plain Parquet with no geometry column, as the city publishes this data. AGENTS.md states the join that maps it.",
       "file:size": 326504,
       "file:checksum": "1220e10febd3491a6fe2df2862b7cb3eb4d001c6e65db81162e064226b3fffb05a11"
     },
@@ -264,6 +265,7 @@
         "visual"
       ],
       "title": "November 2024 Election Results by Precinct (PMTiles)",
+      "description": "Vector tiles built from the joined GeoParquet in this collection, for map display.",
       "file:size": 494184,
       "file:checksum": "122077fec398120efbe3210a8703e7ee5616260c9fecd0102993ed941c3a016e8e17"
     },
@@ -274,6 +276,7 @@
         "thumbnail"
       ],
       "title": "November 2024 Election Results by Precinct rendered with the default style",
+      "description": "The default style rendered over the collection's extent, for catalog browsing.",
       "file:size": 386790,
       "file:checksum": "12209d524265cd41ba3778ccdbc6eb66e1e5d457191ce925f9c5b1ec93c191e26175"
     },
@@ -321,6 +324,65 @@
       "description": "Registered voters per precinct in steps.",
       "file:size": 1303,
       "file:checksum": "12203cc4b6de28296b76933b927d21f05c887f549d6c73160081860a7f27bf756c0f"
+    },
+    "election-results-nov-2024-joined": {
+      "href": "./election-results-nov-2024-joined.parquet",
+      "type": "application/vnd.apache.parquet",
+      "roles": [
+        "data"
+      ],
+      "title": "November 2024 Election Results by Precinct joined to election-precincts (GeoParquet)",
+      "description": "The documented join of this table with the election-precincts collection's geometries, materialized as spec GeoParquet. The PMTiles are built from this file, and AGENTS.md states the same join for reproducing it.",
+      "table:primary_geometry": "geometry",
+      "table:row_count": 185,
+      "table:columns": [
+        {
+          "name": "name",
+          "type": "string",
+          "description": "Precinct name/identifier for the election precinct polygon."
+        },
+        {
+          "name": "Registered_Voters",
+          "type": "int64",
+          "description": "Registered voters in the precinct."
+        },
+        {
+          "name": "Ballots_Cast",
+          "type": "int64",
+          "description": "Ballots cast in the precinct; Turnout_Percentage is Ballots_Cast over Registered_Voters."
+        },
+        {
+          "name": "Turnout_Percentage",
+          "type": "double"
+        },
+        {
+          "name": "Pres_Harris",
+          "type": "double",
+          "description": "Sum of Total_Votes over choices naming HARRIS."
+        },
+        {
+          "name": "Pres_Trump",
+          "type": "double",
+          "description": "Sum of Total_Votes over choices naming TRUMP."
+        },
+        {
+          "name": "Pres_Dem_TwoPartyShare",
+          "type": "double",
+          "description": "Pres_Harris divided by Pres_Harris plus Pres_Trump."
+        },
+        {
+          "name": "geometry",
+          "type": "blob",
+          "description": "Geometry of the joined election-precincts feature (WGS84)."
+        },
+        {
+          "name": "bbox",
+          "type": "struct(xmin double, ymin double, xmax double, ymax double)",
+          "description": "Per-row bounding box of the geometry (the GeoParquet covering column)."
+        }
+      ],
+      "file:size": 258389,
+      "file:checksum": "12206e09ba6a6545fe78dff4623a50884420ea79cfcfdd994c7db673454718b3e8df"
     }
   },
   "title": "November 2024 Election Results by Precinct",

@@ -85,8 +85,8 @@ City street GIS data Mirrored from [the city's open data portal](https://www.stl
 | ToElevation | int32 |  |
 | Time | double |  |
 | Shape__Length | double |  |
-| geometry | binary |  |
-| geometry_bbox | struct<xmin: float not null, ymin: float not null, xmax: float not null, ymax: float not null> |  |
+| geometry | binary | Feature geometry (WGS84, WKB encoding). |
+| geometry_bbox | struct<xmin: float not null, ymin: float not null, xmax: float not null, ymax: float not null> | Per-row bounding box of the geometry (the GeoParquet covering column). |
 
 ## Files
 

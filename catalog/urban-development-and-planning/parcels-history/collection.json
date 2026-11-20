@@ -49,7 +49,7 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
@@ -382,11 +382,13 @@
     },
     {
       "name": "geometry",
-      "type": "binary"
+      "type": "binary",
+      "description": "Feature geometry (WGS84, WKB encoding)."
     },
     {
       "name": "geometry_bbox",
-      "type": "struct<xmin: float, ymin: float, xmax: float, ymax: float>"
+      "type": "struct<xmin: float, ymin: float, xmax: float, ymax: float>",
+      "description": "Per-row bounding box of the geometry (the GeoParquet covering column)."
     },
     {
       "name": "era",
@@ -470,7 +472,8 @@
       "roles": [
         "data"
       ],
-      "title": "Parcels (Historical, 1997-2020) (GeoParquet)"
+      "title": "Parcels (Historical, 1997-2020) (GeoParquet)",
+      "description": "Spec GeoParquet: WGS84, zstd compression, Hilbert row order, bbox covering column with row-group statistics."
     },
     "parcels-history-tiles": {
       "href": "./parcels-history.pmtiles",
@@ -480,7 +483,8 @@
       ],
       "title": "Parcels (Historical, 1997-2020) (PMTiles)",
       "file:size": 34762579,
-      "file:checksum": "1220f9b01b0c250c7d19dfc74045b5fcd83a412353fffc0ed2a89f5ce47eb2c50784"
+      "file:checksum": "1220f9b01b0c250c7d19dfc74045b5fcd83a412353fffc0ed2a89f5ce47eb2c50784",
+      "description": "Vector tiles built from this collection's GeoParquet, for map display."
     },
     "styles/default": {
       "href": "./styles/default.json",
@@ -524,7 +528,8 @@
       ],
       "title": "Parcels (Historical, 1997-2020) rendered with the default style",
       "file:size": 613201,
-      "file:checksum": "12205e8080d7277c6c39f49d2bb06d9689c623c542e85251d9067aa3c7d40c6383bd"
+      "file:checksum": "12205e8080d7277c6c39f49d2bb06d9689c623c542e85251d9067aa3c7d40c6383bd",
+      "description": "The default style rendered over the collection's extent, for catalog browsing."
     },
     "styles/style-zoning-1997": {
       "href": "./styles/style-zoning-1997.json",

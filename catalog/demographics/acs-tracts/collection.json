@@ -55,7 +55,7 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json",
     "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
@@ -194,11 +194,13 @@
     },
     {
       "name": "geometry",
-      "type": "binary"
+      "type": "binary",
+      "description": "Feature geometry (WGS84, WKB encoding)."
     },
     {
       "name": "bbox",
-      "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>"
+      "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>",
+      "description": "Per-row bounding box of the geometry (the GeoParquet covering column)."
     }
   ],
   "portolan:total_size_bytes": 585764,
@@ -227,7 +229,6 @@
       ]
     }
   ],
-  "proj:epsg": 3857,
   "pmtiles:min_zoom": 0,
   "pmtiles:max_zoom": 12,
   "pmtiles:tile_type": "mvt",
@@ -295,7 +296,8 @@
       "file:checksum": "1220744e3dfd2491b627e3cbb9c87b2034192d641c96077580e806cb3cc98c906901",
       "roles": [
         "data"
-      ]
+      ],
+      "description": "Spec GeoParquet: WGS84, zstd compression, Hilbert row order, bbox covering column with row-group statistics."
     },
     "acs-tracts-tiles": {
       "href": "./acs-tracts.pmtiles",
@@ -305,7 +307,8 @@
       "file:checksum": "12201944945d2d100d2b4de53dcd37a73c7f697fa3d4f1fca6c249fd3a0386a716e4",
       "roles": [
         "visual"
-      ]
+      ],
+      "description": "Vector tiles built from this collection's GeoParquet, for map display."
     },
     "styles/default": {
       "href": "./styles/default.json",
@@ -338,7 +341,8 @@
       "file:checksum": "1220dea51917e5bb808c095452f3b0ec458d7e0b3661087082cf703b824ac04675da",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "description": "The default style rendered over the collection's extent, for catalog browsing."
     }
   }
 }

@@ -3,7 +3,7 @@
   "id": "housing/property-sales",
   "stac_version": "1.1.0",
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
@@ -15,10 +15,10 @@
     "spatial": {
       "bbox": [
         [
-          -90.320522,
-          38.531907,
-          -90.166409,
-          38.774362
+          -90.31944177884856,
+          38.533583647301505,
+          -90.17909196943955,
+          38.773096408914235
         ]
       ]
     },
@@ -150,6 +150,7 @@
         "data"
       ],
       "title": "Property Sales (Parquet)",
+      "description": "Plain Parquet with no geometry column, as the city publishes this data. AGENTS.md states the join that maps it.",
       "file:size": 2462849,
       "file:checksum": "122088e0e4fe6a9ec288e2fe1fff7fb627f1905d09ee1b1672b8977d6d260a8c5f7d"
     },
@@ -160,6 +161,7 @@
         "visual"
       ],
       "title": "Property Sales (PMTiles)",
+      "description": "Vector tiles built from the joined GeoParquet in this collection, for map display.",
       "file:size": 14441107,
       "file:checksum": "122098554acf69f5c1d61d08668e7c3082468b8b68daf0a85136aa08d8b89ae39108"
     },
@@ -170,6 +172,7 @@
         "thumbnail"
       ],
       "title": "Property Sales rendered with the default style",
+      "description": "The default style rendered over the collection's extent, for catalog browsing.",
       "file:size": 399815,
       "file:checksum": "122004eefc9fb5bfec29c8a67627584f9aa18556c3c0b1b9781540d5d3f0879de043"
     },
@@ -217,6 +220,56 @@
       "description": "Sales stepped by decade, 2020s in red.",
       "file:size": 1237,
       "file:checksum": "1220cdf948972743d64bea79c3b5b6e77aeb486d8edd4af81ccbe4b978465e482787"
+    },
+    "property-sales-joined": {
+      "href": "./property-sales-joined.parquet",
+      "type": "application/vnd.apache.parquet",
+      "roles": [
+        "data"
+      ],
+      "title": "Property Sales joined to parcels (GeoParquet)",
+      "description": "The documented join of this table with the parcels collection's geometries, materialized as spec GeoParquet. The PMTiles are built from this file, and AGENTS.md states the same join for reproducing it.",
+      "table:primary_geometry": "geometry",
+      "table:row_count": 191194,
+      "table:columns": [
+        {
+          "name": "AsrParcelId",
+          "type": "string",
+          "description": "Assessor's parcel ID (2021 numbering schema)."
+        },
+        {
+          "name": "SalePrice",
+          "type": "double",
+          "description": "Sale price in dollars."
+        },
+        {
+          "name": "SaleTypeDescr",
+          "type": "string",
+          "description": "Sale type name joined from the source MDB's CdSaleType lookup table."
+        },
+        {
+          "name": "SALE_YEAR",
+          "type": "int32",
+          "description": "Year parsed from SaleDate."
+        },
+        {
+          "name": "PricePerSqFt",
+          "type": "double",
+          "description": "SalePrice divided by the joined parcel's LANDAREA, rounded to two decimals."
+        },
+        {
+          "name": "geometry",
+          "type": "blob",
+          "description": "Geometry of the joined parcels feature (WGS84)."
+        },
+        {
+          "name": "bbox",
+          "type": "struct(xmin double, ymin double, xmax double, ymax double)",
+          "description": "Per-row bounding box of the geometry (the GeoParquet covering column)."
+        }
+      ],
+      "file:size": 9907987,
+      "file:checksum": "12208ea0c8946f821c8139658d32c4f0b814861a6d34325c3f405f51381ec31ce7b3"
     },
     "source": {
       "href": "https://www.stlouis-mo.gov/data/upload/data-files/prclsale.zip",

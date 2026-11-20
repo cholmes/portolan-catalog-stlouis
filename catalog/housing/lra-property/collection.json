@@ -54,7 +54,7 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
@@ -336,11 +336,13 @@
     },
     {
       "name": "geometry",
-      "type": "binary"
+      "type": "binary",
+      "description": "Feature geometry (WGS84, WKB encoding)."
     },
     {
       "name": "geometry_bbox",
-      "type": "struct<xmin: float not null, ymin: float not null, xmax: float not null, ymax: float not null>"
+      "type": "struct<xmin: float not null, ymin: float not null, xmax: float not null, ymax: float not null>",
+      "description": "Per-row bounding box of the geometry (the GeoParquet covering column)."
     }
   ],
   "portolan:styles": [
@@ -432,7 +434,8 @@
       "file:checksum": "1220ca4cfc3e4c999d353876ee1c052174c058692661e7a78ae66cacf3158f0abdf8",
       "roles": [
         "data"
-      ]
+      ],
+      "description": "Spec GeoParquet: WGS84, zstd compression, Hilbert row order, bbox covering column with row-group statistics."
     },
     "lra-property-tiles": {
       "href": "./lra-property.pmtiles",
@@ -442,7 +445,8 @@
       "file:checksum": "122042d4e49cd88ebb6f294d27e4852bad326c5eb8f1c07defda3bc4d44cdd4ac306",
       "roles": [
         "visual"
-      ]
+      ],
+      "description": "Vector tiles built from this collection's GeoParquet, for map display."
     },
     "styles/city-renderer": {
       "href": "./styles/city-renderer.json",
@@ -508,7 +512,8 @@
       "file:checksum": "12202bfba8bd7cbd8f19be3b97a127528905b720b58a7eeb1978a53922440357401f",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "description": "The default style rendered over the collection's extent, for catalog browsing."
     },
     "source-csv": {
       "href": "https://static.stlouis-mo.gov/open-data/SLDC/REAL-ESTATE/LRA_INVENTORY.csv",

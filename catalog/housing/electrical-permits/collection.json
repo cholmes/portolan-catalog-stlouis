@@ -3,7 +3,7 @@
   "id": "housing/electrical-permits",
   "stac_version": "1.1.0",
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
@@ -15,10 +15,10 @@
     "spatial": {
       "bbox": [
         [
-          -90.320522,
-          38.531907,
-          -90.166409,
-          38.774362
+          -90.32035122288609,
+          38.53410591506517,
+          -90.18037932345507,
+          38.773972797941646
         ]
       ]
     },
@@ -302,6 +302,7 @@
         "data"
       ],
       "title": "Electrical Permits (Parquet)",
+      "description": "Plain Parquet with no geometry column, as the city publishes this data. AGENTS.md states the join that maps it.",
       "file:size": 14232718,
       "file:checksum": "122027f011744f407d58cab545681b7bb2b8405c4b295c59fe89e6caab69e3a626fe"
     },
@@ -312,6 +313,7 @@
         "visual"
       ],
       "title": "Electrical Permits (PMTiles)",
+      "description": "Vector tiles built from the joined GeoParquet in this collection, for map display.",
       "file:size": 21976186,
       "file:checksum": "12206760edd28d82d39752cb498d3119267c55c541071bca5d981002b6d5de804c9c"
     },
@@ -322,6 +324,7 @@
         "thumbnail"
       ],
       "title": "Electrical Permits rendered with the default style",
+      "description": "The default style rendered over the collection's extent, for catalog browsing.",
       "file:size": 402574,
       "file:checksum": "122007b790b22782c2536bdbf8088747504ca91fd6151b1f82ac01a9982430151dd6"
     },
@@ -358,6 +361,56 @@
       "description": "Every joined parcel in one color, for overlays.",
       "file:size": 534,
       "file:checksum": "12204cb9eef2a2e5bff748557e438fcb8715808860473cb4637bc4af609b9be33dd4"
+    },
+    "electrical-permits-joined": {
+      "href": "./electrical-permits-joined.parquet",
+      "type": "application/vnd.apache.parquet",
+      "roles": [
+        "data"
+      ],
+      "title": "Electrical Permits joined to parcels (GeoParquet)",
+      "description": "The documented join of this table with the parcels collection's geometries, materialized as spec GeoParquet. The PMTiles are built from this file, and AGENTS.md states the same join for reproducing it.",
+      "table:primary_geometry": "geometry",
+      "table:row_count": 295909,
+      "table:columns": [
+        {
+          "name": "HANDLE",
+          "type": "string",
+          "description": "Citywide parcel handle the permit is attached to (join key to the parcels collections)."
+        },
+        {
+          "name": "APPTYPE",
+          "type": "string",
+          "description": "Permit application type code; always 'AE' (Electrical) in this dataset \u2014 codes come from the city 'Permit Application Type' vocabulary (AB Building, AD Demolition, AE Electrical, AM Mechanical, AO Occupancy, AP Plumbing, etc.)."
+        },
+        {
+          "name": "APPDESCRIPTION",
+          "type": "string",
+          "description": "Free-text description of the permitted work."
+        },
+        {
+          "name": "PERMIT_YEAR",
+          "type": "int32",
+          "description": "Year parsed from the permit's ISSUEDATE."
+        },
+        {
+          "name": "ESTPROJECTCOST",
+          "type": "double",
+          "description": "Estimated project cost in dollars as declared on the application."
+        },
+        {
+          "name": "geometry",
+          "type": "blob",
+          "description": "Geometry of the joined parcels feature (WGS84)."
+        },
+        {
+          "name": "bbox",
+          "type": "struct(xmin double, ymin double, xmax double, ymax double)",
+          "description": "Per-row bounding box of the geometry (the GeoParquet covering column)."
+        }
+      ],
+      "file:size": 14014559,
+      "file:checksum": "122056b5e8f18f65b3b7ed03b52ae808a4a7049c53a29427b737cd5be5412858ed07"
     },
     "source": {
       "href": "https://www.stlouis-mo.gov/data/upload/data-files/electrical-permits.zip",

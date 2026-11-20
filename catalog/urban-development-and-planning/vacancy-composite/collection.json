@@ -55,7 +55,7 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
@@ -280,11 +280,13 @@
     },
     {
       "name": "geometry",
-      "type": "binary"
+      "type": "binary",
+      "description": "Feature geometry (WGS84, WKB encoding)."
     },
     {
       "name": "bbox",
-      "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>"
+      "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>",
+      "description": "Per-row bounding box of the geometry (the GeoParquet covering column)."
     }
   ],
   "portolan:total_size_bytes": 6384202,
@@ -367,7 +369,8 @@
       "file:checksum": "1220dd137697c18b6d7f0e88f65de8e34769e3a3521f5873904d8827a270ab951ad3",
       "roles": [
         "data"
-      ]
+      ],
+      "description": "Spec GeoParquet: WGS84, zstd compression, Hilbert row order, bbox covering column with row-group statistics."
     },
     "vacancy-composite-tiles": {
       "href": "./vacancy-composite.pmtiles",
@@ -377,7 +380,8 @@
       "file:checksum": "1220b92eac1d1eb13700f89f9dbb7566a1087af0bc7779c398e8e32c357b3d894b72",
       "roles": [
         "visual"
-      ]
+      ],
+      "description": "Vector tiles built from this collection's GeoParquet, for map display."
     },
     "styles/city-renderer": {
       "href": "./styles/city-renderer.json",
@@ -432,7 +436,8 @@
       "file:checksum": "1220c8252c3ad031357b4fd88a97098aff6c092e411f163816214bd48f4d308002a7",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "description": "The default style rendered over the collection's extent, for catalog browsing."
     }
   }
 }

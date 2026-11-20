@@ -43,8 +43,8 @@ The Citizens' Service Bureau (CSB) is the customer service department for the Ci
 | STATUS | string | Status of the request (portal field definition). |
 | SUBMITTO | string | City division or department responsible for handling the request (portal field definition). |
 | WARD | string | Ward number of the problem location (portal field definition). |
-| geometry | binary |  |
-| geometry_bbox | struct<xmin: float not null, ymin: float not null, xmax: float not null, ymax: float not null> |  |
+| geometry | binary | Feature geometry (WGS84, WKB encoding). |
+| geometry_bbox | struct<xmin: float not null, ymin: float not null, xmax: float not null, ymax: float not null> | Per-row bounding box of the geometry (the GeoParquet covering column). |
 
 ## Files
 

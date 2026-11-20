@@ -22,7 +22,7 @@ Owning, Renting, Homelessness, Repairs, Financing Programs
 
 **Spatial Extent**
 
-- West: -90.3205, South: 38.5319, East: -90.1664, North: 38.7744
+- West: -90.3205, South: 38.5320, East: -90.1667, North: 38.7743
 
 **Temporal Extent**
 

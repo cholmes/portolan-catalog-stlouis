@@ -3,7 +3,7 @@
   "id": "demographics/lodes-commutes",
   "stac_version": "1.1.0",
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
@@ -123,6 +123,7 @@
         "data"
       ],
       "title": "LODES Commute Flows (Parquet)",
+      "description": "Plain Parquet with no geometry column. AGENTS.md states the join that maps it.",
       "file:size": 646415,
       "file:checksum": "12203a58f62e574f1a22e278e60205249278029fcecdb4a519aae5c7b86eb97c4acb"
     }

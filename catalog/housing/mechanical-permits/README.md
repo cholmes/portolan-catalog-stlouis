@@ -6,7 +6,7 @@ Mechanical permit information by property type, year, neighborhood, ward, and pr
 
 ## Spatial Coverage
 
-- **Bounding Box**: [-90.320522, 38.531907, -90.166409, 38.774362]
+- **Bounding Box**: [-90.31881187616641, 38.53498170097803, -90.18037932345507, 38.773096408914235]
 
 ## Temporal Coverage
 
@@ -82,6 +82,7 @@ Mechanical permit information by property type, year, neighborhood, ward, and pr
 | ./styles/default.json | 1.4 KB | 12203a6a7a0f... |
 | ./styles/style-recent.json | 1.0 KB | 122042891edb... |
 | ./styles/style-solid.json | 534 B | 12204341e887... |
+| ./mechanical-permits-joined.parquet | 5.6 MB | 12203f925daf... |
 | https://www.stlouis-mo.gov/data/upload/data-files/mechanical-permits.zip | 6.3 MB | 122006a4b2d2... |
 
 ## Quick Start

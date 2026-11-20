@@ -49,7 +49,7 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
@@ -146,11 +146,13 @@
     },
     {
       "name": "geometry",
-      "type": "binary"
+      "type": "binary",
+      "description": "Feature geometry (WGS84, WKB encoding)."
     },
     {
       "name": "bbox",
-      "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>"
+      "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>",
+      "description": "Per-row bounding box of the geometry (the GeoParquet covering column)."
     }
   ],
   "portolan:total_size_bytes": 75930,
@@ -186,7 +188,8 @@
       "roles": [
         "data"
       ],
-      "title": "Historic Landmarks (GeoParquet)"
+      "title": "Historic Landmarks (GeoParquet)",
+      "description": "Spec GeoParquet: WGS84, zstd compression, Hilbert row order, bbox covering column with row-group statistics."
     },
     "historic-landmarks-tiles": {
       "href": "./historic-landmarks.pmtiles",
@@ -196,7 +199,8 @@
       ],
       "title": "Historic Landmarks (PMTiles)",
       "file:size": 160774,
-      "file:checksum": "122081ac9a9eaedfab0971316b03e806822ea3bf08207786025f3df76415c0ad1995"
+      "file:checksum": "122081ac9a9eaedfab0971316b03e806822ea3bf08207786025f3df76415c0ad1995",
+      "description": "Vector tiles built from this collection's GeoParquet, for map display."
     },
     "styles/city-renderer": {
       "href": "./styles/city-renderer.json",
@@ -251,7 +255,8 @@
       ],
       "title": "Historic Landmarks rendered with the default style",
       "file:size": 373381,
-      "file:checksum": "122018dd4b84469bdb1287a5c92647ed1d6a904a75b583845a7cb1c43f3a90b5f517"
+      "file:checksum": "122018dd4b84469bdb1287a5c92647ed1d6a904a75b583845a7cb1c43f3a90b5f517",
+      "description": "The default style rendered over the collection's extent, for catalog browsing."
     }
   },
   "updated": "2026-08-14T12:21:16+00:00",

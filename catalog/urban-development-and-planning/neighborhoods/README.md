@@ -23,8 +23,8 @@ ESRI shapefiles for city neighborhoods Mirrored from [the city's open data porta
 | NHD_NUMTXT | string |  |
 | Shape__Area | double |  |
 | Shape__Length | double |  |
-| geometry | binary |  |
-| geometry_bbox | struct<xmin: float not null, ymin: float not null, xmax: float not null, ymax: float not null> |  |
+| geometry | binary | Feature geometry (WGS84, WKB encoding). |
+| geometry_bbox | struct<xmin: float not null, ymin: float not null, xmax: float not null, ymax: float not null> | Per-row bounding box of the geometry (the GeoParquet covering column). |
 
 ## Files
 

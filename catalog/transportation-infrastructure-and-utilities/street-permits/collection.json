@@ -3,7 +3,7 @@
   "id": "transportation-infrastructure-and-utilities/street-permits",
   "stac_version": "1.1.0",
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
@@ -15,10 +15,10 @@
     "spatial": {
       "bbox": [
         [
-          -90.320522,
-          38.531907,
-          -90.166409,
-          38.774362
+          -90.3204988703377,
+          38.544818999599975,
+          -90.17505144558082,
+          38.77434508151282
         ]
       ]
     },
@@ -134,6 +134,7 @@
         "data"
       ],
       "title": "Street Permits (Parquet)",
+      "description": "Plain Parquet with no geometry column, as the city publishes this data. AGENTS.md states the join that maps it.",
       "file:size": 1640289,
       "file:checksum": "12204a3d5fda7b397e0ffd6867357fc917e74e0aa645a4521135f876d7bee9e4fbe4"
     },
@@ -144,6 +145,7 @@
         "visual"
       ],
       "title": "Street Permits (PMTiles)",
+      "description": "Vector tiles built from the joined GeoParquet in this collection, for map display.",
       "file:size": 165053,
       "file:checksum": "12209ea8b55f7f9aadb5df08919eeefd9eba6fd8a85c0d82c434c5da167130473a02"
     },
@@ -154,6 +156,7 @@
         "thumbnail"
       ],
       "title": "Street Permits rendered with the default style",
+      "description": "The default style rendered over the collection's extent, for catalog browsing.",
       "file:size": 383685,
       "file:checksum": "1220cce29e32c4607ed7a5030edec9ae5d281cf63e9cdd30557bbb042b0b63008d76"
     },
@@ -190,6 +193,41 @@
       "description": "Neighborhoods with any street permit.",
       "file:size": 513,
       "file:checksum": "1220d965101a4b26514bedfd5827076298e6d8a17df4c240d395c467f7fe4ceaf681"
+    },
+    "street-permits-joined": {
+      "href": "./street-permits-joined.parquet",
+      "type": "application/vnd.apache.parquet",
+      "roles": [
+        "data"
+      ],
+      "title": "Street Permits joined to neighborhoods (GeoParquet)",
+      "description": "The documented join of this table with the neighborhoods collection's geometries, materialized as spec GeoParquet. The PMTiles are built from this file, and AGENTS.md states the same join for reproducing it.",
+      "table:primary_geometry": "geometry",
+      "table:row_count": 85,
+      "table:columns": [
+        {
+          "name": "NHD_NAME",
+          "type": "string",
+          "description": "Neighborhood name from the neighborhoods collection."
+        },
+        {
+          "name": "n_permits",
+          "type": "int64",
+          "description": "Count of this table's rows joined to the neighborhood."
+        },
+        {
+          "name": "geometry",
+          "type": "blob",
+          "description": "Geometry of the joined neighborhoods feature (WGS84)."
+        },
+        {
+          "name": "bbox",
+          "type": "struct(xmin double, ymin double, xmax double, ymax double)",
+          "description": "Per-row bounding box of the geometry (the GeoParquet covering column)."
+        }
+      ],
+      "file:size": 42649,
+      "file:checksum": "122080ad58b994f126e274033549a72b4984cc958395a00e650f54ae909d483dfc12"
     },
     "source": {
       "href": "https://www.stlouis-mo.gov/data/upload/data-files/streets/street-permits.csv",

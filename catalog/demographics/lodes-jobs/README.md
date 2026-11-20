@@ -32,8 +32,8 @@ Unlike the city's own datasets in this catalog, this is **not** City of St. Loui
 | workers_resident_earn_low | int64 | Employed residents earning $1,250/month or less (LODES RAC CE01). |
 | workers_resident_earn_mid | int64 | Employed residents earning $1,251 to $3,333/month (LODES RAC CE02). |
 | workers_resident_earn_high | int64 | Employed residents earning more than $3,333/month (LODES RAC CE03). |
-| geometry | binary |  |
-| bbox | struct<xmin: double, ymin: double, xmax: double, ymax: double> |  |
+| geometry | binary | Feature geometry (WGS84, WKB encoding). |
+| bbox | struct<xmin: double, ymin: double, xmax: double, ymax: double> | Per-row bounding box of the geometry (the GeoParquet covering column). |
 
 ## Files
 

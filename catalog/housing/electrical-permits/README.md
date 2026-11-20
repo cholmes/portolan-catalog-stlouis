@@ -6,7 +6,7 @@ Data on commercial, industrial, and residential electrical permits in the City o
 
 ## Spatial Coverage
 
-- **Bounding Box**: [-90.320522, 38.531907, -90.166409, 38.774362]
+- **Bounding Box**: [-90.32035122288609, 38.53410591506517, -90.18037932345507, 38.773972797941646]
 
 ## Temporal Coverage
 
@@ -77,6 +77,7 @@ Data on commercial, industrial, and residential electrical permits in the City o
 | ./styles/default.json | 1.4 KB | 122065ccc8c8... |
 | ./styles/style-recent.json | 1.0 KB | 122064658524... |
 | ./styles/style-solid.json | 534 B | 12204cb9eef2... |
+| ./electrical-permits-joined.parquet | 13.4 MB | 122056b5e8f1... |
 | https://www.stlouis-mo.gov/data/upload/data-files/electrical-permits.zip | 21.6 MB | 1220c5debafd... |
 
 ## Quick Start

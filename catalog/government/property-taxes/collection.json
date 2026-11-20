@@ -3,7 +3,7 @@
   "id": "government/property-taxes",
   "stac_version": "1.1.0",
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/themes/v1.0.0/schema.json",
@@ -15,18 +15,18 @@
     "spatial": {
       "bbox": [
         [
-          -90.320522,
-          38.531907,
-          -90.166409,
-          38.774362
+          -90.32058220569718,
+          38.53308187377711,
+          -90.17536578502329,
+          38.774362902635474
         ]
       ]
     },
     "temporal": {
       "interval": [
         [
-          null,
-          null
+          "2025-01-01T00:00:00Z",
+          "2025-12-31T23:59:59Z"
         ]
       ]
     }
@@ -882,6 +882,7 @@
         "data"
       ],
       "title": "Property Taxes (Parquet)",
+      "description": "Plain Parquet with no geometry column, as the city publishes this data. AGENTS.md states the join that maps it.",
       "file:size": 14372080,
       "file:checksum": "1220badeef091761c2a6e7f7012a42e84fa367719ef4e60493e21a21da525a29c9fb"
     },
@@ -892,6 +893,7 @@
         "visual"
       ],
       "title": "Property Taxes (PMTiles)",
+      "description": "Vector tiles built from the joined GeoParquet in this collection, for map display.",
       "file:size": 23740408,
       "file:checksum": "12209e0adce78fbc95be5ae9cf324115cb9b54a5ba722572e4c539b0240cdf9fd3c7"
     },
@@ -902,6 +904,7 @@
         "thumbnail"
       ],
       "title": "Property Taxes rendered with the default style",
+      "description": "The default style rendered over the collection's extent, for catalog browsing.",
       "file:size": 391916,
       "file:checksum": "1220bd41a2829d55133f42f37eb1714cc4738fd47bb34f44f8a1494afd7bbc618608"
     },
@@ -938,6 +941,60 @@
       "description": "Every joined parcel in one color.",
       "file:size": 506,
       "file:checksum": "1220fa3a2804f98c3255b798e7ed5a96401e006cfe8875e50f754ebb4e4afab33818"
+    },
+    "property-taxes-joined": {
+      "href": "./property-taxes-joined.parquet",
+      "type": "application/vnd.apache.parquet",
+      "roles": [
+        "data"
+      ],
+      "title": "Property Taxes joined to parcels (GeoParquet)",
+      "description": "The documented join of this table with the parcels collection's geometries, materialized as spec GeoParquet. The PMTiles are built from this file, and AGENTS.md states the same join for reproducing it.",
+      "table:primary_geometry": "geometry",
+      "table:row_count": 134351,
+      "table:columns": [
+        {
+          "name": "AsrParcelId",
+          "type": "string",
+          "description": "The Assessor's parcel ID in the numbering schema introduced in 2021 (portal field definition for ParcelId)."
+        },
+        {
+          "name": "AsdTotal",
+          "type": "double",
+          "description": "Total assessed value in dollars."
+        },
+        {
+          "name": "AsdLand",
+          "type": "double",
+          "description": "Assessed value of land in dollars (Missouri assessed value = 19% residential / 32% commercial / 12% agricultural of appraised value, RSMo 137.115)."
+        },
+        {
+          "name": "AsdImprove",
+          "type": "double",
+          "description": "Assessed value of improvements in dollars."
+        },
+        {
+          "name": "BillYear",
+          "type": "int64",
+          "description": "Tax year of the bill the Bill* fields refer to."
+        },
+        {
+          "name": "OwnerName",
+          "type": "string"
+        },
+        {
+          "name": "geometry",
+          "type": "blob",
+          "description": "Geometry of the joined parcels feature (WGS84)."
+        },
+        {
+          "name": "bbox",
+          "type": "struct(xmin double, ymin double, xmax double, ymax double)",
+          "description": "Per-row bounding box of the geometry (the GeoParquet covering column)."
+        }
+      ],
+      "file:size": 16182030,
+      "file:checksum": "1220991d1a57f359511a0f5fadfb6083e9381ce3e95586d5394b32ea10d6ef4cfc87"
     },
     "source": {
       "href": "https://www.stlouis-mo.gov/data/upload/data-files/prcl.zip",

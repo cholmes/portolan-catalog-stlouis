@@ -6,7 +6,7 @@ Dataset describes real estate sale prices for recent property sales in the city.
 
 ## Spatial Coverage
 
-- **Bounding Box**: [-90.320522, 38.531907, -90.166409, 38.774362]
+- **Bounding Box**: [-90.31944177884856, 38.533583647301505, -90.17909196943955, 38.773096408914235]
 
 ## Temporal Coverage
 
@@ -43,6 +43,7 @@ Dataset describes real estate sale prices for recent property sales in the city.
 | ./styles/style-price-per-sqft.json | 1.5 KB | 12201bc2360a... |
 | ./styles/style-solid.json | 507 B | 122052fe2aab... |
 | ./styles/style-year.json | 1.2 KB | 1220cdf94897... |
+| ./property-sales-joined.parquet | 9.4 MB | 12208ea0c894... |
 | https://www.stlouis-mo.gov/data/upload/data-files/prclsale.zip | 6.4 MB | 1220ef374b13... |
 
 ## Quick Start

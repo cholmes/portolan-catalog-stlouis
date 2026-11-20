@@ -6,7 +6,7 @@ Permits issued by the Street Department to allow for blocking of the right of wa
 
 ## Spatial Coverage
 
-- **Bounding Box**: [-90.320522, 38.531907, -90.166409, 38.774362]
+- **Bounding Box**: [-90.3204988703377, 38.544818999599975, -90.17505144558082, 38.77434508151282]
 
 ## Temporal Coverage
 
@@ -40,6 +40,7 @@ Permits issued by the Street Department to allow for blocking of the right of wa
 | ./styles/default.json | 1.5 KB | 122092630884... |
 | ./styles/style-boundaries.json | 476 B | 12202116ed8a... |
 | ./styles/style-solid.json | 513 B | 1220d965101a... |
+| ./street-permits-joined.parquet | 41.6 KB | 122080ad58b9... |
 | https://www.stlouis-mo.gov/data/upload/data-files/streets/street-permits.csv | 12.4 MB | 122086a38b60... |
 
 ## Quick Start
