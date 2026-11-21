@@ -34,12 +34,12 @@ Lead Service Line Inventory Feature Layer Service Mirrored from [the city's open
 | File | Size | Checksum |
 |------|------|----------|
 | ./lead-service-lines.parquet | 8.5 MB | 12205a267c78... |
-| ./lead-service-lines.pmtiles | 2.2 MB | 12208189bee6... |
+| ./lead-service-lines.pmtiles | 2.2 MB | 122073641b68... |
 | ./styles/city-renderer.json | 551 B | 1220f6a2278d... |
 | ./styles/default.json | 1.8 KB | 122090dd0be2... |
 | ./styles/style-customer-side.json | 1.7 KB | 1220e2ad8bc9... |
 | ./styles/style-material.json | 2.2 KB | 1220b6416e1b... |
-| ./thumbnail.png | 379.8 KB | 1220af3eb899... |
+| ./thumbnail.png | 202.6 KB | 1220db71e624... |
 
 ## Quick Start
 
@@ -69,6 +69,8 @@ Extracted from the city's own ArcGIS REST service with the Portolan CLI:
       https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/STLWD_LSLI__Read_Only_View/FeatureServer --raw
 
 That pages the service's `/query` endpoint for every feature, so this is the whole layer rather than the display-capped sample a browser request returns, and it carries across the service's field aliases. The service's own ESRI renderer was captured at the same time and is republished here as `styles/city-renderer.json`, so the map can be drawn in the city's own symbology.
+
+The service publishes field aliases and coded-value domains but no field descriptions. The schema descriptions here come from those aliases and domains plus researched notes; a column without a description has no documentation at the source.
 
 The service returns coded domain values; the material and status codes were decoded to their labels using the service's own domain definitions, alongside the raw codes.
 

@@ -78,123 +78,153 @@
     },
     {
       "name": "IN_SingleLine",
-      "type": "string"
+      "type": "string",
+      "description": "The city's service labels this field 'Single Line Input'."
     },
     {
       "name": "USER_Doc_Nbr_",
-      "type": "int32"
+      "type": "int32",
+      "description": "The city's service labels this field 'Doc Nbr.'."
     },
     {
       "name": "USER_Tax_Year",
-      "type": "int32"
+      "type": "int32",
+      "description": "The city's service labels this field 'Tax Year'."
     },
     {
       "name": "USER_Status_Cd_",
-      "type": "int32"
+      "type": "int32",
+      "description": "The city's service labels this field 'Status Cd.'."
     },
     {
       "name": "USER_Trade_Name",
-      "type": "string"
+      "type": "string",
+      "description": "The city's service labels this field 'Trade Name'."
     },
     {
       "name": "USER_DocType",
-      "type": "string"
+      "type": "string",
+      "description": "The city's service labels this field 'DocType'."
     },
     {
       "name": "USER_Tax_Period",
-      "type": "int32"
+      "type": "int32",
+      "description": "The city's service labels this field 'Tax Period'."
     },
     {
       "name": "USER_Date_Business_Started",
-      "type": "string"
+      "type": "string",
+      "description": "The city's service labels this field 'Date Business Started'."
     },
     {
       "name": "USER_House_Nbr_",
-      "type": "int32"
+      "type": "int32",
+      "description": "The city's service labels this field 'House Nbr.'."
     },
     {
       "name": "USER_House_Sfx_",
-      "type": "string"
+      "type": "string",
+      "description": "The city's service labels this field 'House Sfx.'."
     },
     {
       "name": "USER_House_Unit",
-      "type": "string"
+      "type": "string",
+      "description": "The city's service labels this field 'House Unit'."
     },
     {
       "name": "USER_St__Dir_",
-      "type": "string"
+      "type": "string",
+      "description": "The city's service labels this field 'St. Dir.'."
     },
     {
       "name": "USER_Property_St__Name",
-      "type": "string"
+      "type": "string",
+      "description": "The city's service labels this field 'Property St. Name'."
     },
     {
       "name": "USER_St__Type",
-      "type": "string"
+      "type": "string",
+      "description": "The city's service labels this field 'St. Type'."
     },
     {
       "name": "USER_Zip_Cd_",
-      "type": "int32"
+      "type": "int32",
+      "description": "The city's service labels this field 'Zip Cd.'."
     },
     {
       "name": "USER_Street_Address",
-      "type": "string"
+      "type": "string",
+      "description": "The city's service labels this field 'Street Address'."
     },
     {
       "name": "USER_HQ_Owner_Cd_",
-      "type": "string"
+      "type": "string",
+      "description": "The city's service labels this field 'HQ Owner Cd.'."
     },
     {
       "name": "USER_Owner_Business_HQ_Name",
-      "type": "string"
+      "type": "string",
+      "description": "The city's service labels this field 'Owner/Business HQ Name'."
     },
     {
       "name": "USER_Mailing_Address_Line_1",
-      "type": "string"
+      "type": "string",
+      "description": "The city's service labels this field 'Mailing Address Line 1'."
     },
     {
       "name": "USER_Mailing_Address_Line_2",
-      "type": "string"
+      "type": "string",
+      "description": "The city's service labels this field 'Mailing Address Line 2'."
     },
     {
       "name": "USER_Mailing_Address_Line_3",
-      "type": "string"
+      "type": "string",
+      "description": "The city's service labels this field 'Mailing Address Line 3'."
     },
     {
       "name": "USER_Ward_Nbr_",
-      "type": "int32"
+      "type": "int32",
+      "description": "The city's service labels this field 'Ward Nbr.'."
     },
     {
       "name": "USER_City_Block",
-      "type": "int32"
+      "type": "int32",
+      "description": "The city's service labels this field 'City Block'."
     },
     {
       "name": "USER_CDA_Neighborhood",
-      "type": "int32"
+      "type": "int32",
+      "description": "The city's service labels this field 'CDA Neighborhood'."
     },
     {
       "name": "USER_CDA_Subdistrict",
-      "type": "int32"
+      "type": "int32",
+      "description": "The city's service labels this field 'CDA Subdistrict'."
     },
     {
       "name": "USER_Nbr__Of_Employees",
-      "type": "int32"
+      "type": "int32",
+      "description": "The city's service labels this field 'Nbr. Of Employees'."
     },
     {
       "name": "USER_Space_Use_Cd_",
-      "type": "int32"
+      "type": "int32",
+      "description": "The city's service labels this field 'Space Use Cd.'."
     },
     {
       "name": "USER_Business_Phone",
-      "type": "string"
+      "type": "string",
+      "description": "The city's service labels this field 'Business Phone'."
     },
     {
       "name": "USER_Contact_Name",
-      "type": "string"
+      "type": "string",
+      "description": "The city's service labels this field 'Contact Name'."
     },
     {
       "name": "USER_Business_E_Mail",
-      "type": "string"
+      "type": "string",
+      "description": "The city's service labels this field 'Business E-Mail'."
     },
     {
       "name": "geometry",
@@ -250,8 +280,8 @@
         "visual"
       ],
       "title": "Business Licenses (PMTiles)",
-      "file:size": 1495414,
-      "file:checksum": "12204a6410b0b18acccedd2a4c0e06e1079efeb3668f60ff5b8df2a6b325f53bede2",
+      "file:size": 9740343,
+      "file:checksum": "122037dea341b606b34525d65b49f11b289a2ca679128465348c759b458441d7099a",
       "description": "Vector tiles built from this collection's GeoParquet, for map display."
     },
     "styles/city-renderer": {
@@ -306,8 +336,8 @@
         "thumbnail"
       ],
       "title": "Business Licenses rendered with the default style",
-      "file:size": 378265,
-      "file:checksum": "12208c6028422286194feb367d4b5b34a15813b5dbe0806eb9c56905b3768229540e",
+      "file:size": 246874,
+      "file:checksum": "12201c56836f04c36fb9c3e855800c766d218abff7a9c6050b4c1610b72126ce814e",
       "description": "The default style rendered over the collection's extent, for catalog browsing."
     }
   },

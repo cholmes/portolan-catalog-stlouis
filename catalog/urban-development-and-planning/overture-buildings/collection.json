@@ -2,7 +2,7 @@
   "type": "Collection",
   "id": "urban-development-and-planning/overture-buildings",
   "stac_version": "1.1.0",
-  "description": "Building footprints and building parts from the Overture Maps buildings theme, which describes human-made structures with roofs or interior spaces that are permanently or semi-permanently in one place. Overture's goal is to provide the world's most comprehensive set of building structures compiled from the best available open data sources. Where known, buildings carry height, number of floors, and facade and roof attributes, supporting 2D and 3D visualization, data enrichment via GERS IDs, and spatial analysis. Both feature types are merged here, with an `overture_type` column telling buildings from building parts. Overture documents this data well: the [buildings theme guide](https://docs.overturemaps.org/guides/buildings/) covers what the theme models, how Overture builds it, and how to query it, and the schema reference gives every field of the feature types merged here \u2014 [`building`](https://docs.overturemaps.org/schema/reference/buildings/building/), [`building_part`](https://docs.overturemaps.org/schema/reference/buildings/building_part/).\n\nUnlike everything else in this catalog, this is **not** City of St. Louis data: it comes from the [Overture Maps Foundation](https://overturemaps.org/), a collaborative project building open, interoperable map data for the world. This collection is a St. Louis extract of that global dataset \u2014 everything inside the city's bounding box, which also takes in the Illinois shore of the Mississippi (East St. Louis, Cahokia Heights) \u2014 included here to demonstrate how a city's open-data catalog can blend in other St. Louis-relevant open data alongside the city's own. The GeoParquet was extracted from Overture release 2026-07-22.0; the map tiles reference Overture's own global PMTiles for the same release, the tiles behind [explore.overturemaps.org](https://explore.overturemaps.org/).",
+  "description": "Building footprints and building parts from the Overture Maps buildings theme, which describes human-made structures with roofs or interior spaces that are permanently or semi-permanently in one place. Overture's goal is to provide the world's most comprehensive set of building structures compiled from the best available open data sources. Where known, buildings carry height, number of floors, and facade and roof attributes, supporting 2D and 3D visualization, data enrichment via GERS IDs, and spatial analysis. Both feature types are merged here, with an `overture_type` column telling buildings from building parts. Overture documents this data well: the [buildings theme guide](https://docs.overturemaps.org/guides/buildings/) covers what the theme models, how Overture builds it, and how to query it, and the schema reference gives every field of the feature types merged here \u2014 [`building`](https://docs.overturemaps.org/schema/reference/buildings/building/), [`building_part`](https://docs.overturemaps.org/schema/reference/buildings/building_part/).\n\nUnlike everything else in this catalog, this is **not** City of St. Louis data: it comes from the [Overture Maps Foundation](https://overturemaps.org/), a collaborative project building open, interoperable map data for the world. This collection is a St. Louis extract of that global dataset \u2014 everything inside the city's bounding box, which also takes in the Illinois shore of the Mississippi (East St. Louis, Cahokia Heights) \u2014 included here to demonstrate how a city's open-data catalog can blend in other St. Louis-relevant open data alongside the city's own. The GeoParquet was extracted from Overture release 2026-07-22.0. The map tiles reference Overture's own global PMTiles for release 2026-11-18.0 \u2014 the tiles behind [explore.overturemaps.org](https://explore.overturemaps.org/) \u2014 because Overture removes older tile builds from its bucket. The map can therefore show slightly newer features than the extract.",
   "links": [
     {
       "rel": "root",
@@ -59,7 +59,7 @@
     },
     {
       "rel": "pmtiles",
-      "href": "https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/buildings.pmtiles",
+      "href": "https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-11-18.0/buildings.pmtiles",
       "type": "application/vnd.pmtiles",
       "pmtiles:layers": [
         "building",
@@ -247,14 +247,14 @@
       "description": "St. Louis bounding-box extract of this Overture theme's release GeoParquet, geometries clipped to the box."
     },
     "overture-buildings-tiles": {
-      "href": "https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/buildings.pmtiles",
+      "href": "https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-11-18.0/buildings.pmtiles",
       "type": "application/vnd.pmtiles",
       "roles": [
         "visual"
       ],
       "title": "Overture buildings theme (PMTiles, global)",
-      "description": "Overture's own release-pinned global vector tiles for the buildings theme, served from the Overture Maps Foundation's public bucket \u2014 not from this mirror, and not clipped to St. Louis. The styles select this collection's layers (building, building_part) from them.",
-      "file:size": 179413355586
+      "description": "Overture's global vector tiles for the buildings theme, release 2026-11-18.0 \u2014 newer than the 2026-07-22.0 GeoParquet extract, because Overture removes older tile builds from its bucket. Served from the Overture Maps Foundation's public bucket, not from this mirror, and not clipped to St. Louis. The styles select this collection's layers (building, building_part) from them.",
+      "file:size": 181379551760
     },
     "styles/default": {
       "href": "./styles/default.json",
@@ -266,7 +266,7 @@
       "title": "Building heights",
       "description": "Every footprint stepped by measured height in meters \u2014 light blue low-rise through dark blue mid-rise, with the 60m+ downtown towers in red. About nine in ten St. Louis buildings carry a height; the rest read as gray. Building parts draw on top with the same ramp.",
       "file:size": 2617,
-      "file:checksum": "12201668641d0ee76f3150c4aeb955f232f221f52c2ace0a3acb0e96e7b6ee6adf39"
+      "file:checksum": "12206f869d6f452104c0dc8c60dc5d24a965ed4e6c7de9bf006832d2f84d9b9712a8"
     },
     "styles/style-explorer": {
       "href": "./styles/style-explorer.json",
@@ -277,7 +277,7 @@
       "title": "Explorer footprints",
       "description": "The quiet warm-gray building fill of Overture's own Explorer site \u2014 footprints as basemap texture.",
       "file:size": 1332,
-      "file:checksum": "1220d426966549f7b08e9e6b2c03d09d40334995fb084793da464feb2fb2d4a1e847"
+      "file:checksum": "1220479a9e37f36f9a9d899b65a545b7cd19140dd0923583443e55fc7545a89636a6"
     },
     "styles/style-subtype": {
       "href": "./styles/style-subtype.json",
@@ -288,7 +288,7 @@
       "title": "Building use",
       "description": "Footprints colored by Overture's building subtype where one is known \u2014 residential blues, commercial red, education orange. Most St. Louis buildings have no recorded subtype and stay light gray.",
       "file:size": 2359,
-      "file:checksum": "1220798fa302fc71187aaf5d5c163dde1e6eb80eb978d2054557dd8a1f063b065da9"
+      "file:checksum": "122074150ace6aed43c2d15f848154a78c83ac407804886967001f751c5aacafaca4"
     },
     "thumbnail": {
       "href": "./thumbnail.png",

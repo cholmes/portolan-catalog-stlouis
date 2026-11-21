@@ -31,26 +31,26 @@ Public emergency siren locations. While these sirens are generally thought of as
 | Date_Last_Tested | timestamp[us] | Date the siren was last tested; 'Working' records whether it worked (name-based inspection fields). |
 | Working | string |  |
 | Numberofcells | double |  |
-| Avg_Ambient | double |  |
-| Anyunusualsoundeventsduringtest | string |  |
+| Avg_Ambient | double | The city's service labels this field 'Average Ambient'. |
+| Anyunusualsoundeventsduringtest | string | The city's service labels this field 'Unusal Sound Events During Testing'. |
 | Birthmarkvisible | string |  |
 | PoleMount | string |  |
 | PoleHeight | double | Height of the siren pole; PoleMount, PoleLean, Polemountedin and PoleConditionNotes describe the pole installation and condition (name-based inspection fields). |
 | Solar | string |  |
-| Any_nearby_encroachments_or_cle | string |  |
-| MinAmbient | double |  |
-| MaxAmbient | double |  |
+| Any_nearby_encroachments_or_cle | string | The city's service labels this field 'Nearby Encroachments or Overhead/Vertical Clearance Issues'. |
+| MinAmbient | double | The city's service labels this field 'Minimum Ambient'. |
+| MaxAmbient | double | The city's service labels this field 'Maximum Ambient'. |
 | PoleConditionNotes | string |  |
 | OtherNotes | string |  |
 | PoleLean | string |  |
 | Polemountedin | string |  |
-| Isthepoledirectlyadjacenttotraf | string |  |
+| Isthepoledirectlyadjacenttotraf | string | The city's service labels this field 'Pole Directly Adjacent to Driving Traffic Within 20 feet'. |
 | GeneralSurroundings | string |  |
-| Isthepolepubliclyaccessibleorbe | string |  |
+| Isthepolepubliclyaccessibleorbe | string | The city's service labels this field 'Pole Publicly Accessible'. |
 | Location_Description | string |  |
 | Z | string |  |
-| Xfield | double |  |
-| Yfield | double |  |
+| Xfield | double | The city's service labels this field 'X'. |
+| Yfield | double | The city's service labels this field 'Y'. |
 | GlobalID | string |  |
 | CreationDate | timestamp[us] |  |
 | Creator | string |  |
@@ -64,12 +64,12 @@ Public emergency siren locations. While these sirens are generally thought of as
 | File | Size | Checksum |
 |------|------|----------|
 | ./siren-locations.parquet | 27.3 KB | 122038641156... |
-| ./siren-locations.pmtiles | 108.8 KB | 122044b90264... |
+| ./siren-locations.pmtiles | 293.5 KB | 12209c0f49ce... |
 | ./styles/city-renderer.json | 534 B | 1220dae106a3... |
-| ./styles/default.json | 807 B | 1220ee88923e... |
+| ./styles/default.json | 836 B | 1220ba06d0cf... |
 | ./styles/style-ownership.json | 1.4 KB | 122005c68a9e... |
 | ./styles/style-plain.json | 782 B | 1220b3ef72cc... |
-| ./thumbnail.png | 364.0 KB | 1220a8cf2547... |
+| ./thumbnail.png | 188.0 KB | 12205b377fd7... |
 
 ## Quick Start
 
@@ -99,6 +99,8 @@ Extracted from the city's own ArcGIS REST service with the Portolan CLI:
       https://maps8.stlouis-mo.gov/arcgis/rest/services/BPS/City_of_St__Louis_Firehouses_and_Outdoor_Warning_Sirens1/MapServer --layers "Outdoor Warning Siren Locations" --raw
 
 That pages the service's `/query` endpoint for every feature, so this is the whole layer rather than the display-capped sample a browser request returns, and it carries across the service's field aliases. The service's own ESRI renderer was captured at the same time and is republished here as `styles/city-renderer.json`, so the map can be drawn in the city's own symbology.
+
+The service publishes field aliases and coded-value domains but no field descriptions. The schema descriptions here come from those aliases and domains plus researched notes; a column without a description has no documentation at the source.
 
 Converted to GeoParquet with gpio — zstd compression, Hilbert row order, and a covering bbox column with row-group statistics, so a spatial filter can skip most of the file over the network — and tiled to PMTiles with tippecanoe.
 

@@ -86,11 +86,13 @@
     },
     {
       "name": "FromStreet",
-      "type": "string"
+      "type": "string",
+      "description": "The city's service labels this field 'From'."
     },
     {
       "name": "ToStreet",
-      "type": "string"
+      "type": "string",
+      "description": "The city's service labels this field 'To'."
     },
     {
       "name": "Side",
@@ -178,8 +180,8 @@
         "visual"
       ],
       "title": "Parking Meters (PMTiles)",
-      "file:size": 161155,
-      "file:checksum": "122027fdddb1d929ec0bcf34739f6d5589ac48b830af89797be89bed7f5730417b79",
+      "file:size": 1248626,
+      "file:checksum": "1220d4c1ab7a724eb694d98802f2d622672a12755a016fbc903386411f241471cb73",
       "description": "Vector tiles built from this collection's GeoParquet, for map display."
     },
     "styles/city-renderer": {
@@ -234,8 +236,8 @@
         "thumbnail"
       ],
       "title": "Parking Meters rendered with the default style",
-      "file:size": 339906,
-      "file:checksum": "12208b009efec802da2dbfac267a87499be75b1d47516e3e1de2399fd7f4f4fe9fa6",
+      "file:size": 309563,
+      "file:checksum": "122070ad97284c80aaa31fbd8a0b3cee0d4b77ecb5cae4056f12252f6454b4f5df2a",
       "description": "The default style rendered over the collection's extent, for catalog browsing."
     }
   },

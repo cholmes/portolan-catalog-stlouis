@@ -23,8 +23,8 @@ Parking meters from the Streets Division parking services map. Mirrored from [th
 | SpaceNumbers | string |  |
 | SpaceCount | int32 |  |
 | Street | string |  |
-| FromStreet | string |  |
-| ToStreet | string |  |
+| FromStreet | string | The city's service labels this field 'From'. |
+| ToStreet | string | The city's service labels this field 'To'. |
 | Side | string |  |
 | STL_Zone | string |  |
 | NumberOfMachines | int32 |  |
@@ -41,12 +41,12 @@ Parking meters from the Streets Division parking services map. Mirrored from [th
 | File | Size | Checksum |
 |------|------|----------|
 | ./parking-meters.parquet | 93.1 KB | 1220749b719a... |
-| ./parking-meters.pmtiles | 157.4 KB | 122027fdddb1... |
+| ./parking-meters.pmtiles | 1.2 MB | 1220d4c1ab7a... |
 | ./styles/city-renderer.json | 532 B | 122001a52440... |
 | ./styles/default.json | 789 B | 12207c87d484... |
 | ./styles/style-bold.json | 775 B | 12206a632116... |
 | ./styles/style-plain.json | 693 B | 12202e92b415... |
-| ./thumbnail.png | 331.9 KB | 12208b009efe... |
+| ./thumbnail.png | 302.3 KB | 122070ad9728... |
 
 ## Quick Start
 
@@ -76,6 +76,8 @@ Extracted from the city's own ArcGIS REST service with the Portolan CLI:
       https://maps8.stlouis-mo.gov/arcgis/rest/services/STREETS/ParkingServices/MapServer --layers "PARKING_METERS" --raw
 
 That pages the service's `/query` endpoint for every feature, so this is the whole layer rather than the display-capped sample a browser request returns, and it carries across the service's field aliases. The service's own ESRI renderer was captured at the same time and is republished here as `styles/city-renderer.json`, so the map can be drawn in the city's own symbology.
+
+The service publishes field aliases and coded-value domains but no field descriptions. The schema descriptions here come from those aliases and domains plus researched notes; a column without a description has no documentation at the source.
 
 Converted to GeoParquet with gpio — zstd compression, Hilbert row order, and a covering bbox column with row-group statistics, so a spatial filter can skip most of the file over the network — and tiled to PMTiles with tippecanoe.
 

@@ -1,7 +1,7 @@
 # Overture Infrastructure
 
 Infrastructure features from the Overture base theme: real-world infrastructure entities such as bridges, airports, runways, aerialways, communication towers, power lines, and transit features like bus stops, platforms, and stations. All features are pulled from OpenStreetMap and converted to the Overture schema, classified by `subtype` and `class`. Overture documents this data well: the [base theme guide](https://docs.overturemaps.org/guides/base/) covers what the theme models, how Overture builds it, and how to query it, and the schema reference gives every field of its feature type — [`infrastructure`](https://docs.overturemaps.org/schema/reference/base/infrastructure/).
-Unlike everything else in this catalog, this is **not** City of St. Louis data: it comes from the [Overture Maps Foundation](https://overturemaps.org/), a collaborative project building open, interoperable map data for the world. This collection is a St. Louis extract of that global dataset — everything inside the city's bounding box, which also takes in the Illinois shore of the Mississippi (East St. Louis, Cahokia Heights) — included here to demonstrate how a city's open-data catalog can blend in other St. Louis-relevant open data alongside the city's own. The GeoParquet was extracted from Overture release 2026-07-22.0; the map tiles reference Overture's own global PMTiles for the same release, the tiles behind [explore.overturemaps.org](https://explore.overturemaps.org/). Explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/transportation-infrastructure-and-utilities/overture-infrastructure/collection.json).
+Unlike everything else in this catalog, this is **not** City of St. Louis data: it comes from the [Overture Maps Foundation](https://overturemaps.org/), a collaborative project building open, interoperable map data for the world. This collection is a St. Louis extract of that global dataset — everything inside the city's bounding box, which also takes in the Illinois shore of the Mississippi (East St. Louis, Cahokia Heights) — included here to demonstrate how a city's open-data catalog can blend in other St. Louis-relevant open data alongside the city's own. The GeoParquet was extracted from Overture release 2026-07-22.0. The map tiles reference Overture's own global PMTiles for release 2026-11-18.0 — the tiles behind [explore.overturemaps.org](https://explore.overturemaps.org/) — because Overture removes older tile builds from its bucket. The map can therefore show slightly newer features than the extract. Explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/transportation-infrastructure-and-utilities/overture-infrastructure/collection.json).
 
 ![overture](https://img.shields.io/badge/overture-blue) ![overture-maps](https://img.shields.io/badge/overture--maps-blue) ![base](https://img.shields.io/badge/base-blue) ![st-louis](https://img.shields.io/badge/st--louis-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![infrastructure](https://img.shields.io/badge/infrastructure-blue)
 
@@ -37,10 +37,10 @@ Unlike everything else in this catalog, this is **not** City of St. Louis data: 
 | File | Size | Checksum |
 |------|------|----------|
 | ./overture-infrastructure.parquet | 7.7 MB | 1220e3b509c9... |
-| https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/base.pmtiles | 181.9 GB | - |
-| ./styles/default.json | 4.7 KB | 12206fd5e4b1... |
-| ./styles/style-grid.json | 2.6 KB | 12209ed067b6... |
-| ./thumbnail.png | 366.3 KB | 1220daeab5f5... |
+| https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-11-18.0/base.pmtiles | 179.1 GB | - |
+| ./styles/default.json | 4.7 KB | 122023707609... |
+| ./styles/style-grid.json | 2.6 KB | 1220221aa4ff... |
+| ./thumbnail.png | 596.8 KB | 1220e072857a... |
 
 ## Quick Start
 

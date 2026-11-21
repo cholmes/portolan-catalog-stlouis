@@ -24,7 +24,10 @@ CATALOG_DIR="$ROOT/catalog"
 CHIITILER_DIR="${CHIITILER_DIR:-/tmp/chiitiler}"
 PORT="${PORT:-13579}"
 SIZE="${SIZE:-800}"
-DEFAULT_BASEMAP_URL='https://basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png'
+# Carto's anonymous raster tiles now watermark every tile with an API-key
+# notice (seen 2026-11-20), so the default is Esri's key-free light-gray
+# canvas, the closest visual match to the old carto-light cards.
+DEFAULT_BASEMAP_URL='https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}'
 BASEMAP_URL="${BASEMAP_URL:-$DEFAULT_BASEMAP_URL}"
 
 fsize() { stat -f%z "$1" 2>/dev/null || stat -c%s "$1"; }
@@ -83,6 +86,9 @@ DETAIL = {
     # county/Illinois fringe inside the bbox, densest around Wellston.
     "overture-addresses": (-90.2980, 38.6620, 0.0045),
     "overture-transportation": (-90.2200, 38.6350, 0.0330),
+    # Infrastructure (bridges, rail, power) only reads at z13+ in the base
+    # tiles, so the city frame showed nothing: riverfront close-up instead.
+    "overture-infrastructure": (-90.1900, 38.6260, 0.0120),
     # Forest Park: the tree points and forest polygons only exist at z13+,
     # so the city-wide frame showed nothing but landmass.
     "overture-land": (-90.2845, 38.6370, 0.0120),
@@ -100,7 +106,7 @@ FILL = {"historic-districts", "opportunity-zones",
         "animal-bites", "parcels-history", "crime", "historic-landmarks",
         "zip-codes", "parking-meters", "street-sweeping",
         "business-licenses", "tax-sales",
-        "overture-transportation", "overture-infrastructure",
+        "overture-transportation",
         "overture-land-use", "overture-water"}
 
 cat = pathlib.Path(os.environ["CATALOG_DIR"])

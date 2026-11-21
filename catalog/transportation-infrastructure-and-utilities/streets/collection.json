@@ -255,7 +255,8 @@
     },
     {
       "name": "Vac_Ordinance",
-      "type": "string"
+      "type": "string",
+      "description": "The city's service labels this field 'Vac_Ordina'."
     },
     {
       "name": "Google_Ima",
@@ -335,7 +336,8 @@
     },
     {
       "name": "Shape__Length",
-      "type": "double"
+      "type": "double",
+      "description": "Feature perimeter or length as computed by the service (ESRI Shape.STLength(), in the service's projection units)."
     },
     {
       "name": "geometry",

@@ -361,6 +361,11 @@ def processing_notes(coll_id: str) -> str:
             "the same time and is republished here as "
             "`styles/city-renderer.json`, so the map can be drawn in the "
             "city's own symbology.")
+        paras.append(
+            "The service publishes field aliases and coded-value domains "
+            "but no field descriptions. The schema descriptions here come "
+            "from those aliases and domains plus researched notes; a column "
+            "without a description has no documentation at the source.")
     elif src.get("crime_scrape"):
         paras.append(
             f"SLMPD does not publish a single file or a service — it posts "

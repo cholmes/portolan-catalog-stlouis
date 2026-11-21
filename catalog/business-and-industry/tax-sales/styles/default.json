@@ -2,7 +2,7 @@
   "version": 8,
   "name": "Tax sale parcels by opening bid",
   "metadata": {
-    "description": "2,200 parcels in tax sale proceedings, stepped by opening bid."
+    "description": "2,200 parcels in tax sale proceedings, stepped by opening bid. Parcels are small, so an outline keeps them visible zoomed out."
   },
   "sources": {
     "data": {
@@ -26,13 +26,13 @@
               "Opening_Bid"
             ]
           ],
-          "#eef3f6",
+          "#9fc4da",
           1000,
-          "#c6dbe8",
+          "#6ea7c7",
           3000,
-          "#8fbdd6",
+          "#4388ad",
           7500,
-          "#5591b5",
+          "#2a6a8f",
           15000,
           "#174054"
         ],
@@ -54,18 +54,47 @@
               "Opening_Bid"
             ]
           ],
-          "#eef3f6",
+          "#9fc4da",
           1000,
-          "#c6dbe8",
+          "#6ea7c7",
           3000,
-          "#8fbdd6",
+          "#4388ad",
           7500,
-          "#5591b5",
+          "#2a6a8f",
           15000,
           "#174054"
         ],
-        "fill-opacity": 0.75,
+        "fill-opacity": 0.85,
         "fill-outline-color": "#FFFFFF"
+      }
+    },
+    {
+      "id": "line",
+      "type": "line",
+      "source": "data",
+      "source-layer": "tax-sales",
+      "paint": {
+        "line-color": [
+          "step",
+          [
+            "to-number",
+            [
+              "get",
+              "Opening_Bid"
+            ]
+          ],
+          "#9fc4da",
+          1000,
+          "#6ea7c7",
+          3000,
+          "#4388ad",
+          7500,
+          "#2a6a8f",
+          15000,
+          "#174054"
+        ],
+        "line-width": 1.2,
+        "line-opacity": 1.0
       }
     }
   ]

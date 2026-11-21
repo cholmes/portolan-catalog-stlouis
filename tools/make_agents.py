@@ -515,13 +515,16 @@ def collection_agents(coll_id: str) -> str:
             f"SELECT * FROM '{url}' LIMIT 5;", "```", ""]
     local_pm = CATALOG / coll_rel(coll_id) / f"{coll_id}.pmtiles"
     if geom and src["type"] == "overture" and not local_pm.exists():
-        from sources import OVERTURE_TILES
+        from sources import OVERTURE_RELEASE, OVERTURE_TILES, \
+            OVERTURE_TILES_RELEASE
         out += [f"PMTiles for maps: Overture's own global theme tiles at "
                 f"`{OVERTURE_TILES}/{src['theme']}.pmtiles` "
                 f"(layers {', '.join('`' + t + '`' for t in src['types'])}), "
                 f"styled by `styles/*.json` — `styles/default.json` is the "
                 "default. Not clipped to St. Louis: only the Parquet is the "
-                "extract.", ""]
+                f"extract. The tiles are release {OVERTURE_TILES_RELEASE}, "
+                f"newer than the {OVERTURE_RELEASE} extract — Overture "
+                "removes older tile builds from its bucket.", ""]
     elif geom:
         out += [f"PMTiles for maps: `{BASE}/{coll_rel(coll_id)}/{coll_id}.pmtiles` "
                 f"(layer `{coll_id}`), styled by `styles/*.json` — "

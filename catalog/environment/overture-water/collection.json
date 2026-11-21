@@ -2,7 +2,7 @@
   "type": "Collection",
   "id": "environment/overture-water",
   "stac_version": "1.1.0",
-  "description": "Water features from the Overture base theme: ocean and inland water bodies, sourced from OpenStreetMap by translating its `natural` and `waterway` tags. For St. Louis that is above all the Mississippi River, plus the River des Peres, park lakes, and ponds, classified by `subtype` and `class`. Overture documents this data well: the [base theme guide](https://docs.overturemaps.org/guides/base/) covers what the theme models, how Overture builds it, and how to query it, and the schema reference gives every field of its feature type \u2014 [`water`](https://docs.overturemaps.org/schema/reference/base/water/).\n\nUnlike everything else in this catalog, this is **not** City of St. Louis data: it comes from the [Overture Maps Foundation](https://overturemaps.org/), a collaborative project building open, interoperable map data for the world. This collection is a St. Louis extract of that global dataset \u2014 everything inside the city's bounding box, which also takes in the Illinois shore of the Mississippi (East St. Louis, Cahokia Heights) \u2014 included here to demonstrate how a city's open-data catalog can blend in other St. Louis-relevant open data alongside the city's own. The GeoParquet was extracted from Overture release 2026-07-22.0; the map tiles reference Overture's own global PMTiles for the same release, the tiles behind [explore.overturemaps.org](https://explore.overturemaps.org/).",
+  "description": "Water features from the Overture base theme: ocean and inland water bodies, sourced from OpenStreetMap by translating its `natural` and `waterway` tags. For St. Louis that is above all the Mississippi River, plus the River des Peres, park lakes, and ponds, classified by `subtype` and `class`. Overture documents this data well: the [base theme guide](https://docs.overturemaps.org/guides/base/) covers what the theme models, how Overture builds it, and how to query it, and the schema reference gives every field of its feature type \u2014 [`water`](https://docs.overturemaps.org/schema/reference/base/water/).\n\nUnlike everything else in this catalog, this is **not** City of St. Louis data: it comes from the [Overture Maps Foundation](https://overturemaps.org/), a collaborative project building open, interoperable map data for the world. This collection is a St. Louis extract of that global dataset \u2014 everything inside the city's bounding box, which also takes in the Illinois shore of the Mississippi (East St. Louis, Cahokia Heights) \u2014 included here to demonstrate how a city's open-data catalog can blend in other St. Louis-relevant open data alongside the city's own. The GeoParquet was extracted from Overture release 2026-07-22.0. The map tiles reference Overture's own global PMTiles for release 2026-11-18.0 \u2014 the tiles behind [explore.overturemaps.org](https://explore.overturemaps.org/) \u2014 because Overture removes older tile builds from its bucket. The map can therefore show slightly newer features than the extract.",
   "links": [
     {
       "rel": "root",
@@ -53,7 +53,7 @@
     },
     {
       "rel": "pmtiles",
-      "href": "https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/base.pmtiles",
+      "href": "https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-11-18.0/base.pmtiles",
       "type": "application/vnd.pmtiles",
       "pmtiles:layers": [
         "water"
@@ -175,14 +175,14 @@
       "description": "St. Louis bounding-box extract of this Overture theme's release GeoParquet, geometries clipped to the box."
     },
     "overture-water-tiles": {
-      "href": "https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/base.pmtiles",
+      "href": "https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-11-18.0/base.pmtiles",
       "type": "application/vnd.pmtiles",
       "roles": [
         "visual"
       ],
       "title": "Overture base theme (PMTiles, global)",
-      "description": "Overture's own release-pinned global vector tiles for the base theme, served from the Overture Maps Foundation's public bucket \u2014 not from this mirror, and not clipped to St. Louis. The styles select this collection's layers (water) from them.",
-      "file:size": 195353612308
+      "description": "Overture's global vector tiles for the base theme, release 2026-11-18.0 \u2014 newer than the 2026-07-22.0 GeoParquet extract, because Overture removes older tile builds from its bucket. Served from the Overture Maps Foundation's public bucket, not from this mirror, and not clipped to St. Louis. The styles select this collection's layers (water) from them.",
+      "file:size": 192291847027
     },
     "styles/default": {
       "href": "./styles/default.json",
@@ -194,7 +194,7 @@
       "title": "Water by subtype",
       "description": "The Mississippi in deep blue, park lakes and ponds lighter, streams and canals teal \u2014 and the city's 374 swimming pools in purple. Lines (streams, drains) draw as lines, everything else as polygons.",
       "file:size": 3518,
-      "file:checksum": "1220bc41bb487af1e185e14aba7d061a89f6d8b4ec1769964cef23b389f649c28cee"
+      "file:checksum": "1220a45e1ee2431a40c1b453bd1bef62beceb2ee66cb0888f3deab7fed63c61f2006"
     },
     "styles/style-explorer": {
       "href": "./styles/style-explorer.json",
@@ -205,7 +205,7 @@
       "title": "Explorer water",
       "description": "One flat Explorer blue for every water feature \u2014 the basemap look.",
       "file:size": 1085,
-      "file:checksum": "1220bbf5134a9b864f5fab82069e682d59b3a40611bde8a506d195d4a73fb5b7cd06"
+      "file:checksum": "12207dd118805cae89220bc987d8ebde78d7d970d0fdaac3665bbe7699c50f1b56dc"
     },
     "thumbnail": {
       "href": "./thumbnail.png",

@@ -29,8 +29,8 @@ A database containing information on city parks, park amenities, and amenity att
 | AREA_ACRES | double |  |
 | CENSUS_POP | double |  |
 | PARCEL_POP | double |  |
-| Shape__Area | double |  |
-| Shape__Length | double |  |
+| Shape__Area | double | Feature area as computed by the service (ESRI Shape.STArea(), in the service's projection units). |
+| Shape__Length | double | Feature perimeter or length as computed by the service (ESRI Shape.STLength(), in the service's projection units). |
 | geometry | binary | Feature geometry (WGS84, WKB encoding). |
 | geometry_bbox | struct<xmin: float not null, ymin: float not null, xmax: float not null, ymax: float not null> | Per-row bounding box of the geometry (the GeoParquet covering column). |
 
@@ -75,6 +75,8 @@ Extracted from the city's own ArcGIS REST service with the Portolan CLI:
       https://maps9.stlouis-mo.gov/arcgis/rest/services/PARKS/Reservable_Park_Amenities/FeatureServer --layers "Parks" --raw
 
 That pages the service's `/query` endpoint for every feature, so this is the whole layer rather than the display-capped sample a browser request returns, and it carries across the service's field aliases. The service's own ESRI renderer was captured at the same time and is republished here as `styles/city-renderer.json`, so the map can be drawn in the city's own symbology.
+
+The service publishes field aliases and coded-value domains but no field descriptions. The schema descriptions here come from those aliases and domains plus researched notes; a column without a description has no documentation at the source.
 
 Converted to GeoParquet with gpio — zstd compression, Hilbert row order, and a covering bbox column with row-group statistics, so a spatial filter can skip most of the file over the network — and tiled to PMTiles with tippecanoe.
 

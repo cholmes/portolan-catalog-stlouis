@@ -328,11 +328,13 @@
     },
     {
       "name": "Shape__Area",
-      "type": "double"
+      "type": "double",
+      "description": "Feature area as computed by the service (ESRI Shape.STArea(), in the service's projection units)."
     },
     {
       "name": "Shape__Length",
-      "type": "double"
+      "type": "double",
+      "description": "Feature perimeter or length as computed by the service (ESRI Shape.STLength(), in the service's projection units)."
     },
     {
       "name": "geometry",
@@ -464,8 +466,8 @@
       "type": "application/vnd.mapbox.style+json",
       "title": "LRA inventory by status",
       "description": "The Land Reutilization Authority's 9,467 parcels \u2014 the nation's oldest land bank \u2014 mostly Available (green), with holds, options, and recent sales.",
-      "file:size": 1791,
-      "file:checksum": "12207f98eac2ef53f781f4af3e0a4ad496f6d91dbe935f3b2f8846408348ea0506b6",
+      "file:size": 2493,
+      "file:checksum": "1220e07b1affd01d49ebb839fc26fd9c43ea7465e66addebc3ca0c773dad58f0673a",
       "roles": [
         "default",
         "style"
@@ -508,8 +510,8 @@
       "href": "./thumbnail.png",
       "type": "image/png",
       "title": "LRA Property rendered with the default style",
-      "file:size": 376867,
-      "file:checksum": "12202bfba8bd7cbd8f19be3b97a127528905b720b58a7eeb1978a53922440357401f",
+      "file:size": 221452,
+      "file:checksum": "122089ce1c02d4813e508d3b1c9da7ea12d421b020eaa8f05d17b31bb86a6e6a7f85",
       "roles": [
         "thumbnail"
       ],

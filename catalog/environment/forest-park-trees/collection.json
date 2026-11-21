@@ -96,7 +96,8 @@
     },
     {
       "name": "DBH",
-      "type": "double"
+      "type": "double",
+      "description": "The city's service labels this field 'Size_DBH'."
     },
     {
       "name": "Stems",
@@ -104,7 +105,8 @@
     },
     {
       "name": "Condition",
-      "type": "string"
+      "type": "string",
+      "description": "Coded values from the city's service: N/A = Vacant."
     },
     {
       "name": "Maintenance",
@@ -184,7 +186,8 @@
     },
     {
       "name": "Dedication_Program",
-      "type": "string"
+      "type": "string",
+      "description": "Coded values from the city's service: TRIBUTE = Tree Tribute."
     },
     {
       "name": "Dedicated_Year",
@@ -196,11 +199,13 @@
     },
     {
       "name": "Hardware_Installed",
-      "type": "string"
+      "type": "string",
+      "description": "Coded values from the city's service: SS = Support System; LP = Lighting Protection; LF = Light Fixtures; MI = Multiple Installed; CB = Cable and/or Brace."
     },
     {
       "name": "Occupancy_Rate",
-      "type": "string"
+      "type": "string",
+      "description": "Coded values from the city's service: R = Rare; O = Occasional; F = Frequent; C = Constant."
     },
     {
       "name": "Genus",
@@ -337,8 +342,8 @@
       "href": "./forest-park-trees.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Forest Park Trees (PMTiles)",
-      "file:size": 1655253,
-      "file:checksum": "1220a650be4189aee7ac88129f4191085a6dd419d6d745057751717024871b4ef6f1",
+      "file:size": 9165378,
+      "file:checksum": "12204572765de15f8a194fa46dd313952f990db114ad62c031c5c828b93aee27dc23",
       "roles": [
         "visual"
       ],
@@ -393,8 +398,8 @@
       "href": "./thumbnail.png",
       "type": "image/png",
       "title": "Forest Park Trees rendered with the default style",
-      "file:size": 525281,
-      "file:checksum": "12205671d3b9cf18c3a287fa191dd8744bc51c35c5790799e93aacda0132fb1e5bd6",
+      "file:size": 527049,
+      "file:checksum": "1220425d563e2fe99631645efced22b62ba37941abe420985cf99d576350ee2d6c6a",
       "roles": [
         "thumbnail"
       ],

@@ -59,7 +59,7 @@ Bicycle infrastructure from the city's Biking Infrastructure Map service: existi
 | Other_Type | string |  |
 | Audit_Note | string |  |
 | GBP_REC_EX | string |  |
-| F_STATUS | string |  |
+| F_STATUS | string | Coded values from the city's service: Plannged = Planned. |
 | Initial_Year | string |  |
 | ID | int32 |  |
 | EWG_ID | string |  |
@@ -113,6 +113,8 @@ Extracted from the city's own ArcGIS REST service with the Portolan CLI:
       https://maps8.stlouis-mo.gov/arcgis/rest/services/PDA/Biking_Infrastructure_Map/MapServer --raw
 
 That pages the service's `/query` endpoint for every feature, so this is the whole layer rather than the display-capped sample a browser request returns, and it carries across the service's field aliases. The service's own ESRI renderer was captured at the same time and is republished here as `styles/city-renderer.json`, so the map can be drawn in the city's own symbology.
+
+The service publishes field aliases and coded-value domains but no field descriptions. The schema descriptions here come from those aliases and domains plus researched notes; a column without a description has no documentation at the source.
 
 The service splits the network across five layers; all five were extracted and merged, with a `source_layer` column recording which one each feature came from.
 

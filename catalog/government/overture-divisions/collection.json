@@ -2,7 +2,7 @@
   "type": "Collection",
   "id": "government/overture-divisions",
   "stac_version": "1.1.0",
-  "description": "Point, line, and polygon representations of human settlements from the Overture divisions theme: recognized areas for governance, culture, or organization, from countries and regions down to counties, cities, and neighborhoods. Three feature types are merged here with an `overture_type` column: `division` (label points with population and hierarchy), `division_area` (the land or maritime polygon belonging to a division), and `division_boundary` (shared borders between divisions). For the St. Louis box that means the city itself, surrounding counties and municipalities on both sides of the river, and Overture's neighborhood set. Overture documents this data well: the [divisions theme guide](https://docs.overturemaps.org/guides/divisions/) covers what the theme models, how Overture builds it, and how to query it, and the schema reference gives every field of the feature types merged here \u2014 [`division`](https://docs.overturemaps.org/schema/reference/divisions/division/), [`division_area`](https://docs.overturemaps.org/schema/reference/divisions/division_area/), [`division_boundary`](https://docs.overturemaps.org/schema/reference/divisions/division_boundary/).\n\nUnlike everything else in this catalog, this is **not** City of St. Louis data: it comes from the [Overture Maps Foundation](https://overturemaps.org/), a collaborative project building open, interoperable map data for the world. This collection is a St. Louis extract of that global dataset \u2014 everything inside the city's bounding box, which also takes in the Illinois shore of the Mississippi (East St. Louis, Cahokia Heights) \u2014 included here to demonstrate how a city's open-data catalog can blend in other St. Louis-relevant open data alongside the city's own. The GeoParquet was extracted from Overture release 2026-07-22.0; the map tiles reference Overture's own global PMTiles for the same release, the tiles behind [explore.overturemaps.org](https://explore.overturemaps.org/).",
+  "description": "Point, line, and polygon representations of human settlements from the Overture divisions theme: recognized areas for governance, culture, or organization, from countries and regions down to counties, cities, and neighborhoods. Three feature types are merged here with an `overture_type` column: `division` (label points with population and hierarchy), `division_area` (the land or maritime polygon belonging to a division), and `division_boundary` (shared borders between divisions). For the St. Louis box that means the city itself, surrounding counties and municipalities on both sides of the river, and Overture's neighborhood set. Overture documents this data well: the [divisions theme guide](https://docs.overturemaps.org/guides/divisions/) covers what the theme models, how Overture builds it, and how to query it, and the schema reference gives every field of the feature types merged here \u2014 [`division`](https://docs.overturemaps.org/schema/reference/divisions/division/), [`division_area`](https://docs.overturemaps.org/schema/reference/divisions/division_area/), [`division_boundary`](https://docs.overturemaps.org/schema/reference/divisions/division_boundary/).\n\nUnlike everything else in this catalog, this is **not** City of St. Louis data: it comes from the [Overture Maps Foundation](https://overturemaps.org/), a collaborative project building open, interoperable map data for the world. This collection is a St. Louis extract of that global dataset \u2014 everything inside the city's bounding box, which also takes in the Illinois shore of the Mississippi (East St. Louis, Cahokia Heights) \u2014 included here to demonstrate how a city's open-data catalog can blend in other St. Louis-relevant open data alongside the city's own. The GeoParquet was extracted from Overture release 2026-07-22.0. The map tiles reference Overture's own global PMTiles for release 2026-11-18.0 \u2014 the tiles behind [explore.overturemaps.org](https://explore.overturemaps.org/) \u2014 because Overture removes older tile builds from its bucket. The map can therefore show slightly newer features than the extract.",
   "links": [
     {
       "rel": "root",
@@ -65,7 +65,7 @@
     },
     {
       "rel": "pmtiles",
-      "href": "https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/divisions.pmtiles",
+      "href": "https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-11-18.0/divisions.pmtiles",
       "type": "application/vnd.pmtiles",
       "pmtiles:layers": [
         "division",
@@ -259,14 +259,14 @@
       "description": "St. Louis bounding-box extract of this Overture theme's release GeoParquet, geometries clipped to the box."
     },
     "overture-divisions-tiles": {
-      "href": "https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/divisions.pmtiles",
+      "href": "https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-11-18.0/divisions.pmtiles",
       "type": "application/vnd.pmtiles",
       "roles": [
         "visual"
       ],
       "title": "Overture divisions theme (PMTiles, global)",
-      "description": "Overture's own release-pinned global vector tiles for the divisions theme, served from the Overture Maps Foundation's public bucket \u2014 not from this mirror, and not clipped to St. Louis. The styles select this collection's layers (division, division_area, division_boundary) from them.",
-      "file:size": 19534917087
+      "description": "Overture's global vector tiles for the divisions theme, release 2026-11-18.0 \u2014 newer than the 2026-07-22.0 GeoParquet extract, because Overture removes older tile builds from its bucket. Served from the Overture Maps Foundation's public bucket, not from this mirror, and not clipped to St. Louis. The styles select this collection's layers (division, division_area, division_boundary) from them.",
+      "file:size": 20296367155
     },
     "styles/default": {
       "href": "./styles/default.json",
@@ -278,7 +278,7 @@
       "title": "Divisions by subtype",
       "description": "Division areas colored by their place in the hierarchy \u2014 counties orange, cities and municipalities blue, neighborhoods green \u2014 with shared boundaries drawn dark and each division's label point named. The country and region areas (bbox clips of the whole US, Missouri, and Illinois polygons) are in the data but not drawn here.",
       "file:size": 2922,
-      "file:checksum": "12203dfc74dcd33145ea39bb3de87333d83bcc03efcac321555721731ec6641062a5"
+      "file:checksum": "12202fcb921dee604df4699b7942ffafca9a61c1f7f520fe42e1ef9950970159ae6b"
     },
     "styles/style-neighborhoods": {
       "href": "./styles/style-neighborhoods.json",
@@ -289,7 +289,7 @@
       "title": "Overture neighborhoods",
       "description": "Just the neighborhood-level divisions, in repeating colors with labels \u2014 Overture's own neighborhood set for both sides of the river, to hold against the city's official neighborhood boundaries. Colors are arbitrary.",
       "file:size": 2514,
-      "file:checksum": "1220fcde50ef9c6198dcbee8e3dd1982b7b51d89ac3a0a33646c7fb7bb61dd702208"
+      "file:checksum": "1220dae7f2c3e5dd4b016d56203fafb31056d18b01333738a32b6e5c7421fe9065c7"
     },
     "thumbnail": {
       "href": "./thumbnail.png",

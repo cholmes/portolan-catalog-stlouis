@@ -60,6 +60,11 @@ DESCRIPTIONS.update(json.loads(
     (ROOT / "docs" / "census-descriptions.json").read_text()))
 _cn = ROOT / "docs" / "column-notes.json"
 COLUMN_NOTES = json.loads(_cn.read_text()) if _cn.exists() else {}
+# Harvested from the city services' own field aliases and coded-value
+# domains (tools/harvest_field_notes.py); used only where the researched
+# notes above have no entry.
+_acn = ROOT / "docs" / "column-notes-arcgis.json"
+ARCGIS_NOTES = json.loads(_acn.read_text()) if _acn.exists() else {}
 
 # The Overture themes share most of their schema, so their glosses live in
 # their own file with three scopes — _shared, _base_theme, per-collection —
@@ -390,12 +395,15 @@ def finalize_collection(coll_id: str) -> None:
 
     # Researched column meanings (docs/column-notes.json) → table:columns
     notes = COLUMN_NOTES.get(coll_id, {})
+    harvested = ARCGIS_NOTES.get(coll_id, {})
     if coll.get("table:columns"):
         for col in coll["table:columns"]:
             if col["name"] in notes:
                 col["description"] = linkify(notes[col["name"]])
             elif col["name"] in GEO_COLUMN_NOTES:
                 col.setdefault("description", GEO_COLUMN_NOTES[col["name"]])
+            elif col["name"] in harvested:
+                col.setdefault("description", harvested[col["name"]])
 
     # Recompute the spatial extent from the parquet itself — the CLI's
     # tracked extent can go stale when files are rewritten out from under it.
@@ -580,7 +588,8 @@ def finalize_overture(coll_id: str, coll_dir, f, coll: dict, src: dict) -> None:
     (the files run 19-195 GB; a checksum of bytes this catalog neither
     serves nor could re-hash would be theater).
     """
-    from sources import OVERTURE_RELEASE, OVERTURE_S3, OVERTURE_TILES
+    from sources import (OVERTURE_RELEASE, OVERTURE_S3, OVERTURE_TILES,
+                         OVERTURE_TILES_RELEASE)
     coll["id"] = coll_rel(coll_id)
     coll["title"] = src["title"]
     coll["description"] = DESCRIPTIONS[coll_id]["description"]
@@ -719,11 +728,14 @@ def finalize_overture(coll_id: str, coll_dir, f, coll: dict, src: dict) -> None:
             "roles": ["visual"],
             "title": f"Overture {src['theme']} theme (PMTiles, global)",
             "description": (
-                "Overture's own release-pinned global vector tiles for the "
-                f"{src['theme']} theme, served from the Overture Maps "
-                "Foundation's public bucket — not from this mirror, and not "
-                "clipped to St. Louis. The styles select this collection's "
-                f"layers ({', '.join(src['types'])}) from them."),
+                f"Overture's global vector tiles for the {src['theme']} "
+                f"theme, release {OVERTURE_TILES_RELEASE} — newer than the "
+                f"{OVERTURE_RELEASE} GeoParquet extract, because Overture "
+                "removes older tile builds from its bucket. Served from the "
+                "Overture Maps Foundation's public bucket, not from this "
+                "mirror, and not clipped to St. Louis. The styles select "
+                f"this collection's layers ({', '.join(src['types'])}) "
+                "from them."),
         }
         size = overture_tile_size(src["theme"])
         if size:
@@ -879,12 +891,15 @@ def finalize_census(coll_id: str, coll_dir, f, coll: dict, src: dict) -> None:
     coll["keywords"] = meta["keywords"]
 
     notes = COLUMN_NOTES.get(coll_id, {})
+    harvested = ARCGIS_NOTES.get(coll_id, {})
     if coll.get("table:columns"):
         for col in coll["table:columns"]:
             if col["name"] in notes:
                 col["description"] = linkify(notes[col["name"]])
             elif col["name"] in GEO_COLUMN_NOTES:
                 col.setdefault("description", GEO_COLUMN_NOTES[col["name"]])
+            elif col["name"] in harvested:
+                col.setdefault("description", harvested[col["name"]])
 
     pq = coll_dir / f"{coll_id}.parquet"
     if pq.exists() and coll_id not in TABULAR:

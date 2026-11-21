@@ -1,7 +1,7 @@
 # Overture Land Cover
 
 Land cover features from the Overture base theme: the primary natural or artificial surface material covering a land area — vegetation like forests and crops, built environments, and natural surfaces like wetlands or barren ground. Derived from ESA WorldCover, high-resolution optical Earth observation data. Land cover is the physical thing covering the land, while land use is the human use the land is put to. Overture documents this data well: the [base theme guide](https://docs.overturemaps.org/guides/base/) covers what the theme models, how Overture builds it, and how to query it, and the schema reference gives every field of its feature type — [`land_cover`](https://docs.overturemaps.org/schema/reference/base/land_cover/).
-Unlike everything else in this catalog, this is **not** City of St. Louis data: it comes from the [Overture Maps Foundation](https://overturemaps.org/), a collaborative project building open, interoperable map data for the world. This collection is a St. Louis extract of that global dataset — everything inside the city's bounding box, which also takes in the Illinois shore of the Mississippi (East St. Louis, Cahokia Heights) — included here to demonstrate how a city's open-data catalog can blend in other St. Louis-relevant open data alongside the city's own. The GeoParquet was extracted from Overture release 2026-07-22.0; the map tiles reference Overture's own global PMTiles for the same release, the tiles behind [explore.overturemaps.org](https://explore.overturemaps.org/). Explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/environment/overture-land-cover/collection.json).
+Unlike everything else in this catalog, this is **not** City of St. Louis data: it comes from the [Overture Maps Foundation](https://overturemaps.org/), a collaborative project building open, interoperable map data for the world. This collection is a St. Louis extract of that global dataset — everything inside the city's bounding box, which also takes in the Illinois shore of the Mississippi (East St. Louis, Cahokia Heights) — included here to demonstrate how a city's open-data catalog can blend in other St. Louis-relevant open data alongside the city's own. The GeoParquet was extracted from Overture release 2026-07-22.0. The map tiles reference Overture's own global PMTiles for release 2026-11-18.0 — the tiles behind [explore.overturemaps.org](https://explore.overturemaps.org/) — because Overture removes older tile builds from its bucket. The map can therefore show slightly newer features than the extract. Explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/environment/overture-land-cover/collection.json).
 
 ![overture](https://img.shields.io/badge/overture-blue) ![overture-maps](https://img.shields.io/badge/overture--maps-blue) ![base](https://img.shields.io/badge/base-blue) ![st-louis](https://img.shields.io/badge/st--louis-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![land-cover](https://img.shields.io/badge/land--cover-blue)
 
@@ -31,8 +31,8 @@ Unlike everything else in this catalog, this is **not** City of St. Louis data: 
 | File | Size | Checksum |
 |------|------|----------|
 | ./overture-land-cover.parquet | 644.0 KB | 12202b8961d7... |
-| https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/base.pmtiles | 181.9 GB | - |
-| ./styles/default.json | 1.9 KB | 12205914fc83... |
+| https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-11-18.0/base.pmtiles | 179.1 GB | - |
+| ./styles/default.json | 1.9 KB | 12204a3e24e2... |
 | ./thumbnail.png | 366.6 KB | 122054ac21ce... |
 
 ## Quick Start

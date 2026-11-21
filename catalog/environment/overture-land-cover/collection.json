@@ -2,7 +2,7 @@
   "type": "Collection",
   "id": "environment/overture-land-cover",
   "stac_version": "1.1.0",
-  "description": "Land cover features from the Overture base theme: the primary natural or artificial surface material covering a land area \u2014 vegetation like forests and crops, built environments, and natural surfaces like wetlands or barren ground. Derived from ESA WorldCover, high-resolution optical Earth observation data. Land cover is the physical thing covering the land, while land use is the human use the land is put to. Overture documents this data well: the [base theme guide](https://docs.overturemaps.org/guides/base/) covers what the theme models, how Overture builds it, and how to query it, and the schema reference gives every field of its feature type \u2014 [`land_cover`](https://docs.overturemaps.org/schema/reference/base/land_cover/).\n\nUnlike everything else in this catalog, this is **not** City of St. Louis data: it comes from the [Overture Maps Foundation](https://overturemaps.org/), a collaborative project building open, interoperable map data for the world. This collection is a St. Louis extract of that global dataset \u2014 everything inside the city's bounding box, which also takes in the Illinois shore of the Mississippi (East St. Louis, Cahokia Heights) \u2014 included here to demonstrate how a city's open-data catalog can blend in other St. Louis-relevant open data alongside the city's own. The GeoParquet was extracted from Overture release 2026-07-22.0; the map tiles reference Overture's own global PMTiles for the same release, the tiles behind [explore.overturemaps.org](https://explore.overturemaps.org/).",
+  "description": "Land cover features from the Overture base theme: the primary natural or artificial surface material covering a land area \u2014 vegetation like forests and crops, built environments, and natural surfaces like wetlands or barren ground. Derived from ESA WorldCover, high-resolution optical Earth observation data. Land cover is the physical thing covering the land, while land use is the human use the land is put to. Overture documents this data well: the [base theme guide](https://docs.overturemaps.org/guides/base/) covers what the theme models, how Overture builds it, and how to query it, and the schema reference gives every field of its feature type \u2014 [`land_cover`](https://docs.overturemaps.org/schema/reference/base/land_cover/).\n\nUnlike everything else in this catalog, this is **not** City of St. Louis data: it comes from the [Overture Maps Foundation](https://overturemaps.org/), a collaborative project building open, interoperable map data for the world. This collection is a St. Louis extract of that global dataset \u2014 everything inside the city's bounding box, which also takes in the Illinois shore of the Mississippi (East St. Louis, Cahokia Heights) \u2014 included here to demonstrate how a city's open-data catalog can blend in other St. Louis-relevant open data alongside the city's own. The GeoParquet was extracted from Overture release 2026-07-22.0. The map tiles reference Overture's own global PMTiles for release 2026-11-18.0 \u2014 the tiles behind [explore.overturemaps.org](https://explore.overturemaps.org/) \u2014 because Overture removes older tile builds from its bucket. The map can therefore show slightly newer features than the extract.",
   "links": [
     {
       "rel": "root",
@@ -53,7 +53,7 @@
     },
     {
       "rel": "pmtiles",
-      "href": "https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/base.pmtiles",
+      "href": "https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-11-18.0/base.pmtiles",
       "type": "application/vnd.pmtiles",
       "pmtiles:layers": [
         "land_cover"
@@ -145,14 +145,14 @@
       "description": "St. Louis bounding-box extract of this Overture theme's release GeoParquet, geometries clipped to the box."
     },
     "overture-land-cover-tiles": {
-      "href": "https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/base.pmtiles",
+      "href": "https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-11-18.0/base.pmtiles",
       "type": "application/vnd.pmtiles",
       "roles": [
         "visual"
       ],
       "title": "Overture base theme (PMTiles, global)",
-      "description": "Overture's own release-pinned global vector tiles for the base theme, served from the Overture Maps Foundation's public bucket \u2014 not from this mirror, and not clipped to St. Louis. The styles select this collection's layers (land_cover) from them.",
-      "file:size": 195353612308
+      "description": "Overture's global vector tiles for the base theme, release 2026-11-18.0 \u2014 newer than the 2026-07-22.0 GeoParquet extract, because Overture removes older tile builds from its bucket. Served from the Overture Maps Foundation's public bucket, not from this mirror, and not clipped to St. Louis. The styles select this collection's layers (land_cover) from them.",
+      "file:size": 192291847027
     },
     "styles/default": {
       "href": "./styles/default.json",
@@ -164,7 +164,7 @@
       "title": "Land cover",
       "description": "ESA WorldCover surface classes in the Explorer site's own palette \u2014 forest, shrub, grass, crop, wetland, barren, and built-up. Drawn at full opacity here (the Explorer fades land cover out above z11; a data collection should not hide its data).",
       "file:size": 1937,
-      "file:checksum": "12205914fc83ee721887ee696d2e85ed6bbed68617512425a3da2ee2df01d764c3cc"
+      "file:checksum": "12204a3e24e251f8a1fd4c146e9b6ac1c8b2a2c900b8f19c0930746746e5626ca16a"
     },
     "thumbnail": {
       "href": "./thumbnail.png",

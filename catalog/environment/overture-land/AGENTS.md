@@ -2,7 +2,7 @@
 
 Land features from the Overture base theme: representations of physical land surfaces, sourced from OpenStreetMap — global land derived from the inverse of OSM coastlines, plus translations of OSM `natural` tags (forests, grass, sand, wetlands, peaks, and more), classified by `subtype` and `class`. Overture documents this data well: the [base theme guide](https://docs.overturemaps.org/guides/base/) covers what the theme models, how Overture builds it, and how to query it, and the schema reference gives every field of its feature type — [`land`](https://docs.overturemaps.org/schema/reference/base/land/).
 
-Unlike everything else in this catalog, this is **not** City of St. Louis data: it comes from the [Overture Maps Foundation](https://overturemaps.org/), a collaborative project building open, interoperable map data for the world. This collection is a St. Louis extract of that global dataset — everything inside the city's bounding box, which also takes in the Illinois shore of the Mississippi (East St. Louis, Cahokia Heights) — included here to demonstrate how a city's open-data catalog can blend in other St. Louis-relevant open data alongside the city's own. The GeoParquet was extracted from Overture release 2026-07-22.0; the map tiles reference Overture's own global PMTiles for the same release, the tiles behind [explore.overturemaps.org](https://explore.overturemaps.org/).
+Unlike everything else in this catalog, this is **not** City of St. Louis data: it comes from the [Overture Maps Foundation](https://overturemaps.org/), a collaborative project building open, interoperable map data for the world. This collection is a St. Louis extract of that global dataset — everything inside the city's bounding box, which also takes in the Illinois shore of the Mississippi (East St. Louis, Cahokia Heights) — included here to demonstrate how a city's open-data catalog can blend in other St. Louis-relevant open data alongside the city's own. The GeoParquet was extracted from Overture release 2026-07-22.0. The map tiles reference Overture's own global PMTiles for release 2026-11-18.0 — the tiles behind [explore.overturemaps.org](https://explore.overturemaps.org/) — because Overture removes older tile builds from its bucket. The map can therefore show slightly newer features than the extract.
 
 64,469 rows; geometry: LineString (WGS84 lon/lat unless noted).
 
@@ -13,7 +13,7 @@ INSTALL httpfs; LOAD httpfs;  -- DuckDB
 SELECT * FROM 'https://data.source.coop/tge-labs/st-louis-open-data-mirror/environment/overture-land/overture-land.parquet' LIMIT 5;
 ```
 
-PMTiles for maps: Overture's own global theme tiles at `https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/base.pmtiles` (layers `land`), styled by `styles/*.json` — `styles/default.json` is the default. Not clipped to St. Louis: only the Parquet is the extract.
+PMTiles for maps: Overture's own global theme tiles at `https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-11-18.0/base.pmtiles` (layers `land`), styled by `styles/*.json` — `styles/default.json` is the default. Not clipped to St. Louis: only the Parquet is the extract. The tiles are release 2026-11-18.0, newer than the 2026-07-22.0 extract — Overture removes older tile builds from its bucket.
 
 ## Key fields
 

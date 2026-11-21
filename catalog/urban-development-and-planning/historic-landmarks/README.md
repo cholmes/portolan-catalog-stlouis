@@ -46,12 +46,12 @@ Historic sites and landmarks from the city's Historic Landmarks map service. Mir
 | File | Size | Checksum |
 |------|------|----------|
 | ./historic-landmarks.parquet | 74.2 KB | 1220f2978cf8... |
-| ./historic-landmarks.pmtiles | 157.0 KB | 122081ac9a9e... |
+| ./historic-landmarks.pmtiles | 979.0 KB | 12200427094e... |
 | ./styles/city-renderer.json | 1.3 KB | 1220572c1b30... |
 | ./styles/default.json | 1.6 KB | 122004b242f6... |
 | ./styles/style-national-register.json | 1.2 KB | 12209f2ecea8... |
 | ./styles/style-plain.json | 741 B | 122059d0cb75... |
-| ./thumbnail.png | 364.6 KB | 122018dd4b84... |
+| ./thumbnail.png | 201.8 KB | 12205cd46c3e... |
 
 ## Quick Start
 
@@ -81,6 +81,8 @@ Extracted from the city's own ArcGIS REST service with the Portolan CLI:
       https://maps8.stlouis-mo.gov/arcgis/rest/services/PDA/Historic_Landmarks/FeatureServer --layers "Historic Sites" --raw
 
 That pages the service's `/query` endpoint for every feature, so this is the whole layer rather than the display-capped sample a browser request returns, and it carries across the service's field aliases. The service's own ESRI renderer was captured at the same time and is republished here as `styles/city-renderer.json`, so the map can be drawn in the city's own symbology.
+
+The service publishes field aliases and coded-value domains but no field descriptions. The schema descriptions here come from those aliases and domains plus researched notes; a column without a description has no documentation at the source.
 
 Converted to GeoParquet with gpio — zstd compression, Hilbert row order, and a covering bbox column with row-group statistics, so a spatial filter can skip most of the file over the network — and tiled to PMTiles with tippecanoe.
 

@@ -442,8 +442,14 @@ SOURCES = {
 
 OVERTURE_RELEASE = "2026-07-22.0"
 OVERTURE_S3 = f"s3://overturemaps-us-west-2/release/{OVERTURE_RELEASE}"
+# Overture removes old tile builds from its bucket (it keeps about four
+# releases), so the global tiles cannot stay pinned to OVERTURE_RELEASE
+# once it ages out. The tiles track a release that still exists; the
+# GeoParquet extracts stay on OVERTURE_RELEASE until a full re-extract.
+# Every place that states the release names this mismatch.
+OVERTURE_TILES_RELEASE = "2026-11-18.0"
 OVERTURE_TILES = ("https://overturemaps-extras-us-west-2.s3.us-west-2"
-                  f".amazonaws.com/tiles/{OVERTURE_RELEASE}")
+                  f".amazonaws.com/tiles/{OVERTURE_TILES_RELEASE}")
 
 OVERTURE_SOURCES = {
     "overture-buildings": {

@@ -198,8 +198,8 @@
         "visual"
       ],
       "title": "Historic Landmarks (PMTiles)",
-      "file:size": 160774,
-      "file:checksum": "122081ac9a9eaedfab0971316b03e806822ea3bf08207786025f3df76415c0ad1995",
+      "file:size": 1002473,
+      "file:checksum": "12200427094ea7aaa1d09599f029b10318e65a5d2cf755c70a67ededce1f942605b0",
       "description": "Vector tiles built from this collection's GeoParquet, for map display."
     },
     "styles/city-renderer": {
@@ -254,8 +254,8 @@
         "thumbnail"
       ],
       "title": "Historic Landmarks rendered with the default style",
-      "file:size": 373381,
-      "file:checksum": "122018dd4b84469bdb1287a5c92647ed1d6a904a75b583845a7cb1c43f3a90b5f517",
+      "file:size": 206642,
+      "file:checksum": "12205cd46c3e782fd4a820072f644ea61297cdfceb053b16189c3333229bb78e80de",
       "description": "The default style rendered over the collection's extent, for catalog browsing."
     }
   },

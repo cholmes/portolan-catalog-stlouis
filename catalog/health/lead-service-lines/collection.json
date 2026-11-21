@@ -209,8 +209,8 @@
       "href": "./lead-service-lines.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Lead Service Line Inventory (PMTiles)",
-      "file:size": 2342054,
-      "file:checksum": "12208189bee6db6eb627fc13c50266ac38538a801e92554c66bdb50c731ccf359089",
+      "file:size": 2342056,
+      "file:checksum": "122073641b68e2e306a12290f443357c02be63e530bb440e8e2b1e0768b15eb6ed2c",
       "roles": [
         "visual"
       ],
@@ -265,8 +265,8 @@
       "href": "./thumbnail.png",
       "type": "image/png",
       "title": "Lead Service Line Inventory rendered with the default style",
-      "file:size": 388907,
-      "file:checksum": "1220af3eb899ce1103fc34aeeb24e537357df6c471c860fa3667cdd2311efb8b7d5c",
+      "file:size": 207469,
+      "file:checksum": "1220db71e624070bbca60ec61c8bc851d6b73f36fe1e20b576266fc1644c3cb29aa5",
       "roles": [
         "thumbnail"
       ],
