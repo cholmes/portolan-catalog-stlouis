@@ -696,7 +696,8 @@ emit("lra-property", "default", style(
     "The Land Reutilization Authority's 9,467 parcels — the nation's "
     "oldest land bank — mostly Available (green), with holds, options, "
     "and recent sales.",
-    [fill("lra-property", LRA_STATUS, 0.7, "#FFFFFF")], legend=LRA_STATUS),
+    [fill("lra-property", LRA_STATUS, 0.7, "#FFFFFF"),
+     line("lra-property", LRA_STATUS, 1.2)], legend=LRA_STATUS),
     default=True)
 emit("lra-property", "style-usage", style(
     "lra-property", "Lot usage",
@@ -1207,7 +1208,7 @@ emit("wards-2010", "style-subtle", style(
 emit("siren-locations", "default", style(
     "siren-locations", "Outdoor warning sirens",
     "The 58 outdoor warning sirens, in alert red.",
-    [circle("siren-locations", RED, zoom_radius(5), stroke="#FFFFFF")]),
+    [circle("siren-locations", RED, zoom_radius(7), stroke="#FFFFFF")]),
     default=True)
 SIREN_OWNER = ["match", ["get", "PROPERTY_OWNER"],
                "CITY OF ST LOUIS", BLUE, "City of St Louis", BLUE, ORANGE]
@@ -1628,13 +1629,15 @@ emit("business-licenses", "style-bold", style(
     "Larger blue markers.",
     [circle("business-licenses", BLUE, zoom_radius(3.6), stroke="#FFFFFF")]))
 
-TAXSALE_BID = step("Opening_Bid", "#eef3f6",
-                   [1000, "#c6dbe8", 3000, "#8fbdd6", 7500, "#5591b5",
+TAXSALE_BID = step("Opening_Bid", "#9fc4da",
+                   [1000, "#6ea7c7", 3000, "#4388ad", 7500, "#2a6a8f",
                     15000, DARK], to_number=True)
 emit("tax-sales", "default", style(
     "tax-sales", "Tax sale parcels by opening bid",
-    "2,200 parcels in tax sale proceedings, stepped by opening bid.",
-    [fill("tax-sales", TAXSALE_BID, 0.75, "#FFFFFF")], legend=TAXSALE_BID),
+    "2,200 parcels in tax sale proceedings, stepped by opening bid. "
+    "Parcels are small, so an outline keeps them visible zoomed out.",
+    [fill("tax-sales", TAXSALE_BID, 0.85, "#FFFFFF"),
+     line("tax-sales", TAXSALE_BID, 1.2)], legend=TAXSALE_BID),
     default=True)
 emit("tax-sales", "style-solid", style(
     "tax-sales", "All tax-sale parcels",

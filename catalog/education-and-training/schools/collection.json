@@ -192,35 +192,43 @@
     },
     {
       "name": "IN_Street",
-      "type": "string"
+      "type": "string",
+      "description": "The city's service labels this field 'Street or Intersection'."
     },
     {
       "name": "IN_ZIP",
-      "type": "string"
+      "type": "string",
+      "description": "The city's service labels this field 'ZIP Code'."
     },
     {
       "name": "USER_School_Name",
-      "type": "string"
+      "type": "string",
+      "description": "The city's service labels this field 'School Name'."
     },
     {
       "name": "USER_Street_Address",
-      "type": "string"
+      "type": "string",
+      "description": "The city's service labels this field 'Street Address'."
     },
     {
       "name": "USER_State",
-      "type": "string"
+      "type": "string",
+      "description": "The city's service labels this field 'State'."
     },
     {
       "name": "USER_City",
-      "type": "string"
+      "type": "string",
+      "description": "The city's service labels this field 'City'."
     },
     {
       "name": "USER_ZIP",
-      "type": "int32"
+      "type": "int32",
+      "description": "The city's service labels this field 'ZIP'."
     },
     {
       "name": "USER_School_System",
-      "type": "string"
+      "type": "string",
+      "description": "The city's service labels this field 'School System'."
     },
     {
       "name": "POINT_X",
@@ -324,8 +332,8 @@
       "href": "./schools.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "City Public Schools (PMTiles)",
-      "file:size": 88705,
-      "file:checksum": "12204607133b3a2d89bd45aa7ecd09aa0d9ea12e978c3407b9a3d945897ffa491fa1",
+      "file:size": 391172,
+      "file:checksum": "1220ad6cd505d107b9271fa1b570f0d15e9036b4ffe2d3780abfc3e33925d45f26fe",
       "roles": [
         "visual"
       ],
@@ -380,8 +388,8 @@
       "href": "./thumbnail.png",
       "type": "image/png",
       "title": "City Public Schools rendered with the default style",
-      "file:size": 368737,
-      "file:checksum": "1220de84dee054f6d7dfb3e67bae7a4cb69b88b32f8cb5beef33f74e53e50d7dc01e",
+      "file:size": 200080,
+      "file:checksum": "12209b87b3edaf555c342a2d8b5312c3fea7ef84141c5abd77bb277f37e6b37beb88",
       "roles": [
         "thumbnail"
       ],

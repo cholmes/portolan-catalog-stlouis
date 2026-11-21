@@ -8,7 +8,7 @@
   "sources": {
     "data": {
       "type": "vector",
-      "url": "pmtiles://https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/divisions.pmtiles"
+      "url": "pmtiles://https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-11-18.0/divisions.pmtiles"
     }
   },
   "layers": [

@@ -41,12 +41,12 @@ Polling Centers Mirrored from [the city's open data portal](https://stlcity.maps
 | File | Size | Checksum |
 |------|------|----------|
 | ./polling-places.parquet | 21.0 KB | 1220db38dfc9... |
-| ./polling-places.pmtiles | 49.4 KB | 1220de18d675... |
+| ./polling-places.pmtiles | 203.7 KB | 122014f74230... |
 | ./styles/city-renderer.json | 532 B | 12204d13d332... |
 | ./styles/default.json | 1.3 KB | 122038b36713... |
 | ./styles/style-accessible.json | 1.4 KB | 12209bc43f28... |
 | ./styles/style-citywide.json | 1.3 KB | 1220cab25d7b... |
-| ./thumbnail.png | 359.8 KB | 1220a532e3f4... |
+| ./thumbnail.png | 196.6 KB | 12205b6aac9d... |
 
 ## Quick Start
 
@@ -76,6 +76,8 @@ Extracted from the city's own ArcGIS REST service with the Portolan CLI:
       https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/Polling_Centers_WFL1/FeatureServer --raw
 
 That pages the service's `/query` endpoint for every feature, so this is the whole layer rather than the display-capped sample a browser request returns, and it carries across the service's field aliases. The service's own ESRI renderer was captured at the same time and is republished here as `styles/city-renderer.json`, so the map can be drawn in the city's own symbology.
+
+The service publishes field aliases and coded-value domains but no field descriptions. The schema descriptions here come from those aliases and domains plus researched notes; a column without a description has no documentation at the source.
 
 Converted to GeoParquet with gpio — zstd compression, Hilbert row order, and a covering bbox column with row-group statistics, so a spatial filter can skip most of the file over the network — and tiled to PMTiles with tippecanoe.
 

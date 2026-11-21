@@ -48,14 +48,14 @@ City of St. Louis public school information including school name, school addres
 | User_fld | string |  |
 | Comp_score | string |  |
 | Status | string |  |
-| IN_Street | string |  |
-| IN_ZIP | string |  |
-| USER_School_Name | string |  |
-| USER_Street_Address | string |  |
-| USER_State | string |  |
-| USER_City | string |  |
-| USER_ZIP | int32 |  |
-| USER_School_System | string |  |
+| IN_Street | string | The city's service labels this field 'Street or Intersection'. |
+| IN_ZIP | string | The city's service labels this field 'ZIP Code'. |
+| USER_School_Name | string | The city's service labels this field 'School Name'. |
+| USER_Street_Address | string | The city's service labels this field 'Street Address'. |
+| USER_State | string | The city's service labels this field 'State'. |
+| USER_City | string | The city's service labels this field 'City'. |
+| USER_ZIP | int32 | The city's service labels this field 'ZIP'. |
+| USER_School_System | string | The city's service labels this field 'School System'. |
 | POINT_X | double |  |
 | POINT_Y | double |  |
 | geometry | binary | Feature geometry (WGS84, WKB encoding). |
@@ -66,12 +66,12 @@ City of St. Louis public school information including school name, school addres
 | File | Size | Checksum |
 |------|------|----------|
 | ./schools.parquet | 37.2 KB | 1220ebe08bc6... |
-| ./schools.pmtiles | 86.6 KB | 12204607133b... |
+| ./schools.pmtiles | 382.0 KB | 1220ad6cd505... |
 | ./styles/city-renderer.json | 1.9 KB | 12204cb5a208... |
 | ./styles/default.json | 1.3 KB | 1220b1c57489... |
 | ./styles/style-plain.json | 799 B | 1220662e5b84... |
 | ./styles/style-system.json | 1.4 KB | 122070582846... |
-| ./thumbnail.png | 360.1 KB | 1220de84dee0... |
+| ./thumbnail.png | 195.4 KB | 12209b87b3ed... |
 
 ## Quick Start
 
@@ -101,6 +101,8 @@ Extracted from the city's own ArcGIS REST service with the Portolan CLI:
       https://maps8.stlouis-mo.gov/arcgis/rest/services/PDA/Schools/FeatureServer --raw
 
 That pages the service's `/query` endpoint for every feature, so this is the whole layer rather than the display-capped sample a browser request returns, and it carries across the service's field aliases. The service's own ESRI renderer was captured at the same time and is republished here as `styles/city-renderer.json`, so the map can be drawn in the city's own symbology.
+
+The service publishes field aliases and coded-value domains but no field descriptions. The schema descriptions here come from those aliases and domains plus researched notes; a column without a description has no documentation at the source.
 
 Converted to GeoParquet with gpio — zstd compression, Hilbert row order, and a covering bbox column with row-group statistics, so a spatial filter can skip most of the file over the network — and tiled to PMTiles with tippecanoe.
 

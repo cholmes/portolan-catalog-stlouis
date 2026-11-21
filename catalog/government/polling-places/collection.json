@@ -229,8 +229,8 @@
       "href": "./polling-places.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Polling Centers (PMTiles)",
-      "file:size": 50617,
-      "file:checksum": "1220de18d67583be189eab9a3dba476e329ccc298e5a3e9f30219085454cfa5088b2",
+      "file:size": 208634,
+      "file:checksum": "122014f742308c8c045174279a298de529faf6bf9f422d52177325e98e8adca9acb2",
       "roles": [
         "visual"
       ],
@@ -285,8 +285,8 @@
       "href": "./thumbnail.png",
       "type": "image/png",
       "title": "Polling Centers rendered with the default style",
-      "file:size": 368413,
-      "file:checksum": "1220a532e3f4c8870f4f42b7334f2ed7d44f9279953d3041a74cf8cd403a8274d421",
+      "file:size": 201270,
+      "file:checksum": "12205b6aac9d0b42089e2d29a9a10574edbe1fb1104b0ab416136289eb47a6a897fe",
       "roles": [
         "thumbnail"
       ],

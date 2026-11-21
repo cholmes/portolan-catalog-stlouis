@@ -79,8 +79,8 @@ Land Reutilization Authority data and search. Mirrored from [the city's open dat
 | Maintenance | string |  |
 | PCA_Date | timestamp[ms] | Date of the property condition assessment (name-based). |
 | OBJECTID | int64 |  |
-| Shape__Area | double |  |
-| Shape__Length | double |  |
+| Shape__Area | double | Feature area as computed by the service (ESRI Shape.STArea(), in the service's projection units). |
+| Shape__Length | double | Feature perimeter or length as computed by the service (ESRI Shape.STLength(), in the service's projection units). |
 | geometry | binary | Feature geometry (WGS84, WKB encoding). |
 | geometry_bbox | struct<xmin: float not null, ymin: float not null, xmax: float not null, ymax: float not null> | Per-row bounding box of the geometry (the GeoParquet covering column). |
 
@@ -91,11 +91,11 @@ Land Reutilization Authority data and search. Mirrored from [the city's open dat
 | ./lra-property.parquet | 1.9 MB | 1220ca4cfc3e... |
 | ./lra-property.pmtiles | 1.8 MB | 122042d4e49c... |
 | ./styles/city-renderer.json | 1.2 KB | 1220c00f954b... |
-| ./styles/default.json | 1.7 KB | 12207f98eac2... |
+| ./styles/default.json | 2.4 KB | 1220e07b1aff... |
 | ./styles/style-solid.json | 506 B | 122033c6a1f3... |
 | ./styles/style-source.json | 1.6 KB | 12201a65e0c5... |
 | ./styles/style-usage.json | 1.6 KB | 1220b6d23480... |
-| ./thumbnail.png | 368.0 KB | 12202bfba8bd... |
+| ./thumbnail.png | 216.3 KB | 122089ce1c02... |
 | https://static.stlouis-mo.gov/open-data/SLDC/REAL-ESTATE/LRA_INVENTORY.csv | 2.8 MB | 1220b44528d7... |
 | https://static.stlouis-mo.gov/open-data/SLDC/REAL-ESTATE/LRA_INVENTORY_AVAILABLE.csv | 1.7 MB | 12204ded3997... |
 
@@ -127,6 +127,8 @@ Extracted from the city's own ArcGIS REST service with the Portolan CLI:
       https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/SLDC_Real_Estate/FeatureServer --layers "LRA Inventory" --raw
 
 That pages the service's `/query` endpoint for every feature, so this is the whole layer rather than the display-capped sample a browser request returns, and it carries across the service's field aliases. The service's own ESRI renderer was captured at the same time and is republished here as `styles/city-renderer.json`, so the map can be drawn in the city's own symbology.
+
+The service publishes field aliases and coded-value domains but no field descriptions. The schema descriptions here come from those aliases and domains plus researched notes; a column without a description has no documentation at the source.
 
 The SLDC service carries every parcel in the city, not just the LRA's; this collection is the `LRA = 'YES'` subset.
 

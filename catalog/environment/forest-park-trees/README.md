@@ -24,9 +24,9 @@ Forest Park Trees data Mirrored from [the city's open data portal](https://www.s
 | Risk_Rating | string |  |
 | Site | string |  |
 | Common_Names | string |  |
-| DBH | double |  |
+| DBH | double | The city's service labels this field 'Size_DBH'. |
 | Stems | int16 |  |
-| Condition | string |  |
+| Condition | string | Coded values from the city's service: N/A = Vacant. |
 | Maintenance | string |  |
 | Comment | string |  |
 | Special | string |  |
@@ -46,11 +46,11 @@ Forest Park Trees data Mirrored from [the city's open data portal](https://www.s
 | Storm_Tool | string |  |
 | Picture | string |  |
 | GUID | string |  |
-| Dedication_Program | string |  |
+| Dedication_Program | string | Coded values from the city's service: TRIBUTE = Tree Tribute. |
 | Dedicated_Year | timestamp[us] |  |
 | Dedicated_To | string |  |
-| Hardware_Installed | string |  |
-| Occupancy_Rate | string |  |
+| Hardware_Installed | string | Coded values from the city's service: SS = Support System; LP = Lighting Protection; LF = Light Fixtures; MI = Multiple Installed; CB = Cable and/or Brace. |
+| Occupancy_Rate | string | Coded values from the city's service: R = Rare; O = Occasional; F = Frequent; C = Constant. |
 | Genus | string |  |
 | Family | string |  |
 | Subtaxa | string |  |
@@ -69,12 +69,12 @@ Forest Park Trees data Mirrored from [the city's open data portal](https://www.s
 | File | Size | Checksum |
 |------|------|----------|
 | ./forest-park-trees.parquet | 1.4 MB | 12207287763a... |
-| ./forest-park-trees.pmtiles | 1.6 MB | 1220a650be41... |
+| ./forest-park-trees.pmtiles | 8.7 MB | 12204572765d... |
 | ./styles/city-renderer.json | 1.4 KB | 1220a4fbaf0e... |
 | ./styles/default.json | 851 B | 1220755bb30c... |
 | ./styles/style-condition.json | 1.9 KB | 12204e292f1e... |
 | ./styles/style-size.json | 1.5 KB | 122056623603... |
-| ./thumbnail.png | 513.0 KB | 12205671d3b9... |
+| ./thumbnail.png | 514.7 KB | 1220425d563e... |
 
 ## Quick Start
 
@@ -104,6 +104,8 @@ Extracted from the city's own ArcGIS REST service with the Portolan CLI:
       https://maps8.stlouis-mo.gov/arcgis/rest/services/FORESTRY/FOREST_PARK_TREES/FeatureServer --layers "FOREST_PARK_TREES" --raw
 
 That pages the service's `/query` endpoint for every feature, so this is the whole layer rather than the display-capped sample a browser request returns, and it carries across the service's field aliases. The service's own ESRI renderer was captured at the same time and is republished here as `styles/city-renderer.json`, so the map can be drawn in the city's own symbology.
+
+The service publishes field aliases and coded-value domains but no field descriptions. The schema descriptions here come from those aliases and domains plus researched notes; a column without a description has no documentation at the source.
 
 Converted to GeoParquet with gpio — zstd compression, Hilbert row order, and a covering bbox column with row-group statistics, so a spatial filter can skip most of the file over the network — and tiled to PMTiles with tippecanoe.
 

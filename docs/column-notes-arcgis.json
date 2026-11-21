@@ -1,0 +1,136 @@
+{
+  "bike-infrastructure": {
+    "F_STATUS": "Coded values from the city's service: Plannged = Planned."
+  },
+  "business-licenses": {
+    "IN_SingleLine": "The city's service labels this field 'Single Line Input'.",
+    "USER_Doc_Nbr_": "The city's service labels this field 'Doc Nbr.'.",
+    "USER_Tax_Year": "The city's service labels this field 'Tax Year'.",
+    "USER_Status_Cd_": "The city's service labels this field 'Status Cd.'.",
+    "USER_Trade_Name": "The city's service labels this field 'Trade Name'.",
+    "USER_DocType": "The city's service labels this field 'DocType'.",
+    "USER_Tax_Period": "The city's service labels this field 'Tax Period'.",
+    "USER_Date_Business_Started": "The city's service labels this field 'Date Business Started'.",
+    "USER_House_Nbr_": "The city's service labels this field 'House Nbr.'.",
+    "USER_House_Sfx_": "The city's service labels this field 'House Sfx.'.",
+    "USER_House_Unit": "The city's service labels this field 'House Unit'.",
+    "USER_St__Dir_": "The city's service labels this field 'St. Dir.'.",
+    "USER_Property_St__Name": "The city's service labels this field 'Property St. Name'.",
+    "USER_St__Type": "The city's service labels this field 'St. Type'.",
+    "USER_Zip_Cd_": "The city's service labels this field 'Zip Cd.'.",
+    "USER_Street_Address": "The city's service labels this field 'Street Address'.",
+    "USER_HQ_Owner_Cd_": "The city's service labels this field 'HQ Owner Cd.'.",
+    "USER_Owner_Business_HQ_Name": "The city's service labels this field 'Owner/Business HQ Name'.",
+    "USER_Mailing_Address_Line_1": "The city's service labels this field 'Mailing Address Line 1'.",
+    "USER_Mailing_Address_Line_2": "The city's service labels this field 'Mailing Address Line 2'.",
+    "USER_Mailing_Address_Line_3": "The city's service labels this field 'Mailing Address Line 3'.",
+    "USER_Ward_Nbr_": "The city's service labels this field 'Ward Nbr.'.",
+    "USER_City_Block": "The city's service labels this field 'City Block'.",
+    "USER_CDA_Neighborhood": "The city's service labels this field 'CDA Neighborhood'.",
+    "USER_CDA_Subdistrict": "The city's service labels this field 'CDA Subdistrict'.",
+    "USER_Nbr__Of_Employees": "The city's service labels this field 'Nbr. Of Employees'.",
+    "USER_Space_Use_Cd_": "The city's service labels this field 'Space Use Cd.'.",
+    "USER_Business_Phone": "The city's service labels this field 'Business Phone'.",
+    "USER_Contact_Name": "The city's service labels this field 'Contact Name'.",
+    "USER_Business_E_Mail": "The city's service labels this field 'Business E-Mail'."
+  },
+  "forest-park-trees": {
+    "DBH": "The city's service labels this field 'Size_DBH'.",
+    "Condition": "Coded values from the city's service: N/A = Vacant.",
+    "Dedication_Program": "Coded values from the city's service: TRIBUTE = Tree Tribute.",
+    "Hardware_Installed": "Coded values from the city's service: SS = Support System; LP = Lighting Protection; LF = Light Fixtures; MI = Multiple Installed; CB = Cable and/or Brace.",
+    "Occupancy_Rate": "Coded values from the city's service: R = Rare; O = Occasional; F = Frequent; C = Constant."
+  },
+  "land-use": {
+    "Shape__Area": "Feature area as computed by the service (ESRI Shape.STArea(), in the service's projection units).",
+    "Shape__Length": "Feature perimeter or length as computed by the service (ESRI Shape.STLength(), in the service's projection units)."
+  },
+  "lead-service-lines": {
+    "utilmaterial": "Coded values from the city's service: 0 = Unknown; 81 = Asbestos Cement - AC; 83 = Cast Iron - CAS; 84 = Copper - COP; 88 = Ductile Iron - DIP; 89 = Galvanized Pipe - GP; 93 = Polyethylene - PE; 94 = Polyvinyl Chloride - PVC; 109 = Lead - LP; 110 = Brass - BRS.",
+    "utilsource": "Coded values from the city's service: 1 = Existing Records; 2 = Test Results; 3 = Visual Confirmation; 5 = Assumed.",
+    "utilstatus": "Coded values from the city's service: 0 = Unknown; 1 = Lead; 2 = Non-Lead; 3 = Galvanized Requiring Replacement.",
+    "custmaterial": "Coded values from the city's service: 0 = Unknown; 81 = Asbestos Cement - AC; 83 = Cast Iron - CAS; 84 = Copper - COP; 88 = Ductile Iron - DIP; 89 = Galvanized Pipe - GP; 93 = Polyethylene - PE; 94 = Polyvinyl Chloride - PVC; 109 = Lead - LP; 110 = Brass - BRS.",
+    "custsource": "Coded values from the city's service: 1 = Existing Records; 2 = Test Results; 3 = Visual Confirmation; 4 = Notified by Customer; 5 = Assumed.",
+    "custstatus": "Coded values from the city's service: 0 = Unknown; 1 = Lead; 2 = Non-Lead; 3 = Galvanized Requiring Replacement."
+  },
+  "lra-property": {
+    "Shape__Area": "Feature area as computed by the service (ESRI Shape.STArea(), in the service's projection units).",
+    "Shape__Length": "Feature perimeter or length as computed by the service (ESRI Shape.STLength(), in the service's projection units)."
+  },
+  "market-value-analysis": {
+    "Shape__Area": "Feature area as computed by the service (ESRI Shape.STArea(), in the service's projection units).",
+    "Shape__Length": "Feature perimeter or length as computed by the service (ESRI Shape.STLength(), in the service's projection units)."
+  },
+  "neighborhood-organizations": {
+    "Shape__Area": "Feature area as computed by the service (ESRI Shape.STArea(), in the service's projection units).",
+    "Shape__Length": "Feature perimeter or length as computed by the service (ESRI Shape.STLength(), in the service's projection units)."
+  },
+  "neighborhoods": {
+    "Shape__Area": "Feature area as computed by the service (ESRI Shape.STArea(), in the service's projection units).",
+    "Shape__Length": "Feature perimeter or length as computed by the service (ESRI Shape.STLength(), in the service's projection units)."
+  },
+  "opportunity-zones": {
+    "Shape__Area": "Feature area as computed by the service (ESRI Shape.STArea(), in the service's projection units).",
+    "Shape__Length": "Feature perimeter or length as computed by the service (ESRI Shape.STLength(), in the service's projection units)."
+  },
+  "parking-meters": {
+    "FromStreet": "The city's service labels this field 'From'.",
+    "ToStreet": "The city's service labels this field 'To'."
+  },
+  "parks": {
+    "Shape__Area": "Feature area as computed by the service (ESRI Shape.STArea(), in the service's projection units).",
+    "Shape__Length": "Feature perimeter or length as computed by the service (ESRI Shape.STLength(), in the service's projection units)."
+  },
+  "police-districts": {
+    "Shape__Area": "Feature area as computed by the service (ESRI Shape.STArea(), in the service's projection units).",
+    "Shape__Length": "Feature perimeter or length as computed by the service (ESRI Shape.STLength(), in the service's projection units)."
+  },
+  "port-authority-district": {
+    "Shape__Area": "Feature area as computed by the service (ESRI Shape.STArea(), in the service's projection units).",
+    "Shape__Length": "Feature perimeter or length as computed by the service (ESRI Shape.STLength(), in the service's projection units)."
+  },
+  "schools": {
+    "IN_Street": "The city's service labels this field 'Street or Intersection'.",
+    "IN_ZIP": "The city's service labels this field 'ZIP Code'.",
+    "USER_School_Name": "The city's service labels this field 'School Name'.",
+    "USER_Street_Address": "The city's service labels this field 'Street Address'.",
+    "USER_State": "The city's service labels this field 'State'.",
+    "USER_City": "The city's service labels this field 'City'.",
+    "USER_ZIP": "The city's service labels this field 'ZIP'.",
+    "USER_School_System": "The city's service labels this field 'School System'."
+  },
+  "siren-locations": {
+    "Siren": "The city's service labels this field 'Siren Number'.",
+    "TYPE": "The city's service labels this field 'Siren Type'.",
+    "Avg_Ambient": "The city's service labels this field 'Average Ambient'.",
+    "Anyunusualsoundeventsduringtest": "The city's service labels this field 'Unusal Sound Events During Testing'.",
+    "Any_nearby_encroachments_or_cle": "The city's service labels this field 'Nearby Encroachments or Overhead/Vertical Clearance Issues'.",
+    "MinAmbient": "The city's service labels this field 'Minimum Ambient'.",
+    "MaxAmbient": "The city's service labels this field 'Maximum Ambient'.",
+    "Isthepoledirectlyadjacenttotraf": "The city's service labels this field 'Pole Directly Adjacent to Driving Traffic Within 20 feet'.",
+    "Isthepolepubliclyaccessibleorbe": "The city's service labels this field 'Pole Publicly Accessible'.",
+    "Xfield": "The city's service labels this field 'X'.",
+    "Yfield": "The city's service labels this field 'Y'."
+  },
+  "streets": {
+    "Vac_Ordinance": "The city's service labels this field 'Vac_Ordina'.",
+    "Shape__Length": "Feature perimeter or length as computed by the service (ESRI Shape.STLength(), in the service's projection units)."
+  },
+  "tax-sales": {
+    "ColParcelId": "The city's service labels this field 'Parcel ID'.",
+    "Shape__Area": "Feature area as computed by the service (ESRI Shape.STArea(), in the service's projection units).",
+    "Shape__Length": "Feature perimeter or length as computed by the service (ESRI Shape.STLength(), in the service's projection units)."
+  },
+  "tif-districts": {
+    "Subgrouping": "The city's service labels this field 'Subgrouping (RPAs)'.",
+    "Shape__Area": "Feature area as computed by the service (ESRI Shape.STArea(), in the service's projection units).",
+    "Shape__Length": "Feature perimeter or length as computed by the service (ESRI Shape.STLength(), in the service's projection units)."
+  },
+  "tornado-damage-2025": {
+    "Shape__Length": "Feature perimeter or length as computed by the service (ESRI Shape.STLength(), in the service's projection units)."
+  },
+  "vacancy-composite": {
+    "Shape__Area": "Feature area as computed by the service (ESRI Shape.STArea(), in the service's projection units).",
+    "Shape__Length": "Feature perimeter or length as computed by the service (ESRI Shape.STLength(), in the service's projection units)."
+  }
+}

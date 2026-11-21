@@ -231,7 +231,8 @@
     },
     {
       "name": "F_STATUS",
-      "type": "string"
+      "type": "string",
+      "description": "Coded values from the city's service: Plannged = Planned."
     },
     {
       "name": "Initial_Year",

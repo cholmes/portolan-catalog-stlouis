@@ -222,8 +222,8 @@
       "href": "./animal-bites.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Animal Bites (PMTiles)",
-      "file:size": 96455,
-      "file:checksum": "1220c1013b82efca1d62076b5d8a97927e6cdd00ef2607c2ed24824c2ccab5cf51e0",
+      "file:size": 438078,
+      "file:checksum": "12202965f901a024032c0b40c5c53171535f921a7dc7533a4944a68fc287e89f4e1a",
       "roles": [
         "visual"
       ],
@@ -267,8 +267,8 @@
       "href": "./thumbnail.png",
       "type": "image/png",
       "title": "Animal Bites rendered with the default style",
-      "file:size": 369358,
-      "file:checksum": "1220621e77cbb10a4ea0745e9c9236d57abe531d08566bb104ed90f5f74091f5601c",
+      "file:size": 198390,
+      "file:checksum": "122027928adf5dd7ecb77ea9cae3ad43eed45ccf429ca66929eb02dfe4bd95652bb5",
       "roles": [
         "thumbnail"
       ],

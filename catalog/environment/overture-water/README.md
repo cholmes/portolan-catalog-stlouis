@@ -1,7 +1,7 @@
 # Overture Water
 
 Water features from the Overture base theme: ocean and inland water bodies, sourced from OpenStreetMap by translating its `natural` and `waterway` tags. For St. Louis that is above all the Mississippi River, plus the River des Peres, park lakes, and ponds, classified by `subtype` and `class`. Overture documents this data well: the [base theme guide](https://docs.overturemaps.org/guides/base/) covers what the theme models, how Overture builds it, and how to query it, and the schema reference gives every field of its feature type — [`water`](https://docs.overturemaps.org/schema/reference/base/water/).
-Unlike everything else in this catalog, this is **not** City of St. Louis data: it comes from the [Overture Maps Foundation](https://overturemaps.org/), a collaborative project building open, interoperable map data for the world. This collection is a St. Louis extract of that global dataset — everything inside the city's bounding box, which also takes in the Illinois shore of the Mississippi (East St. Louis, Cahokia Heights) — included here to demonstrate how a city's open-data catalog can blend in other St. Louis-relevant open data alongside the city's own. The GeoParquet was extracted from Overture release 2026-07-22.0; the map tiles reference Overture's own global PMTiles for the same release, the tiles behind [explore.overturemaps.org](https://explore.overturemaps.org/). Explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/environment/overture-water/collection.json).
+Unlike everything else in this catalog, this is **not** City of St. Louis data: it comes from the [Overture Maps Foundation](https://overturemaps.org/), a collaborative project building open, interoperable map data for the world. This collection is a St. Louis extract of that global dataset — everything inside the city's bounding box, which also takes in the Illinois shore of the Mississippi (East St. Louis, Cahokia Heights) — included here to demonstrate how a city's open-data catalog can blend in other St. Louis-relevant open data alongside the city's own. The GeoParquet was extracted from Overture release 2026-07-22.0. The map tiles reference Overture's own global PMTiles for release 2026-11-18.0 — the tiles behind [explore.overturemaps.org](https://explore.overturemaps.org/) — because Overture removes older tile builds from its bucket. The map can therefore show slightly newer features than the extract. Explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/environment/overture-water/collection.json).
 
 ![overture](https://img.shields.io/badge/overture-blue) ![overture-maps](https://img.shields.io/badge/overture--maps-blue) ![base](https://img.shields.io/badge/base-blue) ![st-louis](https://img.shields.io/badge/st--louis-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![water](https://img.shields.io/badge/water-blue)
 
@@ -37,9 +37,9 @@ Unlike everything else in this catalog, this is **not** City of St. Louis data: 
 | File | Size | Checksum |
 |------|------|----------|
 | ./overture-water.parquet | 468.9 KB | 1220f5d58e15... |
-| https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/base.pmtiles | 181.9 GB | - |
-| ./styles/default.json | 3.4 KB | 1220bc41bb48... |
-| ./styles/style-explorer.json | 1.1 KB | 1220bbf5134a... |
+| https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-11-18.0/base.pmtiles | 179.1 GB | - |
+| ./styles/default.json | 3.4 KB | 1220a45e1ee2... |
+| ./styles/style-explorer.json | 1.1 KB | 12207dd11880... |
 | ./thumbnail.png | 389.9 KB | 1220c39bbeaf... |
 
 ## Quick Start

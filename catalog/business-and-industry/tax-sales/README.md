@@ -18,7 +18,7 @@ Tax sale parcels from SLDC. Mirrored from [the city's open data portal](https://
 | Column | Type | Description |
 |--------|------|-------------|
 | OBJECTID | int64 |  |
-| ColParcelId | string |  |
+| ColParcelId | string | The city's service labels this field 'Parcel ID'. |
 | SubmittedParcel | string |  |
 | Suit | string |  |
 | Sequence | string |  |
@@ -30,8 +30,8 @@ Tax sale parcels from SLDC. Mirrored from [the city's open data portal](https://
 | Sales_Date | timestamp[us] |  |
 | Current_Sales | string |  |
 | Tax_Sale | string |  |
-| Shape__Area | double |  |
-| Shape__Length | double |  |
+| Shape__Area | double | Feature area as computed by the service (ESRI Shape.STArea(), in the service's projection units). |
+| Shape__Length | double | Feature perimeter or length as computed by the service (ESRI Shape.STLength(), in the service's projection units). |
 | geometry | binary | Feature geometry (WGS84, WKB encoding). |
 | bbox | struct<xmin: double, ymin: double, xmax: double, ymax: double> | Per-row bounding box of the geometry (the GeoParquet covering column). |
 
@@ -42,10 +42,10 @@ Tax sale parcels from SLDC. Mirrored from [the city's open data portal](https://
 | ./tax-sales.parquet | 396.9 KB | 1220e7b9cb05... |
 | ./tax-sales.pmtiles | 1.0 MB | 12205e982f66... |
 | ./styles/city-renderer.json | 529 B | 12200bb7c96b... |
-| ./styles/default.json | 1.3 KB | 12203df4879d... |
+| ./styles/default.json | 1.9 KB | 1220fd0fcf4a... |
 | ./styles/style-boundaries.json | 460 B | 1220a8e696fe... |
 | ./styles/style-solid.json | 488 B | 12206ce86ca6... |
-| ./thumbnail.png | 349.2 KB | 1220fcb1d01a... |
+| ./thumbnail.png | 224.0 KB | 1220e64f7a0b... |
 
 ## Quick Start
 
@@ -75,6 +75,8 @@ Extracted from the city's own ArcGIS REST service with the Portolan CLI:
       https://maps8.stlouis-mo.gov/arcgis/rest/services/SLDC/Tax_Sales/FeatureServer --layers "Tax Sales" --raw
 
 That pages the service's `/query` endpoint for every feature, so this is the whole layer rather than the display-capped sample a browser request returns, and it carries across the service's field aliases. The service's own ESRI renderer was captured at the same time and is republished here as `styles/city-renderer.json`, so the map can be drawn in the city's own symbology.
+
+The service publishes field aliases and coded-value domains but no field descriptions. The schema descriptions here come from those aliases and domains plus researched notes; a column without a description has no documentation at the source.
 
 Converted to GeoParquet with gpio — zstd compression, Hilbert row order, and a covering bbox column with row-group statistics, so a spatial filter can skip most of the file over the network — and tiled to PMTiles with tippecanoe.
 

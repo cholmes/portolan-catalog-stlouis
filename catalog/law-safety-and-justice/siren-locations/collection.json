@@ -130,11 +130,13 @@
     },
     {
       "name": "Avg_Ambient",
-      "type": "double"
+      "type": "double",
+      "description": "The city's service labels this field 'Average Ambient'."
     },
     {
       "name": "Anyunusualsoundeventsduringtest",
-      "type": "string"
+      "type": "string",
+      "description": "The city's service labels this field 'Unusal Sound Events During Testing'."
     },
     {
       "name": "Birthmarkvisible",
@@ -155,15 +157,18 @@
     },
     {
       "name": "Any_nearby_encroachments_or_cle",
-      "type": "string"
+      "type": "string",
+      "description": "The city's service labels this field 'Nearby Encroachments or Overhead/Vertical Clearance Issues'."
     },
     {
       "name": "MinAmbient",
-      "type": "double"
+      "type": "double",
+      "description": "The city's service labels this field 'Minimum Ambient'."
     },
     {
       "name": "MaxAmbient",
-      "type": "double"
+      "type": "double",
+      "description": "The city's service labels this field 'Maximum Ambient'."
     },
     {
       "name": "PoleConditionNotes",
@@ -183,7 +188,8 @@
     },
     {
       "name": "Isthepoledirectlyadjacenttotraf",
-      "type": "string"
+      "type": "string",
+      "description": "The city's service labels this field 'Pole Directly Adjacent to Driving Traffic Within 20 feet'."
     },
     {
       "name": "GeneralSurroundings",
@@ -191,7 +197,8 @@
     },
     {
       "name": "Isthepolepubliclyaccessibleorbe",
-      "type": "string"
+      "type": "string",
+      "description": "The city's service labels this field 'Pole Publicly Accessible'."
     },
     {
       "name": "Location_Description",
@@ -203,11 +210,13 @@
     },
     {
       "name": "Xfield",
-      "type": "double"
+      "type": "double",
+      "description": "The city's service labels this field 'X'."
     },
     {
       "name": "Yfield",
-      "type": "double"
+      "type": "double",
+      "description": "The city's service labels this field 'Y'."
     },
     {
       "name": "GlobalID",
@@ -323,8 +332,8 @@
       "href": "./siren-locations.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "Siren Locations (PMTiles)",
-      "file:size": 111369,
-      "file:checksum": "122044b9026488405953826a9ef78e0e3160bbe2ba9dd059104bda0e9428297bf209",
+      "file:size": 300575,
+      "file:checksum": "12209c0f49cea24239e940061edd57cb16facddeb9a2555a0f4ade69f515540f30cc",
       "roles": [
         "visual"
       ],
@@ -346,8 +355,8 @@
       "type": "application/vnd.mapbox.style+json",
       "title": "Outdoor warning sirens",
       "description": "The 58 outdoor warning sirens, in alert red.",
-      "file:size": 807,
-      "file:checksum": "1220ee88923e4c6eedc33373c6206e016735ccbcd033a55036eab9b11b190b1d369c",
+      "file:size": 836,
+      "file:checksum": "1220ba06d0cff0f4649459b2378876d9a5091f2bd92e3a0527a302fd3bcb9b45d7bf",
       "roles": [
         "default",
         "style"
@@ -379,8 +388,8 @@
       "href": "./thumbnail.png",
       "type": "image/png",
       "title": "Siren Locations rendered with the default style",
-      "file:size": 372750,
-      "file:checksum": "1220a8cf2547b77a99e532878fa288a177a7a9f3c72d1011063f53fed3653a9beda8",
+      "file:size": 192514,
+      "file:checksum": "12205b377fd75e595a2ce76d7f16702969ffff1b29fea43973a172aa14f544584c7b",
       "roles": [
         "thumbnail"
       ],

@@ -2,7 +2,7 @@
   "type": "Collection",
   "id": "transportation-infrastructure-and-utilities/overture-infrastructure",
   "stac_version": "1.1.0",
-  "description": "Infrastructure features from the Overture base theme: real-world infrastructure entities such as bridges, airports, runways, aerialways, communication towers, power lines, and transit features like bus stops, platforms, and stations. All features are pulled from OpenStreetMap and converted to the Overture schema, classified by `subtype` and `class`. Overture documents this data well: the [base theme guide](https://docs.overturemaps.org/guides/base/) covers what the theme models, how Overture builds it, and how to query it, and the schema reference gives every field of its feature type \u2014 [`infrastructure`](https://docs.overturemaps.org/schema/reference/base/infrastructure/).\n\nUnlike everything else in this catalog, this is **not** City of St. Louis data: it comes from the [Overture Maps Foundation](https://overturemaps.org/), a collaborative project building open, interoperable map data for the world. This collection is a St. Louis extract of that global dataset \u2014 everything inside the city's bounding box, which also takes in the Illinois shore of the Mississippi (East St. Louis, Cahokia Heights) \u2014 included here to demonstrate how a city's open-data catalog can blend in other St. Louis-relevant open data alongside the city's own. The GeoParquet was extracted from Overture release 2026-07-22.0; the map tiles reference Overture's own global PMTiles for the same release, the tiles behind [explore.overturemaps.org](https://explore.overturemaps.org/).",
+  "description": "Infrastructure features from the Overture base theme: real-world infrastructure entities such as bridges, airports, runways, aerialways, communication towers, power lines, and transit features like bus stops, platforms, and stations. All features are pulled from OpenStreetMap and converted to the Overture schema, classified by `subtype` and `class`. Overture documents this data well: the [base theme guide](https://docs.overturemaps.org/guides/base/) covers what the theme models, how Overture builds it, and how to query it, and the schema reference gives every field of its feature type \u2014 [`infrastructure`](https://docs.overturemaps.org/schema/reference/base/infrastructure/).\n\nUnlike everything else in this catalog, this is **not** City of St. Louis data: it comes from the [Overture Maps Foundation](https://overturemaps.org/), a collaborative project building open, interoperable map data for the world. This collection is a St. Louis extract of that global dataset \u2014 everything inside the city's bounding box, which also takes in the Illinois shore of the Mississippi (East St. Louis, Cahokia Heights) \u2014 included here to demonstrate how a city's open-data catalog can blend in other St. Louis-relevant open data alongside the city's own. The GeoParquet was extracted from Overture release 2026-07-22.0. The map tiles reference Overture's own global PMTiles for release 2026-11-18.0 \u2014 the tiles behind [explore.overturemaps.org](https://explore.overturemaps.org/) \u2014 because Overture removes older tile builds from its bucket. The map can therefore show slightly newer features than the extract.",
   "links": [
     {
       "rel": "root",
@@ -53,7 +53,7 @@
     },
     {
       "rel": "pmtiles",
-      "href": "https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/base.pmtiles",
+      "href": "https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-11-18.0/base.pmtiles",
       "type": "application/vnd.pmtiles",
       "pmtiles:layers": [
         "infrastructure"
@@ -175,14 +175,14 @@
       "description": "St. Louis bounding-box extract of this Overture theme's release GeoParquet, geometries clipped to the box."
     },
     "overture-infrastructure-tiles": {
-      "href": "https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/base.pmtiles",
+      "href": "https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-11-18.0/base.pmtiles",
       "type": "application/vnd.pmtiles",
       "roles": [
         "visual"
       ],
       "title": "Overture base theme (PMTiles, global)",
-      "description": "Overture's own release-pinned global vector tiles for the base theme, served from the Overture Maps Foundation's public bucket \u2014 not from this mirror, and not clipped to St. Louis. The styles select this collection's layers (infrastructure) from them.",
-      "file:size": 195353612308
+      "description": "Overture's global vector tiles for the base theme, release 2026-11-18.0 \u2014 newer than the 2026-07-22.0 GeoParquet extract, because Overture removes older tile builds from its bucket. Served from the Overture Maps Foundation's public bucket, not from this mirror, and not clipped to St. Louis. The styles select this collection's layers (infrastructure) from them.",
+      "file:size": 192291847027
     },
     "styles/default": {
       "href": "./styles/default.json",
@@ -194,7 +194,7 @@
       "title": "Infrastructure by subtype",
       "description": "Everything Overture files under infrastructure, colored by subtype: transportation gray, barriers tan, transit blue, power orange, emergency red \u2014 polygons, lines, and points all drawn.",
       "file:size": 4838,
-      "file:checksum": "12206fd5e4b1d7dfb557d097c7e90924cf0302a568f6b5ab408e7777ec8f3edb2804"
+      "file:checksum": "1220237076097567609f4343b33ea69976e6bba565077227e74fa2f19dd8ae413525"
     },
     "styles/style-grid": {
       "href": "./styles/style-grid.json",
@@ -205,7 +205,7 @@
       "title": "The grid",
       "description": "Power lines orange, utilities purple, towers and communication pink \u2014 the energy and communication network over everything else in light gray.",
       "file:size": 2692,
-      "file:checksum": "12209ed067b6093f5aadbeaabd91492ae6ce29ce001e50b120f198571764ec047115"
+      "file:checksum": "1220221aa4ffbd5a3f58361b8304374fe5922a7673a800b584773a33a4fb4fc22f83"
     },
     "thumbnail": {
       "href": "./thumbnail.png",
@@ -214,8 +214,8 @@
         "thumbnail"
       ],
       "title": "Overture Infrastructure rendered with the default style",
-      "file:size": 375087,
-      "file:checksum": "1220daeab5f5673506af1c04749a7a54b2b6b745b7cb43ed812d2107c314a937f76a",
+      "file:size": 611117,
+      "file:checksum": "1220e072857a2f1ebeafc973a977c990cdf926204b914019f68900d20a873b5f0df4",
       "description": "The default style rendered over the collection's extent, for catalog browsing."
     }
   },

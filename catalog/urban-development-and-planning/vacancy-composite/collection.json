@@ -272,11 +272,13 @@
     },
     {
       "name": "Shape__Area",
-      "type": "double"
+      "type": "double",
+      "description": "Feature area as computed by the service (ESRI Shape.STArea(), in the service's projection units)."
     },
     {
       "name": "Shape__Length",
-      "type": "double"
+      "type": "double",
+      "description": "Feature perimeter or length as computed by the service (ESRI Shape.STLength(), in the service's projection units)."
     },
     {
       "name": "geometry",

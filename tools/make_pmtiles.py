@@ -127,6 +127,15 @@ def make(coll_id: str) -> None:
         if f.returncode != 0:
             raise RuntimeError(f"{coll_id} prefilter: {f.stderr[-300:]}")
         src_pq = filtered
+    n_rows = int(subprocess.run(
+        ["duckdb", "-noheader", "-list", "-c",
+         f"SELECT count(*) FROM '{src_pq}'"],
+        capture_output=True, text=True).stdout.strip())
+    if n_rows <= 20_000:
+        # tippecanoe's default point drop rate thins features below maxzoom:
+        # the 58 sirens rendered as 3 dots at the city frame. A collection
+        # this small keeps every feature at every zoom.
+        tc_cmd += ["-r1"]
     gpio = subprocess.Popen(
         ["gpio", "convert", "geojson", str(src_pq)], stdout=subprocess.PIPE)
     tc = subprocess.run(tc_cmd, stdin=gpio.stdout, capture_output=True, text=True)

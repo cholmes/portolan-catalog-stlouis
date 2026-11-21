@@ -37,8 +37,8 @@ Strategic land use (SLUP),parcel, and zoning data Mirrored from [the city's open
 | Shape_Leng | double |  |
 | Shape_Area | double |  |
 | Acres | double | Polygon area in acres. |
-| Shape__Area | double |  |
-| Shape__Length | double |  |
+| Shape__Area | double | Feature area as computed by the service (ESRI Shape.STArea(), in the service's projection units). |
+| Shape__Length | double | Feature perimeter or length as computed by the service (ESRI Shape.STLength(), in the service's projection units). |
 | geometry | binary | Feature geometry (WGS84, WKB encoding). |
 | bbox | struct<xmin: double, ymin: double, xmax: double, ymax: double> | Per-row bounding box of the geometry (the GeoParquet covering column). |
 
@@ -83,6 +83,8 @@ Extracted from the city's own ArcGIS REST service with the Portolan CLI:
       https://services6.arcgis.com/HZXbCkpCSqbGd0vK/arcgis/rest/services/Strategic_Land_Use_Plan/FeatureServer --raw
 
 That pages the service's `/query` endpoint for every feature, so this is the whole layer rather than the display-capped sample a browser request returns, and it carries across the service's field aliases. The service's own ESRI renderer was captured at the same time and is republished here as `styles/city-renderer.json`, so the map can be drawn in the city's own symbology.
+
+The service publishes field aliases and coded-value domains but no field descriptions. The schema descriptions here come from those aliases and domains plus researched notes; a column without a description has no documentation at the source.
 
 This mirrors the 2025 Strategic Land Use Plan from the live service. The 2019 shapefile edition the portal still offers is linked as a source asset but is not what this collection contains.
 

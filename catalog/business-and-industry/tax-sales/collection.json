@@ -66,7 +66,8 @@
     },
     {
       "name": "ColParcelId",
-      "type": "string"
+      "type": "string",
+      "description": "The city's service labels this field 'Parcel ID'."
     },
     {
       "name": "SubmittedParcel",
@@ -114,11 +115,13 @@
     },
     {
       "name": "Shape__Area",
-      "type": "double"
+      "type": "double",
+      "description": "Feature area as computed by the service (ESRI Shape.STArea(), in the service's projection units)."
     },
     {
       "name": "Shape__Length",
-      "type": "double"
+      "type": "double",
+      "description": "Feature perimeter or length as computed by the service (ESRI Shape.STLength(), in the service's projection units)."
     },
     {
       "name": "geometry",
@@ -197,9 +200,9 @@
         "style"
       ],
       "title": "Tax sale parcels by opening bid",
-      "description": "2,200 parcels in tax sale proceedings, stepped by opening bid.",
-      "file:size": 1381,
-      "file:checksum": "12203df4879d423c616a6489f4c78f5cd9684a17cd11a3d1ec888a91b729d446cf49"
+      "description": "2,200 parcels in tax sale proceedings, stepped by opening bid. Parcels are small, so an outline keeps them visible zoomed out.",
+      "file:size": 1988,
+      "file:checksum": "1220fd0fcf4a0dceb1f61d6dc180829eff66867feddcd995ab0af15142ebc347befc"
     },
     "styles/style-boundaries": {
       "href": "./styles/style-boundaries.json",
@@ -230,8 +233,8 @@
         "thumbnail"
       ],
       "title": "Tax Sales rendered with the default style",
-      "file:size": 357578,
-      "file:checksum": "1220fcb1d01a3b06b06690171521919480f61dc200a14e4f670dc9008eca276e1a72",
+      "file:size": 229406,
+      "file:checksum": "1220e64f7a0b7214422fb417f1d1661a3a5c01904dbbaff5a54891ea2ed1bfcddb3d",
       "description": "The default style rendered over the collection's extent, for catalog browsing."
     }
   },

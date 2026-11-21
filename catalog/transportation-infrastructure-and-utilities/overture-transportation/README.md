@@ -1,7 +1,7 @@
 # Overture Transportation
 
 The Overture transportation theme is a model of how the world's roads, rails, and waterways connect: traversable segments (roads, railways, ferries) and connectors (intersections) representing how people and objects travel, built from OpenStreetMap and enhanced with data from TomTom and other local and regional authoritative sources. It is simple at its core but expressive enough to capture speed limits that change by time of day, one-way streets that allow buses the wrong way, and weight-restricted bridges. Both feature types are merged here, with an `overture_type` column telling segments from connectors. Overture documents this data well: the [transportation theme guide](https://docs.overturemaps.org/guides/transportation/) covers what the theme models, how Overture builds it, and how to query it, and the schema reference gives every field of the feature types merged here — [`segment`](https://docs.overturemaps.org/schema/reference/transportation/segment/), [`connector`](https://docs.overturemaps.org/schema/reference/transportation/connector/).
-Unlike everything else in this catalog, this is **not** City of St. Louis data: it comes from the [Overture Maps Foundation](https://overturemaps.org/), a collaborative project building open, interoperable map data for the world. This collection is a St. Louis extract of that global dataset — everything inside the city's bounding box, which also takes in the Illinois shore of the Mississippi (East St. Louis, Cahokia Heights) — included here to demonstrate how a city's open-data catalog can blend in other St. Louis-relevant open data alongside the city's own. The GeoParquet was extracted from Overture release 2026-07-22.0; the map tiles reference Overture's own global PMTiles for the same release, the tiles behind [explore.overturemaps.org](https://explore.overturemaps.org/). Explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/transportation-infrastructure-and-utilities/overture-transportation/collection.json).
+Unlike everything else in this catalog, this is **not** City of St. Louis data: it comes from the [Overture Maps Foundation](https://overturemaps.org/), a collaborative project building open, interoperable map data for the world. This collection is a St. Louis extract of that global dataset — everything inside the city's bounding box, which also takes in the Illinois shore of the Mississippi (East St. Louis, Cahokia Heights) — included here to demonstrate how a city's open-data catalog can blend in other St. Louis-relevant open data alongside the city's own. The GeoParquet was extracted from Overture release 2026-07-22.0. The map tiles reference Overture's own global PMTiles for release 2026-11-18.0 — the tiles behind [explore.overturemaps.org](https://explore.overturemaps.org/) — because Overture removes older tile builds from its bucket. The map can therefore show slightly newer features than the extract. Explore it in the [St. Louis data browser](https://cholmes.github.io/stlouis-data-browser/#/transportation-infrastructure-and-utilities/overture-transportation/collection.json).
 
 ![overture](https://img.shields.io/badge/overture-blue) ![overture-maps](https://img.shields.io/badge/overture--maps-blue) ![transportation](https://img.shields.io/badge/transportation-blue) ![st-louis](https://img.shields.io/badge/st--louis-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![segment](https://img.shields.io/badge/segment-blue) ![connector](https://img.shields.io/badge/connector-blue)
 
@@ -46,10 +46,10 @@ Unlike everything else in this catalog, this is **not** City of St. Louis data: 
 | File | Size | Checksum |
 |------|------|----------|
 | ./overture-transportation.parquet | 20.8 MB | 122021d42923... |
-| https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-07-22.0/transportation.pmtiles | 121.4 GB | - |
-| ./styles/default.json | 3.1 KB | 1220c4e55069... |
-| ./styles/style-network.json | 1.2 KB | 12205149fb8d... |
-| ./styles/style-topology.json | 1.2 KB | 12206538e9c1... |
+| https://overturemaps-extras-us-west-2.s3.us-west-2.amazonaws.com/tiles/2026-11-18.0/transportation.pmtiles | 125.4 GB | - |
+| ./styles/default.json | 3.1 KB | 12200a88f28c... |
+| ./styles/style-network.json | 1.2 KB | 12205fa10570... |
+| ./styles/style-topology.json | 1.2 KB | 1220315e0c64... |
 | ./thumbnail.png | 447.0 KB | 1220a4fb9705... |
 
 ## Quick Start
