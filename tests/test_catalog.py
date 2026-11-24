@@ -131,15 +131,16 @@ def check_collection(coll_dir: Path):
             if not a["href"].startswith("https://"):
                 err(f"{cid}: asset {key} remote href is not https")
             # Overture collections reference Overture's own release-pinned
-            # global theme tiles as their visual asset: size is recorded but
-            # a checksum of a 19-195 GB file this catalog neither serves nor
-            # re-hashes would be an unverifiable claim in the other
-            # direction, so none is required.
+            # global theme tiles as their visual asset: a convenience layer
+            # for map display, not data this catalog stores. Its file:size
+            # is the whole-planet tileset's size, not this collection's, so
+            # it must not be reported (it would inflate catalog-wide byte
+            # totals by ~100-200 GB per collection that links it).
             if ov and a["href"].endswith(".pmtiles"):
                 if "visual" not in a.get("roles", []):
                     err(f"{cid}: remote tiles asset {key} must be visual")
-                if "file:size" not in a:
-                    err(f"{cid}: remote tiles asset {key} missing file:size")
+                if "file:size" in a:
+                    err(f"{cid}: remote tiles asset {key} must not report file:size")
                 continue
             # A `source` asset points at the city's own copy on a server we
             # do not control, so there is no local file to compare against.

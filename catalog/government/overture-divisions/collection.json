@@ -265,8 +265,7 @@
         "visual"
       ],
       "title": "Overture divisions theme (PMTiles, global)",
-      "description": "Overture's global vector tiles for the divisions theme, release 2026-11-18.0 \u2014 newer than the 2026-07-22.0 GeoParquet extract, because Overture removes older tile builds from its bucket. Served from the Overture Maps Foundation's public bucket, not from this mirror, and not clipped to St. Louis. The styles select this collection's layers (division, division_area, division_boundary) from them.",
-      "file:size": 20296367155
+      "description": "Overture's global vector tiles for the divisions theme, release 2026-11-18.0 \u2014 newer than the 2026-07-22.0 GeoParquet extract, because Overture removes older tile builds from its bucket. Served from the Overture Maps Foundation's public bucket, not from this mirror, and not clipped to St. Louis. The styles select this collection's layers (division, division_area, division_boundary) from them."
     },
     "styles/default": {
       "href": "./styles/default.json",

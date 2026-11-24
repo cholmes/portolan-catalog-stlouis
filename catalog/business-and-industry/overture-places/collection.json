@@ -201,8 +201,7 @@
         "visual"
       ],
       "title": "Overture places theme (PMTiles, global)",
-      "description": "Overture's global vector tiles for the places theme, release 2026-11-18.0 \u2014 newer than the 2026-07-22.0 GeoParquet extract, because Overture removes older tile builds from its bucket. Served from the Overture Maps Foundation's public bucket, not from this mirror, and not clipped to St. Louis. The styles select this collection's layers (place) from them.",
-      "file:size": 20234219226
+      "description": "Overture's global vector tiles for the places theme, release 2026-11-18.0 \u2014 newer than the 2026-07-22.0 GeoParquet extract, because Overture removes older tile builds from its bucket. Served from the Overture Maps Foundation's public bucket, not from this mirror, and not clipped to St. Louis. The styles select this collection's layers (place) from them."
     },
     "styles/default": {
       "href": "./styles/default.json",
