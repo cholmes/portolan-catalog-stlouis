@@ -114,10 +114,10 @@
   "stac_extensions": [
     "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json"
   ],
-  "portolan:total_size_bytes": 544947894,
-  "portolan:asset_count": 89,
+  "portolan:total_size_bytes": 889079428,
+  "portolan:asset_count": 434,
   "portolan:collection_count": 67,
-  "updated": "2026-08-14T12:21:16+00:00",
+  "updated": "2026-11-24T00:00:00+00:00",
   "providers": [
     {
       "name": "City of St. Louis",
